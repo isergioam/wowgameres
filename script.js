@@ -9,8 +9,7 @@ window.addEventListener('scroll', () => {
   }
 
   // Animación fade-in
-  const faders = document.querySelectorAll('.fade-in');
-  faders.forEach(fader => {
+  document.querySelectorAll('.fade-in').forEach(fader => {
     const rect = fader.getBoundingClientRect();
     if (rect.top < window.innerHeight - 50) {
       fader.classList.add('visible');
@@ -20,4 +19,24 @@ window.addEventListener('scroll', () => {
 
 toTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* 🌙 MODO OSCURO */
+const toggle = document.getElementById('darkModeToggle');
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+/* Guardar preferencia */
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
 });
