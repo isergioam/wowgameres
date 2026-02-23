@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de Peletería - Vanilla WoW</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo">
+    <img src="https://content-eu.drive.amazonaws.com/cdproxy/templink/-GfHcwkGLAT93Bz688jSka6b6wCHy4PlCq2Sg26ocmUeJxFPc?viewBox=2744" alt="WOWGamerES Logo">
+  </div>
+  <nav class="main-nav">
+    <ul>
+	<li><a href="#index">Inicio</a></li>
+      <li><a href="#profesiones">Profesiones</a></li>
+      <li><a href="#expansiones">Expansiones</a></li>      
+	  <li><button id="darkModeToggle">🌙</button></li>
+      <!-- Más profesiones futuras -->
+    </ul>
+  </nav>
+</header>
+
+<div class="content">
+  <!-- Introducción -->
+  <div id="intro" class="section">
+    <h2>¿Qué es Peletería?</h2>
+    <p>La Peletería es una profesión secundaria en <strong>Vanilla World of Warcraft</strong> que permite crear armaduras y objetos de cuero y piel. Con ella puedes fabricar desde objetos de nivel bajo hasta armaduras avanzadas, necesarias para muchas clases que usan cuero, como pícaros y druidas. También permite transformar cuero en distintos tipos y crear objetos que se venden en la casa de subastas para obtener oro.</p>
+    <p>El progreso en la Peletería se hace subiendo de nivel mediante recetas que requieren distintos tipos de cuero y restos de pieles. Cada receta permite aprender técnicas de creación más avanzadas a medida que aumentas tu habilidad.</p>
+  </div>
+
+  <!-- Materiales -->
+  <div id="materiales" class="section">
+    <h2>Materiales necesarios</h2>
+    <table>
+      <tr><th>Material</th><th>Cantidad</th></tr>
+      <tr><td>Restos de cuero estropeado</td><td>57</td></tr>
+      <tr><td>Pellejo medio</td><td>15</td></tr>
+      <tr><td>Cuero ligero</td><td>260</td></tr>
+      <tr><td>Cuero medio</td><td>160</td></tr>
+      <tr><td>Pellejo pesado</td><td>20</td></tr>
+      <tr><td>Cuero basto</td><td>120</td></tr>
+    </table>
+  </div>
+
+  <!-- Nivelación (Guía paso a paso) -->
+  <div id="niveles" class="section">
+    <h2>Recetas por nivel</h2>
+
+    <!-- Peletería 1-50 -->
+    <button class="collapsible active">Peletería 1 – 50</button>
+    <div class="content-collapsible" style="display:block;">
+      <p><strong>Peletería 1 – 20</strong><br>
+      19 [Cuero ligero] – 57 Restos de cuero estropeado.<br>
+      Haga la siguiente receta si no tienes Restos de cuero estropeado.</p>
+
+      <p><strong>Peletería 20 – 30 ó 1 – 30</strong><br>
+      10 [Refuerzo para armadura ligero] – 10 Cuero ligero.</p>
+
+      <p><strong>Peletería 30 – 50</strong><br>
+      20 [Capa de cuero cosida a mano] – 40 Cuero ligero, 20 Hilo burdo.</p>
+    </div>
+
+    <!-- Peletería 50-115 -->
+    <button class="collapsible active">Peletería 50 – 115</button>
+    <div class="content-collapsible" style="display:block;">
+      <p><strong>Peletería 50 – 55</strong><br>
+      5 [Cinturón de cuero cosido a mano] – 30 Cuero ligero, 5 Hilo burdo.</p>
+
+      <p><strong>Peletería 55 – 85</strong><br>
+      30 [Guantes de cuero estampado] – 90 Cuero ligero, 60 Hilo burdo.<br>
+      Guárdelos porque los necesitará más tarde.</p>
+
+      <p><strong>Peletería 85 – 100</strong><br>
+      15 [Cinturón de cuero refinado] – 90 Cuero ligero, 30 Hilo burdo.</p>
+
+      <p><strong>Peletería 100 – 115</strong><br>
+      Guarda el Cuero medio, mas tarde lo necesitaras.<br>
+      15 [Pellejo medio curtido] – 15 Pellejo medio, 15 Sal.<br>
+      Haz [Refuerzo para armadura medio] si no puedes encontrar Pellejo medio.</p>
+    </div>
+
+    <!-- Peletería 115-155 -->
+    <button class="collapsible active">Peletería 115 – 155</button>
+    <div class="content-collapsible" style="display:block;">
+      <p><strong>Peletería 115 – 130</strong><br>
+      16 [Botas de cuero oscuro] – 64 Cuero medio, 32 Hilo refinado, 16 Tinte gris.</p>
+
+      <p><strong>Peletería 130 – 145</strong><br>
+      15 [Cinturón de cuero oscuro] – 15 Cinturón de cuero refinado, 15 Pellejo medio, 30 Hilo refinado, 15 Tinte gris.<br>
+      Haz [Capa de cuero oscuro] si todavía no tienes [Pellejo medio curtido].</p>
+
+      <p><strong>Peletería 145 – 150</strong><br>
+      5 [Guantes de cuero de montañero] – 70 Cuero medio, 20 Hilo refinado.</p>
+
+      <p><strong>Peletería 150 – 155</strong><br>
+      5 [Cuero pesado] – 25 Cuero medio.<br>
+      También puede hacer la siguiente receta:<br>
+      5 [Bola de cuero pesado] – 10 Cuero pesado, 5 Hilo refinado.<br>
+      Consulta [Patrón: bola de cuero pesado] para ver que NPC la vende.</p>
+    </div>
+
+    <!-- Peletería 155-200 -->
+    <button class="collapsible active">Peletería 155 – 200</button>
+    <div class="content-collapsible" style="display:block;">
+      <p><strong>Peletería 155 – 165</strong><br>
+      Necesitará el Pellejo pesado curtido más tarde.<br>
+      20 [Pellejo pesado curtido] – 20 Pellejo pesado, 60 Sal.<br>
+      Forma alternativa de subir: usar [Cuero pesado] porque [Pellejo pesado] tiene baja probabilidad de salir.</p>
+
+      <p><strong>Peletería 155 – 180</strong><br>
+      [Refuerzo para armadura pesado] o [Capa de montañero] – 175 [Cuero pesado].</p>
+
+      <p><strong>Peletería 180 – 190</strong><br>
+      [Pantalones de guardián] o [Leotardos barbáricos] – 156 [Cuero pesado], 26 Madeja de paño de seda ó 100 [Cuero pesado], 10 Ágata musgosa.</p>
+
+      <p><strong>Peletería 190 – 200</strong><br>
+      [Leotardos barbáricos] – 130 [Cuero pesado], 13 Ágata musgosa.<br>
+      Consultar [Patrón: leotardos barbáricos] para ver que NPC la vende.</p>
+    </div>
+
+    <!-- Peletería 165-300 -->
+    <button class="collapsible active">Peletería 165 – 300</button>
+    <div class="content-collapsible" style="display:block;">
+      <p><strong>Peletería 165 – 180</strong><br>
+      15 [Refuerzo para armadura pesado] – 75 Cuero pesado, 15 Hilo refinado.</p>
+
+      <p><strong>Peletería 180 – 190</strong><br>
+      10 [Sobrehombros barbáricos] – 80 Cuero pesado, 10 Pellejo pesado curtido, 20 Hilo refinado.</p>
+
+      <p><strong>Peletería 190 – 200</strong><br>
+      10 [Guantes de guardián] – 40 Cuero pesado, 10 Pellejo pesado curtido, 10 Hilo de seda.</p>
+
+      <p><strong>Peletería 200 – 205</strong><br>
+      5 [Refuerzo para armadura grueso] – 25 Cuero grueso, 5 Hilo de seda.</p>
+
+      <p><strong>Peletería 205 – 235</strong><br>
+      35 [Cinta Nochefugaz] – 175 Cuero grueso, 70 Hilo de seda.</p>
+
+      <p><strong>Peletería 235 – 250</strong><br>
+      15 [Pantalones Nochefugaz] – 210 Cuero grueso, 60 Hilo de seda.</p>
+
+      <p><strong>Peletería 250 – 265</strong><br>
+      18 [Refuerzo para armadura basto] – 90 Cuero basto.</p>
+
+      <p><strong>Peletería 265 – 290</strong><br>
+      25 [Brazales de cuero maligno] – 200 Cuero basto, 25 Tinte negro, 25 Hilo rúnico.<br>
+      Si 4 Escamas de escórpido pesado son más baratos que 4 Cuero basto, puedes crear lo siguiente:<br>
+      Consultar [Patrón: brazales de escórpido gruesos] para ver que NPC la vende.<br>
+      Haz [Botas de sable de hielo] si una Esencia de agua es más barato que 4 Cuero basto en su reino.</p>
+
+      <p><strong>Peletería 290 – 300</strong><br>
+      10 [Cinta de cuero maligno] – 120 Cuero basto, 10 Tinte negro, 10 Hilo rúnico.</p>
+    </div>
+  </div>
+</div>
+
+<button id="toTop">⬆️</button>
+<script src="script.js"></script>
+</body>
+</html>
