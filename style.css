@@ -51,7 +51,7 @@ a {
  /* background: linear-gradient(135deg, #f3e8ff, #e0d4ff);*/
   text-align: center;
   padding: 10px 20px;
-  border-radius: 15px;
+ /* border-radius: 15px;*/
   margin: 20px auto;
 }
 /*
@@ -108,7 +108,7 @@ a {
 .card {
   background-color: #dcd0ff;
   padding: 20px;
-  border-radius: 10px;
+ /* border-radius: 10px;*/
   flex: 1 1 250px;
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
@@ -139,7 +139,7 @@ a {
 .card-expansion {
   background-color: #dcd0ff;
   padding: 20px;
-  border-radius: 10px;
+ /* border-radius: 10px;*/
   text-align: center;
   font-weight: bold;
   color: #6a0dad;
@@ -176,7 +176,7 @@ a {
   background-color: #6a0dad;
   color: #fff;
   border: none;
-  border-radius: 5px;
+ /* border-radius: 5px;*/
   cursor: pointer;
   font-size: 18px;
   z-index: 1000;
@@ -236,7 +236,7 @@ body.dark-mode .section h2 {
   padding: 40px;
   text-align: center;
   background-color: #ece6ff;
-  border-radius: 10px;
+ /* border-radius: 10px;*/
   color: #6a0dad;
   font-weight: bold;
 }
