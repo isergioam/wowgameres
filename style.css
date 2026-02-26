@@ -207,6 +207,13 @@ body.dark-mode .main-nav a, body.dark-mode .hero p, body.dark-mode .card p {
 /*body.dark-mode .hero {
   background: linear-gradient(135deg, #1f1b2e, #2c2444);
 }*/
+body.dark-mode h3,
+body.dark-mode h2,
+body.dark-mode .section h3,
+body.dark-mode .section h2{
+	color: #bb9fff;
+	font-size: 40pt;
+}
 
 
 body.dark-mode .card,
