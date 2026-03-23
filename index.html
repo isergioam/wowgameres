@@ -1,171 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WOWGamerES – Guías y Profesiones de WoW</title>
-<link rel="stylesheet" href="./css/style.css">
-<meta name="description" content="Guías completas de profesiones en World of Warcraft. Peletería, Alquimia, Ingeniería, Sastrería y más para todas las expansiones.">
-<meta name="keywords" content="WoW guías, profesiones WoW, peletería WoW, alquimia WoW, ingeniería WoW, joyería WoW">
-<meta name="author" content="WOWGamerES">
-<meta name="robots" content="index, follow">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WOWGamerES – Guías y Profesiones de WoW</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<meta name="description"
+		content="Guías completas de profesiones en World of Warcraft. Peletería, Alquimia, Ingeniería, Sastrería y más para todas las expansiones.">
+	<meta name="keywords"
+		content="WoW guías, profesiones WoW, peletería WoW, alquimia WoW, ingeniería WoW, joyería WoW">
+	<meta name="author" content="WOWGamerES">
+	<meta name="robots" content="index, follow">
 
-<!-- Open Graph (para compartir en redes) -->
-<meta property="og:title" content="WOWGamerES - Guías de Profesiones WoW">
-<meta property="og:description" content="Guías completas de profesiones para todas las expansiones de World of Warcraft.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="./images/WOWGamerES_Logo_2024.png">
+	<!-- Open Graph (para compartir en redes) -->
+	<meta property="og:title" content="WOWGamerES - Guías de Profesiones WoW">
+	<meta property="og:description"
+		content="Guías completas de profesiones para todas las expansiones de World of Warcraft.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="./images/WOWGamerES_Logo_2024.png">
 
-<!-- Favicon -->
-<link rel="icon" href="favicon.ico">
+	<!-- Favicon -->
+	<link rel="icon" href="favicon.ico">
 </head>
+
 <body>
+	<div id="wg-header"></div>
 
-<!-- Menú Principal -->
-<header class="main-header">
-	<!-- Banner LOGO -->
-	<section class="logo">
-			<img id="logo" src="./images/WOWGamerES_Logo_white.png" alt="WOWGamerES Logo">
-	</section>
-	<nav class="main-nav">
-		<ul>
-			<li><a href="./index.html">Inicio</a></li>
-			<li><a href="#profesiones">Profesiones</a>
-				<ul class="submenu">
-					<li><a href="#">Alquimia</a></li>
-					<li><a href="#">Encantamiento</a></li>
-					<li><a href="#">Herrería</a></li>
-					<li><a href="#">Ingeniería</a></li>
-					<li><a href="#">Inscripción</a></li>
-					<li><a href="#">Joyería</a></li>
-					<li><a href="#">Peletería</a></li>
-					<li><a href="#">Sastrería</a></li>
-				</ul>
-			</li>
-			<li><a href="#expansiones">Expansiones</a>
-				<ul class="submenu">
-					<li><a href="#">Vanilla</a></li>
-					<li><a href="#">Terrallende</a></li>
-					<li><a href="#">Rasganorte</a></li>
-					<li><a href="#">Cataclismo</a></li>
-					<li><a href="#">Pandaria</a></li>
-					<li><a href="#">Draenor</a></li>
-					<li><a href="#">Legion</a></li>
-					<li><a href="#">Battle for Azeroth</a></li>
-					<li><a href="#">Shadowlands</a></li>
-					<li><a href="#">Dragonflight</a></li>
-					<li><a href="#">The War Within</a></li>
-					<li><a href="#">Midnight</a></li>
-				</ul>
-			</li>
-			<li><button id="darkModeToggle">🌙</button></li>
-		</ul>
-	</nav>
-</header>
-
-
-
-<!-- Espacio reservado para Google AdSense
+	<!-- Espacio reservado para Google AdSense
 <div class="ad-space">
 
   Publicidad
 </div>
 -->
-<div class="content">
+	<main class="content">
 
-<!-- Profesiones -->
-<div id="profesiones" class="section">
-	<h2>Guías por Profesión</h2>
-	<div class="profesiones">
-		<!-- ALQUIMIA -->
-		<a href="./alquimia.html">
-			<div class="card">
-				<h3>Alquimia</h3>
-				<img src="./images/alquimia_wow.png" alt="WOWGamerES Alquimia">
+		<!-- Expansiones -->
+		<div id="expansiones" class="section">
+			<h2>Explora por Expansión</h2>
+			<div class="expansiones">
+				<div class="card-expansion">Vanilla</div>
+				<div class="card-expansion">Terrallende</div>
+				<div class="card-expansion">Rasganorte</div>
+				<div class="card-expansion">Cataclismo</div>
+				<div class="card-expansion">Pandaria</div>
+				<div class="card-expansion">Draenor</div>
+				<div class="card-expansion">Legión</div>
+				<div class="card-expansion">Battle for Azeroth</div>
+				<div class="card-expansion">Shadowlands</div>
+				<div class="card-expansion">Dragonflight</div>
+				<div class="card-expansion">The War Within</div>
+				<div class="card-expansion">Midnight</div>
 			</div>
-		</a>
-		<!-- ENCANTAMIENTO -->
-		<a href="./encantamiento.html">
-			<div class="card">
-				<h3>Encantamiento</h3>
-				<img src="./images/encantamiento_wow.png" alt="WOWGamerES Encantamiento">
-			</div>
-		</a>	
-		<!-- HERRERIA -->
-		<a href="./herreria.html">
-			<div class="card">
-				<h3>Herrería</h3>
-				<img src="./images/herreria_wow.png" alt="WOWGamerES Herreria">
-			</div>
-		</a>
-		<!-- INGENIERIA -->
-		<a href="./ingenieria.html">
-			<div class="card">
-				<h3>Ingeniería</h3>
-				<img src="./images/ingenieria_wow.png" alt="WOWGamerES Ingenieria">
-			</div>
-		</a>
-		<!-- INSCRIPCION -->
-		<a href="./inscripcion.html">
-			<div class="card">
-				<h3>Inscripción</h3>
-				<img src="./images/inscripcion_wow.png" alt="WOWGamerES Inscripcion">
-			</div>
-		</a>
-		<!-- JOYERIA -->
-		<a href="./joyeria.html">
-			<div class="card">
-				<h3>Joyería</h3>
-				<img src="./images/joyeria_wow.png" alt="WOWGamerES Joyeria">
-			</div>
-		</a>
-		<!-- PELETERIA -->	
-		<a href="./peleteria.html">
-			<div class="card">
-				<h3>Peletería</h3>
-				<img src="./images/peleteria_wow.png" alt="WOWGamerES Peleteria">
-			</div>
-		</a>
-		<!-- SASTRERIA -->
-		<a href="./sastreria.html">
-			<div class="card">
-				<h3>Sastrería</h3>
-				<img src="./images/sastreria_wow.png" alt="WOWGamerES Sastreria">
-			</div>
-		</a>
-	</div>
-  </div>
+		</div>
 
-  <!-- Expansiones -->
-  <div id="expansiones" class="section">
-    <h2>Explora por Expansión</h2>
-    <div class="expansiones">
-      <div class="card-expansion">Vanilla</div>
-      <div class="card-expansion">Terrallende</div>
-      <div class="card-expansion">Rasganorte</div>
-      <div class="card-expansion">Cataclismo</div>
-      <div class="card-expansion">Pandaria</div>
-      <div class="card-expansion">Draenor</div>
-      <div class="card-expansion">Legión</div>
-      <div class="card-expansion">Battle for Azeroth</div>
-      <div class="card-expansion">Shadowlands</div>
-	  <div class="card-expansion">Dragonflight</div>
-	  <div class="card-expansion">The War Within</div>
-	  <div class="card-expansion">Midnight</div>
-    </div>
-  </div>
+		<!-- Profesiones -->
+		<div id="profesiones" class="section">
+			<h2>Guías por Profesión (Actual)</h2>
+			<div class="profesiones">
+				<!-- ALQUIMIA -->
+				<a href="./alquimia.html">
+					<div class="card">
+						<h3>Alquimia</h3>
+						<img src="./images/alquimia_wow.png" alt="WOWGamerES Alquimia">
+					</div>
+				</a>
+				<!-- ENCANTAMIENTO -->
+				<a href="./encantamiento.html">
+					<div class="card">
+						<h3>Encantamiento</h3>
+						<img src="./images/encantamiento_wow.png" alt="WOWGamerES Encantamiento">
+					</div>
+				</a>
+				<!-- HERRERIA -->
+				<a href="./herreria.html">
+					<div class="card">
+						<h3>Herrería</h3>
+						<img src="./images/herreria_wow.png" alt="WOWGamerES Herreria">
+					</div>
+				</a>
+				<!-- INGENIERIA -->
+				<a href="./ingenieria.html">
+					<div class="card">
+						<h3>Ingeniería</h3>
+						<img src="./images/ingenieria_wow.png" alt="WOWGamerES Ingenieria">
+					</div>
+				</a>
+				<!-- INSCRIPCION -->
+				<a href="./inscripcion.html">
+					<div class="card">
+						<h3>Inscripción</h3>
+						<img src="./images/inscripcion_wow.png" alt="WOWGamerES Inscripcion">
+					</div>
+				</a>
+				<!-- JOYERIA -->
+				<a href="./joyeria.html">
+					<div class="card">
+						<h3>Joyería</h3>
+						<img src="./images/joyeria_wow.png" alt="WOWGamerES Joyeria">
+					</div>
+				</a>
+				<!-- PELETERIA -->
+				<a href="./peleteria.html">
+					<div class="card">
+						<h3>Peletería</h3>
+						<img src="./images/peleteria_wow.png" alt="WOWGamerES Peleteria">
+					</div>
+				</a>
+				<!-- SASTRERIA -->
+				<a href="./sastreria.html">
+					<div class="card">
+						<h3>Sastrería</h3>
+						<img src="./images/sastreria_wow.png" alt="WOWGamerES Sastreria">
+					</div>
+				</a>
+			</div>
+		</div>
 
-</div>
 
-<!-- FOOTER -->
-<footer class="copyright-center">
-	<div>
-		Copyright 2012 - <span id="year"></span> | <a href="https://wowgameres.com/aviso-legal/">Aviso Legal</a> | WOWGamerES
-	</div>
-</footer>
 
-<!-- Botón volver arriba -->
-<button id="toTop">⬆️</button>
-<script src="./js/script.js"></script>
+	</main>
+
+	<div id="wg-footer"></div>
+
+	<!-- Botón volver arriba -->
+	<!--<button id="toTop">⬆️</button>-->
+
+	<script src="./js/script.js"></script>
 </body>
+
 </html>
