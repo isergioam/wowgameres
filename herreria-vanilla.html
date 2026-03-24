@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Herrería - Vanilla WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="300" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="25" data-mats='{"Piedra férrea": 133}'>
+          <strong>Herrería 1 – 25</strong><br>
+          <span class="recipe-name">Piedra de pulir férrea &rarr;</span> 133 Piedra férrea.<br>
+          Nota: Guárdelas, las necesitará más adelante.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="65" data-mats='{"Piedra burda": 80}'>
+          <strong>Herrería 25 – 65</strong><br>
+          <span class="recipe-name">Piedra de pulir burda &rarr;</span> 80 Piedra burda.<br>
+          Nota: Guárdelas, las necesitará más adelante.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="75"
+          data-mats='{"Barra de cobre": 10, "Piedra de pulir férrea": 10}'>
+          <strong>Herrería 65 – 75</strong><br>
+          <span class="recipe-name">Piedras de afilar de cobre &rarr;</span> 10 Barra de cobre, 10 Piedra de pulir
+          férrea.
+        </p>
+
+        <p class="custom-step" data-min="75" data-max="90" data-mats='{"Barra de cobre": 30}'>
+          <strong>Herrería 75 – 90</strong><br>
+          <span class="recipe-name">Piedras de afilar de cobre &rarr;</span> 30 Barra de cobre.
+        </p>
+
+        <p class="custom-step" data-min="90" data-max="100" data-mats='{"Barra de cobre": 100}'>
+          <strong>Herrería 90 – 100</strong><br>
+          <span class="recipe-name">Cinturón rúnico de cobre &rarr;</span> 100 Barra de cobre.
+        </p>
+
+        <p class="custom-step" data-min="100" data-max="107" data-mats='{"Barra de plata": 7}'>
+          <strong>Herrería 100 – 107</strong><br>
+          <span class="recipe-name">Barra de plata &rarr;</span> 7 Barra de plata.<br>
+          Alternativa: Si no tiene plata, haga [Cinturón rúnico de cobre] hasta el 107.
+        </p>
+
+        <p class="custom-step" data-min="107" data-max="120"
+          data-mats='{"Barra de bronce": 26, "Piedra de pulir burda": 13}'>
+          <strong>Herrería 107 – 120</strong><br>
+          <span class="recipe-name">Piedras de afilar de bronce &rarr;</span> 26 Barra de bronce, 13 Piedra de pulir
+          burda.
+        </p>
+
+        <p class="custom-step" data-min="120" data-max="125" data-mats='{"Barra de bronce": 25}'>
+          <strong>Herrería 120 – 125</strong><br>
+          <span class="recipe-name">Brazales de bronce rúnicos &rarr;</span> 25 Barra de bronce.
+        </p>
+
+        <p class="custom-step" data-min="125" data-max="140" data-mats='{"Piedra pesada": 105}'>
+          <strong>Herrería 125 – 140</strong><br>
+          <span class="recipe-name">Piedra de pulir pesada &rarr;</span> 105 Piedra pesada.<br>
+          Nota: Guarde al menos 20 de estas.
+        </p>
+
+        <p class="custom-step" data-min="140" data-max="145"
+          data-mats='{"Barra de bronce": 25, "Piedra de pulir burda": 10}'>
+          <strong>Herrería 140 – 145</strong><br>
+          <span class="recipe-name">Brazales de bronce rúnicos &rarr;</span> 25 Barra de bronce, 10 Piedra de pulir
+          burda.
+        </p>
+
+        <p class="custom-step" data-min="145" data-max="150" data-mats='{"Barra de oro": 5}'>
+          <strong>Herrería 145 – 150</strong><br>
+          <span class="recipe-name">Barra de oro &rarr;</span> 5 Barra de oro.
+        </p>
+
+        <p class="custom-step" data-min="150" data-max="155"
+          data-mats='{"Barra de hierro": 30, "Piedra de pulir pesada": 10}'>
+          <strong>Herrería 150 – 155</strong><br>
+          <span class="recipe-name">Brazales de hierro reforzados &rarr;</span> 30 Barra de hierro, 10 Piedra de pulir
+          pesada.
+        </p>
+
+        <p class="custom-step" data-min="155" data-max="165"
+          data-mats='{"Barra de hierro": 80, "Tinte verde": 10, "Piedra de pulir pesada": 10}'>
+          <strong>Herrería 155 – 165</strong><br>
+          <span class="recipe-name">Pantalones de hierro verdes &rarr;</span> 80 Barra de hierro, 10 Tinte verde, 10
+          Piedra de pulir pesada.
+        </p>
+
+        <p class="custom-step" data-min="165" data-max="190" data-mats='{"Barra de hierro": 150, "Tinte verde": 25}'>
+          <strong>Herrería 165 – 190</strong><br>
+          <span class="recipe-name">Brazales de hierro verdes &rarr;</span> 150 Barra de hierro, 25 Tinte verde.
+        </p>
+
+        <p class="custom-step" data-min="190" data-max="200"
+          data-mats='{"Barra de acero": 50, "Piedra de pulir pesada": 20}'>
+          <strong>Herrería 190 – 200</strong><br>
+          <span class="recipe-name">Brazales de escamas doradas &rarr;</span> 50 Barra de acero, 20 Piedra de pulir
+          pesada.<br>
+          Consejo: En los proveedores de Suministros de herrería cerca de su entrenador puede comprar [Carbón] para las
+          barras de acero.
+        </p>
+
+        <p class="custom-step" data-min="200" data-max="210" data-mats='{"Piedra sólida": 20}'>
+          <strong>Herrería 200 – 210</strong><br>
+          <span class="recipe-name">Piedra de afilar sólida &rarr;</span> 20 Piedra sólida.<br>
+          Nota: Esta receta se vuelve verde al final, puede variar la cantidad necesaria.
+        </p>
+
+        <p class="custom-step" data-min="210" data-max="225"
+          data-mats='{"Barra de mitril": 90, "Paño de tejido mágico": 60}'>
+          <strong>Herrería 210 – 225</strong><br>
+          <span class="recipe-name">Guanteletes de mitril pesado &rarr;</span> 90 Barra de mitril, 60 Paño de tejido
+          mágico.
+        </p>
+
+        <p class="custom-step" data-min="225" data-max="235" data-mats='{"Barra de mitril": 80}'>
+          <strong>Herrería 225 – 235</strong><br>
+          <span class="recipe-name">Brazales de placas de mitril &rarr;</span> 80 Barra de mitril.
+        </p>
+
+        <p class="custom-step" data-min="235" data-max="250"
+          data-mats='{"Barra de mitril": 105, "Paño de tejido mágico": 90}'>
+          <strong>Herrería 235 – 250</strong><br>
+          <span class="recipe-name">Hombreras de mitril pesado &rarr;</span> 105 Barra de mitril, 90 Paño de tejido
+          mágico.
+        </p>
+
+        <p class="custom-step" data-min="250" data-max="260" data-mats='{"Piedra densa": 20}'>
+          <strong>Herrería 250 – 260</strong><br>
+          <span class="recipe-name">Piedra de afilar densa &rarr;</span> 20 Piedra densa.
+        </p>
+
+        <p class="custom-step" data-min="260" data-max="270" data-mats='{"Barra de torio": 20}'>
+          <strong>Herrería 260 – 270</strong><br>
+          <span class="recipe-name">Brazales de torio ligeros &rarr;</span> 20 Barra de torio.
+        </p>
+
+        <p class="custom-step" data-min="270" data-max="295" data-mats='{"Barra de torio": 500}'>
+          <strong>Herrería 270 – 295</strong><br>
+          <span class="recipe-name">Brazales de torio imperiales &rarr;</span> 500 Barra de torio.<br>
+          Nota: Requiere el diseño de los Brazales imperiales.
+        </p>
+
+        <p class="custom-step" data-min="295" data-max="300" data-mats='{"Barra de torio": 90, "Cuero denso": 40}'>
+          <strong>Herrería 295 – 300</strong><br>
+          <span class="recipe-name">Botas de torio imperiales &rarr;</span> 90 Barra de torio, 40 Cuero denso.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <button id="toTop">⬆️</button>
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

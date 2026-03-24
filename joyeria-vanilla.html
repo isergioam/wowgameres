@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Joyería - Vanilla WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="300" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="30" data-mats='{"Barra de cobre": 60}'>
+          <strong>Joyería 1 – 30</strong><br>
+          <span class="recipe-name">Hilo de cobre delicado &rarr;</span> 60 Barra de cobre.<br>
+          Guardar para más adelante.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="50"
+          data-mats='{"Ojo de tigre": 20, "Hilo de cobre delicado": 20}'>
+          <strong>Joyería 30 – 50</strong><br>
+          <span class="recipe-name">Sortija de ojo de tigre &rarr;</span> 20 Ojo de tigre, 20 Hilo de cobre
+          delicado.<br>
+          Nota: También se puede hacer Colgante de malaquita.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="80" data-mats='{"Barra de bronce": 100}'>
+          <strong>Joyería 50 – 80</strong><br>
+          <span class="recipe-name">Engarce de bronce &rarr;</span> 100 Barra de bronce.<br>
+          Guardar para más adelante.
+        </p>
+
+        <p class="custom-step" data-min="80" data-max="100" data-mats='{"Barra de plata": 40}'>
+          <strong>Joyería 80 – 100</strong><br>
+          <span class="recipe-name">Sortija de plata del poder &rarr;</span> 40 Barra de plata.
+        </p>
+
+        <p class="custom-step" data-min="100" data-max="110"
+          data-mats='{"Gema de las Sombras": 20, "Engarce de bronce": 10}'>
+          <strong>Joyería 100 – 110</strong><br>
+          <span class="recipe-name">Sortija crepuscular sombría &rarr;</span> 20 Gema de las Sombras, 10 Engarce de
+          bronce.
+        </p>
+
+        <p class="custom-step" data-min="110" data-max="120" data-mats='{"Piedra pesada": 80}'>
+          <strong>Joyería 110 – 120</strong><br>
+          <span class="recipe-name">Estatua de piedra pesada &rarr;</span> 80 Piedra pesada.
+        </p>
+
+        <p class="custom-step" data-min="120" data-max="150" data-mats='{"Ágata musgosa": 30, "Engarce de bronce": 30}'>
+          <strong>Joyería 120 – 150</strong><br>
+          <span class="recipe-name">Colgante de ágata de escudos &rarr;</span> 30 Ágata musgosa, 30 Engarce de
+          bronce.
+        </p>
+
+        <p class="custom-step" data-min="150" data-max="180" data-mats='{"Barra de mitril": 90}'>
+          <strong>Joyería 150 – 180</strong><br>
+          <span class="recipe-name">Filigrana de mitril &rarr;</span> 90 Barra de mitril.<br>
+          Guardar 30 para después.
+        </p>
+
+        <p class="custom-step" data-min="180" data-max="185" data-mats='{"Piedra sólida": 80}'>
+          <strong>Joyería 180 – 185</strong><br>
+          <span class="recipe-name">Estatua de piedra sólida &rarr;</span> 80 Piedra sólida.
+        </p>
+
+        <p class="custom-step" data-min="185" data-max="200"
+          data-mats='{"Barra de veraplata": 15, "Filigrana de mitril": 30}'>
+          <strong>Joyería 185 – 200</strong><br>
+          <span class="recipe-name">Anillo de veraplata grabado &rarr;</span> 15 Barra de veraplata, 30 Filigrana
+          de mitril.
+        </p>
+
+        <p class="custom-step" data-min="200" data-max="220" data-mats='{"Citrino": 25, "Barra de mitril": 50}'>
+          <strong>Joyería 200 – 220</strong><br>
+          <span class="recipe-name">Anillo de citrino de sanación rápida &rarr;</span> 25 Citrino, 50 Barra de
+          mitril.
+        </p>
+
+        <p class="custom-step" data-min="220" data-max="225" data-mats='{"Aguamarina": 5, "Filigrana de mitril": 15}'>
+          <strong>Joyería 220 – 225</strong><br>
+          <span class="recipe-name">Colgante del Guerrero de aguamarina &rarr;</span> 5 Aguamarina, 15 Filigrana de
+          mitril.
+        </p>
+
+        <p class="custom-step" data-min="225" data-max="250" data-mats='{"Barra de torio": 50}'>
+          <strong>Joyería 225 – 250</strong><br>
+          <span class="recipe-name">Engarce de torio &rarr;</span> 50 Barra de torio.
+        </p>
+
+        <p class="custom-step" data-min="250" data-max="260" data-mats='{"Rubí estrella": 10, "Engarce de torio": 10}'>
+          <strong>Joyería 250 – 260</strong><br>
+          <span class="recipe-name">Colgante de rubí de fuego &rarr;</span> 10 Rubí estrella, 10 Engarce de torio.
+        </p>
+
+        <p class="custom-step" data-min="260" data-max="280" data-mats='{"Ópalo grande": 20, "Engarce de torio": 20}'>
+          <strong>Joyería 260 – 280</strong><br>
+          <span class="recipe-name">Anillo de ópalo sencillo &rarr;</span> 20 Ópalo grande, 20 Engarce de torio.
+        </p>
+
+        <p class="custom-step" data-min="280" data-max="287"
+          data-mats='{"Diamante de Azeroth": 7, "Engarce de torio": 7}'>
+          <strong>Joyería 280 – 287</strong><br>
+          <span class="recipe-name">Anillo de diamante de enfoque &rarr;</span> 7 Diamante de Azeroth, 7 Engarce de
+          torio.
+        </p>
+
+        <p class="custom-step" data-min="287" data-max="290"
+          data-mats='{"Zafiro azul": 3, "Esencia de no-muerto": 3, "Engarce de torio": 3}'>
+          <strong>Joyería 287 – 290</strong><br>
+          <span class="recipe-name">Colgante de zafiro de noche invernal &rarr;</span> 3 Zafiro azul, 3 Esencia de
+          no-muerto, 3 Engarce de torio.
+        </p>
+
+        <p class="custom-step" data-min="290" data-max="300"
+          data-mats='{"Esmeralda enorme": 20, "Engarce de torio": 10}'>
+          <strong>Joyería 290 – 300</strong><br>
+          <span class="recipe-name">Anillo de león de esmeralda &rarr;</span> 20 Esmeralda enorme, 10 Engarce de
+          torio.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <button id="toTop">⬆️</button>
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

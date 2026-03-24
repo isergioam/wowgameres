@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Ingeniería - Vanilla WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="300" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="30" data-mats='{"Piedra férrea": 60}'>
+          <strong>Ingeniería 1 – 30</strong><br>
+          <span class="recipe-name">Pólvora férrea &rarr;</span> 60 Piedra férrea.<br>
+          Nota: Podrías llegar incluso a 40 con esta receta. Conserva las 60 pólvoras para más tarde.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="50" data-mats='{"Barra de cobre": 30}'>
+          <strong>Ingeniería 30 – 50</strong><br>
+          <span class="recipe-name">Puñado de tornillos de cobre &rarr;</span> 30 Barra de cobre.<br>
+          Nota: No los vendas, los necesitarás en el siguiente paso.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="75"
+          data-mats='{"Pólvora férrea": 60, "Puñado de tornillos de cobre": 30}'>
+          <strong>Ingeniería 50 – 75</strong><br>
+          <span class="recipe-name">Bomba de cobre férrea &rarr;</span> 60 Pólvora férrea, 30 Puñado de tornillos de
+          cobre.<br>
+          Fabrica una [Llave de tuerca arcoluz] entre los puntos 50 – 70 y consérvela; es una herramienta necesaria para
+          futuras recetas.
+        </p>
+
+        <p class="custom-step" data-min="75" data-max="90" data-mats='{"Piedra burda": 20}'>
+          <strong>Ingeniería 75 – 90</strong><br>
+          <span class="recipe-name">Pólvora burda &rarr;</span> 20 Piedra burda.<br>
+          Nota: ¡No los utilices todos, deja 20 para más tarde!
+        </p>
+
+        <p class="custom-step" data-min="90" data-max="100" data-mats='{"Pólvora burda": 20, "Paño de lino": 20}'>
+          <strong>Ingeniería 90 – 100</strong><br>
+          <span class="recipe-name">Dinamita burda &rarr;</span> 20 Pólvora burda, 20 Paños de lino.
+        </p>
+
+        <p class="custom-step" data-min="100" data-max="113" data-mats='{"Barra de bronce": 30}'>
+          <strong>Ingeniería 100 – 113</strong><br>
+          <span class="recipe-name">Caja mecánica &rarr;</span> 30 Barra de bronce.
+        </p>
+
+        <p class="custom-step" data-min="113" data-max="125" data-mats='{}'>
+          <strong>Ingeniería 113 – 125</strong><br>
+          <span class="recipe-name">Usa la Caja mecánica &rarr;</span> que hiciste anteriormente para subir puntos.
+        </p>
+
+        <p class="custom-step" data-min="125" data-max="130" data-mats='{"Barra de bronce": 8, "Ojo de tigre": 2}'>
+          <strong>Ingeniería 125 – 130</strong><br>
+          <span class="recipe-name">Gafas de tigre volador &rarr;</span> 8 Barra de bronce, 2 Ojo de tigre.
+        </p>
+
+        <p class="custom-step" data-min="130" data-max="150"
+          data-mats='{"Piedra pesada": 30, "Barra de bronce": 30, "Paño de lana": 15}'>
+          <strong>Ingeniería 130 – 150</strong><br>
+          <span class="recipe-name">Pólvora potente &rarr;</span> 30 Piedra pesada.<br>
+          <span class="recipe-name">Cacharros zumbones de bronce &rarr;</span> 30 Barra de bronce, 15 Paño de lana.<br>
+          Nota: Necesitarás ambos materiales más tarde para alcanzar los 150 puntos.
+        </p>
+
+        <p class="custom-step" data-min="150" data-max="160"
+          data-mats='{"Barra de bronce": 30, "Cuero medio": 15, "Paño de lana": 15}'>
+          <strong>Ingeniería 150 – 160</strong><br>
+          <span class="recipe-name">Marco de bronce &rarr;</span> 30 Barra de bronce, 15 Cuero medio, 15 Paño de
+          lana.<br>
+          Nota: Consérvalos también.
+        </p>
+
+        <p class="custom-step" data-min="160" data-max="175"
+          data-mats='{"Pólvora potente": 30, "Cacharros zumbones de bronce": 15, "Marco de bronce": 15, "Paño de lana": 30}'>
+          <strong>Ingeniería 160 – 175</strong><br>
+          <span class="recipe-name">Oveja explosiva &rarr;</span> 30 Pólvora potente, 15 Cacharros zumbones de bronce,
+          15 Marco de bronce, 30 Paño de lana.<br>
+          Nota: Guarda 5 de estos si decides especializarte en Ingeniería Goblin.
+        </p>
+
+        <p class="custom-step" data-min="175" data-max="176" data-mats='{"Barra de acero": 4}'>
+          <strong>Ingeniería 175 – 176</strong><br>
+          <span class="recipe-name">Microajustador giromático &rarr;</span> 4 Barra de acero.<br>
+          Nota: Herramienta necesaria para algunas recetas.
+        </p>
+
+        <p class="custom-step" data-min="176" data-max="195" data-mats='{"Piedra sólida": 120}'>
+          <strong>Ingeniería 176 – 195</strong><br>
+          <span class="recipe-name">Pólvora sólida &rarr;</span> 120 Piedra sólida.<br>
+          Nota: Guárdelos para más tarde.
+        </p>
+
+        <p class="custom-step" data-min="195" data-max="200" data-mats='{"Barra de mitril": 21}'>
+          <strong>Ingeniería 195 – 200</strong><br>
+          <span class="recipe-name">Tubo de mitril &rarr;</span> 21 Barra de mitril.<br>
+          Nota: Si vas a elegir Ingeniería Gnómica, detente en 200 y conserva 6 tubos.
+        </p>
+
+        <p class="custom-step" data-min="200" data-max="200" data-mats='{}'>
+          <strong>Especialización (Nivel 200)</strong><br>
+          Al llegar a 200, puedes elegir entre Ingeniería Gnómica o Ingeniería Goblin. Las misiones se obtienen de los
+          entrenadores. La diferencia principal radica en los teletransportadores y las baratijas que puedes crear y
+          usar. La mayoría de las recetas de una especialización pueden ser usadas por ambos, pero algunas requieren la
+          especialización activa.
+        </p>
+
+        <p class="custom-step" data-min="200" data-max="216"
+          data-mats='{"Barra de mitril": 20, "Paño de tejido mágico": 20, "Pólvora sólida": 20}'>
+          <strong>Ingeniería 200 – 216</strong><br>
+          <span class="recipe-name">Activador inestable &rarr;</span> 20 Barra de mitril, 20 Paño de tejido mágico, 20
+          Pólvora sólida.<br>
+          Nota: Guárdelos para más tarde.
+        </p>
+
+        <p class="custom-step" data-min="216" data-max="238" data-mats='{"Barra de mitril": 120}'>
+          <strong>Ingeniería 216 – 238</strong><br>
+          <span class="recipe-name">Envoltura de mitril &rarr;</span> 120 Barra de mitril.<br>
+          Nota: Guárdelos para más tarde.
+        </p>
+
+        <p class="custom-step" data-min="238" data-max="250"
+          data-mats='{"Envoltura de mitril": 40, "Activador inestable": 20, "Pólvora sólida": 40}'>
+          <strong>Ingeniería 238 – 250</strong><br>
+          <span class="recipe-name">Bomba altamente explosiva &rarr;</span> 40 Envoltura de mitril, 20 Activador
+          inestable, 40 Pólvora sólida.<br>
+          Nota: Es probable que alcances el nivel 255 con este paso.
+        </p>
+
+        <p class="custom-step" data-min="250" data-max="260" data-mats='{"Piedra densa": 40}'>
+          <strong>Ingeniería 250 – 260</strong><br>
+          <span class="recipe-name">Pólvora densa &rarr;</span> 40 Piedra densa.<br>
+          Nota: Es posible que necesites hacer más de 20 para llegar a 260.
+        </p>
+
+        <p class="custom-step" data-min="260" data-max="285" data-mats='{"Barra de torio": 75, "Paño rúnico": 75}'>
+          <strong>Ingeniería 260 – 285</strong><br>
+          <span class="recipe-name">Trasto de torio &rarr;</span> 75 Barra de torio, 75 Paño rúnico.<br>
+          Nota: Esta receta se vuelve amarilla al final, si no llegas a 285 deberás compensar en el siguiente paso.
+        </p>
+
+        <p class="custom-step" data-min="285" data-max="300" data-mats='{"Barra de torio": 120}'>
+          <strong>Ingeniería 285 – 300</strong><br>
+          <span class="recipe-name">Tubo de torio &rarr;</span> 120 Barra de torio.<br>
+          Nota: Estará en verde para los últimos 3 puntos, por lo que es posible que necesites fabricar algunos extras.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <button id="toTop">⬆️</button>
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
