@@ -72,7 +72,7 @@ function initApp() {
   if (expansionCards.length > 0 && profesionesSection) {
     expansionCards.forEach(card => {
       card.style.cursor = 'pointer';
-      
+
       card.addEventListener('click', () => {
         // Encontrar el slug y el nombre
         const i18nAttr = card.getAttribute('data-i18n');
@@ -82,9 +82,9 @@ function initApp() {
         } else {
           slug = card.textContent.trim().toLowerCase().replace(/\s+/g, '-');
         }
-        
+
         window.currentExpansionName = card.textContent.trim();
-        
+
         fetch('./profesiones.html')
           .then(res => {
             if (!res.ok) throw new Error("Error loading profesiones.html");
@@ -93,26 +93,21 @@ function initApp() {
           .then(html => {
             // Modificar href: href="./alquimia.html" -> href="./alquimia-[slug].html"
             let newHtml = html.replace(/href="\.\/([a-zA-Z]+)\.html"/g, `href="./$1-${slug}.html"`);
-            
+
             // Reemplazar el nombre de la expansión en el título
             newHtml = newHtml.replace('(nombre_expansión)', `(${window.currentExpansionName})`);
-            
+
             // Reemplazar DOM de forma robusta
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = newHtml;
             const newContent = tempDiv.querySelector('#profesiones');
-            
+
             if (newContent) {
               profesionesSection.innerHTML = newContent.innerHTML;
             } else {
               profesionesSection.innerHTML = newHtml;
             }
-            
-            // Re-aplicar traducciones al nuevo bloque
-            if (typeof setLanguage === 'function') {
-              setLanguage(localStorage.getItem('language') || 'es');
-            }
-            
+
             // Hacer scroll hacia la sección
             profesionesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           })
