@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Ingeniería - TBC WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="20" data-mats='{"Barra de hierro vil": 294, "Mota de tierra": 20, "Mota de fuego": 10}'>
+          <strong>Ingeniería 1 – 20</strong><br>
+          <span class="recipe-name">Puñado de tornillos de hierro vil &rarr;</span> 126 Barra de hierro vil.<br>
+          <span class="recipe-name">Pólvora elemental &rarr;</span> 20 Mota de tierra, 10 Mota de fuego.<br>
+          <span class="recipe-name">Envoltura de hierro vil &rarr;</span> 168 Barra de hierro vil.<br>
+          Nota: Se recomienda fabricar estos materiales al inicio ya que se utilizarán en pasos posteriores.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="25" data-mats='{"Envoltura de hierro vil": 5, "Puñado de tornillos de hierro vil": 10, "Pólvora elemental": 5}'>
+          <strong>Ingeniería 20 – 25</strong><br>
+          <span class="recipe-name">Bomba de hierro vil &rarr;</span> 5 Envoltura de hierro vil, 10 Puñado de tornillos de hierro vil, 5 Pólvora elemental.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="35" data-mats='{"Barra de adamantita": 136, "Tierra primigenia": 34}'>
+          <strong>Ingeniería 25 – 35</strong><br>
+          <span class="recipe-name">Marco de adamantita &rarr;</span> 136 Barra de adamantita, 34 Tierra primigenia.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="55" data-mats='{"Paño de tejido abisal": 35, "Pólvora elemental": 35}'>
+          <strong>Ingeniería 35 – 55</strong><br>
+          <span class="recipe-name">Bengala de humo blanco &rarr;</span> 35 Paño de tejido abisal, 35 Pólvora elemental.<br>
+          Nota: La receta es de suministro limitado. El vendedor más cercano en Ciudad de Shattrath es Comerciante de viento Lathrai.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="60" data-mats='{"Barra de korio": 6, "Fuego primigenio": 6}'>
+          <strong>Ingeniería 55 – 60</strong><br>
+          <span class="recipe-name">Batería de korio &rarr;</span> 6 Barra de korio, 6 Fuego primigenio.<br>
+          Nota: Guárdalos para el tramo final.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="70" data-mats='{"Envoltura de hierro vil": 51, "Marco de adamantita": 34, "Puñado de tornillos de hierro vil": 68}'>
+          <strong>Ingeniería 60 – 70</strong><br>
+          <span class="recipe-name">Rifle de adamantita &rarr;</span> 51 Envoltura de hierro vil, 34 Marco de adamantita, 68 Puñado de tornillos de hierro vil.<br>
+          Nota: La receta es de suministro limitado. En Shattrath la vende Viggz Brillochispa.
+        </p>
+
+        <p class="custom-step" data-min="70" data-max="75" data-mats='{"Batería de korio": 6, "Puñado de tornillos de hierro vil": 48, "Barra de adamantita": 48}'>
+          <strong>Ingeniería 70 – 75</strong><br>
+          <span class="recipe-name">Robot de reparación de campo 110G &rarr;</span> 6 Batería de korio, 48 Puñado de tornillos de hierro vil, 48 Barra de adamantita.<br>
+          Nota: El esquema es un botín del Analizador Gang’arg en Montañas Filospada. Asegúrate de no tener ya la receta en el banco, ya que no caerá dos veces.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <button id="toTop">⬆️</button>
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

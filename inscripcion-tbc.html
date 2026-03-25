@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Inscripción - TBC WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="75" data-mats='{}'>
+          <strong>Macro Recomendada para Moler</strong><br>
+          Usa esta macro para facilitar la molienda:<br>
+          <code>
+            /cast Moler<br>
+            /use Liquen antiguo<br>
+            /use Gloria de ensueño<br>
+            /use Hierba vil<br>
+            /use Cardo de maná<br>
+            /use Flor abisal<br>
+            /use Vid pesadilla<br>
+            /use Velada<br>
+            /use Teropiña
+          </code><br>
+          Recuerda: El instructor es Escriba Lanloer (Arúspices) o Grabador Lidio (Aldor) en la Ciudad de Shattrath.
+        </p>
+
+        <p class="custom-step" data-min="1" data-max="25" data-mats='{"Planta de Terrallende (aproximado)": 500}'>
+          <strong>Inscripción 1 – 25</strong><br>
+          <span class="recipe-name">Moler plantas de Terrallende &rarr;</span> 500 Planta de Terrallende.<br>
+          Nota: Sube nivel simplemente moliendo unas 500 plantas de Terrallende (Liquen antiguo, Gloria de ensueño,
+          Hierba vil, Cardo de maná, Flor abisal, Vid pesadilla, Velada o Teropiña).
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="33" data-mats='{}'>
+          <strong>Inscripción 25 – 33</strong><br>
+          <span class="recipe-name">Tinta de Flama Oscura y Libro de trucos ingeniosos &rarr;</span> Pigmento de
+          ébano.<br>
+          Convierte todo tu [Pigmento de ébano] en [Tinta de Flama Oscura]. Crea todos los [Libro de trucos ingeniosos]
+          que puedas con esa tinta.
+        </p>
+
+        <p class="custom-step" data-min="33" data-max="75" data-mats='{"Tinta etérea": 126}'>
+          <strong>Inscripción 33 – 75</strong><br>
+          <span class="recipe-name">Investigación: Tinta etérea &rarr;</span> 126 Tinta etérea.<br>
+          Realiza 42 veces la [Investigación: Tinta etérea]. (Costo: 3 Tinta etérea por cada investigación).
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <button id="toTop">⬆️</button>
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
