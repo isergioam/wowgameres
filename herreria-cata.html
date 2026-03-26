@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Herrería - Cataclismo WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="5"
+          data-mats='{"Barra de obsidium": 390}'>
+          <strong>Herrería 1 – 5</strong><br>
+          <span class="recipe-name">Obsidium doblado &rarr;</span> 390 Barra de obsidium.
+        </p>
+
+        <p class="custom-step" data-min="5" data-max="10" data-mats='{"Obsidium doblado": 15}'>
+          <strong>Herrería 5 – 10</strong><br>
+          <span class="recipe-name">Brazales de acero rojo &rarr;</span> 15 Obsidium doblado.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="20" data-mats='{"Obsidium doblado": 40, "Tierra volátil": 10}'>
+          <strong>Herrería 10 – 20</strong><br>
+          <span class="recipe-name">Cinturón de acero rojo &rarr;</span> 40 Obsidium doblado, 10 Tierra volátil.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="25" data-mats='{"Obsidium doblado": 25}'>
+          <strong>Herrería 20 – 25</strong><br>
+          <span class="recipe-name">Botas de acero rojo &rarr;</span> 25 Obsidium doblado.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="35" data-mats='{"Obsidium doblado": 20}'>
+          <strong>Herrería 25 – 35</strong><br>
+          <span class="recipe-name">Llave esqueleto de obsidium &rarr;</span> 20 Obsidium doblado.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="40" data-mats='{"Obsidium doblado": 15, "Barra de elementium": 30}'>
+          <strong>Herrería 35 – 40</strong><br>
+          <span class="recipe-name">Sobrehombros de acero rojo &rarr;</span> 15 Obsidium doblado, 30 Barra de elementium.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="50" data-mats='{"Obsidium doblado": 40, "Barra de elementium": 70}'>
+          <strong>Herrería 40 – 50</strong><br>
+          <span class="recipe-name">Musleras de acero rojo &rarr;</span> 40 Obsidium doblado, 70 Barra de elementium.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="60" data-mats='{"Obsidium doblado": 40, "Barra de elementium": 60}'>
+          <strong>Herrería 50 – 60</strong><br>
+          <span class="recipe-name">Coraza de obsidium endurecido &rarr;</span> 40 Obsidium doblado, 60 Barra de elementium.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="70" data-mats='{"Barra de elementium": 100, "Fuego volátil": 100}'>
+          <strong>Herrería 60 – 70</strong><br>
+          <span class="recipe-name">Cinturón de pirium sañoso &rarr;</span> 100 Barra de elementium, 100 Fuego volátil.
+        </p>
+
+        <p class="custom-step" data-min="70" data-max="75" data-mats='{"Barra de elementium": 60, "Fuego volátil": 50}'>
+          <strong>Herrería 70 – 75</strong><br>
+          <span class="recipe-name">Botas de pirium sañoso &rarr;</span> 60 Barra de elementium, 50 Fuego volátil.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

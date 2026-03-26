@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Encantamiento - Cataclismo WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="5"
+          data-mats='{"Polvo hipnótico": 8}'>
+          <strong>Encantamiento 1 – 5</strong><br>
+          <span class="recipe-name">Encantar botas: vitalidad terránea &rarr;</span> 8 Polvo hipnótico.
+        </p>
+
+        <p class="custom-step" data-min="5" data-max="10" data-mats='{"Polvo hipnótico": 18}'>
+          <strong>Encantamiento 5 – 10</strong><br>
+          <span class="recipe-name">Encantar capa: poder inferior &rarr;</span> 18 Polvo hipnótico.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="15" data-mats='{"Polvo hipnótico": 20, "Esencia celestial inferior": 5}'>
+          <strong>Encantamiento 10 – 15</strong><br>
+          <span class="recipe-name">Encantar guantes: celeridad &rarr;</span> 20 Polvo hipnótico, 5 Esencia celestial inferior.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="25" data-mats='{"Polvo hipnótico": 60}'>
+          <strong>Encantamiento 15 – 25</strong><br>
+          <span class="recipe-name">Encantar capa: intelecto &rarr;</span> 60 Polvo hipnótico.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="30" data-mats='{"Polvo hipnótico": 15, "Esencia celestial superior": 10}'>
+          <strong>Encantamiento 25 – 30</strong><br>
+          <span class="recipe-name">Encantar guantes: fuerza excepcional &rarr;</span> 15 Polvo hipnótico, 10 Esencia celestial superior.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="35" data-mats='{"Polvo hipnótico": 20, "Esencia celestial superior": 10}'>
+          <strong>Encantamiento 30 – 35</strong><br>
+          <span class="recipe-name">Encantar botas: agilidad sublime &rarr;</span> 20 Polvo hipnótico, 10 Esencia celestial superior.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="40" data-mats='{"Polvo hipnótico": 25, "Esencia celestial superior": 10}'>
+          <strong>Encantamiento 35 – 40</strong><br>
+          <span class="recipe-name">Encantar guantes: celeridad superior &rarr;</span> 25 Polvo hipnótico, 10 Esencia celestial superior.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="45" data-mats='{"Polvo hipnótico": 60}'>
+          <strong>Encantamiento 40 – 45</strong><br>
+          <span class="recipe-name">Encantar escudo: maestría &rarr;</span> 60 Polvo hipnótico.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="55" data-mats='{"Polvo hipnótico": 120, "Esencia celestial superior": 10}'>
+          <strong>Encantamiento 45 – 55</strong><br>
+          <span class="recipe-name">Encantar brazales: precisión &rarr;</span> 120 Polvo hipnótico, 10 Esencia celestial superior.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="60" data-mats='{"Polvo hipnótico": 30, "Esencia celestial superior": 20}'>
+          <strong>Encantamiento 55 – 60</strong><br>
+          <span class="recipe-name">Encantar mano izq.: intelecto excelente &rarr;</span> 30 Polvo hipnótico, 20 Esencia celestial superior.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="65" data-mats='{"Polvo hipnótico": 45, "Esencia celestial superior": 15}'>
+          <strong>Encantamiento 60 – 65</strong><br>
+          <span class="recipe-name">Encantar brazales: versatilidad excepcional &rarr;</span> 45 Polvo hipnótico, 15 Esencia celestial superior.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="75" data-mats='{"Polvo hipnótico": 170, "Esencia celestial superior": 51}'>
+          <strong>Encantamiento 65 – 75</strong><br>
+          <span class="recipe-name">Encantar botas: maestría &rarr;</span> 170 Polvo hipnótico, 51 Esencia celestial superior.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

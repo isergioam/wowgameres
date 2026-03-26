@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Peletería - Cataclismo WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="5"
+          data-mats='{"Cuero salvaje": 30}'>
+          <strong>Peletería 1 – 5</strong><br>
+          <span class="recipe-name">Refuerzo para armadura salvaje &rarr;</span> 30 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="5" data-max="10" data-mats='{"Cuero salvaje": 35}'>
+          <strong>Peletería 5 – 10</strong><br>
+          <span class="recipe-name">Botas tsunami &rarr;</span> 35 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="20" data-mats='{"Cuero salvaje": 70}'>
+          <strong>Peletería 10 – 20</strong><br>
+          <span class="recipe-name">Capa salvaje &rarr;</span> 70 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="25" data-mats='{"Cuero salvaje": 50}'>
+          <strong>Peletería 20 – 25</strong><br>
+          <span class="recipe-name">Botas Marca Oscura &rarr;</span> 50 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="35" data-mats='{"Cuero salvaje": 120}'>
+          <strong>Peletería 25 – 35</strong><br>
+          <span class="recipe-name">Sobrehombros Marca Oscura &rarr;</span> 120 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="40" data-mats='{"Cuero salvaje": 1200}'>
+          <strong>Peletería 35 – 40</strong><br>
+          <span class="recipe-name">Cuero salvaje pesado &rarr;</span> 1200 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="45" data-mats='{"Cuero salvaje": 60}'>
+          <strong>Peletería 40 – 45</strong><br>
+          <span class="recipe-name">Coselete Marca Oscura &rarr;</span> 60 Cuero salvaje.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="57" data-mats='{"Cuero salvaje pesado": 60}'>
+          <strong>Peletería 45 – 57</strong><br>
+          <span class="recipe-name">Yelmo Marca Oscura &rarr;</span> 60 Cuero salvaje pesado.
+        </p>
+
+        <p class="custom-step" data-min="57" data-max="60" data-mats='{"Pellejo prístino": 3, "Fuego volátil": 12}'>
+          <strong>Peletería 57 – 60</strong><br>
+          <span class="recipe-name">Capa de pellejo sañoso &rarr;</span> 3 Pellejo prístino, 12 Fuego volátil.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="65" data-mats='{"Cuero salvaje pesado": 50, "Fuego volátil": 50}'>
+          <strong>Peletería 60 – 65</strong><br>
+          <span class="recipe-name">Brazales de cuero sañoso &rarr;</span> 50 Cuero salvaje pesado, 50 Fuego volátil.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="70" data-mats='{"Cuero salvaje pesado": 50, "Fuego volátil": 50}'>
+          <strong>Peletería 65 – 70</strong><br>
+          <span class="recipe-name">Botas de cuero sañoso &rarr;</span> 50 Cuero salvaje pesado, 50 Fuego volátil.
+        </p>
+
+        <p class="custom-step" data-min="70" data-max="75" data-mats='{"Cuero salvaje pesado": 50, "Agua volátil": 50}'>
+          <strong>Peletería 70 – 75</strong><br>
+          <span class="recipe-name">Yelmo de cuero sañoso &rarr;</span> 50 Cuero salvaje pesado, 50 Agua volátil.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

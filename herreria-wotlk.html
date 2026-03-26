@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Herrería - WotLK WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="5"
+          data-mats='{"Barra de cobalto": 20}'>
+          <strong>Herrería 1 – 5</strong><br>
+          <span class="recipe-name">Guanteletes de cobalto &rarr;</span> 20 Barra de cobalto.
+        </p>
+
+        <p class="custom-step" data-min="5" data-max="10" data-mats='{"Barra de cobalto": 35}'>
+          <strong>Herrería 5 – 10</strong><br>
+          <span class="recipe-name">Botas de cobalto claveteadas &rarr;</span> 35 Barra de cobalto.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="15" data-mats='{"Barra de cobalto": 35}'>
+          <strong>Herrería 10 – 15</strong><br>
+          <span class="recipe-name">Sobrehombros de cobalto claveteados &rarr;</span> 35 Barra de cobalto.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="20" data-mats='{"Barra de cobalto": 50}'>
+          <strong>Herrería 15 – 20</strong><br>
+          <span class="recipe-name">Hacha de guerra de cobalto con muesca &rarr;</span> 50 Barra de cobalto.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="15" data-max="20" data-mats='{"Barra de saronita": 35, "Aire cristalizado": 10}'>
+          <strong>Herrería (Ruta Alternativa) 15 – 20</strong><br>
+          <span class="recipe-name">Puntilla de saronita mortal &rarr;</span> 35 Barra de saronita, 10 Aire cristalizado.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="25" data-mats='{"Barra de saronita": 35, "Aire cristalizado": 10}'>
+          <strong>Herrería 20 – 25</strong><br>
+          <span class="recipe-name">Puntilla de saronita mortal &rarr;</span> 35 Barra de saronita, 10 Aire cristalizado.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="30" data-mats='{"Barra de cobalto": 40}'>
+          <strong>Herrería 25 – 30</strong><br>
+          <span class="recipe-name">Yelmo de cobalto con cuernos &rarr;</span> 40 Barra de cobalto.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="40" data-mats='{"Barra de saronita": 70, "Aire cristalizado": 20}'>
+          <strong>Herrería 30 – 40</strong><br>
+          <span class="recipe-name">Puntilla de saronita mortal &rarr;</span> 70 Barra de saronita, 20 Aire cristalizado.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="45" data-mats='{"Barra de saronita": 70}'>
+          <strong>Herrería 40 – 45</strong><br>
+          <span class="recipe-name">Guanteletes de saronita templada &rarr;</span> 70 Barra de saronita.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="50" data-mats='{"Barra de saronita": 10, "Barra de titanio": 5}'>
+          <strong>Herrería 45 – 50</strong><br>
+          <span class="recipe-name">Cadena de titanio &rarr;</span> 10 Barra de saronita, 5 Barra de titanio.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="55" data-mats='{"Barra de saronita": 60, "Tierra eterna": 5}'>
+          <strong>Herrería 50 – 55</strong><br>
+          <span class="recipe-name">Manoplas desalentadoras &rarr;</span> 60 Barra de saronita, 5 Tierra eterna.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="70" data-mats='{"Barra de saronita": 238, "Tierra eterna": 17}'>
+          <strong>Herrería 55 – 70</strong><br>
+          <span class="recipe-name">Quijotes desalentadores &rarr;</span> 238 Barra de saronita, 17 Tierra eterna.
+        </p>
+
+        <p class="custom-step" data-min="70" data-max="75" data-mats='{"Barra de saronita": 238, "Tierra eterna": 17}'>
+          <strong>Herrería 70 – 75</strong><br>
+          <span class="recipe-name">Quijotes desalentadores &rarr;</span> 238 Barra de saronita, 17 Tierra eterna.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

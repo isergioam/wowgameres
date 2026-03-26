@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Ingeniería - WotLK WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="75" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="10"
+          data-mats='{"Barra de cobalto": 140, "Agua cristalizada": 10, "Tierra cristalizada": 10}'>
+          <strong>Ingeniería 1 – 10</strong><br>
+          <span class="recipe-name">Puñado de tornillos de cobalto &rarr;</span> 70 Barra de cobalto.<br>
+          <span class="recipe-name">Activador de explosivo volátil &rarr;</span> 30 Barra de cobalto, 10 Agua cristalizada.<br>
+          <span class="recipe-name">Condensador sobrecargado &rarr;</span> 40 Barra de cobalto, 10 Tierra cristalizada.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="15" data-mats='{"Tela de tejido de Escarcha": 6, "Activador de explosivo volátil": 18}'>
+          <strong>Ingeniería 10 – 15</strong><br>
+          <span class="recipe-name">Señuelo explosivo &rarr;</span> 6 Tela de tejido de Escarcha, 18 Activador de explosivo volátil.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="26" data-mats='{"Barra de cobalto": 120, "Agua cristalizada": 15}'>
+          <strong>Ingeniería 15 – 26</strong><br>
+          <span class="recipe-name">Tubo de acero gélido reforzado &rarr;</span> 120 Barra de cobalto, 15 Agua cristalizada.
+        </p>
+
+        <p class="custom-step" data-min="26" data-max="30" data-mats='{"Tubo de acero gélido reforzado": 5, "Puñado de tornillos de cobalto": 10}'>
+          <strong>Ingeniería 26 – 30</strong><br>
+          <span class="recipe-name">Mira refractaria de corte de diamante &rarr;</span> 5 Tubo de acero gélido reforzado, 10 Puñado de tornillos de cobalto.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="35" data-mats='{"Kit de manitas": 15}'>
+          <strong>Ingeniería 30 – 35</strong><br>
+          <span class="recipe-name">Propulsiones de nitro &rarr;</span> 15 Kit de manitas.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="45" data-mats='{"Kit de manitas": 30}'>
+          <strong>Ingeniería 35 – 45</strong><br>
+          <span class="recipe-name">Disco de amplificación mental &rarr;</span> 30 Kit de manitas.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="50" data-mats='{"Barra de saronita": 60, "Agua cristalizada": 10}'>
+          <strong>Ingeniería 45 – 50</strong><br>
+          <span class="recipe-name">Juego de inyección de maná &rarr;</span> 60 Barra de saronita, 10 Agua cristalizada.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="55" data-mats='{"Barra de saronita": 40, "Cuero boreal": 10, "Sombra eterna": 5}'>
+          <strong>Ingeniería 50 – 55</strong><br>
+          <span class="recipe-name">Gafas de nieve mecanizadas &rarr;</span> 40 Barra de saronita, 10 Cuero boreal, 5 Sombra eterna.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="60" data-mats='{"Tubo de acero gélido reforzado": 10, "Condensador sobrecargado": 10, "Puñado de tornillos de cobalto": 40}'>
+          <strong>Ingeniería 55 – 60</strong><br>
+          <span class="recipe-name">Máquina de ruido &rarr;</span> 10 Tubo de acero gélido reforzado, 10 Condensador sobrecargado, 40 Puñado de tornillos de cobalto.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="74" data-mats='{"Barra de saronita": 300, "Cuchillo de desuello": 30, "Pico de minero": 30, "Martillo de herrero": 30}'>
+          <strong>Ingeniería 60 – 74</strong><br>
+          <span class="recipe-name">Navaja gnómica &rarr;</span> 300 Barra de saronita, 30 Cuchillo de desuello, 30 Pico de minero, 30 Martillo de herrero.
+        </p>
+
+        <p class="custom-step" data-min="74" data-max="75" data-mats='{"Barra de titanio": 8, "Sombra eterna": 2, "Agua eterna": 2, "Fuego eterno": 2, "Aire eterno": 2}'>
+          <strong>Ingeniería 74 – 75</strong><br>
+          <span class="recipe-name">Generador de agujeros de gusano: Rasganorte &rarr;</span> 8 Barra de titanio, 2 Sombra eterna, 2 Agua eterna, 2 Fuego eterno, 2 Aire eterno.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
