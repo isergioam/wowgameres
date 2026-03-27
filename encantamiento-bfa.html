@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Encantamiento - BfA WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="175" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="30" data-mats='{"Polvo lúgubre": 200}'>
+          <strong>Encantamiento 1 – 30</strong><br>
+          <span class="recipe-name">Encantamientos de guantes &rarr;</span> 200 Polvo lúgubre.<br>
+          Nota: Aprende Encantamiento de Kul Tiras (Alianza) o Zandalari (Horda) en Boralus o Dazar'alor.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="35" data-mats='{"Polvo lúgubre": 84}'>
+          <strong>Encantamiento 30 – 35</strong><br>
+          <span class="recipe-name">Sellos de anillo &rarr;</span> 84 Polvo lúgubre.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="85" data-mats='{"Polvo lúgubre": 560}'>
+          <strong>Encantamiento 35 – 85</strong><br>
+          <span class="recipe-name">Sellos de anillo (Rango 3) &rarr;</span> 560 Polvo lúgubre.<br>
+          Nota: Las recetas de rango 3 se obtienen con los Buscadores Tortolianos o misiones del mundo.
+        </p>
+
+        <p class="custom-step" data-min="85" data-max="95"
+          data-mats='{"Fragmento umbrío": 120, "Polvo lúgubre": 300, "Cristal velado": 15}'>
+          <strong>Encantamiento 85 – 95</strong><br>
+          <span class="recipe-name">Encantar arma: Navegación mortal (Rango 1) &rarr;</span> 120 Fragmento umbrío, 300
+          Polvo lúgubre, 15 Cristal velado.
+        </p>
+
+        <p class="custom-step" data-min="95" data-max="120"
+          data-mats='{"Fragmento umbrío": 100, "Polvo lúgubre": 625, "Cristal velado": 25}'>
+          <strong>Encantamiento 95 – 120</strong><br>
+          <span class="recipe-name">Encantamientos de arma (Rango 3) &rarr;</span> 100 Fragmento umbrío, 625 Polvo
+          lúgubre, 25 Cristal velado.
+        </p>
+
+        <p class="custom-step" data-min="120" data-max="125"
+          data-mats='{"Cristal velado": 35, "Fragmento umbrío": 28, "Polvo lúgubre": 90}'>
+          <strong>Encantamiento 120 – 125</strong><br>
+          <span class="recipe-name">Pactos de anillo (Rango 2) &rarr;</span> 35 Cristal velado, 28 Fragmento umbrío, 90
+          Polvo lúgubre.
+        </p>
+
+        <p class="custom-step" data-min="125" data-max="145" data-mats='{"Polvo lúgubre": 500, "Fragmento umbrío": 50}'>
+          <strong>Encantamiento 125 – 145</strong><br>
+          <span class="recipe-name">Máscara tiki encantada &rarr;</span> 500 Polvo lúgubre, 50 Fragmento umbrío.<br>
+          Nota: La receta la suelta el Rey Rastakhan en la Batalla de Dazar'alor.
+        </p>
+
+        <p class="custom-step" data-min="145" data-max="150"
+          data-mats='{"Madera de estrella": 5, "Polvo lúgubre": 125, "Fragmento umbrío": 35, "Expulsom": 15}'>
+          <strong>Encantamiento 145 – 150</strong><br>
+          <span class="recipe-name">Cetro hechicero de Combatiente déspota (Rango 1) &rarr;</span> 5 Madera de estrella,
+          125 Polvo lúgubre, 35 Fragmento umbrío, 15 Expulsom.<br>
+          Nota: Debes ir a Nazjatar para obtener estas nuevas fórmulas.
+        </p>
+
+        <p class="custom-step" data-min="150" data-max="165"
+          data-mats='{"Madera de estrella": 15, "Polvo lúgubre": 345, "Fragmento umbrío": 90, "Expulsom": 30}'>
+          <strong>Encantamiento 150 – 165</strong><br>
+          <span class="recipe-name">Cetro hechicero de Combatiente déspota (Rango 2) &rarr;</span> 15 Madera de
+          estrella, 345 Polvo lúgubre, 90 Fragmento umbrío, 30 Expulsom.<br>
+          Nota: Requiere Marcas de Honor para comprar las fórmulas en Nazjatar.
+        </p>
+
+        <p class="custom-step" data-min="165" data-max="175"
+          data-mats='{"Madera de estrella": 10, "Polvo lúgubre": 200, "Fragmento umbrío": 50, "Expulsom": 10}'>
+          <strong>Encantamiento 165 – 175</strong><br>
+          <span class="recipe-name">Cetro hechicero de Combatiente déspota (Rango 3) &rarr;</span> 10 Madera de
+          estrella, 200 Polvo lúgubre, 50 Fragmento umbrío, 10 Expulsom.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Inscripción - BfA WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="175" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+        <p class="custom-step" data-min="1" data-max="175" data-mats='{}'>
+          <strong>Macro Recomendada para Moler</strong><br>
+          <code>
+            /cast Moler<br>
+            /use Beso gélido<br>
+            /use Mordisco de Akunda<br>
+            /use Polen de sirena<br>
+            /use Brotarrío<br>
+            /use Tallomar<br>
+            /use Musgo estelar
+          </code>
+        </p>
+
+        <p class="custom-step" data-min="1" data-max="50" data-mats='{"Hierbas de BfA": 150}'>
+          <strong>Inscripción 1 – 50</strong><br>
+          <span class="recipe-name">Molido de hierbas y creación de tintas &rarr;</span> ~150 Hierbas de BfA.<br>
+          Nota: Aprende Inscripción de Kul Tiras (Alianza) o Zandalari (Horda) en Boralus o Dazar'alor. No muela más de
+          lo necesario para llegar a 50.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="80" data-mats='{"Hierbas de BfA": 1000}'>
+          <strong>Inscripción 50 – 80</strong><br>
+          <span class="recipe-name">Molido en Masa &rarr;</span> ~1000 Hierbas de BfA.<br>
+          Nota: Use la habilidad Moler en Masa para obtener puntos gratuitos hasta nivel 80.
+        </p>
+
+        <p class="custom-step" data-min="80" data-max="85" data-mats='{"Tinta escarlata": 64}'>
+          <strong>Inscripción 80 – 85</strong><br>
+          <span class="recipe-name">Pergamino de guerra de Grito de batalla &rarr;</span> 64 Tinta escarlata.
+        </p>
+
+        <p class="custom-step" data-min="85" data-max="140"
+          data-mats='{"Tinta ultramarina": 900, "Tinta escarlata": 480}'>
+          <strong>Inscripción 85 – 140</strong><br>
+          <span class="recipe-name">Contratos de facción (Rango 2) &rarr;</span> 900 Tinta ultramarina, 480 Tinta
+          escarlata.<br>
+          Nota: Las recetas de Rango 2 se compran al ser Honorable con las facciones de BfA.
+        </p>
+
+        <p class="custom-step" data-min="140" data-max="145"
+          data-mats='{"Papiro ligero": 5, "Tinta verdosa": 50, "Expulsom": 5}'>
+          <strong>Inscripción 140 – 145</strong><br>
+          <span class="recipe-name">Naipes de la Luna Negra de Guerra (Rango 2) &rarr;</span> 5 Papiro ligero, 50
+          Tinta verdosa, 5 Expulsom.<br>
+          Nota: La receta de Rango 3 la vende el Recolector Kajo (Buscadores Tortolianos).
+        </p>
+
+        <p class="custom-step" data-min="145" data-max="175" data-mats='{"Zin’anthid": 150, "Agua destilada": 100}'>
+          <strong>Inscripción 145 – 175</strong><br>
+          <span class="recipe-name">Tinta bermellón &rarr;</span> 100 Pigmento bermellón (~150 Zin'anthid), 100
+          Agua destilada.<br>
+          Nota: Debes aprender esto de los instructores en Nazjatar (Okanu o Jada).
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-header"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

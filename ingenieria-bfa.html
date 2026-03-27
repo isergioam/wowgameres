@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Ingeniería - BfA WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="175" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="30"
+          data-mats='{"Mena de monelita": 180, "Cartucho explosivo químico": 150, "Cableado aislado": 240}'>
+          <strong>Ingeniería 1 – 30</strong><br>
+          <span class="recipe-name">FRITO (Rango 1) &rarr;</span> 180 Mena de monelita, 150 Cartucho explosivo químico,
+          240 Cableado aislado.<br>
+          Nota: Aprende Ingeniería de Kul Tiras (Alianza) o Zandalari (Horda) en Boralus o Dazar'alor.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="35"
+          data-mats='{"Mena de monelita": 50, "Mena de plata de tormenta": 30, "Cableado aislado": 50}'>
+          <strong>Ingeniería 30 – 35</strong><br>
+          <span class="recipe-name">Reorganizador de atuendo desplegable (Rango 1) &rarr;</span> 50 Mena de monelita, 30
+          Mena de plata de tormenta, 50 Cableado aislado.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="60"
+          data-mats='{"Mena de monelita": 150, "Cartucho explosivo químico": 90, "Cableado aislado": 150}'>
+          <strong>Ingeniería 35 – 60</strong><br>
+          <span class="recipe-name">FRITO (Rango 2) &rarr;</span> 150 Mena de monelita, 90 Cartucho explosivo químico,
+          150 Cableado aislado.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="85"
+          data-mats='{"Mena de monelita": 200, "Mena de plata de tormenta": 125, "Cableado aislado": 200}'>
+          <strong>Ingeniería 60 – 85</strong><br>
+          <span class="recipe-name">Reorganizador de atuendo desplegable (Rango 2) &rarr;</span> 200 Mena de monelita,
+          125 Mena de plata de tormenta, 200 Cableado aislado.
+        </p>
+
+        <p class="custom-step" data-min="85" data-max="110"
+          data-mats='{"Mena de monelita": 120, "Mena de plata de tormenta": 80, "Cableado aislado": 90}'>
+          <strong>Ingeniería 85 – 110</strong><br>
+          <span class="recipe-name">Atenuador de intrusión mágica (Rango 3) &rarr;</span> 120 Mena de monelita, 80 Mena
+          de plata de tormenta, 90 Cableado aislado.
+        </p>
+
+        <p class="custom-step" data-min="110" data-max="145"
+          data-mats='{"Mena de monelita": 280, "Mena de plata de tormenta": 210, "Cableado aislado": 525}'>
+          <strong>Ingeniería 110 – 145</strong><br>
+          <span class="recipe-name">Controlador de tiempo inestable (Rango 3) &rarr;</span> 280 Mena de monelita, 210
+          Mena de plata de tormenta, 525 Cableado aislado.<br>
+          Nota: Requiere reputación Exaltado con Almirantazgo de la Casa Valiente (A) o Imperio Zandalari (H).
+        </p>
+
+        <p class="custom-step" data-min="145" data-max="150"
+          data-mats='{"Mena de osmenita": 75, "Mena de plata de tormenta": 25, "Cableado aislado": 50, "Expulsom": 15}'>
+          <strong>Ingeniería 145 – 150</strong><br>
+          <span class="recipe-name">Descombobulador de Combatiente déspota (Rango 1) &rarr;</span> 75 Mena de osmenita,
+          25 Mena de plata de tormenta, 50 Cableado aislado, 15 Expulsom.<br>
+          Nota: Aprendido en Nazjatar.
+        </p>
+
+        <p class="custom-step" data-min="150" data-max="165"
+          data-mats='{"Mena de osmenita": 210, "Mena de plata de tormenta": 60, "Cableado aislado": 120, "Expulsom": 30}'>
+          <strong>Ingeniería 150 – 165</strong><br>
+          <span class="recipe-name">Descombobulador de Combatiente déspota (Rango 2) &rarr;</span> 210 Mena de osmenita,
+          60 Mena de plata de tormenta, 120 Cableado aislado, 30 Expulsom.
+        </p>
+
+        <p class="custom-step" data-min="165" data-max="175"
+          data-mats='{"Mena de osmenita": 120, "Mena de plata de tormenta": 30, "Cableado aislado": 60, "Expulsom": 10}'>
+          <strong>Ingeniería 165 – 175</strong><br>
+          <span class="recipe-name">Descombobulador de Combatiente déspota (Rango 3) &rarr;</span> 120 Mena de osmenita,
+          30 Mena de plata de tormenta, 60 Cableado aislado, 10 Expulsom.<br>
+          Nota: La receta de Rango 3 requiere 4 Marcas de honor.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

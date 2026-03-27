@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Inscripción - Shadowlands WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="100" data-mats='{}'>
+          <strong>Macro Recomendada para Moler</strong><br>
+          <code>
+            /cast Moler<br>
+            /use Estrella mortal<br>
+            /use Gloria creciente<br>
+            /use Raizmédula<br>
+            /use Antorcha de vigilia<br>
+            /use Flor de viuda
+          </code>
+        </p>
+
+        <p class="custom-step" data-min="1" data-max="25" data-mats='{"Tinta luminosa": 25, "Tinta umbría": 25}'>
+          <strong>Inscripción 1 – 25</strong><br>
+          <span class="recipe-name">Conversión de pigmentos &rarr;</span> Muele hierbas de Shadowlands (~200) y
+          convierte todos tus pigmentos en Tinta luminosa y Tinta umbría hasta llegar a 25.<br>
+          Nota: Aprende Inscripción de Shadowlands del Escriba Au'tehshi en la Sala de las Formas (Oribos).
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="30" data-mats='{"Tinta luminosa": 10, "Tinta umbría": 10}'>
+          <strong>Inscripción 25 – 30</strong><br>
+          <span class="recipe-name">Pliego de profanación de tumbas &rarr;</span> 10 Tinta luminosa, 10 Tinta umbría.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="60" data-mats='{}'>
+          <strong>Inscripción 30 – 60</strong><br>
+          <span class="recipe-name">Molienda masiva &rarr;</span> Usa el hechizo Moler en Masa y muele alrededor de 700
+          de cualquier hierba (Estrella mortal, Raizmédula, etc.) para obtener pigmentos. Seguirás obteniendo puntos al
+          procesar las tintas.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="75" data-mats='{"Tinta tranquila": 25}'>
+          <strong>Inscripción 60 – 75</strong><br>
+          <span class="recipe-name">Pigmento tranquilo a Tinta tranquila &rarr;</span> Convierte todo tu Pigmento
+          tranquilo (obtenido de Sombranoche) en Tinta tranquila.
+        </p>
+
+        <p class="custom-step" data-min="75" data-max="86" data-mats='{"Tinta luminosa": 11, "Tinta umbría": 11}'>
+          <strong>Inscripción 75 – 86</strong><br>
+          <span class="recipe-name">Misivas (Varios tipos) &rarr;</span> Haz misivas hasta llegar a 86. Requieren
+          Tinta luminosa y Tinta umbría.<br>
+          Nota: No fabriques todas del mismo tipo para asegurar la venta o utilidad.
+        </p>
+
+        <p class="custom-step" data-min="86" data-max="100"
+          data-mats='{"Tinta luminosa": 70, "Tinta umbría": 70, "Tinta tranquila": 10}'>
+          <strong>Inscripción 86 – 100</strong><br>
+          <span class="recipe-name">Naipe de la Luna Negra de Muerte &rarr;</span> 70 Tinta luminosa, 70 Tinta umbría,
+          10 Tinta tranquila.<br>
+          Nota: Proporciona Naipes en blanco aleatorios que también otorgan puntos al ser procesados.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-header"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Peletería - Shadowlands WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="21" data-mats='{"Cuero desolado": 90}'>
+          <strong>Peletería 1 – 21</strong><br>
+          <span class="recipe-name">Botines de cuero desolado y Guanteletes de cuero desolado &rarr;</span> 90 Cuero
+          desolado.<br>
+          Nota: Aprende Peletería de Shadowlands del Peletero Au’qil en la Sala de las Formas (Oribos).
+        </p>
+
+        <p class="custom-step" data-min="21" data-max="51" data-mats='{"Cuero desolado": 100}'>
+          <strong>Peletería 21 – 51</strong><br>
+          <span class="recipe-name">Yelmo de cuero desolado y Espaldares de cuero desolado &rarr;</span> 100 Cuero
+          desolado.
+        </p>
+
+        <p class="custom-step" data-min="51" data-max="60"
+          data-mats='{"Cuero desolado": 75, "Sal de curtido": 15, "Hilo de lobreguez": 15}'>
+          <strong>Peletería 51 – 60</strong><br>
+          <span class="recipe-name">Marca del artesano I &rarr;</span> 75 Cuero desolado, 15 Sal de curtido, 15 Hilo de
+          lobreguez.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="70"
+          data-mats='{"Cuero desolado": 150, "Pellejo calloso": 5, "Sal de curtido": 30, "Hilo de lobreguez": 30}'>
+          <strong>Peletería 60 – 70</strong><br>
+          <span class="recipe-name">Guardarrenes de sombra vinculada &rarr;</span> 150 Cuero desolado, 5 Pellejo
+          calloso, 30 Sal de curtido, 30 Hilo de lobreguez.
+        </p>
+
+        <p class="custom-step" data-min="70" data-max="85" data-mats='{"Cuero desolado": 240}'>
+          <strong>Peletería 70 – 85</strong><br>
+          <span class="recipe-name">Cuero desolado pesado &rarr;</span> 240 Cuero desolado.
+        </p>
+
+        <p class="custom-step" data-min="85" data-max="89" data-mats='{"Pellejo calloso": 40}'>
+          <strong>Peletería 85 – 89</strong><br>
+          <span class="recipe-name">Pellejo calloso pesado &rarr;</span> 40 Pellejo calloso.
+        </p>
+
+        <p class="custom-step" data-min="89" data-max="100"
+          data-mats='{"Pellejo calloso pesado": 4, "Hueso pálido": 28, "Cuero desolado pesado": 24}'>
+          <strong>Peletería 89 – 100</strong><br>
+          <span class="recipe-name">Jubón escamalóbrega y Leotardos escamalóbrega &rarr;</span> 4 Pellejo calloso
+          pesado, 28 Hueso pálido, 24 Cuero desolado pesado.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-header"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

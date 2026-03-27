@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Inscripción - Legion WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="100" data-mats='{}'>
+          <strong>Macro Recomendada para Moler</strong><br>
+          <code>
+            /cast Moler<br>
+            /use Aethril<br>
+            /use Frondasueño<br>
+            /use Flor de raposa<br>
+            /use Rosa luz estelar<br>
+            /use Fjarnskaggl<br>
+            /use Gloria astral<br>
+            /use Matojo vil<br>
+            /use Semilla de yseralina
+          </code>
+        </p>
+
+        <p class="custom-step" data-min="1" data-max="25" data-mats='{"Hierbas de Legion": 400}'>
+          <strong>Inscripción 1 – 25</strong><br>
+          <span class="recipe-name">Molienda manual de hierbas &rarr;</span> Alrededor de 400 hierbas de Legion.<br>
+          Nota: ¡NO USE MOLER EN MASA AÚN! Solo use moler en masa después de alcanzar el nivel 25.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="40" data-mats='{"Pigmento cetrino": 20}'>
+          <strong>Inscripción 25 – 40</strong><br>
+          <span class="recipe-name">Escrito de la mente tranquila &rarr;</span> 20 Pigmento cetrino.<br>
+          Nota: Busca la técnica en el mostrador detrás de tu entrenador en Dalaran.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="100"
+          data-mats='{"Pigmento cetrino": 180, "Pigmento rosado": 900}'>
+          <strong>Inscripción 40 – 100</strong><br>
+          <span class="recipe-name">Runas Vantus (Rango 3) &rarr;</span> 180 Pigmento cetrino, 900 Pigmento rosado.<br>
+          Nota: Las recetas de Rango 3 las venden Veridis Fallon o Marin Alacuchilla en Azsuna (requiere reputación
+          Reverenciado).
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

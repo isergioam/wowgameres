@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Herrería - Legion WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="2" data-mats='{"Mena de piedra Ley": 10}'>
+          <strong>Herrería 1 – 2</strong><br>
+          <span class="recipe-name">Misión: Nuevas y extrañas menas &rarr;</span> 10 Mena de piedra Ley.<br>
+          Nota: Visita a Alard Schmied en Dalaran para comenzar las misiones de Legion.
+          <code><br>
+          <strong><span style="font-size: 0.8em;">*Debes llegar al nivel 45 y terminar todas las misiones de Herrería
+              antes de continuar con esta guía.</span></strong>
+          <br>
+          Hay 34 misiones de Herrería en total, son bastante sencillas, por lo que no escribiré los detalles de cada
+          misión. Algunas de las misiones te llevan a mazmorras, pero puedes terminar todas las misiones fácilmente en
+          unas pocas horas si las comienzas en nivel 50. De lo contrario, tendrás que esperar porque las misiones
+          posteriores tienen un requisito de nivel.
+          <br>
+          La última misión es Conocimiento tribal, y la recompensa es [Rango 1 – Receta: guardabrazos de acero
+          demoníaco]. Puedes comprar el resto del conjunto de armadura de Urael en Suramar después de completar la
+          misión.</code>
+        </p>
+
+        <p class="custom-step" data-min="2" data-max="60" data-mats='{"Pizarra vil": 120, "Mena de piedra Ley": 60}'>
+          <strong>Herrería 2 – 60</strong><br>
+          <span class="recipe-name">Barra de acero demoníaco &rarr;</span> 120 Pizarra vil, 60 Mena de piedra Ley.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="100" data-mats='{"Sangre de Sargeras": 28}'>
+          <strong>Herrería 60 – 100</strong><br>
+          <span class="recipe-name">Guardarrenes de acero demoníaco (Rango 3) &rarr;</span> 28 Sangre de Sargeras (y las
+          barras creadas anteriormente).<br>
+          Nota: Cada fabricación otorga 3 puntos. Deben crearse en la "Piedra de los Cielos" en Montaña Alta. La receta
+          de Rango 3 la vende Strap Cierrahebilla en las cloacas de Dalaran.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

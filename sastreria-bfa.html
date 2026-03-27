@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Sastrería - BfA WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="175" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="60" data-mats='{"Lino espuma de marea": 200}'>
+          <strong>Sastrería 1 – 60</strong><br>
+          <span class="recipe-name">Venda de lino espuma de marea &rarr;</span> 200 Lino espuma de marea.<br>
+          Nota: Aprende Sastrería de Kul Tiras (Alianza) o Zandalari (Horda) en Boralus o Dazar'alor.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="75"
+          data-mats='{"Lino espuma de marea": 240, "Hilo de nailon": 300}'>
+          <strong>Sastrería 60 – 75</strong><br>
+          <span class="recipe-name">Toga de lino espuma de marea &rarr;</span> 240 Lino espuma de marea, 300 Hilo de
+          nailon.
+        </p>
+
+        <p class="custom-step" data-min="75" data-max="150"
+          data-mats='{"Satén de mar profundo": 150, "Lino espuma de marea": 150, "Hilo de nailon": 750}'>
+          <strong>Sastrería 75 – 150</strong><br>
+          <span class="recipe-name">Satén de mar profundo bordado &rarr;</span> 150 Satén de mar profundo, 150 Lino
+          espuma de marea, 750 Hilo de nailon.
+        </p>
+
+        <p class="custom-step" data-min="150" data-max="160"
+          data-mats='{"Tejido marino dorado": 100, "Satén de mar profundo": 60, "Hilo de nailon": 80, "Expulsom": 20}'>
+          <strong>Sastrería 150 – 160</strong><br>
+          <span class="recipe-name">Brazales de satén de Combatiente déspota (Rango 1) &rarr;</span> 100 Tejido marino
+          dorado, 60 Satén de mar profundo, 80 Hilo de nailon, 20 Expulsom.<br>
+          Nota: Debes aprender esto de los instructores en Nazjatar (Daniel Tejesalmuera o Pin'jin).
+        </p>
+
+        <p class="custom-step" data-min="160" data-max="170"
+          data-mats='{"Tejido marino dorado": 80, "Satén de mar profundo": 50, "Hilo de nailon": 60, "Expulsom": 20}'>
+          <strong>Sastrería 160 – 170</strong><br>
+          <span class="recipe-name">Brazales de satén de Combatiente déspota (Rango 2) &rarr;</span> 80 Tejido marino
+          dorado, 50 Satén de mar profundo, 60 Hilo de nailon, 20 Expulsom.<br>
+          Nota: Requiere Marcas de Honor para comprar las recetas en Nazjatar.
+        </p>
+
+        <p class="custom-step" data-min="170" data-max="175"
+          data-mats='{"Tejido marino dorado": 35, "Satén de mar profundo": 20, "Hilo de nailon": 25, "Expulsom": 5}'>
+          <strong>Sastrería 170 – 175</strong><br>
+          <span class="recipe-name">Brazales de satén de Combatiente déspota (Rango 3) &rarr;</span> 35 Tejido marino
+          dorado, 20 Satén de mar profundo, 25 Hilo de nailon, 5 Expulsom.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-header"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

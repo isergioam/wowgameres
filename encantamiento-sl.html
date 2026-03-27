@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Encantamiento - Shadowlands WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="115" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="10" data-mats='{"Polvo de alma": 30}'>
+          <strong>Encantamiento 1 – 10</strong><br>
+          <span class="recipe-name">Encantar guantes: recolección de las Tierras Sombrías &rarr;</span> 30 Polvo de
+          alma.<br>
+          Nota: Aprende Encantamiento de Shadowlands del Imbuidor Au’vresh en la Sala de las Formas (Oribos).
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="21" data-mats='{"Polvo de alma": 33}'>
+          <strong>Encantamiento 10 – 21</strong><br>
+          <span class="recipe-name">Encantar brazales: Alma iluminada &rarr;</span> 33 Polvo de alma.
+        </p>
+
+        <p class="custom-step" data-min="21" data-max="31" data-mats='{"Fragmento sagrado": 10, "Polvo de alma": 25}'>
+          <strong>Encantamiento 21 – 31</strong><br>
+          <span class="recipe-name">Encantar arma: Guía celestial &rarr;</span> 10 Fragmento sagrado, 25 Polvo de alma.
+        </p>
+
+        <p class="custom-step" data-min="31" data-max="41" data-mats='{"Polvo de alma": 40}'>
+          <strong>Encantamiento 31 – 41</strong><br>
+          <span class="recipe-name">Encantar pechera: Estadísticas sagradas &rarr;</span> 40 Polvo de alma.
+        </p>
+
+        <p class="custom-step" data-min="41" data-max="45" data-mats='{"Fragmento sagrado": 5, "Polvo de alma": 10}'>
+          <strong>Encantamiento 41 – 45</strong><br>
+          <span class="recipe-name">Encantar anillo: trato de golpe crítico &rarr;</span> 5 Fragmento sagrado, 10 Polvo
+          de alma.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="50" data-mats='{"Fragmento sagrado": 5, "Polvo de alma": 10}'>
+          <strong>Encantamiento 45 – 50</strong><br>
+          <span class="recipe-name">Encantar anillo: trato de celeridad &rarr;</span> 5 Fragmento sagrado, 10 Polvo de
+          alma.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="55" data-mats='{"Fragmento sagrado": 5, "Polvo de alma": 10}'>
+          <strong>Encantamiento 50 – 55</strong><br>
+          <span class="recipe-name">Encantar anillo: trato de maestría &rarr;</span> 5 Fragmento sagrado, 10 Polvo de
+          alma.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="70" data-mats='{"Polvo de alma": 80}'>
+          <strong>Encantamiento 55 – 70</strong><br>
+          <span class="recipe-name">Encantar anillo: trato de maestría (Rango 2) &rarr;</span> 80 Polvo de alma.
+        </p>
+
+        <p class="custom-step" data-min="70" data-max="75" data-mats='{"Cristal eterno": 5, "Fragmento sagrado": 10}'>
+          <strong>Encantamiento 70 – 75</strong><br>
+          <span class="recipe-name">Encantar pechera: Baluarte eterno &rarr;</span> 5 Cristal eterno, 10 Fragmento
+          sagrado.
+        </p>
+
+        <p class="custom-step" data-min="75" data-max="80" data-mats='{"Cristal eterno": 5, "Fragmento sagrado": 10}'>
+          <strong>Encantamiento 75 – 80</strong><br>
+          <span class="recipe-name">Encantar botas: agilidad eterna &rarr;</span> 5 Cristal eterno, 10 Fragmento
+          sagrado.
+        </p>
+
+        <p class="custom-step" data-min="80" data-max="95" data-mats='{"Fragmento sagrado": 54}'>
+          <strong>Encantamiento 80 – 95</strong><br>
+          <span class="recipe-name">Encantar anillo: doctrina de golpe crítico &rarr;</span> 54 Fragmento sagrado.
+        </p>
+
+        <p class="custom-step" data-min="95" data-max="100" data-mats='{"Cristal eterno": 5, "Fragmento sagrado": 10}'>
+          <strong>Encantamiento 95 – 100</strong><br>
+          <span class="recipe-name">Encantar pechera: Escaramuza eterna &rarr;</span> 5 Cristal eterno, 10 Fragmento
+          sagrado.
+        </p>
+
+        <p class="custom-step" data-min="100" data-max="110"
+          data-mats='{"Cristal eterno": 10, "Fragmento sagrado": 15}'>
+          <strong>Encantamiento 100 – 110</strong><br>
+          <span class="recipe-name">Encantar arma: Gracia eterna &rarr;</span> 10 Cristal eterno, 15 Fragmento sagrado.
+        </p>
+
+        <p class="custom-step" data-min="110" data-max="115" data-mats='{"Cristal eterno": 8, "Fragmento sagrado": 16}'>
+          <strong>Encantamiento 110 – 115</strong><br>
+          <span class="recipe-name">Encantar pechera: Límites eternos &rarr;</span> 8 Cristal eterno, 16 Fragmento
+          sagrado.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-header"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
