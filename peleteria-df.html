@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Peletería - Dragonflight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales para el tramo 65-100 varían según los pedidos de fabricación y el uso de Chispas de
+          ingenio.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="7"
+          data-mats='{"Cuero resistente": 20, "Escamas de adamantina": 20}'>
+          <strong>Peletería 1 – 7</strong><br>
+          <span class="recipe-name">Guardamuñecas de cuero de pionero &rarr;</span> 15 Cuero resistente, 5 Escamas de
+          adamantina.<br>
+          <span class="recipe-name">Brazales de escamas de quemasendas &rarr;</span> 5 Cuero resistente, 15 Escamas de
+          adamantina.
+        </p>
+
+        <p class="custom-step" data-min="7" data-max="11"
+          data-mats='{"Cuero resistente": 30, "Escamas de adamantina": 30}'>
+          <strong>Peletería 7 – 11</strong><br>
+          <span class="recipe-name">Botas de cuero de pionero &rarr;</span> 20 Cuero resistente, 10 Escamas de
+          adamantina.<br>
+          <span class="recipe-name">Botas de escamas de quemasendas &rarr;</span> 10 Cuero resistente, 20 Escamas de
+          adamantina.
+        </p>
+
+        <p class="custom-step" data-min="11" data-max="20"
+          data-mats='{"Cuero resistente": 60, "Escamas de adamantina": 40, "Pellejo denso": 1}'>
+          <strong>Peletería 11 – 20</strong><br>
+          <span class="recipe-name">Guerrera de cuero de pionero &rarr;</span> 25 Cuero resistente, 15 Escamas de
+          adamantina.<br>
+          <span class="recipe-name">Jubón de escamas de quemasendas &rarr;</span> 15 Cuero resistente, 25 Escamas de
+          adamantina.<br>
+          <span class="recipe-name">Paquete resistente &rarr;</span> 20 Cuero resistente, 1 Pellejo denso.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="25"
+          data-mats='{"Cuero resistente": 16, "Pellejo denso": 2, "Escamas de adamantina": 16, "Pellejo de escamas lustrosas": 2}'>
+          <strong>Peletería 20 – 25</strong><br>
+          <span class="recipe-name">Cinturón acreditado de pionero &rarr;</span> 16 Cuero resistente, 2 Pellejo
+          denso.<br>
+          <span class="recipe-name">Cinturón de anillas endurecido de quemasendas &rarr;</span> 16 Escamas de
+          adamantina, 2 Pellejo de escamas lustrosas.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="31"
+          data-mats='{"Cuero resistente": 16, "Pellejo denso": 2, "Escamas de adamantina": 16, "Pellejo de escamas lustrosas": 2}'>
+          <strong>Peletería 25 – 31</strong><br>
+          <span class="recipe-name">Guantes acreditados de pionero &rarr;</span> 16 Cuero resistente, 2 Pellejo
+          denso.<br>
+          <span class="recipe-name">Mandiletes endurecidos de quemasendas &rarr;</span> 16 Escamas de
+          adamantina, 2 Pellejo de escamas lustrosas.
+
+        </p>
+
+        <p class="custom-step" data-min="31" data-max="37"
+          data-mats='{"Cuero resistente": 10, "Pellejo denso": 2, "Escamas de adamantina": 10, "Pellejo de escamas lustrosas": 2}'>
+          <strong>Peletería 31 – 37</strong><br>
+          <span class="recipe-name">Protector de joyero &rarr;</span> 10 Cuero resistente, 2 Pellejo
+          denso.<br>
+          <span class="recipe-name">Guantes protectores &rarr;</span> 10 Escamas de
+          adamantina, 2 Pellejo de escamas lustrosas.
+        </p>
+
+        <p class="custom-step" data-min="37" data-max="41"
+          data-mats='{"Cuero resistente": 10, "Escamas de adamantina": 10, "Pellejo de escamas lustrosas": 2, "Pellejo denso": 2}'>
+          <strong>Peletería 37 – 41</strong><br>
+          <span class="recipe-name">Sombrero de alquimista &rarr;</span> 10 Cuero resistente, 2 Pellejo de escamas
+          lustrosas.<br>
+          <span class="recipe-name">Delantal de herrería &rarr;</span> 10 Escamas de
+          adamantina, 2 Pellejo denso.
+        </p>
+
+        <p class="custom-step" data-min="41" data-max="47"
+          data-mats='{"Cuero resistente": 16, "Pellejo denso": 2, "Escamas de adamantina": 16, "Pellejo de escamas lustrosas": 2}'>
+          <strong>Peletería 41 – 47</strong><br>
+          <span class="recipe-name">Hombreras acreditadas de pionero &rarr;</span> 16 Cuero resistente, 2 Pellejo
+          denso.<br>
+          <span class="recipe-name">Pinchos endurecidos de quemasendas &rarr;</span> 16 Escamas de
+          adamantina, 2 Pellejo de escamas lustrosas.
+        </p>
+
+        <p class="custom-step" data-min="47" data-max="52"
+          data-mats='{"Cuero resistente": 16, "Pellejo denso": 2, "Escamas de adamantina": 16, "Pellejo de escamas lustrosas": 2}'>
+          <strong>Peletería 47 – 52</strong><br>
+          <span class="recipe-name">Leotardos acreditados de pionero &rarr;</span> 16 Cuero resistente, 2 Pellejo
+          denso.<br>
+          <span class="recipe-name">Musleras endurecidas de quemasendas &rarr;</span> 16 Escamas de
+          adamantina, 2 Pellejo de escamas lustrosas.
+        </p>
+
+        <p class="custom-step" data-min="52" data-max="65" data-mats='{"Cuero resistente": 400, "Pellejo denso": 50}'>
+          <strong>Peletería 52 – 65</strong><br>
+          <span class="recipe-name">25x Capucha acreditada de pionero &rarr;</span> 400 Cuero resistente, 50 Pellejo
+          denso.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="100"
+          data-mats='{"Chispa de ingenio": 5, "Cuero resistente": 750, "Plumaje de Son del Viento": 15, "Escamas de brillo terrestre": 50}'>
+          <strong>Peletería 65 – 100</strong><br>
+          Fase final mediante pedidos de fabricación:<br>
+          <span class="recipe-name">5x Ataduras ligadas a la vida &rarr;</span> 15 Plumaje de Son del Viento, 750 Cuero
+          resistente, 50 Escamas de brillo terrestre, 5 Chispa de ingenio.<br>
+          Cada craft requiere 1x Chispa de ingenio. Se recomienda realizarlos a través del sistema de pedidos personales
+          usando personajes secundarios.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="65" data-max="100"
+          data-mats='{"Chispa de ingenio": 5, "Escamas de adamantita": 750, "Plumaje de Son del Viento": 20, "Escamas de brillo terrestre": 50}'>
+          <strong>Peletería (Ruta Alternativa) 65 – 100</strong><br>
+          <span class="recipe-name">5x Puños tocados por las llamas &rarr;</span> 20 Plumaje de Son del Viento, 750
+          Escamas de adamantita, 50 Escamas de brillo terrestre, 5 Chispa de ingenio.<br>
+          Cada craft requiere 1x Chispa de ingenio. Se recomienda realizarlos a través del sistema de pedidos personales
+          usando personajes secundarios.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

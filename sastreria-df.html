@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Sastrería - Dragonflight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales para el tramo 65-100 dependen principalmente de los pedidos de fabricación y reputación.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="15" data-mats='{"Tela salvaje andrajosa": 150}'>
+          <strong>Sastrería 1 – 15</strong><br>
+          <span class="recipe-name">30x Comprensión de las Islas Dragón &rarr;</span> Utiliza esta habilidad sobre 150
+          Tela salvaje andrajosa.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="21"
+          data-mats='{"Tela salvaje": 10, "Bobina de hilo salvaje": 9, "Lumbreflor": 5}'>
+          <strong>Sastrería 15 – 21</strong><br>
+          <span class="recipe-name">Toga de tela de perito &rarr;</span> 8 Tela salvaje, 5 Bobina de hilo salvaje.<br>
+          <span class="recipe-name">Sombrero de jardinería de tela salvaje &rarr;</span> 5 Tela salvaje, 4 Bobina de
+          hilo salvaje, 5 Lumbreflor.
+        </p>
+
+        <p class="custom-step" data-min="21" data-max="27"
+          data-mats='{"Tela salvaje": 13, "Bobina de hilo salvaje": 10}'>
+          <strong>Sastrería 21 – 27</strong><br>
+          <span class="recipe-name">Gorro de cocinero de tela salvaje &rarr;</span> 5 Tela salvaje, 4 Bobina de hilo
+          salvaje.<br>
+          <span class="recipe-name">Capa a medida de perito &rarr;</span> 8 Tela salvaje, 6 Bobina de
+          hilo salvaje.
+        </p>
+
+        <p class="custom-step" data-min="27" data-max="30" data-mats='{"Tela salvaje": 5, "Bobina de hilo salvaje": 4}'>
+          <strong>Sastrería 27 – 30</strong><br>
+          <span class="recipe-name">Gorro de pesca de tela salvaje &rarr;</span> 5 Tela salvaje, 4 Bobina de hilo
+          salvaje.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="36"
+          data-mats='{"Tela salvaje": 14, "Bobina de hilo salvaje": 10}'>
+          <strong>Sastrería 30 – 36</strong><br>
+          <span class="recipe-name">Cordón de perito avezado &rarr;</span> 8 Tela salvaje, 6 Bobina de hilo
+          salvaje.<br>
+          <span class="recipe-name">Toga de alquimista de tela salvaje &rarr;</span> 6 Tela salvaje, 4 Bobina de
+          hilo salvaje.
+        </p>
+
+        <p class="custom-step" data-min="36" data-max="40"
+          data-mats='{"Tela salvaje": 11, "Bobina de hilo salvaje": 10, "Polvo cromático": 3}'>
+          <strong>Sastrería 36 – 40</strong><br>
+          <span class="recipe-name">Gorro de cocinero de tela salvaje &rarr;</span> 5 Tela salvaje, 4 Bobina de hilo
+          salvaje.<br>
+          <span class="recipe-name">Capa a medida de perito &rarr;</span> 8 Tela salvaje, 6 Bobina de
+          hilo salvaje.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="46"
+          data-mats='{"Tela salvaje": 24, "Bobina de hilo salvaje": 18}'>
+          <strong>Sastrería 40 – 46</strong><br>
+          <span class="recipe-name">3x Sobrehombros de perito avezado &rarr;</span> 24 Tela salvaje, 18 Bobina de
+          hilo salvaje.
+        </p>
+
+        <p class="custom-step" data-min="46" data-max="51"
+          data-mats='{"Cristal fracturado": 3, "Rollo de tela salvaje": 1, "Tela salvaje": 20, "Bobina de hilo salvaje": 14}'>
+          <strong>Sastrería 46 – 51</strong><br>
+          <span class="recipe-name">Paño para pulir abrasivo &rarr;</span> 3 Cristales fracturados, 1 Rollo de tela
+          salvaje.<br>
+          <span class="recipe-name">2x Pantalones de perito avezado &rarr;</span> 20 Tela salvaje, 14 Bobina de
+          hilo salvaje.
+        </p>
+
+        <p class="custom-step" data-min="51" data-max="54"
+          data-mats='{"Tela salvaje": 10, "Bobina de hilo salvaje": 7}'>
+          <strong>Sastrería 51 – 54</strong><br>
+          <span class="recipe-name">1x Caperuza de perito avezado &rarr;</span> 10 Tela salvaje, 7 Bobina de hilo
+          salvaje.<br>
+          <span class="recipe-name">2x Rollo de tela salvaje vibrante &rarr;</span> 2 Fragmento vibrante, 6 Rollo de
+          tela
+          salvaje.<br>
+          <span class="recipe-name">1x Hilo de hechizo vibrante &rarr;</span> 1 Fragmento vibrante, 2 Rollo de tela
+          salvaje vibrante.
+        </p>
+
+        <p class="custom-step" data-min="54" data-max="65"
+          data-mats='{"Tela salvaje": 250, "Bobina de hilo salvaje": 175}'>
+          <strong>Sastrería 54 – 65</strong><br>
+          <span class="recipe-name">25x Caperuza de perito avezado &rarr;</span> 250 Tela salvaje, 175 Bobina de
+          hilo salvaje.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="100"
+          data-mats='{"Perla arcoíris": 110, "Bobina de hilo salvaje": 275, "Rollo de tela salvaje vibrante": 165}'>
+          <strong>Sastrería 65 – 100</strong><br>
+          <span class="recipe-name">55x Gorro de pesca de tela salvaje de maestro &rarr;</span> 110 Perla arcoíris, 275
+          Bobina de hilo salvaje, 165 Rollo de tela salvaje vibrante.<br>
+          Nota: Requiere renombre 15 con Expedición Dragontina.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="65" data-max="100"
+          data-mats='{"Bobina de hilo salvaje": 30, "Rollo de tela salvaje vibrante": 40, "Chispa de ingenio": 5}'>
+          <strong>Sastrería (Ruta Alternativa) 65 – 100</strong><br>
+          <span class="recipe-name">5x Cubremuñecas de tela salvaje vibrante &rarr;</span> 30 Bobina de hilo salvaje, 40
+          Rollo de tela salvaje vibrante, 5 Chispa de ingenio.<br>
+          Cada craft requiere 1x Chispa de ingenio. Se recomienda realizarlos a través del sistema de pedidos personales
+          usando personajes secundarios.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

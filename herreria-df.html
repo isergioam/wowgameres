@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Herrería - Dragonflight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales para el tramo 65-100 se basan en pedidos de fabricación debido a la necesidad de Chispas
+          de ingenio.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="7" data-mats='{"Mena de serevita": 10, "Mena de draconio": 2}'>
+          <strong>Herrería 1 – 7</strong><br>
+          <span class="recipe-name">Martillo de herrero de draconio &rarr;</span> 10 Mena de serevita, 2 Mena de
+          draconio.
+        </p>
+
+        <p class="custom-step" data-min="7" data-max="10" data-mats='{"Mena de serevita": 10, "Mena de draconio": 2}'>
+          <strong>Herrería 7 – 10</strong><br>
+          <span class="recipe-name">Pico de draconio &rarr;</span> 10 Mena de serevita, 2 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="13" data-mats='{"Mena de serevita": 10, "Mena de draconio": 2}'>
+          <strong>Herrería 10 – 13</strong><br>
+          <span class="recipe-name">Hoz de draconio &rarr;</span> 10 Mena de serevita, 2 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="13" data-max="17" data-mats='{"Mena de serevita": 20, "Mena de draconio": 6}'>
+          <strong>Herrería 13 – 17</strong><br>
+          <span class="recipe-name">2x Coselete de placas de expedicionario &rarr;</span> 20 Mena de serevita, 6 Mena de
+          draconio.
+        </p>
+
+        <p class="custom-step" data-min="17" data-max="21" data-mats='{"Mena de serevita": 20, "Mena de draconio": 6}'>
+          <strong>Herrería 17 – 21</strong><br>
+          <span class="recipe-name">2x Cuchillo para desollar de draconio &rarr;</span> 20 Mena de serevita, 6 Mena de
+          draconio.
+        </p>
+
+        <p class="custom-step" data-min="21" data-max="25" data-mats='{"Mena de serevita": 12, "Mena de draconio": 3}'>
+          <strong>Herrería 21 – 25</strong><br>
+          <span class="recipe-name">Herramientas de peletería de draconio &rarr;</span> 12 Mena de serevita, 3
+          Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="26" data-mats='{"Mena de serevita": 12, "Mena de draconio": 3}'>
+          <strong>Herrería 25 – 26</strong><br>
+          <span class="recipe-name">Cuchillo de peletería de draconio &rarr;</span> 12 Mena de serevita, 3 Mena de
+          draconio.
+        </p>
+
+        <p class="custom-step" data-min="26" data-max="31" data-mats='{"Mena de serevita": 12, "Mena de draconio": 6}'>
+          <strong>Herrería 26 – 31</strong><br>
+          <span class="recipe-name">Hacha de draconio &rarr;</span> 12 Mena de serevita, 6 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="31" data-max="37" data-mats='{"Mena de serevita": 24, "Mena de draconio": 6}'>
+          <strong>Herrería 31 – 37</strong><br>
+          <span class="recipe-name">2x Aguja de draconio &rarr;</span> 24 Mena de serevita, 6 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="37" data-max="41" data-mats='{"Mena de serevita": 42, "Mena de draconio": 21}'>
+          <strong>Herrería 37 – 41</strong><br>
+          <span class="recipe-name">2x Grebas de expedicionario experto &rarr;</span> 42 Mena de serevita, 21 Mena de
+          draconio.
+        </p>
+
+        <p class="custom-step" data-min="41" data-max="45" data-mats='{"Mena de serevita": 32, "Mena de draconio": 16}'>
+          <strong>Herrería 41 – 45</strong><br>
+          <span class="recipe-name">Gran hacha de draconio</span> y <span class="recipe-name">Guanteletes de experto de
+            explorador &rarr;</span> 32 Mena de serevita, 16 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="47" data-mats='{"Mena de serevita": 12, "Mena de draconio": 6}'>
+          <strong>Herrería 45 – 47</strong><br>
+          <span class="recipe-name">Estilete de draconio &rarr;</span> 12 Mena de serevita, 6 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="47" data-max="51" data-mats='{"Mena de serevita": 24, "Mena de draconio": 12}'>
+          <strong>Herrería 47 – 51</strong><br>
+          <span class="recipe-name">2x Bufas de expedicionario experto &rarr;</span> 24 Mena de serevita, 12 Mena de
+          draconio.
+        </p>
+
+        <p class="custom-step" data-min="51" data-max="54" data-mats='{"Mena de serevita": 20, "Mena de draconio": 10}'>
+          <strong>Herrería 51 – 54</strong><br>
+          <span class="recipe-name">Gran maza de draconio &rarr;</span> 20 Mena de serevita, 10 Mena de draconio.
+        </p>
+
+        <p class="custom-step" data-min="54" data-max="65"
+          data-mats='{"Mena de serevita": 210, "Mena de draconio": 105}'>
+          <strong>Herrería 54 – 65</strong><br>
+          <span class="recipe-name">~15x Yelmo de expedicionario experto &rarr;</span> 210 Mena de serevita, 105 Mena de
+          draconio.<br>
+          Nota: Esta receta se vuelve amarilla y luego verde, la cantidad puede variar.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="100"
+          data-mats='{"Aleación de magma primigenio": 168, "Chispa de ingenio": 11}'>
+          <strong>Herrería 65 – 100</strong><br>
+          Para llegar a 100, debes usar el sistema de pedidos de fabricación con <span class="recipe-name">Avambrazos de
+            magma primigenio</span>.<br>
+          Requiere especialización en Armadura de placas &rarr; Armadura de calidad &rarr; Brazales.<br>
+          Cada craft requiere 1x Chispa de ingenio y 4x Aleación de magma primigenio. Se recomienda usar personajes
+          secundarios (alts) para enviarte pedidos.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

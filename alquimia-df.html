@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Alquimia - Dragonflight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales para el tramo 56-100 varían debido a la naturaleza de las experimentaciones.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="7" data-mats='{"Escarcha reanimadora": 4, "Lumbreflor": 16}'>
+          <strong>Alquimia 1 – 7</strong><br>
+          <span class="recipe-name">Poción de sanación refrescante &rarr;</span> 4 Escarcha reanimadora, 16 Lumbreflor.
+        </p>
+
+        <p class="custom-step" data-min="7" data-max="11" data-mats='{"Aire reanimador": 2, "Lumbreflor": 16}'>
+          <strong>Alquimia 7 – 11</strong><br>
+          <span class="recipe-name">Poción de maná aireada &rarr;</span> 2 Aire reanimador, 16 Lumbreflor.
+        </p>
+
+        <p class="custom-step" data-min="11" data-max="15">
+          <strong>Alquimia 11 – 15</strong><br>
+          <span class="recipe-name">Brebajes de reclamación &rarr;</span> Usa esta habilidad en las pociones creadas
+          anteriormente.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="16" data-mats='{"Escarcha despierta": 1, "Fuego despierto": 1}'>
+          <strong>Alquimia 15 – 16</strong><br>
+          <span class="recipe-name">Transmutar: Aire despierto &rarr;</span> 1 Escarcha despierta, 1 Fuego
+          despierto.
+        </p>
+
+        <p class="custom-step" data-min="16" data-max="25"
+          data-mats='{"Pino retorcido": 15, "Saxífraga": 15, "Lumbreflor": 75, "Amapola burbuja": 15}'>
+          <strong>Alquimia 16 – 25</strong><br>
+          <span class="recipe-name">Omnium Draconis &rarr;</span> 15 Pino retorcido, 15 Saxífraga, 75 Lumbreflor, 15
+          Amapola burbuja.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="26"
+          data-mats='{"Tierra despierta": 1, "Fuego despierto": 1, "Aire despierto": 1, "Escarcha despierta": 1, "Orden despierto": 1}'>
+          <strong>Alquimia 25 – 26</strong><br>
+          <span class="recipe-name">Convergente primigenio &rarr;</span> 1 Tierra despierta, 1 Fuego despierto, 1 Aire
+          despierto, 1 Escarcha despierta, 1 Orden despierto.
+        </p>
+
+        <p class="custom-step" data-min="26" data-max="35" data-mats='{"Escarcha despierta": 30, "Lumbreflor": 240}'>
+          <strong>Alquimia 26 – 35</strong><br>
+          <span class="recipe-name">Ampolla de versatilidad tibia &rarr;</span> 30 Escarcha despierta, 240 Lumbreflor.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="45"
+          data-mats='{"Fuego despierto": 18, "Lumbreflor": 36, "Pino retorcido": 18}'>
+          <strong>Alquimia 35 – 45</strong><br>
+          <span class="recipe-name">Aceite retuercefuego &rarr;</span> 18 Fuego despierto, 36 Lumbreflor, 18
+          Pino retorcido.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="47"
+          data-mats='{"Entereza de artesano": 10, "Solución alquímica del dragón": 4, "Omnium Draconis": 2}'>
+          <strong>Alquimia 45 – 47</strong><br>
+          Realiza una de cada para el bono de primer fabricación:<br>
+          <span class="recipe-name">Experimentación básica con ampollas &rarr;</span> Requiere Entereza de artesano,
+          Solución alquímica del dragón y Omnium Draconis.<br>
+          <span class="recipe-name">Experimentación básica con pociones &rarr;</span> Requiere Entereza de artesano,
+          Solución alquímica del dragón y Omnium Draconis.
+        </p>
+
+        <p class="custom-step" data-min="47" data-max="50"
+          data-mats='{"Entereza de artesano": 15, "Solución alquímica del dragón": 6, "Omnium Draconis": 3}'>
+          <strong>Alquimia 47 – 50</strong><br>
+          Continúa con experimentaciones de pociones o ampollas hasta el nivel 50.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="56"
+          data-mats='{"Omnium Draconis": 6, "Convergente primigenio": 2}'>
+          <strong>Alquimia 50 – 56</strong><br>
+          <span class="recipe-name">Poción elemental de poder &rarr;</span> 6 Omnium Draconis, 2 Convergente primigenio.
+        </p>
+
+        <p class="custom-step" data-min="56" data-max="100"
+          data-mats='{"Entereza de artesano": 300, "Solución alquímica del dragón": 100, "Omnium Draconis": 75}'>
+          <strong>Alquimia 56 – 100</strong><br>
+          La única forma de llegar a 100 es mediante:<br>
+          <span class="recipe-name">Experimentación básica con ampollas</span> o <span
+            class="recipe-name">Experimentación básica con pociones</span>.<br>
+          Nota: A partir de 90 se vuelven verdes y suben nivel con menos frecuencia.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

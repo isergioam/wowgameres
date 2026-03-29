@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Joyería - Dragonflight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Muchos materiales como polvos y broches se obtienen prospectando menas de serevita inicialmente.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="6" data-mats='{"Mena de serevita": 25}'>
+          <strong>Joyería 1 – 6</strong><br>
+          <span class="recipe-name">25x Prospectar Mena de serevita &rarr;</span> Extrae gemas de las menas
+          recolectadas.
+        </p>
+
+        <p class="custom-step" data-min="6" data-max="9"
+          data-mats='{"Piedra desmoronada": 4, "Tierra reanimadora": 2, "Filigrana deforme": 1, "Zafiro místico": 1, "Ámbar de eternidad": 2}'>
+          <strong>Joyería 6 – 9</strong><br>
+          Fabrica uno de cada:<br>
+          <span class="recipe-name">Piedra brillante &rarr;</span> 4 Piedra desmoronada, 2 Tierra reanimadora, 1 Ámbar
+          de eternidad.<br>
+          <span class="recipe-name">Cinto fulgurante &rarr;</span> 1 Filigrana deforme, 1 Zafiro místico.<br>
+          <span class="recipe-name">Trituración de las Islas Dragón &rarr;</span> 1 Ámbar de eternidad.
+        </p>
+
+        <p class="custom-step" data-min="9" data-max="12" data-mats='{"Ámbar de eternidad": 6}'>
+          <strong>Joyería 9 – 12</strong><br>
+          <span class="recipe-name">3x Ámbar de eternidad sólido &rarr;</span> 6x Ámbar de eternidad.
+        </p>
+
+        <p class="custom-step" data-min="12" data-max="15"
+          data-mats='{"Tierra reanimadora": 3, "Cristal fracturado": 3, "Polvo de gemas sedoso": 2, "Escarcha reanimadora": 2, "Esmeralda vibrante": 2, "Zafiro místico": 2}'>
+          <strong>Joyería 12 – 15</strong><br>
+          Fabrica uno de cada:<br>
+          <span class="recipe-name">Lente sin marco &rarr;</span> 1 Tierra reanimadora, 3 Cristal fracturado, 2 Polvo
+          de
+          gema sedoso.<br>
+          <span class="recipe-name">Esmeralda vibrante energizada &rarr;</span> 2 Escarcha reanimadora, 2 Esmeralda
+          vibrante.<br>
+          <span class="recipe-name">Zafiro místico zen &rarr;</span> 2 Tierra reanimadora, 2 Zafiro místico.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="20"
+          data-mats='{"Fuego reanimador": 4, "Aire reanimador": 2, "Ónice hendido": 3, "Rubí de la reina": 2, "Cinto fulgurante": 2, "Ámbar de eternidad": 2}'>
+          <strong>Joyería 15 – 20</strong><br>
+          Fabrica uno de cada:<br>
+          <span class="recipe-name">Ónice hendido de sensei &rarr;</span> 2 Fuego reanimador, 2 Ónice hendido.<br>
+          <span class="recipe-name">Rubí de la reina artesanal &rarr;</span> 2 Aire reanimador, 2 Rubí de la reina.<br>
+          <span class="recipe-name">Sortija de nuevos comienzos &rarr;</span> 2 Fuego reanimador, 1 Cinto fulgurante, 2
+          Ámbar de eternidad.<br>
+          <span class="recipe-name">Colgante de peligros inminentes &rarr;</span> 1 Cinto fulgurante, 1 Ónice hendido.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="26"
+          data-mats='{"Lente sin marco": 4, "Ónice hendido": 1, "Mena de serevita": 4, "Polvo de gemas sedoso": 1, "Fuego reanimador": 1, "Cristal fracturado": 5, "Tapón dracónico": 5}'>
+          <strong>Joyería 20 – 26</strong><br>
+          Bonus de primera fabricación:<br>
+          <span class="recipe-name">Bifocales en negrita &rarr;</span> 2 Mena de serevita, 2 Lente sin marco.<br>
+          <span class="recipe-name">Lente de aumento de ónice hendido &rarr;</span> 2 Mena de serevita, 1 Ónice hendido,
+          2 Lente sin marco.<br>
+          <span class="recipe-name">Vial dracónico &rarr;</span> 1 Fuego reanimador, 5 Cristal fracturado, 5 Tapón
+          dracónico, 1 Polvo de gema sedoso.
+        </p>
+
+        <p class="custom-step" data-min="26" data-max="29"
+          data-mats='{"Cristal fracturado": 3, "Ámbar de eternidad": 4, "Polvo de gemas sedoso": 3, "Cinto fulgurante": 2, "Rubí de la reina": 2, "Piedra brillante": 4}'>
+          <strong>Joyería 26 – 29</strong><br>
+          <span class="recipe-name">1x Paciencia del vigía del tiempo &rarr;</span> 3 Cristal fracturado, 4 Ámbar de
+          eternidad, 1 Polvo de gema sedoso.<br>
+          <span class="recipe-name">2x Talla roja revitalizante &rarr;</span> 1 Cinto fulgurante, 1 Rubí de la reina, 2
+          Piedra brillante, 1 Polvo de gema sedoso.
+        </p>
+
+        <p class="custom-step" data-min="29" data-max="55"
+          data-mats='{"Fuego reanimador": 60, "Tela salvaje": 60, "Polvo de gemas sedoso": 60}'>
+          <strong>Joyería 29 – 55</strong><br>
+          <span class="recipe-name">60x Polvo de salvadera &rarr;</span> 60 Fuego reanimador, 60 Tela salvaje, 60 Polvo
+          de
+          gemas sedoso.<br>
+          Nota: Debes elegir la especialización de <i>Emprendimiento</i> para aprender esta receta.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="29" data-max="75"
+          data-mats='{"Fuego despierto": 50, "Nozdorita": 50}'>
+          <strong>Joyería (Ruta Alternativa) 29 – 75</strong><br>
+          <span class="recipe-name">50x Nozdiorita dentada &rarr;</span> 50 Fuego despierto, 50 Nozdorita.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="75" data-mats='{"Nozdorita": 25, "Fuego despierto": 25}'>
+          <strong>Joyería 55 – 75</strong><br>
+          <span class="recipe-name">25x Nozdorita dentada &rarr;</span> 25x Nozdorita, 25x Fuego despierto.<br>
+          Fabrica también sus variantes para el bono de primera fabricación.
+        </p>
+
+        <p class="custom-step" data-min="75" data-max="100"
+          data-mats='{"Cinto fulgurante": 10, "Chispa de ingenio": 5, "Ysmeralda": 5, "Armonía elemental": 5}'>
+          <strong>Joyería 75 – 100</strong><br>
+          Tramo final mediante pedidos:<br>
+          <span class="recipe-name">5x Sello de conocimiento titánico</span> (u otros anillos/collares
+          épicos)<span class="recipe-name"> &rarr;</span> 10 Cinto fulgurante, 5 Ysmeralda, 5 Armonía elemental, 5
+          Chispa de ingenio.<br>
+          Cada craft requiere 1x Chispa de ingenio. Se recomienda realizarlos a través del sistema de pedidos personales
+          usando alts.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
