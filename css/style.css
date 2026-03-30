@@ -60,32 +60,6 @@ a {
   color: #8a2be2;
 }
 
-/* Submenú */
-.main-nav .submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  min-width: 180px;
-}
-
-.main-nav .submenu li {
-  /* display: block;*/
-  margin: auto 10px;
-}
-
-.main-nav .submenu li::before {
-  content: "🍁";
-  /* O un icono de fuente */
-  margin-right: 8px;
-}
-
-/* Mostrar submenu al pasar el ratón */
-.main-nav ul li:hover>.submenu {
-  display: block;
-}
-
 /* Banner */
 .logo img {
   height: 100px;
@@ -133,18 +107,14 @@ a {
 }
 
 .card {
-  /*background-color: #dcd0ff;*/
   padding: 20px;
   text-align: center;
-  /* border-radius: 10px;*/
   flex: 1 1 250px;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s;
 }
 
 .card:hover {
-  /* background-color: #c5b3ff;*/
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -171,9 +141,7 @@ a {
 .card-expansion {
   background-color: #dcd0ff;
   padding: 20px;
-  /* border-radius: 10px;*/
   text-align: center;
-  /* font-weight: bold;*/
   color: #6a0dad;
   cursor: pointer;
   flex: 1 1 180px;
@@ -241,11 +209,24 @@ body.dark-mode .card-expansion:hover {
 
 @media (max-width: 768px) {
   .logo img {
-    height: 100px;
+    height: 70px;
+    margin: 15px 10px;
   }
 
   .main-nav {
     margin: 10px 20px;
+  }
+
+  .profesiones {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 0px;
+  }
+
+  .card img {
+    height: 200px;
   }
 }
 
