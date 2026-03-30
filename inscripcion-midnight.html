@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Inscripción - Midnight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="20"
+          data-mats='{"Flor de tranquilidad": 360, "Hojargenta": 100, "Lirio de maná": 90, "Sanguispino": 90}'>
+          <strong>Inscripción 1 – 20</strong><br>
+          <span class="recipe-name">Molienda de Midnight &rarr;</span> 360 Flor de tranquilidad, 100 Hojargenta, 90
+          Lirio de maná, 90 Sanguispino.<br>
+          Nota: Usa la facultad de molienda en tu libro de hechizos de profesión para moler todas estas hierbas y
+          obtener los pigmentos necesarios.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="30"
+          data-mats='{"Cantagua thalassiana": 69, "Pigmento de polvo": 460, "Pigmento de sanguispino": 110, "Pigmento de hojargenta": 120, "Pigmento de lirio de maná": 115}'>
+          <strong>Inscripción 20 – 30</strong><br>
+          <span class="recipe-name">11x Tinta Munsell &rarr;</span> 33 Cantagua thalassiana, 220 Pigmento de polvo, 110
+          Pigmento de sanguispino, 55 Pigmento de lirio de maná.<br>
+          <span class="recipe-name">12x Tinta Sienna &rarr;</span> 36 Cantagua thalassiana, 240 Pigmento de polvo, 120
+          Pigmento de hojargenta, 60 Pigmento de lirio de maná.<br>
+          Nota: Guarda las tintas para los pasos siguientes. Puedes comprar el Cantagua thalassiana al vendedor de
+          suministros al lado del instructor.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="35"
+          data-mats='{"Cantagua thalassiana": 3, "Azerraíz": 24, "Mota de vacío puro": 1, "Mota de luz": 1, "Piedra velocrepúsculo": 1, "Tinta Munsell": 1, "Tinta Sienna": 1}'>
+          <strong>Inscripción 30 – 35</strong><br>
+          Nota: Fabrica una de cada una para el bonus de primera fabricación.<br>
+          <span class="recipe-name">1x Bordón de cuidado de la fauna &rarr;</span> 1 Cantagua thalassiana, 8
+          Azerraíz.<br>
+          <span class="recipe-name">1x Muleta de cuidador de la flora &rarr;</span> 1 Cantagua thalassiana, 8
+          Azerraíz.<br>
+          <span class="recipe-name">1x Lámpara de celador de raíces &rarr;</span> 1 Cantagua thalassiana, 8
+          Azerraíz.<br>
+          <span class="recipe-name">1x Clave de almas &rarr;</span> 1 Mota de vacío puro, 1 Mota de luz, 1 Piedra
+          velocrepúsculo, 1 Tinta Munsell, 1 Tinta Sienna.<br>
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="42"
+          data-mats='{"Vitela de lexicólogo": 4, "Mota de energía primigenia": 4, "Mota de magia salvaje": 1, "Azerraíz": 23, "Clave de almas": 1, "Cantagua thalassiana": 3, "Tinta Sienna": 11, "Tinta Munsell": 9, "Mota de vacío puro": 1}'>
+          <strong>Inscripción 35 – 42</strong><br>
+          <span class="recipe-name">1x Azerraíz codificada &rarr;</span> 1 Mota de energía primigenia, 1 Mota de magia
+          salvaje, 8 Azerraíz, 1 Clave de almas.<br>
+          <span class="recipe-name">1x Confianza de cuidador de la fauna &rarr;</span> 1 Cantagua thalassiana, 8
+          Azerraíz.<br>
+          <span class="recipe-name">1x Vara de mezclado de alquimista aficionado &rarr;</span> 1 Cantagua thalassiana,
+          10
+          Azerraíz, 1 Tinta Sienna.<br>
+          <span class="recipe-name">1x Rodillo de chef aficionado &rarr;</span> 10 Azerraíz, 1 Tinta Sienna.<br>
+          <span class="recipe-name">1x Cálamo de escriba aficionado &rarr;</span> 1 Cantagua thalassiana, 5 Azerraíz, 1
+          Tinta Munsell, 1 Tinta Sienna.<br>
+          <span class="recipe-name">1x Misiva thalassiana de la aurora &rarr;</span> 1 Vitela de lexicólogo, 1 Mota de
+          energía primigenia, 2
+          Tinta Munsell, 2 Tinta Sienna.<br>
+          <span class="recipe-name">1x Misiva thalassiana de la llama febril &rarr;</span> 1 Vitela de lexicólogo, 1
+          Mota de energía primigenia,
+          2 Tinta Munsell, 2 Tinta Sienna.<br>
+          <span class="recipe-name">1x Misiva thalassiana del fuegolátigo &rarr;</span> 1 Vitela de lexicólogo, 1 Mota
+          de energía primigenia,
+          2 Tinta Munsell, 2 Tinta Sienna.<br>
+          <span class="recipe-name">1x Misiva thalassiana del armonioso &rarr;</span> 1 Vitela de lexicólogo, 1 Mota de
+          vacío puro,
+          2 Tinta Munsell, 2 Tinta Sienna.<br>
+          Nota: Equipo Cálamo de escriba aficionado después de fabricarlo.
+        </p>
+
+        <p class="custom-step" data-min="42" data-max="45"
+          data-mats='{"Vitela de lexicólogo": 9, "Mota de magia salvaje": 1, "Tinta Munsell": 1, "Tinta Sienna": 1}'>
+          <strong>Inscripción 42 – 45</strong><br>
+          <span class="recipe-name">3x Tratado thalassiano de inscripción &rarr;</span> 9 Vitela de lexicólogo, 1 Mota
+          de magia salvaje, 1 Tinta Munsell, 1 Tinta Sienna.<br>
+          Nota: No uses los tratados todavía. Si pones 10 puntos en la especialización de <i>Manos Calmas</i>, obtendrás
+          2 puntos de conocimiento en lugar de uno.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="50"
+          data-mats='{"Vitela de lexicólogo": 11, "Mota de magia salvaje": 3, "Tinta Munsell": 7, "Tinta Sienna": 7, "Mota de vacío puro": 2}'>
+          <strong>Inscripción 45 – 50</strong><br>
+          <span class="recipe-name">1x Misiva thalassiana del incomparable &rarr;</span>1 Vitela de lexicólogo, 2 Tinta
+          Munsell, 2 Tinta Sienna, 1 Mota de vacío puro.<br>
+          <span class="recipe-name">1x Misiva thalassiana de la navaja &rarr;</span> 1 Vitela de lexicólogo, 1 Mota
+          de vacío puro, 2 Tinta Munsell, 2 Tinta Sienna.<br>
+          <span class="recipe-name">3x Tratado thalassiano de inscripción &rarr;</span> 9 Vitela de lexicólogo, 3 Mota
+          de magia salvaje, 3 Tinta Munsell, 3 Tinta Sienna.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="100"
+          data-mats='{"Vitela de lexicólogo": 210, "Tinta Munsell": 70, "Tinta Sienna": 70, "Mota de magia salvaje": 70}'>
+          <strong>Inscripción 50 – 100</strong><br>
+          <span class="recipe-name">70x Tratado thalassiano de inscripción &rarr;</span> 210 Vitela de lexicólogo, 70
+          Tinta Munsell, 70 Tinta Sienna, 70 Mota de magia salvaje.<br>
+          Nota: A medida que los fabriques, descubrirás tratados de otras profesiones que también otorgan puntos.
+          Fabrica cada uno nuevo para obtener el bono de primera fabricación. La receta se vuelve verde al final, por lo
+          que el número total es aproximado.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

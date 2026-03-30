@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Alquimia - Midnight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="7"
+          data-mats='{"Flor de Tranquilidad": 36, "Frasco de vidriosolar": 30}'>
+          <strong>Alquimia 1 – 7</strong><br>
+          <span class="recipe-name">Poción de sanación de Lunargenta &rarr;</span> 36 Flor de Tranquilidad, 30 Frasco de
+          vidriosolar.
+        </p>
+
+        <p class="custom-step" data-min="7" data-max="20" data-mats='{"Aceite de duramen": 14}'>
+          <strong>Alquimia 7 – 20</strong><br>
+          <span class="recipe-name">Reciclar pociones &rarr;</span> 14 Aceite de duramen.<br>
+          Nota: Úsalo en la Poción de sanación de Lunargenta que acabas de crear. Melaris vende el Aceite al
+          lado del instructor.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="27"
+          data-mats='{"Flor de tranquilidad": 28, "Frasco de vidriosolar": 20, "Sanguispino": 3, "Lirio de Maná": 3, "Mota de Luz": 12, "Derivado Estabilizado": 4, "Mota de Energía Primigenia": 4, "Hojargenta": 4}'>
+          <strong>Alquimia 20 – 27</strong><br>
+          Nota: Asegúrate de interactuar con la <a
+            href="https://www.wowhead.com/es/npc=247420/caldera-de-camberon">Caldera de Camberon</a> para investigar
+          estas recetas primero.<br>
+          <span class="recipe-name">Suero refrescante &rarr;</span> 8 Flor de tranquilidad, 3 Sanguispino, 5 Frasco de
+          vidriosolar .<br>
+          <span class="recipe-name">Poción de maná imbuida de Luz &rarr;</span> 8 Flor de tranquilidad, 3 Lirio de
+          maná, 5 Frasco de vidriosolar.<br>
+          <span class="recipe-name">Piedra filosofal primigenia &rarr;</span> 2 Derivado estabilizado, 2 Mota de luz,
+          5 Suero refrescante.<br>
+          <span class="recipe-name">Transmutar: mota de magia salvaje &rarr;</span> 10 Mota de luz, 2 Derivado
+          estabilizado.<br>
+          <span class="recipe-name">Flora compuesta &rarr;</span> 4 Mota de magia salvaje, 4 Mota de energía
+          primigenia, 6 Flor de tranquilidad, 4 Hojargenta.<br>
+          <span class="recipe-name">Tónico de iluminación &rarr;</span> 3 Flor de tranquilidad, 5 Frasco de
+          vidriosolar.<br>
+          <span class="recipe-name">Extracto entrópico &rarr;</span> 3 Flor de tranquilidad, 5 Frasco de
+          vidriosolar.
+        </p>
+
+        <p class="custom-step" data-min="27" data-max="32"
+          data-mats='{"Flor de Tranquilidad": 24, "Frasco de vidriosolar": 40}'>
+          <strong>Alquimia 27 – 32</strong><br>
+          <span class="recipe-name">Extracto entrópico &rarr;</span> 24 Flor de Tranquilidad, 40 Frasco de vidriosolar.
+        </p>
+
+        <p class="custom-step" data-min="32" data-max="50"
+          data-mats='{"Flor de Tranquilidad": 180, "Frasco de vidriosolar": 150}'>
+          <strong>Alquimia 32 – 50</strong><br>
+          <span class="recipe-name">Poción de sanación de Lunargenta &rarr;</span> 180 Flor de Tranquilidad, 150
+          Frasco de vidriosolar.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="100"
+          data-mats='{"Mota de luz": 80, "Flor de tranquilidad": 640, "Azerraíz": 240, "Hojargenta": 240, "Frasco de vidriosolar": 400}'>
+          <strong>Alquimia 50 – 100</strong><br>
+          <span class="recipe-name">Potencial de luz &rarr;</span> 80 Mota de luz, 640 Flor de tranquilidad, 240
+          Azerraíz, 240 Hojargenta, 400 Frasco de vidriosolar.<br>
+          Nota: Desbloquea esta receta en la <a href="https://www.wowhead.com/es/npc=247420/caldera-de-camberon">Caldera
+            de Camberon</a> por 50 Arrojo de alquimista artesano. Es la forma más barata de llegar a 100.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

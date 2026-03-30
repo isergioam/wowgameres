@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Encantamiento - Midnight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="25"
+          data-mats='{"Vara de cobre refulgente": 30, "Polvo cantoeterno": 150}'>
+          <strong>Encantamiento 1 – 25</strong><br>
+          <span class="recipe-name">30x Vara de cobre refulgente con runas &rarr;</span> 30 Vara de cobre refulgente,
+          150
+          Polvo cantoeterno.<br>
+          Nota: Desencanta las 30 varas creadas para ganar puntos hasta nivel 25. Recuperarás aproximadamente la mitad
+          del polvo invertido.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="27"
+          data-mats='{"Polvo cantoeterno: 20, "Fragmento radiante": 3, "Mota de luz": 5, "Frasco de vidriosolar": 1}'>
+          <strong>Encantamiento 25 – 27</strong><br>
+          <span class="recipe-name">1x Encantar yelmo: Runa de evasión &rarr;</span> 15 Polvo cantoeterno, 3 Fragmento
+          radiante.<br>
+          <span class="recipe-name">1x Aceite de fénix thalassiano &rarr;</span> 5 Mota de luz, 1 Frasco de vidriosolar,
+          5
+          Polvo cantoeterno.
+        </p>
+
+        <p class="custom-step" data-min="27" data-max="38" data-mats='{"Polvo cantoeterno": 72, "Mota de luz": 1}'>
+          <strong>Encantamiento 27 – 38</strong><br>
+          <span class="recipe-name">1x Encantar anillo: Cólera de la Naturaleza &rarr;</span> 5 Polvo cantoeterno.<br>
+          <span class="recipe-name">1x Adorno ilusorio: Luz floreciente &rarr;</span> 1 Mota de luz, 2 Polvo
+          cantoeterno.<br>
+          <span class="recipe-name">13x Encantar anillo: Cólera de la Naturaleza &rarr;</span> 65 Polvo cantoeterno.
+        </p>
+
+        <p class="custom-step" data-min="38" data-max="40"
+          data-mats='{"Polvo cantoeterno": 30, "Fragmento radiante": 6}'>
+          <strong>Encantamiento 38 – 40</strong><br>
+          <span class="recipe-name">1x Encantar hombros: Vuelo del águila &rarr;</span> 15 Polvo cantoeterno, 3
+          Fragmento radiante.<br>
+          <span class="recipe-name">1x Encantar yelmo: Maleficio de parasitismo &rarr;</span> 15 Polvo cantoeterno, 3
+          Fragmento radiante.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="52"
+          data-mats='{"Polvo cantoeterno": 60, "Fragmento radiante": 12}'>
+          <strong>Encantamiento 40 – 52</strong><br>
+          <span class="recipe-name">4x Varita de tejehechizos thalassiano &rarr;</span> 60 Polvo cantoeterno, 12
+          Fragmento radiante.<br>
+          Nota: Cada fabricación otorga 3 puntos de habilidad.
+        </p>
+
+        <p class="custom-step" data-min="52" data-max="55"
+          data-mats='{"Polvo cantoeterno": 35, "Fragmento radiante": 6}'>
+          <strong>Encantamiento 52 – 55</strong><br>
+          <span class="recipe-name">1x Encantar anillo: Maestría Amani &rarr;</span> 5 Polvo cantoeterno.<br>
+          <span class="recipe-name">1x Encantar yelmo: Bendición de velocidad &rarr;</span> 15 Polvo cantoeterno, 3
+          Fragmento radiante.<br>
+          <span class="recipe-name">1x Encantar hombros: Recuperación thalassiana &rarr;</span> 15 Polvo cantoeterno, 3
+          Fragmento radiante.
+        </p>
+
+        <p class="custom-step" data-min="55" data-max="62" data-mats='{"Polvo cantoeterno": 45}'>
+          <strong>Encantamiento 55 – 62</strong><br>
+          <span class="recipe-name">9x Encantar anillo: Maestría Amani &rarr;</span> 45 Polvo cantoeterno.
+        </p>
+
+        <p class="custom-step" data-min="62" data-max="100"
+          data-mats='{"Mota de energía primigenia": 190, "Raíz petrificada": 152, "Peridoto de Harandar impecable": 38, "Polvo cantoeterno": 760, "Fragmento radiante": 380, "Cristal del alba": 76}'>
+          <strong>Encantamiento 62 – 100</strong><br>
+          <span class="recipe-name">38x Encantar arma: Égida del alma-mundo &rarr;</span> 190 Mota de energía
+          primigenia, 152 Raíz
+          petrificada, 38 Peridoto de Harandar impecable, 760 Polvo cantoeterno, 380 Fragmento radiante, 76 Cristal del
+          alba.<br>
+          Nota: Esta receta se mantiene naranja hasta el nivel 100. Los materiales son estimados para 38 fabricaciones.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Sastrería - Midnight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="25" data-mats='{"Hilo de hojaplata": 264, "Lino brillante": 66}'>
+          <strong>Sastrería 1 – 25</strong><br>
+          <span class="recipe-name">66x Rollo de lino brillante &rarr;</span> 264 Hilo de hojaplata, 66 Lino
+          brillante.<br>
+          Nota: Necesitas todos los rollos para la armadura de tela y los rollos imbuidos más adelante, así que fabrica
+          todos aunque se vuelvan grises alrededor del nivel 20. <br> Puedes comprar el
+          <a href="https://www.wowhead.com/es/item=251665">Hilo de hojaplata</a> y el
+          <a href="https://www.wowhead.com/es/item=251691">Filamento de bordado</a> al vendedor de suministros cerca del
+          instructor.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="40"
+          data-mats='{"Hilo de hojaplata": 56, "Rollo de lino brillante": 28}'>
+          <strong>Sastrería 25 – 40</strong><br>
+          <span class="recipe-name">14x Rollo de lino brillante imbuido &rarr;</span>56 Hilo de hojaplata, 28 Rollo de
+          lino brillante.<br>
+          Nota: Guarda estos rollos imbuidos, los necesitarás más adelante.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="50"
+          data-mats='{"Hilo de hojaplata": 27, "Rollo de lino brillante": 6, "Polvo cantoeterno": 6, "Rollo de lino brillante imbuido": 6, "Filamento de bordado": 6}'>
+          <strong>Sastrería 40 – 50</strong><br>
+          <span class="recipe-name">3x Toga de sastrería de lino brillante &rarr;</span> 9 Hilo de hojaplata, 6 Rollo
+          de lino brillante imbuido, 6 Polvo cantoeterno.<br>
+          <span class="recipe-name">6x Sobrehombros refinados &rarr;</span> 18 Hilo de hojaplata, 6 Filamento de
+          bordado, 12 Rollo de lino brillante.<br>
+          Nota: Equipa la Toga de sastrería de lino brillante que fabriques.
+        </p>
+
+        <p class="custom-step" data-min="50" data-max="65"
+          data-mats='{"Filamento de bordado": 90, "Rollo de lino brillante imbuido": 60, "Polvo cantoeterno": 60}'>
+          <strong>Sastrería 50 – 65</strong><br>
+          <span class="recipe-name">30x Hilo de hechizo de lino brillante &rarr;</span> 90 Filamento de bordado, 60
+          Rollo
+          de lino brillante imbuido, 60 Polvo cantoeterno.<br>
+          Nota: La receta se vuelve verde para los últimos 5 puntos, por lo que el número es una estimación.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="90"
+          data-mats='{"Filamento de bordado": 28, "Seda de fuego solar": 168, "Rollo de seda de fuego solar": 56}'>
+          <strong>Sastrería 65 – 90</strong><br>
+          <span class="recipe-name">28x Forro de seda de fuego solar &rarr;</span> 28 Filamento de bordado, 168 Seda de
+          fuego solar, 56 Rollo de seda de fuego solar.<br>
+          Nota: La receta se vuelve amarilla a partir del nivel 80 y puede requerir fabricaciones extra. También puedes
+          usar <i>Forro de tejido Arcano</i> como alternativa con los mismos costes.
+        </p>
+
+        <p class="custom-step" data-min="90" data-max="100"
+          data-mats='{"Filamento de bordado": 13, "Mota de luz": 67, "Rollo de seda de fuego solar": 107, "Fragmento radiante": 40}'>
+          <strong>Sastrería 90 – 100</strong><br>
+          <span class="recipe-name">13x Gorro de cocina de artesano elegante &rarr;</span> 13 Filamento de bordado, 67
+          Mota de luz, 107 Rollo de seda de fuego solar, 40 Fragmento radiante.<br>
+          Nota: Puedes usar cualquier receta de Artesano Elegante. La receta se compra al vendedor de sastrería por 150
+          <i>Arrojo de sastre artesano</i>.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="50" data-max="100" data-mats='{"}'>
+          <strong>Sastrería (Ruta Alternativa lenta) 50 – 100</strong><br>
+          <span class="recipe-name">Rollo de seda de fuego solar (CD diario) &rarr;</span> 5 Seda de fuego solar, 4
+          Mota de luz, 6 Rollo de lino brillante imbuido.<br>
+          Nota: Invierte 5 puntos en <i>Costura ágil</i> para desbloquear el CD de rollos. Da 2 puntos de habilidad
+          hasta el 80. Combina con pedidos de artesanía de patrón para completar los últimos niveles de forma pasiva.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

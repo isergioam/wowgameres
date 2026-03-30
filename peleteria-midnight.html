@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Peletería - Midnight WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="7"
+          data-mats='{"Cuero templado por el Vacío": 70, "Escamas templadas por el Vacío": 50}'>
+          <strong>Peletería 1 – 10 </strong><br>
+          <span class="recipe-name">3x Braciles de cuero de contrabandista &rarr;</span> 60 Cuero templado por el Vacío,
+          30 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">1x Brazales escamados de explorador &rarr;</span> 20 Escamas templadas por el Vacío,
+          10 Cuero templado por el Vacío.<br>
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="62"
+          data-mats='{"Cuero templado por el Vacío": 687, "Escamas templadas por el Vacío": 607, "Pellejo templado por el vacío": 3, "Placas templadas por el vacío": 2, "Plumaje incomparable": 4, "Canino trinchante": 3, "Pelaje fantástico": 4, "Flor de tranquilidad": 10, "Mota de luz": 4, "Mota de vacío puro": 1, "Hilo de hojaplata": 73}'>
+          <strong>Peletería 10 – 62</strong><br>
+          <span class="recipe-name">2x Escarpines de cuero de contrabandista &rarr;</span> 50 Cuero templado por el
+          Vacío,
+          20 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">2x Guerrera de cuero de contrabandista &rarr;</span> 50 Cuero templado por el Vacío,
+          30 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">3x Atadura reforzada de contrabandista &rarr;</span> 90 Cuero templado por el Vacío,
+          45 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">2x Guantes reforzados de contrabandista &rarr;</span> 2 Plumaje incomparable, 80
+          Cuero templado por el Vacío, 40 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">3x Delantal de joyero aprendiz &rarr;</span> 30 Hilo de hojaplata, 120 Cuero
+          templado por el Vacío, 60 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">3x Guardahombros reforzado de contrabandista &rarr;</span> 4 Canino trinchante, 160
+          Cuero templado por el Vacío, 80 Escamas templadas por el Vacío.<br>
+          <span class="recipe-name">3x Caperuza reforzada de contrabandista &rarr;</span> 120 Cuero templado por el
+          Vacío, 60 Escamas templadas por el Vacío.
+        </p>
+
+        <p class="custom-step" data-min="62" data-max="91"
+          data-mats='{"Piedra velocrepúsculo": 70, "Pellejo templado por el vacío": 35, "Mota de magia salvaje": 350, "Canino trinchante": 35, "Plumaje incomparable": 35}'>
+          <strong>Peletería 62 – 91</strong><br>
+          <span class="recipe-name">35x Talismán de pangolín bendito &rarr;</span> 350 Mota de magia salvaje, 35 Canino
+          trinchante, 35 Plumaje incomparable, 35 Pellejo templado por el vacío, 70 Piedra velocrepúsculo.<br>
+        </p>
+
+        <p class="custom-step" data-min="91" data-max="100"
+          data-mats='{"Tántalo atormentado": 3, "Mota de energía primigenia": 60, "Cuero templado por el Vacío": 450, "Escamas templadas por el Vacío": 225, "Pellejo tejido de escamas imbuido": 3, "Banda de armadura sindorei": 6, "Chispa": 6}'>
+          <strong>Peletería 91 – 100</strong><br>
+          <span class="recipe-name">3x Envolturas raigales del Árbol del Mundo</span> (Renombre 5 - Hara'ti ) <span
+            class="recipe-name"> &rarr;</span> 3 Tántalo atormentado, 60 Mota de energía primigenia, 450 Cuero templado
+          por el Vacío, 225 Escamas templadas por el Vacío, 3 Pellejo tejido de escamas imbuido, 6
+          Banda de armadura sin'dorei, 6 Chispa.<br>
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="91" data-max="100"
+          data-mats='{"Barra de saronita": 10, "Barra de titanio": 5}'>
+          <strong>Peletería (Ruta Alternativa) 91 – 100</strong><br>
+          <span class="recipe-name">Pedidos de Artesanía &rarr;</span> Las recetas épicas de armadura de cuero y malla
+          provienen de los árboles de especialización de armadura
+          de cuero y armadura de malla, así como de vendedores, caídas y misiones. Todos dan 3 puntos de habilidad cada
+          uno y son de color naranja a 100, por lo que debes completar 3 pedidos para pasar de 91 a 100.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
