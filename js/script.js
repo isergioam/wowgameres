@@ -36,9 +36,9 @@ function initApp() {
 
   // Ajustar la imagen de acuerdo al tema cargado
   if (document.body.classList.contains('dark-mode')) {
-    if (imagen) imagen.src = "./images/WOWGamerES_Logo_black.png";
+    if (imagen) imagen.src = "./images/WOWGamerES_Logo_black.webp";
   } else {
-    if (imagen) imagen.src = "./images/WOWGamerES_Logo_white.png";
+    if (imagen) imagen.src = "./images/WOWGamerES_Logo_white.webp";
   }
 
   if (toggle) {
@@ -47,10 +47,10 @@ function initApp() {
 
       if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
-        if (imagen) imagen.src = "./images/WOWGamerES_Logo_black.png";
+        if (imagen) imagen.src = "./images/WOWGamerES_Logo_black.webp";
       } else {
         localStorage.setItem('theme', 'light');
-        if (imagen) imagen.src = "./images/WOWGamerES_Logo_white.png";
+        if (imagen) imagen.src = "./images/WOWGamerES_Logo_white.webp";
       }
     });
   }

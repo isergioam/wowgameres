@@ -45,9 +45,6 @@ a {
 
 .main-nav ul li {
   position: relative;
-}
-
-.main-nav ul>li {
   display: inline-block;
 }
 
@@ -145,19 +142,40 @@ a {
   color: #6a0dad;
   cursor: pointer;
   flex: 1 1 180px;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s;
 }
 
 .card-expansion:hover {
   background-color: #c5b3ff;
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 /* Footer */
 footer {
   text-align: center;
   margin: 20px auto;
+}
+
+/* Tabla de materiales */
+.materials-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.materials-table thead tr {
+  border-bottom: 2px solid #6a0dad;
+}
+
+body.dark-mode .materials-table thead tr {
+  border-bottom-color: #bb9fff;
+}
+
+.materials-table th {
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* ===================== */
