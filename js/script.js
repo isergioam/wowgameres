@@ -55,15 +55,7 @@ function initApp() {
     });
   }
 
-  /* Menú móvil (Hamburger) */
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navList = document.querySelector('.main-nav ul');
 
-  if (mobileMenu && navList) {
-    mobileMenu.addEventListener('click', () => {
-      navList.classList.toggle('nav-active');
-    });
-  }
 
   /* Carga dinámica de Profesiones por Expansión */
   const expansionCards = document.querySelectorAll('.card-expansion');
