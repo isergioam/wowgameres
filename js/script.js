@@ -59,9 +59,11 @@ function initApp() {
 
   /* Carga dinámica de Profesiones por Expansión */
   const expansionCards = document.querySelectorAll('.card-expansion');
-  const profesionesSection = document.getElementById('profesiones');
+  const profesionesTitle = document.getElementById('profesiones');
+  // La sección de contenido es el siguiente hermano <section> después del H1
+  const profesionesContent = profesionesTitle ? profesionesTitle.nextElementSibling : null;
 
-  if (expansionCards.length > 0 && profesionesSection) {
+  if (expansionCards.length > 0 && profesionesTitle && profesionesContent) {
     expansionCards.forEach(card => {
       card.style.cursor = 'pointer';
 
@@ -89,18 +91,23 @@ function initApp() {
             // Reemplazar el nombre de la expansión en el título
             newHtml = newHtml.replace('(nombre_expansión)', `(${window.currentExpansionName})`);
 
-            // Reemplazar DOM de forma robusta
+            // Parsear el HTML del template
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = newHtml;
-            const newContent = tempDiv.querySelector('#profesiones');
 
-            if (newContent) {
-              profesionesSection.innerHTML = newContent.innerHTML;
-            } else {
-              profesionesSection.innerHTML = newHtml;
+            // Actualizar el texto del H1
+            const templateTitle = tempDiv.querySelector('#profesiones');
+            if (templateTitle) {
+              profesionesTitle.textContent = templateTitle.textContent;
             }
 
-            // Hacer scroll hacia la sección
+            // Extraer las tarjetas de profesiones e insertarlas en la sección
+            const templateCards = tempDiv.querySelector('.profesiones');
+            if (templateCards) {
+              profesionesContent.innerHTML = templateCards.outerHTML;
+            }
+
+            // Hacer scroll
             window.scrollTo({ top: 0, behavior: 'smooth' });
           })
           .catch(err => console.error("Error al cargar profesiones: ", err));

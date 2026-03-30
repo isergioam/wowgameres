@@ -158,6 +158,44 @@ h1 {
   transform: translateY(-5px);
 }
 
+/* Página de Aviso Legal */
+.legal-section {
+  margin-bottom: 30px;
+}
+
+.legal-content {
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.legal-content p {
+  margin-bottom: 12px;
+}
+
+.legal-content ul {
+  margin: 10px 0 15px 25px;
+}
+
+.legal-content ul li {
+  margin-bottom: 6px;
+}
+
+.legal-content h3 {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.legal-content .materials-table td {
+  padding: 8px;
+  border-bottom: 1px solid #e0d4ff;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .legal-content .materials-table td {
+  border-bottom-color: rgba(187, 159, 255, 0.15);
+}
+
 /* Footer */
 footer {
   text-align: center;
