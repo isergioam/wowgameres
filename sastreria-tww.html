@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Sastrería - The War Within WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales son aproximados, ya que el tramo 65-100 depende de pedidos de fabricación y materiales
+          especiales.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="10" data-mats='{"Tejetela": 200}'>
+          <strong>Sastrería 1 – 10</strong><br>
+          <span class="recipe-name">Desenredándose &rarr;</span> 200 Tejetela.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="25"
+          data-mats='{"Hilo de lanamusgo": 300, "Bobina de tejehilo": 510}'>
+          <strong>Sastrería 10 – 25</strong><br>
+          <span class="recipe-name">51x Rollo de tejetela &rarr;</span> 300 Hilo de lanamusgo, 510 Bobina de tejehilo.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="29"
+          data-mats='{"Hilo de lanamusgo": 8, "Rollo de tejetela": 8, "Polvo de tormenta": 4}'>
+          <strong>Sastrería 25 – 29</strong><br>
+          <span class="recipe-name">4x Rollo de tejetela exquisita &rarr;</span> 8 Hilo de lanamusgo, 8 Rollo de
+          tejetela, 4 Polvo de tormenta.
+        </p>
+
+        <p class="custom-step" data-min="29" data-max="35"
+          data-mats='{"Hilo de lanamusgo": 13, "Rollo de tejetela exquisita": 3, "Polvo de tormenta": 6}'>
+          <strong>Sastrería 29 – 35</strong><br>
+          <span class="recipe-name">1x Toga de alquimista de tejetela &rarr;</span> 5 Hilo de lanamusgo, 1 Rollo de
+          tejetela exquisita, 2 Polvo de tormenta.<br>
+          <span class="recipe-name">1x Gorro de cocinero de tejetela &rarr;</span> 3 Hilo de lanamusgo, 1 Rollo de
+          tejetela exquisita, 2 Polvo de tormenta.<br>
+          <span class="recipe-name">1x Abrigo de sastre de tejetela &rarr;</span> 5 Hilo de lanamusgo, 1 Rollo de
+          tejetela exquisita, 2 Polvo de tormenta.
+        </p>
+
+        <p class="custom-step" data-min="35" data-max="37"
+          data-mats='{"Hilo de lanamusgo": 4, "Rollo de tejetela": 3, "Cinta decorativa": 3}'>
+          <strong>Sastrería 35 – 37</strong><br>
+          <span class="recipe-name">1x Caperuza perfeccionada de pionero &rarr;</span> 4 Hilo de lanamusgo, 3 Rollo
+          de tejetela, 3 Cinta decorativa.
+        </p>
+
+        <p class="custom-step" data-min="37" data-max="39"
+          data-mats='{"Hilo de lanamusgo": 3, "Rollo de tejetela": 2, "Cinta decorativa": 1}'>
+          <strong>Sastrería 37 – 39</strong><br>
+          <span class="recipe-name">1x Guantes perfeccionados de pionero &rarr;</span> 3 Hilo de lanamusgo, 2 Rollo
+          de tejetela, 1 Cinta decorativa.
+        </p>
+
+        <p class="custom-step" data-min="39" data-max="45"
+          data-mats='{"Hilo de lanamusgo": 9, "Rollo de tejetela": 6, "Cinta decorativa": 3}'>
+          <strong>Sastrería 39 – 45</strong><br>
+          <span class="recipe-name">3x Manto perfeccionado de pionero &rarr;</span> 9 Hilo de lanamusgo, 6
+          Rollo de tejetela, 3 Cinta decorativa.
+        </p>
+
+        <p class="custom-step" data-min="45" data-max="48"
+          data-mats='{"Residuo de línea ley": 4, "Rollo de tejetela": 2}'>
+          <strong>Sastrería 45 – 48</strong><br>
+          <span class="recipe-name">1x Paño para pulir áspero &rarr;</span> 2 Residuo de línea ley, 1 Rollo de
+          tejetela.<br>
+          <span class="recipe-name">1x Paño para pulir lustroso &rarr;</span> 2 Residuo de línea ley, 1 Rollo de
+          tejetela.
+        </p>
+
+        <p class="custom-step" data-min="48" data-max="65"
+          data-mats='{"Muestra temblorosa": 30, "Rollo de tejetela": 30}'>
+          <strong>Sastrería 48 – 65</strong><br>
+          <span class="recipe-name">30x Hilo de bordado de tejetela &rarr;</span> 30 Muestra temblorosa, 30 Rollo de
+          tejetela.
+        </p>
+
+        <p class="custom-step" data-min="65" data-max="91" data-mats='{"Cinta decorativa": 6, "Bobina de hilo
+          crepuscular": 72, "Rollo de tejido del ocaso": 12}'>
+          <strong>Sastrería 65 – 91</strong><br>
+          Estas son las opciones para seguir subiendo niveles:<br>
+          <span class="recipe-name">Bolsa de tejido del ocaso &rarr;</span> 2 Cinta decorativa, 30 Bobina de hilo
+          crepuscular, 4 Rollo de tejido del ocaso.<br>
+          <span class="recipe-name">Bolsa de componentes de tejido del amanecer &rarr;</span> 2 Cinta decorativa, 30
+          Bobina de hilo
+          crepuscular, 4 Rollo de tejido del ocaso.<br>
+          <span class="recipe-name">Forro de hilo crepuscular &rarr;</span> 1 Cinta decorativa, 6 Bobina de hilo
+          crepuscular, 2 Rollo de tejido del ocaso.<br>
+          <span class="recipe-name">Forro de hilo del alba &rarr;</span> 1 Cinta decorativa, 6 Bobina de hilo
+          crepuscular, 2 Rollo de tejido del ocaso.
+        </p>
+
+        <p class="custom-step" data-min="91" data-max="100" data-mats='{"Chispa de presagios": 5}'>
+          <strong>Sastrería 91 – 100</strong><br>
+          <span class="recipe-name">Pedidos de Fabricación &rarr;</span> Completa épicos de otros jugadores (utilizando
+          su Chispa
+          de presagios) para asegurar los puntos finales de habilidad.<br>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

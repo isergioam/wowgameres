@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Ingeniería - The War Within WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales son aproximados, ya que el tramo 40-100 depende de descubrimientos aleatorios y
+          prototipos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="15" data-mats='{"Montón de chatarra oxidada": 25}'>
+          <strong>Ingeniería 1 – 15</strong><br>
+          <span class="recipe-name">5x Buscar entre la chatarra &rarr;</span> 25x Montón de chatarra oxidada.<br>
+          Nota: Puede comprar en la casa de subastas "Puñado de tornillos de serevita" para usar Buscar entre la
+          chatarra.
+        </p>
+
+        <p class="custom-step" data-min="15" data-max="20"
+          data-mats='{"Bismuto": 240, "Cableado deshilachado": 10, "Cubo de chatarra": 10, "Aqirita": 10}'>
+          <strong>Ingeniería 15 – 20</strong><br>
+          Fabricación de componentes básicos:<br>
+          <span class="recipe-name">10x Cableado caprichoso &rarr;</span> 10 Cableado deshilachado, 30 Bismuto.<br>
+          <span class="recipe-name">10x Engranaje giratorio &rarr;</span> 10 Cubo de chatarra, 30 Bismuto, 10
+          Aqirita.<br>
+          <span class="recipe-name">45x Puñado de tornillos de bismuto &rarr;</span> 180 Bismuto.
+        </p>
+
+        <p class="custom-step" data-min="20" data-max="25"
+          data-mats='{"Bismuto": 20, "Aqirita": 12, "Polvo cristalino": 4, "Puñado de tornillos de bismuto": 8, "Cableado caprichoso": 2, "Engranaje giratorio": 2}'>
+          <strong>Ingeniería 20 – 25</strong><br>
+          <span class="recipe-name">1x Churumbele impulsado por bismuto &rarr;</span> 8 Puñado de tornillos de bismuto,
+          2 Cableado
+          caprichoso, 2 Engranaje giratorio.<br>
+          <span class="recipe-name">4x Interruptor de seguridad &rarr;</span> 4 Polvo cristalino, 20 Bismuto, 12
+          Aqirita.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="33"
+          data-mats='{"Montón de chatarra oxidada": 30, "Puñado de tornillos de bismuto": 22, "Cableado caprichoso": 5, "Engranaje giratorio": 5, "Interruptor de seguridad": 1}'>
+          <strong>Ingeniería 25 – 33</strong><br>
+          <span class="recipe-name">P1STOL4 4UT0MÁT14 &rarr;</span> 10 Montón de chatarra oxidada, 6 Puñado de
+          tornillos de bismuto, 1 Cableado caprichoso, 1 Engranaje giratorio, 1 Interruptor de seguridad.<br>
+          <span class="recipe-name">Gafas de rastreador &rarr;</span> 5 Montón de chatarra oxidada, 4 Puñado de
+          tornillos de bismuto, 1 Cableado caprichoso, 1 Engranaje giratorio.<br>
+          <span class="recipe-name">Gafas de acólito &rarr;</span> 5 Montón de chatarra oxidada, 4 Puñado de
+          tornillos de bismuto, 1 Cableado caprichoso, 1 Engranaje giratorio.<br>
+          <span class="recipe-name">Gafas de espeleólogo &rarr;</span> 5 Montón de chatarra oxidada, 4 Puñado de
+          tornillos de bismuto, 1 Cableado caprichoso, 1 Engranaje giratorio.<br>
+          <span class="recipe-name">Gafas de dragador &rarr;</span> 5 Montón de chatarra oxidada, 4 Puñado de
+          tornillos de bismuto, 1 Cableado caprichoso, 1 Engranaje giratorio.<br>
+
+        <p class="custom-step" data-min="33" data-max="40"
+          data-mats='{"Puñado de tornillos de bismuto": 32, "Cableado caprichoso": 8, "Engranaje giratorio": 8}'>
+          <strong>Ingeniería 33 – 40</strong><br>
+          <span class="recipe-name">4x Churumbele impulsado por bismuto &rarr;</span> 32 Puñado de tornillos de
+          bismuto, 8 Cableado
+          caprichoso, 8 Engranaje giratorio.
+        </p>
+
+        <p class="custom-step" data-min="40" data-max="100" data-mats='{"Montón de chatarra oxidada": 350}'>
+          <strong>Ingeniería 40 – 100</strong><br>
+          Usa la facultad <span class="recipe-name">Buscar entre la chatarra</span> para obtener <i>Prototipos</i>.<br>
+          Al usar un Prototipo descubrirás una nueva receta específica.<br>
+          Fabricar cada una de las 14 nuevas recetas por primera vez otorga 5 puntos de habilidad.<br>
+          Nota: Se estima que necesitarás unos 350 Montón de chatarra oxidada extra para descubrir todos los prototipos.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="40" data-max="100" data-mats='{}'>
+          <strong>Ingeniería (Ruta Alternativa) 40 – 100</strong><br>
+          Usa la facultad <span class="recipe-name">Inventar</span> (CD diario) para obtener <i>Prototipos</i>.<br>
+          Al usar un Prototipo descubrirás una nueva receta específica.<br>
+          Fabricar cada una de las 14 nuevas recetas por primera vez otorga 5 puntos de habilidad.<br>
+          Nota: Se estima que necesitarás unos 350 Montón de chatarra oxidada extra para descubrir todos los prototipos.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

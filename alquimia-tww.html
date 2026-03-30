@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía de Alquimia - The War Within WoW</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div id="wg-header"></div>
+
+  <div class="content">
+    <!-- Controles Nivelación Premium -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" min="1" max="100" value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <div id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios (Restantes)</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_material">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;" data-i18n="th_qty">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Insertado Dinamicamente -->
+          </tbody>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+          Nota: Los materiales son aproximados, ya que para el tramo 30-100 pueden variar las cantidades.
+        </p>
+      </div>
+    </div>
+
+    <!-- Nivelación (Guía paso a paso) -->
+    <div id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+
+        <p class="custom-step" data-min="1" data-max="10" data-mats='{"Micoflor": 60, "Vial dorado": 50}'>
+          <strong>Alquimia 1 – 10</strong><br>
+          <span class="recipe-name">10x Poción de sanación algariana &rarr;</span> 60 Micoflor, 50 Vial dorado.
+        </p>
+
+        <p class="custom-step" data-min="10" data-max="21"
+          data-mats='{"Catalizador de Vía del Núcleo": 8, "Micoflor": 20, "Flor de la la bendición": 20, "Orbínida": 20, "Cebo mortal": 20}'>
+          <strong>Alquimia 10 – 21</strong><br>
+          <span class="recipe-name">Experimentación salvaje (Micoflor) &rarr;</span> 2 Catalizador de Vía del Núcleo, 20
+          Micoflor.<br>
+          <span class="recipe-name">Experimentación salvaje (Flor de la la bendición) &rarr;</span> 2 Catalizador de Vía
+          del Núcleo, 20 Flor de la la bendición.<br>
+          <span class="recipe-name">Experimentación salvaje (Orbínida) &rarr;</span> 2 Catalizador de Vía del Núcleo, 20
+          Orbínida.<br>
+          <span class="recipe-name">Experimentación salvaje (Cebo mortal) &rarr;</span> 2 Catalizador de Vía del Núcleo,
+          20 Cebo mortal.<br>
+          Nota: Los descubrimientos pueden variar. Cada experimento requiere 2 catalizadores y 20 hierbas de Khaz
+          Algar.
+        </p>
+
+        <p class="custom-step" data-min="21" data-max="25"
+          data-mats='{"Micoflor": 20, "Flor de la bendición": 8, "Lanza de Arathor": 6, "Vial dorado": 15, "Cebo mortal": 4, "Orbínida": 4}'>
+          <strong>Alquimia 21 – 25</strong><br>
+          Fabrica para conseguir el bonus de primera fabricación.<br>
+          <span class="recipe-name">Poción de maná algariana &rarr;</span> 6 Micoflor, 3 Flor de la bendición, 5 Vial
+          dorado.<br>
+          <span class="recipe-name">Suero de alma durmiente &rarr;</span> 4 Micoflor, 5 Flor de la bendición, 5 Lanza de
+          Arathor, 5 Vial dorado.<br>
+          <span class="recipe-name">Deleite de morador de cuevas &rarr;</span> 8 Micoflor, 4 Cebo mortal, 4 Orbínida, 5
+          Vial dorado.<br>
+          <span class="recipe-name">Polvo de pétalo &rarr;</span> 2 Micoflor, 1 Lanza de Arathor.
+        </p>
+
+        <p class="custom-step" data-min="25" data-max="30" data-mats='{"Micoflor": 20, "Lanza de Arathor": 10}'>
+          <strong>Alquimia 25 – 30</strong><br>
+          <span class="recipe-name">Polvo de pétalo &rarr;</span> 20 Micoflor, 10 Lanza de Arathor.<br>
+          Nota: Al nivel 25 puedes elegir la especialización de <i>Taumaturgia</i> para obtener puntos
+          extra.
+        </p>
+
+        <p class="custom-step" data-min="30" data-max="60" data-mats='{}'>
+          <strong>Alquimia 30 – 60</strong><br>
+          Continúa con <span class="recipe-name">Experimentación salvaje</span> o <span
+            class="recipe-name">Experimentación meticulosa</span> (CD de 24h, descubrimiento garantizado).<br>
+          Usa Taumaturgia para puntos adicionales hasta nivel 50.
+        </p>
+
+        <p class="custom-step" data-min="60" data-max="100"
+          data-mats='{"Loto anulador": 45, "Residuo de línea ley": 90, "Flor de la bendición": 540, "Lanza de Arathor": 540, "Vial dorado": 90}'>
+          <strong>Alquimia 60 – 100</strong><br>
+          Elija hacer Frascos o Pociones según las recetas que tenga disponibles, aquí pondré un ejemplo:<br>
+          <span class="recipe-name">45x Frasco de maestría templada &rarr;</span> 45 Loto anulador, 90 Residuo de línea
+          ley,
+          540 Flor de la bendición, 540 Lanza de Arathor, 90 Vial dorado.<br>
+          Nota: Cada frasco otorga 2 puntos de habilidad garantizados hasta el nivel 90.
+        </p>
+
+        <p class="custom-step" data-alt="true" data-min="60" data-max="100"
+          data-mats='{"Loto nulo": 20, "Esporas viridiscentes": 40, "Orbínido": 240, "Lanza de Arathor": 240, "Vial dorado": 40}'>
+          <strong>Alquimia (Ruta Alternativa) 60 – 100</strong><br>
+          <span class="recipe-name">Experimentación meticulosa</span> (CD de 24h, descubrimiento garantizado).
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div id="wg-footer"></div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
