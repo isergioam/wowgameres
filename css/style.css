@@ -64,12 +64,12 @@ a {
   margin: auto 20px;
 }
 
-.ad-space {
-  margin: 30px auto;
-  padding: 40px;
+.ad-container {
+  max-width: 1200px;
+  margin: 15px auto;
+  padding: 0 20px;
   text-align: center;
-  background-color: #ece6ff;
-  color: #6a0dad;
+  min-height: 90px;
 }
 
 .recipe-name {
