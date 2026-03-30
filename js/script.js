@@ -101,7 +101,7 @@ function initApp() {
             }
 
             // Hacer scroll hacia la sección
-            profesionesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           })
           .catch(err => console.error("Error al cargar profesiones: ", err));
       });
