@@ -95,6 +95,14 @@ a {
   margin-bottom: 20px;
 }
 
+h1 {
+  color: #6a0dad;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #6a0dad;
+  padding-bottom: 10px;
+}
+
 /* Profesiones y Expansiones(tarjetas) */
 .profesiones {
   display: flex;
@@ -197,6 +205,7 @@ body.dark-mode .card p {
   color: #fff;
 }
 
+body.dark-mode h1,
 body.dark-mode h3,
 body.dark-mode h2,
 body.dark-mode .section h3,
