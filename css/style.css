@@ -269,29 +269,259 @@ body.dark-mode .card-expansion:hover {
 }
 
 /* ===================== */
-/* 📱 MENÚ MÓVIL */
+/* 📱 RESPONSIVE DESIGN  */
 /* ===================== */
 
+/* --- Tabla responsive --- */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- TABLET (max 1024px) --- */
+@media (max-width: 1024px) {
+  .content {
+    padding: 0 15px;
+  }
+
+  .card-expansion {
+    flex: 1 1 150px;
+    padding: 15px;
+  }
+
+  .card {
+    flex: 1 1 200px;
+  }
+}
+
+/* --- MOBILE (max 768px) --- */
 @media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+
+  /* Header */
+  .main-header {
+    padding: 8px 15px;
+  }
+
   .logo img {
-    height: 70px;
-    margin: 15px 10px;
+    height: 55px;
+    margin: 5px 0;
   }
 
   .main-nav {
-    margin: 10px 20px;
+    margin: 0 10px;
   }
 
+  /* Nav siempre visible */
+  .main-nav ul {
+    gap: 12px;
+  }
+
+  /* Titulos */
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+
+  .section h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Cards de profesiones */
   .profesiones {
     gap: 10px;
   }
 
   .card {
-    padding: 0px;
+    padding: 10px;
+    flex: 1 1 140px;
   }
 
   .card img {
-    height: 200px;
+    height: 120px;
+    width: auto;
+  }
+
+  .card h3 {
+    font-size: 0.9rem;
+  }
+
+  /* Cards de expansiones */
+  .card-expansion {
+    flex: 1 1 130px;
+    padding: 14px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Glass filter (sticky slider) */
+  .leveling-wrapper-glass {
+    top: 85px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .glass-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .glass-title {
+    font-size: 1rem;
+  }
+
+  .glass-badge {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+  }
+
+  /* Recipe steps */
+  .custom-step {
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+
+  .custom-step strong {
+    font-size: 1rem;
+  }
+
+  .recipe-name {
+    font-size: 1em;
+  }
+
+  /* Section toggles */
+  .section-toggle {
+    padding: 10px 14px;
+  }
+
+  .section-toggle-title {
+    font-size: 1.05rem;
+  }
+
+  /* Materials table */
+  #materialsTable,
+  .materials-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Legal page */
+  .legal-content {
+    font-size: 0.88rem;
+  }
+
+  .legal-content .materials-table {
+    font-size: 0.8rem;
+  }
+
+  /* Ad container */
+  .ad-container {
+    padding: 0 10px;
+    min-height: 50px;
+  }
+}
+
+/* --- SMALL MOBILE (max 480px) --- */
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  h1 {
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+  }
+
+  .section h2 {
+    font-size: 1.05rem;
+  }
+
+  .content {
+    padding: 0 10px;
+  }
+
+  /* Cards en 2 columnas */
+  .profesiones {
+    gap: 8px;
+  }
+
+  .card {
+    flex: 1 1 120px;
+    padding: 8px;
+  }
+
+  .card img {
+    height: 90px;
+  }
+
+  .card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  /* Expansiones en 2 columnas */
+  .card-expansion {
+    flex: 1 1 110px;
+    padding: 12px 8px;
+    font-size: 0.82rem;
+  }
+
+  /* Glass slider */
+  .leveling-wrapper-glass {
+    top: 75px;
+    padding: 10px 12px;
+  }
+
+  .glass-title {
+    font-size: 0.9rem;
+  }
+
+  .glass-slider::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  .glass-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Recipe steps compactos */
+  .custom-step {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  .custom-step strong {
+    font-size: 0.92rem;
+  }
+
+  .recipe-name {
+    font-size: 0.92em;
+  }
+
+  /* Toggle headers */
+  .section-toggle-title {
+    font-size: 0.95rem;
+  }
+
+  .section-toggle-icon {
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.8rem;
+    padding: 10px;
   }
 }
 
