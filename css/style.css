@@ -10,7 +10,7 @@ body {
   background-color: #fff;
   color: #2e2e2e;
   line-height: 1.6;
-  padding-top: 130px;
+  padding-top: 120px;
   /* Para que el contenido no quede debajo del menú fijo */
 }
 
@@ -297,7 +297,7 @@ body.dark-mode .card-expansion:hover {
 /* --- MOBILE (max 768px) --- */
 @media (max-width: 768px) {
   body {
-    padding-top: 80px;
+    padding-top: 96px;
   }
 
   /* Header */
@@ -357,7 +357,7 @@ body.dark-mode .card-expansion:hover {
 
   /* Glass filter (sticky slider) */
   .leveling-wrapper-glass {
-    top: 85px;
+    top: 96px;
     padding: 14px 16px;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -428,7 +428,7 @@ body.dark-mode .card-expansion:hover {
 /* --- SMALL MOBILE (max 480px) --- */
 @media (max-width: 480px) {
   body {
-    padding-top: 70px;
+    padding-top: 96px;
   }
 
   h1 {
@@ -473,7 +473,7 @@ body.dark-mode .card-expansion:hover {
 
   /* Glass slider */
   .leveling-wrapper-glass {
-    top: 75px;
+    top: 96px;
     padding: 10px 12px;
   }
 
@@ -526,7 +526,7 @@ body.dark-mode .card-expansion:hover {
 /* ===================== */
 .leveling-wrapper-glass {
   position: sticky;
-  top: 140px;
+  top: 120px;
   z-index: 100;
   margin-bottom: 30px;
   padding: 20px 25px;
