@@ -526,7 +526,7 @@ body.dark-mode .card-expansion:hover {
 /* ===================== */
 .leveling-wrapper-glass {
   position: sticky;
-  top: 120px;
+  top: 130px;
   z-index: 100;
   margin-bottom: 30px;
   padding: 20px 25px;
