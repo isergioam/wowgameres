@@ -306,7 +306,7 @@ body.dark-mode .card-expansion:hover {
   }
 
   .logo img {
-    height: 55px;
+    height: 80px;
     margin: 5px 0;
   }
 
@@ -429,10 +429,6 @@ body.dark-mode .card-expansion:hover {
 @media (max-width: 480px) {
   body {
     padding-top: 70px;
-  }
-
-  .logo img {
-    height: 45px;
   }
 
   h1 {
