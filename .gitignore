@@ -1,7 +1,5 @@
-# Dependencias de Node (solo scripts de build)
+# Dependencias de Node
 node_modules/
-package.json
-package-lock.json
 
-# Backups de im√°genes originales
+# Backups de im·genes
 images/original/
