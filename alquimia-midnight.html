@@ -5,15 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guía de Alquimia Midnight 1-100 - WoW | WOWGamerES</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
-  <meta name="description" content="Guía de nivelación de Alquimia (1-100) en Midnight de World of Warcraft. Materiales necesarios, recetas paso a paso y rutas alternativas para subir tu profesión rápido.">
+  <meta name="description"
+    content="Guía de nivelación de Alquimia (1-100) en Midnight de World of Warcraft. Materiales necesarios, recetas paso a paso y rutas alternativas para subir tu profesión rápido.">
   <link rel="icon" href="./images/favicon.ico">
   <link rel="canonical" href="https://wowgameres.com/alquimia-midnight.html">
   <link rel="preload" href="./header.html" as="fetch" crossorigin>
   <link rel="preload" href="./footer.html" as="fetch" crossorigin>
 
   <meta property="og:title" content="Guía de Alquimia Midnight 1-100 - WoW | WOWGamerES">
-  <meta property="og:description" content="Guía de nivelación de Alquimia (1-100) en Midnight de World of Warcraft. Materiales necesarios, recetas paso a paso y rutas alternativas para subir tu profesión rápido.">
+  <meta property="og:description"
+    content="Guía de nivelación de Alquimia (1-100) en Midnight de World of Warcraft. Materiales necesarios, recetas paso a paso y rutas alternativas para subir tu profesión rápido.">
   <meta property="og:url" content="https://wowgameres.com/alquimia-midnight.html">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://wowgameres.com/images/WOWGamerES_2026.webp">
@@ -49,7 +56,8 @@
     crossorigin="anonymous" type="text/plain" data-cookie-consent="ads"></script>
 
   <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD2R9CWXLH" type="text/plain" data-cookie-consent="analytics"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD2R9CWXLH" type="text/plain"
+    data-cookie-consent="analytics"></script>
   <script type="text/plain" data-cookie-consent="analytics">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -63,10 +71,7 @@
   <div id="wg-header"></div>
   <!-- Google AdSense - Banner superior -->
   <div class="ad-container">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-9393134927059057"
-      data-ad-format="auto"
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9393134927059057" data-ad-format="auto"
       data-full-width-responsive="true"></ins>
     <script type="text/plain" data-cookie-consent="ads-push">(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
@@ -82,7 +87,8 @@
         <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
       </div>
       <div class="glass-slider-container">
-        <input type="range" id="levelSlider" aria-label="Filtro de nivel de Alquimia" min="1" max="100" value="1" class="glass-slider">
+        <input type="range" id="levelSlider" aria-label="Filtro de nivel de Alquimia" min="1" max="100" value="1"
+          class="glass-slider">
       </div>
     </div>
 
@@ -108,76 +114,79 @@
           </tbody>
         </table>
       </div>
-    </div>
-
-    <!-- Nivelación (Guía paso a paso) -->
-    <section id="niveles" class="section">
-      <div id="recipesToggle" class="section-toggle">
-        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
-        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
       </div>
-      <div id="recipesContent" class="section-content">
 
-        <p class="custom-step" data-min="1" data-max="7"
-          data-mats='{"Flor de Tranquilidad": 36, "Frasco de vidriosolar": 30}'>
-          <strong>Alquimia 1 – 7</strong><br>
-          <span class="recipe-name">Poción de sanación de Lunargenta &rarr;</span> 36 Flor de Tranquilidad, 30 Frasco de
-          vidriosolar.
-        </p>
+      <!-- Nivelación (Guía paso a paso) -->
+      <section id="niveles" class="section">
+        <div id="recipesToggle" class="section-toggle">
+          <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+          <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+        </div>
+        <div id="recipesContent" class="section-content">
 
-        <p class="custom-step" data-min="7" data-max="20" data-mats='{"Aceite de duramen": 14}'>
-          <strong>Alquimia 7 – 20</strong><br>
-          <span class="recipe-name">Reciclar pociones &rarr;</span> 14 Aceite de duramen.<br>
-          Nota: Úsalo en la Poción de sanación de Lunargenta que acabas de crear. Melaris vende el Aceite al
-          lado del instructor.
-        </p>
+          <p class="custom-step" data-min="1" data-max="7"
+            data-mats='{"Flor de tranquilidad": 36, "Frasco de vidriosolar": 30}'>
+            <strong>Alquimia 1 – 7</strong><br>
+            <span class="recipe-name">Poción de sanación de Lunargenta &rarr;</span> 36 Flor de tranquilidad, 30 Frasco
+            de
+            vidriosolar.
+          </p>
 
-        <p class="custom-step" data-min="20" data-max="27"
-          data-mats='{"Flor de tranquilidad": 28, "Frasco de vidriosolar": 20, "Sanguispino": 3, "Lirio de Maná": 3, "Mota de Luz": 12, "Derivado Estabilizado": 4, "Mota de Energía Primigenia": 4, "Hojargenta": 4}'>
-          <strong>Alquimia 20 – 27</strong><br>
-          Nota: Asegúrate de interactuar con la <a
-            href="https://www.wowhead.com/es/npc=247420/caldera-de-camberon" target="_blank" rel="noopener noreferrer">Caldera de Camberon</a> para investigar
-          estas recetas primero.<br>
-          <span class="recipe-name">Suero refrescante &rarr;</span> 8 Flor de tranquilidad, 3 Sanguispino, 5 Frasco de
-          vidriosolar .<br>
-          <span class="recipe-name">Poción de maná imbuida de Luz &rarr;</span> 8 Flor de tranquilidad, 3 Lirio de
-          maná, 5 Frasco de vidriosolar.<br>
-          <span class="recipe-name">Piedra filosofal primigenia &rarr;</span> 2 Derivado estabilizado, 2 Mota de luz,
-          5 Suero refrescante.<br>
-          <span class="recipe-name">Transmutar: mota de magia salvaje &rarr;</span> 10 Mota de luz, 2 Derivado
-          estabilizado.<br>
-          <span class="recipe-name">Flora compuesta &rarr;</span> 4 Mota de magia salvaje, 4 Mota de energía
-          primigenia, 6 Flor de tranquilidad, 4 Hojargenta.<br>
-          <span class="recipe-name">Tónico de iluminación &rarr;</span> 3 Flor de tranquilidad, 5 Frasco de
-          vidriosolar.<br>
-          <span class="recipe-name">Extracto entrópico &rarr;</span> 3 Flor de tranquilidad, 5 Frasco de
-          vidriosolar.
-        </p>
+          <p class="custom-step" data-min="7" data-max="20" data-mats='{"Aceite de duramen": 20}'>
+            <strong>Alquimia 7 – 20</strong><br>
+            <span class="recipe-name">Reciclar pociones &rarr;</span> 20 Aceite de duramen.<br>
+            Nota: Úsalo en la Poción de sanación de Lunargenta que acabas de crear. Melaris vende el Aceite al
+            lado del instructor.
+          </p>
 
-        <p class="custom-step" data-min="27" data-max="32"
-          data-mats='{"Flor de Tranquilidad": 24, "Frasco de vidriosolar": 40}'>
-          <strong>Alquimia 27 – 32</strong><br>
-          <span class="recipe-name">Extracto entrópico &rarr;</span> 24 Flor de Tranquilidad, 40 Frasco de vidriosolar.
-        </p>
+          <p class="custom-step" data-min="20" data-max="27"
+            data-mats='{"Flor de tranquilidad": 28, "Frasco de vidriosolar": 20, "Sanguispino": 3, "Lirio de maná": 3, "Mota de luz": 12, "Derivado estabilizado": 4, "Mota de Energía Primigenia": 4, "Hojargenta": 4}'>
+            <strong>Alquimia 20 – 27</strong><br>
+            Nota: Asegúrate de interactuar con la <a href="https://www.wowhead.com/es/npc=247420/caldera-de-camberon"
+              target="_blank" rel="noopener noreferrer">Caldera de Camberon</a> para investigar
+            estas recetas primero.<br>
+            <span class="recipe-name">Suero refrescante &rarr;</span> 8 Flor de tranquilidad, 3 Sanguispino, 5 Frasco de
+            vidriosolar .<br>
+            <span class="recipe-name">Poción de maná imbuida de luz &rarr;</span> 8 Flor de tranquilidad, 3 Lirio de
+            maná, 5 Frasco de vidriosolar.<br>
+            <span class="recipe-name">Piedra filosofal primigenia &rarr;</span> 2 Derivado estabilizado, 2 Mota de luz,
+            5 Suero refrescante.<br>
+            <span class="recipe-name">Transmutar: mota de magia salvaje &rarr;</span> 10 Mota de luz, 2 Derivado
+            estabilizado.<br>
+            <span class="recipe-name">Flora compuesta &rarr;</span> 4 Mota de magia salvaje, 4 Mota de energía
+            primigenia, 6 Flor de tranquilidad, 4 Hojargenta.<br>
+            <span class="recipe-name">Tónico de iluminación &rarr;</span> 3 Flor de tranquilidad, 5 Frasco de
+            vidriosolar.<br>
+            <span class="recipe-name">Extracto entrópico &rarr;</span> 3 Flor de tranquilidad, 5 Frasco de
+            vidriosolar.
+          </p>
 
-        <p class="custom-step" data-min="32" data-max="50"
-          data-mats='{"Flor de Tranquilidad": 180, "Frasco de vidriosolar": 150}'>
-          <strong>Alquimia 32 – 50</strong><br>
-          <span class="recipe-name">Poción de sanación de Lunargenta &rarr;</span> 180 Flor de Tranquilidad, 150
-          Frasco de vidriosolar.
-        </p>
+          <p class="custom-step" data-min="27" data-max="32"
+            data-mats='{"Flor de tranquilidad": 24, "Frasco de vidriosolar": 40}'>
+            <strong>Alquimia 27 – 32</strong><br>
+            <span class="recipe-name">Extracto entrópico &rarr;</span> 24 Flor de tranquilidad, 40 Frasco de
+            vidriosolar.
+          </p>
 
-        <p class="custom-step" data-min="50" data-max="100"
-          data-mats='{"Mota de luz": 80, "Flor de tranquilidad": 640, "Azerraíz": 240, "Hojargenta": 240, "Frasco de vidriosolar": 400}'>
-          <strong>Alquimia 50 – 100</strong><br>
-          <span class="recipe-name">Potencial de luz &rarr;</span> 80 Mota de luz, 640 Flor de tranquilidad, 240
-          Azerraíz, 240 Hojargenta, 400 Frasco de vidriosolar.<br>
-          Nota: Desbloquea esta receta en la <a href="https://www.wowhead.com/es/npc=247420/caldera-de-camberon" target="_blank" rel="noopener noreferrer">Caldera
-            de Camberon</a> por 50 Arrojo de alquimista artesano. Es la forma más barata de llegar a 100.
-        </p>
+          <p class="custom-step" data-min="32" data-max="50"
+            data-mats='{"Flor de tranquilidad": 180, "Frasco de vidriosolar": 150}'>
+            <strong>Alquimia 32 – 50</strong><br>
+            <span class="recipe-name">Poción de sanación de Lunargenta &rarr;</span> 180 Flor de tranquilidad, 150
+            Frasco de vidriosolar.
+          </p>
 
-      </div>
-    </div>
+          <p class="custom-step" data-min="50" data-max="100"
+            data-mats='{"Mota de luz": 80, "Flor de tranquilidad": 640, "Azerraíz": 240, "Hojargenta": 240, "Frasco de vidriosolar": 400}'>
+            <strong>Alquimia 50 – 100</strong><br>
+            <span class="recipe-name">Potencial de luz &rarr;</span> 80 Mota de luz, 640 Flor de tranquilidad, 240
+            Azerraíz, 240 Hojargenta, 400 Frasco de vidriosolar.<br>
+            Nota: Desbloquea esta receta en la <a href="https://www.wowhead.com/es/npc=247420/caldera-de-camberon"
+              target="_blank" rel="noopener noreferrer">Caldera
+              de Camberon</a> por 50 Arrojo de alquimista artesano. Es la forma más barata de llegar a 100.
+          </p>
+
+        </div>
+        </div>
   </main>
 
 
