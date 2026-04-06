@@ -15,30 +15,32 @@
 </div>
 
 <script>
-  const CONSENT_KEY = 'cookie_consent';
-  const banner = document.getElementById('cookieConsent');
-  const acceptBtn = document.getElementById('cookieAccept');
-  const rejectBtn = document.getElementById('cookieReject');
+  (function() {
+    const CONSENT_KEY = 'cookie_consent';
+    const banner = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('cookieAccept');
+    const rejectBtn = document.getElementById('cookieReject');
 
-  if (localStorage.getItem(CONSENT_KEY)) {
-    banner?.remove();
-  } else {
-    banner?.classList.add('cookie-banner-visible');
-  }
+    if (localStorage.getItem(CONSENT_KEY)) {
+      banner?.remove();
+    } else {
+      banner?.classList.add('cookie-banner-visible');
+    }
 
-  function closeBanner() {
-    banner?.classList.remove('cookie-banner-visible');
-    banner?.classList.add('cookie-banner-hidden');
-    setTimeout(() => banner?.remove(), 400);
-  }
+    function closeBanner() {
+      banner?.classList.remove('cookie-banner-visible');
+      banner?.classList.add('cookie-banner-hidden');
+      setTimeout(() => banner?.remove(), 400);
+    }
 
-  acceptBtn?.addEventListener('click', () => {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
-    window.location.reload(); // Recargar para activar analytics
-  });
+    acceptBtn?.addEventListener('click', () => {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+      window.location.reload(); 
+    });
 
-  rejectBtn?.addEventListener('click', () => {
-    localStorage.setItem(CONSENT_KEY, 'rejected');
-    closeBanner();
-  });
+    rejectBtn?.addEventListener('click', () => {
+      localStorage.setItem(CONSENT_KEY, 'rejected');
+      closeBanner();
+    });
+  })();
 </script>

@@ -48,99 +48,97 @@
 </header>
 
 <script>
-  const toggle = document.getElementById('darkModeToggle');
-  const logoImg = document.getElementById("logo") as HTMLImageElement;
+  (function() {
+    const toggle = document.getElementById('darkModeToggle');
+    const logoImg = document.getElementById("logo") as HTMLImageElement;
 
-  function updateLogo(isDark: boolean) {
-    if (!logoImg) return;
-    logoImg.src = isDark 
-      ? "/images/WOWGamerES_Logo_black.webp" 
-      : "/images/WOWGamerES_Logo_white.webp";
-  }
+    function updateLogo(isDark: boolean) {
+      if (!logoImg) return;
+      logoImg.src = isDark 
+        ? "/images/WOWGamerES_Logo_black.webp" 
+        : "/images/WOWGamerES_Logo_white.webp";
+    }
 
-  // Inicializar estado del logo según el tema actual (en html)
-  const isCurrentlyDark = document.documentElement.classList.contains('dark-mode');
-  updateLogo(isCurrentlyDark);
+    const isCurrentlyDark = document.documentElement.classList.contains('dark-mode');
+    updateLogo(isCurrentlyDark);
 
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.toggle('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateLogo(isDark);
-    });
-  }
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateLogo(isDark);
+      });
+    }
 
-  // Lógica del Buscador Rápido
-  const searchInput = document.getElementById('quickSearch') as HTMLInputElement;
-  const resultsList = document.getElementById('searchResults');
+    const searchInput = document.getElementById('quickSearch') as HTMLInputElement;
+    const resultsList = document.getElementById('searchResults');
 
-  const professions = [
-    { id: 'alquimia', name: 'Alquimia' },
-    { id: 'encantamiento', name: 'Encantamiento' },
-    { id: 'herreria', name: 'Herrería' },
-    { id: 'ingenieria', name: 'Ingeniería' },
-    { id: 'inscripcion', name: 'Inscripción' },
-    { id: 'joyeria', name: 'Joyería' },
-    { id: 'peleteria', name: 'Peletería' },
-    { id: 'sastreria', name: 'Sastrería' }
-  ];
+    const professions = [
+      { id: 'alquimia', name: 'Alquimia' },
+      { id: 'encantamiento', name: 'Encantamiento' },
+      { id: 'herreria', name: 'Herrería' },
+      { id: 'ingenieria', name: 'Ingeniería' },
+      { id: 'inscripcion', name: 'Inscripción' },
+      { id: 'joyeria', name: 'Joyería' },
+      { id: 'peleteria', name: 'Peletería' },
+      { id: 'sastreria', name: 'Sastrería' }
+    ];
 
-  const expansions = [
-    { id: 'vanilla', name: 'Vanilla (Classic)', alias: ['classic'] },
-    { id: 'tbc', name: 'Terrallende (TBC)', alias: ['tbc', 'burning crusade', 'outland'] },
-    { id: 'wotlk', name: 'Rasganorte (WotLK)', alias: ['wotlk', 'lich king', 'northrend'] },
-    { id: 'cata', name: 'Cataclismo', alias: ['cata', 'cataclysm'] },
-    { id: 'mop', name: 'Pandaria (MoP)', alias: ['mop', 'mist of pandaria'] },
-    { id: 'wod', name: 'Draenor (WoD)', alias: ['wod', 'warlords'] },
-    { id: 'legion', name: 'Legión', alias: ['legion'] },
-    { id: 'bfa', name: 'Battle for Azeroth (BfA)', alias: ['bfa'] },
-    { id: 'sl', name: 'Shadowlands', alias: ['sl'] },
-    { id: 'df', name: 'Dragonflight', alias: ['df'] },
-    { id: 'tww', name: 'The War Within', alias: ['tww', 'war within'] },
-    { id: 'midnight', name: 'Midnight', alias: ['midnight'] }
-  ];
+    const expansions = [
+      { id: 'vanilla', name: 'Vanilla (Classic)', alias: ['classic'] },
+      { id: 'tbc', name: 'Terrallende (TBC)', alias: ['tbc', 'burning crusade', 'outland'] },
+      { id: 'wotlk', name: 'Rasganorte (WotLK)', alias: ['wotlk', 'lich king', 'northrend'] },
+      { id: 'cata', name: 'Cataclismo', alias: ['cata', 'cataclysm'] },
+      { id: 'mop', name: 'Pandaria (MoP)', alias: ['mop', 'mist of pandaria'] },
+      { id: 'wod', name: 'Draenor (WoD)', alias: ['wod', 'warlords'] },
+      { id: 'legion', name: 'Legión', alias: ['legion'] },
+      { id: 'bfa', name: 'Battle for Azeroth (BfA)', alias: ['bfa'] },
+      { id: 'sl', name: 'Shadowlands', alias: ['sl'] },
+      { id: 'df', name: 'Dragonflight', alias: ['df'] },
+      { id: 'tww', name: 'The War Within', alias: ['tww', 'war within'] },
+      { id: 'midnight', name: 'Midnight', alias: ['midnight'] }
+    ];
 
-  const searchableIndex: { title: string, url: string, keywords: string[] }[] = [];
-  professions.forEach(p => {
-    expansions.forEach(e => {
-      searchableIndex.push({
-        title: `${p.name} - ${e.name}`,
-        url: `/guias/${p.id}/${e.id}`,
-        keywords: [p.name.toLowerCase(), e.name.toLowerCase(), ... (e.alias || [])]
+    const searchableIndex: { title: string, url: string, keywords: string[] }[] = [];
+    professions.forEach(p => {
+      expansions.forEach(e => {
+        searchableIndex.push({
+          title: `${p.name} - ${e.name}`,
+          url: `/guias/${p.id}/${e.id}`,
+          keywords: [p.name.toLowerCase(), e.name.toLowerCase(), ... (e.alias || [])]
+        });
       });
     });
-  });
 
-  searchInput?.addEventListener('input', (e) => {
-    const val = (e.target as HTMLInputElement).value.toLowerCase().trim();
-    if (!resultsList) return;
+    searchInput?.addEventListener('input', (e) => {
+      const val = (e.target as HTMLInputElement).value.toLowerCase().trim();
+      if (!resultsList) return;
 
-    if (val.length < 2) {
-      resultsList.style.display = 'none';
-      return;
-    }
+      if (val.length < 2) {
+        resultsList.style.display = 'none';
+        return;
+      }
 
-    const searchTerms = val.split(/\s+/);
+      const searchTerms = val.split(/\s+/);
+      const filtered = searchableIndex.filter(item => {
+        const itemText = (item.title + ' ' + item.keywords.join(' ')).toLowerCase();
+        return searchTerms.every(term => itemText.includes(term));
+      }).slice(0, 8);
 
-    const filtered = searchableIndex.filter(item => {
-      const itemText = (item.title + ' ' + item.keywords.join(' ')).toLowerCase();
-      return searchTerms.every(term => itemText.includes(term));
-    }).slice(0, 8);
+      if (filtered.length > 0) {
+        resultsList.innerHTML = filtered.map(item => `
+          <li><a href="${item.url}">${item.title}</a></li>
+        `).join('');
+        resultsList.style.display = 'block';
+      } else {
+        resultsList.style.display = 'none';
+      }
+    });
 
-    if (filtered.length > 0) {
-      resultsList.innerHTML = filtered.map(item => `
-        <li><a href="${item.url}">${item.title}</a></li>
-      `).join('');
-      resultsList.style.display = 'block';
-    } else {
-      resultsList.style.display = 'none';
-    }
-  });
-
-  // Cerrar al hacer clic fuera
-  document.addEventListener('click', (e) => {
-    if (!searchInput?.contains(e.target as Node) && !resultsList?.contains(e.target as Node)) {
-      if (resultsList) resultsList.style.display = 'none';
-    }
-  });
+    document.addEventListener('click', (e) => {
+      if (!searchInput?.contains(e.target as Node) && !resultsList?.contains(e.target as Node)) {
+        if (resultsList) resultsList.style.display = 'none';
+      }
+    });
+  })();
 </script>
