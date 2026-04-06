@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -18,20 +20,17 @@
   --bg-color: #000000;
 }
 
-html, body {
+
+body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
-}
-
-body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   background-color: var(--bg-color);
   color: var(--text-dark);
   line-height: 1.6;
   padding-top: 120px;
   margin: 0;
-  /* Espacio para el menú fijo, restaurado a 120px */
 }
 
 a {
@@ -89,7 +88,8 @@ a {
   max-width: 400px;
   margin: 0 40px;
   z-index: 1001;
-  min-width: 0; /* Permite que el flex item se encoja por debajo de su contenido */
+  min-width: 0;
+  /* Permite que el flex item se encoja por debajo de su contenido */
 }
 
 #quickSearch {
@@ -534,6 +534,182 @@ footer {
   }
 }
 
+/* ===================== */
+/* 💎 FILTRO PREMIUM GLASS */
+/* ===================== */
+.leveling-wrapper-glass {
+  position: sticky;
+  top: 130px;
+  /* Sincronizado con el padding-top del body */
+  z-index: 990;
+  /* Debajo del header (1000) pero encima de todo lo demás */
+  margin-bottom: 30px;
+  padding: 20px 25px;
+  border-radius: 0;
+  background: rgba(243, 232, 255, 0.85);
+  /* #f3e8ff semi-transparente */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--primary-glow);
+  box-shadow: 0 8px 32px var(--primary-glow);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .leveling-wrapper-glass {
+  background: rgba(42, 33, 63, 0.75);
+  /* #2a213f semi-transparente */
+  border: 1px solid rgba(187, 159, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  /* para móviles */
+  gap: 10px;
+}
+
+.glass-title {
+  border: none !important;
+  margin: 0 !important;
+  font-size: 1.3rem;
+  color: var(--primary-purple);
+  font-weight: 800;
+}
+
+.dark-mode .glass-title {
+  color: #bb9fff;
+}
+
+.glass-badge {
+  color: var(--primary-purple);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.dark-mode .glass-badge {
+  color: var(--primary-purple);
+}
+
+.glass-badge span {
+  font-size: 1.8rem;
+}
+
+.glass-slider-container {
+  width: 100%;
+}
+
+.glass-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 0;
+  background: var(--primary-glow);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dark-mode .glass-slider {
+  background: rgba(187, 159, 255, 0.2);
+}
+
+.glass-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  margin-top: -21px;
+  background: transparent;
+  background-image: url("/images/favicon.ico");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 5px var(--primary-glow));
+  transition: transform 0.2s ease;
+}
+
+.dark-mode .glass-slider::-webkit-slider-thumb {
+  background-image: url("/images/favicon.ico");
+  filter: drop-shadow(0 2px 8px rgba(187, 159, 255, 0.4));
+}
+
+.glass-slider::-moz-range-thumb {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  background-image: url("/images/favicon.ico");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.dark-mode .glass-slider::-moz-range-thumb {
+  background-image: url("/images/favicon.ico");
+}
+
+/* Botón de Reinicio Guía */
+.reset-btn-mini {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary-soft);
+  color: var(--primary-purple);
+  border: 1px solid var(--primary-glow);
+  padding: 4px 10px;
+  /*border-radius: 6px;*/
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 28px;
+}
+
+.reset-btn-mini:hover {
+  background: var(--primary-glow);
+  border-color: var(--primary-purple);
+  transform: translateY(-1px);
+}
+
+.dark-mode .reset-btn-mini {
+  background: var(--primary-soft);
+  color: var(--primary-purple);
+  border-color: var(--primary-glow);
+}
+
+.dark-mode .reset-btn-mini:hover {
+  background: var(--primary-glow);
+  border-color: var(--primary-purple);
+}
+
+@media (max-width: 768px) {
+  .reset-btn-mini span {
+    display: none;
+    /* Solo icono en móvil para ahorrar espacio */
+  }
+}
+
+.interaction-hint {
+  font-size: 0.85rem;
+  color: var(--primary-purple);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 500;
+  border-left: 3px solid var(--primary-purple);
+}
+
+.dark-mode .interaction-hint {
+  color: var(--primary-purple);
+  border-left-color: var(--primary-purple);
+}
+
 /* --- SCROLL REVEAL ANIMATIONS --- */
 .reveal {
   opacity: 0;
@@ -620,7 +796,9 @@ footer {
 
   /* Glass filter (sticky slider) */
   .leveling-wrapper-glass {
-    top: 135px;
+    position: sticky;
+    top: 145px;
+    z-index: 990;
     /* Sincronizado con la altura del header móvil */
     padding: 8px 12px;
     /* Reducido */
@@ -786,7 +964,8 @@ footer {
 
   /* Glass slider */
   .leveling-wrapper-glass {
-    top: 155px;
+    position: sticky;
+    top: 145px;
     /* Sincronizado con la altura real del header móvil expandido */
     padding: 10px 12px;
     z-index: 950;
@@ -847,183 +1026,6 @@ footer {
   }
 }
 
-/* ===================== */
-/* 💎 FILTRO PREMIUM GLASS */
-/* ===================== */
-.leveling-wrapper-glass {
-  position: sticky;
-  top: 120px;
-  /* Sincronizado con el padding-top del body */
-  z-index: 900;
-  /* Debajo del header (1000) pero encima de todo lo demás */
-  margin-bottom: 30px;
-  padding: 20px 25px;
-  border-radius: 0;
-  background: rgba(243, 232, 255, 0.85);
-  /* #f3e8ff semi-transparente */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--primary-glow);
-  box-shadow: 0 8px 32px var(--primary-glow);
-  transition: all 0.3s ease;
-}
-
-.dark-mode .leveling-wrapper-glass {
-  background: rgba(42, 33, 63, 0.75);
-  /* #2a213f semi-transparente */
-  border: 1px solid rgba(187, 159, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.glass-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-  /* para móviles */
-  gap: 10px;
-}
-
-.glass-title {
-  border: none !important;
-  margin: 0 !important;
-  font-size: 1.3rem;
-  color: var(--primary-purple);
-  font-weight: 800;
-}
-
-.dark-mode .glass-title {
-  color: #bb9fff;
-}
-
-.glass-badge {
-  color: var(--primary-purple);
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.dark-mode .glass-badge {
-  background: var(--primary-soft);
-  color: var(--primary-purple);
-  border-color: var(--primary-glow);
-}
-
-.glass-badge span {
-  font-size: 1.8rem;
-}
-
-.glass-slider-container {
-  width: 100%;
-}
-
-.glass-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  border-radius: 0;
-  background: var(--primary-glow);
-  outline: none;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.dark-mode .glass-slider {
-  background: rgba(187, 159, 255, 0.2);
-}
-
-.glass-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 50px;
-  height: 50px;
-  margin-top: -21px;
-  background: transparent;
-  background-image: url("/images/favicon.ico");
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  filter: drop-shadow(0 2px 5px var(--primary-glow));
-  transition: transform 0.2s ease;
-}
-
-.dark-mode .glass-slider::-webkit-slider-thumb {
-  background-image: url("/images/favicon.ico");
-  filter: drop-shadow(0 2px 8px rgba(187, 159, 255, 0.4));
-}
-
-.glass-slider::-moz-range-thumb {
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  background-image: url("/images/favicon.ico");
-  background-size: contain;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-}
-
-.dark-mode .glass-slider::-moz-range-thumb {
-  background-image: url("/images/favicon.ico");
-}
-
-/* Botón de Reinicio Guía */
-.reset-btn-mini {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--primary-soft);
-  color: var(--primary-purple);
-  border: 1px solid var(--primary-glow);
-  padding: 4px 10px;
-  /*border-radius: 6px;*/
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  height: 28px;
-}
-
-.reset-btn-mini:hover {
-  background: var(--primary-glow);
-  border-color: var(--primary-purple);
-  transform: translateY(-1px);
-}
-
-.dark-mode .reset-btn-mini {
-  background: var(--primary-soft);
-  color: var(--primary-purple);
-  border-color: var(--primary-glow);
-}
-
-.dark-mode .reset-btn-mini:hover {
-  background: var(--primary-glow);
-  border-color: var(--primary-purple);
-}
-
-@media (max-width: 768px) {
-  .reset-btn-mini span {
-    display: none;
-    /* Solo icono en móvil para ahorrar espacio */
-  }
-}
-
-.interaction-hint {
-  font-size: 0.85rem;
-  color: var(--primary-purple);
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  display: inline-block;
-  font-weight: 500;
-  border-left: 3px solid var(--primary-purple);
-}
-
-.dark-mode .interaction-hint {
-  color: var(--primary-purple);
-  border-left-color: var(--primary-purple);
-}
 
 /* Hover en tabla de materiales para indicar click */
 #materialsTable tr {
