@@ -983,10 +983,8 @@ footer {
 }
 
 .interaction-hint {
-  width: 100%;
   font-size: 0.85rem;
   color: var(--primary-purple);
-  background: var(--primary-soft);
   padding: 8px 12px;
   margin-bottom: 10px;
   display: inline-block;
@@ -996,7 +994,6 @@ footer {
 
 .dark-mode .interaction-hint {
   color: var(--primary-purple);
-  background: var(--primary-soft);
   border-left-color: var(--primary-purple);
 }
 
