@@ -33,6 +33,20 @@
   --bg-color: #000000;
 }
 
+/* Sistema de Espaciado (Sentido y Consistencia) */
+:root {
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-xxxl: 64px;
+  
+  --header-height-desktop: 80px;
+  --header-height-mobile: 135px;
+}
+
 
 body {
   overflow-x: hidden;
@@ -42,7 +56,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-dark);
   line-height: 1.6;
-  padding-top: 120px;
+  padding-top: var(--header-height-desktop);
   margin: 0;
 }
 
@@ -56,7 +70,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: var(--space-sm) var(--space-lg);
   background: #fff;
   position: fixed;
   top: 0;
@@ -315,12 +329,12 @@ a {
 /* Secciones */
 .content {
   max-width: 1200px;
-  margin: 15px auto;
-  padding: 0 20px;
+  margin: var(--space-md) auto;
+  padding: 0 var(--space-lg);
 }
 
 .section {
-  margin-bottom: 40px;
+  margin-bottom: var(--space-xxl);
 }
 
 .section h2 {
@@ -333,9 +347,9 @@ a {
 h1 {
   color: var(--primary-purple);
   font-size: 1.8rem;
-  margin-bottom: 25px;
+  margin-bottom: var(--space-xl);
   border-bottom: 3px solid var(--primary-purple);
-  padding-bottom: 10px;
+  padding-bottom: var(--space-sm);
 }
 
 /* Profesiones y Expansiones(tarjetas) */
@@ -347,7 +361,7 @@ h1 {
 }
 
 .card {
-  padding: 20px;
+  padding: var(--space-lg);
   text-align: center;
   transition: transform 0.3s;
   display: flex;
@@ -771,10 +785,8 @@ footer {
 /* --- MOBILE (max 768px) --- */
 @media (max-width: 768px) {
   body {
-    padding-top: 145px;
-    /* Dejamos margen suficiente para el H1 */
-    scroll-padding-top: 145px;
-    /* Para que al saltar a anclas no se meta debajo */
+    padding-top: var(--header-height-mobile);
+    scroll-padding-top: var(--header-height-mobile);
   }
 
   /* Header */
@@ -842,17 +854,14 @@ footer {
   .leveling-wrapper-glass {
     position: sticky;
     top: 137px;
-    z-index: 990;
-    /* Sincronizado con la altura del header móvil */
-    padding: 8px 12px;
-    /* Reducido */
+    z-index: 1000;
+    padding: var(--space-sm) var(--space-md);
     border-radius: 0;
-    margin-bottom: 15px;
+    margin-bottom: var(--space-md);
     background: var(--primary-soft);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
   }
 
   /* Ocultar título del filtro en móvil para ganar espacio */
@@ -912,10 +921,9 @@ footer {
 
   /* Materials table: ancho total de borde a borde */
   #materiales {
-    margin-left: -15px;
-    /* Contraresta el padding de .content */
-    margin-right: -15px;
-    width: calc(100% + 30px);
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 
   .section-toggle {
@@ -959,14 +967,14 @@ footer {
 /* --- SMALL MOBILE (max 480px) --- */
 @media (max-width: 480px) {
   body {
-    padding-top: 145px;
-    scroll-padding-top: 145px;
+    padding-top: var(--header-height-mobile);
+    scroll-padding-top: var(--header-height-mobile);
   }
 
   h1 {
     font-size: 1.15rem;
-    margin-bottom: 14px;
-    padding-bottom: 8px;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
   }
 
   .section h2 {
@@ -974,7 +982,7 @@ footer {
   }
 
   .content {
-    padding: 0 10px;
+    padding: 0 var(--space-md);
   }
 
   /* Cards en 2 columnas */
