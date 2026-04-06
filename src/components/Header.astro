@@ -75,7 +75,7 @@
     expansions.forEach(e => {
       searchableIndex.push({
         title: `${p.name} - ${e.name}`,
-        url: `/guia/${p.id}/${e.id}`,
+        url: `/guias/${p.id}/${e.id}`,
         keywords: [p.name.toLowerCase(), e.name.toLowerCase(), ... (e.alias || [])]
       });
     });
