@@ -1,50 +1,53 @@
 ---
 ---
 <header class="main-header">
-    <section class="logo">
-        <a href="/"><img id="logo" src="/images/WOWGamerES_Logo_white.webp" alt="WOWGamerES Logo"></a>
-    </section>
+    <div class="header-top-row">
+        <section class="logo">
+            <a href="/"><img id="logo" src="/images/WOWGamerES_Logo_white.webp" alt="WOWGamerES Logo"></a>
+        </section>
+        
+        <nav class="main-nav">
+            <ul>
+                <li>
+                  <a href="/" data-i18n="nav_home" aria-label="Inicio" title="Inicio" class="hearthstone-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minimal-icon hearthstone-icon">
+                      <!-- Tejado puntiagudo -->
+                      <path d="M3 11L12 3L21 11"/>
+                      <!-- Estructura de la casa -->
+                      <path d="M5 10v10h14V10"/>
+                      <!-- Puerta con arco medieval -->
+                      <path d="M10 22v-5a2 2 0 0 1 4 0v5"/>
+                      <!-- Chimenea -->
+                      <line x1="18" y1="4" x2="18" y2="8"/>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <button id="darkModeToggle" aria-label="Cambiar tema">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon">
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="theme-icon sun">
+                      <circle cx="12" cy="12" r="4"/>
+                      <line x1="12" y1="2" x2="12" y2="5"/>
+                      <line x1="12" y1="19" x2="12" y2="22"/>
+                      <line x1="2" y1="12" x2="5" y2="12"/>
+                      <line x1="19" y1="12" x2="22" y2="12"/>
+                      <line x1="4.93" y1="4.93" x2="6.76" y2="6.76"/>
+                      <line x1="17.24" y1="17.24" x2="19.07" y2="19.07"/>
+                      <line x1="4.93" y1="19.07" x2="6.76" y2="17.24"/>
+                      <line x1="17.24" y1="6.76" x2="19.07" y2="4.93"/>
+                    </svg>
+                  </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
     
     <div class="search-container">
       <input type="text" id="quickSearch" placeholder="Buscar guía (ej: Joyería TBC)..." autocomplete="off">
       <ul id="searchResults" class="search-results" style="display: none;"></ul>
     </div>
-    <nav class="main-nav">
-        <ul>
-            <li>
-              <a href="/" data-i18n="nav_home" aria-label="Inicio" title="Inicio" class="hearthstone-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="minimal-icon hearthstone-icon">
-                  <!-- Tejado puntiagudo -->
-                  <path d="M3 11L12 3L21 11"/>
-                  <!-- Estructura de la casa -->
-                  <path d="M5 10v10h14V10"/>
-                  <!-- Puerta con arco medieval -->
-                  <path d="M10 22v-5a2 2 0 0 1 4 0v5"/>
-                  <!-- Chimenea -->
-                  <line x1="18" y1="4" x2="18" y2="8"/>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <button id="darkModeToggle" aria-label="Cambiar tema">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="theme-icon sun">
-                  <circle cx="12" cy="12" r="4"/>
-                  <line x1="12" y1="2" x2="12" y2="5"/>
-                  <line x1="12" y1="19" x2="12" y2="22"/>
-                  <line x1="2" y1="12" x2="5" y2="12"/>
-                  <line x1="19" y1="12" x2="22" y2="12"/>
-                  <line x1="4.93" y1="4.93" x2="6.76" y2="6.76"/>
-                  <line x1="17.24" y1="17.24" x2="19.07" y2="19.07"/>
-                  <line x1="4.93" y1="19.07" x2="6.76" y2="17.24"/>
-                  <line x1="17.24" y1="6.76" x2="19.07" y2="4.93"/>
-                </svg>
-              </button>
-            </li>
-        </ul>
-    </nav>
 </header>
 
 <script>
@@ -55,8 +58,8 @@
     function updateLogo(isDark: boolean) {
       if (!logoImg) return;
       logoImg.src = isDark 
-        ? "/images/WOWGamerES_Logo_black.webp" 
-        : "/images/WOWGamerES_Logo_white.webp";
+        ? "/images/WOWGamerES_Logo_white.webp" 
+        : "/images/WOWGamerES_Logo_black.webp";
     }
 
     const isCurrentlyDark = document.documentElement.classList.contains('dark-mode');

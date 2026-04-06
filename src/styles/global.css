@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+/* Ocultar barras de desplazamiento globalmente */
+* {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE y Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari y Opera */
+}
+
 :root {
   --primary-purple: #6a0dad;
   --primary-glow: rgba(106, 13, 173, 0.15);
@@ -51,8 +64,7 @@ a {
   right: 0;
   width: 100%;
   max-width: 100vw;
-  z-index: 1000;
-  overflow: hidden;
+  z-index: 2000;
 }
 
 .main-nav {
@@ -130,12 +142,20 @@ a {
   box-shadow: 0 15px 50px var(--primary-glow);
   list-style: none;
   padding: 6px;
-  z-index: 2000;
+  z-index: 3000;
   max-height: 400px;
   overflow-y: auto;
   border: 1px solid var(--primary-purple);
   transform-origin: top;
   animation: slideIn 0.2s ease-out;
+
+  /* Refuerzo para ocultar scrollbar en el desplegable */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.search-results::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes slideIn {
@@ -205,24 +225,40 @@ a {
 
 @media (max-width: 768px) {
   .main-header {
-    flex-wrap: wrap;
-    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 15px;
+    height: auto;
+    background: #fff;
+  }
+
+  .dark-mode .main-header {
+    background: #000;
+  }
+
+  /* Fila 1: Logo e Iconos */
+  .header-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
   }
 
   .logo {
-    order: 1;
-    flex: 1 1 auto;
+    flex: 1;
   }
 
   .logo img {
-    margin: 2px 0;
-    max-height: 60px;
+    height: 55px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .main-nav {
-    order: 2;
-    flex: 0 0 auto;
     margin: 0 !important;
+    flex: 0;
   }
 
   .main-nav ul {
@@ -230,18 +266,26 @@ a {
     padding: 0;
   }
 
+  /* Fila 2: Buscador */
   .search-container {
-    order: 3;
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin: 8px 0 2px 0 !important;
-    min-width: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 5px 0;
+    z-index: 2001;
+  }
+
+  .search-results {
+    top: 100%;
+    z-index: 3000;
+    width: 100%;
+    /* Aseguramos que ocupe todo el ancho del contenedor del buscador */
   }
 
   #quickSearch {
-    padding: 10px 12px 10px 35px;
-    font-size: 0.9rem;
-    width: 100%;
+    padding: 12px 12px 12px 40px;
+    font-size: 0.92rem;
+    height: 45px;
   }
 }
 
@@ -541,8 +585,8 @@ footer {
   position: sticky;
   top: 130px;
   /* Sincronizado con el padding-top del body */
-  z-index: 990;
-  /* Debajo del header (1000) pero encima de todo lo demás */
+  z-index: 1000;
+  /* Debajo del header (2000) pero encima de todo lo demás */
   margin-bottom: 30px;
   padding: 20px 25px;
   border-radius: 0;
@@ -797,7 +841,7 @@ footer {
   /* Glass filter (sticky slider) */
   .leveling-wrapper-glass {
     position: sticky;
-    top: 145px;
+    top: 137px;
     z-index: 990;
     /* Sincronizado con la altura del header móvil */
     padding: 8px 12px;
@@ -965,7 +1009,7 @@ footer {
   /* Glass slider */
   .leveling-wrapper-glass {
     position: sticky;
-    top: 145px;
+    top: 138px;
     /* Sincronizado con la altura real del header móvil expandido */
     padding: 10px 12px;
     z-index: 950;
