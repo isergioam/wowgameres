@@ -4,6 +4,11 @@
     <section class="logo">
         <a href="/"><img id="logo" src="/images/WOWGamerES_Logo_white.webp" alt="WOWGamerES Logo"></a>
     </section>
+    
+    <div class="search-container">
+      <input type="text" id="quickSearch" placeholder="Buscar guía (ej: Joyería TBC)..." autocomplete="off">
+      <ul id="searchResults" class="search-results" style="display: none;"></ul>
+    </div>
     <nav class="main-nav">
         <ul>
             <li><a href="/" data-i18n="nav_home">Inicio</a></li>
@@ -34,4 +39,75 @@
       updateLogo(isDark);
     });
   }
+
+  // Lógica del Buscador Rápido
+  const searchInput = document.getElementById('quickSearch') as HTMLInputElement;
+  const resultsList = document.getElementById('searchResults');
+
+  const professions = [
+    { id: 'alquimia', name: 'Alquimia' },
+    { id: 'encantamiento', name: 'Encantamiento' },
+    { id: 'herreria', name: 'Herrería' },
+    { id: 'ingenieria', name: 'Ingeniería' },
+    { id: 'inscripcion', name: 'Inscripción' },
+    { id: 'joyeria', name: 'Joyería' },
+    { id: 'peleteria', name: 'Peletería' },
+    { id: 'sastreria', name: 'Sastrería' }
+  ];
+
+  const expansions = [
+    { id: 'vanilla', name: 'Vanilla (Classic)', alias: ['classic'] },
+    { id: 'tbc', name: 'Terrallende (TBC)', alias: ['tbc', 'burning crusade', 'outland'] },
+    { id: 'wotlk', name: 'Rasganorte (WotLK)', alias: ['wotlk', 'lich king', 'northrend'] },
+    { id: 'cata', name: 'Cataclismo', alias: ['cata', 'cataclysm'] },
+    { id: 'mop', name: 'Pandaria (MoP)', alias: ['mop', 'mist of pandaria'] },
+    { id: 'wod', name: 'Draenor (WoD)', alias: ['wod', 'warlords'] },
+    { id: 'legion', name: 'Legión', alias: ['legion'] },
+    { id: 'bfa', name: 'Battle for Azeroth (BfA)', alias: ['bfa'] },
+    { id: 'sl', name: 'Shadowlands', alias: ['sl'] },
+    { id: 'df', name: 'Dragonflight', alias: ['df'] },
+    { id: 'tww', name: 'The War Within', alias: ['tww', 'war within'] },
+    { id: 'midnight', name: 'Midnight', alias: ['midnight'] }
+  ];
+
+  const searchableIndex: { title: string, url: string, keywords: string[] }[] = [];
+  professions.forEach(p => {
+    expansions.forEach(e => {
+      searchableIndex.push({
+        title: `${p.name} - ${e.name}`,
+        url: `/guia/${p.id}/${e.id}`,
+        keywords: [p.name.toLowerCase(), e.name.toLowerCase(), ... (e.alias || [])]
+      });
+    });
+  });
+
+  searchInput?.addEventListener('input', (e) => {
+    const val = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    if (!resultsList) return;
+
+    if (val.length < 2) {
+      resultsList.style.display = 'none';
+      return;
+    }
+
+    const filtered = searchableIndex.filter(item => 
+      item.keywords.some(k => k.includes(val)) || item.title.toLowerCase().includes(val)
+    ).slice(0, 8);
+
+    if (filtered.length > 0) {
+      resultsList.innerHTML = filtered.map(item => `
+        <li><a href="${item.url}">${item.title}</a></li>
+      `).join('');
+      resultsList.style.display = 'block';
+    } else {
+      resultsList.style.display = 'none';
+    }
+  });
+
+  // Cerrar al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!searchInput?.contains(e.target as Node) && !resultsList?.contains(e.target as Node)) {
+      if (resultsList) resultsList.style.display = 'none';
+    }
+  });
 </script>
