@@ -10,8 +10,8 @@ body {
   background-color: #fff;
   color: #2e2e2e;
   line-height: 1.6;
-  padding-top: 90px;
-  /* Espacio para el menú fijo, reducido de 120px */
+  padding-top: 120px;
+  /* Espacio para el menú fijo, restaurado a 120px */
 }
 
 a {
@@ -59,9 +59,9 @@ a {
 
 /* Banner */
 .logo img {
-  height: 60px;
+  height: 100px;
   padding: 2px;
-  margin: auto 10px;
+  margin: auto 20px;
 }
 
 .ad-container {
@@ -152,7 +152,8 @@ h1 {
   text-decoration: none;
   color: inherit;
   display: block;
-  flex: 1 1 180px; /* Crece para rellenar espacio, base de 180px */
+  flex: 1 1 180px;
+  /* Crece para rellenar espacio, base de 180px */
 }
 
 .card-expansion {
