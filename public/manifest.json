@@ -1,0 +1,16 @@
+{
+  "name": "WOWGamerES – Guías de Nivelación de Profesiones WoW",
+  "short_name": "WOWGamerES",
+  "description": "Guías de nivelación de profesiones para World of Warcraft de todas las expansiones.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6a0dad",
+  "icons": [
+    {
+      "src": "/images/WOWGamerES_Logo_2026.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ]
+}

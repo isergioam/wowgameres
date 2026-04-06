@@ -21,6 +21,8 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#6a0dad" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
@@ -67,6 +69,18 @@ const {
 					activateScripts();
 				}
 			})();
+		</script>
+		<!-- Service Worker for Offline PWA -->
+		<script is:inline>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/sw.js').then(reg => {
+						console.log('SW registrado Correctamente');
+					}).catch(err => {
+						console.log('SW fallo al registrarse', err);
+					});
+				});
+			}
 		</script>
 	</body>
 </html>

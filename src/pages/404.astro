@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404: Página no encontrada - WOWGamerES" description="Lo sentimos, no hemos podido encontrar la guía que buscas.">
+	<main class="content" style="text-align: center; padding: 100px 20px;">
+		<div class="error-container">
+            <h1 style="font-size: 5rem; margin-bottom: 10px; border: none;">404</h1>
+            <p style="font-size: 1.5rem; color: #6a0dad; font-weight: bold; margin-bottom: 20px;">
+                ¡Vaya! Parece que este objeto no está en tu inventario.
+            </p>
+            <p style="margin-bottom: 40px; opacity: 0.8;">
+                La guía que buscas se ha desvanecido en el Vacío Abisal o nunca existió.
+            </p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <a href="/" class="card-expansion" style="display: inline-block; padding: 15px 30px; border-radius: 8px;">
+                    Volver a la Posada (Inicio)
+                </a>
+            </div>
+        </div>
+	</main>
+</BaseLayout>
+
+<style>
+    .error-container {
+        max-width: 600px;
+        margin: 0 auto;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
