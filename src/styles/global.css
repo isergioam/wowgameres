@@ -10,8 +10,8 @@ body {
   background-color: #fff;
   color: #2e2e2e;
   line-height: 1.6;
-  padding-top: 120px;
-  /* Para que el contenido no quede debajo del menú fijo */
+  padding-top: 90px;
+  /* Espacio para el menú fijo, reducido de 120px */
 }
 
 a {
@@ -59,9 +59,9 @@ a {
 
 /* Banner */
 .logo img {
-  height: 100px;
+  height: 60px;
   padding: 2px;
-  margin: auto 20px;
+  margin: auto 10px;
 }
 
 .ad-container {
@@ -105,8 +105,8 @@ h1 {
 
 /* Profesiones y Expansiones(tarjetas) */
 .profesiones {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   justify-content: center;
 }
@@ -114,8 +114,11 @@ h1 {
 .card {
   padding: 20px;
   text-align: center;
-  flex: 1 1 250px;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card:hover {
@@ -124,6 +127,8 @@ h1 {
 
 .card img {
   height: 150px;
+  width: auto;
+  object-fit: contain;
 }
 
 .card h3 {
@@ -137,10 +142,16 @@ h1 {
 
 /* Expansiones (tarjetas) */
 .expansiones {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 15px;
-  justify-content: center;
+  width: 100%;
+}
+
+.card-expansion-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .card-expansion {
@@ -149,8 +160,11 @@ h1 {
   text-align: center;
   color: #6a0dad;
   cursor: pointer;
-  flex: 1 1 180px;
-  transition: transform 0.3s;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .card-expansion:hover {
