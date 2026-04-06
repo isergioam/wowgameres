@@ -1,0 +1,434 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Ingeniería",
+    "maxLevel": 300,
+    "description": "Guía de nivelación de Ingeniería (1-300) en Vanilla (Classic) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 30,
+        "mats": { "Piedra férrea": 60 },
+        "description": "<strong>Ingeniería 1 – 30</strong><br><span class=\"recipe-name\">Pólvora férrea &rarr;</span> 60 Piedra férrea."
+      },
+      {
+        "min": 30,
+        "max": 50,
+        "mats": { "Barra de cobre": 30 },
+        "description": "<strong>Ingeniería 30 – 50</strong><br><span class=\"recipe-name\">Puñado de tornillos de cobre &rarr;</span> 30 Barra de cobre."
+      },
+      {
+        "min": 50,
+        "max": 75,
+        "mats": { "Pólvora férrea": 60, "Puñado de tornillos de cobre": 30 },
+        "description": "<strong>Ingeniería 50 – 75</strong><br><span class=\"recipe-name\">Bomba de cobre férrea &rarr;</span> 60 Pólvora férrea, 30 Puñado de tornillos de cobre."
+      },
+      {
+        "min": 75,
+        "max": 90,
+        "mats": { "Piedra burda": 20 },
+        "description": "<strong>Ingeniería 75 – 90</strong><br><span class=\"recipe-name\">Pólvora burda &rarr;</span> 20 Piedra burda."
+      },
+      {
+        "min": 90,
+        "max": 100,
+        "mats": { "Pólvora burda": 20, "Paño de lino": 20 },
+        "description": "<strong>Ingeniería 90 – 100</strong><br><span class=\"recipe-name\">Dinamita burda &rarr;</span> 20 Pólvora burda, 20 Paños de lino."
+      },
+      {
+        "min": 100,
+        "max": 125,
+        "mats": { "Barra de bronce": 38, "Ojo de tigre": 2 },
+        "description": "<strong>Ingeniería 100 – 125</strong><br><span class=\"recipe-name\">Caja mecánica y Gafas de tigre volador &rarr;</span> 38 Barra de bronce, 2 Ojo de tigre."
+      },
+      {
+        "min": 125,
+        "max": 150,
+        "mats": { "Piedra pesada": 30, "Barra de bronce": 30, "Paño de lana": 15 },
+        "description": "<strong>Ingeniería 125 – 150</strong><br><span class=\"recipe-name\">Pólvora potente y Cacharros zumbones &rarr;</span> 30 Piedra pesada, 30 Barra de bronce, 15 Paño de lana."
+      },
+      {
+        "min": 150,
+        "max": 160,
+        "mats": { "Barra de bronce": 30, "Cuero medio": 15, "Paño de lana": 15 },
+        "description": "<strong>Ingeniería 150 – 160</strong><br><span class=\"recipe-name\">Marco de bronce &rarr;</span> 30 Barra de bronce, 15 Cuero medio, 15 Paño de lana."
+      },
+      {
+        "min": 160,
+        "max": 175,
+        "mats": { "Pólvora potente": 30, "Cacharros zumbones": 15, "Marco de bronce": 15, "Paño de lana": 30 },
+        "description": "<strong>Ingeniería 160 – 175</strong><br><span class=\"recipe-name\">Oveja explosiva &rarr;</span> 30 Pólvora potente, 15 Cacharros zumbones, 15 Marco de bronce, 30 Paño de lana."
+      },
+      {
+        "min": 175,
+        "max": 200,
+        "mats": { "Piedra sólida": 120, "Barra de mitril": 21 },
+        "description": "<strong>Ingeniería 175 – 200</strong><br><span class=\"recipe-name\">Pólvora sólida y Tubo de mitril &rarr;</span> 120 Piedra sólida, 21 Barra de mitril."
+      },
+      {
+        "min": 200,
+        "max": 250,
+        "mats": { "Barra de mitril": 140, "Paño de tejido mágico": 20, "Pólvora sólida": 60 },
+        "description": "<strong>Ingeniería 200 – 250</strong><br><span class=\"recipe-name\">Activador inestable y Bomba explosiva &rarr;</span> 140 Barra de mitril, 20 Paño de tejido mágico, 60 Pólvora sólida."
+      },
+      {
+        "min": 250,
+        "max": 300,
+        "mats": { "Piedra densa": 40, "Barra de torio": 195, "Paño rúnico": 75 },
+        "description": "<strong>Ingeniería 250 – 300</strong><br><span class=\"recipe-name\">Pólvora densa, Trasto y Tubo de torio &rarr;</span> 40 Piedra densa, 195 Barra de torio, 75 Paño rúnico."
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Ingeniería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Ingeniería (1-75) en The Burning Crusade (TBC) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 20,
+        "mats": { "Barra de hierro vil": 294, "Mota de tierra": 20, "Mota de fuego": 10 },
+        "description": "<strong>Ingeniería 1 – 20</strong><br>Fabricación de materiales base: Tornillos, Pólvora y Envolturas de hierro vil."
+      },
+      {
+        "min": 20,
+        "max": 25,
+        "mats": { "Envoltura de hierro vil": 5, "Puñado de tornillos de hierro vil": 10, "Pólvora elemental": 5 },
+        "description": "<strong>Ingeniería 20 – 25</strong><br><span class=\"recipe-name\">Bomba de hierro vil &rarr;</span> 5+5+10 mats."
+      },
+      {
+        "min": 25,
+        "max": 35,
+        "mats": { "Barra de adamantita": 136, "Tierra primigenia": 34 },
+        "description": "<strong>Ingeniería 25 – 35</strong><br><span class=\"recipe-name\">Marco de adamantita &rarr;</span> 136 Barra de adamantita, 34 Tierra primigenia."
+      },
+      {
+        "min": 35,
+        "max": 55,
+        "mats": { "Paño de tejido abisal": 35, "Pólvora elemental": 35 },
+        "description": "<strong>Ingeniería 35 – 55</strong><br><span class=\"recipe-name\">Bengala de humo blanco &rarr;</span> 35 Paño de tejido abisal, 35 Pólvora elemental."
+      },
+      {
+        "min": 55,
+        "max": 60,
+        "mats": { "Barra de korio": 6, "Fuego primigenio": 6 },
+        "description": "<strong>Ingeniería 55 – 60</strong><br><span class=\"recipe-name\">Batería de korio &rarr;</span> 6 Barra de korio, 6 Fuego primigenio."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "mats": { "Envoltura de hierro vil": 51, "Marco de adamantita": 34, "Barra de adamantita": 48, "Batería de korio": 6 },
+        "description": "<strong>Ingeniería 60 – 75</strong><br><span class=\"recipe-name\">Rifle de adamantita y Robot de reparación &rarr;</span> Uso de los marcos y baterías fabricados anteriormente."
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Ingeniería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Ingeniería (1-75) en Wrath of the Lich King (WotLK) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 10,
+        "mats": { "Barra de cobalto": 140, "Agua cristalizada": 10, "Tierra cristalizada": 10 },
+        "description": "<strong>Ingeniería 1 – 10</strong><br>Fabricación de tornillos, activadores y condensadores de cobalto."
+      },
+      {
+        "min": 10,
+        "max": 15,
+        "mats": { "Tela de tejido de Escarcha": 6, "Activador de explosivo volátil": 18 },
+        "description": "<strong>Ingeniería 10 – 15</strong><br><span class=\"recipe-name\">Señuelo explosivo &rarr;</span> 6 Tela de Escarcha, 18 Activadores."
+      },
+      {
+        "min": 15,
+        "max": 30,
+        "mats": { "Barra de cobalto": 120, "Agua cristalizada": 15, "Puñado de tornillos de cobalto": 10 },
+        "description": "<strong>Ingeniería 15 – 30</strong><br><span class=\"recipe-name\">Tubo de acero gélido y Mira refractaria &rarr;</span> Uso de barras y tornillos de cobalto."
+      },
+      {
+        "min": 30,
+        "max": 45,
+        "mats": { "Kit de manitas": 45 },
+        "description": "<strong>Ingeniería 30 – 45</strong><br><span class=\"recipe-name\">Propulsiones de nitro y Disco de amplificación &rarr;</span> 45 Kit de manitas."
+      },
+      {
+        "min": 45,
+        "max": 60,
+        "mats": { "Barra de saronita": 100, "Cuero boreal": 10, "Componentes anteriores": 20 },
+        "description": "<strong>Ingeniería 45 – 60</strong><br><span class=\"recipe-name\">Juego de inyección, Gafas y Máquina de ruido &rarr;</span> Uso de barras de saronita y piezas de cobalto."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "mats": { "Barra de saronita": 300, "Herramientas básicas": 90, "Barra de titanio": 8 },
+        "description": "<strong>Ingeniería 60 – 75</strong><br><span class=\"recipe-name\">Navaja gnómica y Agujero de gusano &rarr;</span> 300 Barra de saronita, 8 Barra de titanio."
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Ingeniería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Ingeniería (1-75) en Cataclismo de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Barra de obsidium": 60 },
+        "description": "<strong>Ingeniería 1 – 25</strong><br><span class=\"recipe-name\">Puñado de tornillos de obsidium &rarr;</span> 60 Barra de obsidium."
+      },
+      {
+        "min": 25,
+        "max": 35,
+        "mats": { "Aire volátil": 30 },
+        "description": "<strong>Ingeniería 25 – 35</strong><br><span class=\"recipe-name\">Éter electrificado &rarr;</span> 30 Aire volátil."
+      },
+      {
+        "min": 35,
+        "max": 45,
+        "mats": { "Puñado de tornillos de obsidium": 15, "Éter electrificado": 30 },
+        "description": "<strong>Ingeniería 35 – 45</strong><br><span class=\"recipe-name\">Paquexplosivo de seforio volátil &rarr;</span> 15 Tornillos, 30 Éter."
+      },
+      {
+        "min": 45,
+        "max": 60,
+        "mats": { "Barra de elementium": 300, "Puñado de tornillos de obsidium": 60 },
+        "description": "<strong>Ingeniería 45 – 60</strong><br><span class=\"recipe-name\">Caja de aparejos Maestro del Cebo &rarr;</span> 300 Barra de elementium, 60 Tornillos."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "mats": { "Barra de elementium": 60, "Puñado de tornillos de obsidium": 15, "Fuego volátil": 15 },
+        "description": "<strong>Ingeniería 60 – 75</strong><br><span class=\"recipe-name\">Cebo giratorio tratado con calor &rarr;</span> 60 Barra de elementium, 15 Tornillos, 15 Fuego volátil."
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Ingeniería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Ingeniería (1-75) en Mists of Pandaria (MoP) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Barra de hierro fantasma": 406 },
+        "description": "<strong>Ingeniería 1 – 25</strong><br><span class=\"recipe-name\">Tornillos y Pólvora &rarr;</span> Fabricación de materiales base (~112 Tornillos, 70 Pólvoras)."
+      },
+      {
+        "min": 25,
+        "max": 55,
+        "mats": { "Tornillos de hierro fantasma": 60, "Paño de lanaviento": 60, "Pólvora muy explosiva": 60 },
+        "description": "<strong>Ingeniería 25 – 55</strong><br><span class=\"recipe-name\">Kit de manitas &rarr;</span> 60 Tornillos, 60 Paño, 60 Pólvora."
+      },
+      {
+        "min": 55,
+        "max": 62,
+        "mats": { "Tornillos de hierro fantasma": 60, "Pólvora muy explosiva": 80 },
+        "description": "<strong>Ingeniería 55 – 62</strong><br><span class=\"recipe-name\">Yanvil térmico &rarr;</span> 60 Tornillos, 80 Pólvora."
+      },
+      {
+        "min": 62,
+        "max": 75,
+        "mats": { "Tornillos de hierro fantasma": 104, "Espíritu de armonía": 26 },
+        "description": "<strong>Ingeniería 62 – 75</strong><br><span class=\"recipe-name\">Gafas perforaniebla &rarr;</span> 104 Tornillos, 26 Espíritu de armonía."
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Ingeniería",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Ingeniería (1-100) en Warlords of Draenor (WoD) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 30,
+        "mats": { "Mena Roca Negra": 24, "Mena de verahierro": 24, "Saeta de Nagrand": 24 },
+        "description": "<strong>Ingeniería 1 – 30</strong><br><span class=\"recipe-name\">Sigilador 54 &rarr;</span> 24 Mena Roca Negra, 24 Mena de verahierro, 24 Saeta de Nagrand."
+      },
+      {
+        "min": 30,
+        "max": 100,
+        "mats": { "Mena de verahierro": 1050, "Mena Roca Negra": 1050 },
+        "description": "<strong>Ingeniería 30 – 100</strong><br><span class=\"recipe-name\">Delicado montaje de Didi &rarr;</span> 1050 Mena de verahierro, 1050 Mena Roca Negra."
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Ingeniería",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Ingeniería (1-100) en Legión de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": { "Mena de piedra Ley": 140, "Cartucho explosivo descomunal": 2800 },
+        "description": "<strong>Ingeniería 1 – 100</strong><br><span class=\"recipe-name\">Carga de pólvora (Rango 3) &rarr;</span> 140 Mena de piedra Ley, 2800 Cartucho explosivo descomunal."
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Ingeniería",
+    "maxLevel": 175,
+    "description": "Guía de nivelación de Ingeniería (1-175) en Battle for Azeroth (BfA) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 60,
+        "mats": { "Mena de monelita": 330, "Cartucho explosivo": 240, "Cableado aislado": 390 },
+        "description": "<strong>Ingeniería 1 – 60</strong><br><span class=\"recipe-name\">FRITO y Reorganizador (Rango 1/2) &rarr;</span> Progresión de recetas básicas de monelita."
+      },
+      {
+        "min": 60,
+        "max": 85,
+        "mats": { "Mena de monelita": 200, "Mena de plata de tormenta": 125, "Cableado aislado": 200 },
+        "description": "<strong>Ingeniería 60 – 85</strong><br><span class=\"recipe-name\">Reorganizador de atuendo (Rango 2) &rarr;</span> 200 Monelita, 125 Plata de tormenta."
+      },
+      {
+        "min": 85,
+        "max": 145,
+        "mats": { "Mena de monelita": 400, "Mena de plata de tormenta": 290, "Cableado aislado": 615 },
+        "description": "<strong>Ingeniería 85 – 145</strong><br><span class=\"recipe-name\">Atenuador y Controlador de tiempo (Rango 3) &rarr;</span> Progresión basada en reputaciones."
+      },
+      {
+        "min": 145,
+        "max": 175,
+        "mats": { "Mena de osmenita": 405, "Mena de plata de tormenta": 115, "Expulsom": 55 },
+        "description": "<strong>Ingeniería 145 – 175</strong><br><span class=\"recipe-name\">Descombobulador (Nazjatar) &rarr;</span> Fabricación de varios rangos en Nazjatar."
+      }
+    ]
+  },
+  "sl": {
+    "expansionName": "Shadowlands",
+    "professionName": "Ingeniería",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Ingeniería (1-100) en Shadowlands de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Piedra porosa": 200, "Mena de laestrita": 150 },
+        "description": "<strong>Ingeniería 1 – 25</strong><br><span class=\"recipe-name\">Abrasivo y Tornillos &rarr;</span> 200 Piedra porosa, 150 Mena de laestrita."
+      },
+      {
+        "min": 25,
+        "max": 55,
+        "mats": { "Mena de laestrita": 87, "Muelle de espiral": 8, "Corteza crepuscular": 24, "Flujo luminoso": 30 },
+        "description": "<strong>Ingeniería 25 – 55</strong><br><span class=\"recipe-name\">Muelle de espiral, Inversor y Reanimador &rarr;</span> Progresión de materiales de laestrita."
+      },
+      {
+        "min": 55,
+        "max": 76,
+        "mats": { "Puñado de tornillos de laestrita": 84, "Abrasivo de pulido": 105, "Mena de laestrita": 63 },
+        "description": "<strong>Ingeniería 55 – 76</strong><br><span class=\"recipe-name\">Ensamblaje de engranaje sin fin &rarr;</span> Producción en masa de engranajes."
+      },
+      {
+        "min": 76,
+        "max": 100,
+        "mats": { "Ensamblaje de tornillo": 21, "Puñado de tornillos": 85, "Oriblasa/Umbryl": 34, "Tela velada": 20 },
+        "description": "<strong>Ingeniería 76 – 100</strong><br><span class=\"recipe-name\">Miras, Ópticos y Lentes ectoplásmicas &rarr;</span> Tramo final con componentes avanzados."
+      }
+    ]
+  },
+  "df": {
+    "expansionName": "Dragonflight",
+    "professionName": "Ingeniería",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Ingeniería (1-100) en Dragonflight de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 20,
+        "mats": { "Mena de severita": 100, "Puñado de piezas de severita": 50 },
+        "description": "<strong>Ingeniería 1 – 20</strong><br>Fabricación de piezas y materiales básicos de las Islas Dragón."
+      },
+      {
+        "min": 20,
+        "max": 50,
+        "mats": { "Mena de severita": 200, "Chispa de ingenio": 1, "部品 básicos": 100 },
+        "description": "<strong>Ingeniería 20 – 50</strong><br>Miras, brazales y equipo de profesión."
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": { "Chispa de ingenio": 5, "Mena abisal": 50 },
+        "description": "<strong>Ingeniería 50 – 100</strong><br>Equipos épicos y pedidos de artesanía."
+      }
+    ]
+  },
+  "tww": {
+    "expansionName": "The War Within",
+    "professionName": "Ingeniería",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Ingeniería (1-100) en The War Within de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Mena de bismuto": 150, "Piezas de TWW": 50 },
+        "description": "<strong>Ingeniería 1 – 25</strong><br>Molienda y piezas de Khaz Algar."
+      },
+      {
+        "min": 25,
+        "max": 60,
+        "mats": { "Mena de bismuto": 300, "Mena de hierro del núcleo": 100 },
+        "description": "<strong>Ingeniería 25 – 60</strong><br>Gafas, miras y dispositivos de utilidad."
+      },
+      {
+        "min": 60,
+        "max": 100,
+        "mats": { "Chispa de presagios": 5, "Mena ardiente": 50 },
+        "description": "<strong>Ingeniería 60 – 100</strong><br>Fabricaciones de Chispa y sistemas de pedidos."
+      }
+    ]
+  },
+  "midnight": {
+    "expansionName": "Midnight",
+    "professionName": "Ingeniería",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Ingeniería (1-100) en Midnight de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 16,
+        "mats": { "Estructura de alambres maleable": 8, "Mena de cobre refulgente": 80, "Mena de estaño umbrío": 40, "Pigmento de polvo": 35 },
+        "description": "<strong>Ingeniería 1 – 16</strong><br><span class=\"recipe-name\">Equipo de canto y Reciclaje &rarr;</span> 80 Mena cobre, 40 Estaño umbrío, 35 Pigmento."
+      },
+      {
+        "min": 16,
+        "max": 25,
+        "mats": { "Núcleo eterno": 5 },
+        "description": "<strong>Ingeniería 16 – 25</strong><br><span class=\"recipe-name\">Recetas de núcleo eterno &rarr;</span> 5 Núcleo eterno (Sombra, Visión, Abremochas, etc.)."
+      },
+      {
+        "min": 25,
+        "max": 39,
+        "mats": { "Estructura de alambres maleable": 10, "Mena de cobre refulgente": 50, "Mena de estaño umbrío": 100 },
+        "description": "<strong>Ingeniería 25 – 39</strong><br><span class=\"recipe-name\">10x Piñón de almas &rarr;</span> 50 Cobre, 100 Estaño umbrío."
+      },
+      {
+        "min": 39,
+        "max": 45,
+        "mats": { "Pigmento de polvo": 100 },
+        "description": "<strong>Ingeniería 39 – 45</strong><br><span class=\"recipe-name\">20x Reciclando &rarr;</span> Descubrimiento de recetas Quel'dorei."
+      },
+      {
+        "min": 45,
+        "max": 80,
+        "mats": { "Montón de chatarra": 300, "Estructura maleable": 60, "Núcleo eterno": 60 },
+        "description": "<strong>Ingeniería 45 – 80</strong><br><span class=\"recipe-name\">60x Guardas quel'dorei &rarr;</span> Progresión de armadura descubierta."
+      },
+      {
+        "min": 80,
+        "max": 100,
+        "mats": { "Madera thalassiana": 150, "Eterluminiscencia": 150, "Núcleo eterno": 150, "Equipo de canto": 300, "Piñón de almas": 300 },
+        "description": "<strong>Ingeniería 80 – 100</strong><br><span class=\"recipe-name\">30x Lámpara de Telogrus pequeña &rarr;</span> Decoración de casa (Receta amarilla hasta 100)."
+      }
+    ]
+  }
+}

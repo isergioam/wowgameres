@@ -85,8 +85,8 @@ function initApp() {
             return res.text();
           })
           .then(html => {
-            // Modificar href: href="./alquimia.html" -> href="./alquimia-[slug].html"
-            let newHtml = html.replace(/href="\.\/([a-zA-Z]+)\.html"/g, `href="./$1-${slug}.html"`);
+            // Modificar href: para usar la nueva arquitectura basada en datos
+            let newHtml = html.replace(/href="\.\/([a-zA-Z]+)\.html"/g, `href="./guia.html?p=$1&e=${slug}"`);
 
             // Reemplazar el nombre de la expansión en el título
             newHtml = newHtml.replace('(nombre_expansión)', `(${window.currentExpansionName})`);
@@ -125,7 +125,6 @@ function initLevelingSlider() {
   const slider = document.getElementById('levelSlider');
   const display = document.getElementById('currentLevelDisplay');
   const materialsBody = document.getElementById('materialsBody');
-  const steps = document.querySelectorAll('.custom-step');
 
   const sortByNameBtn = document.getElementById('sortByName');
   const sortByQtyBtn = document.getElementById('sortByQty');
@@ -137,6 +136,14 @@ function initLevelingSlider() {
   let qtyAsc = false; // Cantidades mayores primero por defecto
 
   if (!slider || !materialsBody) return;
+
+  // Evitar duplicar listeners si se llama varias veces (ej: en carga dinámica)
+  if (slider.getAttribute('data-initialized') === 'true') {
+    // Si ya tiene listeners, solo ejecutamos el update
+    updateLeveling();
+    return;
+  }
+  slider.setAttribute('data-initialized', 'true');
 
   if (sortByNameBtn) {
     sortByNameBtn.addEventListener('click', () => {
@@ -155,6 +162,7 @@ function initLevelingSlider() {
   }
 
   function updateLeveling() {
+    const steps = document.querySelectorAll('.custom-step');
     const currentLevel = parseInt(slider.value);
     if (display) display.textContent = currentLevel;
 

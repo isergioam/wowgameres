@@ -1,0 +1,512 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Inscripción",
+    "maxLevel": 300,
+    "description": "Guía de nivelación de Inscripción (1-300) en Vanilla (Classic) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 45,
+        "mats": { "Pigmento de alabastro": 88 },
+        "description": "<strong>Inscripción 1 – 45</strong><br><span class=\"recipe-name\">Tinta de resplandor lunar &rarr;</span> 88 Pigmento de alabastro."
+      },
+      {
+        "min": 45,
+        "max": 75,
+        "mats": { "Tinta de resplandor lunar": 30 },
+        "description": "<strong>Inscripción 45 – 75</strong><br><span class=\"recipe-name\">Pergamino de regreso &rarr;</span> 30 Tinta de resplandor lunar."
+      },
+      {
+        "min": 75,
+        "max": 80,
+        "mats": { "Pigmento oscurecido": 72 },
+        "description": "<strong>Inscripción 75 – 80</strong><br><span class=\"recipe-name\">Tinta de medianoche &rarr;</span> 72 Pigmento oscurecido."
+      },
+      {
+        "min": 80,
+        "max": 100,
+        "mats": { "Tinta de medianoche": 25 },
+        "description": "<strong>Inscripción 80 – 100</strong><br><span class=\"recipe-name\">Polvo desvanecedor &rarr;</span> 25 Tinta de medianoche."
+      },
+      {
+        "min": 100,
+        "max": 105,
+        "mats": { "Pigmento dorado": 126 },
+        "description": "<strong>Inscripción 100 – 105</strong><br><span class=\"recipe-name\">Tinta de león &rarr;</span> 126 Pigmento dorado."
+      },
+      {
+        "min": 105,
+        "max": 116,
+        "mats": { "Tinta de resplandor lunar": 12, "Tinta de medianoche": 12, "Tinta de león": 12 },
+        "description": "<strong>Inscripción 105 – 116</strong><br>Investigaciones de varias tintas."
+      },
+      {
+        "min": 116,
+        "max": 125,
+        "mats": { "Tinta de león": 27 },
+        "description": "<strong>Inscripción 116 – 125</strong><br>Glifos descubiertos."
+      },
+      {
+        "min": 125,
+        "max": 142,
+        "mats": { "Pigmento quemado": 1, "Tinta Estrella del Alba": 1 },
+        "description": "<strong>Inscripción 125 – 142</strong><br>Tarot extrañó."
+      },
+      {
+        "min": 142,
+        "max": 150,
+        "mats": { "Tinta de león": 24 },
+        "description": "<strong>Inscripción 142 – 150</strong><br>Glifos descubiertos."
+      },
+      {
+        "min": 150,
+        "max": 155,
+        "mats": { "Pigmento esmeralda": 80 },
+        "description": "<strong>Inscripción 150 – 155</strong><br><span class=\"recipe-name\">Tinta de fuego de jade &rarr;</span> 80 Pigmento esmeralda."
+      },
+      {
+        "min": 155,
+        "max": 180,
+        "mats": { "Tinta de fuego de jade": 25 },
+        "description": "<strong>Inscripción 155 – 180</strong><br>Pergaminos de estadísticas III."
+      },
+      {
+        "min": 180,
+        "max": 185,
+        "mats": { "Tinta de fuego de jade": 15 },
+        "description": "<strong>Inscripción 180 – 185</strong><br>Investigación: Tinta de fuego de jade."
+      },
+      {
+        "min": 185,
+        "max": 200,
+        "mats": { "Tintas": 45 },
+        "description": "<strong>Inscripción 185 – 200</strong><br>Tarot Arcano o glifos naranjas."
+      },
+      {
+        "min": 200,
+        "max": 205,
+        "mats": { "Pigmento violeta": 68 },
+        "description": "<strong>Inscripción 200 – 205</strong><br><span class=\"recipe-name\">Tinta celestial &rarr;</span> 68 Pigmento violeta."
+      },
+      {
+        "min": 205,
+        "max": 230,
+        "mats": { "Tinta celestial": 25 },
+        "description": "<strong>Inscripción 205 – 230</strong><br>Pergaminos de estadísticas IV."
+      },
+      {
+        "min": 230,
+        "max": 233,
+        "mats": { "Tinta celestial": 9 },
+        "description": "<strong>Inscripción 230 – 233</strong><br>Investigación: Tinta celestial."
+      },
+      {
+        "min": 233,
+        "max": 250,
+        "mats": { "Tintas": 51 },
+        "description": "<strong>Inscripción 233 – 250</strong><br>Tarot oscuro o glifos naranjas."
+      },
+      {
+        "min": 250,
+        "max": 255,
+        "mats": { "Pigmento de plata": 84 },
+        "description": "<strong>Inscripción 250 – 255</strong><br><span class=\"recipe-name\">Tinta fulgurante &rarr;</span> 84 Pigmento de plata."
+      },
+      {
+        "min": 255,
+        "max": 275,
+        "mats": { "Tinta fulgurante": 20 },
+        "description": "<strong>Inscripción 255 – 275</strong><br>Pergaminos de estadísticas V."
+      },
+      {
+        "min": 275,
+        "max": 290,
+        "mats": { "Tinta fulgurante": 12 },
+        "description": "<strong>Inscripción 275 – 290</strong><br>Investigación: Tinta celestial (con fulgurante)."
+      },
+      {
+        "min": 290,
+        "max": 300,
+        "mats": { "Tinta fulgurante": 10 },
+        "description": "<strong>Inscripción 290 – 300</strong><br>Pergamino de aguante VI."
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Inscripción",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Inscripción (1-75) en The Burning Crusade (TBC) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Planta de Terrallende": 500 },
+        "description": "<strong>Inscripción 1 – 25</strong><br><span class=\"recipe-name\">Moler plantas de Terrallende &rarr;</span> 500 Planta de Terrallende."
+      },
+      {
+        "min": 25,
+        "max": 33,
+        "mats": { "Pigmento de ébano": 10 },
+        "description": "<strong>Inscripción 25 – 33</strong><br>Tinta de Flama Oscura y Libro de trucos ingeniosos."
+      },
+      {
+        "min": 33,
+        "max": 75,
+        "mats": { "Tinta etérea": 126 },
+        "description": "<strong>Inscripción 33 – 75</strong><br>Investigación: Tinta etérea."
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Inscripción",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Inscripción (1-75) en Wrath of the Lich King (WotLK) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Pigmento azur": 190 },
+        "description": "<strong>Inscripción 1 – 25</strong><br><span class=\"recipe-name\">Tinta del mar &rarr;</span> 190 Pigmento azur."
+      },
+      {
+        "min": 25,
+        "max": 55,
+        "mats": { "Tinta del mar": 25 },
+        "description": "<strong>Inscripción 25 – 55</strong><br>Pergaminos de estadísticas VIII."
+      },
+      {
+        "min": 55,
+        "max": 75,
+        "mats": { "Tinta del mar": 60 },
+        "description": "<strong>Inscripción 55 – 75</strong><br>Investigación: Tinta del mar."
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Inscripción",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Inscripción (1-75) en Cataclismo de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 60,
+        "mats": { "Papiro ligero": 300 },
+        "description": "<strong>Inscripción 1 – 60</strong><br><span class=\"recipe-name\">Alfazaque de origami &rarr;</span> 300 Papiro ligero."
+      },
+      {
+        "min": 60,
+        "max": 61,
+        "mats": { "Tinta Fangonegro": 1 },
+        "description": "<strong>Inscripción 60 – 61</strong><br><span class=\"recipe-name\">Documentos falsificados &rarr;</span> 1 Tinta Fangonegro."
+      },
+      {
+        "min": 61,
+        "max": 75,
+        "mats": { "Tinta Fangonegro": 42 },
+        "description": "<strong>Inscripción 61 – 75</strong><br><span class=\"recipe-name\">Investigación: Tinta Fangonegro &rarr;</span> 42 Tinta Fangonegro."
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Inscripción",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Inscripción (1-75) en Mists of Pandaria (MoP) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Tinta onírica": 135 },
+        "description": "<strong>Inscripción 1 – 25</strong><br>Molienda y Elaboración de Tintas."
+      },
+      {
+        "min": 25,
+        "max": 45,
+        "mats": { "Tinta onírica": 60 },
+        "description": "<strong>Inscripción 25 – 45</strong><br>Investigación: Tinta onírica."
+      },
+      {
+        "min": 45,
+        "max": 50,
+        "mats": { "Tinta de luz estelar": 15 },
+        "description": "<strong>Inscripción 45 – 50</strong><br><span class=\"recipe-name\">Inscripción de cuerno de buey superior &rarr;</span> 15 Tinta de luz estelar."
+      },
+      {
+        "min": 50,
+        "max": 70,
+        "mats": { "Tinta onírica": 60 },
+        "description": "<strong>Inscripción 50 – 70</strong><br>Investigación: Tinta onírica."
+      },
+      {
+        "min": 70,
+        "max": 75,
+        "mats": { "Tinta onírica": 15 },
+        "description": "<strong>Inscripción 70 – 75</strong><br><span class=\"recipe-name\">Inscripción de ala de grulla secreta &rarr;</span> 15 Tinta onírica."
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Inscripción",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Inscripción (1-100) en Warlords of Draenor (WoD) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Hierbas de Draenor": 2250 },
+        "description": "<strong>Inscripción 1 – 25</strong><br><span class=\"recipe-name\">Moler hierbas de Draenor &rarr;</span> ~2250 Hierbas."
+      },
+      {
+        "min": 25,
+        "max": 100,
+        "mats": { "Pigmento cerúleo": 900 },
+        "description": "<strong>Inscripción 25 – 100</strong><br><span class=\"recipe-name\">Cristal volátil &rarr;</span> 900 Pigmento cerúleo."
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Inscripción",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Inscripción (1-100) en Legión de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Hierbas de Legion": 400 },
+        "description": "<strong>Inscripción 1 – 25</strong><br><span class=\"recipe-name\">Molienda manual de hierbas &rarr;</span> ~400 hierbas de Legion."
+      },
+      {
+        "min": 25,
+        "max": 40,
+        "mats": { "Pigmento cetrino": 20 },
+        "description": "<strong>Inscripción 25 – 40</strong><br><span class=\"recipe-name\">Escrito de la mente tranquila &rarr;</span> 20 Pigmento cetrino."
+      },
+      {
+        "min": 40,
+        "max": 100,
+        "mats": { "Pigmento cetrino": 180, "Pigmento rosado": 900 },
+        "description": "<strong>Inscripción 40 – 100</strong><br><span class=\"recipe-name\">Runas Vantus (Rango 3) &rarr;</span> 180 Pigmento cetrino, 900 Pigmento rosado."
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Inscripción",
+    "maxLevel": 175,
+    "description": "Guía de nivelación de Inscripción (1-175) en Battle for Azeroth (BfA) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": { "Hierbas de BfA": 150 },
+        "description": "<strong>Inscripción 1 – 50</strong><br>Molido de hierbas y creación de tintas."
+      },
+      {
+        "min": 50,
+        "max": 80,
+        "mats": { "Hierbas de BfA": 1000 },
+        "description": "<strong>Inscripción 50 – 80</strong><br><span class=\"recipe-name\">Molido en Masa &rarr;</span> ~1000 Hierbas de BfA."
+      },
+      {
+        "min": 80,
+        "max": 85,
+        "mats": { "Tinta escarlata": 64 },
+        "description": "<strong>Inscripción 80 – 85</strong><br><span class=\"recipe-name\">Pergamino de guerra de Grito de batalla &rarr;</span> 64 Tinta escarlata."
+      },
+      {
+        "min": 85,
+        "max": 140,
+        "mats": { "Tinta ultramarina": 900, "Tinta escarlata": 480 },
+        "description": "<strong>Inscripción 85 – 140</strong><br>Contratos de facción (Rango 2)."
+      },
+      {
+        "min": 140,
+        "max": 145,
+        "mats": { "Papiro ligero": 5, "Tinta verdosa": 50, "Expulsom": 5 },
+        "description": "<strong>Inscripción 140 – 145</strong><br>Naipes de la Luna Negra de Guerra (Rango 2)."
+      },
+      {
+        "min": 145,
+        "max": 175,
+        "mats": { "Zin’anthid": 150, "Agua destilada": 100 },
+        "description": "<strong>Inscripción 145 – 175</strong><br><span class=\"recipe-name\">Tinta bermellón &rarr;</span> ~150 Zin'anthid."
+      }
+    ]
+  },
+  "sl": {
+    "expansionName": "Shadowlands",
+    "professionName": "Inscripción",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Inscripción (1-100) en Shadowlands de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": { "Tinta luminosa": 25, "Tinta umbría": 25 },
+        "description": "<strong>Inscripción 1 – 25</strong><br>Conversión de pigmentos."
+      },
+      {
+        "min": 25,
+        "max": 30,
+        "mats": { "Tinta luminosa": 10, "Tinta umbría": 10 },
+        "description": "<strong>Inscripción 25 – 30</strong><br><span class=\"recipe-name\">Pliego de profanación de tumbas &rarr;</span> 10 Tinta luminosa, 10 Tinta umbría."
+      },
+      {
+        "min": 30,
+        "max": 60,
+        "mats": { "Hierbas de Shadowlands": 700 },
+        "description": "<strong>Inscripción 30 – 60</strong><br><span class=\"recipe-name\">Molienda masiva &rarr;</span> ~700 hierbas."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "mats": { "Tinta tranquila": 25 },
+        "description": "<strong>Inscripción 60 – 75</strong><br>Pigmento tranquilo a Tinta tranquila."
+      },
+      {
+        "min": 75,
+        "max": 86,
+        "mats": { "Tinta luminosa": 11, "Tinta umbría": 11 },
+        "description": "<strong>Inscripción 75 – 86</strong><br>Misivas (Varios tipos)."
+      },
+      {
+        "min": 86,
+        "max": 100,
+        "mats": { "Tinta luminosa": 70, "Tinta umbría": 70, "Tinta tranquila": 10 },
+        "description": "<strong>Inscripción 86 – 100</strong><br>Naipe de la Luna Negra de Muerte."
+      }
+    ]
+  },
+  "df": {
+    "expansionName": "Dragonflight",
+    "professionName": "Inscripción",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Inscripción (1-100) en Dragonflight de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 10,
+        "mats": { "Pigmento rutilante": 40, "Pigmento floreciente": 40 },
+        "description": "<strong>Inscripción 1 – 10</strong><br>Tinta rutilante y Tinta floreciente."
+      },
+      {
+        "min": 10,
+        "max": 20,
+        "mats": { "Tinta rutilante": 20, "Papiro basto": 20 },
+        "description": "<strong>Inscripción 10 – 20</strong><br>Nota de investigación: Especialización."
+      },
+      {
+        "min": 20,
+        "max": 35,
+        "mats": { "Tinta floreciente": 30, "Mota de aire": 15 },
+        "description": "<strong>Inscripción 20 – 35</strong><br>Escrito de la mente tranquila (DF)."
+      },
+      {
+        "min": 35,
+        "max": 50,
+        "mats": { "Tinta rutilante": 60, "Pigmento sereno": 15 },
+        "description": "<strong>Inscripción 35 – 50</strong><br>Runas de Vantus: Dragonflight."
+      },
+      {
+        "min": 50,
+        "max": 75,
+        "mats": { "Tinta floreciente": 100, "Pigmento sereno": 50 },
+        "description": "<strong>Inscripción 50 – 75</strong><br>Naipe de la Luna Negra de Dragonflight."
+      },
+      {
+        "min": 75,
+        "max": 100,
+        "mats": { "Tinta floreciente": 150, "Pigmento abrasador": 50, "Chispa de ingenio": 5 },
+        "description": "<strong>Inscripción 75 – 100</strong><br>Equipamiento épico o pedidos de artesanía."
+      }
+    ]
+  },
+  "tww": {
+    "expansionName": "The War Within",
+    "professionName": "Inscripción",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Inscripción (1-100) en The War Within de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 15,
+        "mats": { "Mena de bismuto": 75, "Fundente de núcleo cristaloide": 30 },
+        "description": "<strong>Inscripción 1 – 15</strong><br>Molienda de materiales de TWW."
+      },
+      {
+        "min": 15,
+        "max": 30,
+        "mats": { "Tinta de bismuto": 60, "Pigmento de bismuto": 30 },
+        "description": "<strong>Inscripción 15 – 30</strong><br>Tratado de profesión (TWW)."
+      },
+      {
+        "min": 30,
+        "max": 50,
+        "mats": { "Tinta de bismuto": 100, "Pigmento de Kaheti": 40 },
+        "description": "<strong>Inscripción 30 – 50</strong><br>Naipe de la Luna Negra de TWW."
+      },
+      {
+        "min": 50,
+        "max": 75,
+        "mats": { "Tinta de bismuto": 150, "Pigmento de Arathor": 50 },
+        "description": "<strong>Inscripción 50 – 75</strong><br>Misivas de estadísticas de TWW."
+      },
+      {
+        "min": 75,
+        "max": 100,
+        "mats": { "Chispa de presagios": 5, "Tinta de bismuto": 100 },
+        "description": "<strong>Inscripción 75 – 100</strong><br>Equipamiento épico con Chispa de presagios."
+      }
+    ]
+  },
+  "midnight": {
+    "expansionName": "Midnight",
+    "professionName": "Inscripción",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Inscripción (1-100) en Midnight de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 20,
+        "mats": { "Flor de tranquilidad": 360, "Hojargenta": 100, "Lirio de maná": 90, "Sanguispino": 90 },
+        "description": "<strong>Inscripción 1 – 20</strong><br><span class=\"recipe-name\">Molienda de Midnight &rarr;</span> Varias plantas de Midnight."
+      },
+      {
+        "min": 20,
+        "max": 30,
+        "mats": { "Cantagua thalassiana": 69, "Pigmento de polvo": 460, "tintas": 1 },
+        "description": "<strong>Inscripción 20 – 30</strong><br>Tinta Munsell y Tinta Sienna."
+      },
+      {
+        "min": 30,
+        "max": 35,
+        "mats": { "Azerraíz": 24, "tintas": 1 },
+        "description": "<strong>Inscripción 30 – 35</strong><br>Bordón, Muleta y Lámpara de cuidador."
+      },
+      {
+        "min": 35,
+        "max": 42,
+        "mats": { "Azerraíz": 23, "tintas": 1 },
+        "description": "<strong>Inscripción 35 – 42</strong><br>Equipo de profesión aficionado."
+      },
+      {
+        "min": 42,
+        "max": 50,
+        "mats": { "Vitela de lexicólogo": 20, "Tinta Sienna": 4, "Tinta Munsell": 4 },
+        "description": "<strong>Inscripción 42 – 50</strong><br>Tratado thalassiano de inscripción."
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": { "Vitela de lexicólogo": 210, "Tinta Munsell": 70, "Tinta Sienna": 70 },
+        "description": "<strong>Inscripción 50 – 100</strong><br>70x Tratado thalassiano de inscripción."
+      }
+    ]
+  }
+}
