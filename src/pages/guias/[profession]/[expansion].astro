@@ -1,58 +1,140 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const allProfessions = await getCollection('professions');
-  return allProfessions.flatMap(prof => {
-    return Object.keys(prof.data).map(expKey => {
+  const allProfessions = await getCollection("professions");
+  return allProfessions.flatMap((prof) => {
+    return Object.keys(prof.data).map((expKey) => {
       return {
         params: { profession: prof.id, expansion: expKey },
-        props: { 
+        props: {
           guideData: prof.data[expKey],
           professionId: prof.id,
-          expansionId: expKey
-        }
+          expansionId: expKey,
+        },
       };
     });
   });
 }
 
 const { guideData, professionId, expansionId } = Astro.props;
-const { expansionName, professionName, maxLevel, description, steps, note } = guideData;
+const { expansionName, professionName, maxLevel, description, steps, note } =
+  guideData;
+const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
 ---
 
-<BaseLayout title={`Guía de ${professionName} ${expansionName} (1-${maxLevel}) - WOWGamerES`}>
+<BaseLayout
+  title={`Guía de ${professionName} ${cleanExpansionName} - WOWGamerES`}
+>
   <main class="content">
-    <h1 id="guide-h1">Guía de {professionName} {expansionName} (1-{maxLevel})</h1>
+    <h1 id="guide-h1">Guía de {professionName} {cleanExpansionName}</h1>
 
     <!-- Controles Nivelación -->
     <div id="leveling-controls" class="leveling-wrapper-glass section">
       <div class="glass-header">
         <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
-        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+        <div class="glass-badge">
+          Nivel <span id="currentLevelDisplay">1</span>
+        </div>
+        <button id="resetProgress" class="reset-btn-mini" title="Borrar todo el progreso de esta guía">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <span>Reiniciar</span>
+        </button>
       </div>
       <div class="glass-slider-container">
-        <input type="range" id="levelSlider" aria-label="Filtro de nivel" min="1" max={maxLevel} value="1" class="glass-slider">
+        <input
+          type="range"
+          id="levelSlider"
+          aria-label="Filtro de nivel"
+          min="1"
+          max={maxLevel}
+          value="1"
+          class="glass-slider"
+        />
       </div>
     </div>
 
     <!-- Materiales -->
-    <section id="materiales" class="section">
+    <section id="materiales" class="section reveal">
       <div id="materialsToggle" class="section-toggle">
-        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="minimal-icon"
+            ><path
+              d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+            ></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"
+            ></path></svg
+          >
+          <h2 class="section-toggle-title">Materiales necesarios</h2>
+        </div>
         <div style="display: flex; gap: 15px; align-items: center;">
-          <button id="copyMaterials" class="glass-badge" style="cursor: pointer; border: none; font-size: 0.8rem; padding: 4px 12px;">📋 Copiar Lista</button>
+          <button id="copyMaterials" class="copy-btn-premium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon-clipboard"
+              ><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path
+                d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+              ></path></svg
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon-check"
+              style="display: none;"
+              ><polyline points="20 6 9 17 4 12"></polyline></svg
+            >
+            <span>Copiar Lista</span>
+          </button>
           <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
         </div>
       </div>
       <div id="materialsContent" class="section-content">
-        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+        <p class="interaction-hint">
+          * Haz clic para marcar los materiales que ya tengas.
+        </p>
+        <table
+          id="materialsTable"
+          style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;"
+        >
           <thead>
-            <tr style="border-bottom: 2px solid #6a0dad;">
-              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;">
-                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
-              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;">Cantidad
+            <tr class="materials-header-row">
+              <th
+                id="sortByName"
+                style="padding: 5px; cursor: pointer; user-select: none;"
+              >
+                Material <span id="sortIndicatorName" class="sort-indicator"
+                  >▼</span
+                ></th
+              >
+              <th
+                id="sortByQty"
+                style="padding: 5px; cursor: pointer; user-select: none;"
+                >Cantidad
                 <span id="sortIndicatorQty" class="sort-indicator">↕</span>
               </th>
             </tr>
@@ -61,104 +143,190 @@ const { expansionName, professionName, maxLevel, description, steps, note } = gu
             <!-- Dinámico vía Script -->
           </tbody>
         </table>
-        {note && <p id="guide-note" style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">{note}</p>}
+        {
+          note && (
+            <p
+              id="guide-note"
+              style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;"
+            >
+              {note}
+            </p>
+          )
+        }
       </div>
-      
+
       <!-- Publicidad tras materiales -->
-      <div class="ad-container" style="margin-top: 30px; text-align: center; min-height: 90px; overflow: hidden;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9393134927059057"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <div class="ad-container ad-middle">
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-9393134927059057"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </section>
 
     <!-- Nivelación (Pasos) -->
-    <section id="niveles" class="section">
+    <section id="niveles" class="section reveal">
       <div id="recipesToggle" class="section-toggle">
-        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="minimal-icon"
+            ><path
+              d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+            ></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path
+              d="M8 17h8"></path><path d="M10 9H8"></path></svg
+          >
+          <h2 class="section-toggle-title">Recetas por nivel</h2>
+        </div>
         <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
       </div>
+
       <div id="recipesContent" class="section-content">
-        {steps.map((step, index) => (
-          <p 
-            class="custom-step" 
-            data-min={step.min} 
-            data-max={step.max} 
-            data-mats={JSON.stringify(step.mats)}
-          >
-            <Fragment set:html={step.description} />
-          </p>
-        ))}
+        <p class="interaction-hint">
+          * Haz clic para marcar los pasos que ya hiciste.
+        </p>
+        {
+          steps.map((step, index) => (
+            <p
+              class="custom-step"
+              data-min={step.min}
+              data-max={step.max}
+              data-mats={JSON.stringify(step.mats)}
+            >
+              <Fragment set:html={step.description} />
+            </p>
+          ))
+        }
       </div>
 
       <!-- Publicidad al final de la guía -->
-      <div class="ad-container" style="margin-top: 40px; text-align: center; min-height: 250px; overflow: hidden;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-9393134927059057"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <div class="ad-container ad-bottom">
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-9393134927059057"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script is:inline>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </section>
   </main>
 </BaseLayout>
 
 <script>
-  // Reutilizamos la lógica del slider original adaptada para Astro
-  const slider = document.getElementById('levelSlider') as HTMLInputElement;
-  const display = document.getElementById('currentLevelDisplay');
-  const materialsBody = document.getElementById('materialsBody');
-  const sortByNameBtn = document.getElementById('sortByName');
-  const sortByQtyBtn = document.getElementById('sortByQty');
-  const sortIndName = document.getElementById('sortIndicatorName');
-  const sortIndQty = document.getElementById('sortIndicatorQty');
+  // Elementos DOM
+  const slider = document.getElementById("levelSlider") as HTMLInputElement;
+  const display = document.getElementById("currentLevelDisplay");
+  const materialsBody = document.getElementById("materialsBody");
+  const sortByNameBtn = document.getElementById("sortByName");
+  const sortByQtyBtn = document.getElementById("sortByQty");
+  const sortIndName = document.getElementById("sortIndicatorName");
+  const sortIndQty = document.getElementById("sortIndicatorQty");
 
-  let currentSort = 'name'; 
+  let currentSort = "name";
   let nameAsc = true;
-  let qtyAsc = false; 
+  let qtyAsc = false;
+
+  // --- PERSISTENCIA ---
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  const profession = pathParts[pathParts.length - 2];
+  const expansion = pathParts[pathParts.length - 1];
+  const storageKey = `wow_progress_${profession}_${expansion}`;
+
+  let checkedMaterials = new Set<string>();
+  let completedSteps = new Set<number>();
+
+  function saveProgress() {
+    const data = {
+      level: slider?.value,
+      materials: Array.from(checkedMaterials),
+      steps: Array.from(completedSteps),
+    };
+    localStorage.setItem(storageKey, JSON.stringify(data));
+  }
+
+  function loadProgress() {
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      try {
+        const data = JSON.parse(saved);
+        if (slider) slider.value = data.level;
+        checkedMaterials = new Set(data.materials || []);
+        completedSteps = new Set(data.steps || []);
+
+        const steps = document.querySelectorAll(".custom-step");
+        completedSteps.forEach((index) => {
+          if (steps[index]) {
+            steps[index].classList.add("step-completed");
+          }
+        });
+
+        updateLeveling();
+      } catch (e) {
+        console.error("Error loading progress", e);
+      }
+    }
+  }
 
   function updateLeveling() {
     if (!slider || !materialsBody) return;
-    const steps = document.querySelectorAll('.custom-step') as NodeListOf<HTMLElement>;
+    const steps = document.querySelectorAll(
+      ".custom-step",
+    ) as NodeListOf<HTMLElement>;
     const currentLevel = parseInt(slider.value);
     if (display) display.textContent = currentLevel.toString();
 
     const totalMats: Record<string, number> = {};
 
-    steps.forEach(step => {
-      const max = parseInt(step.getAttribute('data-max') || '0');
+    steps.forEach((step) => {
+      const max = parseInt(step.getAttribute("data-max") || "0");
       if (currentLevel >= max) {
-        step.style.display = 'none';
+        step.style.display = "none";
       } else {
-        step.style.display = 'block';
-        const matsStr = step.getAttribute('data-mats');
+        step.style.display = "block";
+        const matsStr = step.getAttribute("data-mats");
         if (matsStr) {
           try {
             const mats = JSON.parse(matsStr);
             for (const [mat, qty] of Object.entries(mats)) {
-              totalMats[mat] = (totalMats[mat] as number || 0) + (qty as number);
+              totalMats[mat] =
+                ((totalMats[mat] as number) || 0) + (qty as number);
             }
-          } catch (e) { console.error("Error parsing materials JSON", e); }
+          } catch (e) {
+            console.error("Error parsing materials JSON", e);
+          }
         }
       }
     });
 
-    materialsBody.innerHTML = '';
+    materialsBody.innerHTML = "";
     const matsEntries = Object.entries(totalMats);
 
     if (matsEntries.length === 0) {
-      materialsBody.innerHTML = '<tr><td colspan="2" style="text-align:center; padding: 10px;">¡Ya has alcanzado el nivel máximo de esta guía!</td></tr>';
+      materialsBody.innerHTML =
+        '<tr><td colspan="2" style="text-align:center; padding: 10px;">¡Ya has alcanzado el nivel máximo de esta guía!</td></tr>';
       return;
     }
 
     let matsArray = matsEntries.map(([name, qty]) => ({ name, qty }));
 
     matsArray.sort((a, b) => {
-      if (currentSort === 'name') {
+      if (currentSort === "name") {
         const res = a.name.localeCompare(b.name);
         return nameAsc ? res : -res;
       } else {
@@ -167,12 +335,23 @@ const { expansionName, professionName, maxLevel, description, steps, note } = gu
       }
     });
 
-    if (sortIndName) sortIndName.textContent = currentSort === 'name' ? (nameAsc ? '▼' : '▲') : '↕';
-    if (sortIndQty) sortIndQty.textContent = currentSort === 'qty' ? (qtyAsc ? '▼' : '▲') : '↕';
+    if (sortIndName)
+      sortIndName.textContent =
+        currentSort === "name" ? (nameAsc ? "▼" : "▲") : "↕";
+    if (sortIndQty)
+      sortIndQty.textContent =
+        currentSort === "qty" ? (qtyAsc ? "▼" : "▲") : "↕";
 
-    matsArray.forEach(item => {
-      const tr = document.createElement('tr');
-      tr.style.borderBottom = '1px solid #e0d4ff';
+    matsArray.forEach((item) => {
+      const tr = document.createElement("tr");
+      tr.style.borderBottom = "1px solid #e0d4ff";
+
+      // Aplicar estado de persistencia
+      if (checkedMaterials.has(item.name)) {
+        tr.style.opacity = "0.3";
+        tr.style.textDecoration = "line-through";
+      }
+
       tr.innerHTML = `
         <td style="padding: 5px;">${item.name}</td>
         <td style="padding: 5px;">${item.qty}</td>
@@ -182,88 +361,146 @@ const { expansionName, professionName, maxLevel, description, steps, note } = gu
   }
 
   // Event Listeners
-  slider?.addEventListener('input', updateLeveling);
-  sortByNameBtn?.addEventListener('click', () => {
-    if (currentSort === 'name') nameAsc = !nameAsc;
-    else { currentSort = 'name'; nameAsc = true; }
+  slider?.addEventListener("input", () => {
+    updateLeveling();
+    saveProgress();
+  });
+
+  sortByNameBtn?.addEventListener("click", () => {
+    if (currentSort === "name") nameAsc = !nameAsc;
+    else {
+      currentSort = "name";
+      nameAsc = true;
+    }
     updateLeveling();
   });
-  sortByQtyBtn?.addEventListener('click', () => {
-    if (currentSort === 'qty') qtyAsc = !qtyAsc;
-    else { currentSort = 'qty'; qtyAsc = false; }
+
+  sortByQtyBtn?.addEventListener("click", () => {
+    if (currentSort === "qty") qtyAsc = !qtyAsc;
+    else {
+      currentSort = "qty";
+      qtyAsc = false;
+    }
     updateLeveling();
   });
 
   // Checklist y Completado
-  materialsBody?.addEventListener('click', (e) => {
+  materialsBody?.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
-    const tr = target.closest('tr');
+    const tr = target.closest("tr");
     if (tr) {
-      tr.style.opacity = tr.style.opacity === '0.3' ? '1' : '0.3';
-      tr.style.textDecoration = tr.style.textDecoration === 'line-through' ? 'none' : 'line-through';
-    }
-  });
-
-  const recipesContent = document.getElementById('recipesContent');
-  recipesContent?.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    const step = target.closest('.custom-step') as HTMLElement;
-    if (step) {
-      step.classList.toggle('step-completed');
-      if (step.classList.contains('step-completed')) {
-        step.style.opacity = '0.4';
-        step.style.borderLeftColor = '#ccc';
-      } else {
-        step.style.opacity = '1';
-        step.style.borderLeftColor = step.getAttribute('data-alt') === 'true' ? '#f39c12' : '#6a0dad';
+      const matName = tr.querySelector("td")?.textContent;
+      if (matName) {
+        if (checkedMaterials.has(matName)) {
+          checkedMaterials.delete(matName);
+          tr.style.opacity = "1";
+          tr.style.textDecoration = "none";
+        } else {
+          checkedMaterials.add(matName);
+          tr.style.opacity = "0.3";
+          tr.style.textDecoration = "line-through";
+        }
+        saveProgress();
       }
     }
   });
 
+  const recipesContent = document.getElementById("recipesContent");
+  recipesContent?.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    const step = target.closest(".custom-step") as HTMLElement;
+    if (step) {
+      const allSteps = Array.from(document.querySelectorAll(".custom-step"));
+      const stepIndex = allSteps.indexOf(step);
+
+      step.classList.toggle("step-completed");
+      if (step.classList.contains("step-completed")) {
+        completedSteps.add(stepIndex);
+      } else {
+        completedSteps.delete(stepIndex);
+      }
+      saveProgress();
+    }
+  });
+
   // Copiar al portapapeles
-  document.getElementById('copyMaterials')?.addEventListener('click', (e) => {
+  document.getElementById("copyMaterials")?.addEventListener("click", (e) => {
     e.stopPropagation();
-    const rows = materialsBody?.querySelectorAll('tr');
+    const rows = materialsBody?.querySelectorAll("tr");
     if (!rows) return;
-    
+
     let text = `Lista de materiales - ${document.title}\n\n`;
-    rows.forEach(row => {
-      const cells = row.querySelectorAll('td');
+    rows.forEach((row) => {
+      const cells = row.querySelectorAll("td");
       if (cells.length >= 2) {
         text += `- ${cells[1].textContent}x ${cells[0].textContent}\n`;
       }
     });
 
     navigator.clipboard.writeText(text).then(() => {
-      const btn = document.getElementById('copyMaterials');
-      if (btn) {
-        const originalText = btn.textContent;
-        btn.textContent = '✅ ¡Copiado!';
-        setTimeout(() => btn.textContent = originalText, 2000);
+      const btn = document.getElementById("copyMaterials");
+      const iconClipboard = btn?.querySelector(
+        ".icon-clipboard",
+      ) as HTMLElement;
+      const iconCheck = btn?.querySelector(".icon-check") as HTMLElement;
+      const textSpan = btn?.querySelector("span");
+
+      if (iconClipboard && iconCheck && textSpan) {
+        iconClipboard.style.display = "none";
+        iconCheck.style.display = "block";
+        textSpan.textContent = "¡Copiado!";
+
+        setTimeout(() => {
+          iconClipboard.style.display = "block";
+          iconCheck.style.display = "none";
+          textSpan.textContent = "Copiar Lista";
+        }, 2000);
       }
     });
   });
 
   // Toggles
-  document.getElementById('materialsToggle')?.addEventListener('click', () => {
-    const content = document.getElementById('materialsContent');
-    const icon = document.getElementById('materialsToggleIcon');
+  document.getElementById("materialsToggle")?.addEventListener("click", () => {
+    const content = document.getElementById("materialsContent");
+    const icon = document.getElementById("materialsToggleIcon");
     if (content && icon) {
-      const isHidden = content.style.display === 'none';
-      content.style.display = isHidden ? 'block' : 'none';
-      icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
+      const isHidden = content.style.display === "none";
+      content.style.display = isHidden ? "block" : "none";
+      icon.style.transform = isHidden ? "rotate(0deg)" : "rotate(-90deg)";
     }
   });
-  document.getElementById('recipesToggle')?.addEventListener('click', () => {
-    const content = document.getElementById('recipesContent');
-    const icon = document.getElementById('recipesToggleIcon');
+  document.getElementById("recipesToggle")?.addEventListener("click", () => {
+    const content = document.getElementById("recipesContent");
+    const icon = document.getElementById("recipesToggleIcon");
     if (content && icon) {
-      const isHidden = content.style.display === 'none';
-      content.style.display = isHidden ? 'block' : 'none';
-      icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
+      const isHidden = content.style.display === "none";
+      content.style.display = isHidden ? "block" : "none";
+      icon.style.transform = isHidden ? "rotate(0deg)" : "rotate(-90deg)";
     }
   });
 
-  // Initial call
-  updateLeveling();
+  loadProgress();
+  if (checkedMaterials.size === 0 && completedSteps.size === 0 && slider && slider.value === "1") {
+    updateLeveling();
+  }
+
+  // --- REINICIAR PROGRESO ---
+  document.getElementById("resetProgress")?.addEventListener("click", () => {
+    if (confirm("¿Estás seguro de que quieres borrar todo el progreso guardado en esta guía?")) {
+      localStorage.removeItem(storageKey);
+      
+      // Resetear estado local
+      if (slider) slider.value = "1";
+      checkedMaterials.clear();
+      completedSteps.clear();
+      
+      // Resetear UI de pasos
+      document.querySelectorAll(".custom-step").forEach(step => {
+        step.classList.remove("step-completed");
+      });
+      
+      updateLeveling();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
 </script>

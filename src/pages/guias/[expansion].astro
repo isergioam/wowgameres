@@ -44,7 +44,7 @@ const professions = [
 		<section class="section">
 			<div class="profesiones">
         {professions.map(prof => (
-          <a href={`/guias/${prof.id}/${expansion}`}>
+          <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
             <div class="card">
               <h3>{prof.name}</h3>
               <img src={prof.img} alt={`WOWGamerES ${prof.name}`} loading="lazy" width="200" height="150" />
