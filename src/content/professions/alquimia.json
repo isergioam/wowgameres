@@ -1,0 +1,693 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Alquimia",
+    "maxLevel": 300,
+    "description": "Guía de nivelación de Alquimia (1-300) en Vanilla (Classic) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 60,
+        "mats": { "Flor de paz": 59, "Hojaplata": 59 },
+        "description": "<strong>Alquimia 1 – 60</strong><br><span class=\"recipe-name\">Poción de sanación menor &rarr;</span> 59 Flor de paz, 59 Hojaplata.<br>Guárdalas porque las necesitaras en el próximo paso."
+      },
+      {
+        "min": 60,
+        "max": 105,
+        "mats": { "Poción de sanación menor": 50, "Brezospina": 50 },
+        "description": "<strong>Alquimia 60 – 105</strong><br><span class=\"recipe-name\">Poción de sanación inferior &rarr;</span> 50 Poción de sanación menor, 50 Brezospina."
+      },
+      {
+        "min": 105,
+        "max": 110,
+        "mats": { "Marregal": 5, "Brezospina": 10 },
+        "description": "<strong>Alquimia 105 – 110</strong><br><span class=\"recipe-name\">Elixir de sabiduría &rarr;</span> 5 Marregal, 10 Brezospina."
+      },
+      {
+        "min": 110,
+        "max": 140,
+        "mats": { "Hierba cardenal": 30, "Brezospina": 30 },
+        "description": "<strong>Alquimia 110 – 140</strong><br><span class=\"recipe-name\">Poción de sanación &rarr;</span> 30 Hierba cardenal, 30 Brezospina."
+      },
+      {
+        "min": 140,
+        "max": 155,
+        "mats": { "Marregal": 15, "Alga estranguladora": 15 },
+        "description": "<strong>Alquimia 140 – 155</strong><br><span class=\"recipe-name\">Poción de maná inferior &rarr;</span> 15 Marregal, 15 Alga estranguladora.<br>Si no tienes Alga estranguladora puedes hacer Aceite de Fuego con Pargo de fuego."
+      },
+      {
+        "min": 155,
+        "max": 175,
+        "mats": { "Vidarraíz": 20, "Sangrerregia": 20 },
+        "description": "<strong>Alquimia 155 – 175</strong><br><span class=\"recipe-name\">Poción de sanación superior &rarr;</span> 20 Vidarraíz, 20 Sangrerregia."
+      },
+      {
+        "min": 175,
+        "max": 185,
+        "mats": { "Alga estranguladora": 10, "Sangrerregia": 10 },
+        "description": "<strong>Alquimia 175 – 185</strong><br><span class=\"recipe-name\">Poción de maná &rarr;</span> 10 Alga estranguladora, 10 Sangrerregia."
+      },
+      {
+        "min": 185,
+        "max": 205,
+        "mats": { "Alga estranguladora": 20, "Espina de oro": 20 },
+        "description": "<strong>Alquimia 185 – 205</strong><br><span class=\"recipe-name\">Elixir de agilidad &rarr;</span> 20 Alga estranguladora, 20 Espina de oro."
+      },
+      {
+        "min": 205,
+        "max": 215,
+        "mats": { "Acérita salvaje": 10, "Espina de oro": 10 },
+        "description": "<strong>Alquimia 205 – 215</strong><br><span class=\"recipe-name\">Elixir de defensa superior &rarr;</span> 10 Acérita salvaje, 10 Espina de oro."
+      },
+      {
+        "min": 215,
+        "max": 240,
+        "mats": { "Solea": 25, "Mostacho de Khadgar": 25 },
+        "description": "<strong>Alquimia 215 – 240</strong><br><span class=\"recipe-name\">Poción de sanación excelente &rarr;</span> 25 Solea, 25 Mostacho de Khadgar."
+      },
+      {
+        "min": 240,
+        "max": 250,
+        "mats": { "Mostacho de Khadgar": 10, "Carolina": 10 },
+        "description": "<strong>Alquimia 240 – 250</strong><br><span class=\"recipe-name\">Elixir de intelecto superior &rarr;</span> 10 Mostacho de Khadgar, 10 Carolina."
+      },
+      {
+        "min": 250,
+        "max": 270,
+        "mats": { "Gromsanguina": 40 },
+        "description": "<strong>Alquimia 250 – 270</strong><br><span class=\"recipe-name\">Elixir de detección de demonios &rarr;</span> 40 Gromsanguina."
+      },
+      {
+        "min": 270,
+        "max": 285,
+        "mats": { "Musgopena": 30, "Hojasueño": 15 },
+        "description": "<strong>Alquimia 270 – 285</strong><br><span class=\"recipe-name\">Elixir de los sabios &rarr;</span> 30 Musgopena, 15 Hojasueño."
+      },
+      {
+        "min": 285,
+        "max": 295,
+        "mats": { "Samsam dorado": 28, "Salviargenta de montaña": 14 },
+        "description": "<strong>Alquimia 285 – 295</strong><br><span class=\"recipe-name\">Poción de sanación sublime &rarr;</span> 28 Samsam dorado, 14 Salviargenta de montaña."
+      },
+      {
+        "min": 295,
+        "max": 300,
+        "mats": { "Setelo": 10, "Flor de plaga": 10 },
+        "description": "<strong>Alquimia 295 – 300</strong><br><span class=\"recipe-name\">Poción de sanación sublime &rarr;</span> 10 Setelo, 10 Flor de plaga."
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Alquimia",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Alquimia (1-75) en The Burning Crusade (TBC) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 15,
+        "mats": { "Sansam dorado": 14, "Hierba vil": 14 },
+        "description": "<strong>Alquimia 1 – 15</strong><br><span class=\"recipe-name\">Poción de sanación volátil &rarr;</span> 14 Sansam dorado, 14 Hierba vil."
+      },
+      {
+        "min": 15,
+        "max": 25,
+        "mats": { "Sansam dorado": 10, "Gloria de ensueño": 10 },
+        "description": "<strong>Alquimia 15 – 25</strong><br><span class=\"recipe-name\">Elixir de poder de sanación &rarr;</span> 10 Sansam dorado, 10 Gloria de ensueño."
+      },
+      {
+        "min": 25,
+        "max": 35,
+        "mats": { "Teropiña": 10, "Hierba vil": 10 },
+        "description": "<strong>Alquimia 25 – 35</strong><br><span class=\"recipe-name\">Elixir de sabiduría draénica &rarr;</span> 10 Teropiña, 10 Hierba vil."
+      },
+      {
+        "min": 35,
+        "max": 40,
+        "mats": { "Flor abisal": 10, "Hierba vil": 5 },
+        "description": "<strong>Alquimia 35 – 40</strong><br><span class=\"recipe-name\">Superpoción de sanación &rarr;</span> 10 Flor abisal, 5 Hierba vil."
+      },
+      {
+        "min": 40,
+        "max": 55,
+        "mats": { "Gloria de ensueño": 30, "Hierba vil": 15 },
+        "description": "<strong>Alquimia 40 – 55</strong><br><span class=\"recipe-name\">Superpoción de maná &rarr;</span> 30 Gloria de ensueño, 15 Hierba vil."
+      },
+      {
+        "min": 55,
+        "max": 75,
+        "mats": { "Gloria de ensueño": 40, "Vid pesadilla": 40 },
+        "description": "<strong>Alquimia 55 – 75</strong><br><span class=\"recipe-name\">Poción de letargo sin sueños sublime &rarr;</span> 40 Gloria de ensueño, 40 Vid pesadilla."
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Alquimia",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Alquimia (1-75) en Wrath of the Lich King (WotLK) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 5,
+        "mats": { "Trébol de oro": 5, "Rosa de Talandra": 10 },
+        "description": "<strong>Alquimia 1 – 5</strong><br><span class=\"recipe-name\">Poción de pesadillas &rarr;</span> 5 Trébol de oro, 10 Rosa de Talandra."
+      },
+      {
+        "min": 5,
+        "max": 10,
+        "mats": { "Lirio atigrado": 20 },
+        "description": "<strong>Alquimia 5 – 10</strong><br><span class=\"recipe-name\">Elixir de fuerza poderosa &rarr;</span> 20 Lirio atigrado."
+      },
+      {
+        "min": 10,
+        "max": 20,
+        "mats": { "Trébol de oro": 24, "Lengua de víboris": 24 },
+        "description": "<strong>Alquimia 10 – 20</strong><br><span class=\"recipe-name\">Elixir de agilidad poderosa &rarr;</span> 24 Trébol de oro, 24 Lengua de víboris."
+      },
+      {
+        "min": 20,
+        "max": 30,
+        "mats": { "Hierba cardenal": 30, "Brezospina": 30 },
+        "description": "<strong>Alquimia 20 – 30</strong><br><span class=\"recipe-name\">Poción de sanación &rarr;</span> 30 Hierba cardenal, 30 Brezospina."
+      },
+      {
+        "min": 30,
+        "max": 40,
+        "mats": { "Espina de hielo": 20 },
+        "description": "<strong>Alquimia 30 – 40</strong><br><span class=\"recipe-name\">Poción indestructible &rarr;</span> 20 Espina de hielo."
+      },
+      {
+        "min": 40,
+        "max": 55,
+        "mats": { "Trébol de oro": 30, "Flor exánime": 60 },
+        "description": "<strong>Alquimia 40 – 55</strong><br><span class=\"recipe-name\">Poción de maná rúnica &rarr;</span> 60 Flor exánime, 30 Trébol de oro."
+      },
+      {
+        "min": 55,
+        "max": 60,
+        "mats": { "Jade oscuro": 5, "Citrino enorme": 5, "Fuego eterno": 5 },
+        "description": "<strong>Alquimia 55 – 60</strong><br><span class=\"recipe-name\">Transmutar: diamante de asedio de tierra &rarr;</span> 5 Jade oscuro, 5 Citrino enorme, 5 Fuego eterno."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "mats": { "Flor exánime": 105, "Vida cristalizada": 45, "Loto de escarcha": 15 },
+        "description": "<strong>Alquimia 60 – 75</strong><br><span class=\"recipe-name\">Frasco de sangrepiedra &rarr;</span> 105 Flor exánime, 45 Vida cristalizada, 15 Loto de escarcha."
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Alquimia",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Alquimia (1-75) en Cataclismo de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 5,
+        "mats": { "Flor de ceniza": 5 },
+        "description": "<strong>Alquimia 1 – 5</strong><br><span class=\"recipe-name\">Jarabe de guerra &rarr;</span> 5 Flor de ceniza."
+      },
+      {
+        "min": 5,
+        "max": 10,
+        "mats": { "Flor de ceniza": 10 },
+        "description": "<strong>Alquimia 5 – 10</strong><br><span class=\"recipe-name\">Elixir de fantasma &rarr;</span> 10 Flor de ceniza."
+      },
+      {
+        "min": 10,
+        "max": 15,
+        "mats": { "Flor de ceniza": 5, "Velo de Azshara": 5 },
+        "description": "<strong>Alquimia 10 – 15</strong><br><span class=\"recipe-name\">Poción volcánica &rarr;</span> 5 Flor de ceniza, 5 Velo de Azshara."
+      },
+      {
+        "min": 15,
+        "max": 25,
+        "mats": { "Flor de ceniza": 10, "Velo de Azshara": 10 },
+        "description": "<strong>Alquimia 15 – 25</strong><br><span class=\"recipe-name\">Elixir de la cobra &rarr;</span> 10 Flor de ceniza, 10 Velo de Azshara."
+      },
+      {
+        "min": 25,
+        "max": 30,
+        "mats": { "Flor de corazón": 10 },
+        "description": "<strong>Alquimia 25 – 30</strong><br><span class=\"recipe-name\">Elixir del interior de la tierra &rarr;</span> 10 Flor de corazón."
+      },
+      {
+        "min": 30,
+        "max": 35,
+        "mats": { "Flor de ceniza": 10, "Flor de corazón": 10 },
+        "description": "<strong>Alquimia 30 – 35</strong><br><span class=\"recipe-name\">Elixir de precisión imposible &rarr;</span> 10 Flor de ceniza, 10 Flor de corazón."
+      },
+      {
+        "min": 35,
+        "max": 40,
+        "mats": { "Flor de ceniza": 5, "Colátigo": 5 },
+        "description": "<strong>Alquimia 35 – 40</strong><br><span class=\"recipe-name\">Poción de maná mítica &rarr;</span> 5 Flor de ceniza, 5 Colátigo."
+      },
+      {
+        "min": 40,
+        "max": 45,
+        "mats": { "Vida volátil": 5, "Flor de corazón": 5 },
+        "description": "<strong>Alquimia 40 – 45</strong><br><span class=\"recipe-name\">Poción de sangre de gólem &rarr;</span> 5 Vida volátil, 5 Flor de corazón."
+      },
+      {
+        "min": 45,
+        "max": 60,
+        "mats": { "Jazmín Crepuscular": 30 },
+        "description": "<strong>Alquimia 45 – 60</strong><br><span class=\"recipe-name\">Poción de sanación mítica &rarr;</span> 30 Jazmín Crepuscular."
+      },
+      {
+        "min": 60,
+        "max": 65,
+        "mats": { "Vida volátil": 40, "Flor de ceniza": 40, "Colátigo": 40 },
+        "description": "<strong>Alquimia 60 – 65</strong><br><span class=\"recipe-name\">Frasco de fuerza titánica &rarr;</span> 40 Vida volátil, 40 Flor de ceniza, 40 Colátigo."
+      },
+      {
+        "min": 65,
+        "max": 70,
+        "mats": { "Piedra nocturna": 15, "Jazmín Crepuscular": 15 },
+        "description": "<strong>Alquimia 65 – 70</strong><br><span class=\"recipe-name\">Transmutar: ojo de demonio &rarr;</span> 15 Piedra nocturna, 15 Jazmín Crepuscular."
+      },
+      {
+        "min": 70,
+        "max": 75,
+        "mats": { "Alicita": 15, "Colátigo": 15 },
+        "description": "<strong>Alquimia 70 – 75</strong><br><span class=\"recipe-name\">Transmutar: ambarina &rarr;</span> 15 Alicita, 15 Colátigo."
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Alquimia",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Alquimia (1-75) en Mists of Pandaria (MoP) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 10,
+        "mats": { "Hoja de té verde": 20 },
+        "description": "<strong>Alquimia 1 – 10</strong><br><span class=\"recipe-name\">Poción de sanación maestra &rarr;</span> 20 Hoja de té verde."
+      },
+      {
+        "min": 10,
+        "max": 55,
+        "mats": { "Hoja de té verde": 1 },
+        "description": "<strong>Alquimia 10 – 55</strong><br><span class=\"recipe-name\">Investigación de Alquimia de Pandaria &rarr;</span> Materiales variables.<br>Nota: Fabricar lo que descubras."
+      },
+      {
+        "min": 55,
+        "max": 75,
+        "mats": { "Lirio de las nieves": 20, "Hoja de té verde": 20, "Seta del inocente": 20 },
+        "description": "<strong>Alquimia 55 – 75</strong><br><span class=\"recipe-name\">Poción de maná maestra &rarr;</span> 20 Lirio de las nieves, 20 Hoja de té verde, 20 Seta del inocente."
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Alquimia",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Alquimia (1-100) en Warlords of Draenor (WoD) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 2,
+        "mats": { "Verbesina": 5 },
+        "description": "<strong>Alquimia 1 – 2</strong><br><span class=\"recipe-name\">Secretos de la alquimia de Draenor &rarr;</span> 5 Verbesina."
+      },
+      {
+        "min": 2,
+        "max": 55,
+        "mats": { "Verbesina": 162 },
+        "description": "<strong>Alquimia 2 – 55</strong><br><span class=\"recipe-name\">Poción de versatilidad draénica &rarr;</span> 162 Verbesina."
+      },
+      {
+        "min": 55,
+        "max": 100,
+        "mats": { "Saeta de Nagrand": 180, "Atrapamoscas de Gorgrond": 180 },
+        "description": "<strong>Alquimia 55 – 100</strong><br><span class=\"recipe-name\">Frasco de fuerza draénico &rarr;</span> 180 Saeta de Nagrand, 180 Atrapamoscas de Gorgrond."
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Alquimia",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Alquimia (1-100) en Legión de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 4,
+        "mats": { "Semilla de yseralina": 9 },
+        "description": "<strong>Alquimia 1 – 4</strong><br><span class=\"recipe-name\">Misión: Mezcla que te mezcla &rarr;</span> 9 Semilla de yseralina."
+      },
+      {
+        "min": 4,
+        "max": 9,
+        "mats": { "Semilla de yseralina": 20 },
+        "description": "<strong>Alquimia 4 – 9</strong><br><span class=\"recipe-name\">Poción de maná antigua (Rango 1) &rarr;</span> 20 Semilla de yseralina."
+      },
+      {
+        "min": 9,
+        "max": 15,
+        "mats": { "Semilla de yseralina": 24 },
+        "description": "<strong>Alquimia 9 – 15</strong><br><span class=\"recipe-name\">Poción de sanación antigua (Rango 2) &rarr;</span> 24 Semilla de yseralina."
+      },
+      {
+        "min": 15,
+        "max": 20,
+        "mats": {},
+        "description": "<strong>Alquimia 15 – 20</strong><br><span class=\"recipe-name\">Poción de rejuvenecimiento antigua (Rango 1) &rarr;</span> Usa pociones previas."
+      },
+      {
+        "min": 20,
+        "max": 50,
+        "mats": { "Semilla de yseralina": 140 },
+        "description": "<strong>Alquimia 20 – 50</strong><br><span class=\"recipe-name\">Poción de sanación antigua (Rango 2) &rarr;</span> 140 Semilla de yseralina."
+      },
+      {
+        "min": 50,
+        "max": 70,
+        "mats": { "Rosa luz estelar": 25, "Aethril": 50, "Frondasueño": 50 },
+        "description": "<strong>Alquimia 50 – 70</strong><br><span class=\"recipe-name\">Poción de torrente Ley (Rango 2) &rarr;</span> 25 Rosa luz estelar, 50 Aethril, 50 Frondasueño."
+      },
+      {
+        "min": 70,
+        "max": 100,
+        "mats": { "Rosa luz estelar": 420, "Aethril": 600, "Frondasueño": 600 },
+        "description": "<strong>Alquimia 70 – 100</strong><br><span class=\"recipe-name\">Frasco de las diez mil cicatrices (Rango 2) &rarr;</span> 420 Rosa luz estelar, 600 Aethril, 600 Frondasueño."
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Alquimia",
+    "maxLevel": 175,
+    "description": "Guía de nivelación de Alquimia (1-175) en Battle for Azeroth (BfA) de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 37,
+        "mats": { "Polen de sirena": 60, "Brotarrío": 60 },
+        "description": "<strong>Alquimia 1 – 37</strong><br><span class=\"recipe-name\">Poción de Sanación/Maná costera (Rango 1) &rarr;</span> 60 Polen de sirena, 60 Brotarrío."
+      },
+      {
+        "min": 37,
+        "max": 40,
+        "mats": { "Musgo estelar": 45 },
+        "description": "<strong>Alquimia 37 – 40</strong><br><span class=\"recipe-name\">Poción de pies ligeros &rarr;</span> 45 Musgo estelar."
+      },
+      {
+        "min": 40,
+        "max": 50,
+        "mats": { "Polen de sirena": 10, "Brotarrío": 10 },
+        "description": "<strong>Alquimia 40 – 50</strong><br><span class=\"recipe-name\">Poción de Sanación/Maná costera (Rango 2) &rarr;</span> 10 Polen de sirena, 10 Brotarrío."
+      },
+      {
+        "min": 50,
+        "max": 75,
+        "mats": { "Polen de sirena": 36, "Brotarrío": 36 },
+        "description": "<strong>Alquimia 50 – 75</strong><br><span class=\"recipe-name\">Poción de Sanación/Maná costera (Rango 3) &rarr;</span> 36 Polen de sirena, 36 Brotarrío."
+      },
+      {
+        "min": 75,
+        "max": 115,
+        "mats": { "Tallomar": 500, "Musgo estelar": 400 },
+        "description": "<strong>Alquimia 75 – 115</strong><br><span class=\"recipe-name\">Poción de batalla de fuerza (Rango 2) &rarr;</span> 500 Tallomar, 400 Musgo estelar."
+      },
+      {
+        "min": 115,
+        "max": 145,
+        "mats": { "Alga de ancla": 140, "Beso gélido": 280, "Brotarrío": 420 },
+        "description": "<strong>Alquimia 115 – 145</strong><br><span class=\"recipe-name\">Frascos de profundidades infinitas (Rango 2) &rarr;</span> 140 Alga de ancla, 280 Beso gélido, 420 Brotarrío."
+      },
+      {
+        "min": 145,
+        "max": 160,
+        "mats": { "Zin’anthid": 60 },
+        "description": "<strong>Alquimia 145 – 160</strong><br><span class=\"recipe-name\">Poción de sanación abisal (Rango 1) &rarr;</span> 60 Zin’anthid."
+      },
+      {
+        "min": 160,
+        "max": 175,
+        "mats": { "Zin’anthid": 50 },
+        "description": "<strong>Alquimia 160 – 175</strong><br><span class=\"recipe-name\">Poción de sanación abisal (Rango 2) &rarr;</span> 50 Zin’anthid."
+      }
+    ]
+  },
+  "sl": {
+    "expansionName": "Shadowlands",
+    "professionName": "Alquimia",
+    "maxLevel": 175,
+    "description": "Guía de nivelación de Alquimia (1-175) en Shadowlands de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 20,
+        "mats": { "Estrella mortal": 16, "Vial con runas grabadas": 16 },
+        "description": "<strong>Alquimia 1 – 20</strong><br><span class=\"recipe-name\">Poción de sanación espiritual &rarr;</span> 16 Estrella mortal, 16 Vial con runas grabadas."
+      },
+      {
+        "min": 20,
+        "max": 30,
+        "mats": { "Estrella mortal": 26 },
+        "description": "<strong>Alquimia 20 – 30</strong><br><span class=\"recipe-name\">Estrella mortal molida &rarr;</span> 26 Estrella mortal."
+      },
+      {
+        "min": 30,
+        "max": 45,
+        "mats": { "Estrella mortal": 30, "Gloria creciente": 45 },
+        "description": "<strong>Alquimia 30 – 45</strong><br><span class=\"recipe-name\">Poción de espíritu oculto &rarr;</span> 30 Estrella mortal, 45 Gloria creciente."
+      },
+      {
+        "min": 45,
+        "max": 55,
+        "mats": { "Raizmédula": 20 },
+        "description": "<strong>Alquimia 45 – 55</strong><br><span class=\"recipe-name\">Raizmédula molida &rarr;</span> 20 Raizmédula."
+      },
+      {
+        "min": 55,
+        "max": 60,
+        "mats": { "Estrella mortal": 10, "Antorcha de vigilia": 15 },
+        "description": "<strong>Alquimia 55 – 60</strong><br><span class=\"recipe-name\">Poción de pureza de alma &rarr;</span> 10 Estrella mortal, 15 Antorcha de vigilia."
+      },
+      {
+        "min": 60,
+        "max": 80,
+        "mats": { "Estrella mortal": 56, "Raizmédula": 84 },
+        "description": "<strong>Alquimia 60 – 80</strong><br><span class=\"recipe-name\">Poción de presteza espectral &rarr;</span> 56 Estrella mortal, 84 Raizmédula."
+      },
+      {
+        "min": 80,
+        "max": 97,
+        "mats": { "Antorcha de vigilia": 44 },
+        "description": "<strong>Alquimia 80 – 97</strong><br><span class=\"recipe-name\">Antorcha de vigilia molida &rarr;</span> 44 Antorcha de vigilia."
+      },
+      {
+        "min": 97,
+        "max": 100,
+        "mats": { "Gloria creciente": 9, "Antorcha de vigilia": 9 },
+        "description": "<strong>Alquimia 97 – 100</strong><br><span class=\"recipe-name\">Poción de velocidad de psicopompo &rarr;</span> 9 Gloria creciente, 9 Antorcha de vigilia."
+      },
+      {
+        "min": 100,
+        "max": 110,
+        "mats": { "Antorcha de vigilia": 30, "Gloria creciente": 30 },
+        "description": "<strong>Alquimia 100 – 110</strong><br><span class=\"recipe-name\">Poción de sombras endurecidas &rarr;</span> 30 Antorcha de vigilia, 30 Gloria creciente."
+      },
+      {
+        "min": 110,
+        "max": 120,
+        "mats": { "Flor de viuda": 28 },
+        "description": "<strong>Alquimia 110 – 120</strong><br><span class=\"recipe-name\">Flor de viuda molida &rarr;</span> 28 Flor de viuda."
+      },
+      {
+        "min": 120,
+        "max": 125,
+        "mats": { "Flor de viuda": 42 },
+        "description": "<strong>Alquimia 120 – 125</strong><br><span class=\"recipe-name\">Poción de sacrificio de ánima &rarr;</span> 42 Flor de viuda."
+      },
+      {
+        "min": 125,
+        "max": 157,
+        "mats": { "Estrella mortal": 190, "Vial con runas grabadas": 38, "Extracto de muerte destilada": 114 },
+        "description": "<strong>Alquimia 125 – 157</strong><br><span class=\"recipe-name\">Marca del artesano I &rarr;</span> 190 Estrella mortal, 38 Vial con runas grabadas, 114 Extracto de muerte destilada."
+      },
+      {
+        "min": 157,
+        "max": 170,
+        "mats": { "Gloria creciente": 85 },
+        "description": "<strong>Alquimia 157 – 170</strong><br><span class=\"recipe-name\">Poción de fuerza espectral &rarr;</span> 85 Gloria creciente."
+      },
+      {
+        "min": 170,
+        "max": 175,
+        "mats": { "Estrella mortal": 75, "Vial con runas grabadas": 25, "Extracto de muerte destilada": 25 },
+        "description": "<strong>Alquimia 170 – 175</strong><br><span class=\"recipe-name\">Marca del artesano II &rarr;</span> 75 Estrella mortal, 25 Vial con runas grabadas, 25 Extracto de muerte destilada."
+      }
+    ]
+  },
+  "df": {
+    "expansionName": "Dragonflight",
+    "professionName": "Alquimia",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Alquimia (1-100) en Dragonflight de World of Warcraft.",
+    "note": "Nota: Los materiales para el tramo 56-100 varían debido a la naturaleza de las experimentaciones.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 7,
+        "mats": { "Escarcha reanimadora": 4, "Lumbreflor": 16 },
+        "description": "<strong>Alquimia 1 – 7</strong><br><span class=\"recipe-name\">Poción de sanación refrescante &rarr;</span> 4 Escarcha reanimadora, 16 Lumbreflor."
+      },
+      {
+        "min": 7,
+        "max": 11,
+        "mats": { "Aire reanimador": 2, "Lumbreflor": 16 },
+        "description": "<strong>Alquimia 7 – 11</strong><br><span class=\"recipe-name\">Poción de maná aireada &rarr;</span> 2 Aire reanimador, 16 Lumbreflor."
+      },
+      {
+        "min": 11,
+        "max": 15,
+        "mats": {},
+        "description": "<strong>Alquimia 11 – 15</strong><br><span class=\"recipe-name\">Brebajes de reclamación &rarr;</span> Usa pociones previas."
+      },
+      {
+        "min": 15,
+        "max": 16,
+        "mats": { "Escarcha despierta": 1, "Fuego despierto": 1 },
+        "description": "<strong>Alquimia 15 – 16</strong><br><span class=\"recipe-name\">Transmutar: Aire despierto &rarr;</span> 1 Escarcha despierta, 1 Fuego despierto."
+      },
+      {
+        "min": 16,
+        "max": 25,
+        "mats": { "Pino retorcido": 15, "Saxífraga": 15, "Lumbreflor": 75, "Amapola burbuja": 15 },
+        "description": "<strong>Alquimia 16 – 25</strong><br><span class=\"recipe-name\">Omnium Draconis &rarr;</span> 15 Pino retorcido, 15 Saxífraga, 75 Lumbreflor, 15 Amapola burbuja."
+      },
+      {
+        "min": 25,
+        "max": 26,
+        "mats": { "Tierra despierta": 1, "Fuego despierto": 1, "Aire despierto": 1, "Escarcha despierta": 1, "Orden despierto": 1 },
+        "description": "<strong>Alquimia 25 – 26</strong><br><span class=\"recipe-name\">Convergente primigenio &rarr;</span> 1 Tierra despierta, 1 Fuego despierto, 1 Aire despierto, 1 Escarcha despierta, 1 Orden despierto."
+      },
+      {
+        "min": 26,
+        "max": 35,
+        "mats": { "Escarcha despierta": 30, "Lumbreflor": 240 },
+        "description": "<strong>Alquimia 26 – 35</strong><br><span class=\"recipe-name\">Ampolla de versatilidad tibia &rarr;</span> 30 Escarcha despierta, 240 Lumbreflor."
+      },
+      {
+        "min": 35,
+        "max": 45,
+        "mats": { "Fuego despierto": 18, "Lumbreflor": 36, "Pino retorcido": 18 },
+        "description": "<strong>Alquimia 35 – 45</strong><br><span class=\"recipe-name\">Aceite retuercefuego &rarr;</span> 18 Fuego despierto, 36 Lumbreflor, 18 Pino retorcido."
+      },
+      {
+        "min": 45,
+        "max": 50,
+        "mats": { "Entereza de artesano": 15, "Solución alquímica del dragón": 6, "Omnium Draconis": 3 },
+        "description": "<strong>Alquimia 45 – 50</strong><br>Continúa con experimentaciones hasta el nivel 50."
+      },
+      {
+        "min": 50,
+        "max": 56,
+        "mats": { "Omnium Draconis": 6, "Convergente primigenio": 2 },
+        "description": "<strong>Alquimia 50 – 56</strong><br><span class=\"recipe-name\">Poción elemental de poder &rarr;</span> 6 Omnium Draconis, 2 Convergente primigenio."
+      },
+      {
+        "min": 56,
+        "max": 100,
+        "mats": { "Entereza de artesano": 300, "Solución alquímica del dragón": 100, "Omnium Draconis": 75 },
+        "description": "<strong>Alquimia 56 – 100</strong><br>Experimentación básica con ampollas o pociones."
+      }
+    ]
+  },
+  "tww": {
+    "expansionName": "The War Within",
+    "professionName": "Alquimia",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Alquimia (1-100) en The War Within de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 10,
+        "mats": { "Micoflor": 60, "Vial dorado": 50 },
+        "description": "<strong>Alquimia 1 – 10</strong><br><span class=\"recipe-name\">10x Poción de sanación algariana &rarr;</span> 60 Micoflor, 50 Vial dorado."
+      },
+      {
+        "min": 10,
+        "max": 21,
+        "mats": { "Catalizador de Vía del Núcleo": 8, "Micoflor": 20, "Flor de la la bendición": 20, "Orbínida": 20, "Cebo mortal": 20 },
+        "description": "<strong>Alquimia 10 – 21</strong><br>Experimentación salvaje con diferentes hierbas."
+      },
+      {
+        "min": 21,
+        "max": 25,
+        "mats": { "Micoflor": 20, "Flor de la bendición": 8, "Lanza de Arathor": 6, "Vial dorado": 15 },
+        "description": "<strong>Alquimia 21 – 25</strong><br>Fabrica para conseguir el bonus de primera fabricación."
+      },
+      {
+        "min": 25,
+        "max": 30,
+        "mats": { "Micoflor": 20, "Lanza de Arathor": 10 },
+        "description": "<strong>Alquimia 25 – 30</strong><br><span class=\"recipe-name\">Polvo de pétalo &rarr;</span> 20 Micoflor, 10 Lanza de Arathor."
+      },
+      {
+        "min": 30,
+        "max": 60,
+        "mats": {},
+        "description": "<strong>Alquimia 30 – 60</strong><br>Continúa con Experimentación salvaje o meticulosa."
+      },
+      {
+        "min": 60,
+        "max": 100,
+        "mats": { "Loto anulador": 45, "Residuo de línea ley": 90, "Flor de la bendición": 540, "Lanza de Arathor": 540 },
+        "description": "<strong>Alquimia 60 – 100</strong><br>Frasco de maestría templada o similar."
+      }
+    ]
+  },
+  "midnight": {
+    "expansionName": "Midnight",
+    "professionName": "Alquimia",
+    "maxLevel": 100,
+    "description": "Guía de nivelación de Alquimia (1-100) en Midnight de World of Warcraft.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 7,
+        "mats": { "Flor de tranquilidad": 36, "Frasco de vidriosolar": 30 },
+        "description": "<strong>Alquimia 1 – 7</strong><br><span class=\"recipe-name\">Poción de sanación de Lunargenta &rarr;</span> 36 Flor de tranquilidad, 30 Frasco de vidriosolar."
+      },
+      {
+        "min": 7,
+        "max": 20,
+        "mats": { "Aceite de duramen": 20 },
+        "description": "<strong>Alquimia 7 – 20</strong><br><span class=\"recipe-name\">Reciclar pociones &rarr;</span> 20 Aceite de duramen."
+      },
+      {
+        "min": 20,
+        "max": 27,
+        "mats": { "Flor de tranquilidad": 28, "Frasco de vidriosolar": 20 },
+        "description": "<strong>Alquimia 20 – 27</strong><br>Suero refrescante, Poción de maná imbuida de luz, etc."
+      },
+      {
+        "min": 27,
+        "max": 32,
+        "mats": { "Flor de tranquilidad": 24, "Frasco de vidriosolar": 40 },
+        "description": "<strong>Alquimia 27 – 32</strong><br><span class=\"recipe-name\">Extracto entrópico &rarr;</span> 24 Flor de tranquilidad, 40 Frasco de vidriosolar."
+      },
+      {
+        "min": 32,
+        "max": 50,
+        "mats": { "Flor de tranquilidad": 180, "Frasco de vidriosolar": 150 },
+        "description": "<strong>Alquimia 32 – 50</strong><br><span class=\"recipe-name\">Poción de sanación de Lunargenta &rarr;</span> 180 Flor de tranquilidad, 150 Frasco de vidriosolar."
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": { "Flor de tranquilidad": 760, "Azerraíz": 285, "Hojargenta": 285, "Frasco de vidriosolar": 485 },
+        "description": "<strong>Alquimia 50 – 100</strong><br><span class=\"recipe-name\">Potencial de luz &rarr;</span> 760 Flor de tranquilidad, 285 Azerraíz, 285 Hojargenta, 485 Frasco de vidriosolar."
+      }
+    ]
+  }
+}

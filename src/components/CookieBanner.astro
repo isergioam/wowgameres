@@ -1,0 +1,44 @@
+---
+---
+<div id="cookieConsent" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <span class="cookie-icon">🍪</span>
+      <p>Utilizamos cookies de <strong>Google Analytics</strong> y <strong>Google AdSense</strong> para analizar el tráfico y mostrar anuncios relevantes. 
+      Puedes aceptar o rechazar su uso. <a href="/aviso-legal">Más información</a></p>
+    </div>
+    <div class="cookie-buttons">
+      <button id="cookieReject" class="cookie-btn cookie-btn-reject">Rechazar</button>
+      <button id="cookieAccept" class="cookie-btn cookie-btn-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const CONSENT_KEY = 'cookie_consent';
+  const banner = document.getElementById('cookieConsent');
+  const acceptBtn = document.getElementById('cookieAccept');
+  const rejectBtn = document.getElementById('cookieReject');
+
+  if (localStorage.getItem(CONSENT_KEY)) {
+    banner?.remove();
+  } else {
+    banner?.classList.add('cookie-banner-visible');
+  }
+
+  function closeBanner() {
+    banner?.classList.remove('cookie-banner-visible');
+    banner?.classList.add('cookie-banner-hidden');
+    setTimeout(() => banner?.remove(), 400);
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem(CONSENT_KEY, 'accepted');
+    window.location.reload(); // Recargar para activar analytics
+  });
+
+  rejectBtn?.addEventListener('click', () => {
+    localStorage.setItem(CONSENT_KEY, 'rejected');
+    closeBanner();
+  });
+</script>

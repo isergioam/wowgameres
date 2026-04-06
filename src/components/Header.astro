@@ -1,0 +1,37 @@
+---
+---
+<header class="main-header">
+    <section class="logo">
+        <a href="/"><img id="logo" src="/images/WOWGamerES_Logo_white.webp" alt="WOWGamerES Logo"></a>
+    </section>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="/" data-i18n="nav_home">Inicio</a></li>
+            <li><button id="darkModeToggle">🌙</button></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('darkModeToggle');
+  const imagen = document.getElementById("logo") as HTMLImageElement;
+
+  function updateLogo(isDark: boolean) {
+    if (!imagen) return;
+    imagen.src = isDark 
+      ? "/images/WOWGamerES_Logo_black.webp" 
+      : "/images/WOWGamerES_Logo_white.webp";
+  }
+
+  // Inicializar estado del logo
+  updateLogo(document.body.classList.contains('dark-mode'));
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateLogo(isDark);
+    });
+  }
+</script>

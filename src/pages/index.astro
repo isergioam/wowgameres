@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const expansions = [
+  { id: 'vanilla', name: 'Vanilla' },
+  { id: 'tbc', name: 'Terrallende' },
+  { id: 'wotlk', name: 'Rasganorte' },
+  { id: 'cata', name: 'Cataclismo' },
+  { id: 'mop', name: 'Pandaria' },
+  { id: 'wod', name: 'Draenor' },
+  { id: 'legion', name: 'Legión' },
+  { id: 'bfa', name: 'Battle for Azeroth' },
+  { id: 'sl', name: 'Shadowlands' },
+  { id: 'df', name: 'Dragonflight' },
+  { id: 'tww', name: 'The War Within' },
+  { id: 'midnight', name: 'Midnight' },
+];
+---
+
+<BaseLayout>
+	<main class="content">
+		<h1 id="profesiones" data-i18n="title_professions">Guías por Profesión</h1>
+
+		<section class="section">
+			<p style="margin: 0px 20px;">* Selecciona una expansión para ver sus profesiones.</p>
+		</section>
+
+		<!-- Expansiones -->
+		<section id="expansiones" class="section">
+			<h2 data-i18n="title_explore">Explora por Expansión</h2>
+			<div class="expansiones">
+        {expansions.map(exp => (
+          <a href={`/profesiones/${exp.id}`} class="card-expansion-link">
+            <div class="card-expansion">{exp.name}</div>
+          </a>
+        ))}
+			</div>
+		</section>
+	</main>
+</BaseLayout>
+
+<style>
+  .card-expansion-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+</style>

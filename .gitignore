@@ -1,5 +1,15 @@
 # Dependencias de Node
 node_modules/
 
-# Backups de im·genes
+# Astro
+dist/
+.astro/
+
+# Backups de im√°genes
 images/original/
+
+# Logs y misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store

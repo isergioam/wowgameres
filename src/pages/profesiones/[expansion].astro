@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const expansions = [
+    { id: 'vanilla', name: 'Vanilla' },
+    { id: 'tbc', name: 'Terrallende' },
+    { id: 'wotlk', name: 'Rasganorte' },
+    { id: 'cata', name: 'Cataclismo' },
+    { id: 'mop', name: 'Pandaria' },
+    { id: 'wod', name: 'Draenor' },
+    { id: 'legion', name: 'Legión' },
+    { id: 'bfa', name: 'Battle for Azeroth' },
+    { id: 'sl', name: 'Shadowlands' },
+    { id: 'df', name: 'Dragonflight' },
+    { id: 'tww', name: 'The War Within' },
+    { id: 'midnight', name: 'Midnight' },
+  ];
+
+  return expansions.map(exp => ({
+    params: { expansion: exp.id },
+    props: { expName: exp.name }
+  }));
+}
+
+const { expansion } = Astro.params;
+const { expName } = Astro.props;
+
+const professions = [
+  { id: 'alquimia', name: 'Alquimia', img: '/images/alquimia_wow.webp' },
+  { id: 'encantamiento', name: 'Encantamiento', img: '/images/encantamiento_wow.webp' },
+  { id: 'herreria', name: 'Herrería', img: '/images/herreria_wow.webp' },
+  { id: 'ingenieria', name: 'Ingeniería', img: '/images/ingenieria_wow.webp' },
+  { id: 'inscripcion', name: 'Inscripción', img: '/images/inscripcion_wow.webp' },
+  { id: 'joyeria', name: 'Joyería', img: '/images/joyeria_wow.webp' },
+  { id: 'peleteria', name: 'Peletería', img: '/images/peleteria_wow.webp' },
+  { id: 'sastreria', name: 'Sastrería', img: '/images/sastreria_wow.webp' },
+];
+---
+
+<BaseLayout title={`Guías por Profesión (${expName})`}>
+	<main class="content">
+		<h1 id="profesiones">Guías por Profesión ({expName})</h1>
+		<section class="section">
+			<div class="profesiones">
+        {professions.map(prof => (
+          <a href={`/guia/${prof.id}/${expansion}`}>
+            <div class="card">
+              <h3>{prof.name}</h3>
+              <img src={prof.img} alt={`WOWGamerES ${prof.name}`} loading="lazy" width="200" height="150" />
+            </div>
+          </a>
+        ))}
+			</div>
+		</section>
+	</main>
+</BaseLayout>

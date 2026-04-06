@@ -1,0 +1,72 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "WOWGamerES – Guías de Nivelación de Profesiones WoW", 
+	description = "Guías de Alquimia, Encantamiento, Herrería, Ingeniería, Inscripción, Joyería, Peletería y Sastrería de todas las expansiones del universo World of Warcraft."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<!-- Google Fonts: Inter -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+		<!-- Inline script to prevent theme flickering -->
+		<script is:inline>
+			const theme = localStorage.getItem('theme');
+			if (theme === 'dark') {
+				document.body.classList.add('dark-mode');
+			}
+		</script>
+	</head>
+	<body>
+		<Header />
+		<slot />
+		<Footer />
+
+		<!-- Scripts de Terceros (Google Adsense y Analytics) -->
+		<script is:inline>
+			// Lógica de consentimiento de cookies y scripts de rastreo
+			(function() {
+				const CONSENT_KEY = 'cookie_consent';
+				const consent = localStorage.getItem(CONSENT_KEY);
+
+				function activateScripts() {
+					// Analytics 4
+					const gScript = document.createElement('script');
+					gScript.async = true;
+					gScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZD2R9CWXLH';
+					document.head.appendChild(gScript);
+
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'G-ZD2R9CWXLH');
+				}
+
+				if (consent === 'accepted') {
+					activateScripts();
+				}
+			})();
+		</script>
+	</body>
+</html>

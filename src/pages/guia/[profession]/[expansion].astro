@@ -1,0 +1,186 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const allProfessions = await getCollection('professions');
+  return allProfessions.flatMap(prof => {
+    return Object.keys(prof.data).map(expKey => {
+      return {
+        params: { profession: prof.id, expansion: expKey },
+        props: { 
+          guideData: prof.data[expKey],
+          professionId: prof.id,
+          expansionId: expKey
+        }
+      };
+    });
+  });
+}
+
+const { guideData, professionId, expansionId } = Astro.props;
+const { expansionName, professionName, maxLevel, description, steps, note } = guideData;
+---
+
+<BaseLayout title={`Guía de ${professionName} ${expansionName} (1-${maxLevel}) - WOWGamerES`}>
+  <main class="content">
+    <h1 id="guide-h1">Guía de {professionName} {expansionName} (1-{maxLevel})</h1>
+
+    <!-- Controles Nivelación -->
+    <div id="leveling-controls" class="leveling-wrapper-glass section">
+      <div class="glass-header">
+        <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
+        <div class="glass-badge">Nivel <span id="currentLevelDisplay">1</span></div>
+      </div>
+      <div class="glass-slider-container">
+        <input type="range" id="levelSlider" aria-label="Filtro de nivel" min="1" max={maxLevel} value="1" class="glass-slider">
+      </div>
+    </div>
+
+    <!-- Materiales -->
+    <section id="materiales" class="section">
+      <div id="materialsToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
+        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="materialsContent" class="section-content">
+        <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
+          <thead>
+            <tr style="border-bottom: 2px solid #6a0dad;">
+              <th id="sortByName" style="padding: 5px; cursor: pointer; user-select: none;">
+                Material <span id="sortIndicatorName" class="sort-indicator">▼</span></th>
+              <th id="sortByQty" style="padding: 5px; cursor: pointer; user-select: none;">Cantidad
+                <span id="sortIndicatorQty" class="sort-indicator">↕</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="materialsBody">
+            <!-- Dinámico vía Script -->
+          </tbody>
+        </table>
+        {note && <p id="guide-note" style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">{note}</p>}
+      </div>
+    </section>
+
+    <!-- Nivelación (Pasos) -->
+    <section id="niveles" class="section">
+      <div id="recipesToggle" class="section-toggle">
+        <h2 class="section-toggle-title">📜 Recetas por nivel</h2>
+        <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
+      </div>
+      <div id="recipesContent" class="section-content">
+        {steps.map((step, index) => (
+          <p 
+            class="custom-step" 
+            data-min={step.min} 
+            data-max={step.max} 
+            data-mats={JSON.stringify(step.mats)}
+          >
+            <Fragment set:html={step.description} />
+          </p>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  // Reutilizamos la lógica del slider original adaptada para Astro
+  const slider = document.getElementById('levelSlider') as HTMLInputElement;
+  const display = document.getElementById('currentLevelDisplay');
+  const materialsBody = document.getElementById('materialsBody');
+  const sortByNameBtn = document.getElementById('sortByName');
+  const sortByQtyBtn = document.getElementById('sortByQty');
+  const sortIndName = document.getElementById('sortIndicatorName');
+  const sortIndQty = document.getElementById('sortIndicatorQty');
+
+  let currentSort = 'name'; 
+  let nameAsc = true;
+  let qtyAsc = false; 
+
+  function updateLeveling() {
+    if (!slider || !materialsBody) return;
+    const steps = document.querySelectorAll('.custom-step') as NodeListOf<HTMLElement>;
+    const currentLevel = parseInt(slider.value);
+    if (display) display.textContent = currentLevel.toString();
+
+    const totalMats: Record<string, number> = {};
+
+    steps.forEach(step => {
+      const max = parseInt(step.getAttribute('data-max') || '0');
+      if (currentLevel >= max) {
+        step.style.display = 'none';
+      } else {
+        step.style.display = 'block';
+        const matsStr = step.getAttribute('data-mats');
+        if (matsStr) {
+          try {
+            const mats = JSON.parse(matsStr);
+            for (const [mat, qty] of Object.entries(mats)) {
+              totalMats[mat] = (totalMats[mat] as number || 0) + (qty as number);
+            }
+          } catch (e) { console.error("Error parsing materials JSON", e); }
+        }
+      }
+    });
+
+    materialsBody.innerHTML = '';
+    const matsEntries = Object.entries(totalMats);
+
+    if (matsEntries.length === 0) {
+      materialsBody.innerHTML = '<tr><td colspan="2" style="text-align:center; padding: 10px;">¡Ya has alcanzado el nivel máximo de esta guía!</td></tr>';
+      return;
+    }
+
+    let matsArray = matsEntries.map(([name, qty]) => ({ name, qty }));
+
+    matsArray.sort((a, b) => {
+      if (currentSort === 'name') {
+        const res = a.name.localeCompare(b.name);
+        return nameAsc ? res : -res;
+      } else {
+        const res = a.qty - b.qty;
+        return qtyAsc ? res : -res;
+      }
+    });
+
+    if (sortIndName) sortIndName.textContent = currentSort === 'name' ? (nameAsc ? '▼' : '▲') : '↕';
+    if (sortIndQty) sortIndQty.textContent = currentSort === 'qty' ? (qtyAsc ? '▼' : '▲') : '↕';
+
+    matsArray.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.style.borderBottom = '1px solid #e0d4ff';
+      tr.innerHTML = `
+        <td style="padding: 5px;">${item.name}</td>
+        <td style="padding: 5px;">${item.qty}</td>
+      `;
+      materialsBody.appendChild(tr);
+    });
+  }
+
+  // Event Listeners
+  slider?.addEventListener('input', updateLeveling);
+  sortByNameBtn?.addEventListener('click', () => {
+    if (currentSort === 'name') nameAsc = !nameAsc;
+    else { currentSort = 'name'; nameAsc = true; }
+    updateLeveling();
+  });
+  sortByQtyBtn?.addEventListener('click', () => {
+    if (currentSort === 'qty') qtyAsc = !qtyAsc;
+    else { currentSort = 'qty'; qtyAsc = false; }
+    updateLeveling();
+  });
+
+  // Toggles
+  document.getElementById('materialsToggle')?.addEventListener('click', () => {
+    const content = document.getElementById('materialsContent');
+    if (content) content.style.display = content.style.display === 'none' ? 'block' : 'none';
+  });
+  document.getElementById('recipesToggle')?.addEventListener('click', () => {
+    const content = document.getElementById('recipesContent');
+    if (content) content.style.display = content.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Initial call
+  updateLeveling();
+</script>
