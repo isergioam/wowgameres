@@ -41,7 +41,10 @@ const { expansionName, professionName, maxLevel, description, steps, note } = gu
     <section id="materiales" class="section">
       <div id="materialsToggle" class="section-toggle">
         <h2 class="section-toggle-title">📦 Materiales necesarios</h2>
-        <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+        <div style="display: flex; gap: 15px; align-items: center;">
+          <button id="copyMaterials" class="glass-badge" style="cursor: pointer; border: none; font-size: 0.8rem; padding: 4px 12px;">📋 Copiar Lista</button>
+          <span id="materialsToggleIcon" class="section-toggle-icon">▼</span>
+        </div>
       </div>
       <div id="materialsContent" class="section-content">
         <table id="materialsTable" style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 10px;">
@@ -171,14 +174,74 @@ const { expansionName, professionName, maxLevel, description, steps, note } = gu
     updateLeveling();
   });
 
+  // Checklist y Completado
+  materialsBody?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const tr = target.closest('tr');
+    if (tr) {
+      tr.style.opacity = tr.style.opacity === '0.3' ? '1' : '0.3';
+      tr.style.textDecoration = tr.style.textDecoration === 'line-through' ? 'none' : 'line-through';
+    }
+  });
+
+  const recipesContent = document.getElementById('recipesContent');
+  recipesContent?.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const step = target.closest('.custom-step') as HTMLElement;
+    if (step) {
+      step.classList.toggle('step-completed');
+      if (step.classList.contains('step-completed')) {
+        step.style.opacity = '0.4';
+        step.style.borderLeftColor = '#ccc';
+      } else {
+        step.style.opacity = '1';
+        step.style.borderLeftColor = step.getAttribute('data-alt') === 'true' ? '#f39c12' : '#6a0dad';
+      }
+    }
+  });
+
+  // Copiar al portapapeles
+  document.getElementById('copyMaterials')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const rows = materialsBody?.querySelectorAll('tr');
+    if (!rows) return;
+    
+    let text = `Lista de materiales - ${document.title}\n\n`;
+    rows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      if (cells.length >= 2) {
+        text += `- ${cells[1].textContent}x ${cells[0].textContent}\n`;
+      }
+    });
+
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyMaterials');
+      if (btn) {
+        const originalText = btn.textContent;
+        btn.textContent = '✅ ¡Copiado!';
+        setTimeout(() => btn.textContent = originalText, 2000);
+      }
+    });
+  });
+
   // Toggles
   document.getElementById('materialsToggle')?.addEventListener('click', () => {
     const content = document.getElementById('materialsContent');
-    if (content) content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    const icon = document.getElementById('materialsToggleIcon');
+    if (content && icon) {
+      const isHidden = content.style.display === 'none';
+      content.style.display = isHidden ? 'block' : 'none';
+      icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
+    }
   });
   document.getElementById('recipesToggle')?.addEventListener('click', () => {
     const content = document.getElementById('recipesContent');
-    if (content) content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    const icon = document.getElementById('recipesToggleIcon');
+    if (content && icon) {
+      const isHidden = content.style.display === 'none';
+      content.style.display = isHidden ? 'block' : 'none';
+      icon.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(-90deg)';
+    }
   });
 
   // Initial call
