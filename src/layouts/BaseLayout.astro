@@ -44,6 +44,7 @@ const {
 		<Header />
 		<slot />
 		<Footer />
+		<CookieBanner />
 
 		<!-- Scripts de Terceros (Google Adsense y Analytics) -->
 		<script is:inline>
@@ -63,6 +64,13 @@ const {
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
 					gtag('config', 'G-ZD2R9CWXLH');
+
+					// Google AdSense (ca-pub-9393134927059057)
+					const adsenseScript = document.createElement('script');
+					adsenseScript.async = true;
+					adsenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9393134927059057';
+					adsenseScript.setAttribute('crossorigin', 'anonymous');
+					document.head.appendChild(adsenseScript);
 				}
 
 				if (consent === 'accepted') {
