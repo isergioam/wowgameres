@@ -126,7 +126,7 @@
       const filtered = searchableIndex.filter(item => {
         const itemText = (item.title + ' ' + item.keywords.join(' ')).toLowerCase();
         return searchTerms.every(term => itemText.includes(term));
-      }).slice(0, 8);
+      }).slice(0, 20);
 
       if (filtered.length > 0) {
         resultsList.innerHTML = filtered.map(item => `

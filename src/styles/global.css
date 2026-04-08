@@ -4,14 +4,17 @@
   box-sizing: border-box;
 }
 
-/* Ocultar barras de desplazamiento por defecto en html y body para estética limpia */
-html, body {
+/* Ocultar barras de desplazamiento globalmente */
+* {
   scrollbar-width: none;
+  /* Firefox */
   -ms-overflow-style: none;
+  /* IE y Edge */
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
+  /* Chrome, Safari y Opera */
 }
 
 :root {
@@ -176,24 +179,12 @@ a {
   transform-origin: top;
   animation: slideIn 0.2s ease-out;
 
-  /* Restaurar scrollbar para los resultados para mejorar la accesibilidad */
-  scrollbar-width: thin;
-  -ms-overflow-style: auto;
+  /* Asegurar que sea desplazable en táctiles */
   -webkit-overflow-scrolling: touch;
 }
 
 .search-results::-webkit-scrollbar {
-  display: block;
-  width: 6px;
-}
-
-.search-results::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.search-results::-webkit-scrollbar-thumb {
-  background: var(--primary-purple);
-  border-radius: 10px;
+  display: none;
 }
 
 @keyframes slideIn {
@@ -295,9 +286,10 @@ a {
   }
 
   .search-results {
-    /* Ajuste para móviles: asegurar que los resultados no se salgan de la pantalla y sean desplazables */
-    max-height: 60vh;
+    /* Ajuste para móviles: más altura y asegura el scroll táctil */
+    max-height: 65vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   #quickSearch {
@@ -1043,18 +1035,20 @@ footer {
 
   /* Ajuste para el botón de materiales en móvil */
   .section-toggle {
-    flex-wrap: nowrap; /* Evitamos que rompa en dos filas si es posible */
+    flex-wrap: nowrap;
+    /* Evitamos que rompa en dos filas si es posible */
     gap: var(--space-sm);
     padding: 10px var(--space-sm);
     justify-content: space-between;
   }
 
   .section-toggle div {
-    width: auto; /* Devolvemos el ancho automático */
+    width: auto;
+    /* Devolvemos el ancho automático */
     flex: 1 1 auto;
     min-width: 0;
   }
-  
+
   .section-toggle-title {
     font-size: 0.9rem;
     white-space: nowrap;
@@ -1070,7 +1064,8 @@ footer {
   }
 
   .copy-btn-premium span {
-    display: none; /* Solo icono en pantallas muy pequeñas para evitar empujar el toggle */
+    display: none;
+    /* Solo icono en pantallas muy pequeñas para evitar empujar el toggle */
   }
 
   .section-toggle-icon {
@@ -1081,7 +1076,8 @@ footer {
   .glass-slider::-webkit-slider-thumb {
     width: 44px;
     height: 44px;
-    margin-top: -18px; /* (44/2 - 8/2) = 22-4 = 18 */
+    margin-top: -18px;
+    /* (44/2 - 8/2) = 22-4 = 18 */
   }
 
   .glass-slider::-moz-range-thumb {
