@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wowgameres-v1';
+const CACHE_NAME = 'wowgameres-v2';
 const ASSETS = [
   '/',
   '/manifest.json'
