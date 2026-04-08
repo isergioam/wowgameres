@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ShareButtons from "../../../components/ShareButtons.astro";
 
 export async function getStaticPaths() {
   const allProfessions = await getCollection("professions");
@@ -37,8 +38,24 @@ const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
         <div class="glass-badge">
           Nivel <span id="currentLevelDisplay">1</span>
         </div>
-        <button id="resetProgress" class="reset-btn-mini" title="Borrar todo el progreso de esta guía">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        <button
+          id="resetProgress"
+          class="reset-btn-mini"
+          title="Borrar todo el progreso de esta guía"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+            ></path><path d="M3 3v5h5"></path></svg
+          >
           <span>Reiniciar</span>
         </button>
       </div>
@@ -211,6 +228,8 @@ const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
           ))
         }
       </div>
+      <!-- Botones de Compartir -->
+      <ShareButtons />
 
       <!-- Publicidad al final de la guía -->
       <div class="ad-container ad-bottom">
@@ -480,27 +499,36 @@ const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
   });
 
   loadProgress();
-  if (checkedMaterials.size === 0 && completedSteps.size === 0 && slider && slider.value === "1") {
+  if (
+    checkedMaterials.size === 0 &&
+    completedSteps.size === 0 &&
+    slider &&
+    slider.value === "1"
+  ) {
     updateLeveling();
   }
 
   // --- REINICIAR PROGRESO ---
   document.getElementById("resetProgress")?.addEventListener("click", () => {
-    if (confirm("¿Estás seguro de que quieres borrar todo el progreso guardado en esta guía?")) {
+    if (
+      confirm(
+        "¿Estás seguro de que quieres borrar todo el progreso guardado en esta guía?",
+      )
+    ) {
       localStorage.removeItem(storageKey);
-      
+
       // Resetear estado local
       if (slider) slider.value = "1";
       checkedMaterials.clear();
       completedSteps.clear();
-      
+
       // Resetear UI de pasos
-      document.querySelectorAll(".custom-step").forEach(step => {
+      document.querySelectorAll(".custom-step").forEach((step) => {
         step.classList.remove("step-completed");
       });
-      
+
       updateLeveling();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   });
 </script>
