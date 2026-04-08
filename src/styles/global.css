@@ -4,17 +4,14 @@
   box-sizing: border-box;
 }
 
-/* Ocultar barras de desplazamiento globalmente */
-* {
+/* Ocultar barras de desplazamiento por defecto en html y body para estética limpia */
+html, body {
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE y Edge */
 }
 
-*::-webkit-scrollbar {
+html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari y Opera */
 }
 
 :root {
@@ -179,13 +176,24 @@ a {
   transform-origin: top;
   animation: slideIn 0.2s ease-out;
 
-  /* Refuerzo para ocultar scrollbar en el desplegable */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* Restaurar scrollbar para los resultados para mejorar la accesibilidad */
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .search-results::-webkit-scrollbar {
-  display: none;
+  display: block;
+  width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: var(--primary-purple);
+  border-radius: 10px;
 }
 
 @keyframes slideIn {
@@ -287,10 +295,9 @@ a {
   }
 
   .search-results {
-    top: 100%;
-    z-index: 3000;
-    width: 100%;
-    /* Aseguramos que ocupe todo el ancho del contenedor del buscador */
+    /* Ajuste para móviles: asegurar que los resultados no se salgan de la pantalla y sean desplazables */
+    max-height: 60vh;
+    overflow-y: auto;
   }
 
   #quickSearch {
