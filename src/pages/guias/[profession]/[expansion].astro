@@ -23,11 +23,31 @@ const { guideData, professionId, expansionId } = Astro.props;
 const { expansionName, professionName, maxLevel, description, steps, note } =
   guideData;
 const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
+
+const seoDescription = description || `Sube ${professionName} al máximo nivel en la expansión ${cleanExpansionName} de World of Warcraft con nuestra guía paso a paso.`;
+const seoImage = `/images/${professionId}_wow.webp`;
+
+// Datos Estructurados para Fragmentos Destacados en Google
+const schemaJSON = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": `Guía de ${professionName} ${cleanExpansionName}`,
+  "description": seoDescription,
+  "step": steps.map((s, i) => ({
+    "@type": "HowToStep",
+    "name": `Nivel ${s.min}-${s.max}`,
+    "url": `https://wowgameres.com/guias/${professionId}/${expansionId}#niveles`,
+    "text": s.description.replace(/<[^>]*>?/gm, '').trim()
+  }))
+};
 ---
 
 <BaseLayout
   title={`Guía de ${professionName} ${cleanExpansionName} - WOWGamerES`}
+  description={seoDescription}
+  image={seoImage}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaJSON)} />
   <main class="content">
     <h1 id="guide-h1">Guía de {professionName} {cleanExpansionName}</h1>
 

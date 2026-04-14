@@ -36,9 +36,11 @@ const professions = [
   { id: 'peleteria', name: 'Peletería', img: '/images/peleteria_wow.webp' },
   { id: 'sastreria', name: 'Sastrería', img: '/images/sastreria_wow.webp' },
 ];
+
+const seoDescription = `Listado con todas las guías de profesiones (Alquimia, Herrería, Joyería...) disponibles para la expansión ${expName} de World of Warcraft. Sube al nivel máximo de forma rápida y barata.`;
 ---
 
-<BaseLayout title={`Guías por Profesión (${expName})`}>
+<BaseLayout title={`Guías de Profesiones WoW - ${expName} | WOWGamerES`} description={seoDescription}>
 	<main class="content">
 		<h1 id="profesiones">Guías por Profesión ({expName})</h1>
 		<section class="section">
