@@ -7,10 +7,15 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check-links": "linkinator ./dist"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.2.0",
     "astro": "^5.0.0",
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "linkinator": "^6.0.0"
   }
 }
