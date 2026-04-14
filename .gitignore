@@ -1,15 +1,24 @@
 # Dependencias de Node
 node_modules/
+package-lock.json.backup
 
 # Astro
 dist/
 .astro/
 
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
 # Backups de imágenes
 images/original/
+public/images/original/
+public/images/old/
 
 # Logs y misc
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .DS_Store
+Thumbs.db
