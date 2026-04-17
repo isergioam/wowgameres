@@ -51,6 +51,17 @@ const schemaJSON = {
   <main class="content">
     <h1 id="guide-h1">Guía de {professionName} {cleanExpansionName}</h1>
 
+    <!-- Bloque SEO Dinámico introductorio para AdSense (Evitar Thin Content) -->
+    <div class="intro-description" style="margin-bottom: 25px; line-height: 1.6; font-size: 1.05rem; background: var(--bg-card, rgba(20,20,20,0.4)); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color, rgba(187, 159, 255, 0.1));">
+      <p style="margin-bottom: 12px;">{description}</p>
+      <p style="margin-bottom: 12px;">
+        Dominar <strong>{professionName}</strong> en la expansión <strong>{cleanExpansionName}</strong> requiere recolectar y crear objetos de manera eficiente. Esta guía paso a paso está diseñada para llevarte desde el nivel inicial hasta el nivel máximo ({maxLevel}) gastando la menor cantidad del oro y tiempo posible en la Casa de Subastas. 
+      </p>
+      <p>
+        <span style="color: var(--primary-color, #bb9fff); font-weight: 500;">💡 Consejo de uso:</span> Utiliza nuestro rastreador interactivo a continuación filtrando por niveles para marcar los materiales que ya posees y llevar la cuenta de tu progreso en la rama de nivelación. Todos tus datos se guardan estrictamente en local.
+      </p>
+    </div>
+
     <!-- Controles Nivelación -->
     <div id="leveling-controls" class="leveling-wrapper-glass section">
       <div class="glass-header">

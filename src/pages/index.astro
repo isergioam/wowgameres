@@ -19,15 +19,24 @@ const expansions = [
 
 <BaseLayout>
 	<main class="content">
-		<h1 id="profesiones" data-i18n="title_professions">Guías por Profesión</h1>
-
-		<section class="section">
-			<p style="margin: 0px 20px;">* Selecciona una expansión para ver sus profesiones.</p>
+		<!-- Hero Section con texto enriquecido para SEO y AdSense -->
+		<section class="section welcome-section reveal">
+			<h1 id="profesiones" data-i18n="title_professions">Tu central de Guías de Profesión para World of Warcraft</h1>
+			<p class="intro-description" style="margin-top: 15px; font-size: 1.1em; line-height: 1.6;">
+				Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo creado por jugadores y para jugadores. 
+				Nuestro objetivo es ayudarte a subir las profesiones de tus personajes de forma rápida, eficiente y 
+				gastando la menor cantidad de oro posible. Cubrimos todas las expansiones, desde Classic (Vanilla) 
+				hasta la más reciente, ofreciéndote rutas optimizadas y listas de materiales exactas.
+			</p>
 		</section>
 
 		<!-- Expansiones -->
 		<section id="expansiones" class="section">
-			<h2 data-i18n="title_explore">Explora por Expansión</h2>
+			<div style="margin-bottom: 25px; text-align: center;">
+				<h2 data-i18n="title_explore">Comienza tu aventura: Elige una Expansión</h2>
+				<p style="opacity: 0.8; margin-top: 10px;">Selecciona la era temporal en la que deseas mejorar tus habilidades de artesanía o recolección.</p>
+			</div>
+			
 			<div class="expansiones">
         {expansions.map(exp => (
           <a href={`/guias/${exp.id}`} class="card-expansion-link reveal">
@@ -36,6 +45,24 @@ const expansions = [
         ))}
 			</div>
 		</section>
+
+		<!-- Nueva sección para añadir densidad de texto y valor (E-E-A-T) -->
+		<section class="section faq-section reveal" style="margin-top: 50px; text-align: left;">
+			<h2>¿Por qué utilizar nuestras guías?</h2>
+			<div style="margin-top: 20px; display: grid; gap: 20px;">
+				<article>
+					<h3 style="color: #bb9fff; margin-bottom: 5px;">Rutas Optimizadas paso a paso</h3>
+					<p>Nos encargamos de estructurar cada tramo de nivel (por ejemplo, del 1 al 75 o del 1 al 300) seleccionando siempre las recetas que consumen materiales más comunes y baratos en la casa de subastas. Rehuimos sistemáticamente de componentes raros salvo que sean estrictamente necesarios.</p>
+				</article>
+				<article>
+					<h3 style="color: #bb9fff; margin-bottom: 5px;">Rastreador de Progreso Integrado</h3>
+					<p>Nuestras guías no son solo texto estático. Cada página de profesión incluye una herramienta interactiva donde puedes tachar los materiales que vas consiguiendo y llevar la cuenta de en qué nivel te has quedado, guardándose automáticamente en tu navegador.</p>
+				</article>
+				<article>
+					<h3 style="color: #bb9fff; margin-bottom: 5px;">Actualizaciones Constantes</h3>
+					<p>El universo de Azeroth cambia constantemente. Parche tras parche, revisamos las dinámicas de farmeo y ajuste de recetas que Blizzard introduce, asegurándonos de que nunca sigas una ruta que haya quedado obsoleta.</p>
+				</article>
+			</div>
+		</section>
 	</main>
 </BaseLayout>
-
