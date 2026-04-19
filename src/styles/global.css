@@ -4,17 +4,40 @@
   box-sizing: border-box;
 }
 
-/* Ocultar barras de desplazamiento globalmente */
-* {
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* IE y Edge */
+/* Barra de desplazamiento personalizada (Premium & Sharp) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-*::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari y Opera */
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-glow); /* Usando variable para mejor contraste */
+  border-radius: 0;
+  transition: background 0.3s;
+  border: 1px solid rgba(0,0,0,0.05); /* Sutil separación visual */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-purple);
+}
+
+/* Ajuste específico para visibilidad en modo claro */
+html:not(.dark-mode) ::-webkit-scrollbar-thumb {
+  background: rgba(106, 13, 173, 0.35); /* Un púrpura más profundo para fondo blanco */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(106, 13, 173, 0.4) transparent;
+}
+
+.dark-mode {
+  scrollbar-color: rgba(187, 159, 255, 0.4) transparent;
 }
 
 :root {
@@ -43,8 +66,8 @@
   --space-xxl: 48px;
   --space-xxxl: 64px;
 
-  --header-height-desktop: 88px;
-  --header-height-mobile: 135px;
+  --header-height-desktop: 120px;
+  --header-height-mobile: 195px;
 }
 
 
@@ -860,7 +883,7 @@ footer {
   /* Glass filter (sticky slider) */
   .leveling-wrapper-glass {
     position: sticky;
-    top: 140px;
+    top: 195px;
     z-index: 1000;
     padding: var(--space-sm) var(--space-md);
     border-radius: 0;
@@ -1023,7 +1046,7 @@ footer {
   /* Glass slider */
   .leveling-wrapper-glass {
     position: sticky;
-    top: 140px;
+    top: 195px;
     /* Sincronizado con la altura real del header móvil expandido */
     padding: 10px 12px;
     z-index: 950;

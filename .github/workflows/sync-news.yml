@@ -1,0 +1,27 @@
+name: Sync WoW News
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Cada 6 horas
+  workflow_dispatch: # Permite ejecutarlo manualmente
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Sync News
+        run: node scripts/sync-news.mjs
+        
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add src/content/news/latest.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: sync latest WoW news [skip ci]" && git push)

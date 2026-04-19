@@ -17,6 +17,24 @@ const professions = defineCollection({
   }))
 });
 
+const news = defineCollection({
+  type: 'data',
+  schema: z.array(z.object({
+    id: z.number(),
+    title: z.string(),
+    slug: z.string(),
+    description: z.string(),
+    content: z.string(),
+    url: z.string().url(),
+    image: z.string().url(),
+    date: z.string(),
+    category: z.string(),
+    summary: z.string(),
+    summaryTitle: z.string().nullable().optional()
+  }))
+});
+
 export const collections = {
-  professions
+  professions,
+  news
 };
