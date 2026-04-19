@@ -345,15 +345,17 @@ const description = "Descubre las últimas novedades de Azeroth con resúmenes e
   }
 
   @media (max-width: 1024px) { 
-    .toolbar-sticky { top: 120px; } 
+    .toolbar-sticky { top: 100px; } 
   }
   @media (max-width: 768px) {
-    .toolbar-sticky { top: 195px; }
+    .toolbar-sticky { top: var(--header-height-mobile, 240px); }
     .news-command-bar { flex-direction: column; height: auto; border: 1px solid var(--toolbar-border); }
     .cat-toggle-btn { border-right: none; border-bottom: 1px solid var(--toolbar-border); width: 100%; justify-content: space-between; }
     .cat-menu-panel { width: 100%; position: static; box-shadow: none; border: none; border-bottom: 1px solid var(--toolbar-border); }
     .search-command { padding: 15px 20px; }
     .main-news-section { padding-top: 20px !important; }
+    .hero-cinematic { height: 50vh; min-height: 400px; padding-top: 20px; }
+    .hero-content h1 { font-size: 1.6rem; }
   }
 
   /* Re-añadir estilos de tarjetas eliminados por error */
@@ -388,8 +390,8 @@ const description = "Descubre las últimas novedades de Azeroth con resúmenes e
 
   /* Ajuste ultra-fino para dispositivos muy pequeños */
   @media (max-width: 480px) {
-    .toolbar-sticky { top: 190px; } 
-    .hero-cinematic { height: 35vh; min-height: 300px; }
+    .toolbar-sticky { top: var(--header-height-mobile, 240px); } 
+    .hero-cinematic { height: 45vh; min-height: 360px; }
     .card-content { padding: 20px; }
     .card-content h3 { font-size: 1.15rem; }
   }
