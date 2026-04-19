@@ -1,0 +1,203 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Desuello",
+    "maxLevel": 300,
+    "description": "Guía de nivelación de Desuello (1-300) en WoW Classic. Consigue cueros y pieles de las bestias de Azeroth para Peletería.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 65,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 65</div><br>Desuella bestias en las zonas de inicio (Jabalíes, Lobos, Gatos).<br>Horda: Durotar o Mulgore.<br>Alianza: Bosque de Elwynn o Dun Morogh.",
+        "routeImage": "/images/routes/vanilla_skinning_start.webp"
+      },
+      {
+        "min": 65,
+        "max": 150,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 65 – 150</div><br>Busca bestias de nivel 10-25.<br>Zonas recomendadas: Los Baldíos, Loch Modan o Páramos de Poniente.",
+        "routeImage": "/images/routes/vanilla_skinning_barrens.webp"
+      },
+      {
+        "min": 150,
+        "max": 225,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 150 – 225</div><br>Céntrate en las bestias de nivel 25-40.<br>Zonas recomendadas: Mil Agujas o El Pantano de las Penas.",
+        "routeImage": "/images/routes/vanilla_skinning_feralas.webp"
+      },
+      {
+        "min": 225,
+        "max": 300,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 225 – 300</div><br>Desuella bestias de nivel 40-60.<br>Zonas recomendadas: Cráter de Un'Goro o Tierras de la Peste del Este.",
+        "routeImage": "/images/routes/vanilla_skinning_ungoro.webp"
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Desuello",
+    "maxLevel": 75,
+    "description": "Consigue cuero de las bestias exóticas de Terrallende.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 75</div><br>Desuella en la Península del Fuego Infernal y progresa hacia Nagrand.",
+        "routeImage": "/images/routes/tbc_skinning.webp"
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Desuello",
+    "maxLevel": 75,
+    "description": "Desuello en las frías tierras de Rasganorte.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 75</div><br>Desuella Rinocerontes y Bestias en la Cuenca de Sholazar.",
+        "routeImage": "/images/routes/wotlk_skinning.webp"
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Desuello",
+    "maxLevel": 75,
+    "description": "Desuello en Cataclismo.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 75</div><br>Mina y desuella en Monte Hyjal y las Tierras Altas Crepusculares.",
+        "routeImage": "/images/routes/cata_skinning.webp"
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Desuello",
+    "maxLevel": 75,
+    "description": "Guía de desuello en Pandaria.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 75</div><br>Desuella Tortugas y Bestias en el Valle de los Cuatro Vientos.",
+        "routeImage": "/images/routes/mop_skinning.webp"
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Desuello",
+    "maxLevel": 100,
+    "description": "Desuello en Draenor.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 100</div><br>Desuella en Nagrand de Draenor.",
+        "routeImage": "/images/routes/wod_skinning.webp"
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Desuello",
+    "maxLevel": 100,
+    "description": "Desuello en las Islas Quebradas.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 100</div><br>Desuella en Azsuna y Monte Alto.",
+        "routeImage": "/images/routes/legion_skinning.webp"
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Desuello",
+    "maxLevel": 175,
+    "description": "Desuello en Kul Tiras y Zandalar.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 175</div><br>Desuella en Zuldazar y Drustvar.",
+        "routeImage": "/images/routes/bfa_skinning.webp"
+      }
+    ]
+  },
+  "sl": {
+    "expansionName": "Shadowlands",
+    "professionName": "Desuello",
+    "maxLevel": 175,
+    "description": "Desuello en las Tierras Sombrías.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 175</div><br>Desuella en Bastión y Maldraxxus.",
+        "routeImage": "/images/routes/sl_skinning.webp"
+      }
+    ]
+  },
+  "df": {
+    "expansionName": "Dragonflight",
+    "professionName": "Desuello",
+    "maxLevel": 100,
+    "description": "Desuello en las Islas Dragón.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 100</div><br>Desuella en las Llanuras de Ohn'ahra.",
+        "routeImage": "/images/routes/df_skinning.webp"
+      }
+    ]
+  },
+  "tww": {
+    "expansionName": "The War Within",
+    "professionName": "Desuello",
+    "maxLevel": 100,
+    "description": "Desuello en Khaz Algar.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 100</div><br>Desuella en la Isla de Dorn.",
+        "routeImage": "/images/routes/tww_skinning.webp"
+      }
+    ]
+  },
+  "midnight": {
+    "expansionName": "Midnight",
+    "professionName": "Desuello",
+    "maxLevel": 100,
+    "description": "Desuello en Quel'Thalas renacido (2026).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 100: Quel'Thalas</div>Desuella bestias infundidas por la energía del Sol y el Vacío en los bosques de Canción Eterna.",
+        "routeImage": "/images/routes/midnight_skinning.webp"
+      }
+    ]
+  }
+}

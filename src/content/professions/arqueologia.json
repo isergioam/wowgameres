@@ -1,0 +1,138 @@
+{
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Arqueología",
+    "maxLevel": 75,
+    "description": "El origen de la Arqueología. Desentierra los cimientos de Azeroth y consigue armas épicas y monturas prehistóricas.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 30,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 1 – 30: Los Reinos del Este</div>Empieza excavando fragmentos de <div class=\"step-title\">Enanos y Trolls</div>. Estas razas son muy abundantes en las zonas centrales. Es el momento de aprender a usar el catalejo y la linterna para triangular fragmentos."
+      },
+      {
+        "min": 30,
+        "max": 60,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 30 – 60: Kalimdor</div>Viaja al continente oeste para encontrar fragmentos de <div class=\"step-title\">Elfos de la Noche y Fósiles</div>. Los fósiles son la clave para las primeras grandes recompensas de la profesión."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 60 – 75: Tol'vir</div>Una vez alcances el nivel máximo de esta franja, enfócate en Uldum. Los fragmentos de <div class=\"step-title\">Tol'vir</div> son los más raros y valiosos de esta expansión."
+      },
+      {
+        "min": 75,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Botín Legendario de Cataclysm:</div><ul><li><div class=\"step-title\">Raptor fosilizado:</div> Una montura terrestre esquelética (Fósil).</li><li><div class=\"step-title\">Tanque de batalla Qiraji azul:</div> Solo usable en exteriores (Fósil/Qiraji).</li><li><div class=\"step-title\">Zin'rokh, Destructora de Mundos:</div> Una espada de dos manos épica nivel 85 (Troll).</li></ul>"
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Arqueología",
+    "maxLevel": 75,
+    "description": "Descubre la historia de los Pandaren, los Mogu y los invasores Mántides en el continente oculto.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 35,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 1 – 35: El Bosque de Jade</div>Céntrate en los fragmentos <div class=\"step-title\">Pandaren</div>. Aprenderás sobre la historia del último emperador mientras completas artefactos comunes."
+      },
+      {
+        "min": 35,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 35 – 75: Kun-Lai y Desierto de Tong Long</div>Busca fragmentos de los <div class=\"step-title\">Mogu</div>. Estos revelan el pasado oscuro y guerrero de Pandaria."
+      },
+      {
+        "min": 75,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Mecánicas de Pandaria:</div><ul><li><div class=\"step-title\">Localizador Sónico Mántide:</div> Un objeto que puedes comprar para que todos los sitios de excavación de Pandaria sean solo de Mántides por 24 horas.</li><li><div class=\"step-title\">Asiento de Conocimiento:</div> Entrega tus artefactos restaurados en el Palacio Mogu'shan para conseguir puntos de conquista y fragmentos antiguos.</li></ul>"
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Arqueología",
+    "maxLevel": 100,
+    "description": "Viaja al pasado de los clanes orcos y la avanzada civilización de los Arakkoa.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 1 – 50: Clanes de Draenor</div>Excava en Cresta Fuego Glacial y Valle Sombraluna para encontrar fragmentos de los <div class=\"step-title\">Orcos de Draenor</div>. Revelarás el origen de clanes como el Lobo Gélido."
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 50 – 100: Nagrand y Gorgrond</div>Busca fragmentos de <div class=\"step-title\">Ogros y Arakkoa</div>. Estas civilizaciones antiguas tienen los artefactos más raros de la expansión."
+      },
+      {
+        "min": 100,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Secretos de Draenor:</div><ul><li><div class=\"step-title\">Exhibición en Ciudadela:</div> Los artefactos 'Prístinos' que descubras aparecerán físicamente en tu sala de trofeos de la Ciudadela.</li><li><div class=\"step-title\">Cachorro de lobo gélido fantasma:</div> Una mascota adorable obtenida mediante fragmentos orcos.</li></ul>"
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Arqueología",
+    "maxLevel": 100,
+    "description": "La era dorada de la arqueología con misiones de historia únicas y monturas espectaculares.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 1 – 50: Azsuna y Val'sharah</div>Investiga a los <div class=\"step-title\">Altonato</div>. Sus fragmentos son elegantes y te darán una visión completa de la caída de su civilización."
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 50 – 100: Monte Alto y Tormenheim</div>Busca artefactos de los <div class=\"step-title\">Tauren de Monte Alto</div> y de los <div class=\"step-title\">Vrykul</div>. Es la zona con más misiones de historia activa de la profesión."
+      },
+      {
+        "min": 100,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">El Sistema de Misiones de Dalaran:</div><ul><li>Cada 2 semanas, Dariness la Erudita en Dalaran ofrece una misión que te guía a una montura, mascota o juguete raro.</li><li><div class=\"step-title\">Espíritu de Eche'ro:</div> La famosa montura de alce fantasma se consigue mediante este ciclo de misiones en Monte Alto.</li></ul>"
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Arqueología",
+    "maxLevel": 175,
+    "description": "Investiga los imperios caídos de los Zandalari y los antiguos rituales de los Drust.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 80,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 1 – 80: Zandalar</div>Excava en las selvas de Zuldazar para encontrar fragmentos de <div class=\"step-title\">Troll Zandalari</div>. Aprenderás sobre los Loas y sus antiguos reyes."
+      },
+      {
+        "min": 80,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Arqueología 80 – 175: Kul Tiras</div>Investiga las tierras malditas de Drustvar para encontrar fragmentos de los <div class=\"step-title\">Drust</div>. Es el contenido más oscuro y misterioso de la profesión en BfA."
+      },
+      {
+        "min": 175,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Coleccionables de BfA:</div><ul><li><div class=\"step-title\">Pluma sangrienta:</div> Un juguete macabro con temática de sangre.</li><li><div class=\"step-title\">Cuchillo de ritual Drust:</div> Otro objeto cosmético muy codiciado por los coleccionistas de transfiguraciones.</li></ul>"
+      }
+    ]
+  }
+}

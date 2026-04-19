@@ -8,61 +8,81 @@
       {
         "min": 1,
         "max": 50,
-        "mats": { "Paño de lino": 55 },
+        "mats": {
+          "Paño de lino": 55
+        },
         "description": "<strong>Sastrería 1 – 50</strong><br><span class=\"recipe-name\">Venda de lino &rarr;</span> 55 Paño de lino."
       },
       {
         "min": 50,
         "max": 80,
-        "mats": { "Paño de lino": 60 },
+        "mats": {
+          "Paño de lino": 60
+        },
         "description": "<strong>Sastrería 50 – 80</strong><br><span class=\"recipe-name\">Venda de lino gruesa &rarr;</span> 60 Paño de lino."
       },
       {
         "min": 80,
         "max": 130,
-        "mats": { "Paño de lana": 55 },
+        "mats": {
+          "Paño de lana": 55
+        },
         "description": "<strong>Sastrería 80 – 130</strong><br><span class=\"recipe-name\">Venda de lana &rarr;</span> 55 Paño de lana."
       },
       {
         "min": 130,
         "max": 150,
-        "mats": { "Paño de lana": 40 },
+        "mats": {
+          "Paño de lana": 40
+        },
         "description": "<strong>Sastrería 130 – 150</strong><br><span class=\"recipe-name\">Venda de lana gruesa &rarr;</span> 40 Paño de lana."
       },
       {
         "min": 150,
         "max": 190,
-        "mats": { "Paño de seda": 45 },
+        "mats": {
+          "Paño de seda": 45
+        },
         "description": "<strong>Sastrería 150 – 190</strong><br><span class=\"recipe-name\">Venda de seda &rarr;</span> 45 Paño de seda."
       },
       {
         "min": 190,
         "max": 210,
-        "mats": { "Paño de seda": 40 },
+        "mats": {
+          "Paño de seda": 40
+        },
         "description": "<strong>Sastrería 190 – 210</strong><br><span class=\"recipe-name\">Venda de seda gruesa &rarr;</span> 40 Paño de seda."
       },
       {
         "min": 210,
         "max": 240,
-        "mats": { "Paño de tejido mágico": 30 },
+        "mats": {
+          "Paño de tejido mágico": 30
+        },
         "description": "<strong>Sastrería 210 – 240</strong><br><span class=\"recipe-name\">Venda de tejido mágico &rarr;</span> 30 Paño de tejido mágico."
       },
       {
         "min": 240,
         "max": 260,
-        "mats": { "Paño de tejido mágico": 40 },
+        "mats": {
+          "Paño de tejido mágico": 40
+        },
         "description": "<strong>Sastrería 240 – 260</strong><br><span class=\"recipe-name\">Venda de tejido mágico gruesa &rarr;</span> 40 Paño de tejido mágico."
       },
       {
         "min": 260,
         "max": 290,
-        "mats": { "Paño rúnico": 30 },
+        "mats": {
+          "Paño rúnico": 30
+        },
         "description": "<strong>Sastrería 260 – 290</strong><br><span class=\"recipe-name\">Venda de paño rúnico &rarr;</span> 30 Paño rúnico."
       },
       {
         "min": 290,
         "max": 300,
-        "mats": { "Paño rúnico": 20 },
+        "mats": {
+          "Paño rúnico": 20
+        },
         "description": "<strong>Sastrería 290 – 300</strong><br><span class=\"recipe-name\">Venda de paño rúnico gruesa &rarr;</span> 20 Paño rúnico."
       }
     ]
@@ -76,13 +96,17 @@
       {
         "min": 1,
         "max": 40,
-        "mats": { "Paño de tejido abisal": 45 },
+        "mats": {
+          "Paño de tejido abisal": 45
+        },
         "description": "<strong>Sastrería 1 – 40</strong><br><span class=\"recipe-name\">Venda de tejido abisal &rarr;</span> 45 Paño de tejido abisal."
       },
       {
         "min": 40,
         "max": 75,
-        "mats": { "Paño de tejido abisal": 200 },
+        "mats": {
+          "Paño de tejido abisal": 200
+        },
         "description": "<strong>Sastrería 40 – 75</strong><br><span class=\"recipe-name\">Venda de tejido abisal gruesa &rarr;</span> 200 Paño de tejido abisal."
       }
     ]
@@ -96,13 +120,17 @@
       {
         "min": 1,
         "max": 20,
-        "mats": { "Tela de tejido de Escarcha": 20 },
+        "mats": {
+          "Tela de tejido de Escarcha": 20
+        },
         "description": "<strong>Sastrería 1 – 20</strong><br><span class=\"recipe-name\">Venda de tejido de Escarcha &rarr;</span> 20 Tela de tejido de Escarcha."
       },
       {
         "min": 20,
         "max": 75,
-        "mats": { "Tela de tejido de Escarcha": 180 },
+        "mats": {
+          "Tela de tejido de Escarcha": 180
+        },
         "description": "<strong>Sastrería 20 – 75</strong><br><span class=\"recipe-name\">Venda de tejido de Escarcha gruesa &rarr;</span> 180 Tela de tejido de Escarcha."
       }
     ]
@@ -116,13 +144,17 @@
       {
         "min": 1,
         "max": 25,
-        "mats": { "Paño de seda de ascuas": 25 },
+        "mats": {
+          "Paño de seda de ascuas": 25
+        },
         "description": "<strong>Sastrería 1 – 25</strong><br><span class=\"recipe-name\">Venda de seda de ascuas &rarr;</span> 25 Paño de seda de ascuas."
       },
       {
         "min": 25,
         "max": 75,
-        "mats": { "Paño de seda de ascuas": 160 },
+        "mats": {
+          "Paño de seda de ascuas": 160
+        },
         "description": "<strong>Sastrería 25 – 75</strong><br><span class=\"recipe-name\">Venda de seda de ascuas gruesa &rarr;</span> 160 Paño de seda de ascuas."
       }
     ]
@@ -136,25 +168,34 @@
       {
         "min": 1,
         "max": 10,
-        "mats": { "Paño de lanaviento": 225 },
+        "mats": {
+          "Paño de lanaviento": 225
+        },
         "description": "<strong>Sastrería 1 – 10</strong><br><span class=\"recipe-name\">Madeja de paño de lanaviento &rarr;</span> 225 Paño de lanaviento."
       },
       {
         "min": 10,
         "max": 25,
-        "mats": { "Paño de lanaviento": 25 },
+        "mats": {
+          "Paño de lanaviento": 25
+        },
         "description": "<strong>Sastrería 10 – 25</strong><br><span class=\"recipe-name\">Venda de lanaviento &rarr;</span> 25 Paño de lanaviento."
       },
       {
         "min": 25,
         "max": 60,
-        "mats": { "Paño de lanaviento": 140 },
+        "mats": {
+          "Paño de lanaviento": 140
+        },
         "description": "<strong>Sastrería 25 – 60</strong><br><span class=\"recipe-name\">Venda de lanaviento pesada &rarr;</span> 140 Paño de lanaviento."
       },
       {
         "min": 60,
         "max": 75,
-        "mats": { "Madeja de paño de lanaviento": 45, "Espíritu de armonía": 1 },
+        "mats": {
+          "Madeja de paño de lanaviento": 45,
+          "Espíritu de armonía": 1
+        },
         "description": "<strong>Sastrería 60 – 75</strong><br><span class=\"recipe-name\">Puños de satén de contendiente &rarr;</span> 45 Madeja de paño de lanaviento, 1 Espíritu de armonía."
       }
     ]
@@ -168,19 +209,25 @@
       {
         "min": 1,
         "max": 2,
-        "mats": { "Pelaje suntuoso": 5 },
+        "mats": {
+          "Pelaje suntuoso": 5
+        },
         "description": "<strong>Sastrería 1 – 2</strong><br><span class=\"recipe-name\">Secretos de sastrería de Draenor &rarr;</span> 5 Pelaje suntuoso."
       },
       {
         "min": 2,
         "max": 50,
-        "mats": { "Pelaje suntuoso": 750 },
+        "mats": {
+          "Pelaje suntuoso": 750
+        },
         "description": "<strong>Sastrería 2 – 50</strong><br><span class=\"recipe-name\">Venda antiséptica &rarr;</span> 750 Pelaje suntuoso."
       },
       {
         "min": 50,
         "max": 100,
-        "mats": { "Pelaje suntuoso": 1500 },
+        "mats": {
+          "Pelaje suntuoso": 1500
+        },
         "description": "<strong>Sastrería 50 – 100</strong><br><span class=\"recipe-name\">Bordado de tejido de maleficio &rarr;</span> 1500 Pelaje suntuoso."
       }
     ]
@@ -194,31 +241,44 @@
       {
         "min": 1,
         "max": 30,
-        "mats": { "Seda shal'dorei": 55 },
+        "mats": {
+          "Seda shal'dorei": 55
+        },
         "description": "<strong>Sastrería 1 – 30</strong><br><span class=\"recipe-name\">Venda de filoseda &rarr;</span> 55 Seda shal'dorei."
       },
       {
         "min": 30,
         "max": 54,
-        "mats": { "Seda shal'dorei": 288 },
+        "mats": {
+          "Seda shal'dorei": 288
+        },
         "description": "<strong>Sastrería 30 – 54</strong><br><span class=\"recipe-name\">Cincho de filoseda (Rango 3) &rarr;</span> 288 Seda shal'dorei."
       },
       {
         "min": 54,
         "max": 60,
-        "mats": { "Seda shal'dorei": 60, "Arkhana": 18 },
+        "mats": {
+          "Seda shal'dorei": 60,
+          "Arkhana": 18
+        },
         "description": "<strong>Sastrería 54 – 60</strong><br><span class=\"recipe-name\">Filoseda imbuida &rarr;</span> 60 Seda shal'dorei, 18 Arkhana."
       },
       {
         "min": 60,
         "max": 90,
-        "mats": { "Seda shal'dorei": 275, "Mena de piedra Ley": 55 },
+        "mats": {
+          "Seda shal'dorei": 275,
+          "Mena de piedra Ley": 55
+        },
         "description": "<strong>Sastrería 60 – 90</strong><br><span class=\"recipe-name\">Tablilla de filoseda &rarr;</span> 275 Seda shal'dorei, 55 Mena de piedra Ley."
       },
       {
         "min": 90,
         "max": 100,
-        "mats": { "Filoseda imbuida": 60, "Sangre de Sargeras": 20 },
+        "mats": {
+          "Filoseda imbuida": 60,
+          "Sangre de Sargeras": 20
+        },
         "description": "<strong>Sastrería 90 – 100</strong><br><span class=\"recipe-name\">Cincho de filoseda imbuida (Rango 3) &rarr;</span> 60 Filoseda imbuida, 20 Sangre de Sargeras."
       }
     ]
@@ -232,25 +292,38 @@
       {
         "min": 1,
         "max": 60,
-        "mats": { "Lino espuma de marea": 200 },
+        "mats": {
+          "Lino espuma de marea": 200
+        },
         "description": "<strong>Sastrería 1 – 60</strong><br><span class=\"recipe-name\">Venda de lino espuma de marea &rarr;</span> 200 Lino espuma de marea."
       },
       {
         "min": 60,
         "max": 75,
-        "mats": { "Lino espuma de marea": 240, "Hilo de nailon": 300 },
+        "mats": {
+          "Lino espuma de marea": 240,
+          "Hilo de nailon": 300
+        },
         "description": "<strong>Sastrería 60 – 75</strong><br><span class=\"recipe-name\">Toga de lino espuma de marea &rarr;</span> 240 Lino espuma de marea, 300 Hilo de nailon."
       },
       {
         "min": 75,
         "max": 150,
-        "mats": { "Satén de mar profundo": 150, "Lino espuma de marea": 150, "Hilo de nailon": 750 },
+        "mats": {
+          "Satén de mar profundo": 150,
+          "Lino espuma de marea": 150,
+          "Hilo de nailon": 750
+        },
         "description": "<strong>Sastrería 75 – 150</strong><br><span class=\"recipe-name\">Satén de mar profundo bordado &rarr;</span> 150 Satén de mar profundo, 150 Lino espuma de marea, 750 Hilo de nailon."
       },
       {
         "min": 150,
         "max": 175,
-        "mats": { "Tejido marino dorado": 215, "Satén de mar profundo": 130, "Expulsom": 45 },
+        "mats": {
+          "Tejido marino dorado": 215,
+          "Satén de mar profundo": 130,
+          "Expulsom": 45
+        },
         "description": "<strong>Sastrería 150 – 175</strong><br><span class=\"recipe-name\">Brazales de satén de Combatiente déspota &rarr;</span> Fabricación de brazales de varios rangos en Nazjatar."
       }
     ]
@@ -264,31 +337,43 @@
       {
         "min": 1,
         "max": 31,
-        "mats": { "Tela velada": 49 },
+        "mats": {
+          "Tela velada": 49
+        },
         "description": "<strong>Sastrería 1 – 31</strong><br><span class=\"recipe-name\">Venda y manteo de tela velada &rarr;</span> 49 Tela velada."
       },
       {
         "min": 31,
         "max": 52,
-        "mats": { "Tela velada": 42 },
+        "mats": {
+          "Tela velada": 42
+        },
         "description": "<strong>Sastrería 31 – 52</strong><br><span class=\"recipe-name\">Caperuza y bufas de tela velada &rarr;</span> 42 Tela velada."
       },
       {
         "min": 52,
         "max": 65,
-        "mats": { "Tela velada": 40 },
+        "mats": {
+          "Tela velada": 40
+        },
         "description": "<strong>Sastrería 52 – 65</strong><br><span class=\"recipe-name\">Venda de tela velada pesada &rarr;</span> 40 Tela velada."
       },
       {
         "min": 65,
         "max": 75,
-        "mats": { "Tela velada": 150, "Seda lóbrega": 30 },
+        "mats": {
+          "Tela velada": 150,
+          "Seda lóbrega": 30
+        },
         "description": "<strong>Sastrería 65 – 75</strong><br><span class=\"recipe-name\">Equipo de encaje sombrío &rarr;</span> 150 Tela velada, 30 Seda lóbrega."
       },
       {
         "min": 75,
         "max": 100,
-        "mats": { "Tela velada": 240, "Seda lóbrega": 48 },
+        "mats": {
+          "Tela velada": 240,
+          "Seda lóbrega": 48
+        },
         "description": "<strong>Sastrería 75 – 100</strong><br><span class=\"recipe-name\">Piezas mayores de encaje sombrío &rarr;</span> 240 Tela velada, 48 Seda lóbrega."
       }
     ]
@@ -302,19 +387,28 @@
       {
         "min": 1,
         "max": 20,
-        "mats": { "Paño salvaje": 60, "Carrete de hilo salvaje": 20 },
+        "mats": {
+          "Paño salvaje": 60,
+          "Carrete de hilo salvaje": 20
+        },
         "description": "<strong>Sastrería 1 – 20</strong><br><span class=\"recipe-name\">Madeja de paño salvaje &rarr;</span> ~60 Paño salvaje."
       },
       {
         "min": 20,
         "max": 50,
-        "mats": { "Paño salvaje": 150, "Carrete de hilo salvaje": 50 },
+        "mats": {
+          "Paño salvaje": 150,
+          "Carrete de hilo salvaje": 50
+        },
         "description": "<strong>Sastrería 20 – 50</strong><br>Brazales e indumentaria básica de las Islas Dragón."
       },
       {
         "min": 50,
         "max": 100,
-        "mats": { "Chispa de ingenio": 5, "Tela vibrante": 20 },
+        "mats": {
+          "Chispa de ingenio": 5,
+          "Tela vibrante": 20
+        },
         "description": "<strong>Sastrería 50 – 100</strong><br>Equipos épicos y pedidos de artesanía."
       }
     ]
@@ -328,19 +422,28 @@
       {
         "min": 1,
         "max": 25,
-        "mats": { "Paño de tejerred": 100, "Hilo de Khaz Algar": 50 },
+        "mats": {
+          "Paño de tejerred": 100,
+          "Hilo de Khaz Algar": 50
+        },
         "description": "<strong>Sastrería 1 – 25</strong><br>Rollos y vendas de Khaz Algar."
       },
       {
         "min": 25,
         "max": 60,
-        "mats": { "Paño de tejerred": 200, "Hilo de Khaz Algar": 100 },
+        "mats": {
+          "Paño de tejerred": 200,
+          "Hilo de Khaz Algar": 100
+        },
         "description": "<strong>Sastrería 25 – 60</strong><br>Equipamiento de tela azul (Calidad rara)."
       },
       {
         "min": 60,
         "max": 100,
-        "mats": { "Chispa de presagios": 5, "Tela imbuida": 10 },
+        "mats": {
+          "Chispa de presagios": 5,
+          "Tela imbuida": 10
+        },
         "description": "<strong>Sastrería 60 – 100</strong><br>Fabricaciones de Chispa y sistemas de pedidos."
       }
     ]
@@ -354,37 +457,58 @@
       {
         "min": 1,
         "max": 25,
-        "mats": { "Hilo de hojaplata": 264, "Lino brillante": 66 },
+        "mats": {
+          "Hilo de hojaplata": 264,
+          "Lino brillante": 66
+        },
         "description": "<strong>Sastrería 1 – 25</strong><br><span class=\"recipe-name\">66x Rollo de lino brillante &rarr;</span> 264 Hilo de hojaplata, 66 Lino brillante."
       },
       {
         "min": 25,
         "max": 40,
-        "mats": { "Hilo de hojaplata": 56, "Rollo de lino brillante": 28 },
+        "mats": {
+          "Hilo de hojaplata": 56,
+          "Rollo de lino brillante": 28
+        },
         "description": "<strong>Sastrería 25 – 40</strong><br><span class=\"recipe-name\">14x Rollo de lino brillante imbuido &rarr;</span> 56 Hilo de hojaplata, 28 Rollo de lino brillante."
       },
       {
         "min": 40,
         "max": 50,
-        "mats": { "Hilo de hojaplata": 27, "Rollo de lino": 12, "Polvo cantoeterno": 6 },
+        "mats": {
+          "Hilo de hojaplata": 27,
+          "Rollo de lino": 12,
+          "Polvo cantoeterno": 6
+        },
         "description": "<strong>Sastrería 40 – 50</strong><br>Toga de lino brillante y sobrehombros refinados."
       },
       {
         "min": 50,
         "max": 65,
-        "mats": { "Filamento de bordado": 90, "Rollo imbuido": 60, "Polvo cantoeterno": 60 },
+        "mats": {
+          "Filamento de bordado": 90,
+          "Rollo imbuido": 60,
+          "Polvo cantoeterno": 60
+        },
         "description": "<strong>Sastrería 50 – 65</strong><br><span class=\"recipe-name\">30x Hilo de hechizo de lino brillante &rarr;</span> 90 Filamento de bordado, 60 Rollo imbuido, 60 Polvo cantoeterno."
       },
       {
         "min": 65,
         "max": 90,
-        "mats": { "Filamento de bordado": 28, "Seda de fuego solar": 168 },
+        "mats": {
+          "Filamento de bordado": 28,
+          "Seda de fuego solar": 168
+        },
         "description": "<strong>Sastrería 65 – 90</strong><br><span class=\"recipe-name\">28x Forro de seda de fuego solar &rarr;</span> 28 Filamento de bordado, 168 Seda de fuego solar."
       },
       {
         "min": 90,
         "max": 100,
-        "mats": { "Filamento de bordado": 13, "Mota de luz": 67, "Rollo de seda": 107 },
+        "mats": {
+          "Filamento de bordado": 13,
+          "Mota de luz": 67,
+          "Rollo de seda": 107
+        },
         "description": "<strong>Sastrería 90 – 100</strong><br><span class=\"recipe-name\">13x Gorro de cocina de artesano elegante &rarr;</span> Receta de especialización de Midnight."
       }
     ]

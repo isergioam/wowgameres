@@ -1,0 +1,162 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 300,
+    "description": "Guía de Primeros Auxilios (1-300) en WoW Classic. Esencial para todas las clases que no pueden curarse.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 80,
+        "mats": { "Paño de lino": 110 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 80: Paño de Lino</div><br>Crea <span class=\"recipe-name\">Vendas de lino</span> y luego <span class=\"recipe-name\">Vendas de lino pesadas</span>. Puedes farmear este paño en cualquier zona inicial."
+      },
+      {
+        "min": 80,
+        "max": 150,
+        "mats": { "Paño de lana": 120 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 80 – 150: Paño de Lana</div><br>Fabrica <span class=\"recipe-name\">Vendas de lana pesadas</span>. Los humanoides de nivel 15-25 (como los de Los Baldíos) son tu mejor fuente."
+      },
+      {
+        "min": 150,
+        "max": 210,
+        "mats": { "Paño de seda": 100 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 150 – 210: Paño de Seda</div><br>Procesa <span class=\"recipe-name\">Vendas de seda pesadas</span> en Monasterio Escarlata para optimizar el farmeo."
+      },
+      {
+        "min": 210,
+        "max": 260,
+        "mats": { "Paño de tejido de mago": 90 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 210 – 260: Tejido de Mago</div><br>Crea <span class=\"recipe-name\">Vendas de tejido de mago pesadas</span>. Los ogros de Tanaris son ideales para esto."
+      },
+      {
+        "min": 260,
+        "max": 300,
+        "mats": { "Paño rúnico": 80 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 260 – 300: Paño Rúnico</div><br>Termina con <span class=\"recipe-name\">Vendas de paño rúnico pesadas</span>. El farmeo en Stratholme o Scholomance es el más rápido."
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 75,
+    "description": "Primeros Auxilios en Terrallende utilizando el tejido abisal.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 40,
+        "mats": { "Paño de tejido abisal": 40 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 40</div><br>Fabrica <span class=\"recipe-name\">Vendas de tejido abisal</span> con los paños que caen en la Península del Fuego Infernal."
+      },
+      {
+        "min": 40,
+        "max": 75,
+        "mats": { "Paño de tejido abisal": 60 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 40 – 75</div><br>Aprende <span class=\"recipe-name\">Vendas de tejido abisal pesadas</span> en Falcon Watch o Honor Hold para llegar al máximo."
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 75,
+    "description": "Auxilio médico en el gélido Rasganorte.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 40,
+        "mats": { "Paño de tejido de escarcha": 40 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 40</div><br>Usa <span class=\"recipe-name\">Vendas de tejido de escarcha</span> básicas farmradas en el Fiordo o Tundra."
+      },
+      {
+        "min": 40,
+        "max": 75,
+        "mats": { "Paño de tejido de escarcha": 60 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 40 – 75</div><br>Consigue el manual para <span class=\"recipe-name\">Vendas de tejido de escarcha pesadas</span>, esencial para las bandas de nivel 80."
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 75,
+    "description": "Primeros Auxilios en las zonas devastadas con seda de ascuas.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 45,
+        "mats": { "Paño de seda de ascuas": 50 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 45</div><br>Fabrica <span class=\"recipe-name\">Vendas de seda de ascuas</span> en Monte Hyjal."
+      },
+      {
+        "min": 45,
+        "max": 75,
+        "mats": { "Paño de seda de ascuas": 70 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 45 – 75</div><br>Finaliza con <span class=\"recipe-name\">Vendas de seda de ascuas pesadas</span> para el contenido de nivel 85."
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 75,
+    "description": "Técnicas de curación de Pandaria con lanaviento.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 40,
+        "mats": { "Paño de lanaviento": 50 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 40</div><br>Crea <span class=\"recipe-name\">Vendas de lanaviento</span> con los abundantes paños del Bosque de Jade."
+      },
+      {
+        "min": 40,
+        "max": 75,
+        "mats": { "Paño de lanaviento": 70 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 40 – 75</div><br>Sube al máximo con <span class=\"recipe-name\">Vendas de lanaviento pesadas</span> comprando la receta a los instructores del Alcor."
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 100,
+    "description": "Auxilio médico extremo en el Draenor salvaje utilizando pelajes suntuosos.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": { "Pelaje suntuoso": 150 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 100</div><br>A diferencia de otras expansiones, en Draenor usarás <span class=\"recipe-name\">Vendas antisépticas</span> de alta eficiencia hechas con pelaje de bestia."
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 100,
+    "description": "La última era de los Primeros Auxilios independientes.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": { "Seda vil": 150 },
+        "description": "<div class=\"step-title\">Primeros Auxilios 1 – 100</div><br>Fabrica <span class=\"recipe-name\">Vendas de seda vil</span>. Es el último rango de esta histórica profesión secundaria."
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Primeros Auxilios",
+    "maxLevel": 0,
+    "description": "La profesión fue retirada y sus funciones movidas a Sastrería.",
+    "steps": [
+      {
+        "min": 0,
+        "max": 0,
+        "mats": {},
+        "description": "<div class=\"step-title\">Legado:</div><br>A partir de BfA, si quieres fabricar vendas deberás aprender la profesión de <div class=\"step-title\">Sastrería</div>. Esta página queda como registro histórico para los jugadores de Retail."
+      }
+    ]
+  }
+}

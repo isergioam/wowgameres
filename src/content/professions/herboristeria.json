@@ -1,0 +1,190 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Herboristería",
+    "maxLevel": 300,
+    "description": "Guía de nivelación de Herboristería (1-300) en World of Warcraft Classic. Aprende a recolectar las plantas más raras de Azeroth para Alquimia e Inscripción.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 50: Zonas de Inicio</div>Recolecta <div class=\"step-title\">Flor de paz, Hoja de plata y Tierraíz</div> en las zonas de inicio.<br>Horda: Claros de Tirisfal o Mulgore.<br>Alianza: Bosque de Elwynn o Dun Morogh."
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 50 – 100: Reinos del Este</div>Busca <div class=\"step-title\">Marregal y Brezoespina</div> en Laderas de Hillsbrad o Los Baldíos."
+      },
+      {
+        "min": 100,
+        "max": 150,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 100 – 150: Pantano y Montaña</div>Céntrate en <div class=\"step-title\">Alga finas y Vid de raíz</div> en Pantano de las Penas o Sierra Espolón."
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Herboristería",
+    "maxLevel": 75,
+    "description": "Herboristería en las tierras devastadas de Terrallende (Outland).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 45,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 45: Península</div>Recolecta <div class=\"step-title\">Gloria de Honor</div> en la Península del Fuego Infernal."
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Herboristería",
+    "maxLevel": 75,
+    "description": "Guía de recolección en el frío norte de Rasganorte (Northrend).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 75: Rasganorte</div>Recolecta <div class=\"step-title\">Trébol de oro</div> en Tundra Boreal y progresa hacia Cuenca Sholazar."
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Herboristería",
+    "maxLevel": 75,
+    "description": "Herboristería en las zonas devastadas por el Cataclismo.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 75: Monte Hyjal</div>Recolecta <div class=\"step-title\">Velo de Azshara o Flor de ceniza</div>."
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Herboristería",
+    "maxLevel": 75,
+    "description": "Recolecta plantas exóticas en las místicas tierras de Pandaria.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 75: Bosque de Jade</div>Recolecta <div class=\"step-title\">Hoja de té verde</div>."
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Herboristería",
+    "maxLevel": 100,
+    "description": "Hierbas de Draenor, recolectables incluso en tu Jardín de la Ciudadela.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 100: Draenor</div>Recolecta <div class=\"step-title\">Hierba de fuego y Atrapamoscas</div>."
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Herboristería",
+    "maxLevel": 100,
+    "description": "Domina los rangos de herboristería en las Islas Quebradas.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 100: Islas Quebradas</div>Busca <div class=\"step-title\">Fjarnskaggl y Rosa de luz estelar</div>."
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Herboristería",
+    "maxLevel": 175,
+    "description": "Herboristería en Kul Tiras y Zandalar.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 175: BfA</div>Recolecta <div class=\"step-title\">Beso de polen y Tallo de río</div>."
+      }
+    ]
+  },
+  "sl": {
+    "expansionName": "Shadowlands",
+    "professionName": "Herboristería",
+    "maxLevel": 175,
+    "description": "Recolección de plantas en el Más Allá.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 175: Shadowlands</div>Recolecta <div class=\"step-title\">Belladona y Planta vigilante</div>."
+      }
+    ]
+  },
+  "df": {
+    "expansionName": "Dragonflight",
+    "professionName": "Herboristería",
+    "maxLevel": 100,
+    "description": "Herboristería avanzada en las Islas Dragón.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 100: Dragon Isles</div>Recolecta <div class=\"step-title\">Flor de burbuja y Amapola de corteza</div>."
+      }
+    ]
+  },
+  "tww": {
+    "expansionName": "The War Within",
+    "professionName": "Herboristería",
+    "maxLevel": 100,
+    "description": "Flora de Khaz Algar, en las profundidades bajo la superficie.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 100: Khaz Algar</div>Recolecta <div class=\"step-title\">Musgo de micelio y Loto de las profundidades</div>."
+      }
+    ]
+  },
+  "midnight": {
+    "expansionName": "Midnight",
+    "professionName": "Herboristería",
+    "maxLevel": 100,
+    "description": "Recolección en el Quel'Thalas renacido (2026). Descubre el Pétalo de Luz Solar y el Alga del Vacío.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 50: Pétalo de Luz Solar</div>Recolecta estas flores brillantes en los alrededores de la Fuente del Sol y los bosques circundantes.",
+        "routeImage": "/images/routes/midnight_herbs_sun.webp"
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 50 – 100: Alga del Vacío</div>Pezca y recolecta en las costas afectadas por el vacío cerca de Zul'Aman.",
+        "routeImage": "/images/routes/midnight_herbs_void.webp"
+      }
+    ]
+  }
+}

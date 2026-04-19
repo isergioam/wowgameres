@@ -1,7 +1,13 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButtons from "../../../components/ShareButtons.astro";
+
+const allImages: Record<string, any> = import.meta.glob(
+  "/src/assets/images/**/*.{webp,png,jpg,jpeg}",
+  { eager: true },
+);
 
 export async function getStaticPaths() {
   const allProfessions = await getCollection("professions");
@@ -24,46 +30,141 @@ const { expansionName, professionName, maxLevel, description, steps, note } =
   guideData;
 const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
 
-const seoDescription = description || `Sube ${professionName} al máximo nivel en la expansión ${cleanExpansionName} de World of Warcraft con nuestra guía paso a paso.`;
+// Generamos un título de alto impacto SEO
+const optimizedTitle = `Guía de ${professionName} ${cleanExpansionName} (1-${maxLevel}) Actualizada | WOWGamerES`;
+
+// Enriquecemos la descripción dinámicamente si es muy corta
+const baseDescription =
+  description ||
+  `Aprende a subir ${professionName} al nivel ${maxLevel} en ${cleanExpansionName}.`;
+const seoDescription = `${baseDescription} Rutas paso a paso, lista de materiales y trucos para ahorrar oro en WoW ${cleanExpansionName}.`;
+
+const isPngProfession = [
+  "mineria",
+  "herboristeria",
+  "desuello",
+  "pesca",
+  "arqueologia",
+  "cocina",
+  "primeros-auxilios",
+].includes(professionId);
 const seoImage = `/images/${professionId}_wow.webp`;
 
 // Datos Estructurados para Fragmentos Destacados en Google
 const schemaJSON = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": `Guía de ${professionName} ${cleanExpansionName}`,
-  "description": seoDescription,
-  "step": steps.map((s, i) => ({
+  name: `Guía de ${professionName} ${cleanExpansionName}`,
+  description: seoDescription,
+  step: steps.map((s, i) => ({
     "@type": "HowToStep",
-    "name": `Nivel ${s.min}-${s.max}`,
-    "url": `https://wowgameres.com/guias/${professionId}/${expansionId}#niveles`,
-    "text": s.description.replace(/<[^>]*>?/gm, '').trim()
-  }))
+    name: `Nivel ${s.min}-${s.max}`,
+    url: `https://wowgameres.com/guias/${professionId}/${expansionId}#niveles`,
+    text: s.description.replace(/<[^>]*>?/gm, "").trim(),
+  })),
 };
 ---
 
 <BaseLayout
-  title={`Guía de ${professionName} ${cleanExpansionName} - WOWGamerES`}
+  title={optimizedTitle}
   description={seoDescription}
   image={seoImage}
 >
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(schemaJSON)} />
-  <main class="content">
-    <h1 id="guide-h1">Guía de {professionName} {cleanExpansionName}</h1>
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(schemaJSON)}
+  />
 
-    <!-- Bloque SEO Dinámico introductorio para AdSense (Evitar Thin Content) -->
-    <div class="intro-description" style="margin-bottom: 25px; line-height: 1.6; font-size: 1.05rem; background: var(--bg-card, rgba(20,20,20,0.4)); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color, rgba(187, 159, 255, 0.1));">
-      <p style="margin-bottom: 12px;">{description}</p>
+  {
+    (() => {
+      const mainImgPath = `/src/assets/images/${professionId}_wow.webp`;
+      const heroImageAsset = allImages[mainImgPath];
+      return (
+        <header class="guide-hero-detail">
+          <div class="hero-bg">
+            {heroImageAsset && (
+              <Image
+                src={heroImageAsset.default}
+                alt={professionName}
+                width={1920}
+                height={1080}
+                quality="mid"
+              />
+            )}
+            <div class="hero-overlay" />
+          </div>
+          <div class="hero-container content">
+            <div class="hero-content">
+              <nav class="guide-breadcrumb">
+                <a href="/">Inicio</a>
+                <span class="sep">/</span>
+                <a href={`/guias/${expansionId}`}>{expansionName}</a>
+                <span class="sep">/</span>
+                <span class="current">{professionName}</span>
+              </nav>
+
+              <h1 id="guide-h1" class="hero-title-stack">
+                <span class="hero-main-title">{professionName}</span>
+                <span class="hero-separator"></span>
+                <span class="hero-exp-name">{cleanExpansionName}</span>
+              </h1>
+              <p class="hero-intro">{description}</p>
+            </div>
+          </div>
+        </header>
+      );
+    })()
+  }
+
+  <main class="content">
+    <!-- Bloque Informativo AdSense -->
+    <div class="intro-description-box section reveal" style="margin-top: 30px;">
       <p style="margin-bottom: 12px;">
-        Dominar <strong>{professionName}</strong> en la expansión <strong>{cleanExpansionName}</strong> requiere recolectar y crear objetos de manera eficiente. Esta guía paso a paso está diseñada para llevarte desde el nivel inicial hasta el nivel máximo ({maxLevel}) gastando la menor cantidad del oro y tiempo posible en la Casa de Subastas. 
+        {
+          [
+            "mineria",
+            "herboristeria",
+            "desuello",
+            "pesca",
+            "arqueologia",
+          ].includes(professionId)
+            ? `Dominar ${professionName} en ${cleanExpansionName} es clave para cualquier habitante de Azeroth. Esta guía te muestra las mejores rutas y zonas para subir de nivel rápidamente.`
+            : `Dominar ${professionName} en ${cleanExpansionName} requiere recolectar y crear objetos de manera eficiente. Esta guía está diseñada para llevarte al nivel máximo (${maxLevel}) ahorrando el máximo oro posible.`
+        }
       </p>
       <p>
-        <span style="color: var(--primary-color, #bb9fff); font-weight: 500;">💡 Consejo de uso:</span> Utiliza nuestro rastreador interactivo a continuación filtrando por niveles para marcar los materiales que ya posees y llevar la cuenta de tu progreso en la rama de nivelación. Todos tus datos se guardan estrictamente en local.
+        <span style="color: var(--primary-color, #bb9fff); font-weight: 500;"
+          >💡 Consejo de uso:</span
+        >
+        {
+          [
+            "mineria",
+            "herboristeria",
+            "desuello",
+            "pesca",
+            "arqueologia",
+          ].includes(professionId)
+            ? "Consulta las zonas y rutas recomendadas a continuación y haz clic en los pasos para marcar tu avance."
+            : "Utiliza el rastreador para marcar los materiales que ya posees y filtrar los pasos según tu nivel actual."
+        }
       </p>
     </div>
 
     <!-- Controles Nivelación -->
-    <div id="leveling-controls" class="leveling-wrapper-glass section">
+    <div
+      id="leveling-controls"
+      class="leveling-wrapper-glass section"
+      style={[
+        "mineria",
+        "herboristeria",
+        "desuello",
+        "pesca",
+        "arqueologia",
+      ].includes(professionId)
+        ? "display: none;"
+        : ""}
+    >
       <div class="glass-header">
         <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
         <div class="glass-badge">
@@ -104,7 +205,13 @@ const schemaJSON = {
     </div>
 
     <!-- Materiales -->
-    <section id="materiales" class="section reveal">
+    <section
+      id="materiales"
+      class="section reveal"
+      style={steps.every((s) => Object.keys(s.mats).length === 0)
+        ? "display: none;"
+        : ""}
+    >
       <div id="materialsToggle" class="section-toggle">
         <div style="display: flex; align-items: center; gap: 10px;">
           <svg
@@ -237,7 +344,19 @@ const schemaJSON = {
             ></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path
               d="M8 17h8"></path><path d="M10 9H8"></path></svg
           >
-          <h2 class="section-toggle-title">Recetas por nivel</h2>
+          <h2 class="section-toggle-title">
+            {
+              [
+                "mineria",
+                "herboristeria",
+                "desuello",
+                "pesca",
+                "arqueologia",
+              ].includes(professionId)
+                ? "Rutas de recolección"
+                : "Recetas por nivel"
+            }
+          </h2>
         </div>
         <span id="recipesToggleIcon" class="section-toggle-icon">▼</span>
       </div>
@@ -248,14 +367,45 @@ const schemaJSON = {
         </p>
         {
           steps.map((step, index) => (
-            <p
+            <div
               class="custom-step"
               data-min={step.min}
               data-max={step.max}
               data-mats={JSON.stringify(step.mats)}
             >
-              <Fragment set:html={step.description} />
-            </p>
+              <div class="step-info">
+                <Fragment set:html={step.description} />
+              </div>
+              {step.routeImage && (
+                <div
+                  class="route-map-container reveal"
+                  style="margin-top: 15px;"
+                >
+                  {(() => {
+                    const assetPath = `/src/assets${step.routeImage}`;
+                    const imgAsset = allImages[assetPath];
+                    if (imgAsset) {
+                      return (
+                        <Image
+                          src={imgAsset.default}
+                          alt={`Ruta de farmueo WoW ${step.min}-${step.max}`}
+                          class="route-map-img"
+                          width={800}
+                          quality="mid"
+                        />
+                      );
+                    } else {
+                      return (
+                        <p style="color: red; font-size: 0.8rem;">
+                          [Error: Imagen no encontrada en {assetPath}]
+                        </p>
+                      );
+                    }
+                  })()}
+                  <p class="route-caption">📍 Ruta sugerida en el mapa</p>
+                </div>
+              )}
+            </div>
           ))
         }
       </div>

@@ -1,59 +1,305 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const allImages: Record<string, any> = import.meta.glob(
+  "/src/assets/images/**/*.{webp,png,jpg,jpeg}",
+  { eager: true },
+);
 
 export function getStaticPaths() {
   const expansions = [
-    { id: 'vanilla', name: 'Vanilla' },
-    { id: 'tbc', name: 'Terrallende' },
-    { id: 'wotlk', name: 'Rasganorte' },
-    { id: 'cata', name: 'Cataclismo' },
-    { id: 'mop', name: 'Pandaria' },
-    { id: 'wod', name: 'Draenor' },
-    { id: 'legion', name: 'Legión' },
-    { id: 'bfa', name: 'Battle for Azeroth' },
-    { id: 'sl', name: 'Shadowlands' },
-    { id: 'df', name: 'Dragonflight' },
-    { id: 'tww', name: 'The War Within' },
-    { id: 'midnight', name: 'Midnight' },
+    { id: "vanilla", name: "Vanilla" },
+    { id: "tbc", name: "Terrallende" },
+    { id: "wotlk", name: "Rasganorte" },
+    { id: "cata", name: "Cataclismo" },
+    { id: "mop", name: "Pandaria" },
+    { id: "wod", name: "Draenor" },
+    { id: "legion", name: "Legión" },
+    { id: "bfa", name: "Battle for Azeroth" },
+    { id: "sl", name: "Shadowlands" },
+    { id: "df", name: "Dragonflight" },
+    { id: "tww", name: "The War Within" },
+    { id: "midnight", name: "Midnight" },
   ];
 
-  return expansions.map(exp => ({
+  return expansions.map((exp) => ({
     params: { expansion: exp.id },
-    props: { expName: exp.name }
+    props: { expName: exp.name },
   }));
 }
 
 const { expansion } = Astro.params;
 const { expName } = Astro.props;
 
-const professions = [
-  { id: 'alquimia', name: 'Alquimia', img: '/images/alquimia_wow.webp' },
-  { id: 'encantamiento', name: 'Encantamiento', img: '/images/encantamiento_wow.webp' },
-  { id: 'herreria', name: 'Herrería', img: '/images/herreria_wow.webp' },
-  { id: 'ingenieria', name: 'Ingeniería', img: '/images/ingenieria_wow.webp' },
-  { id: 'inscripcion', name: 'Inscripción', img: '/images/inscripcion_wow.webp' },
-  { id: 'joyeria', name: 'Joyería', img: '/images/joyeria_wow.webp' },
-  { id: 'peleteria', name: 'Peletería', img: '/images/peleteria_wow.webp' },
-  { id: 'sastreria', name: 'Sastrería', img: '/images/sastreria_wow.webp' },
-];
+// Obtener todas las profesiones de la colección
+const allProfessions = await getCollection("professions");
 
-const seoDescription = `Listado con todas las guías de profesiones (Alquimia, Herrería, Joyería...) disponibles para la expansión ${expName} de World of Warcraft. Sube al nivel máximo de forma rápida y barata.`;
+// Definir metadatos visuales para las profesiones (mapeado por ID)
+const profMetadata: Record<string, any> = {
+  alquimia: {
+    name: "Alquimia",
+    img: "/images/alquimia_wow.webp",
+    type: "crafting",
+  },
+  encantamiento: {
+    name: "Encantamiento",
+    img: "/images/encantamiento_wow.webp",
+    type: "crafting",
+  },
+  herreria: {
+    name: "Herrería",
+    img: "/images/herreria_wow.webp",
+    type: "crafting",
+  },
+  ingenieria: {
+    name: "Ingeniería",
+    img: "/images/ingenieria_wow.webp",
+    type: "crafting",
+  },
+  inscripcion: {
+    name: "Inscripción",
+    img: "/images/inscripcion_wow.webp",
+    type: "crafting",
+  },
+  joyeria: {
+    name: "Joyería",
+    img: "/images/joyeria_wow.webp",
+    type: "crafting",
+  },
+  peleteria: {
+    name: "Peletería",
+    img: "/images/peleteria_wow.webp",
+    type: "crafting",
+  },
+  sastreria: {
+    name: "Sastrería",
+    img: "/images/sastreria_wow.webp",
+    type: "crafting",
+  },
+  mineria: {
+    name: "Minería",
+    img: "/images/mineria_wow.webp",
+    type: "gathering",
+  },
+  herboristeria: {
+    name: "Herboristería",
+    img: "/images/herboristeria_wow.webp",
+    type: "gathering",
+  },
+  desuello: {
+    name: "Desuello",
+    img: "/images/desuello_wow.webp",
+    type: "gathering",
+  },
+  cocina: { name: "Cocina", img: "/images/cocina_wow.webp", type: "secondary" },
+  pesca: { name: "Pesca", img: "/images/pesca_wow.webp", type: "secondary" },
+  arqueologia: {
+    name: "Arqueología",
+    img: "/images/arqueologia_wow.webp",
+    type: "secondary",
+  },
+  "primeros-auxilios": {
+    name: "Primeros Auxilios",
+    img: "/images/primeros_auxilios_wow.webp",
+    type: "secondary",
+  },
+};
+
+// Filtrar las profesiones que tienen contenido para esta expansión
+const filteredProfessions = allProfessions
+  .filter((p) => p.data[expansion])
+  .map((p) => ({
+    id: p.id,
+    ...profMetadata[p.id],
+  }));
+
+const crafting = filteredProfessions.filter((p) => p.type === "crafting");
+const gathering = filteredProfessions.filter((p) => p.type === "gathering");
+const secondary = filteredProfessions.filter((p) => p.type === "secondary");
+
+const optimizedTitle = `Guías de Profesiones WoW ${expName} | Rutas y Listas de Materiales | WOWGamerES`;
+const seoDescription = `Todas las guías de profesiones (Artesanía, Recolección y Secundarias) para la expansión ${expName} de World of Warcraft. Optimiza tu farmeo y ahorra oro con WOWGamerES.`;
 ---
 
-<BaseLayout title={`Guías de Profesiones WoW - ${expName} | WOWGamerES`} description={seoDescription}>
-	<main class="content">
-		<h1 id="profesiones">Guías por Profesión ({expName})</h1>
-		<section class="section">
-			<div class="profesiones">
-        {professions.map(prof => (
-          <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
-            <div class="card">
-              <h3>{prof.name}</h3>
-              <img src={prof.img} alt={`WOWGamerES ${prof.name}`} loading="lazy" width="200" height="150" />
+<BaseLayout title={optimizedTitle} description={seoDescription}>
+  {
+    (() => {
+      // Intentamos cargar una imagen de fondo para la expansión (o usamos una genérica)
+      const expansionImgPath = `/src/assets/images/expansions/${expansion}.webp`;
+      const heroImageAsset =
+        allImages[expansionImgPath] ||
+        allImages["/src/assets/images/dragonflight_wow.webp"]; // Fallback
+      return (
+        <header class="guide-hero-detail">
+          <div class="hero-bg">
+            {heroImageAsset && (
+              <Image
+                src={heroImageAsset.default}
+                alt={expName}
+                width={1920}
+                height={1080}
+                quality="mid"
+              />
+            )}
+            <div class="hero-overlay" />
+          </div>
+          <div class="hero-container content">
+            <div class="hero-content">
+              <nav class="guide-breadcrumb">
+                <a href="/">Inicio</a>
+                <span class="sep">/</span>
+                <span class="current">{expName}</span>
+              </nav>
+
+              <h1 id="profesiones" class="hero-title-stack">
+                <span class="hero-main-title">Guías de Profesiones</span>
+                <span class="hero-separator" />
+                <span class="hero-exp-name">{expName}</span>
+              </h1>
+              <p class="hero-intro">{seoDescription}</p>
             </div>
-          </a>
-        ))}
-			</div>
-		</section>
-	</main>
+          </div>
+        </header>
+      );
+    })()
+  }
+
+  <main class="content">
+    {
+      crafting.length > 0 && (
+        <section class="section">
+          <h2 class="section-subtitle">Profesiones de Artesanía</h2>
+          <div class="grid-principales">
+            {crafting.map((prof, index) => {
+              const itemsPerRow = 3;
+              const isLastRowFilling = crafting.length % itemsPerRow !== 0 && index >= crafting.length - (crafting.length % itemsPerRow);
+              return (
+                <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
+                  <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
+                    <div class="card-bg">
+                      {(() => {
+                        const assetPath = `/src/assets${prof.img}`;
+                        const imgAsset = allImages[assetPath];
+                        if (imgAsset) {
+                          return (
+                            <Image
+                              src={imgAsset.default}
+                              alt={`Guía de ${prof.name} WoW ${expName}`}
+                              width={isLastRowFilling ? 900 : 500}
+                              height={isLastRowFilling ? 500 : 350}
+                              quality="mid"
+                            />
+                          );
+                        }
+                        return <img src={prof.img} alt={prof.name} />;
+                      })()}
+                    </div>
+                    <div class="card-overlay">
+                      <h3>{prof.name}</h3>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      gathering.length > 0 && (
+        <section class="section" style="margin-top: 50px;">
+          <h2 class="section-subtitle">Profesiones de Recolección</h2>
+          <div class="grid-recoleccion">
+            {gathering.map((prof, index) => {
+              const itemsPerRow = Math.min(gathering.length, 3);
+              const isLastRowFilling = gathering.length % itemsPerRow !== 0 && index >= gathering.length - (gathering.length % itemsPerRow);
+              return (
+                <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
+                  <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
+                    <div class="card-bg">
+                      {(() => {
+                        const assetPath = `/src/assets${prof.img}`;
+                        const imgAsset = allImages[assetPath];
+                        if (imgAsset) {
+                          return (
+                            <Image
+                              src={imgAsset.default}
+                              alt={`Guía de ${prof.name} WoW ${expName}`}
+                              width={isLastRowFilling ? 900 : 500}
+                              height={isLastRowFilling ? 500 : 350}
+                              quality="mid"
+                            />
+                          );
+                        }
+                        return <img src={prof.img} alt={prof.name} />;
+                      })()}
+                    </div>
+                    <div class="card-overlay">
+                      <h3>{prof.name}</h3>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      secondary.length > 0 && (
+        <section class="section" style="margin-top: 50px;">
+          <h2 class="section-subtitle">Profesiones Secundarias</h2>
+          <div class="grid-secundarias">
+            {secondary.map((prof, index) => {
+              const itemsPerRow = Math.min(secondary.length, 4);
+              const isLastRowFilling = secondary.length % itemsPerRow !== 0 && index >= secondary.length - (secondary.length % itemsPerRow);
+              return (
+                <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
+                  <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
+                    <div class="card-bg">
+                      {(() => {
+                        const assetPath = `/src/assets${prof.img}`;
+                        const imgAsset = allImages[assetPath];
+                        if (imgAsset) {
+                          return (
+                            <Image
+                              src={imgAsset.default}
+                              alt={`Guía de ${prof.name} WoW ${expName}`}
+                              width={isLastRowFilling ? 900 : 400}
+                              height={isLastRowFilling ? 500 : 300}
+                              quality="mid"
+                            />
+                          );
+                        }
+                        return <img src={prof.img} alt={prof.name} />;
+                      })()}
+                    </div>
+                    <div class="card-overlay">
+                      <h3>{prof.name}</h3>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+  </main>
 </BaseLayout>
+
+<style>
+  .section-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-purple);
+    border-left: 4px solid var(--primary-purple);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>

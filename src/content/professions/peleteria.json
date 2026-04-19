@@ -8,127 +8,192 @@
       {
         "min": 1,
         "max": 20,
-        "mats": { "Restos de cuero estropeado": 57 },
+        "mats": {
+          "Restos de cuero estropeado": 57
+        },
         "description": "<strong>Peletería 1 – 20</strong><br><span class=\"recipe-name\">Cuero ligero &rarr;</span> 57 Restos de cuero estropeado."
       },
       {
         "min": 20,
         "max": 30,
-        "mats": { "Cuero ligero": 10 },
+        "mats": {
+          "Cuero ligero": 10
+        },
         "description": "<strong>Peletería 20 – 30</strong><br>Refuerzo para armadura ligero."
       },
       {
         "min": 30,
         "max": 50,
-        "mats": { "Cuero ligero": 40, "Hilo burdo": 20 },
+        "mats": {
+          "Cuero ligero": 40,
+          "Hilo burdo": 20
+        },
         "description": "<strong>Peletería 30 – 50</strong><br>Capa de cuero cosida a mano."
       },
       {
         "min": 50,
         "max": 55,
-        "mats": { "Cuero ligero": 30, "Hilo burdo": 5 },
+        "mats": {
+          "Cuero ligero": 30,
+          "Hilo burdo": 5
+        },
         "description": "<strong>Peletería 50 – 55</strong><br>Cinturón de cuero cosido a mano."
       },
       {
         "min": 55,
         "max": 85,
-        "mats": { "Cuero ligero": 90, "Hilo burdo": 60 },
+        "mats": {
+          "Cuero ligero": 90,
+          "Hilo burdo": 60
+        },
         "description": "<strong>Peletería 55 – 85</strong><br>Guantes de cuero estampado."
       },
       {
         "min": 85,
         "max": 100,
-        "mats": { "Cuero ligero": 90, "Hilo burdo": 30 },
+        "mats": {
+          "Cuero ligero": 90,
+          "Hilo burdo": 30
+        },
         "description": "<strong>Peletería 85 – 100</strong><br>Cinturón de cuero refinado."
       },
       {
         "min": 100,
         "max": 115,
-        "mats": { "Pellejo medio": 15, "Sal": 15 },
+        "mats": {
+          "Pellejo medio": 15,
+          "Sal": 15
+        },
         "description": "<strong>Peletería 100 – 115</strong><br>Pellejo medio curtido."
       },
       {
         "min": 115,
         "max": 130,
-        "mats": { "Cuero medio": 64, "Hilo refinado": 32, "Tinte gris": 16 },
+        "mats": {
+          "Cuero medio": 64,
+          "Hilo refinado": 32,
+          "Tinte gris": 16
+        },
         "description": "<strong>Peletería 115 – 130</strong><br>Botas de cuero oscuro."
       },
       {
         "min": 130,
         "max": 145,
-        "mats": { "Cinturón de cuero refinado": 15, "Pellejo medio curtido": 15, "Hilo refinado": 30 },
+        "mats": {
+          "Cinturón de cuero refinado": 15,
+          "Pellejo medio curtido": 15,
+          "Hilo refinado": 30
+        },
         "description": "<strong>Peletería 130 – 145</strong><br>Cinturón de cuero oscuro."
       },
       {
         "min": 145,
         "max": 150,
-        "mats": { "Cuero medio": 70, "Hilo refinado": 20 },
+        "mats": {
+          "Cuero medio": 70,
+          "Hilo refinado": 20
+        },
         "description": "<strong>Peletería 145 – 150</strong><br>Guantes de cuero de montañero."
       },
       {
         "min": 150,
         "max": 155,
-        "mats": { "Cuero medio": 25 },
+        "mats": {
+          "Cuero medio": 25
+        },
         "description": "<strong>Peletería 150 – 155</strong><br>Pellejo pesado."
       },
       {
         "min": 155,
         "max": 165,
-        "mats": { "Pellejo pesado": 20, "Sal": 60 },
+        "mats": {
+          "Pellejo pesado": 20,
+          "Sal": 60
+        },
         "description": "<strong>Peletería 155 – 165</strong><br>Pellejo pesado curtido."
       },
       {
         "min": 165,
         "max": 180,
-        "mats": { "Cuero pesado": 75, "Hilo refinado": 15 },
+        "mats": {
+          "Cuero pesado": 75,
+          "Hilo refinado": 15
+        },
         "description": "<strong>Peletería 165 – 180</strong><br>Refuerzo para armadura pesado."
       },
       {
         "min": 180,
         "max": 190,
-        "mats": { "Cuero pesado": 80, "Pellejo pesado curtido": 10, "Hilo refinado": 20 },
+        "mats": {
+          "Cuero pesado": 80,
+          "Pellejo pesado curtido": 10,
+          "Hilo refinado": 20
+        },
         "description": "<strong>Peletería 180 – 190</strong><br>Sobrehombros barbáricos."
       },
       {
         "min": 190,
         "max": 200,
-        "mats": { "Cuero pesado": 40, "Pellejo pesado curtido": 10, "Hilo de seda": 10 },
+        "mats": {
+          "Cuero pesado": 40,
+          "Pellejo pesado curtido": 10,
+          "Hilo de seda": 10
+        },
         "description": "<strong>Peletería 190 – 200</strong><br>Guantes de guardián."
       },
       {
         "min": 200,
         "max": 205,
-        "mats": { "Cuero grueso": 25, "Hilo de seda": 5 },
+        "mats": {
+          "Cuero grueso": 25,
+          "Hilo de seda": 5
+        },
         "description": "<strong>Peletería 200 – 205</strong><br>Refuerzo para armadura grueso."
       },
       {
         "min": 205,
         "max": 235,
-        "mats": { "Cuero grueso": 175, "Hilo de seda": 70 },
+        "mats": {
+          "Cuero grueso": 175,
+          "Hilo de seda": 70
+        },
         "description": "<strong>Peletería 205 – 235</strong><br>Cinta Nochefugaz."
       },
       {
         "min": 235,
         "max": 250,
-        "mats": { "Cuero grueso": 210, "Hilo de seda": 60 },
+        "mats": {
+          "Cuero grueso": 210,
+          "Hilo de seda": 60
+        },
         "description": "<strong>Peletería 235 – 250</strong><br>Pantalones Nochefugaz."
       },
       {
         "min": 250,
         "max": 265,
-        "mats": { "Cuero basto": 90 },
+        "mats": {
+          "Cuero basto": 90
+        },
         "description": "<strong>Peletería 250 – 265</strong><br>Refuerzo para armadura basto."
       },
       {
         "min": 265,
         "max": 290,
-        "mats": { "Cuero basto": 200, "Tinte negro": 25, "Hilo rúnico": 25 },
+        "mats": {
+          "Cuero basto": 200,
+          "Tinte negro": 25,
+          "Hilo rúnico": 25
+        },
         "description": "<strong>Peletería 265 – 290</strong><br>Brazales de cuero maligno."
       },
       {
         "min": 290,
         "max": 300,
-        "mats": { "Cuero basto": 120, "Tinte negro": 10, "Hilo rúnico": 10 },
+        "mats": {
+          "Cuero basto": 120,
+          "Tinte negro": 10,
+          "Hilo rúnico": 10
+        },
         "description": "<strong>Peletería 290 – 300</strong><br>Cinta de cuero maligno."
       }
     ]
@@ -142,43 +207,60 @@
       {
         "min": 1,
         "max": 5,
-        "mats": { "Cuero de pellejo nudoso": 10 },
+        "mats": {
+          "Cuero de pellejo nudoso": 10
+        },
         "description": "<strong>Peletería 1 – 5</strong><br>Plantillas cómodas."
       },
       {
         "min": 5,
         "max": 25,
-        "mats": { "Cuero de pellejo nudoso": 100 },
+        "mats": {
+          "Cuero de pellejo nudoso": 100
+        },
         "description": "<strong>Peletería 5 – 25</strong><br>Refuerzo para armadura de pellejo nudoso."
       },
       {
         "min": 25,
         "max": 35,
-        "mats": { "Cuero de pellejo nudoso": 1230 },
+        "mats": {
+          "Cuero de pellejo nudoso": 1230
+        },
         "description": "<strong>Peletería 25 – 35</strong><br>Cuero de pellejo nudoso grueso."
       },
       {
         "min": 35,
         "max": 50,
-        "mats": { "Cuero de pellejo nudoso grueso": 60, "Hilo rúnico": 60 },
+        "mats": {
+          "Cuero de pellejo nudoso grueso": 60,
+          "Hilo rúnico": 60
+        },
         "description": "<strong>Peletería 35 – 50</strong><br>Jubón draénico grueso."
       },
       {
         "min": 50,
         "max": 65,
-        "mats": { "Cuero de pellejo nudoso grueso": 90 },
+        "mats": {
+          "Cuero de pellejo nudoso grueso": 90
+        },
         "description": "<strong>Peletería 50 – 65</strong><br>Refuerzo para armadura de pellejo nudoso grueso."
       },
       {
         "min": 65,
         "max": 70,
-        "mats": { "Cuero de pellejo nudoso grueso": 48, "Cuero de uñagrieta grueso": 32 },
+        "mats": {
+          "Cuero de pellejo nudoso grueso": 48,
+          "Cuero de uñagrieta grueso": 32
+        },
         "description": "<strong>Peletería 65 – 70</strong><br>Tambores de batalla."
       },
       {
         "min": 70,
         "max": 75,
-        "mats": { "Cuero de pellejo nudoso grueso": 48, "Pelaje vil": 32 },
+        "mats": {
+          "Cuero de pellejo nudoso grueso": 48,
+          "Pelaje vil": 32
+        },
         "description": "<strong>Peletería 70 – 75</strong><br>Tambores de pánico."
       }
     ]
@@ -192,61 +274,89 @@
       {
         "min": 1,
         "max": 5,
-        "mats": { "Cuero boreal": 20 },
+        "mats": {
+          "Cuero boreal": 20
+        },
         "description": "<strong>Peletería 1 – 5</strong><br>Refuerzo para armadura boreal."
       },
       {
         "min": 5,
         "max": 10,
-        "mats": { "Cuero boreal": 40 },
+        "mats": {
+          "Cuero boreal": 40
+        },
         "description": "<strong>Peletería 5 – 10</strong><br>Botas árticas."
       },
       {
         "min": 10,
         "max": 15,
-        "mats": { "Cuero boreal": 50 },
+        "mats": {
+          "Cuero boreal": 50
+        },
         "description": "<strong>Peletería 10 – 15</strong><br>Guantes árticos."
       },
       {
         "min": 15,
         "max": 30,
-        "mats": { "Cuero boreal": 1800 },
+        "mats": {
+          "Cuero boreal": 1800
+        },
         "description": "<strong>Peletería 15 – 30</strong><br>Cuero boreal pesado."
       },
       {
         "min": 30,
         "max": 35,
-        "mats": { "Cuero boreal": 72 },
+        "mats": {
+          "Cuero boreal": 72
+        },
         "description": "<strong>Peletería 30 – 35</strong><br>Brazales nerubianos."
       },
       {
         "min": 35,
         "max": 45,
-        "mats": { "Cuero boreal pesado": 52, "Agua cristalizada": 65 },
+        "mats": {
+          "Cuero boreal pesado": 52,
+          "Agua cristalizada": 65
+        },
         "description": "<strong>Peletería 35 – 45</strong><br>Leotardos de escamas de escarcha oscuros."
       },
       {
         "min": 45,
         "max": 50,
-        "mats": { "Cuero boreal pesado": 40, "Agua eterna": 5 },
+        "mats": {
+          "Cuero boreal pesado": 40,
+          "Agua eterna": 5
+        },
         "description": "<strong>Peletería 45 – 50</strong><br>Brazales encapotados."
       },
       {
         "min": 50,
         "max": 60,
-        "mats": { "Cuero boreal pesado": 130, "Agua eterna": 13 },
+        "mats": {
+          "Cuero boreal pesado": 130,
+          "Agua eterna": 13
+        },
         "description": "<strong>Peletería 50 – 60</strong><br>Manijas encapotadas."
       },
       {
         "min": 60,
         "max": 65,
-        "mats": { "Pelaje ártico": 10, "Quitina nerubiana": 10, "Orbe congelado": 5 },
+        "mats": {
+          "Pelaje ártico": 10,
+          "Quitina nerubiana": 10,
+          "Orbe congelado": 5
+        },
         "description": "<strong>Peletería 60 – 65</strong><br>Armadura para pierna de pellejo de escarcha."
       },
       {
         "min": 65,
         "max": 75,
-        "mats": { "Cuero boreal pesado": 100, "Sombra eterna": 50, "Fuego eterna": 50, "Orbe congelado": 10 },
+        "mats": {
+          "Cuero boreal pesado": 100,
+          "Sombra eterna": 50,
+          "Fuego eterna": 50,
+          "Orbe congelado": 10
+        },
         "description": "<strong>Peletería 65 – 75</strong><br>Faja de tejido de trol."
       }
     ]
@@ -260,61 +370,83 @@
       {
         "min": 1,
         "max": 5,
-        "mats": { "Cuero salvaje": 30 },
+        "mats": {
+          "Cuero salvaje": 30
+        },
         "description": "<strong>Peletería 1 – 5</strong><br>Refuerzo para armadura salvaje."
       },
       {
         "min": 5,
         "max": 10,
-        "mats": { "Cuero salvaje": 35 },
+        "mats": {
+          "Cuero salvaje": 35
+        },
         "description": "<strong>Peletería 5 – 10</strong><br>Botas tsunami."
       },
       {
         "min": 10,
         "max": 20,
-        "mats": { "Cuero salvaje": 70 },
+        "mats": {
+          "Cuero salvaje": 70
+        },
         "description": "<strong>Peletería 10 – 20</strong><br>Capa salvaje."
       },
       {
         "min": 20,
         "max": 25,
-        "mats": { "Cuero salvaje": 50 },
+        "mats": {
+          "Cuero salvaje": 50
+        },
         "description": "<strong>Peletería 20 – 25</strong><br>Botas Marca Oscura."
       },
       {
         "min": 25,
         "max": 35,
-        "mats": { "Cuero salvaje": 120 },
+        "mats": {
+          "Cuero salvaje": 120
+        },
         "description": "<strong>Peletería 25 – 35</strong><br>Sobrehombros Marca Oscura."
       },
       {
         "min": 35,
         "max": 40,
-        "mats": { "Cuero salvaje": 1200 },
+        "mats": {
+          "Cuero salvaje": 1200
+        },
         "description": "<strong>Peletería 35 – 40</strong><br>Cuero salvaje pesado."
       },
       {
         "min": 40,
         "max": 45,
-        "mats": { "Cuero salvaje": 60 },
+        "mats": {
+          "Cuero salvaje": 60
+        },
         "description": "<strong>Peletería 40 – 45</strong><br>Coselete Marca Oscura."
       },
       {
         "min": 45,
         "max": 57,
-        "mats": { "Cuero salvaje pesado": 60 },
+        "mats": {
+          "Cuero salvaje pesado": 60
+        },
         "description": "<strong>Peletería 45 – 57</strong><br>Yelmo Marca Oscura."
       },
       {
         "min": 57,
         "max": 60,
-        "mats": { "Pellejo prístino": 3, "Fuego volátil": 12 },
+        "mats": {
+          "Pellejo prístino": 3,
+          "Fuego volátil": 12
+        },
         "description": "<strong>Peletería 57 – 60</strong><br>Capa de pellejo sañoso."
       },
       {
         "min": 60,
         "max": 75,
-        "mats": { "Cuero salvaje pesado": 100, "Fuego volátil": 100 },
+        "mats": {
+          "Cuero salvaje pesado": 100,
+          "Fuego volátil": 100
+        },
         "description": "<strong>Peletería 60 – 75</strong><br>Equipo de cuero sañoso."
       }
     ]
@@ -328,31 +460,42 @@
       {
         "min": 1,
         "max": 11,
-        "mats": { "Cuero exótico": 40 },
+        "mats": {
+          "Cuero exótico": 40
+        },
         "description": "<strong>Peletería 1 – 11</strong><br>Refuerzo para armadura de sha."
       },
       {
         "min": 11,
         "max": 30,
-        "mats": { "Cuero exótico": 80 },
+        "mats": {
+          "Cuero exótico": 80
+        },
         "description": "<strong>Peletería 11 – 30</strong><br>Brazales de pellejo de niebla."
       },
       {
         "min": 30,
         "max": 36,
-        "mats": { "Cuero exótico": 48 },
+        "mats": {
+          "Cuero exótico": 48
+        },
         "description": "<strong>Peletería 30 – 36</strong><br>Guantes de pellejo de niebla."
       },
       {
         "min": 36,
         "max": 51,
-        "mats": { "Cuero exótico": 150 },
+        "mats": {
+          "Cuero exótico": 150
+        },
         "description": "<strong>Peletería 36 – 51</strong><br>Coselete de pellejo de niebla."
       },
       {
         "min": 51,
         "max": 75,
-        "mats": { "Cuero exótico": 360, "Espíritu de armonía": 1 },
+        "mats": {
+          "Cuero exótico": 360,
+          "Espíritu de armonía": 1
+        },
         "description": "<strong>Peletería 51 – 75</strong><br>Brazales de cuero de contendiente."
       }
     ]
@@ -366,13 +509,17 @@
       {
         "min": 1,
         "max": 55,
-        "mats": { "Pellejo de bestia bruto": 275 },
+        "mats": {
+          "Pellejo de bestia bruto": 275
+        },
         "description": "<strong>Peletería 1 – 55</strong><br>Tambores de furia."
       },
       {
         "min": 55,
         "max": 100,
-        "mats": { "Pellejo de bestia bruto": 1350 },
+        "mats": {
+          "Pellejo de bestia bruto": 1350
+        },
         "description": "<strong>Peletería 55 – 100</strong><br>Kit de reforma de cuero."
       }
     ]
@@ -386,13 +533,18 @@
       {
         "min": 1,
         "max": 75,
-        "mats": { "Cuero de Petrapiel": 810 },
+        "mats": {
+          "Cuero de Petrapiel": 810
+        },
         "description": "<strong>Peletería 1 – 75</strong><br>Ataduras de pellejo de guerra (Rango 3)."
       },
       {
         "min": 75,
         "max": 100,
-        "mats": { "Cuero de Petrapiel": 300, "Sangre de Sargeras": 50 },
+        "mats": {
+          "Cuero de Petrapiel": 300,
+          "Sangre de Sargeras": 50
+        },
         "description": "<strong>Peletería 75 – 100</strong><br>Cinturón de terrocuero (Rango 3)."
       }
     ]
@@ -406,43 +558,62 @@
       {
         "min": 1,
         "max": 25,
-        "mats": { "Cuero burdo": 150, "Hueso manchado de sangre": 100 },
+        "mats": {
+          "Cuero burdo": 150,
+          "Hueso manchado de sangre": 100
+        },
         "description": "<strong>Peletería 1 – 25</strong><br>Guardabrazos de cuero burdo."
       },
       {
         "min": 25,
         "max": 50,
-        "mats": { "Cuero burdo": 200, "Hueso manchado de sangre": 150 },
+        "mats": {
+          "Cuero burdo": 200,
+          "Hueso manchado de sangre": 150
+        },
         "description": "<strong>Peletería 25 – 50</strong><br>Espaldares de cuero burdo."
       },
       {
         "min": 50,
         "max": 70,
-        "mats": { "Pellejo de tempestad": 50, "Aceite de ámbar para curtir": 50 },
+        "mats": {
+          "Pellejo de tempestad": 50,
+          "Aceite de ámbar para curtir": 50
+        },
         "description": "<strong>Peletería 50 – 70</strong><br>Pellejo de tempestad endurecido."
       },
       {
         "min": 70,
         "max": 85,
-        "mats": { "Cuero burdo": 375 },
+        "mats": {
+          "Cuero burdo": 375
+        },
         "description": "<strong>Peletería 70 – 85</strong><br>Barda de cuero burdo (Rango 1)."
       },
       {
         "min": 85,
         "max": 120,
-        "mats": { "Cuero burdo": 900 },
+        "mats": {
+          "Cuero burdo": 900
+        },
         "description": "<strong>Peletería 85 – 120</strong><br>Barda de cuero burdo (Rango 2)."
       },
       {
         "min": 120,
         "max": 150,
-        "mats": { "Cuero burdo": 750, "Hueso manchado de sangre": 300 },
+        "mats": {
+          "Cuero burdo": 750,
+          "Hueso manchado de sangre": 300
+        },
         "description": "<strong>Peletería 120 – 150</strong><br>Tambores de La Vorágine."
       },
       {
         "min": 150,
         "max": 175,
-        "mats": { "Cuero pulido": 400, "Hilo de nailon": 200 },
+        "mats": {
+          "Cuero pulido": 400,
+          "Hilo de nailon": 200
+        },
         "description": "<strong>Peletería 150 – 175</strong><br>Vejiga de cuero pulido."
       }
     ]
@@ -456,43 +627,63 @@
       {
         "min": 1,
         "max": 21,
-        "mats": { "Cuero desolado": 90 },
+        "mats": {
+          "Cuero desolado": 90
+        },
         "description": "<strong>Peletería 1 – 21</strong><br>Botines y guanteletes de cuero desolado."
       },
       {
         "min": 21,
         "max": 51,
-        "mats": { "Cuero desolado": 100 },
+        "mats": {
+          "Cuero desolado": 100
+        },
         "description": "<strong>Peletería 21 – 51</strong><br>Yelmo y espaldares de cuero desolado."
       },
       {
         "min": 51,
         "max": 60,
-        "mats": { "Cuero desolado": 75, "Sal de curtido": 15, "Hilo de lobreguez": 15 },
+        "mats": {
+          "Cuero desolado": 75,
+          "Sal de curtido": 15,
+          "Hilo de lobreguez": 15
+        },
         "description": "<strong>Peletería 51 – 60</strong><br>Marca del artesano I."
       },
       {
         "min": 60,
         "max": 70,
-        "mats": { "Cuero desolado": 150, "Pellejo calloso": 5, "Sal de curtido": 30 },
+        "mats": {
+          "Cuero desolado": 150,
+          "Pellejo calloso": 5,
+          "Sal de curtido": 30
+        },
         "description": "<strong>Peletería 60 – 70</strong><br>Guardarrenes de sombra vinculada."
       },
       {
         "min": 70,
         "max": 85,
-        "mats": { "Cuero desolado": 240 },
+        "mats": {
+          "Cuero desolado": 240
+        },
         "description": "<strong>Peletería 70 – 85</strong><br>Cuero desolado pesado."
       },
       {
         "min": 85,
         "max": 89,
-        "mats": { "Pellejo calloso": 40 },
+        "mats": {
+          "Pellejo calloso": 40
+        },
         "description": "<strong>Peletería 85 – 89</strong><br>Pellejo calloso pesado."
       },
       {
         "min": 89,
         "max": 100,
-        "mats": { "Pellejo calloso pesado": 4, "Hueso pálido": 28, "Cuero desolado pesado": 24 },
+        "mats": {
+          "Pellejo calloso pesado": 4,
+          "Hueso pálido": 28,
+          "Cuero desolado pesado": 24
+        },
         "description": "<strong>Peletería 89 – 100</strong><br>Jubón y leotardos escamalóbrega."
       }
     ]
@@ -506,19 +697,28 @@
       {
         "min": 1,
         "max": 20,
-        "mats": { "Escama de draco": 50, "Cuero elástico": 50 },
+        "mats": {
+          "Escama de draco": 50,
+          "Cuero elástico": 50
+        },
         "description": "<strong>Peletería 1 – 20</strong><br>Refuerzos para armadura de las Islas Dragón."
       },
       {
         "min": 20,
         "max": 50,
-        "mats": { "Escama de draco": 100, "Cuero elástico": 100 },
+        "mats": {
+          "Escama de draco": 100,
+          "Cuero elástico": 100
+        },
         "description": "<strong>Peletería 20 – 50</strong><br>Equipamiento de cuero de las Islas Dragón."
       },
       {
         "min": 50,
         "max": 100,
-        "mats": { "Chispa de ingenio": 5, "Pellejo imbuido": 20 },
+        "mats": {
+          "Chispa de ingenio": 5,
+          "Pellejo imbuido": 20
+        },
         "description": "<strong>Peletería 50 – 100</strong><br>Fabricación de equipo épico y pedidos."
       }
     ]
@@ -532,19 +732,28 @@
       {
         "min": 1,
         "max": 25,
-        "mats": { "Cuero de Khaz Algar": 100, "Escamas de Khaz Algar": 50 },
+        "mats": {
+          "Cuero de Khaz Algar": 100,
+          "Escamas de Khaz Algar": 50
+        },
         "description": "<strong>Peletería 1 – 25</strong><br>Refuerzos y parches de Khaz Algar."
       },
       {
         "min": 25,
         "max": 60,
-        "mats": { "Cuero de Khaz Algar": 200, "Plumaje incomparable": 20 },
+        "mats": {
+          "Cuero de Khaz Algar": 200,
+          "Plumaje incomparable": 20
+        },
         "description": "<strong>Peletería 25 – 60</strong><br>Equipamiento de cuero y malla azul."
       },
       {
         "min": 60,
         "max": 100,
-        "mats": { "Chispa de presagios": 5, "Pellejo imbuido": 20 },
+        "mats": {
+          "Chispa de presagios": 5,
+          "Pellejo imbuido": 20
+        },
         "description": "<strong>Peletería 60 – 100</strong><br>Fabricación épica y sistemas de pedidos."
       }
     ]
@@ -558,25 +767,40 @@
       {
         "min": 1,
         "max": 10,
-        "mats": { "Cuero templado": 70, "Escamas templadas": 50 },
+        "mats": {
+          "Cuero templado": 70,
+          "Escamas templadas": 50
+        },
         "description": "<strong>Peletería 1 – 10</strong><br>Brazales de cuero de contrabandista."
       },
       {
         "min": 10,
         "max": 62,
-        "mats": { "Cuero templado": 687, "Escamas templadas": 607, "Hilo de hojaplata": 73 },
+        "mats": {
+          "Cuero templado": 687,
+          "Escamas templadas": 607,
+          "Hilo de hojaplata": 73
+        },
         "description": "<strong>Peletería 10 – 62</strong><br>Equipo de contrabandista y delantal de joyero."
       },
       {
         "min": 62,
         "max": 91,
-        "mats": { "Pellejo templado": 35, "Mota de magia salvaje": 350, "Piedra velocrepúsculo": 70 },
+        "mats": {
+          "Pellejo templado": 35,
+          "Mota de magia salvaje": 350,
+          "Piedra velocrepúsculo": 70
+        },
         "description": "<strong>Peletería 62 – 91</strong><br>Talismán de pangolín bendito."
       },
       {
         "min": 91,
         "max": 100,
-        "mats": { "Cuero templado": 450, "Mota de energía primigenia": 60, "Barra sindorei": 6 },
+        "mats": {
+          "Cuero templado": 450,
+          "Mota de energía primigenia": 60,
+          "Barra sindorei": 6
+        },
         "description": "<strong>Peletería 91 – 100</strong><br>Envolturas raigales del Árbol del Mundo."
       }
     ]

@@ -1,0 +1,258 @@
+{
+  "vanilla": {
+    "expansionName": "Vanilla (Classic)",
+    "professionName": "Minería",
+    "maxLevel": 300,
+    "description": "Guía de nivelación de Minería (1-300) en Vanilla (Classic) de World of Warcraft. La minería es una profesión de recolección esencial para Herrería, Ingeniería y Joyería.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 65,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 65: Cobre</div>Mina <div class=\"step-title\">Cobre</div> en las zonas de inicio. <br>Horda: Durotar o Mulgore. <br>Alianza: Bosque de Elwynn o Dun Morogh.",
+        "routeImage": "/images/routes/vanilla_copper.webp"
+      },
+      {
+        "min": 65,
+        "max": 125,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 65 – 125: Estaño y Plata</div>Horda: Los Baldíos es el mejor lugar. <br>Alianza: Páramos de Poniente o Montañas Crestagrana.",
+        "routeImage": "/images/routes/vanilla_tin.webp"
+      },
+      {
+        "min": 125,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 125 – 175: Hierro y Oro</div>Zonas recomendadas: Tierras Altas de Arathi o Las Mil Agujas.",
+        "routeImage": "/images/routes/vanilla_iron.webp"
+      },
+      {
+        "min": 175,
+        "max": 245,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 175 – 245: Mitril</div>Zonas recomendadas: Tanaris o Tierras del Interior.",
+        "routeImage": "/images/routes/vanilla_mithril.webp"
+      },
+      {
+        "min": 245,
+        "max": 300,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 245 – 300: Torio</div>Zonas recomendadas: Cráter de Un'Goro o Tierras de la Peste del Este.",
+        "routeImage": "/images/routes/vanilla_thorium.webp"
+      }
+    ]
+  },
+  "tbc": {
+    "expansionName": "The Burning Crusade (TBC)",
+    "professionName": "Minería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Minería en Outland (TBC).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 45,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 45: Hierro vil</div>Mina en la Península del Fuego Infernal.",
+        "routeImage": "/images/routes/tbc_fel_iron.webp"
+      },
+      {
+        "min": 45,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 45 – 75: Adamantita</div>Busca en Nagrand o Terokkar.",
+        "routeImage": "/images/routes/tbc_adamantite.webp"
+      }
+    ]
+  },
+  "wotlk": {
+    "expansionName": "Wrath of the Lich King (WotLK)",
+    "professionName": "Minería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Minería en Northrend (WotLK).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 25: Cobalto</div>Fiordo Aquilonal o Tundra Boreal.",
+        "routeImage": "/images/routes/wotlk_cobalt.webp"
+      },
+      {
+        "min": 25,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 25 – 50: Saronita</div>Recolecta en la Cuenca de Sholazar.",
+        "routeImage": "/images/routes/wotlk_saronite.webp"
+      },
+      {
+        "min": 50,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 50 – 75: Titanio</div>Corona de Hielo o Las Cumbres Tormentosas.",
+        "routeImage": "/images/routes/wotlk_titanium.webp"
+      }
+    ]
+  },
+  "cata": {
+    "expansionName": "Cataclismo",
+    "professionName": "Minería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Minería en Cataclismo.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 25: Obsidiana</div>Monte Hyjal es la mejor zona.",
+        "routeImage": "/images/routes/cata_obsidian.webp"
+      },
+      {
+        "min": 25,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 25 – 50: Elementium</div>Tierras Altas Crepusculares o Infralar.",
+        "routeImage": "/images/routes/cata_elementium.webp"
+      },
+      {
+        "min": 50,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 50 – 75: Pirita</div>Mina en Uldum siguiendo el río.",
+        "routeImage": "/images/routes/cata_pyrite.webp"
+      }
+    ]
+  },
+  "mop": {
+    "expansionName": "Mists of Pandaria (MoP)",
+    "professionName": "Minería",
+    "maxLevel": 75,
+    "description": "Guía de nivelación de Minería en Pandaria.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 75: Hierro fantasma</div>Bosque de Jade por toda la zona.",
+        "routeImage": "/images/routes/mop_ghost_iron.webp"
+      }
+    ]
+  },
+  "wod": {
+    "expansionName": "Warlords of Draenor (WoD)",
+    "professionName": "Minería",
+    "maxLevel": 100,
+    "description": "Guía de niveles de Minería en Draenor.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 100: Draenor</div>Mina en tu ciudadela y en Cresta Fuego Glacial.",
+        "routeImage": "/images/routes/wod_mining.webp"
+      }
+    ]
+  },
+  "legion": {
+    "expansionName": "Legión",
+    "professionName": "Minería",
+    "maxLevel": 100,
+    "description": "Rangos de minería en las Islas Quebradas.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 100: Islas Quebradas</div>Céntrate en Piedra ley y Pizarra vil.",
+        "routeImage": "/images/routes/legion_mining.webp"
+      }
+    ]
+  },
+  "bfa": {
+    "expansionName": "Battle for Azeroth (BfA)",
+    "professionName": "Minería",
+    "maxLevel": 175,
+    "description": "Minería en Kul Tiras y Zandalar.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 175: BfA</div>Mina en Zuldazar o Estrecho de Tiragarde.",
+        "routeImage": "/images/routes/bfa_mining.webp"
+      }
+    ]
+  },
+  "sl": {
+    "expansionName": "Shadowlands",
+    "professionName": "Minería",
+    "maxLevel": 175,
+    "description": "Guía de minería en las Tierras Sombrías.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 175,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 175: Shadowlands</div>Bastión y Ardenweald son las mejores zonas."
+      }
+    ]
+  },
+  "df": {
+    "expansionName": "Dragonflight",
+    "professionName": "Minería",
+    "maxLevel": 100,
+    "description": "Minería en las Islas Dragón con especializaciones.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 100: Dragon Isles</div>Mina Serevita y Draconita.",
+        "routeImage": "/images/routes/df_mining.webp"
+      }
+    ]
+  },
+  "tww": {
+    "expansionName": "The War Within",
+    "professionName": "Minería",
+    "maxLevel": 100,
+    "description": "Minería en las profundidades de Khaz Algar.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 60,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 60: Isla de Dorn</div>Mina Bismuto rápidamente.",
+        "routeImage": "/images/routes/tww_dorn.webp"
+      },
+      {
+        "min": 60,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 60 – 100: Azj-Kahet</div>Busca Hierrogarra y Aqirita.",
+        "routeImage": "/images/routes/tww_mining_deep.webp"
+      }
+    ]
+  },
+  "midnight": {
+    "expansionName": "Midnight",
+    "professionName": "Minería",
+    "maxLevel": 100,
+    "description": "Guía de Minería de Midnight (2026). Aprende a recolectar los nuevos cristales de luz y materiales del vacío en las tierras de Quel'Thalas.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 1 – 50: Vetas de Luzsolar</div>Mina en los Bosques de Canción Eterna y las Tierras del Sol. Busca el brillo dorado en las bases de las estructuras élficas.",
+        "routeImage": "/images/routes/midnight_mining.webp"
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": {},
+        "description": "<div class=\"step-title\">Minería 50 – 100: Mena de Vacío</div>Explora las zonas afectadas por el abismo para encontrar estos depósitos oscuros. Son necesarios para la forja avanzada de Midnight.",
+        "routeImage": "/images/routes/midnight_mining_void.webp"
+      }
+    ]
+  }
+}

@@ -12,7 +12,8 @@ const professions = defineCollection({
       min: z.number(),
       max: z.number(),
       mats: z.record(z.number()),
-      description: z.string()
+      description: z.string(),
+      routeImage: z.string().optional()
     }))
   }))
 });
