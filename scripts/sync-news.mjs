@@ -7,6 +7,27 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const genAI = GEMINI_API_KEY ? new GoogleGenerativeAI(GEMINI_API_KEY) : null;
 
 /**
+ * Limpia un texto para convertirlo en un slug seguro para URLs.
+ * Elimina acentos, caracteres especiales y convierte a minúsculas.
+ */
+function slugify(text) {
+  if (!text) return '';
+  return text
+    .toString()
+    .toLowerCase()
+    .normalize('NFD') // Separa los acentos de las letras
+    .replace(/[\u0300-\u036f]/g, '') // Elimina los acentos
+    .replace(/[^\w\s-]/g, '') // Elimina todo lo que no sea letra, número, espacio o guion
+    .replace(/\s+/g, '-') // Reemplaza espacios por guiones
+    .replace(/--+/g, '-') // Evita guiones dobles
+    .trim()
+    .split('-')
+    .slice(0, 10) // Limitamos a las primeras 10 palabras para URLs más SEO-friendly
+    .join('-')
+    .replace(/^-+|-+$/g, ''); // Elimina guiones al principio o al final
+}
+
+/**
  * Normaliza la categoría de una noticia usando detección de palabras clave.
  * Las categorías de la API de Blizzard son inconsistentes ("WoW", "Puesto comercial WoW", etc.)
  * Esta función las unifica en categorías claras y útiles para los usuarios.
@@ -169,10 +190,11 @@ async function main() {
       }
     }
 
-    // Re-normalizar categorías del historial existente también
+    // Re-normalizar categorías y slugs del historial existente también
     existingNews = existingNews.map(item => ({
       ...item,
-      category: normalizeCategory(item.category || '', item.title || '', item.description || '')
+      category: normalizeCategory(item.category || '', item.title || '', item.description || ''),
+      slug: slugify(item.slug || item.title || item.id?.toString() || '')
     }));
 
     const fetchedNews = [];
@@ -198,7 +220,7 @@ async function main() {
       const newsItem = {
         id: blog.id,
         title,
-        slug: blog.slug || blog.id.toString(),
+        slug: slugify(blog.slug || blog.title || blog.id.toString()),
         description,
         content: bodyContent,
         url: blog.url.startsWith('/') ? `https://worldofwarcraft.blizzard.com${blog.url}` : blog.url,
