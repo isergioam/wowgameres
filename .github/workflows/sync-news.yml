@@ -15,10 +15,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
           
       - name: Sync News
         run: node scripts/sync-news.mjs
-        
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Action"
