@@ -120,7 +120,7 @@ const gathering = filteredProfessions.filter((p) => p.type === "gathering");
 const secondary = filteredProfessions.filter((p) => p.type === "secondary");
 
 const optimizedTitle = `Guías de Profesiones WoW ${expName} | Rutas y Listas de Materiales | WOWGamerES`;
-const seoDescription = `Todas las guías de profesiones (Artesanía, Recolección y Secundarias) para la expansión ${expName} de World of Warcraft. Optimiza tu farmeo y ahorra oro con WOWGamerES.`;
+const seoDescription = `Todas las guías de profesiones de Artesanía para la expansión ${expName} de World of Warcraft. Optimiza tu farmeo y ahorra oro con WOWGamerES.`;
 ---
 
 <BaseLayout title={optimizedTitle} description={seoDescription}>
@@ -189,88 +189,6 @@ const seoDescription = `Todas las guías de profesiones (Artesanía, Recolecció
                               alt={`Guía de ${prof.name} WoW ${expName}`}
                               width={isLastRowFilling ? 900 : 500}
                               height={isLastRowFilling ? 500 : 350}
-                              quality="mid"
-                            />
-                          );
-                        }
-                        return <img src={prof.img} alt={prof.name} />;
-                      })()}
-                    </div>
-                    <div class="card-overlay">
-                      <h3>{prof.name}</h3>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </section>
-      )
-    }
-
-    {
-      gathering.length > 0 && (
-        <section class="section" style="margin-top: 50px;">
-          <h2 class="section-subtitle">Profesiones de Recolección</h2>
-          <div class="grid-recoleccion">
-            {gathering.map((prof, index) => {
-              const itemsPerRow = Math.min(gathering.length, 3);
-              const isLastRowFilling = gathering.length % itemsPerRow !== 0 && index >= gathering.length - (gathering.length % itemsPerRow);
-              return (
-                <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
-                  <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
-                    <div class="card-bg">
-                      {(() => {
-                        const assetPath = `/src/assets${prof.img}`;
-                        const imgAsset = allImages[assetPath];
-                        if (imgAsset) {
-                          return (
-                            <Image
-                              src={imgAsset.default}
-                              alt={`Guía de ${prof.name} WoW ${expName}`}
-                              width={isLastRowFilling ? 900 : 500}
-                              height={isLastRowFilling ? 500 : 350}
-                              quality="mid"
-                            />
-                          );
-                        }
-                        return <img src={prof.img} alt={prof.name} />;
-                      })()}
-                    </div>
-                    <div class="card-overlay">
-                      <h3>{prof.name}</h3>
-                    </div>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </section>
-      )
-    }
-
-    {
-      secondary.length > 0 && (
-        <section class="section" style="margin-top: 50px;">
-          <h2 class="section-subtitle">Profesiones Secundarias</h2>
-          <div class="grid-secundarias">
-            {secondary.map((prof, index) => {
-              const itemsPerRow = Math.min(secondary.length, 4);
-              const isLastRowFilling = secondary.length % itemsPerRow !== 0 && index >= secondary.length - (secondary.length % itemsPerRow);
-              return (
-                <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
-                  <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
-                    <div class="card-bg">
-                      {(() => {
-                        const assetPath = `/src/assets${prof.img}`;
-                        const imgAsset = allImages[assetPath];
-                        if (imgAsset) {
-                          return (
-                            <Image
-                              src={imgAsset.default}
-                              alt={`Guía de ${prof.name} WoW ${expName}`}
-                              width={isLastRowFilling ? 900 : 400}
-                              height={isLastRowFilling ? 500 : 300}
                               quality="mid"
                             />
                           );
