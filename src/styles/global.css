@@ -824,7 +824,7 @@ footer {
 
   /* Header */
   .main-header {
-    padding: 8px 15px;
+    padding: 8px 15px 19px;
   }
 
   .logo img {
@@ -999,8 +999,8 @@ footer {
 /* --- SMALL MOBILE (max 480px) --- */
 @media (max-width: 480px) {
   body {
-    padding-top: 120px;
-    scroll-padding-top: 120px;
+    padding-top: var(--header-height-mobile);
+    scroll-padding-top: var(--header-height-mobile);
   }
 
   h1 {
@@ -1048,7 +1048,7 @@ footer {
   /* Glass slider */
   .leveling-wrapper-glass {
     position: sticky;
-    top: 120px;
+    top: var(--header-height-mobile);
     padding: 10px 12px;
     z-index: 950;
   }
