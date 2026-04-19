@@ -15,10 +15,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-glow); /* Usando variable para mejor contraste */
+  background: var(--primary-glow);
+  /* Usando variable para mejor contraste */
   border-radius: 0;
   transition: background 0.3s;
-  border: 1px solid rgba(0,0,0,0.05); /* Sutil separación visual */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* Sutil separación visual */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -27,7 +29,8 @@
 
 /* Ajuste específico para visibilidad en modo claro */
 html:not(.dark-mode) ::-webkit-scrollbar-thumb {
-  background: rgba(106, 13, 173, 0.35); /* Un púrpura más profundo para fondo blanco */
+  background: rgba(106, 13, 173, 0.35);
+  /* Un púrpura más profundo para fondo blanco */
 }
 
 /* Para Firefox */
@@ -67,7 +70,7 @@ html:not(.dark-mode) ::-webkit-scrollbar-thumb {
   --space-xxxl: 64px;
 
   --header-height-desktop: 120px;
-  --header-height-mobile: 240px;
+  --header-height-mobile: 150px;
 }
 
 
