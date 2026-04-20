@@ -176,7 +176,7 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
               const itemsPerRow = 3;
               const isLastRowFilling = crafting.length % itemsPerRow !== 0 && index >= crafting.length - (crafting.length % itemsPerRow);
               return (
-                <a href={`/guias/${prof.id}/${expansion}`} class="reveal">
+                <a href={`/guias/${prof.id}/${expansion}/`} class="reveal">
                   <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
                     <div class="card-bg">
                       {(() => {

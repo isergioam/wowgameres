@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { title, description, slug, image, date, category } = Astro.props;
-const url = `/noticias/${slug}`;
+const url = `/noticias/${slug}/`;
 
 // Formatear fecha
 const formattedDate = new Date(date).toLocaleDateString('es-ES', {

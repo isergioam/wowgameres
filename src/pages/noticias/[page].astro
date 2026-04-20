@@ -93,7 +93,7 @@ const description = "Explora el historial completo de noticias de World of Warcr
       <!-- Pager -->
       <nav class="pagination-nav">
         {page.url.prev ? (
-          <a href={page.url.prev.endsWith('/1') ? '/noticias' : page.url.prev} class="page-link">&larr; Anterior</a>
+          <a href={page.url.prev.endsWith('/1') ? '/noticias/' : page.url.prev} class="page-link">&larr; Anterior</a>
         ) : (
           <span class="page-link disabled">&larr; Anterior</span>
         )}

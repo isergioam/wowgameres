@@ -53,7 +53,7 @@ const description =
               </div>
               <h1>{featuredNews.title}</h1>
               <p>{featuredNews.description}</p>
-              <a href={`/noticias/${featuredNews.slug}`} class="cta-banner">
+              <a href={`/noticias/${featuredNews.slug}/`} class="cta-banner">
                 LEER ARTÍCULO
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -167,7 +167,7 @@ const description =
         </div>
         {
           allNews.length > 10 ? (
-            <a href="/noticias/2" class="page-link">
+            <a href="/noticias/2/" class="page-link">
               Siguiente &rarr;
             </a>
           ) : (
@@ -227,7 +227,7 @@ const description =
     const itemsHtml = items
       .map(
         (item) => `
-      <a href="/noticias/${item.slug}" class="news-card-dynamic">
+      <a href="/noticias/${item.slug}/" class="news-card-dynamic">
         <article class="news-card">
           <div class="card-image-wrapper">
             <img src="${item.image}" alt="${item.title}" loading="lazy" class="news-image" />
