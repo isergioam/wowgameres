@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import newsData from '../content/news/latest.json';
 
 const expansions = [
   { id: 'vanilla', name: 'Vanilla' },
@@ -15,6 +17,8 @@ const expansions = [
   { id: 'tww', name: 'The War Within' },
   { id: 'midnight', name: 'Midnight' },
 ];
+
+const latestNews = newsData.slice(0, 3);
 const title = "Guías de Profesiones WoW & Noticias de Azeroth | WOWGamerES";
 const description = "Las mejores guías de nivelación de profesiones para World of Warcraft y las últimas noticias de Azeroth resumidas por IA. Optimiza tu juego con WOWGamerES.";
 ---
@@ -31,6 +35,28 @@ const description = "Las mejores guías de nivelación de profesiones para World
 				hasta la más reciente, ofreciéndote rutas optimizadas y listas de materiales exactas.
 			</p>
 		</section>
+    
+    <!-- Últimas Noticias -->
+    {latestNews.length > 0 && (
+      <section class="section news-preview-section reveal">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
+          <h2>Últimas Noticias de Azeroth</h2>
+          <a href="/noticias/" style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;">Ver todas &rarr;</a>
+        </div>
+        <div class="news-grid">
+          {latestNews.map(news => (
+            <NewsCard 
+              title={news.title}
+              description={news.summary || news.description}
+              slug={news.slug}
+              image={news.image}
+              date={news.date}
+              category={news.category}
+            />
+          ))}
+        </div>
+      </section>
+    )}
 
 		<!-- Expansiones -->
 		<section id="expansiones" class="section">
@@ -68,3 +94,18 @@ const description = "Las mejores guías de nivelación de profesiones para World
 		</section>
 	</main>
 </BaseLayout>
+
+<style>
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
