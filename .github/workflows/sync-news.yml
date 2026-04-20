@@ -30,4 +30,10 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add src/content/news/latest.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: sync latest WoW news [skip ci]" && git push)
+          # Comprobar si hay cambios reales antes de intentar el commit
+          if git diff --staged --quiet; then
+            echo "No hay nuevas noticias para sincronizar. Saltando commit."
+          else
+            git commit -m "docs: sync latest WoW news [skip ci]"
+            git push origin main
+          fi
