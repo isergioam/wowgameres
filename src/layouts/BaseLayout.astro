@@ -114,6 +114,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           console.log('SW fallo al registrarse', err);
         });
       });
+
+      // Recargar automáticamente cuando el nuevo Service Worker toma el control
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        refreshing = true;
+        window.location.reload();
+      });
     }
 
     // Scroll Reveal Observer
