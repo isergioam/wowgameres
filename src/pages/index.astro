@@ -35,12 +35,27 @@ const description = "Las mejores guías de nivelación de profesiones para World
 				hasta la más reciente, ofreciéndote rutas optimizadas y listas de materiales exactas.
 			</p>
 		</section>
-    
+		<!-- Expansiones -->
+		<section id="expansiones" class="section">
+			<div style="margin-bottom: 25px; text-align: center;">
+				<h2 data-i18n="title_explore">Comienza tu aventura: Elige una Expansión</h2>
+				<p style="opacity: 0.8; margin-top: 10px;">Selecciona la era temporal en la que deseas mejorar tus habilidades de artesanía o recolección.</p>
+			</div>
+			
+			<div class="expansiones">
+        {expansions.map(exp => (
+          <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
+            <div class="card-expansion">{exp.name}</div>
+          </a>
+        ))}
+			</div>
+		</section>
+
     <!-- Últimas Noticias -->
     {latestNews.length > 0 && (
-      <section class="section news-preview-section reveal">
+      <section class="section news-preview-section reveal" style="margin-top: 50px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
-          <h2>Últimas Noticias de Azeroth</h2>
+          <h2 style="border: none; padding: 0; margin: 0;">Últimas Noticias de Azeroth</h2>
           <a href="/noticias/" style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;">Ver todas &rarr;</a>
         </div>
         <div class="news-grid">
@@ -57,22 +72,6 @@ const description = "Las mejores guías de nivelación de profesiones para World
         </div>
       </section>
     )}
-
-		<!-- Expansiones -->
-		<section id="expansiones" class="section">
-			<div style="margin-bottom: 25px; text-align: center;">
-				<h2 data-i18n="title_explore">Comienza tu aventura: Elige una Expansión</h2>
-				<p style="opacity: 0.8; margin-top: 10px;">Selecciona la era temporal en la que deseas mejorar tus habilidades de artesanía o recolección.</p>
-			</div>
-			
-			<div class="expansiones">
-        {expansions.map(exp => (
-          <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
-            <div class="card-expansion">{exp.name}</div>
-          </a>
-        ))}
-			</div>
-		</section>
 
 		<!-- Nueva sección para añadir densidad de texto y valor (E-E-A-T) -->
 		<section class="section faq-section reveal" style="margin-top: 50px; text-align: left;">
