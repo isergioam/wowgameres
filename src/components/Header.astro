@@ -63,23 +63,37 @@
     const toggle = document.getElementById('darkModeToggle');
     const logoImg = document.getElementById("logo") as HTMLImageElement;
 
-    function updateLogo(isDark: boolean) {
-      if (!logoImg) return;
-      logoImg.src = isDark 
-        ? "/images/WOWGamerES_Logo_white.webp" 
-        : "/images/WOWGamerES_Logo_black.webp";
+    function applyTheme(isDark: boolean) {
+      if (isDark) {
+        document.documentElement.classList.add('dark-mode');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+      }
+      
+      if (logoImg) {
+        logoImg.src = isDark 
+          ? "/images/WOWGamerES_Logo_white.webp" 
+          : "/images/WOWGamerES_Logo_black.webp";
+      }
     }
 
-    const isCurrentlyDark = document.documentElement.classList.contains('dark-mode');
-    updateLogo(isCurrentlyDark);
+    // Inicialización
+    applyTheme(document.documentElement.classList.contains('dark-mode'));
 
     if (toggle) {
       toggle.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark-mode');
+        const isDark = !document.documentElement.classList.contains('dark-mode');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        updateLogo(isDark);
+        applyTheme(isDark);
       });
     }
+
+    // Escuchar cambios en otras pestañas
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'theme') {
+        applyTheme(e.newValue === 'dark');
+      }
+    });
 
     const searchInput = document.getElementById('quickSearch') as HTMLInputElement;
     const resultsList = document.getElementById('searchResults');
