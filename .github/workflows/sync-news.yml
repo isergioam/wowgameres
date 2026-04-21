@@ -8,6 +8,9 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
     steps:
       - uses: actions/checkout@v4
       
@@ -35,5 +38,6 @@ jobs:
             echo "No hay nuevas noticias para sincronizar. Saltando commit."
           else
             git commit -m "docs: sync latest WoW news [skip ci]"
+            git pull origin main --rebase
             git push origin main
           fi

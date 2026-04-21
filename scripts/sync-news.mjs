@@ -100,7 +100,7 @@ function normalizeCategory(rawCategory, title = '', description = '') {
 async function generateSummaryTitle(title, description) {
   if (!genAI) return null;
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `Eres un editor creativo de un portal de World of Warcraft.
     
 Basándote en este artículo, escribe un título corto y evocador (máximo 8 palabras) que capture la esencia de la noticia. 
@@ -110,23 +110,23 @@ TÍTULO ORIGINAL: ${title}
 DESCRIPCIÓN: ${description.substring(0, 200)}`;
 
     const result = await model.generateContent(prompt);
-    const text = result.response.text().trim().replace(/^["']|["']$/g, '');
+    const response = await result.response;
+    const text = response.text().trim().replace(/^["']|["']$/g, '');
     return text;
   } catch (err) {
-    console.error(`Error generando summaryTitle:`, err.message);
+    console.error(`Error generando summaryTitle para "${title}":`, err.stack || err.message);
     return null;
   }
 }
 
 async function generateSummary(title, content) {
   if (!genAI) {
-    console.warn(`Skipping summary for "${title}" (No API Key found)`);
     return null;
   }
 
   try {
     console.log(`Generating AI summary for: ${title}...`);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
 
@@ -166,11 +166,40 @@ async function fetchNews() {
   }
 
   const html = await response.text();
-  const match = html.match(/model\s*=\s*({.*?});/s);
+  
+  // Intento 1: Regex clásica
+  let match = html.match(/model\s*=\s*({.*?});/s);
+  
+  // Intento 2: Búsqueda manual más agresiva si la regex falla por complejidad del JSON
+  if (!match) {
+    console.log('Regex fail, trying manual extraction...');
+    const startMarker = 'model = ';
+    const startIndex = html.indexOf(startMarker);
+    if (startIndex !== -1) {
+      const jsonStart = startIndex + startMarker.length;
+      // Buscamos el final del objeto JSON. Blizzard suele terminarlo con };\n
+      const jsonEnd = html.indexOf('};', jsonStart);
+      if (jsonEnd !== -1) {
+        const jsonText = html.substring(jsonStart, jsonEnd + 1);
+        try {
+          const model = JSON.parse(jsonText);
+          return model.blogList.blogs;
+        } catch (e) {
+          console.error('Manual extraction JSON parse failed:', e.message);
+        }
+      }
+    }
+  }
+
   if (!match) throw new Error('Could not find news model in HTML');
   
-  const model = JSON.parse(match[1]);
-  return model.blogList.blogs;
+  try {
+    const model = JSON.parse(match[1]);
+    return model.blogList.blogs;
+  } catch (e) {
+    console.error('Regex match JSON parse failed:', e.message);
+    throw new Error(`Failed to parse news JSON: ${e.message}`);
+  }
 }
 
 async function main() {
