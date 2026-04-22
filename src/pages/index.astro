@@ -1,114 +1,162 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import NewsCard from '../components/NewsCard.astro';
-import newsData from '../content/news/latest.json';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NewsCard from "../components/NewsCard.astro";
+import newsData from "../content/news/latest.json";
 
 const expansions = [
-  { id: 'vanilla', name: 'Vanilla' },
-  { id: 'tbc', name: 'Terrallende' },
-  { id: 'wotlk', name: 'Rasganorte' },
-  { id: 'cata', name: 'Cataclismo' },
-  { id: 'mop', name: 'Pandaria' },
-  { id: 'wod', name: 'Draenor' },
-  { id: 'legion', name: 'Legión' },
-  { id: 'bfa', name: 'Battle for Azeroth' },
-  { id: 'sl', name: 'Shadowlands' },
-  { id: 'df', name: 'Dragonflight' },
-  { id: 'tww', name: 'The War Within' },
-  { id: 'midnight', name: 'Midnight' },
+  { id: "vanilla", name: "Vanilla" },
+  { id: "tbc", name: "Terrallende" },
+  { id: "wotlk", name: "Rasganorte" },
+  { id: "cata", name: "Cataclismo" },
+  { id: "mop", name: "Pandaria" },
+  { id: "wod", name: "Draenor" },
+  { id: "legion", name: "Legión" },
+  { id: "bfa", name: "Battle for Azeroth" },
+  { id: "sl", name: "Shadowlands" },
+  { id: "df", name: "Dragonflight" },
+  { id: "tww", name: "The War Within" },
+  { id: "midnight", name: "Midnight" },
 ];
 
 const latestNews = newsData.slice(0, 3);
 const title = "Guías de Profesiones WoW & Noticias de Azeroth | WOWGamerES";
-const description = "Las mejores guías de nivelación de profesiones para World of Warcraft y las últimas noticias de Azeroth resumidas por IA. Optimiza tu juego con WOWGamerES.";
+const description =
+  "Las mejores guías de nivelación de profesiones para World of Warcraft y las últimas noticias de Azeroth resumidas por IA. Optimiza tu juego con WOWGamerES.";
 ---
 
 <BaseLayout title={title} description={description}>
-	<section class="hero-section reveal">
-		<div class="hero-background"></div>
-		<div class="hero-overlay"></div>
-		<div class="hero-content">
-			<h1 id="profesiones" data-i18n="title_professions">Tu central de Guías de Profesión para World of Warcraft</h1>
-			<p class="hero-description">
-				Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo creado por jugadores y para jugadores. 
-				Nuestro objetivo es ayudarte a subir las profesiones de tus personajes de forma rápida, eficiente y 
-				gastando la menor cantidad de oro posible.
-			</p>
-			<div class="hero-stats">
-				<div class="stat-item">
-					<span class="stat-value">12</span>
-					<span class="stat-label">Expansiones</span>
-				</div>
-				<div class="stat-item">
-					<span class="stat-value">100%</span>
-					<span class="stat-label">Actualizado</span>
-				</div>
-				<div class="stat-item">
-					<span class="stat-value">Free</span>
-					<span class="stat-label">Siempre gratis</span>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section class="hero-section reveal">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 id="profesiones" data-i18n="title_professions">
+        Guías paso a paso para World of Warcraft
+      </h1>
+      <p class="hero-description">
+        Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo creado
+        por jugadores y para jugadores. Nuestro objetivo es ayudarte a subir las
+        profesiones de tus personajes de forma rápida, eficiente y gastando la
+        menor cantidad de oro posible.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">12</span>
+          <span class="stat-label">Expansiones</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Actualizado</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">Free</span>
+          <span class="stat-label">Siempre gratis</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<main class="content">
-		<!-- Expansiones -->
-		<section id="expansiones" class="section">
-			<div style="margin-bottom: 25px; text-align: center;">
-				<h2 data-i18n="title_explore">Comienza tu aventura: Elige una Expansión</h2>
-				<p style="opacity: 0.8; margin-top: 10px;">Selecciona la era temporal en la que deseas mejorar tus habilidades de artesanía o recolección.</p>
-			</div>
-			
-			<div class="expansiones">
-        {expansions.map(exp => (
-          <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
-            <div class="card-expansion">{exp.name}</div>
-          </a>
-        ))}
-			</div>
-		</section>
+  <main class="content">
+    <!-- Expansiones -->
+    <section id="expansiones" class="section">
+      <div style="margin-bottom: 25px; text-align: center;">
+        <h2 data-i18n="title_explore">
+          Comienza tu aventura: Elige una Expansión
+        </h2>
+        <p style="opacity: 0.8; margin-top: 10px;">
+          Selecciona la era temporal en la que deseas mejorar tus habilidades de
+          artesanía o recolección.
+        </p>
+      </div>
+
+      <div class="expansiones">
+        {
+          expansions.map((exp) => (
+            <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
+              <div class="card-expansion">{exp.name}</div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
 
     <!-- Últimas Noticias -->
-    {latestNews.length > 0 && (
-      <section class="section news-preview-section reveal" style="margin-top: 50px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
-          <h2 style="border: none; padding: 0; margin: 0;">Últimas Noticias de Azeroth</h2>
-          <a href="/noticias/" style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;">Ver todas &rarr;</a>
-        </div>
-        <div class="news-grid">
-          {latestNews.map(news => (
-            <NewsCard 
-              title={news.title}
-              description={news.summary || news.description}
-              slug={news.slug}
-              image={news.image}
-              date={news.date}
-              category={news.category}
-            />
-          ))}
-        </div>
-      </section>
-    )}
+    {
+      latestNews.length > 0 && (
+        <section
+          class="section news-preview-section reveal"
+          style="margin-top: 50px;"
+        >
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
+            <h2 style="border: none; padding: 0; margin: 0;">
+              Últimas Noticias de Azeroth
+            </h2>
+            <a
+              href="/noticias/"
+              style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;"
+            >
+              Ver todas &rarr;
+            </a>
+          </div>
+          <div class="news-grid">
+            {latestNews.map((news) => (
+              <NewsCard
+                title={news.title}
+                description={news.summary || news.description}
+                slug={news.slug}
+                image={news.image}
+                date={news.date}
+                category={news.category}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
 
-		<!-- Nueva sección para añadir densidad de texto y valor (E-E-A-T) -->
-		<section class="section faq-section reveal" style="margin-top: 50px; text-align: left;">
-			<h2>¿Por qué utilizar nuestras guías?</h2>
-			<div style="margin-top: 20px; display: grid; gap: 20px;">
-				<article>
-					<h3 style="color: #bb9fff; margin-bottom: 5px;">Rutas Optimizadas paso a paso</h3>
-					<p>Nos encargamos de estructurar cada tramo de nivel (por ejemplo, del 1 al 75 o del 1 al 300) seleccionando siempre las recetas que consumen materiales más comunes y baratos en la casa de subastas. Rehuimos sistemáticamente de componentes raros salvo que sean estrictamente necesarios.</p>
-				</article>
-				<article>
-					<h3 style="color: #bb9fff; margin-bottom: 5px;">Rastreador de Progreso Integrado</h3>
-					<p>Nuestras guías no son solo texto estático. Cada página de profesión incluye una herramienta interactiva donde puedes tachar los materiales que vas consiguiendo y llevar la cuenta de en qué nivel te has quedado, guardándose automáticamente en tu navegador.</p>
-				</article>
-				<article>
-					<h3 style="color: #bb9fff; margin-bottom: 5px;">Actualizaciones Constantes</h3>
-					<p>El universo de Azeroth cambia constantemente. Parche tras parche, revisamos las dinámicas de farmeo y ajuste de recetas que Blizzard introduce, asegurándonos de que nunca sigas una ruta que haya quedado obsoleta.</p>
-				</article>
-			</div>
-		</section>
-	</main>
+    <!-- Nueva sección para añadir densidad de texto y valor (E-E-A-T) -->
+    <section
+      class="section faq-section reveal"
+      style="margin-top: 50px; text-align: left;"
+    >
+      <h2>¿Por qué utilizar nuestras guías?</h2>
+      <div style="margin-top: 20px; display: grid; gap: 20px;">
+        <article>
+          <h3 style="color: #bb9fff; margin-bottom: 5px;">
+            Rutas Optimizadas paso a paso
+          </h3>
+          <p>
+            Nos encargamos de estructurar cada tramo de nivel (por ejemplo, del
+            1 al 75 o del 1 al 300) seleccionando siempre las recetas que
+            consumen materiales más comunes y baratos en la casa de subastas.
+            Rehuimos sistemáticamente de componentes raros salvo que sean
+            estrictamente necesarios.
+          </p>
+        </article>
+        <article>
+          <h3 style="color: #bb9fff; margin-bottom: 5px;">
+            Rastreador de Progreso Integrado
+          </h3>
+          <p>
+            Nuestras guías no son solo texto estático. Cada página de profesión
+            incluye una herramienta interactiva donde puedes tachar los
+            materiales que vas consiguiendo y llevar la cuenta de en qué nivel
+            te has quedado, guardándose automáticamente en tu navegador.
+          </p>
+        </article>
+        <article>
+          <h3 style="color: #bb9fff; margin-bottom: 5px;">
+            Actualizaciones Constantes
+          </h3>
+          <p>
+            El universo de Azeroth cambia constantemente. Parche tras parche,
+            revisamos las dinámicas de farmeo y ajuste de recetas que Blizzard
+            introduce, asegurándonos de que nunca sigas una ruta que haya
+            quedado obsoleta.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 </BaseLayout>
 
 <style>
@@ -132,7 +180,7 @@ const description = "Las mejores guías de nivelación de profesiones para World
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/Cabecera_WOWGamerES.png');
+    background-image: url("/images/Cabecera_WOWGamerES.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -142,8 +190,12 @@ const description = "Las mejores guías de nivelación de profesiones para World
   }
 
   @keyframes slowZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.15); }
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.15);
+    }
   }
 
   .hero-overlay {
@@ -264,5 +316,4 @@ const description = "Las mejores guías de nivelación de profesiones para World
       grid-template-columns: 1fr;
     }
   }
-
 </style>
