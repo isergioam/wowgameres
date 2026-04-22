@@ -1,4 +1,4 @@
-﻿*,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -96,8 +96,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px var(--space-lg);
-  background: #fff;
+  padding: 0 var(--space-lg);
+  background: #ffffff;
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -106,6 +107,8 @@ a {
   max-width: 100vw;
   z-index: 2000;
   height: var(--header-height-desktop);
+  border-bottom: 1px solid rgba(106, 13, 173, 0.1);
+  transition: all 0.3s ease;
 }
 
 .header-top-row {
@@ -168,9 +171,8 @@ a {
   /* Esquinas picudas */
   border: 1px solid var(--primary-purple);
   /* Borde morado de la web */
-  background: rgba(243, 232, 255, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(243, 232, 255, 0.9);
+  
   color: var(--text-dark);
   outline: none;
   font-size: 0.95rem;
@@ -520,7 +522,8 @@ footer {
 }
 
 .dark-mode .main-header {
-  background-color: var(--bg-color);
+  background-color: #000000;
+  border-bottom-color: rgba(187, 159, 255, 0.1);
 }
 
 /* Fila de cabecera de materiales */
