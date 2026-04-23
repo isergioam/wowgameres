@@ -1,1 +1,1 @@
-*.astro linguist-language=HTML
+*.html linguist-language=Astro
