@@ -18,6 +18,21 @@ export default defineConfig({
     '/alquimia-wotlk.html': '/guias/alquimia/wotlk/',
     '/herreria-midnight.html': '/guias/herreria/midnight/',
 
+    /* Nuevas redirecciones del segundo CSV (Tabla.csv) */
+    '/legion-alquimia/': '/guias/alquimia/legion/',
+    '/vanilla-peleteria/': '/guias/peleteria/vanilla/',
+    '/vanilla-herreria/': '/guias/herreria/vanilla/',
+    '/draenor-inscripcion/': '/guias/inscripcion/wod/',
+    '/legion-joyeria/': '/guias/joyeria/legion/',
+    '/legion-herreria/': '/guias/herreria/legion/',
+    '/vanilla-sastreria/': '/guias/sastreria/vanilla/',
+    '/legion-encantamiento/': '/guias/encantamiento/legion/',
+    '/draenor-peleteria/': '/guias/peleteria/wod/',
+    '/draenor-joyeria/': '/guias/joyeria/wod/',
+    '/legion-peleteria/': '/guias/peleteria/legion/',
+    '/pandaria-alquimia/': '/guias/alquimia/mop/',
+
+
     /* Nuevas redirecciones de rutas antiguas detectadas en Search Console */
     '/pandaria-inscripcion/': '/guias/inscripcion/mop/',
     '/rasganorte-inscripcion/': '/guias/inscripcion/wotlk/',
