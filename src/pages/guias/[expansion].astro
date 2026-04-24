@@ -172,12 +172,10 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
         <section class="section">
           <h2 class="section-subtitle">Profesiones de Artesanía</h2>
           <div class="grid-principales">
-            {crafting.map((prof, index) => {
-              const itemsPerRow = 3;
-              const isLastRowFilling = crafting.length % itemsPerRow !== 0 && index >= crafting.length - (crafting.length % itemsPerRow);
+            {crafting.map((prof) => {
               return (
                 <a href={`/guias/${prof.id}/${expansion}/`} class="reveal">
-                  <div class={`card-cinematic ${isLastRowFilling ? 'alt-height' : ''}`}>
+                  <div class="card-cinematic">
                     <div class="card-bg">
                       {(() => {
                         const assetPath = `/src/assets${prof.img}`;
@@ -187,8 +185,8 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
                             <Image
                               src={imgAsset.default}
                               alt={`Guía de ${prof.name} WoW ${expName}`}
-                              width={isLastRowFilling ? 900 : 500}
-                              height={isLastRowFilling ? 500 : 350}
+                              width={500}
+                              height={350}
                               quality="mid"
                             />
                           );
