@@ -8,12 +8,14 @@ interface Props {
 	title?: string;
 	description?: string;
 	image?: string;
+	preloadImage?: string;
 }
 
 const { 
 	title = "WOWGamerES – Guías de Nivelación de Profesiones WoW", 
 	description = "Guías de Alquimia, Encantamiento, Herrería, Ingeniería, Inscripción, Joyería, Peletería y Sastrería de todas las expansiones del universo World of Warcraft.",
-	image = "/images/WOWGamerES_Logo_2026.webp"
+	image = "/images/WOWGamerES_Logo_2026.webp",
+	preloadImage
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -30,6 +32,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="theme-color" content="#bb9fff" />
 		<meta name="generator" content={Astro.generator} />
 		
+		{preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+
 		<!-- Etiquetas Meta Principales -->
 		<title>{title}</title>
 		<meta name="description" content={description} />
