@@ -12,6 +12,21 @@ export default defineConfig({
   // Si usas GitHub Pages sin dominio personalizado, descomenta la siguiente línea:
   // base: '/wowgameres', 
   redirects: {
+    /* Nuevas redirecciones .html detectadas en Search Console */
+    '/inscripcion-midnight.html': '/guias/inscripcion/midnight/',
+    '/sastreria-legion.html': '/guias/sastreria/legion/',
+    '/alquimia-wotlk.html': '/guias/alquimia/wotlk/',
+    '/herreria-midnight.html': '/guias/herreria/midnight/',
+
+    /* Nuevas redirecciones de rutas antiguas detectadas en Search Console */
+    '/pandaria-inscripcion/': '/guias/inscripcion/mop/',
+    '/rasganorte-inscripcion/': '/guias/inscripcion/wotlk/',
+    '/pandaria-herreria/': '/guias/herreria/mop/',
+    '/legion-inscripcion/': '/guias/inscripcion/legion/',
+    '/vanilla-joyeria/': '/guias/joyeria/vanilla/',
+    '/draenor-alquimia/': '/guias/alquimia/wod/',
+    '/terrallende-alquimia/': '/guias/alquimia/tbc/',
+
     '/pandaria-joyeria/': '/guias/joyeria/mop/',
     '/joyeria-cata.html': '/guias/joyeria/cata/',
     '/joyeria-wotlk.html': '/guias/joyeria/wotlk/',
