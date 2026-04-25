@@ -2098,19 +2098,33 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 50%);
   z-index: 2;
   display: flex;
   align-items: flex-end;
-  padding: 25px;
+  padding: 0; /* Eliminamos el padding para que el h3 sea full width */
 }
 
 .card-cinematic h3 {
+  width: 100%;
+  background: rgba(10, 5, 25, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 20px;
   color: #fff;
-  font-size: 1.6rem;
-  font-weight: 900;
+  font-size: 1.1rem;
+  font-weight: 800;
   text-transform: uppercase;
   margin: 0;
-  text-shadow: 0 3px 15px rgba(0,0,0,0.9);
-  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(187, 159, 255, 0.5);
+  letter-spacing: 2px;
+  border-top: 2px solid var(--primary-purple);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.card-cinematic:hover h3 {
+  background: rgba(187, 159, 255, 0.15);
+  color: #bb9fff;
+  text-shadow: 0 0 15px rgba(187, 159, 255, 0.8);
 }
