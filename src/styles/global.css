@@ -311,6 +311,8 @@ a {
 
   .logo img {
     height: 50px !important;
+    width: auto !important;
+    object-fit: contain;
   }
 
   .search-results {
@@ -832,6 +834,8 @@ footer {
 
   .logo img {
     height: 50px;
+    width: auto !important;
+    object-fit: contain;
     margin: 2px 0;
   }
 
