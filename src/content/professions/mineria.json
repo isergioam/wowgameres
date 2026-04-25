@@ -44,7 +44,8 @@
         "min": 275,
         "max": 300,
         "mats": {},
-        "description": "<div class=\"step-title\">Minería 275 – 300: Torio Rico</div>Cuna del Invierno (Winterspring) y Silithus. Busca los filones de Torio Rico para los últimos puntos."
+        "description": "<div class=\"step-title\">Minería 275 – 300: Torio Rico</div>Cuna del Invierno (Winterspring) y Silithus. Busca los filones de Torio Rico para los últimos puntos.",
+        "routeImage": "/images/routes/placeholder_mining.webp"
       }
     ]
   },
