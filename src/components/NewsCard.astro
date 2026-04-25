@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
   title: string;
   description: string;
@@ -22,7 +23,17 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
 <article class="news-card">
   <a href={url} class="news-card-link">
     <div class="news-image-container">
-      <img src={image} alt={title} loading="lazy" class="news-image" width="400" height="225" />
+      <Image 
+        src={image} 
+        alt={title} 
+        width={400} 
+        height={225} 
+        format="avif"
+        quality="mid"
+        loading="lazy" 
+        decoding="async"
+        class="news-image" 
+      />
       <span class="news-category">{category}</span>
     </div>
     <div class="news-content">

@@ -112,6 +112,12 @@ export default defineConfig({
   integrations: [sitemap()],
   image: {
     domains: ["wowgameres.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "bnetcmsus-a.akamaihd.net",
+      },
+    ],
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }
