@@ -1,0 +1,49 @@
+name: Sync Profession Guides
+
+on:
+  workflow_dispatch:
+    inputs:
+      profession:
+        description: 'Profession ID to sync (e.g., mineria, alquimia). Leave empty for ALL.'
+        required: false
+        default: ''
+      expansion:
+        description: 'Expansion ID for the guide (e.g., midnight, tww, sl)'
+        required: true
+        default: 'midnight'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+          
+      - name: Sync Professions
+        run: node scripts/sync-professions.mjs ${{ github.event.inputs.profession }} ${{ github.event.inputs.expansion }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add src/content/professions/*.json
+          if git diff --staged --quiet; then
+            echo "No hay cambios en las guías para sincronizar."
+          else
+            git commit -m "docs: sync profession guides for ${{ github.event.inputs.expansion }} [skip ci]"
+            git pull origin main --rebase
+            git push origin main
+          fi
