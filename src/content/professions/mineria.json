@@ -110,14 +110,14 @@
         "max": 25,
         "mats": {},
         "description": "<div class=\"step-title\">Minería 1 – 25: Obsidiana</div>Mina <strong>Obsidiana</strong> en el Monte Hyjal. Es la zona más eficiente para empezar.",
-        "routeImage": "/images/routes/generic_mining_route.png"
+        "routeImage": "/images/routes/cata_obsidian.webp"
       },
       {
         "min": 25,
         "max": 50,
         "mats": {},
         "description": "<div class=\"step-title\">Minería 25 – 50: Elementium</div>Tierras Altas Crepusculares o Infralar.",
-        "routeImage": "/images/routes/generic_mining_route.png"
+        "routeImage": "/images/routes/cata_elementium.webp"
       },
       {
         "min": 50,
@@ -139,7 +139,7 @@
         "max": 75,
         "mats": {},
         "description": "<div class=\"step-title\">Minería 1 – 75: Hierro Fantasma</div>Busca <strong>Hierro Fantasma</strong> en el Bosque de Jade.",
-        "routeImage": "/images/routes/generic_mining_route.png"
+        "routeImage": "/images/routes/mop_ghost_iron.webp"
       }
     ]
   },
