@@ -125,16 +125,16 @@ const description =
     }
 
     <!-- Nueva sección para añadir densidad de texto y valor (E-E-A-T) -->
-    <section
-      class="section faq-section reveal"
-      style="margin-top: 50px; text-align: left;"
-    >
-      <h2>¿Por qué utilizar nuestras guías?</h2>
-      <div style="margin-top: 20px; display: grid; gap: 20px;">
-        <article>
-          <h3 style="color: #bb9fff; margin-bottom: 5px;">
-            Rutas Optimizadas paso a paso
-          </h3>
+    <section class="section premium-feature-section reveal">
+      <div class="premium-header">
+        <h2>¿Por qué utilizar nuestras guías?</h2>
+        <p>La diferencia entre buscar materiales a ciegas y subir tu profesión a nivel máximo de la manera más óptima.</p>
+      </div>
+      
+      <div class="premium-features-grid">
+        <article class="premium-feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Rutas Optimizadas paso a paso</h3>
           <p>
             Nos encargamos de estructurar cada tramo de nivel (por ejemplo, del
             1 al 75 o del 1 al 300) seleccionando siempre las recetas que
@@ -143,10 +143,10 @@ const description =
             estrictamente necesarios.
           </p>
         </article>
-        <article>
-          <h3 style="color: #bb9fff; margin-bottom: 5px;">
-            Rastreador de Progreso Integrado
-          </h3>
+        
+        <article class="premium-feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Rastreador Integrado</h3>
           <p>
             Nuestras guías no son solo texto estático. Cada página de profesión
             incluye una herramienta interactiva donde puedes tachar los
@@ -154,10 +154,10 @@ const description =
             te has quedado, guardándose automáticamente en tu navegador.
           </p>
         </article>
-        <article>
-          <h3 style="color: #bb9fff; margin-bottom: 5px;">
-            Actualizaciones Constantes
-          </h3>
+        
+        <article class="premium-feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Actualización Constante</h3>
           <p>
             El universo de Azeroth cambia constantemente. Parche tras parche,
             revisamos las dinámicas de farmeo y ajuste de recetas que Blizzard
@@ -310,6 +310,108 @@ const description =
     margin-bottom: 40px;
   }
 
+  /* --- PREMIUM FEATURES SECTION --- */
+  .premium-feature-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 60px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #160c28 0%, #0a0519 100%);
+    border: 1px solid rgba(187, 159, 255, 0.15);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .premium-feature-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 0%, rgba(187, 159, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .premium-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .premium-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ffffff, #bb9fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .premium-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .premium-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .premium-feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(187, 159, 255, 0.1);
+    padding: 35px 30px;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+  }
+
+  .premium-feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(187, 159, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(187, 159, 255, 0.1);
+  }
+
+  .feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    background: rgba(187, 159, 255, 0.1);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    border: 1px solid rgba(187, 159, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  .premium-feature-card h3 {
+    color: #bb9fff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  .premium-feature-card p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
   @media (max-width: 1024px) and (min-width: 769px) {
     .hero-section {
       height: auto;
@@ -339,6 +441,15 @@ const description =
 
     .news-grid {
       grid-template-columns: 1fr;
+    }
+
+    .premium-feature-section {
+      padding: 40px 20px;
+      border-radius: 16px;
+    }
+
+    .premium-header h2 {
+      font-size: 1.8rem;
     }
   }
 </style>
