@@ -393,7 +393,8 @@ const schemaJSON = {
                     
                     // Extraemos el título del paso para el overlay
                     let mapTitle = "Ruta de Recolección";
-                    const titleMatch = step.description.match(/<div class="step-title">([^<]+)<\/div>/);
+                    const regex = new RegExp('<div class="step-title">([^<]+)</div>');
+                    const titleMatch = step.description.match(regex);
                     if (titleMatch && titleMatch[1]) {
                       // Limpiamos el texto (e.g. "Minería 1 - 65: Cobre" -> "Cobre")
                       const parts = titleMatch[1].split(':');
