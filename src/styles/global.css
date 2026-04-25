@@ -2025,13 +2025,23 @@ footer {
 }
 
 .grid-secundarias a {
-  flex: 0 1 calc(33.33% - 20px);
-  min-width: 300px;
+  flex: 1 1 calc(25% - 20px);
+  min-width: 250px;
+  max-width: 350px;
+}
+
+@media (max-width: 1400px) {
+  .grid-secundarias a {
+    flex: 1 1 calc(33.33% - 20px);
+  }
 }
 
 @media (max-width: 1200px) {
-  .grid-principales a, .grid-recoleccion a, .grid-secundarias a {
+  .grid-principales a, .grid-recoleccion a {
     flex: 0 1 calc(50% - 25px);
+  }
+  .grid-secundarias a {
+    flex: 1 1 calc(50% - 25px);
   }
 }
 
