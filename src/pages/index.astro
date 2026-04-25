@@ -124,47 +124,31 @@ const description =
       )
     }
 
-    <!-- Nueva sección para añadir densidad de texto y valor (E-E-A-T) -->
-    <section class="section premium-feature-section reveal">
-      <div class="premium-header">
-        <h2>¿Por qué utilizar nuestras guías?</h2>
-        <p>La diferencia entre buscar materiales a ciegas y subir tu profesión a nivel máximo de la manera más óptima.</p>
+    <!-- Sección Cinemática Informativa (Minimalista) -->
+    <section class="cinematic-info-section reveal">
+      <div class="cinematic-bg">
+        <Image src={heroImage} alt="Cinematic Background" class="bg-img" />
+        <div class="cinematic-overlay"></div>
       </div>
-      
-      <div class="premium-features-grid">
-        <article class="premium-feature-card">
-          <div class="feature-icon">✨</div>
-          <h3>Rutas Optimizadas paso a paso</h3>
-          <p>
-            Nos encargamos de estructurar cada tramo de nivel (por ejemplo, del
-            1 al 75 o del 1 al 300) seleccionando siempre las recetas que
-            consumen materiales más comunes y baratos en la casa de subastas.
-            Rehuimos sistemáticamente de componentes raros salvo que sean
-            estrictamente necesarios.
-          </p>
-        </article>
-        
-        <article class="premium-feature-card">
-          <div class="feature-icon">📝</div>
-          <h3>Rastreador Integrado</h3>
-          <p>
-            Nuestras guías no son solo texto estático. Cada página de profesión
-            incluye una herramienta interactiva donde puedes tachar los
-            materiales que vas consiguiendo y llevar la cuenta de en qué nivel
-            te has quedado, guardándose automáticamente en tu navegador.
-          </p>
-        </article>
-        
-        <article class="premium-feature-card">
-          <div class="feature-icon">🔄</div>
-          <h3>Actualización Constante</h3>
-          <p>
-            El universo de Azeroth cambia constantemente. Parche tras parche,
-            revisamos las dinámicas de farmeo y ajuste de recetas que Blizzard
-            introduce, asegurándonos de que nunca sigas una ruta que haya
-            quedado obsoleta.
-          </p>
-        </article>
+      <div class="cinematic-container">
+        <header class="cinematic-header">
+          <h2>¿Por qué utilizar nuestras guías?</h2>
+          <div class="accent-line"></div>
+        </header>
+        <div class="cinematic-grid">
+          <div class="cinematic-item">
+            <h3>Rutas Optimizadas</h3>
+            <p>Estructuramos cada tramo seleccionando las recetas más eficientes y económicas de la casa de subastas.</p>
+          </div>
+          <div class="cinematic-item">
+            <h3>Progreso Real</h3>
+            <p>Herramientas interactivas integradas para tachar materiales y guardar tu avance automáticamente.</p>
+          </div>
+          <div class="cinematic-item">
+            <h3>Siempre Al Día</h3>
+            <p>Revisamos cada parche y expansión para asegurar que nuestras rutas nunca queden obsoletas.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -310,106 +294,104 @@ const description =
     margin-bottom: 40px;
   }
 
-  /* --- PREMIUM FEATURES SECTION --- */
-  .premium-feature-section {
+  /* --- CINEMATIC INFO SECTION --- */
+  .cinematic-info-section {
+    position: relative;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 120px 0;
+    color: white;
+    overflow: hidden;
     margin-top: 80px;
     margin-bottom: 80px;
-    padding: 60px;
-    border-radius: 24px;
-    background: linear-gradient(145deg, #160c28 0%, #0a0519 100%);
-    border: 1px solid rgba(187, 159, 255, 0.15);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
   }
 
-  .premium-feature-section::before {
-    content: '';
+  .cinematic-bg {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 50% 0%, rgba(187, 159, 255, 0.08) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
 
-  .premium-header {
-    text-align: center;
-    margin-bottom: 50px;
+  .cinematic-bg .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.2) saturate(0.4);
+  }
+
+  .cinematic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+      #000 0%, 
+      transparent 20%, 
+      transparent 80%, 
+      #000 100%
+    );
+  }
+
+  .cinematic-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
     position: relative;
     z-index: 1;
   }
 
-  .premium-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    background: linear-gradient(90deg, #ffffff, #bb9fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .cinematic-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .cinematic-header h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    margin-bottom: 25px;
     border: none;
     padding: 0;
+    text-transform: uppercase;
   }
 
-  .premium-header p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.15rem;
-    max-width: 600px;
+  .accent-line {
+    width: 80px;
+    height: 4px;
+    background: #bb9fff;
     margin: 0 auto;
-    line-height: 1.6;
+    box-shadow: 0 0 15px rgba(187, 159, 255, 0.5);
   }
 
-  .premium-features-grid {
+  .cinematic-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    position: relative;
-    z-index: 1;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
   }
 
-  .premium-feature-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(187, 159, 255, 0.1);
-    padding: 35px 30px;
-    border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    position: relative;
+  .cinematic-item {
+    text-align: center;
   }
 
-  .premium-feature-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(187, 159, 255, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(187, 159, 255, 0.1);
-  }
-
-  .feature-icon {
-    font-size: 2.2rem;
-    margin-bottom: 25px;
-    background: rgba(187, 159, 255, 0.1);
-    width: 65px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    border: 1px solid rgba(187, 159, 255, 0.2);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  }
-
-  .premium-feature-card h3 {
+  .cinematic-item h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
     color: #bb9fff;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
-  .premium-feature-card p {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin: 0;
+  .cinematic-item p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
   }
 
   @media (max-width: 1024px) and (min-width: 769px) {
@@ -443,13 +425,21 @@ const description =
       grid-template-columns: 1fr;
     }
 
-    .premium-feature-section {
-      padding: 40px 20px;
-      border-radius: 16px;
+    .cinematic-info-section {
+      padding: 60px 0;
     }
 
-    .premium-header h2 {
+    .cinematic-header h2 {
       font-size: 1.8rem;
+    }
+
+    .cinematic-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .cinematic-container {
+      padding: 0 20px;
     }
   }
 </style>
