@@ -1545,44 +1545,7 @@ footer {
   filter: drop-shadow(0 0 6px var(--primary-glow));
 }
 
-/* Botón Premium para Copiar Lista */
-.copy-btn-premium {
-  background: var(--primary-glow);
-  color: var(--primary-purple);
-  border: 1px solid var(--primary-soft);
-  padding: 6px 14px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-radius: 0;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px var(--primary-soft);
-}
 
-
-.copy-btn-premium:hover {
-  background: var(--primary-glow);
-  border-color: var(--primary-purple);
-  transform: translateY(-1px);
-}
-
-.copy-btn-premium:active {
-  transform: translateY(0);
-}
-
-.dark-mode .copy-btn-premium {
-  background: var(--primary-soft);
-  color: var(--primary-purple);
-  border-color: var(--primary-glow);
-}
-
-.dark-mode .copy-btn-premium:hover {
-  background: var(--primary-glow);
-  border-color: var(--primary-purple);
-}
 /* Estilos para Rutas de Miner�a y Recolecci�n */
 .route-map-container {
   width: 100%;
@@ -1928,14 +1891,7 @@ footer {
 
 /* --- AJUSTES FINALES DE DISEÑO --- */
 
-/* Hover más oscuro e intenso para las tarjetas cinematic */
-.card-cinematic:hover .card-overlay {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 100%) !important;
-}
 
-.card-cinematic:hover .card-bg img {
-  filter: brightness(0.6) !important; /* También oscurecemos la imagen de fondo en hover */
-}
 
 /* Color unificado para botones de tema */
 .theme-icon.moon {
