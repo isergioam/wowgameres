@@ -69,8 +69,9 @@ html:not(.dark-mode) ::-webkit-scrollbar-thumb {
   --space-xxl: 48px;
   --space-xxxl: 64px;
 
-  --header-height-desktop: 120px;
-  --header-height-mobile: 150px;
+  --header-height-desktop: 100px;
+  --header-height-tablet: 135px;
+  --header-height-mobile: 110px;
 }
 
 
@@ -281,6 +282,10 @@ a {
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
+  body {
+    padding-top: var(--header-height-tablet);
+    scroll-padding-top: var(--header-height-tablet);
+  }
   .main-header {
     height: auto;
     padding: var(--space-sm) var(--space-lg);
