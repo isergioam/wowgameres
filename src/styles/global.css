@@ -280,6 +280,21 @@ a {
   color: #1a1a2e;
 }
 
+@media (max-width: 1024px) and (min-width: 769px) {
+  .header-top-row {
+    gap: 15px;
+  }
+  .search-container {
+    margin: 0 15px;
+  }
+  .main-nav ul {
+    gap: 12px;
+  }
+  .main-nav a {
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
   .main-header {
     height: auto;
