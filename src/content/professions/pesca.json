@@ -3,37 +3,37 @@
     "expansionName": "Vanilla (Classic)",
     "professionName": "Pesca",
     "maxLevel": 300,
-    "description": "GuÃ­a completa de Pesca 1-300. Aprende dÃ³nde encontrar los peces mÃ¡s raros y cÃ³mo ganar el Gran Concurso de Vega de Tuercespina.",
+    "description": "Domina el arte de la pesca en los lagos y océanos del Azeroth clásico.",
     "steps": [
       {
         "min": 1,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 75: Aprendiz</div>Pesca en las zonas iniciales de tu facciÃ³n (Bosque de Elwynn, Mulgore o Durotar). Busca los bancos de 1<div class=\"step-title\">Peces de lodo</div> para obtener tus primeros niveles rÃ¡pidos."
+        "description": "<div class=\"step-title\">Pesca 1 – 75: Aprendiz</div>Pesca en las zonas iniciales de tu facción (Bosque de Elwynn, Mulgore o Durotar). Busca los bancos de <b>Peces de lodo</b> para obtener tus primeros niveles rápidos. <b>Tip:</b> Compra una caña de pescar básica y cebos (+25) para evitar que se escapen los peces."
       },
       {
         "min": 75,
         "max": 150,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 75 â€“ 150: Oficial</div>DirÃ­gete a zonas de nivel medio como Los BaldÃ­os o PÃ¡ramos del Poniente. AquÃ­ empezarÃ¡s a pescar <div class=\"step-title\">Bocazas de aceite</div> y <div class=\"step-title\">Peces salvia</div>."
+        "description": "<div class=\"step-title\">Pesca 75 – 150: Oficial</div>Dirígete a zonas de nivel medio como Los Baldíos o Páramos del Poniente. Aquí empezarás a pescar <b>Bocazas de aceite</b> y <b>Peces salvia</b>."
       },
       {
         "min": 150,
         "max": 225,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 150 â€“ 225: Experto</div>Vega de Tuercespina es el mejor lugar. Intenta participar en el concurso de pesca los domingos. AquÃ­ puedes pescar <div class=\"step-title\">Pargo de lodo</div> y <div class=\"step-title\">Pez dardo</div>."
+        "description": "<div class=\"step-title\">Pesca 150 – 225: Experto</div>Vega de Tuercespina es el mejor lugar. Intenta participar en el concurso de pesca los domingos. Aquí puedes pescar <b>Pargo de lodo</b> y <b>Pez dardo</b>. Necesitarás el libro <b>'Pesca para expertos'</b> para avanzar."
       },
       {
         "min": 225,
         "max": 300,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 225 â€“ 300: Artesano</div>Las costas de Feralas y Tanaris son ideales. Pesca <div class=\"step-title\">Calamares de invierno</div> o <div class=\"step-title\">Pargo snapper</div> (dependiendo del ciclo dÃ­a/noche)."
+        "description": "<div class=\"step-title\">Pesca 225 – 300: Artesano</div>Debes completar la misión <b>'Nat Pagle, pescador extremo'</b> en Marjal Revolcafango. Luego, las costas de Feralas y Tanaris son ideales para los últimos puntos."
       },
       {
         "min": 300,
         "max": 300,
         "mats": {},
-        "description": "<div class=\"step-title\">Coleccionables y Recompensas:</div><ul><li><div class=\"step-title\">CaÃ±a de hierro de Nat Pagle:</div> La mejor caÃ±a de Vanilla (+20 pesca).</li><li><div class=\"step-title\">Sombrero de pesca:</div> Obtenido en el concurso de Tuercespina.</li><li><div class=\"step-title\">Pez de piedra:</div> MisiÃ³n necesaria para el rango de Artesano.</li></ul>"
+        "description": "<div class=\"step-title\">Coleccionables y Recompensas:</div><ul><li><b>Caña de hierro de Nat Pagle:</b> La mejor caña de Vanilla (+20 pesca).</li><li><b>Sombrero de pesca:</b> Obtenido en el concurso de Tuercespina.</li><li><b>Pez de piedra:</b> Misión necesaria para el rango de Artesano.</li></ul>"
       }
     ]
   },
@@ -41,25 +41,25 @@
     "expansionName": "The Burning Crusade (TBC)",
     "professionName": "Pesca",
     "maxLevel": 75,
-    "description": "Pesca en los lagos mÃ¡gicos del fragmentado mundo de Terrallende.",
+    "description": "Pesca en los lagos mágicos del fragmentado mundo de Terrallende.",
     "steps": [
       {
         "min": 1,
         "max": 40,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 40: PenÃ­nsula y Marisma</div>Pesca en los estanques de Marisma de Zangar. Busca los bancos de <div class=\"step-title\">Pez espora</div>; comerlo aumenta tu aguante y espÃ­ritu."
+        "description": "<div class=\"step-title\">Pesca 1 – 40: Península y Marisma</div>Pesca en los estanques de Marisma de Zangar. Busca los bancos de <b>Pez espora</b>; comerlo aumenta tu aguante y espíritu."
       },
       {
         "min": 40,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 40 â€“ 75: Nagrand y Terokkar</div>Los lagos de Nagrand son perfectos. Ve a los lagos de las Tierras Altas de Terokkar para pescar en los <div class=\"step-title\">Bancos mixtos</div>."
+        "description": "<div class=\"step-title\">Pesca 40 – 75: Nagrand y Terokkar</div>Los lagos de Nagrand son perfectos. Ve a los lagos de las Tierras Altas de Terokkar para pescar en los <b>Bancos mixtos</b>."
       },
       {
         "min": 75,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Hitos de TBC:</div><ul><li><div class=\"step-title\">Mr. Pinchy:</div> Pesca en los bancos de Terokkar para intentar conseguir esta mascota rarÃ­sima.</li><li><div class=\"step-title\">Diarios de Shattrath:</div> Completa las misiones diarias del Viejo Barlo fuera de la ciudad.</li></ul>"
+        "description": "<div class=\"step-title\">Hitos de TBC:</div><ul><li><b>Mr. Pinchy:</b> Pesca en los bancos de Terokkar para intentar conseguir esta mascota rarísima.</li><li><b>Diarios de Shattrath:</b> Completa las misiones diarias del Viejo Barlo fuera de la ciudad.</li></ul>"
       }
     ]
   },
@@ -67,25 +67,25 @@
     "expansionName": "Wrath of the Lich King (WotLK)",
     "professionName": "Pesca",
     "maxLevel": 75,
-    "description": "Pesca en las gÃ©lidas aguas de Rasganorte y consigue la montura definitiva de nado.",
+    "description": "Pesca en las gélidas aguas de Rasganorte y consigue la montura definitiva de nado.",
     "steps": [
       {
         "min": 1,
         "max": 35,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 35: Costas del Norte</div>Tundra Boreal y Fiordo Aquilonal son las mejores zonas. Pesca <div class=\"step-title\">Mejillones de lomo de ballena</div> y <div class=\"step-title\">RÃ³balos aletadragÃ³n</div>."
+        "description": "<div class=\"step-title\">Pesca 1 – 35: Costas del Norte</div>Tundra Boreal y Fiordo Aquilonal son las mejores zonas. Pesca <b>Mejillones de lomo de ballena</b> y <b>Róbalos aletadragón</b>."
       },
       {
         "min": 35,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 35 â€“ 75: Cuenca Sholazar</div>La Cuenca de Sholazar tiene la mayor densidad de bancos de peces. TambiÃ©n puedes pescar en Crystalsong Forest."
+        "description": "<div class=\"step-title\">Pesca 35 – 75: Cuenca Sholazar</div>La Cuenca de Sholazar tiene la mayor densidad de bancos de peces. También puedes pescar en Bosque de Canto de Cristal."
       },
       {
         "min": 75,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Recompensas de Rasganorte:</div><ul><li><div class=\"step-title\">Montura Tortuga Marina:</div> Puede caer en cualquier banco de peces de Rasganorte (0.01% de probabilidad).</li><li><div class=\"step-title\">CaÃ±a Kalu'ak:</div> ConsÃ­guela con reputaciÃ³n Honorado con los Kalu'ak.</li></ul>"
+        "description": "<div class=\"step-title\">Recompensas de Rasganorte:</div><ul><li><b>Montura Tortuga Marina:</b> Puede caer en cualquier banco de peces de Rasganorte.</li><li><b>Caña Kalu'ak:</b> Consíguela con reputación Honorado con los Kalu'ak.</li></ul>"
       }
     ]
   },
@@ -99,13 +99,13 @@
         "min": 1,
         "max": 50,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 50: Monte Hyjal</div>Pesca en los lagos de Hyjal para conseguir <div class=\"step-title\">Gobio estriado</div>. Es una de las zonas mÃ¡s seguras para empezar."
+        "description": "<div class=\"step-title\">Pesca 1 – 50: Monte Hyjal</div>Pesca en los lagos de Hyjal para conseguir <b>Gobio estriado</b>."
       },
       {
         "min": 50,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 50 â€“ 75: Tierras Altas Crepusculares</div>Busca los bancos de <div class=\"step-title\">Pez salvia de la superficie</div> en la costa este para maximizar tus niveles."
+        "description": "<div class=\"step-title\">Pesca 50 – 75: Tierras Altas Crepusculares</div>Busca los bancos de <b>Pez salvia de la superficie</b> en la costa este."
       }
     ]
   },
@@ -113,31 +113,25 @@
     "expansionName": "Mists of Pandaria (MoP)",
     "professionName": "Pesca",
     "maxLevel": 75,
-    "description": "Pandaria introdujo la facciÃ³n de Los Celadores del Agua y un sistema de amistad con Nat Pagle.",
+    "description": "Pandaria introdujo la facción de Los Celadores del Agua y un sistema de amistad con Nat Pagle.",
     "steps": [
       {
         "min": 1,
         "max": 25,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 25: Bosque de Jade</div>Pesca <div class=\"step-title\">Pez pulmÃ³n de jade</div> en los rÃ­os centrales. Habla con los pescadores del Mercado del Alcor para empezar."
+        "description": "<div class=\"step-title\">Pesca 1 – 25: Bosque de Jade</div>Pesca <b>Pez pulmón de jade</b> en los ríos centrales."
       },
       {
         "min": 25,
         "max": 50,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 25 â€“ 50: Espesura Krasarang</div>Visita el muelle de los <div class=\"step-title\">Celadores del Agua</div>. Haz las 3 misiones diarias para subir reputaciÃ³n."
+        "description": "<div class=\"step-title\">Pesca 25 – 50: Espesura Krasarang</div>Visita el muelle de los <b>Celadores del Agua</b>. Haz las diarias para subir reputación."
       },
       {
         "min": 50,
         "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 50 â€“ 75: Cumbres de Kun-Lai</div>Busca los bancos de <div class=\"step-title\">SalmÃ³n de montaÃ±a</div>. Estos peces son los mÃ¡s demandados."
-      },
-      {
-        "min": 75,
-        "max": 75,
-        "mats": {},
-        "description": "<div class=\"step-title\">Objetivos de Pandaria:</div><ul><li><div class=\"step-title\">Balsa de los Celadores:</div> Te permite navegar y pescar a gran velocidad (Exaltado).</li><li><div class=\"step-title\">Nat Pagle:</div> Puedes ganar reputaciÃ³n individual entregÃ¡ndole peces raros.</li></ul>"
+        "description": "<div class=\"step-title\">Pesca 50 – 75: Cumbres de Kun-Lai</div>Busca los bancos de <b>Salmón de montaña</b>."
       }
     ]
   },
@@ -151,33 +145,33 @@
         "min": 1,
         "max": 50,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 50: CabaÃ±a de Nivel 1</div>Empieza pescando en el estanque de tu propia Ciudadela. Usa los cebos para atraer especies especÃ­ficas."
+        "description": "<div class=\"step-title\">Pesca 1 – 50: Cabaña de Nivel 1</div>Empieza pescando en el estanque de tu propia Ciudadela."
       },
       {
         "min": 50,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 50 â€“ 100: Mundo Abierto</div>Consigue el logro <div class=\"step-title\">Maestro de pesca de Draenor</div> para desbloquear la cabaÃ±a de nivel 3."
+        "description": "<div class=\"step-title\">Pesca 50 – 100: Mundo Abierto</div>Consigue el logro <b>Maestro de pesca de Draenor</b> para desbloquear la cabaña de nivel 3."
       }
     ]
   },
   "legion": {
-    "expansionName": "LegiÃ³n",
+    "expansionName": "Legión",
     "professionName": "Pesca",
     "maxLevel": 100,
-    "description": "La expansiÃ³n definitiva para los pescadores gracias al artefacto Sotoviento.",
+    "description": "La expansión definitiva para los pescadores gracias al artefacto Sotoviento.",
     "steps": [
       {
         "min": 1,
         "max": 40,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 40: Azsuna y Val'sharah</div>Pesca <div class=\"step-title\">Koi escama de reina</div>. Busca 'Cebos raros' que te permiten pescar peces de +5 puntos."
+        "description": "<div class=\"step-title\">Pesca 1 – 40: Azsuna y Val'sharah</div>Pesca <b>Koi escama de reina</b>."
       },
       {
         "min": 40,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 40 â€“ 100: Artifact Hunt</div>CÃ©ntrate en el <div class=\"step-title\">SalmÃ³n del Monte Alto</div> y completa el logro 'A pez puesto' para la CaÃ±a Sotoviento."
+        "description": "<div class=\"step-title\">Pesca 40 – 100: Artifact Hunt</div>Céntrate en el <b>Salmón del Monte Alto</b> para la Caña Sotoviento."
       }
     ]
   },
@@ -191,13 +185,13 @@
         "min": 1,
         "max": 50,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 50: Costas</div>Cualquier costa sirve. Pesca <div class=\"step-title\">Beso de polen</div> y <div class=\"step-title\">Pescado de arena lazuli</div>."
+        "description": "<div class=\"step-title\">Pesca 1 – 50: Costas</div>Pesca <b>Beso de polen</b> y <b>Pescado de arena lazuli</b>."
       },
       {
         "min": 50,
         "max": 175,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 50 â€“ 175: SalmÃ³n de Medianoche</div>Los bancos de salmÃ³n solo aparecen de noche (6 PM - 6 AM). Son vitales para los festines."
+        "description": "<div class=\"step-title\">Pesca 50 – 175: Salmón de Medianoche</div>Los bancos de salmón solo aparecen de noche."
       }
     ]
   },
@@ -205,13 +199,13 @@
     "expansionName": "Shadowlands",
     "professionName": "Pesca",
     "maxLevel": 100,
-    "description": "Pesca en los reinos del mÃ¡s allÃ¡.",
+    "description": "Pesca en los reinos del más allá.",
     "steps": [
       {
         "min": 1,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 100: Shadowlands</div>Pesca en BastiÃ³n o Ardenweald. Usa los cebos especÃ­ficos de Oribos para capturar especies exÃ³ticas."
+        "description": "<div class=\"step-title\">Pesca 1 – 100: Shadowlands</div>Pesca en Bastión o Ardenweald. Usa los cebos específicos de Oribos."
       }
     ]
   },
@@ -225,7 +219,7 @@
         "min": 1,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 100: Dragon Isles</div>Mejora tu Renombre con los Iskaara para desbloquear redes pasivas, arpones y pesca en lava o hielo."
+        "description": "<div class=\"step-title\">Pesca 1 – 100: Dragon Isles</div>Mejora tu Renombre con los Iskaara para desbloquear redes pasivas."
       }
     ]
   },
@@ -239,7 +233,7 @@
         "min": 1,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 100: Khaz Algar</div>CÃ©ntrate en las zonas de Hallowfall. Los nuevos peces son fundamentales para el 'Estofado de todo'."
+        "description": "<div class=\"step-title\">Pesca 1 – 100: Khaz Algar</div>Concéntrate en las zonas de Santificación (Hallowfall)."
       }
     ]
   },
@@ -253,7 +247,7 @@
         "min": 1,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 â€“ 100: Quel'Thalas</div>Pesca el 'Pez de Vidriosolar' en las fuentes mÃ¡gicas y el 'Pez del VacÃ­o' en las costas de Zul'Aman."
+        "description": "<div class=\"step-title\">Pesca 1 – 100: Quel'Thalas</div>Pesca el <b>Pez de Vidriosolar</b> en las fuentes mágicas y el <b>Pez del Vacío</b> en las costas de Zul'Aman."
       }
     ]
   }

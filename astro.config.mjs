@@ -109,5 +109,16 @@ export default defineConfig({
     '/inscripcion/': '/guias/inscripcion/tww/',
     '/joyeria/': '/guias/joyeria/tww/'
   },
-  integrations: [sitemap()], 
+  integrations: [sitemap()],
+  image: {
+    domains: ["wowgameres.com"],
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
+  },
+  vite: {
+    build: {
+      assetsInlineLimit: 0, // Evita que imágenes pequeñas se metan en el JS, mejor para caché
+    }
+  }
 });

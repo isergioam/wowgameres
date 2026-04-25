@@ -89,7 +89,11 @@ const schemaJSON = {
                 alt={professionName}
                 width={1920}
                 height={1080}
+                format="avif"
                 quality="mid"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
             )}
             <div class="hero-overlay" />
@@ -391,7 +395,11 @@ const schemaJSON = {
                           alt={`Ruta de farmueo WoW ${step.min}-${step.max}`}
                           class="route-map-img"
                           width={800}
+                          height={450}
+                          format="avif"
                           quality="mid"
+                          loading="lazy"
+                          decoding="async"
                         />
                       );
                     } else {

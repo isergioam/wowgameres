@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/NewsCard.astro";
 import newsData from "../content/news/latest.json";
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/Cabecera_WOWGamerES.webp";
 
 const expansions = [
   { id: "vanilla", name: "Vanilla" },
@@ -24,19 +26,28 @@ const description =
   "Las mejores guías de nivelación de profesiones para World of Warcraft y las últimas noticias de Azeroth resumidas por IA. Optimiza tu juego con WOWGamerES.";
 ---
 
-<BaseLayout title={title} description={description} preloadImage="/images/Cabecera_WOWGamerES.webp">
+<BaseLayout title={title} description={description}>
   <section class="hero-section reveal">
-    <div class="hero-background"></div>
+    <div class="hero-background">
+      <Image 
+        src={heroImage} 
+        alt="Fondo de cabecera WOWGamerES" 
+        width={1920} 
+        height={1080} 
+        format="avif"
+        quality="mid"
+        loading="eager"
+        fetchpriority="high"
+        class="hero-img-asset"
+      />
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 id="profesiones" data-i18n="title_professions">
-        Guías paso a paso para World of Warcraft
+        Guías de Profesiones World of Warcraft: Paso a Paso
       </h1>
       <p class="hero-description">
-        Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo creado
-        por jugadores y para jugadores. Nuestro objetivo es ayudarte a subir las
-        profesiones de tus personajes de forma rápida, eficiente y gastando la
-        menor cantidad de oro posible.
+        Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para dominar las <strong>profesiones de WoW</strong>. Nuestra misión es ayudarte a alcanzar el nivel máximo de forma rápida, eficiente y optimizando cada moneda de oro en todas las expansiones, desde Vanilla hasta Midnight.
       </p>
       <div class="hero-stats">
         <div class="stat-item">
@@ -180,12 +191,15 @@ const description =
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("/images/Cabecera_WOWGamerES.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     z-index: -2;
-    filter: brightness(0.6); /* Oscurecemos la imagen para más dramatismo */
+    overflow: hidden;
+  }
+
+  .hero-img-asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
     animation: slowZoom 20s infinite alternate ease-in-out;
   }
 

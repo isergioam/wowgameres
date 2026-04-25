@@ -205,6 +205,79 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
         </section>
       )
     }
+    {
+      gathering.length > 0 && (
+        <section class="section">
+          <h2 class="section-subtitle">Recolección</h2>
+          <div class="grid-principales">
+            {gathering.map((prof) => (
+              <a href={`/guias/${prof.id}/${expansion}/`} class="reveal">
+                <div class="card-cinematic">
+                  <div class="card-bg">
+                    {(() => {
+                      const assetPath = `/src/assets${prof.img}`;
+                      const imgAsset = allImages[assetPath];
+                      if (imgAsset) {
+                        return (
+                          <Image
+                            src={imgAsset.default}
+                            alt={`Guía de ${prof.name} WoW ${expName}`}
+                            width={500}
+                            height={350}
+                            quality="mid"
+                          />
+                        );
+                      }
+                      return <img src={prof.img} alt={prof.name} />;
+                    })()}
+                  </div>
+                  <div class="card-overlay">
+                    <h3>{prof.name}</h3>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      secondary.length > 0 && (
+        <section class="section">
+          <h2 class="section-subtitle">Profesiones Secundarias</h2>
+          <div class="grid-principales">
+            {secondary.map((prof) => (
+              <a href={`/guias/${prof.id}/${expansion}/`} class="reveal">
+                <div class="card-cinematic">
+                  <div class="card-bg">
+                    {(() => {
+                      const assetPath = `/src/assets${prof.img}`;
+                      const imgAsset = allImages[assetPath];
+                      if (imgAsset) {
+                        return (
+                          <Image
+                            src={imgAsset.default}
+                            alt={`Guía de ${prof.name} WoW ${expName}`}
+                            width={500}
+                            height={350}
+                            quality="mid"
+                          />
+                        );
+                      }
+                      return <img src={prof.img} alt={prof.name} />;
+                    })()}
+                  </div>
+                  <div class="card-overlay">
+                    <h3>{prof.name}</h3>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
   </main>
 </BaseLayout>
 

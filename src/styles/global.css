@@ -2014,26 +2014,24 @@ footer {
 .grid-principales, .grid-recoleccion, .grid-secundarias {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
   width: 100%;
 }
 
 .grid-principales a, .grid-recoleccion a {
-  flex: 1 1 calc(33.33% - 20px);
+  flex: 0 1 calc(33.33% - 20px);
   min-width: 300px;
 }
 
 .grid-secundarias a {
-  flex: 1 1 calc(25% - 20px);
-  min-width: 240px;
+  flex: 0 1 calc(33.33% - 20px);
+  min-width: 300px;
 }
 
 @media (max-width: 1200px) {
-  .grid-principales a, .grid-recoleccion a {
-    flex: 1 1 calc(50% - 25px);
-  }
-  .grid-secundarias a {
-    flex: 1 1 calc(33.33% - 25px);
+  .grid-principales a, .grid-recoleccion a, .grid-secundarias a {
+    flex: 0 1 calc(50% - 25px);
   }
 }
 
@@ -2079,7 +2077,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   filter: brightness(0.7);
   transition: transform 0.8s ease;
 }

@@ -1,9 +1,15 @@
 ---
+import { Image } from "astro:assets";
+import logoWhite from "../assets/images/WOWGamerES_Logo_white.webp";
+import logoBlack from "../assets/images/WOWGamerES_Logo_black.webp";
 ---
 <header class="main-header">
     <div class="header-top-row">
         <section class="logo">
-            <a href="/"><img id="logo" src="/images/WOWGamerES_Logo_white.webp" alt="WOWGamerES Logo" width="400" height="100"></a>
+            <a href="/">
+                <Image src={logoWhite} id="logo-white" alt="WOWGamerES Logo" width={400} height={100} format="avif" loading="eager" class="logo-img logo-white" />
+                <Image src={logoBlack} id="logo-black" alt="WOWGamerES Logo" width={400} height={100} format="avif" loading="eager" class="logo-img logo-black" />
+            </a>
         </section>
 
         <div class="search-container">
@@ -56,24 +62,32 @@
             </ul>
         </nav>
     </div>
+    <style>
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .logo-white { display: none; }
+        .logo-black { display: block; }
+
+        :global(.dark-mode) .logo-white { display: block; }
+        :global(.dark-mode) .logo-black { display: none; }
+
+        @media (max-width: 768px) {
+            .logo-img { width: 250px; }
+        }
+    </style>
 </header>
 
 <script>
   (function() {
     const toggle = document.getElementById('darkModeToggle');
-    const logoImg = document.getElementById("logo") as HTMLImageElement;
 
     function applyTheme(isDark: boolean) {
       if (isDark) {
         document.documentElement.classList.add('dark-mode');
       } else {
         document.documentElement.classList.remove('dark-mode');
-      }
-      
-      if (logoImg) {
-        logoImg.src = isDark 
-          ? "/images/WOWGamerES_Logo_white.webp" 
-          : "/images/WOWGamerES_Logo_black.webp";
       }
     }
 
@@ -106,7 +120,14 @@
       { id: 'inscripcion', name: 'Inscripción' },
       { id: 'joyeria', name: 'Joyería' },
       { id: 'peleteria', name: 'Peletería' },
-      { id: 'sastreria', name: 'Sastrería' }
+      { id: 'sastreria', name: 'Sastrería' },
+      { id: 'mineria', name: 'Minería' },
+      { id: 'herboristeria', name: 'Herboristería' },
+      { id: 'desuello', name: 'Desuello' },
+      { id: 'pesca', name: 'Pesca' },
+      { id: 'cocina', name: 'Cocina' },
+      { id: 'arqueologia', name: 'Arqueología' },
+      { id: 'primeros-auxilios', name: 'Primeros Auxilios' }
     ];
 
     const expansions = [

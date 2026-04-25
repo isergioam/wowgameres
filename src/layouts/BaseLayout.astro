@@ -28,8 +28,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
-		<link rel="manifest" href="/manifest.json" />
-		<meta name="theme-color" content="#bb9fff" />
 		<meta name="generator" content={Astro.generator} />
 		
 		{preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
@@ -105,28 +103,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				}
 			})();
 		</script>
-		<!-- Service Worker for Offline PWA -->
+		<!-- Script de limpieza y utilidades -->
 		<script>
   (function() {
+    // 1. ELIMINAR SERVICE WORKERS EXISTENTES (Crucial para desactivar el modo offline en navegadores de usuarios)
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then(reg => {
-          console.log('SW registrado Correctamente');
-        }).catch(err => {
-          console.log('SW fallo al registrarse', err);
-        });
-      });
-
-      // Recargar automáticamente cuando el nuevo Service Worker toma el control
-      let refreshing = false;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (refreshing) return;
-        refreshing = true;
-        window.location.reload();
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for(let registration of registrations) {
+          registration.unregister();
+          console.log('Service Worker antiguo desinstalado para asegurar visualización de anuncios.');
+        }
       });
     }
 
-    // Scroll Reveal Observer
+    // 2. Scroll Reveal Observer
     const revealCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

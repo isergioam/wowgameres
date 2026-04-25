@@ -21,19 +21,19 @@
         "min": 150,
         "max": 210,
         "mats": { "Paño de seda": 100 },
-        "description": "<div class=\"step-title\">Primeros Auxilios 150 – 210: Paño de Seda</div><br>Procesa <span class=\"recipe-name\">Vendas de seda pesadas</span> en Monasterio Escarlata para optimizar el farmeo."
+        "description": "<div class=\"step-title\">Primeros Auxilios 150 – 210: Paño de Seda</div><br><b>Nota:</b> Necesitas comprar el libro 'Primeros Auxilios para Expertos' para subir de 150. Procesa <span class=\"recipe-name\">Vendas de seda pesadas</span> en Monasterio Escarlata para optimizar el farmeo."
       },
       {
         "min": 210,
         "max": 260,
         "mats": { "Paño de tejido de mago": 90 },
-        "description": "<div class=\"step-title\">Primeros Auxilios 210 – 260: Tejido de Mago</div><br>Crea <span class=\"recipe-name\">Vendas de tejido de mago pesadas</span>. Los ogros de Tanaris son ideales para esto."
+        "description": "<div class=\"step-title\">Primeros Auxilios 210 – 260: Tejido de Mago</div><br>Crea <span class=\"recipe-name\">Vendas de tejido de mago pesadas</span>. Los ogros de Tanaris son ideales para esto. <b>Tip:</b> A nivel 225 debes hacer la misión de Triaje en Theramore (Alianza) o Hammerfall (Horda)."
       },
       {
         "min": 260,
         "max": 300,
         "mats": { "Paño rúnico": 80 },
-        "description": "<div class=\"step-title\">Primeros Auxilios 260 – 300: Paño Rúnico</div><br>Termina con <span class=\"recipe-name\">Vendas de paño rúnico pesadas</span>. El farmeo en Stratholme o Scholomance es el más rápido."
+        "description": "<div class=\"step-title\">Primeros Auxilios 260 – 300: Paño Rúnico</div><br>Termina con <span class=\"recipe-name\">Vendas de paño rúnico pesadas</span>. El farmeo en Stratholme o Scholomance es el más rápido. Las recetas se aprenden del mismo instructor de la misión de Triaje."
       }
     ]
   },

@@ -3,37 +3,55 @@
     "expansionName": "Vanilla (Classic)",
     "professionName": "Cocina",
     "maxLevel": 300,
-    "description": "GuÃ­a maestra de Cocina 1-300. Aprende a preparar desde simples costillas hasta el legendario Manjar de DragÃ³n.",
+    "description": "Guía maestra de Cocina 1-300. Aprende a preparar desde simples costillas hasta el legendario Manjar de Dragón.",
     "steps": [
       {
         "min": 1,
-        "max": 50,
-        "mats": { "Carne de lobo": 50 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 50: Carne de lobo asada</div>Consigue carne de los lobos en las zonas iniciales. Es el plato mÃ¡s bÃ¡sico para empezar."
+        "max": 40,
+        "mats": { "Carne de lobo": 40 },
+        "description": "<div class=\"step-title\">Cocina 1 – 40: Carne de lobo asada</div>Consigue carne de los lobos en las zonas iniciales. Es el plato más básico para empezar."
       },
       {
-        "min": 50,
-        "max": 125,
-        "mats": { "Pez lodo bocazas": 75 },
-        "description": "<div class=\"step-title\">Cocina 50 â€“ 125: Pescado de lodo</div>Aprovecha los peces que pescaste mientras subÃ­as Pesca. El Pargo de lodo es ideal."
+        "min": 40,
+        "max": 80,
+        "mats": { "Carne de oso ahumada": 40 },
+        "description": "<div class=\"step-title\">Cocina 40 – 80: Carne de oso ahumada</div>Caza osos en Loch Modan o Darkshore. La receta se compra a los vendedores locales."
       },
       {
-        "min": 125,
-        "max": 200,
-        "mats": { "Huevo de raptor": 80 },
-        "description": "<div class=\"step-title\">Cocina 125 â€“ 200: Tortilla de sabor curioso</div>Caza raptores en Tierras Altas de Arathi. Estos huevos son muy fÃ¡ciles de farmear."
+        "min": 80,
+        "max": 130,
+        "mats": { "Almejas hervidas": 50 },
+        "description": "<div class=\"step-title\">Cocina 80 – 130: Almejas hervidas</div>Usa la carne de almeja que encuentres en las costas. Es una forma barata de subir."
       },
       {
-        "min": 200,
+        "min": 130,
+        "max": 175,
+        "mats": { "Chuletillas de raptor": 50 },
+        "description": "<div class=\"step-title\">Cocina 130 – 175: Chuletillas de raptor</div>Caza raptores en Humedales (Wetlands) o Tierras Altas de Arathi."
+      },
+      {
+        "min": 175,
+        "max": 225,
+        "mats": { "Chuletillas de lobo": 50 },
+        "description": "<div class=\"step-title\">Cocina 175 – 225: Chuletillas de lobo asadas</div>La receta se vende en Gadgetzan. Caza lobos en las cercanías de la ciudad."
+      },
+      {
+        "min": 225,
+        "max": 250,
+        "mats": { "Tortilla de monstruo": 25 },
+        "description": "<div class=\"step-title\">Cocina 225 – 250: Tortilla de monstruo</div>Usa los <b>Huevos Gigantes</b> de los búhos en Cuna del Invierno (Winterspring) o los pajararracos de Tanaris."
+      },
+      {
+        "min": 250,
         "max": 285,
-        "mats": { "Carne de oso tierna": 90 },
-        "description": "<div class=\"step-title\">Cocina 200 â€“ 285: Hamburguesa de oso</div>Los osos de nivel alto en Cuna del Invierno son tu mejor fuente de materiales."
+        "mats": { "Filete de oso jugoso": 40 },
+        "description": "<div class=\"step-title\">Cocina 250 – 285: Filete de oso jugoso</div>Caza osos de nivel 55+ en Cuna del Invierno o Felwood."
       },
       {
         "min": 285,
         "max": 300,
-        "mats": { "Carne de silÃ­tido": 20 },
-        "description": "<div class=\"step-title\">Cocina 285 â€“ 300: Empanada del desierto</div>Completa la misiÃ³n de Silithus para aprender esta receta final."
+        "mats": { "Carne de silítido": 20 },
+        "description": "<div class=\"step-title\">Cocina 285 – 300: Empanada del desierto</div>Debes completar la misión <b>Receta para el desastre</b> en Silithus para aprender esta receta."
       }
     ]
   },
@@ -41,13 +59,13 @@
     "expansionName": "The Burning Crusade (TBC)",
     "professionName": "Cocina",
     "maxLevel": 75,
-    "description": "Explora la cocina de Terrallende con ingredientes exÃ³ticos de otro mundo.",
+    "description": "Explora la cocina de Terrallende con ingredientes exóticos de otro mundo.",
     "steps": [
       {
         "min": 1,
         "max": 75,
-        "mats": { "Carne de uÃ±agrieta": 75 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 75: Terrallende</div>Empieza con <b>Perros de Ravager</b> y termina con <b>Filetes de UÃ±agrieta</b> en Nagrand."
+        "mats": { "Carne de uñagrieta": 75 },
+        "description": "<div class=\"step-title\">Cocina 1 – 75: Terrallende</div>Empieza con <b>Perros de Ravager</b> en Península y termina con <b>Filetes de Uñagrieta</b> en Nagrand."
       }
     ]
   },
@@ -61,7 +79,7 @@
         "min": 1,
         "max": 75,
         "mats": { "Carne de rinoceronte": 75 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 75: Rasganorte</div>Caza rinocerontes en Sholazar. NecesitarÃ¡s <b>Especias del Norte</b> de los diarios de Dalaran para los tramos finales."
+        "description": "<div class=\"step-title\">Cocina 1 – 75: Rasganorte</div>Caza rinocerontes en Sholazar. Necesitarás <b>Especias del Norte</b> de los diarios de Dalaran para los tramos finales."
       }
     ]
   },
@@ -75,7 +93,7 @@
         "min": 1,
         "max": 75,
         "mats": { "Lomo de basilisco": 75 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 75: Cataclysm</div>Empieza en Hyjal y usa tus <b>Premios de Chef</b> para comprar recetas avanzadas."
+        "description": "<div class=\"step-title\">Cocina 1 – 75: Cataclysm</div>Empieza en Hyjal y usa tus <b>Premios de Chef</b> para comprar recetas avanzadas."
       }
     ]
   },
@@ -83,13 +101,13 @@
     "expansionName": "Mists of Pandaria (MoP)",
     "professionName": "Cocina",
     "maxLevel": 75,
-    "description": "ConviÃ©rtete en un maestro de las Seis VÃ­as de la Cocina Pandaren.",
+    "description": "Conviértete en un maestro de las Seis Vías de la Cocina Pandaren.",
     "steps": [
       {
         "min": 1,
         "max": 75,
         "mats": { "F Noodles": 75 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 75: El Mercado del Alcor</div>Sube los primeros niveles con <b>Melocotones</b> y luego elige tu especialidad o 'VÃ­a'."
+        "description": "<div class=\"step-title\">Cocina 1 – 75: El Mercado del Alcor</div>Sube los primeros niveles con <b>Melocotones</b> y luego elige tu especialidad o 'Vía'."
       }
     ]
   },
@@ -103,21 +121,21 @@
         "min": 1,
         "max": 100,
         "mats": { "Pez sable": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 100: Draenor</div>Usa el <b>Pez sable</b> y aprovecha los materiales que consigas en el corral de tu Ciudadela."
+        "description": "<div class=\"step-title\">Cocina 1 – 100: Draenor</div>Usa el <b>Pez sable</b> y aprovecha los materiales que consigas en el corral de tu Ciudadela."
       }
     ]
   },
   "legion": {
-    "expansionName": "LegiÃ³n",
+    "expansionName": "Legión",
     "professionName": "Cocina",
     "maxLevel": 100,
-    "description": "GastronomÃ­a mÃ­stica con la ayuda de Nomi en Dalaran.",
+    "description": "Gastronomía mística con la ayuda de Nomi en Dalaran.",
     "steps": [
       {
         "min": 1,
         "max": 100,
         "mats": { "Seda vil": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 100: Islas Quebradas</div>Investiga con Nomi en Dalaran. PrepÃ¡rate para quemar comida hasta descubrir los Rango 3."
+        "description": "<div class=\"step-title\">Cocina 1 – 100: Islas Quebradas</div>Investiga con Nomi en Dalaran. Prepárate para quemar comida hasta descubrir los Rango 3."
       }
     ]
   },
@@ -125,13 +143,13 @@
     "expansionName": "Battle for Azeroth (BfA)",
     "professionName": "Cocina",
     "maxLevel": 175,
-    "description": "Alimenta al ejÃ©rcito con postres y banquetes de capitÃ¡n.",
+    "description": "Alimenta al ejército con postres y banquetes de capitán.",
     "steps": [
       {
         "min": 1,
         "max": 175,
-        "mats": { "SalmÃ³n": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 175: BfA</div>Sube con <b>Mon'Dazi</b> y termina con los <b>Festines de CapitÃ¡n</b> (requieren salmÃ³n de medianoche)."
+        "mats": { "Salmón": 100 },
+        "description": "<div class=\"step-title\">Cocina 1 – 175: BfA</div>Sube con <b>Mon'Dazi</b> y termina con los <b>Festines de Capitán</b> (requieren salmón de medianoche)."
       }
     ]
   },
@@ -139,13 +157,13 @@
     "expansionName": "Shadowlands",
     "professionName": "Cocina",
     "maxLevel": 100,
-    "description": "Prepara manjares con ingredientes de las Tierras SombrÃ­as.",
+    "description": "Prepara manjares con ingredientes de las Tierras Sombrías.",
     "steps": [
       {
         "min": 1,
         "max": 100,
         "mats": { "Carne": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 100: Shadowlands</div>Usa <b>Chuletillas tenebrosas</b> y los banquetes de hedonismo glotÃ³n en Oribos."
+        "description": "<div class=\"step-title\">Cocina 1 – 100: Shadowlands</div>Usa <b>Chuletillas tenebrosas</b> y los banquetes de hedonismo glotón en Oribos."
       }
     ]
   },
@@ -159,7 +177,7 @@
         "min": 1,
         "max": 100,
         "mats": { "Carne": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 100: Dragon Isles</div>Participa en el evento del <b>Gran Banquete</b> cerca de Iskaara para subir niveles."
+        "description": "<div class=\"step-title\">Cocina 1 – 100: Dragon Isles</div>Participa en el evento del <b>Gran Banquete</b> cerca de Iskaara para subir niveles."
       }
     ]
   },
@@ -173,7 +191,7 @@
         "min": 1,
         "max": 100,
         "mats": { "Carne": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 100: Khaz Algar</div>El <b>Estofado de todo</b> es el plato estrella del contenido final actual."
+        "description": "<div class=\"step-title\">Cocina 1 – 100: Khaz Algar</div>El <b>Estofado de todo</b> es el plato estrella del contenido final actual."
       }
     ]
   },
@@ -181,13 +199,13 @@
     "expansionName": "Midnight",
     "professionName": "Cocina",
     "maxLevel": 100,
-    "description": "Explora la gastronomÃ­a de Quel'Thalas y las delicias infundidas por la Luz y el VacÃ­o.",
+    "description": "Explora la gastronomía de Quel'Thalas y las delicias infundidas por la Luz y el Vacío.",
     "steps": [
       {
         "min": 1,
         "max": 100,
         "mats": { "Carne": 100 },
-        "description": "<div class=\"step-title\">Cocina 1 â€“ 100: Banquetes del Sol</div>Utiliza los nuevos ingredientes de los bosques de CanciÃ³n Eterna para preparar el 'Manjar de Quel'Thalas'."
+        "description": "<div class=\"step-title\">Cocina 1 – 100: Banquetes del Sol</div>Utiliza los nuevos ingredientes de los bosques de Canción Eterna para preparar el 'Manjar de Quel'Thalas'."
       }
     ]
   }
