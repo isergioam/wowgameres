@@ -1,6 +1,8 @@
 name: Sync Profession Guides
 
 on:
+  schedule:
+    - cron: '0 0 1 * *' # Se ejecuta el primer día de cada mes a las 00:00
   workflow_dispatch:
     inputs:
       profession:
