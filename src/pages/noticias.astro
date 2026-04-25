@@ -434,7 +434,7 @@ const description =
 
   .toolbar-sticky {
     position: sticky;
-    top: 120px;
+    top: var(--header-height-desktop, 100px);
     z-index: 1000;
     transition: all 0.3s ease;
     background: var(--toolbar-bg);
@@ -596,9 +596,15 @@ const description =
       top: 100px;
     }
   }
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .toolbar-sticky {
+      top: var(--header-height-tablet, 135px);
+    }
+  }
+
   @media (max-width: 768px) {
     .toolbar-sticky {
-      top: var(--header-height-mobile, 140px);
+      top: var(--header-height-mobile, 110px);
     }
     .news-command-bar {
       flex-direction: column;
@@ -769,7 +775,7 @@ const description =
   /* Ajuste ultra-fino para dispositivos muy pequeños */
   @media (max-width: 480px) {
     .toolbar-sticky {
-      top: var(--header-height-mobile, 140px);
+      top: var(--header-height-mobile, 110px);
     }
     .hero-cinematic {
       height: 55vh;
