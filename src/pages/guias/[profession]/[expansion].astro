@@ -48,7 +48,8 @@ const isPngProfession = [
   "cocina",
   "primeros-auxilios",
 ].includes(professionId);
-const seoImage = `/images/${professionId}_wow.webp`;
+const imgNameSeo = professionId.replace(/-/g, "_");
+const seoImage = `/images/${imgNameSeo}_wow.webp`;
 
 // Datos Estructurados para Fragmentos Destacados en Google
 const schemaJSON = {
@@ -78,7 +79,8 @@ const schemaJSON = {
 
   {
     (() => {
-      const mainImgPath = `/src/assets/images/${professionId}_wow.webp`;
+      const imgName = professionId.replace(/-/g, "_");
+      const mainImgPath = `/src/assets/images/${imgName}_wow.webp`;
       const heroImageAsset = allImages[mainImgPath];
       return (
         <header class="guide-hero-detail">
