@@ -453,6 +453,12 @@ const schemaJSON = {
       </div>
     </section>
   </main>
+
+  <!-- Modal para Zoom de Imágenes -->
+  <div id="imageModal" class="image-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="imgModalDisplay" />
+  </div>
 </BaseLayout>
 
 <script>
@@ -635,6 +641,19 @@ const schemaJSON = {
   const recipesContent = document.getElementById("recipesContent");
   recipesContent?.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
+    
+    // Si se hizo click en la imagen, hacer zoom y evitar marcar paso
+    if (target.classList.contains("route-map-img")) {
+      e.stopPropagation();
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("imgModalDisplay") as HTMLImageElement;
+      if (modal && modalImg) {
+        modal.style.display = "block";
+        modalImg.src = (target as HTMLImageElement).src;
+      }
+      return;
+    }
+
     const step = target.closest(".custom-step") as HTMLElement;
     if (step) {
       const allSteps = Array.from(document.querySelectorAll(".custom-step"));
@@ -649,6 +668,22 @@ const schemaJSON = {
       saveProgress();
     }
   });
+
+  // Lógica para cerrar el Modal
+  const modal = document.getElementById("imageModal");
+  const closeModal = document.querySelector(".close-modal");
+  
+  if (modal && closeModal) {
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    // Cerrar si se hace click fuera de la imagen
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 
   // Copiar al portapapeles
   document.getElementById("copyMaterials")?.addEventListener("click", (e) => {

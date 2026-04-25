@@ -2115,3 +2115,54 @@ footer {
   color: #bb9fff;
   text-shadow: 0 0 15px rgba(187, 159, 255, 0.8);
 }
+
+/* Image Modal / Lightbox */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(10, 5, 25, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.image-modal .modal-content {
+  margin: auto;
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-purple);
+  box-shadow: 0 0 30px rgba(187, 159, 255, 0.3);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.9); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 45px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: var(--primary-purple);
+  text-decoration: none;
+  cursor: pointer;
+}
