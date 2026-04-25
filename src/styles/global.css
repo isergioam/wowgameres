@@ -306,7 +306,7 @@ a {
     order: 3;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 15px 0 0 0 !important;
+    margin: 5px 0 0 0 !important;
     flex: 1 1 100%;
   }
 }
@@ -336,7 +336,7 @@ a {
     order: 3;
     width: 100% !important;
     max-width: 100% !important;
-    margin: var(--space-sm) 0 0 0 !important;
+    margin: 5px 0 0 0 !important;
     flex: 1 1 100%;
   }
 
