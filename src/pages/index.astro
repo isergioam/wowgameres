@@ -394,6 +394,42 @@ const description =
     font-weight: 400;
   }
 
+  /* --- LIGHT MODE ADAPTATION --- */
+  html:not(.dark-mode) .cinematic-info-section {
+    color: #1a1a2e;
+    background-color: #f9f7ff;
+  }
+
+  html:not(.dark-mode) .cinematic-bg .bg-img {
+    filter: brightness(1.7) saturate(0.4) opacity(0.2);
+  }
+
+  html:not(.dark-mode) .cinematic-overlay {
+    background: linear-gradient(to bottom, 
+      #ffffff 0%, 
+      transparent 20%, 
+      transparent 80%, 
+      #ffffff 100%
+    );
+  }
+
+  html:not(.dark-mode) .cinematic-header h2 {
+    color: #1a1a2e;
+  }
+
+  html:not(.dark-mode) .accent-line {
+    background: #6a0dad;
+    box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+  }
+
+  html:not(.dark-mode) .cinematic-item h3 {
+    color: #6a0dad;
+  }
+
+  html:not(.dark-mode) .cinematic-item p {
+    color: #444;
+  }
+
   @media (max-width: 1024px) and (min-width: 769px) {
     .hero-section {
       height: auto;
