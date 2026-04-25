@@ -390,19 +390,35 @@ const schemaJSON = {
                   {(() => {
                     const assetPath = `/src/assets${step.routeImage}`;
                     const imgAsset = allImages[assetPath];
+                    
+                    // Extraemos el título del paso para el overlay
+                    let mapTitle = "Ruta de Recolección";
+                    const titleMatch = step.description.match(/<div class="step-title">([^<]+)<\/div>/);
+                    if (titleMatch && titleMatch[1]) {
+                      // Limpiamos el texto (e.g. "Minería 1 - 65: Cobre" -> "Cobre")
+                      const parts = titleMatch[1].split(':');
+                      mapTitle = parts.length > 1 ? parts[1].trim() : titleMatch[1];
+                    }
+
                     if (imgAsset) {
                       return (
-                        <Image
-                          src={imgAsset.default}
-                          alt={`Ruta de farmueo WoW ${step.min}-${step.max}`}
-                          class="route-map-img"
-                          width={800}
-                          height={450}
-                          format="avif"
-                          quality="mid"
-                          loading="lazy"
-                          decoding="async"
-                        />
+                        <div style="position: relative; display: inline-block; max-width: 100%;">
+                          <Image
+                            src={imgAsset.default}
+                            alt={`Ruta de farmueo WoW ${step.min}-${step.max}`}
+                            class="route-map-img"
+                            width={800}
+                            height={450}
+                            format="avif"
+                            quality="mid"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <div class="route-map-overlay">
+                            <span class="overlay-title">📍 Zona Recomendada</span>
+                            <span class="overlay-subtitle">{mapTitle}</span>
+                          </div>
+                        </div>
                       );
                     } else {
                       return (
@@ -412,7 +428,7 @@ const schemaJSON = {
                       );
                     }
                   })()}
-                  <p class="route-caption">📍 Ruta sugerida en el mapa</p>
+                  <p class="route-caption">Haz clic en la imagen para ver más de cerca</p>
                 </div>
               )}
             </div>

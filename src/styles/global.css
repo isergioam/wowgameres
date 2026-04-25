@@ -1573,6 +1573,37 @@ footer {
   letter-spacing: 0.5px;
 }
 
+.route-map-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(10, 5, 25, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-left: 3px solid var(--primary-purple);
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.overlay-title {
+  color: #bb9fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.overlay-subtitle {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
 /* Fix for misaligned profession steps */
 .custom-step .step-title {
   display: block;
