@@ -56,9 +56,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-		<!-- Google AdSense -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9393134927059057"
-     crossorigin="anonymous"></script>
+
 
 		<!-- Script ultra-rápido para prevenir parpadeo (inline en HEAD) -->
 		<script is:inline>
@@ -96,6 +94,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
 					gtag('config', 'G-ZD2R9CWXLH');
+
+					// Adsterra - Social Bar
+					const adsterraSocial = document.createElement('script');
+					adsterraSocial.async = true;
+					adsterraSocial.src = 'https://pl29271087.profitablecpmratenetwork.com/67/44/7a/67447a435616e0e8ff5381ee2845a167.js';
+					document.head.appendChild(adsterraSocial);
+
+					// Adsterra - Popunder
+					const adsterraPop = document.createElement('script');
+					adsterraPop.async = true;
+					adsterraPop.src = 'https://pl29271088.profitablecpmratenetwork.com/9f/e7/e3/9fe7e3ec94a44df3cf9c5cb684e1e204.js';
+					document.head.appendChild(adsterraPop);
 				}
 
 				if (consent === 'accepted') {
