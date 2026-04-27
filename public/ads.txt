@@ -1,2 +1,1 @@
-# Adsterra (Sustituye por tu linea de ads.txt de Adsterra si la tienes)
-# Ejemplo: adsterra.com, XXXXX, DIRECT, XXXXX
+adsterra.com, 3269084, DIRECT
