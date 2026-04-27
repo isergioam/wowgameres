@@ -383,6 +383,14 @@ a {
   min-height: 90px;
 }
 
+/* Adsterra Social Bar - Reposicionamiento a la derecha abajo */
+div[class*="as-social-bar"] {
+  top: auto !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+}
+
 .recipe-name {
   font-size: 1.2em;
   font-weight: bold;
