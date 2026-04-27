@@ -1,1 +1,2 @@
-google.com, pub-9393134927059057, DIRECT, f08c47fec0942fa0
+# Adsterra (Sustituye por tu linea de ads.txt de Adsterra si la tienes)
+# Ejemplo: adsterra.com, XXXXX, DIRECT, XXXXX

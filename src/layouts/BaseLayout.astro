@@ -56,8 +56,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
-
 		<!-- Script ultra-rápido para prevenir parpadeo (inline en HEAD) -->
 		<script is:inline>
 			(function() {
@@ -76,7 +74,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<Footer />
 		<CookieBanner />
 
-		<!-- Scripts de Terceros (Analytics) -->
+		<!-- Scripts de Terceros (Analytics y Adsterra) -->
 		<script is:inline>
 			// Lógica de consentimiento de cookies y scripts de rastreo
 			(function() {
