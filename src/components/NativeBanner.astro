@@ -1,0 +1,32 @@
+---
+/**
+ * NativeBanner.astro
+ * Componente reutilizable para el banner nativo de Adsterra.
+ * Solo carga el script si el usuario ha aceptado las cookies.
+ */
+---
+<div class="native-ad-wrapper" id="nativeAdWrapper">
+  <div id="container-4351cc85b60ce113a6e878139d8362db"></div>
+</div>
+
+<style>
+  .native-ad-wrapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    text-align: center;
+    min-height: 0; /* No reservar espacio si no carga */
+    overflow: hidden;
+    transition: min-height 0.3s ease;
+  }
+
+  /* Cuando el anuncio carga, el contenedor hijo tendrá contenido */
+  .native-ad-wrapper:has(iframe),
+  .native-ad-wrapper:has(ins) {
+    min-height: 250px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid var(--primary-glow);
+    border-bottom: 1px solid var(--primary-glow);
+  }
+</style>

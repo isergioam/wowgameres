@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/NewsCard.astro";
+import NativeBanner from "../components/NativeBanner.astro";
 import newsData from "../content/news/latest.json";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/Cabecera_WOWGamerES.webp";
@@ -90,7 +91,8 @@ const description =
       </div>
     </section>
 
-    <!-- Últimas Noticias -->
+    <!-- Adsterra Native Banner -->
+    <NativeBanner />
     {
       latestNews.length > 0 && (
         <section
