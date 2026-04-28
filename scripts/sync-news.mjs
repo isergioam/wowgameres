@@ -11,9 +11,10 @@ const genAI = GEMINI_API_KEY ? new GoogleGenerativeAI(GEMINI_API_KEY) : null;
  * Elimina acentos, caracteres especiales y convierte a minúsculas.
  */
 function slugify(text) {
-  if (!text) return '';
-  return text
-    .toString()
+  if (text === null || text === undefined) return '';
+  const str = typeof text === 'string' ? text : String(text);
+  
+  return str
     .toLowerCase()
     .normalize('NFD') // Separa los acentos de las letras
     .replace(/[\u0300-\u036f]/g, '') // Elimina los acentos
@@ -100,7 +101,7 @@ function normalizeCategory(rawCategory, title = '', description = '') {
 async function generateSummaryTitle(title, description) {
   if (!genAI) return null;
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-3.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = `Eres un editor creativo de un portal de World of Warcraft.
     
 Basándote en este artículo, escribe un título corto y evocador (máximo 8 palabras) que capture la esencia de la noticia. 
@@ -126,7 +127,7 @@ async function generateSummary(title, content) {
 
   try {
     console.log(`Generating AI summary for: ${title}...`);
-    const model = genAI.getGenerativeModel({ model: "gemini-3.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
 
@@ -167,37 +168,69 @@ async function fetchNews() {
 
   const html = await response.text();
   
-  // Intento 1: Regex clásica
-  let match = html.match(/model\s*=\s*({.*?});/s);
+  const startMarker = 'model = ';
+  const startIndex = html.indexOf(startMarker);
   
-  // Intento 2: Búsqueda manual más agresiva si la regex falla por complejidad del JSON
-  if (!match) {
-    console.log('Regex fail, trying manual extraction...');
-    const startMarker = 'model = ';
-    const startIndex = html.indexOf(startMarker);
-    if (startIndex !== -1) {
-      const jsonStart = startIndex + startMarker.length;
-      // Buscamos el final del objeto JSON. Blizzard suele terminarlo con };\n
-      const jsonEnd = html.indexOf('};', jsonStart);
-      if (jsonEnd !== -1) {
-        const jsonText = html.substring(jsonStart, jsonEnd + 1);
-        try {
-          const model = JSON.parse(jsonText);
-          return model.blogList.blogs;
-        } catch (e) {
-          console.error('Manual extraction JSON parse failed:', e.message);
-        }
+  if (startIndex === -1) {
+    throw new Error('Could not find news model start marker in HTML');
+  }
+
+  const jsonStart = startIndex + startMarker.length;
+  
+  // Extraemos el JSON buscando el balance de llaves { }
+  // Esto es mucho más robusto que Regex o búsqueda de };
+  let jsonText = '';
+  let braceCount = 0;
+  let started = false;
+  let inString = false;
+  let escape = false;
+
+  for (let i = jsonStart; i < html.length; i++) {
+    const char = html[i];
+    jsonText += char;
+
+    if (escape) {
+      escape = false;
+      continue;
+    }
+
+    if (char === '\\') {
+      escape = true;
+      continue;
+    }
+
+    if (char === '"') {
+      inString = !inString;
+      continue;
+    }
+
+    if (!inString) {
+      if (char === '{') {
+        braceCount++;
+        started = true;
+      } else if (char === '}') {
+        braceCount--;
+      }
+
+      if (started && braceCount === 0) {
+        break;
       }
     }
   }
 
-  if (!match) throw new Error('Could not find news model in HTML');
-  
+  if (!jsonText || braceCount !== 0) {
+    throw new Error('Failed to extract balanced JSON from HTML');
+  }
+
   try {
-    const model = JSON.parse(match[1]);
+    const model = JSON.parse(jsonText);
+    if (!model.blogList || !model.blogList.blogs) {
+      console.error('Model structure unexpected:', Object.keys(model));
+      throw new Error('News blogs not found in model');
+    }
     return model.blogList.blogs;
   } catch (e) {
-    console.error('Regex match JSON parse failed:', e.message);
+    console.error('JSON parse failed for extracted text. Snippet:', jsonText.substring(0, 100));
     throw new Error(`Failed to parse news JSON: ${e.message}`);
   }
 }
@@ -249,7 +282,7 @@ async function main() {
       const newsItem = {
         id: blog.id,
         title,
-        slug: slugify(blog.slug || blog.title || blog.id.toString()),
+        slug: slugify(blog.slug || blog.title || (blog.id ? blog.id.toString() : 'news')),
         description,
         content: bodyContent,
         url: blog.url.startsWith('/') ? `https://worldofwarcraft.blizzard.com${blog.url}` : blog.url,

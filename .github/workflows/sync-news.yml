@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm install
+        run: npm ci || npm install
           
       - name: Sync News
         run: node scripts/sync-news.mjs
@@ -32,12 +32,35 @@ jobs:
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add src/content/news/latest.json
-          # Comprobar si hay cambios reales antes de intentar el commit
-          if git diff --staged --quiet; then
-            echo "No hay nuevas noticias para sincronizar. Saltando commit."
+          
+          # Solo añadir si el archivo existe y ha cambiado
+          if [ -f src/content/news/latest.json ]; then
+            git add src/content/news/latest.json
+            
+            if git diff --staged --quiet; then
+              echo "No hay nuevas noticias para sincronizar. Saltando commit."
+            else
+              git commit -m "docs: sync latest WoW news [skip ci]"
+              
+              # Intentar subir los cambios con rebase para evitar conflictos
+              MAX_RETRIES=5
+              COUNT=0
+              while [ $COUNT -lt $MAX_RETRIES ]; do
+                if git pull origin main --rebase && git push origin main; then
+                  echo "Cambios subidos correctamente."
+                  break
+                fi
+                COUNT=$((COUNT + 1))
+                echo "Error al subir (intento $COUNT/$MAX_RETRIES). Reintentando en 5s..."
+                sleep 5
+              done
+              
+              if [ $COUNT -eq $MAX_RETRIES ]; then
+                echo "Error persistente al subir cambios."
+                exit 1
+              fi
+            fi
           else
-            git commit -m "docs: sync latest WoW news [skip ci]"
-            git pull origin main --rebase
-            git push origin main
+            echo "Error: No se encontró src/content/news/latest.json"
+            exit 1
           fi
