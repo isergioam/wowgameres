@@ -101,7 +101,7 @@ function normalizeCategory(rawCategory, title = '', description = '') {
 async function generateSummaryTitle(title, description) {
   if (!genAI) return null;
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     const prompt = `Eres un editor creativo de un portal de World of Warcraft.
     
 Basándote en este artículo, escribe un título corto y evocador (máximo 8 palabras) que capture la esencia de la noticia. 
@@ -128,7 +128,7 @@ async function generateSummary(title, content) {
 
   try {
     console.log(`  🤖 Generando resumen IA para: "${title}"...`);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     
     const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
 
