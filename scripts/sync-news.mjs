@@ -108,6 +108,18 @@ async function getWorkingModel() {
   
   for (const modelName of candidates) {
     try {
+      // Diagnóstico: Intentar listar modelos para ver qué ve esta API Key
+      if (modelName === candidates[0]) {
+        console.log("🔍 Escaneando modelos disponibles para tu API Key...");
+        const diagResp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GEMINI_API_KEY}`);
+        const diagData = await diagResp.json();
+        if (diagData.models) {
+          console.log("📋 Modelos que Google dice que puedes usar:", diagData.models.map(m => m.name.replace('models/', '')).join(', '));
+        } else {
+          console.log("⚠️ Google no devolvió ninguna lista de modelos. Error:", JSON.stringify(diagData));
+        }
+      }
+
       const model = genAI.getGenerativeModel({ model: modelName });
       // Prueba rápida para ver si el modelo existe y acepta peticiones
       await model.generateContent({ contents: [{ role: 'user', parts: [{ text: 'hi' }] }] });
