@@ -115,7 +115,9 @@ async function getWorkingModel() {
       console.log(`✅ IA Conectada exitosamente usando el modelo: ${modelName}`);
       return workingModel;
     } catch (err) {
-      console.log(`  ⚠️ Modelo "${modelName}" no disponible (404 o restricción), probando el siguiente...`);
+      const status = err.status || (err.response ? err.response.status : "unknown");
+      const message = err.message || "Sin mensaje";
+      console.log(`  ⚠️ Modelo "${modelName}" falló (Status: ${status}): ${message}`);
     }
   }
   
