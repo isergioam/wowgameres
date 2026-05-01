@@ -98,10 +98,36 @@ function normalizeCategory(rawCategory, title = '', description = '') {
   return 'Retail';
 }
 
-async function generateSummaryTitle(title, description) {
+let workingModel = null;
+
+async function getWorkingModel() {
+  if (workingModel) return workingModel;
   if (!genAI) return null;
+
+  const candidates = ["gemini-1.5-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro", "gemini-pro"];
+  
+  for (const modelName of candidates) {
+    try {
+      const model = genAI.getGenerativeModel({ model: modelName });
+      // Prueba rápida para ver si el modelo existe y acepta peticiones
+      await model.generateContent({ contents: [{ role: 'user', parts: [{ text: 'hi' }] }] });
+      workingModel = model;
+      console.log(`✅ IA Conectada exitosamente usando el modelo: ${modelName}`);
+      return workingModel;
+    } catch (err) {
+      console.log(`  ⚠️ Modelo "${modelName}" no disponible (404 o restricción), probando el siguiente...`);
+    }
+  }
+  
+  console.error("❌ No se encontró ningún modelo de Gemini compatible con tu API Key.");
+  return null;
+}
+
+async function generateSummaryTitle(title, description) {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    const model = await getWorkingModel();
+    if (!model) return null;
+    
     const prompt = `Eres un editor creativo de un portal de World of Warcraft.
     
 Basándote en este artículo, escribe un título corto y evocador (máximo 8 palabras) que capture la esencia de la noticia. 
@@ -121,14 +147,14 @@ DESCRIPCIÓN: ${description.substring(0, 200)}`;
 }
 
 async function generateSummary(title, content) {
-  if (!genAI) {
-    console.log(`  ⚠️ Saltando resumen para "${title}": IA desactivada (sin API Key).`);
-    return null;
-  }
-
   try {
+    const model = await getWorkingModel();
+    if (!model) {
+      console.log(`  ⚠️ Saltando resumen para "${title}": No hay modelo de IA disponible.`);
+      return null;
+    }
+
     console.log(`  🤖 Generando resumen IA para: "${title}"...`);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     
     const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
 
