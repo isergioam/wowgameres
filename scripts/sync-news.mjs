@@ -122,11 +122,12 @@ DESCRIPCIÓN: ${description.substring(0, 200)}`;
 
 async function generateSummary(title, content) {
   if (!genAI) {
+    console.log(`  ⚠️ Saltando resumen para "${title}": IA desactivada (sin API Key).`);
     return null;
   }
 
   try {
-    console.log(`Generating AI summary for: ${title}...`);
+    console.log(`  🤖 Generando resumen IA para: "${title}"...`);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
@@ -146,9 +147,13 @@ async function generateSummary(title, content) {
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    return response.text();
+    const summary = response.text();
+    console.log(`  ✅ Resumen generado con éxito (${summary.length} caracteres).`);
+    return summary;
   } catch (err) {
-    console.error(`Error summarizing "${title}":`, err.message);
+    console.error(`  ❌ Error de IA en "${title}":`, err.message);
+    if (err.message.includes('API_KEY_INVALID')) console.error('     Causa probable: La API KEY no es válida.');
+    if (err.message.includes('429')) console.error('     Causa probable: Límite de cuota excedido.');
     return null;
   }
 }
