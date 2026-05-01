@@ -1,0 +1,164 @@
+---
+/**
+ * AffiliateBanner.astro
+ * Banner premium para promocionar Instant Gaming.
+ */
+interface Props {
+  type?: 'horizontal' | 'vertical';
+}
+
+const { type = 'horizontal' } = Astro.props;
+
+// AQUÍ DEBES PONER TU ENLACE DE AFILIADO
+const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
+---
+
+<div class={`affiliate-container ${type} reveal`}>
+  <a href={AFFILIATE_URL} target="_blank" rel="noopener noreferrer" class="affiliate-card">
+    <div class="affiliate-content">
+      <div class="brand-tag">Oferta Especial</div>
+      <div class="main-text">
+        <span class="highlight">Tiempo de Juego WoW</span> y Tarjetas Prepago al mejor precio
+      </div>
+      <div class="cta-button">
+        Ver ofertas en Instant Gaming
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div class="affiliate-visual">
+       <!-- Un gradiente o imagen sutil relacionada con IG -->
+       <div class="ig-logo-mock">IG</div>
+    </div>
+  </a>
+</div>
+
+<style>
+  .affiliate-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .affiliate-card {
+    display: flex;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 1px solid rgba(255, 100, 0, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .affiliate-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 100, 0, 0.8);
+    box-shadow: 0 15px 40px rgba(255, 100, 0, 0.15);
+  }
+
+  .affiliate-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .brand-tag {
+    display: inline-block;
+    background: #ff6400;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    width: fit-content;
+  }
+
+  .main-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .highlight {
+    color: #ff6400;
+  }
+
+  .cta-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ff6400;
+    transition: gap 0.3s ease;
+  }
+
+  .affiliate-card:hover .cta-button {
+    gap: 15px;
+  }
+
+  .affiliate-visual {
+    width: 200px;
+    background: radial-gradient(circle at center, rgba(255, 100, 0, 0.2) 0%, transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ig-logo-mock {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(255, 100, 0, 0.1);
+    transform: rotate(-10deg);
+  }
+
+  /* Animación de brillo */
+  .affiliate-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.8s;
+    pointer-events: none;
+  }
+
+  .affiliate-card:hover::after {
+    left: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .affiliate-card {
+      flex-direction: column;
+    }
+    .affiliate-visual {
+      width: 100%;
+      height: 60px;
+    }
+    .main-text {
+      font-size: 1.2rem;
+    }
+    .affiliate-content {
+      padding: 20px;
+    }
+  }
+</style>
