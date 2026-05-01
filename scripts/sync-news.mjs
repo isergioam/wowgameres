@@ -155,24 +155,42 @@ async function generateSummary(title, content) {
 
 async function fetchNews() {
   console.log('Fetching news from Blizzard...');
-  const url = 'https://worldofwarcraft.blizzard.com/es-es/news';
+  // Añadimos un timestamp para evitar cache de red/CDN
+  const url = `https://worldofwarcraft.blizzard.com/es-es/news?t=${Date.now()}`;
+  
   const response = await fetch(url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+      'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache'
     }
   });
 
+  console.log(`Blizzard response status: ${response.status} ${response.statusText}`);
+
   if (!response.ok) {
+    const errorText = await response.text().catch(() => 'No error body');
+    console.error('Error response body snippet:', errorText.substring(0, 200));
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
   const html = await response.text();
   
-  const startMarker = 'model = ';
-  const startIndex = html.indexOf(startMarker);
+  // Buscamos el marcador de forma más flexible
+  let startMarker = 'model = ';
+  let startIndex = html.indexOf(startMarker);
   
   if (startIndex === -1) {
-    throw new Error('Could not find news model start marker in HTML');
+    // Reintento con otra variante común
+    startMarker = 'window.model = ';
+    startIndex = html.indexOf(startMarker);
+  }
+
+  if (startIndex === -1) {
+    console.error('HTML Snippet (first 500 chars):', html.substring(0, 500));
+    throw new Error('Could not find news model marker (model = or window.model =) in HTML');
   }
 
   const jsonStart = startIndex + startMarker.length;
@@ -225,12 +243,16 @@ async function fetchNews() {
   try {
     const model = JSON.parse(jsonText);
     if (!model.blogList || !model.blogList.blogs) {
-      console.error('Model structure unexpected:', Object.keys(model));
-      throw new Error('News blogs not found in model');
+      console.error('Model keys found:', Object.keys(model));
+      if (model.blogList) console.error('blogList keys found:', Object.keys(model.blogList));
+      throw new Error('News blogs not found in model structure');
     }
+    
+    console.log(`Successfully fetched ${model.blogList.blogs.length} blogs from Blizzard.`);
     return model.blogList.blogs;
   } catch (e) {
-    console.error('JSON parse failed for extracted text. Snippet:', jsonText.substring(0, 100));
+    console.error('JSON parse failed. Text length:', jsonText.length);
+    console.error('JSON Snippet:', jsonText.substring(0, 150), '...');
     throw new Error(`Failed to parse news JSON: ${e.message}`);
   }
 }
