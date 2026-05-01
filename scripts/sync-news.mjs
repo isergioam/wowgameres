@@ -104,7 +104,7 @@ async function getWorkingModel() {
   if (workingModel) return workingModel;
   if (!genAI) return null;
 
-  const candidates = ["gemini-1.5-flash", "gemini-1.5-flash-latest", "gemini-1.5-pro", "gemini-pro"];
+  const candidates = ["gemini-2.0-flash", "gemini-flash-latest", "gemini-pro-latest", "gemini-2.0-flash-lite"];
   
   for (const modelName of candidates) {
     try {
