@@ -258,6 +258,7 @@ async function fetchNews() {
 }
 
 async function main() {
+  console.log(`AI Summary Status: ${genAI ? 'ENABLED' : 'DISABLED (Missing GEMINI_API_KEY)'}`);
   try {
     const rawBlogs = await fetchNews();
     const dataDir = path.resolve('src/content/news');
