@@ -319,7 +319,32 @@ async function main() {
 
     const fetchedNews = [];
 
-    for (const blog of rawBlogs) {
+    // Limitamos el procesamiento a las 5 noticias más recientes para ahorrar cuota
+    const blogsToProcess = rawBlogs.slice(0, 5);
+    let quotaExceeded = false;
+
+    for (const blog of blogsToProcess) {
+      if (quotaExceeded) {
+        console.log(`  ⏩ Saltando "${blog.title}" porque se ha alcanzado el límite de cuota.`);
+        // Añadimos la noticia sin resumen para procesarla en la siguiente ejecución
+        const newsItem = {
+          id: blog.id,
+          title: blog.title || '',
+          slug: slugify(blog.slug || blog.title || (blog.id ? blog.id.toString() : 'news')),
+          description: blog.description || blog.subtitle || '',
+          content: (blog.content || '').replace(/src="\//g, 'src="https://worldofwarcraft.blizzard.com/'),
+          url: blog.url.startsWith('/') ? `https://worldofwarcraft.blizzard.com${blog.url}` : blog.url,
+          image: blog.thumb?.url || blog.image?.url || blog.image || '',
+          date: blog.published || blog.publish_at || blog.created_at || new Date().toISOString(),
+          category: normalizeCategory(blog.category?.name || blog.category || 'WoW', blog.title || '', blog.description || ''),
+          summary: null,
+          summaryTitle: null
+        };
+        if (newsItem.image.startsWith('//')) newsItem.image = `https:${newsItem.image}`;
+        fetchedNews.push(newsItem);
+        continue;
+      }
+
       // Mirar si ya tenemos esta noticia para no pedir resumen a la IA otra vez
       const existing = existingNews.find(n => n.id === blog.id);
       
@@ -351,17 +376,27 @@ async function main() {
         summaryTitle: existing?.summaryTitle || null
       };
 
+      // SOLO pedimos resumen si NO lo tenemos ya
       if (!newsItem.summary && genAI) {
-        newsItem.summary = await generateSummary(newsItem.title, newsItem.content || newsItem.description);
+        const generatedSummary = await generateSummary(newsItem.title, newsItem.content || newsItem.description);
+        if (generatedSummary) {
+          newsItem.summary = generatedSummary;
+        } else {
+          // Si generateSummary devuelve null (posible 429), marcamos para parar
+          quotaExceeded = true;
+        }
       }
 
-      if (!newsItem.summaryTitle && genAI) {
-        newsItem.summaryTitle = await generateSummaryTitle(newsItem.title, newsItem.description);
-        console.log(`  📌 Título generado: "${newsItem.summaryTitle}"`);
-        
-        // Pausa para evitar 429 Too Many Requests (límite de cuota de la versión gratuita)
-        console.log("  ⏳ Esperando 10 segundos para la siguiente noticia...");
-        await new Promise(resolve => setTimeout(resolve, 10000));
+      if (!newsItem.summaryTitle && genAI && !quotaExceeded) {
+        const generatedTitle = await generateSummaryTitle(newsItem.title, newsItem.description);
+        if (generatedTitle) {
+          newsItem.summaryTitle = generatedTitle;
+          console.log(`  📌 Título generado: "${newsItem.summaryTitle}"`);
+          // Pausa obligatoria para respetar el Plan Gratuito (evita picos de consumo)
+          await new Promise(resolve => setTimeout(resolve, 15000));
+        } else {
+          quotaExceeded = true;
+        }
       }
 
       fetchedNews.push(newsItem);
