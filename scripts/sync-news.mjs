@@ -104,98 +104,88 @@ async function getWorkingModel() {
   if (workingModel) return workingModel;
   if (!genAI) return null;
 
-  const candidates = ["gemini-2.0-flash", "gemini-flash-latest", "gemini-pro-latest", "gemini-2.0-flash-lite"];
-  
-  for (const modelName of candidates) {
-    try {
-      // Diagnóstico: Intentar listar modelos para ver qué ve esta API Key
-      if (modelName === candidates[0]) {
-        console.log("🔍 Escaneando modelos disponibles para tu API Key...");
-        const diagResp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${process.env.GEMINI_API_KEY}`);
-        const diagData = await diagResp.json();
-        if (diagData.models) {
-          console.log("📋 Modelos que Google dice que puedes usar:", diagData.models.map(m => m.name.replace('models/', '')).join(', '));
-        } else {
-          console.log("⚠️ Google no devolvió ninguna lista de modelos. Error:", JSON.stringify(diagData));
-        }
-      }
-
-      const model = genAI.getGenerativeModel({ model: modelName });
-      // Prueba rápida para ver si el modelo existe y acepta peticiones
-      await model.generateContent({ contents: [{ role: 'user', parts: [{ text: 'hi' }] }] });
-      workingModel = model;
-      console.log(`✅ IA Conectada exitosamente usando el modelo: ${modelName}`);
-      return workingModel;
-    } catch (err) {
-      const status = err.status || (err.response ? err.response.status : "unknown");
-      const message = err.message || "Sin mensaje";
-      console.log(`  ⚠️ Modelo "${modelName}" falló (Status: ${status}): ${message}`);
-    }
+  try {
+    // Usamos directamente el modelo que confirmó funcionamiento
+    workingModel = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+    return workingModel;
+  } catch (err) {
+    console.error("❌ Error inicializando el modelo Gemini:", err.message);
+    return null;
   }
-  
-  console.error("❌ No se encontró ningún modelo de Gemini compatible con tu API Key.");
-  return null;
 }
 
 async function generateSummaryTitle(title, description) {
-  try {
-    const model = await getWorkingModel();
-    if (!model) return null;
-    
-    const prompt = `Eres un editor creativo de un portal de World of Warcraft.
-    
+  let retries = 3;
+  while (retries > 0) {
+    try {
+      const model = await getWorkingModel();
+      if (!model) return null;
+      
+      const prompt = `Eres un editor creativo de un portal de World of Warcraft.
+      
 Basándote en este artículo, escribe un título corto y evocador (máximo 8 palabras) que capture la esencia de la noticia. 
 Debe ser dramático, épico o intrigante. No uses comillas. No uses dos puntos. Solo el título.
 
 TÍTULO ORIGINAL: ${title}
 DESCRIPCIÓN: ${description.substring(0, 200)}`;
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text().trim().replace(/^["']|["']$/g, '');
-    return text;
-  } catch (err) {
-    console.error(`Error generando summaryTitle para "${title}":`, err.stack || err.message);
-    return null;
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text().trim().replace(/^["']|["']$/g, '');
+      return text;
+    } catch (err) {
+      if (err.message.includes('429') && retries > 1) {
+        console.log(`  ⏳ Límite alcanzado en título, esperando 30s antes de reintentar... (Quedan ${retries-1} intentos)`);
+        await new Promise(r => setTimeout(r, 30000));
+        retries--;
+        continue;
+      }
+      console.error(`Error generando summaryTitle para "${title}":`, err.stack || err.message);
+      return null;
+    }
   }
+  return null;
 }
 
 async function generateSummary(title, content) {
-  try {
-    const model = await getWorkingModel();
-    if (!model) {
-      console.log(`  ⚠️ Saltando resumen para "${title}": No hay modelo de IA disponible.`);
+  let retries = 3;
+  while (retries > 0) {
+    try {
+      const model = await getWorkingModel();
+      if (!model) return null;
+
+      console.log(`  🤖 Generando resumen IA para: "${title}"...`);
+      const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
+
+      const prompt = `Actúa como un redactor experto en World of Warcraft para el sitio web WOWGamerES. 
+      Tu tarea es resumir la noticia de forma atractiva, profesional y única.
+      
+      TÍTULO: ${title}
+      CONTENIDO: ${cleanContent}
+      
+      Instrucciones:
+      1. Escribe 2 párrafos cortos.
+      2. Usa un tono cercano para la comunidad pero profesional.
+      3. Ve directo al grano.
+      4. Escribe en Español de España.`;
+
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const summary = response.text();
+      console.log(`  ✅ Resumen generado con éxito (${summary.length} caracteres).`);
+      return summary;
+    } catch (err) {
+      if (err.message.includes('429') && retries > 1) {
+        console.log(`  ⏳ Límite alcanzado en resumen, esperando 30s antes de reintentar... (Quedan ${retries-1} intentos)`);
+        await new Promise(r => setTimeout(r, 30000));
+        retries--;
+        continue;
+      }
+      console.error(`  ❌ Error de IA en "${title}":`, err.message);
       return null;
     }
-
-    console.log(`  🤖 Generando resumen IA para: "${title}"...`);
-    
-    const cleanContent = content.replace(/<[^>]*>?/gm, '').substring(0, 5000);
-
-    const prompt = `Actúa como un redactor experto en World of Warcraft para el sitio web WOWGamerES. 
-    Tu tarea es resumir la siguiente noticia oficial de Blizzard de forma atractiva, profesional y única.
-    
-    TÍTULO: ${title}
-    CONTENIDO: ${cleanContent}
-    
-    Instrucciones:
-    1. Escribe 2 párrafos cortos (máximo 120 palabras en total).
-    2. Usa un tono cercano para la comunidad pero profesional.
-    3. NO empieces con frases como "Esta noticia habla de..." o "Resumen:". Ve directo al grano.
-    4. Céntrate en lo más importante para los jugadores (fechas, cambios, recompensas).
-    5. Escribe en Español de España.`;
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const summary = response.text();
-    console.log(`  ✅ Resumen generado con éxito (${summary.length} caracteres).`);
-    return summary;
-  } catch (err) {
-    console.error(`  ❌ Error de IA en "${title}":`, err.message);
-    if (err.message.includes('API_KEY_INVALID')) console.error('     Causa probable: La API KEY no es válida.');
-    if (err.message.includes('429')) console.error('     Causa probable: Límite de cuota excedido.');
-    return null;
   }
+  return null;
 }
 
 async function fetchNews() {
@@ -368,6 +358,10 @@ async function main() {
       if (!newsItem.summaryTitle && genAI) {
         newsItem.summaryTitle = await generateSummaryTitle(newsItem.title, newsItem.description);
         console.log(`  📌 Título generado: "${newsItem.summaryTitle}"`);
+        
+        // Pausa para evitar 429 Too Many Requests (límite de cuota de la versión gratuita)
+        console.log("  ⏳ Esperando 10 segundos para la siguiente noticia...");
+        await new Promise(resolve => setTimeout(resolve, 10000));
       }
 
       fetchedNews.push(newsItem);
