@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -56,6 +55,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+		<!-- Umami Analytics (Private & Privacy-focused) -->
+		<script defer src="https://cloud.umami.is/script.js" data-website-id="017a7529-4eed-4f91-a881-841c908f88c2"></script>
+
 		<!-- Script ultra-rápido para prevenir parpadeo (inline en HEAD) -->
 		<script is:inline>
 			(function() {
@@ -72,36 +74,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<Header />
 		<slot />
 		<Footer />
-		<CookieBanner />
 
-		<!-- Scripts de Terceros (Analytics y Adsterra) -->
-		<script is:inline>
-			// Lógica de consentimiento de cookies y scripts de rastreo
-			(function() {
-				const CONSENT_KEY = 'cookie_consent';
-				const consent = localStorage.getItem(CONSENT_KEY);
-
-				function activateScripts() {
-					// Analytics 4
-					const gScript = document.createElement('script');
-					gScript.async = true;
-					gScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZD2R9CWXLH';
-					document.head.appendChild(gScript);
-
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', 'G-ZD2R9CWXLH');
-
-
-				}
-
-				if (consent === 'accepted') {
-					activateScripts();
-				}
-			})();
-		</script>
-		<!-- Script de limpieza y utilidades -->
+		<!-- Scripts de utilidad -->
 		<script>
   (function() {
     // 1. ELIMINAR SERVICE WORKERS EXISTENTES (Crucial para desactivar el modo offline en navegadores de usuarios)
