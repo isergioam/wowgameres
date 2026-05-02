@@ -2,7 +2,7 @@ name: Sync WoW News
 
 on:
   schedule:
-    - cron: '0 18 * * *' # Todos los días a las 10:00 AM PST (18:00 UTC)
+    - cron: '*/5 18-21 * * *' # Cada 5 min entre las 10:00 AM y las 2:00 PM PST (18:00-21:55 UTC)
   workflow_dispatch: # Permite ejecutarlo manualmente
 
 jobs:
