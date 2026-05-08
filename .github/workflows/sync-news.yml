@@ -2,7 +2,7 @@ name: Sync WoW News
 
 on:
   schedule:
-    - cron: '*/5 18-21 * * *' # Cada 5 min entre las 10:00 AM y las 2:00 PM PST (18:00-21:55 UTC)
+    - cron: '0 * * * *' # Cada hora, las 24 horas del día
   workflow_dispatch: # Permite ejecutarlo manualmente
 
 jobs:
@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
       
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +30,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
@@ -39,14 +42,15 @@ jobs:
           else
             echo "Se han detectado nuevas noticias. Procediendo al commit..."
             git add src/content/news/latest.json
-            git commit -m "docs: sync latest WoW news [skip ci]"
+            git commit -m "docs: sync latest WoW news"
             
             # Intentar subir los cambios con rebase para evitar conflictos
             MAX_RETRIES=5
             COUNT=0
             while [ $COUNT -lt $MAX_RETRIES ]; do
               if git pull origin main --rebase && git push origin main; then
-                echo "Cambios subidos correctamente."
+                echo "Cambios subidos correctamente. Desencadenando despliegue de la web..."
+                gh workflow run deploy.yml --ref main
                 break
               fi
               COUNT=$((COUNT + 1))
