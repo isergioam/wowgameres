@@ -174,7 +174,7 @@ const description =
       <nav class="pagination-nav" id="pagination-nav">
         <span class="page-link disabled">&larr; Anterior</span>
         <div class="page-info">
-          Página <span>1</span> de {Math.ceil((allNews.length - 1) / 9)}
+          Página <span>1</span> de {Math.max(1, Math.ceil((allNews.length - 1) / 9))}
         </div>
         {
           allNews.length > 10 ? (
