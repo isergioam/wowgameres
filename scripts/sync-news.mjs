@@ -189,106 +189,121 @@ async function generateSummary(title, content) {
 }
 
 async function fetchNews() {
-  console.log('Fetching news from Blizzard...');
-  // Añadimos un timestamp para evitar cache de red/CDN
-  const url = `https://worldofwarcraft.blizzard.com/es-es/news?t=${Date.now()}`;
+  const retries = 3;
+  const delay = 5000;
   
-  const response = await fetch(url, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-      'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
-      'Cache-Control': 'no-cache',
-      'Pragma': 'no-cache'
-    }
-  });
+  for (let i = 0; i < retries; i++) {
+    try {
+      console.log(`Fetching news from Blizzard (attempt ${i + 1}/${retries})...`);
+      // Añadimos un timestamp para evitar cache de red/CDN
+      const url = `https://worldofwarcraft.blizzard.com/es-es/news?t=${Date.now()}`;
+      
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+          'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        }
+      });
 
-  console.log(`Blizzard response status: ${response.status} ${response.statusText}`);
+      console.log(`Blizzard response status: ${response.status} ${response.statusText}`);
 
-  if (!response.ok) {
-    const errorText = await response.text().catch(() => 'No error body');
-    console.error('Error response body snippet:', errorText.substring(0, 200));
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  const html = await response.text();
-  
-  // Buscamos el marcador de forma más flexible
-  let startMarker = 'model = ';
-  let startIndex = html.indexOf(startMarker);
-  
-  if (startIndex === -1) {
-    // Reintento con otra variante común
-    startMarker = 'window.model = ';
-    startIndex = html.indexOf(startMarker);
-  }
-
-  if (startIndex === -1) {
-    console.error('HTML Snippet (first 500 chars):', html.substring(0, 500));
-    throw new Error('Could not find news model marker (model = or window.model =) in HTML');
-  }
-
-  const jsonStart = startIndex + startMarker.length;
-  
-  // Extraemos el JSON buscando el balance de llaves { }
-  // Esto es mucho más robusto que Regex o búsqueda de };
-  let jsonText = '';
-  let braceCount = 0;
-  let started = false;
-  let inString = false;
-  let escape = false;
-
-  for (let i = jsonStart; i < html.length; i++) {
-    const char = html[i];
-    jsonText += char;
-
-    if (escape) {
-      escape = false;
-      continue;
-    }
-
-    if (char === '\\') {
-      escape = true;
-      continue;
-    }
-
-    if (char === '"') {
-      inString = !inString;
-      continue;
-    }
-
-    if (!inString) {
-      if (char === '{') {
-        braceCount++;
-        started = true;
-      } else if (char === '}') {
-        braceCount--;
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => 'No error body');
+        console.error('Error response body snippet:', errorText.substring(0, 200));
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      if (started && braceCount === 0) {
-        break;
+      const html = await response.text();
+      
+      // Buscamos el marcador de forma más flexible
+      let startMarker = 'model = ';
+      let startIndex = html.indexOf(startMarker);
+      
+      if (startIndex === -1) {
+        // Reintento con otra variante común
+        startMarker = 'window.model = ';
+        startIndex = html.indexOf(startMarker);
+      }
+
+      if (startIndex === -1) {
+        console.error('HTML Snippet (first 500 chars):', html.substring(0, 500));
+        throw new Error('Could not find news model marker (model = or window.model =) in HTML');
+      }
+
+      const jsonStart = startIndex + startMarker.length;
+      
+      // Extraemos el JSON buscando el balance de llaves { }
+      // Esto es mucho más robusto que Regex o búsqueda de };
+      let jsonText = '';
+      let braceCount = 0;
+      let started = false;
+      let inString = false;
+      let escape = false;
+
+      for (let j = jsonStart; j < html.length; j++) {
+        const char = html[j];
+        jsonText += char;
+
+        if (escape) {
+          escape = false;
+          continue;
+        }
+
+        if (char === '\\') {
+          escape = true;
+          continue;
+        }
+
+        if (char === '"') {
+          inString = !inString;
+          continue;
+        }
+
+        if (!inString) {
+          if (char === '{') {
+            braceCount++;
+            started = true;
+          } else if (char === '}') {
+            braceCount--;
+          }
+
+          if (started && braceCount === 0) {
+            break;
+          }
+        }
+      }
+
+      if (!jsonText || braceCount !== 0) {
+        throw new Error('Failed to extract balanced JSON from HTML');
+      }
+
+      try {
+        const model = JSON.parse(jsonText);
+        if (!model.blogList || !model.blogList.blogs) {
+          console.error('Model keys found:', Object.keys(model));
+          if (model.blogList) console.error('blogList keys found:', Object.keys(model.blogList));
+          throw new Error('News blogs not found in model structure');
+        }
+        
+        console.log(`Successfully fetched ${model.blogList.blogs.length} blogs from Blizzard.`);
+        return model.blogList.blogs;
+      } catch (e) {
+        console.error('JSON parse failed. Text length:', jsonText.length);
+        console.error('JSON Snippet:', jsonText.substring(0, 150), '...');
+        throw new Error(`Failed to parse news JSON: ${e.message}`);
+      }
+    } catch (err) {
+      console.error(`Attempt ${i + 1} failed:`, err.message);
+      if (i < retries - 1) {
+        console.log(`Waiting ${delay / 1000}s before retrying...`);
+        await new Promise(r => setTimeout(r, delay));
+      } else {
+        throw err;
       }
     }
-  }
-
-  if (!jsonText || braceCount !== 0) {
-    throw new Error('Failed to extract balanced JSON from HTML');
-  }
-
-  try {
-    const model = JSON.parse(jsonText);
-    if (!model.blogList || !model.blogList.blogs) {
-      console.error('Model keys found:', Object.keys(model));
-      if (model.blogList) console.error('blogList keys found:', Object.keys(model.blogList));
-      throw new Error('News blogs not found in model structure');
-    }
-    
-    console.log(`Successfully fetched ${model.blogList.blogs.length} blogs from Blizzard.`);
-    return model.blogList.blogs;
-  } catch (e) {
-    console.error('JSON parse failed. Text length:', jsonText.length);
-    console.error('JSON Snippet:', jsonText.substring(0, 150), '...');
-    throw new Error(`Failed to parse news JSON: ${e.message}`);
   }
 }
 
@@ -423,7 +438,12 @@ async function main() {
     
   } catch (err) {
     console.error('Fallo en la sincronización:', err);
-    process.exit(1);
+    if (process.env.GITHUB_ACTIONS === 'true') {
+      console.warn(`::warning::Fallo en la sincronización de noticias WoW (se reintentará en la próxima ejecución programada): ${err.message}`);
+      process.exit(0);
+    } else {
+      process.exit(1);
+    }
   }
 }
 
