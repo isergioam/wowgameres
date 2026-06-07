@@ -106,7 +106,7 @@ async function getWorkingModel() {
 
   try {
     // Usamos directamente el modelo que confirmó funcionamiento
-    workingModel = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+    workingModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     return workingModel;
   } catch (err) {
     console.error("❌ Error inicializando el modelo Gemini:", err.message);
