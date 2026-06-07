@@ -13,7 +13,7 @@ const genAI = GEMINI_API_KEY ? new GoogleGenerativeAI(GEMINI_API_KEY) : null;
 function slugify(text) {
   if (text === null || text === undefined) return '';
   const str = typeof text === 'string' ? text : String(text);
-  
+
   return str
     .toLowerCase()
     .normalize('NFD') // Separa los acentos de las letras
@@ -106,7 +106,7 @@ async function getWorkingModel() {
 
   try {
     // Usamos directamente el modelo que confirmó funcionamiento
-    workingModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    workingModel = genAI.getGenerativeModel({ model: "gemini-3.5-flash" });
     return workingModel;
   } catch (err) {
     console.error("❌ Error inicializando el modelo Gemini:", err.message);
@@ -120,7 +120,7 @@ async function generateSummaryTitle(title, description) {
     try {
       const model = await getWorkingModel();
       if (!model) return null;
-      
+
       const prompt = `Eres un editor creativo de un portal de World of Warcraft.
       
 Basándote en este artículo, escribe un título corto y evocador (máximo 8 palabras) que capture la esencia de la noticia. 
@@ -135,7 +135,7 @@ DESCRIPCIÓN: ${description.substring(0, 200)}`;
       return text;
     } catch (err) {
       if (err.message.includes('429') && retries > 1) {
-        console.log(`  ⏳ Límite alcanzado en título, esperando 30s antes de reintentar... (Quedan ${retries-1} intentos)`);
+        console.log(`  ⏳ Límite alcanzado en título, esperando 30s antes de reintentar... (Quedan ${retries - 1} intentos)`);
         await new Promise(r => setTimeout(r, 30000));
         retries--;
         continue;
@@ -176,7 +176,7 @@ async function generateSummary(title, content) {
       return summary;
     } catch (err) {
       if (err.message.includes('429') && retries > 1) {
-        console.log(`  ⏳ Límite alcanzado en resumen, esperando 30s antes de reintentar... (Quedan ${retries-1} intentos)`);
+        console.log(`  ⏳ Límite alcanzado en resumen, esperando 30s antes de reintentar... (Quedan ${retries - 1} intentos)`);
         await new Promise(r => setTimeout(r, 30000));
         retries--;
         continue;
@@ -191,13 +191,13 @@ async function generateSummary(title, content) {
 async function fetchNews() {
   const retries = 3;
   const delay = 5000;
-  
+
   for (let i = 0; i < retries; i++) {
     try {
       console.log(`Fetching news from Blizzard (attempt ${i + 1}/${retries})...`);
       // Añadimos un timestamp para evitar cache de red/CDN
       const url = `https://worldofwarcraft.blizzard.com/es-es/news?t=${Date.now()}`;
-      
+
       const response = await fetch(url, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -217,11 +217,11 @@ async function fetchNews() {
       }
 
       const html = await response.text();
-      
+
       // Buscamos el marcador de forma más flexible
       let startMarker = 'model = ';
       let startIndex = html.indexOf(startMarker);
-      
+
       if (startIndex === -1) {
         // Reintento con otra variante común
         startMarker = 'window.model = ';
@@ -234,7 +234,7 @@ async function fetchNews() {
       }
 
       const jsonStart = startIndex + startMarker.length;
-      
+
       // Extraemos el JSON buscando el balance de llaves { }
       // Esto es mucho más robusto que Regex o búsqueda de };
       let jsonText = '';
@@ -287,7 +287,7 @@ async function fetchNews() {
           if (model.blogList) console.error('blogList keys found:', Object.keys(model.blogList));
           throw new Error('News blogs not found in model structure');
         }
-        
+
         console.log(`Successfully fetched ${model.blogList.blogs.length} blogs from Blizzard.`);
         return model.blogList.blogs;
       } catch (e) {
@@ -313,7 +313,7 @@ async function main() {
     const rawBlogs = await fetchNews();
     const dataDir = path.resolve('src/content/news');
     const dataPath = path.join(dataDir, 'latest.json');
-    
+
     // Cargar historial existente
     let existingNews = [];
     if (fs.existsSync(dataPath)) {
@@ -362,14 +362,14 @@ async function main() {
 
       // Mirar si ya tenemos esta noticia para no pedir resumen a la IA otra vez
       const existing = existingNews.find(n => n.id === blog.id);
-      
+
       let imageUrl = blog.thumb?.url || blog.image?.url || blog.image || '';
       if (imageUrl.startsWith('//')) imageUrl = `https:${imageUrl}`;
 
       // Extraer categoría raw y normalizarla
       let rawCategory = blog.category || 'WoW';
       if (typeof rawCategory === 'object' && rawCategory !== null) rawCategory = rawCategory.name || 'WoW';
-      
+
       const title = blog.title || '';
       const description = blog.description || blog.subtitle || '';
       const category = normalizeCategory(rawCategory, title, description);
@@ -419,10 +419,10 @@ async function main() {
 
     // Combinar nuevas noticias con el historial
     const allNewsMap = new Map();
-    
+
     // Mantenemos lo que ya teníamos (con categorías normalizadas)
     existingNews.forEach(item => allNewsMap.set(item.id, item));
-    
+
     // Añadimos lo nuevo (sobrescribe si hay actualización de Blizzard)
     fetchedNews.forEach(item => allNewsMap.set(item.id, item));
 
@@ -435,7 +435,7 @@ async function main() {
     console.log(`✅ ¡Historial acumulado! Total de noticias en archivo: ${finalNews.length}`);
     console.log(`📂 Categorías usadas: ${[...new Set(finalNews.map(n => n.category))].join(', ')}`);
     if (!genAI) console.log('NOTA: No se generaron nuevos resúmenes (falta GEMINI_API_KEY).');
-    
+
   } catch (err) {
     console.error('Fallo en la sincronización:', err);
     if (process.env.GITHUB_ACTIONS === 'true') {
