@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Tickra</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #4f46e5;
+            --border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: #1e293b;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --primary: #818cf8;
+                --border: #334155;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        p, ul {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                margin: 20px auto;
+            }
+            .card {
+                padding: 24px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Política de Privacidad</h1>
+            <div class="subtitle">Última actualización: 17 de junio de 2026</div>
+
+            <p><strong>WOWGamerES</strong> ("nosotros", "nuestro" o "la Empresa") se compromete a proteger la privacidad de los usuarios de la aplicación móvil <strong>Tickra</strong> ("la Aplicación"). Esta Política de Privacidad describe cómo se recopila, utiliza y protege tu información al utilizar nuestros servicios.</p>
+
+            <h2>1. Información que recopilamos</h2>
+            <ul>
+                <li><strong>Datos guardados localmente:</strong> Toda la información de tus compras, artículos extraídos, totales, tiendas, fechas y categorías de gastos se almacena <strong>exclusivamente en la base de datos local</strong> de tu dispositivo móvil (base de datos SQLite/Room). Nosotros no tenemos acceso a este historial de datos ni lo guardamos en servidores externos.</li>
+                <li><strong>Imágenes de tickets:</strong> Cuando utilizas la función de cámara para escanear un ticket, la imagen se procesa temporalmente con el único propósito de extraer la información de compra. La imagen se transmite de forma cifrada a través de nuestra API segura a los servicios de procesamiento de Inteligencia Artificial (Google Gemini API). <strong>Estas imágenes no se almacenan de forma permanente</strong> en ningún servidor y se eliminan inmediatamente tras finalizar el proceso de extracción de datos.</li>
+            </ul>
+
+            <h2>2. Servicios de Terceros</h2>
+            <p>La Aplicación hace uso de servicios de terceros para el análisis inteligente de imágenes y la detección de textos:</p>
+            <ul>
+                <li><strong>Google Gemini API:</strong> Las imágenes de los tickets se envían temporalmente a esta API para convertirlas en datos de texto estructurados. Google procesa estos datos de conformidad con sus políticas de privacidad aplicables para desarrolladores de API.</li>
+            </ul>
+
+            <h2>3. Uso de la Información</h2>
+            <p>Utilizamos la información recopilada estrictamente para:</p>
+            <ul>
+                <li>Proporcionar la funcionalidad central de la aplicación (conversión de imágenes de tickets a listas de artículos de gastos).</li>
+                <li>Mantener estadísticas de gastos financieros organizados dentro de la aplicación móvil.</li>
+                <li>Permitir la exportación de tus datos a formato de hoja de cálculo Excel.</li>
+            </ul>
+
+            <h2>4. Seguridad de los Datos</h2>
+            <p>Implementamos medidas técnicas y organizativas de seguridad estándar de la industria para proteger tus datos contra el acceso no autorizado, la alteración o la divulgación, especialmente durante la transferencia de las imágenes a la API de análisis.</p>
+
+            <h2>5. Derechos de Control del Usuario</h2>
+            <p>Al estar todos los datos financieros almacenados de forma local en tu dispositivo móvil, tienes control total sobre ellos:</p>
+            <ul>
+                <li>Puedes eliminar registros individuales de tickets o artículos en cualquier momento desde la propia interfaz de la aplicación.</li>
+                <li>Si desinstalas la aplicación o borras sus datos desde los ajustes del sistema de Android, toda tu base de datos de compras y configuraciones se eliminará de forma permanente e irrecuperable.</li>
+            </ul>
+
+            <h2>6. Contacto</h2>
+            <p>Si tienes alguna duda o sugerencia sobre esta Política de Privacidad, puedes ponerte en contacto con nosotros a través de:</p>
+            <ul>
+                <li><strong>Correo electrónico:</strong> <a href="mailto:Tickra@wowgameres.com">Tickra@wowgameres.com</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            &copy; 2026 WOWGamerES. Todos los derechos reservados.
+        </div>
+    </div>
+</body>
+</html>
