@@ -420,7 +420,6 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Sal de curtido": 183955,
   "Salmón": 245573,
   "Salviargenta de montaña": 13465,
-  "Samsam dorado": 13467,
   "Sangre de Grom": 8846,
   "Sangrarita": 130172,
   "Sangre de Sargeras": 124124,

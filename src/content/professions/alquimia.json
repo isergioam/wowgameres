@@ -125,10 +125,10 @@
         "min": 285,
         "max": 295,
         "mats": {
-          "Samsam dorado": 28,
+          "Sansam dorado": 28,
           "Salviargenta de montaña": 14
         },
-        "description": "<strong>Alquimia 285 – 295</strong><br><span class=\"recipe-name\">Poción de sanación sublime &rarr;</span> 28 Samsam dorado, 14 Salviargenta de montaña."
+        "description": "<strong>Alquimia 285 – 295</strong><br><span class=\"recipe-name\">Poción de sanación sublime &rarr;</span> 28 Sansam dorado, 14 Salviargenta de montaña."
       },
       {
         "min": 295,
