@@ -750,7 +750,7 @@ const schemaJSON = {
 
   function updateTransform() {
     if (modalImg) {
-      modalImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+      modalImg.style.transform = `scale(${scale}) translate(${pointX / scale}px, ${pointY / scale}px)`;
       if (zoomIndicator) {
         zoomIndicator.textContent = `${Math.round(scale * 100)}%`;
       }
@@ -785,16 +785,11 @@ const schemaJSON = {
 
   imgWrapper?.addEventListener("wheel", (e) => {
     e.preventDefault();
-    const xs = (e.clientX - pointX) / scale;
-    const ys = (e.clientY - pointY) / scale;
     const delta = e.deltaY < 0 ? 1 : -1;
-    if (delta > 0) {
-      scale = Math.min(scale + 0.15, 4);
-    } else {
-      scale = Math.max(scale - 0.15, 0.5);
-    }
-    pointX = e.clientX - xs * scale;
-    pointY = e.clientY - ys * scale;
+    const newScale = delta > 0
+      ? Math.min(scale + 0.15, 4)
+      : Math.max(scale - 0.15, 0.5);
+    scale = newScale;
     updateTransform();
   }, { passive: false });
 
@@ -815,7 +810,7 @@ const schemaJSON = {
 
   window.addEventListener("mouseup", () => {
     isDragging = false;
-    if (imgWrapper) imgWrapper.style.cursor = "grab";
+    if (imgWrapper) (imgWrapper as HTMLElement).style.cursor = scale > 1 ? "grab" : "default";
   });
 
   let touchStartX = 0;

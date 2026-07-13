@@ -2546,14 +2546,17 @@ footer {
 }
 
 .image-modal .modal-content {
-  max-width: 95%;
-  max-height: 85vh;
+  max-width: 90vw;
+  max-height: 80vh;
   object-fit: contain;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-  transition: transform 0.1s ease-out;
+  transition: transform 0.08s ease-out;
   transform-origin: center center;
+  display: block;
+  user-select: none;
+  pointer-events: none;
 }
 
 .modal-instructions {
