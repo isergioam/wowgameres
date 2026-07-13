@@ -665,6 +665,11 @@ const schemaJSON = {
       progressPercentage.textContent = `${percentage}%`;
       progressBar.style.width = `${percentage}%`;
     }
+
+    // Refrescar los tooltips de Wowhead para que detecte los nuevos enlaces en el DOM
+    if (typeof (window as any).$WowheadPower !== "undefined" && (window as any).$WowheadPower.refreshLinks) {
+      (window as any).$WowheadPower.refreshLinks();
+    }
   }
 
   // Event Listeners

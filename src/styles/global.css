@@ -2614,3 +2614,16 @@ footer {
   z-index: 1;
 }
 
+/* Override Wowhead quality colors in Light Mode to ensure proper contrast/readability */
+html:not(.dark-mode) a.q1,
+html:not(.dark-mode) a.q1:visited,
+html:not(.dark-mode) .wowhead-tooltip-link.q1 {
+  color: var(--text-dark) !important;
+}
+
+html:not(.dark-mode) a.q0,
+html:not(.dark-mode) a.q0:visited,
+html:not(.dark-mode) .wowhead-tooltip-link.q0 {
+  color: #666666 !important;
+}
+
