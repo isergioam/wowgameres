@@ -501,7 +501,10 @@ const schemaJSON = {
   </div>
 </BaseLayout>
 
-<script define:vars={{ wowheadIds: WOWHEAD_IDS }}>
+<!-- Inyectamos el diccionario de IDs de Wowhead como variable global (is:inline preserva TS en el script principal) -->
+<script is:inline set:html={`window.__WOWHEAD_IDS__ = ${JSON.stringify(WOWHEAD_IDS)};`}></script>
+
+<script>
   // Elementos DOM
   const slider = document.getElementById("levelSlider") as HTMLInputElement;
   const display = document.getElementById("currentLevelDisplay");
@@ -626,7 +629,8 @@ const schemaJSON = {
       }
 
       // Generar link de Wowhead: con ID real si está en el diccionario, con búsqueda si no
-      const itemId = (wowheadIds as Record<string, number>)[item.name];
+      const wowIds = (window as any).__WOWHEAD_IDS__ as Record<string, number> || {};
+      const itemId = wowIds[item.name];
       const wowheadHref = itemId
         ? `https://es.wowhead.com/item=${itemId}`
         : `https://es.wowhead.com/search?q=${encodeURIComponent(item.name)}`;
