@@ -405,7 +405,7 @@ const schemaJSON = {
                   style="margin-top: 15px;"
                 >
                   {(() => {
-                    const assetPath = `/src/assets${step.routeImage}`;
+                    const assetPath = `/src/assets${step.routeImage}`.replace(/\.png$/, '.webp');
                     const imgAsset = allImages[assetPath];
                     
                     // Extraemos el título del paso para el overlay

@@ -13,7 +13,7 @@ const { type = 'horizontal' } = Astro.props;
 const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
 ---
 
-<div class={`affiliate-container ${type} reveal`}>
+<div class={`affiliate-container ${type}`}>
   <a href={AFFILIATE_URL} target="_blank" rel="noopener noreferrer" class="affiliate-card">
     <div class="affiliate-content">
       <div class="brand-tag">Oferta Especial</div>
@@ -37,6 +37,8 @@ const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 5;
   }
 
   .affiliate-card {

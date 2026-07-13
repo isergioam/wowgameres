@@ -6,20 +6,35 @@ import AffiliateBanner from "../components/AffiliateBanner.astro";
 import newsData from "../content/news/latest.json";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/Cabecera_WOWGamerES.webp";
+import silvermoonLandscape from "../assets/images/silvermoon_landscape.webp";
+
+// Importación de imágenes de las expansiones
+import imgVanilla from "../assets/images/expansions/vanilla.webp";
+import imgTbc from "../assets/images/expansions/tbc.webp";
+import imgWotlk from "../assets/images/expansions/wotlk.webp";
+import imgCata from "../assets/images/expansions/cata.webp";
+import imgMop from "../assets/images/expansions/mop.webp";
+import imgWod from "../assets/images/expansions/wod.webp";
+import imgLegion from "../assets/images/expansions/legion.webp";
+import imgBfa from "../assets/images/expansions/bfa.webp";
+import imgSl from "../assets/images/expansions/sl.webp";
+import imgDf from "../assets/images/expansions/df.webp";
+import imgTww from "../assets/images/expansions/tww.webp";
+import imgMidnight from "../assets/images/expansions/midnight.webp";
 
 const expansions = [
-  { id: "vanilla", name: "Vanilla" },
-  { id: "tbc", name: "Terrallende" },
-  { id: "wotlk", name: "Rasganorte" },
-  { id: "cata", name: "Cataclismo" },
-  { id: "mop", name: "Pandaria" },
-  { id: "wod", name: "Draenor" },
-  { id: "legion", name: "Legión" },
-  { id: "bfa", name: "Battle for Azeroth" },
-  { id: "sl", name: "Shadowlands" },
-  { id: "df", name: "Dragonflight" },
-  { id: "tww", name: "The War Within" },
-  { id: "midnight", name: "Midnight" },
+  { id: "midnight", name: "Midnight", class: "exp-midnight", subtitle: "Sunwell Gold/Void", image: imgMidnight, color: "#bb9fff", glow: "rgba(187, 159, 255, 0.4)" },
+  { id: "tww", name: "The War Within", class: "exp-tww", subtitle: "Void Purple", image: imgTww, color: "#a330c9", glow: "rgba(163, 48, 201, 0.4)" },
+  { id: "df", name: "Dragonflight", class: "exp-df", subtitle: "Aspect Gold", image: imgDf, color: "#ffd700", glow: "rgba(255, 215, 0, 0.4)" },
+  { id: "sl", name: "Shadowlands", class: "exp-sl", subtitle: "Kyrian Blue", image: imgSl, color: "#48d1cc", glow: "rgba(72, 209, 204, 0.4)" },
+  { id: "bfa", name: "Battle for Azeroth", class: "exp-bfa", subtitle: "Zandalari Gold/Navy", image: imgBfa, color: "#ffd700", glow: "rgba(255, 215, 0, 0.4)" },
+  { id: "legion", name: "Legión", class: "exp-legion", subtitle: "Fel Green", image: imgLegion, color: "#32cd32", glow: "rgba(50, 205, 50, 0.4)" },
+  { id: "wod", name: "Draenor", class: "exp-wod", subtitle: "Iron Horde Orange", image: imgWod, color: "#b22222", glow: "rgba(178, 34, 34, 0.4)" },
+  { id: "mop", name: "Pandaria", class: "exp-mop", subtitle: "Jade Green", image: imgMop, color: "#2e8b57", glow: "rgba(46, 139, 87, 0.4)" },
+  { id: "cata", name: "Cataclismo", class: "exp-cata", subtitle: "Magma Orange", image: imgCata, color: "#ff4500", glow: "rgba(255, 69, 0, 0.4)" },
+  { id: "wotlk", name: "Rasganorte", class: "exp-wotlk", subtitle: "Ice Blue", image: imgWotlk, color: "#00b4d8", glow: "rgba(0, 180, 216, 0.4)" },
+  { id: "tbc", name: "Terrallende", class: "exp-tbc", subtitle: "Outland Purple", image: imgTbc, color: "#a330c9", glow: "rgba(163, 48, 201, 0.4)" },
+  { id: "vanilla", name: "Vanilla", class: "exp-vanilla", subtitle: "Classic Bronze", image: imgVanilla, color: "#c48f5a", glow: "rgba(196, 143, 90, 0.4)" },
 ];
 
 const latestNews = newsData.slice(0, 3);
@@ -29,63 +44,62 @@ const description =
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="hero-section reveal">
-    <div class="hero-background">
-      <Image 
-        src={heroImage} 
-        alt="Fondo de cabecera WOWGamerES" 
-        width={1920} 
-        height={1080} 
-        format="avif"
-        quality="mid"
-        loading="eager"
-        fetchpriority="high"
-        class="hero-img-asset"
-      />
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 id="profesiones" data-i18n="title_professions">
-        Guías de Profesiones World of Warcraft: Paso a Paso
-      </h1>
-      <p class="hero-description">
-        Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para dominar las <strong>profesiones de WoW</strong>. Nuestra misión es ayudarte a alcanzar el nivel máximo de forma rápida, eficiente y optimizando cada moneda de oro en todas las expansiones, desde Vanilla hasta Midnight.
-      </p>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-value">12</span>
-          <span class="stat-label">Expansiones</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value">100%</span>
-          <span class="stat-label">Actualizado</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value">Free</span>
-          <span class="stat-label">Siempre gratis</span>
-        </div>
+  <section class="hero-section">
+      <div class="hero-background">
+        <Image 
+          src={silvermoonLandscape} 
+          alt="Ciudad de Lunargenta - Expansión Actual Midnight" 
+          width={1920} 
+          height={1080} 
+          format="avif"
+          quality="mid"
+          loading="eager"
+          fetchpriority="high"
+          class="hero-img-asset"
+        />
       </div>
-    </div>
-  </section>
-
-  <main class="content">
-    <!-- Expansiones -->
-    <section id="expansiones" class="section">
-      <div style="margin-bottom: 25px; text-align: center;">
-        <h2 data-i18n="title_explore">
-          Comienza tu aventura: Elige una Expansión
-        </h2>
-        <p style="opacity: 0.8; margin-top: 10px;">
-          Selecciona la era temporal en la que deseas mejorar tus habilidades de
-          artesanía o recolección.
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span data-i18n="hero_badge_text">Actualizado: Midnight (12.0.7)</span>
+        </div>
+        <h1 id="profesiones" data-i18n="title_professions" class="gradient-title">
+          Guías de Profesiones<br>World of Warcraft
+        </h1>
+        <p class="hero-description">
+          Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para dominar las <strong>profesiones de WoW</strong>. Te ayudamos a alcanzar el nivel máximo de forma rápida, eficiente y optimizando cada moneda de oro en todas las expansiones.
         </p>
       </div>
+    </section>
 
+  <main class="content">
+    <!-- Expansiones (Grid Directo) -->
+    <section id="expansiones" class="section" style="margin-top: -60px; padding-top: 0; position: relative; z-index: 5;">
       <div class="expansiones">
         {
           expansions.map((exp) => (
             <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
-              <div class="card-expansion">{exp.name}</div>
+              <div 
+                class={`card-expansion ${exp.class}`}
+                style={`
+                  --glow-color: ${exp.color};
+                  --glow-shadow: ${exp.glow};
+                `}
+              >
+                <Image 
+                  src={exp.image} 
+                  alt={exp.name} 
+                  width={220}
+                  height={275}
+                  quality={80}
+                  format="webp"
+                  loading="lazy"
+                  class="card-expansion-img"
+                />
+                <div class="card-expansion-overlay"></div>
+                <span class="exp-name" style="position: relative; z-index: 2;">{exp.name}</span>
+              </div>
             </a>
           ))
         }
@@ -97,16 +111,18 @@ const description =
     {
       latestNews.length > 0 && (
         <section
-          class="section news-preview-section reveal"
-          style="margin-top: 50px;"
+          id="noticias"
+          class="section news-preview-section"
+          style="margin-top: 30px; padding-top: 40px; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
         >
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
-            <h2 style="border: none; padding: 0; margin: 0;">
+            <h2 class="news-section-title" style="border: none; padding: 0; margin: 0;">
               Últimas Noticias de Azeroth
             </h2>
             <a
               href="/noticias/"
-              style="color: var(--primary-purple); font-weight: 600; font-size: 0.9rem;"
+              class="news-view-all-link"
+              style="font-weight: 600; font-size: 0.9rem;"
             >
               Ver todas &rarr;
             </a>
@@ -127,49 +143,175 @@ const description =
       )
     }
 
-    <!-- Sección Cinemática Informativa (Minimalista) -->
-    <section class="cinematic-info-section reveal">
-      <div class="cinematic-bg">
-        <Image src={heroImage} alt="Cinematic Background" class="bg-img" />
-        <div class="cinematic-overlay"></div>
-      </div>
-      <div class="cinematic-container">
-        <header class="cinematic-header">
-          <h2>¿Por qué utilizar nuestras guías?</h2>
-          <div class="accent-line"></div>
-        </header>
-        <div class="cinematic-grid">
-          <div class="cinematic-item">
-            <h3>Rutas Optimizadas</h3>
-            <p>Estructuramos cada tramo seleccionando las recetas más eficientes y económicas de la casa de subastas.</p>
-          </div>
-          <div class="cinematic-item">
-            <h3>Progreso Real</h3>
-            <p>Herramientas interactivas integradas para tachar materiales y guardar tu avance automáticamente.</p>
-          </div>
-          <div class="cinematic-item">
-            <h3>Siempre Al Día</h3>
-            <p>Revisamos cada parche y expansión para asegurar que nuestras rutas nunca queden obsoletas.</p>
-          </div>
+  </main>
+
+  <!-- Sección Cinemática Informativa (Minimalista) -->
+  <section class="cinematic-info-section">
+    <div class="cinematic-bg">
+      <Image src={heroImage} alt="Cinematic Background" class="bg-img" />
+      <div class="cinematic-overlay"></div>
+    </div>
+    <div class="cinematic-container">
+      <header class="cinematic-header">
+        <h2>¿Por qué utilizar nuestras guías?</h2>
+        <div class="accent-line"></div>
+      </header>
+      <div class="cinematic-grid">
+        <div class="cinematic-item">
+          <h3>Rutas Optimizadas</h3>
+          <p>Estructuramos cada tramo seleccionando las recetas más eficientes y económicas de la casa de subastas.</p>
+        </div>
+        <div class="cinematic-item">
+          <h3>Progreso Real</h3>
+          <p>Herramientas interactivas integradas para tachar materiales y guardar tu avance automáticamente.</p>
+        </div>
+        <div class="cinematic-item">
+          <h3>Siempre Al Día</h3>
+          <p>Revisamos cada parche y expansión para asegurar que nuestras rutas nunca queden obsoletas.</p>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
+  .news-section-title {
+    color: #bb9fff !important;
+  }
+  .news-view-all-link {
+    color: #bb9fff !important;
+    transition: color 0.3s ease;
+  }
+  .news-view-all-link:hover {
+    color: #d1a3ff !important;
+    text-shadow: 0 0 10px rgba(209, 163, 255, 0.4);
+  }
+
+  /* Override global grid: force 6 columns = 2 rows for 12 expansions */
+  .expansiones {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  @media (max-width: 1024px) {
+    .expansiones {
+      grid-template-columns: repeat(4, 1fr) !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .expansiones {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  .card-expansion {
+    position: relative;
+    z-index: 1;
+    color: #ffffff !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
+    border: 1.5px solid var(--glow-color, rgba(255, 255, 255, 0.12)) !important;
+    box-shadow: 0 4px 15px var(--glow-shadow, rgba(0,0,0,0.15)), inset 0 -40px 50px rgba(0, 0, 0, 0.8) !important;
+    aspect-ratio: 3.2 / 4;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align elements to the bottom like in mockup */
+    gap: 4px;
+    padding: 20px 15px !important;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+  }
+
+  .card-expansion-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .card-expansion:hover .card-expansion-img {
+    transform: scale(1.1);
+  }
+
+  .card-expansion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(10, 5, 25, 0.05) 0%, rgba(10, 5, 25, 0.3) 50%, rgba(10, 5, 25, 0.95) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .card-expansion span.exp-name {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 2px;
+  }
+
+  .card-expansion span.exp-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: center;
+  }
+
+  .card-expansion:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 10px 25px var(--glow-shadow), inset 0 -45px 50px rgba(0, 0, 0, 0.9) !important;
+  }
+
   .hero-section {
     position: relative;
-    height: 60vh;
-    min-height: 500px;
+    height: auto;
+    min-height: 70vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    overflow: hidden;
-    margin-top: calc(-1 * var(--header-height-desktop));
-    padding-top: var(--header-height-desktop);
+    overflow: visible;
+    margin-top: 0 !important;
+    padding: 70px 20px 80px;
+  }
+
+  .hero-content-simple {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .view-all-link-container {
+    margin-top: 6px;
+  }
+
+  .view-all-link {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .view-all-link:hover {
+    color: #bb9fff !important;
   }
 
   .hero-background {
@@ -177,8 +319,8 @@ const description =
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: -2;
+    height: 170%; /* Covers both card rows + separator margin */
+    z-index: 1;
     overflow: hidden;
   }
 
@@ -186,17 +328,8 @@ const description =
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.6);
-    animation: slowZoom 20s infinite alternate ease-in-out;
-  }
-
-  @keyframes slowZoom {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.15);
-    }
+    object-position: center 30%;
+    filter: brightness(1.0) saturate(1.1);
   }
 
   .hero-overlay {
@@ -204,43 +337,157 @@ const description =
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 250%;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.2) 40%,
-      rgba(10, 5, 25, 0.7) 70%,
-      #0a0519 100%
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.45) 18%,
+      rgba(0, 0, 0, 0.1) 22%,
+      rgba(10, 5, 25, 0.6) 30%,
+      rgba(10, 5, 25, 0.97) 36%,
+      rgba(10, 5, 25, 1) 40%,
+      rgba(10, 5, 25, 1) 100%
     );
-    z-index: -1;
+    z-index: 3;
   }
 
   .dark-mode .hero-overlay {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      #000000 100%
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.05) 18%,
+      rgba(6, 4, 13, 0.7) 28%,
+      rgba(6, 4, 13, 0.98) 34%,
+      rgba(6, 4, 13, 1) 38%,
+      rgba(6, 4, 13, 1) 100%
     );
   }
 
   .hero-content {
+    position: relative;
     max-width: 900px;
     padding: 0 20px;
-    z-index: 1;
+    z-index: 10;
     animation: fadeInUp 1s ease-out;
   }
 
-  .hero-section h1 {
-    font-size: 3.5rem;
+  .gradient-title {
+    font-size: 3.8rem;
     font-weight: 900;
-    color: white;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: -1.5px;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #FFE07D 0%, #D1A3FF 50%, #9F62FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
     border: none;
     padding: 0;
     line-height: 1.1;
   }
+
+
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(187, 159, 255, 0.1);
+    border: 1px solid rgba(187, 159, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #bb9fff;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
+
+
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #39ff14;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #39ff14;
+    animation: badgePulse 2s infinite;
+  }
+
+  @keyframes badgePulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 8px rgba(57, 255, 20, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(57, 255, 20, 0);
+    }
+  }
+
+  .hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    color: white !important;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px 32px;
+    border-radius: 100px;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.7);
+    background: linear-gradient(135deg, #b55fe6 0%, #8b4bfb 100%);
+  }
+
+  .btn-primary svg {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(13, 10, 30, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    color: white !important;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 13px 32px; /* Adjusted padding to compensate for 2px border */
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-3px);
+    background: rgba(13, 10, 30, 0.7);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  }
+
+
 
   .hero-description {
     font-size: 1.25rem;
@@ -254,30 +501,46 @@ const description =
   }
 
   .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 650px;
+    margin: 40px auto 0;
   }
 
-  .stat-item {
-    display: flex;
-    flex-direction: column;
+  .stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px 20px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(187, 159, 255, 0.25);
+    box-shadow: 0 10px 30px rgba(187, 159, 255, 0.08);
   }
 
   .stat-value {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #bb9fff; /* Usamos el púrpura claro siempre aquí para contraste */
-    text-shadow: 0 0 15px rgba(187, 159, 255, 0.3);
+    color: #bb9fff;
+    text-shadow: 0 0 15px rgba(187, 159, 255, 0.2);
+    display: block;
+    margin-bottom: 4px;
   }
 
   .stat-label {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
   }
+
+
 
   @keyframes fadeInUp {
     from {
@@ -294,20 +557,18 @@ const description =
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
-  /* --- CINEMATIC INFO SECTION --- */
   .cinematic-info-section {
     position: relative;
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding: 80px 0;
+    width: 100%;
+    padding: 80px 20px;
     color: white;
     overflow: hidden;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    z-index: 5;
   }
 
   .cinematic-bg {
@@ -324,6 +585,8 @@ const description =
     height: 100%;
     object-fit: cover;
     filter: brightness(0.45) saturate(0.7);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
   }
 
   .cinematic-overlay {
@@ -333,10 +596,10 @@ const description =
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, 
-      #000 0%, 
+      transparent 0%,
       transparent 20%, 
-      transparent 80%, 
-      #000 100%
+      transparent 78%, 
+      rgba(10, 5, 25, 0.95) 100%
     );
   }
 
@@ -404,19 +667,19 @@ const description =
   /* --- LIGHT MODE ADAPTATION --- */
   html:not(.dark-mode) .cinematic-info-section {
     color: #1a1a2e;
-    background-color: #f9f7ff;
+    background-color: transparent;
   }
 
   html:not(.dark-mode) .cinematic-bg .bg-img {
-    filter: brightness(1.7) saturate(0.4) opacity(0.2);
+    filter: brightness(1.7) saturate(0.4) opacity(0.25);
   }
 
   html:not(.dark-mode) .cinematic-overlay {
     background: linear-gradient(to bottom, 
-      #ffffff 0%, 
+      transparent 0%, 
       transparent 20%, 
       transparent 80%, 
-      #ffffff 100%
+      rgba(255, 255, 255, 0.85) 100%
     );
   }
 

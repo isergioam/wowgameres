@@ -57,7 +57,7 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     
     background: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 0;
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
     height: 100%;
@@ -66,11 +66,14 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
   }
 
   :global(.dark-mode) .news-card {
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(187, 159, 255, 0.15);
     --card-title: #ffffff;
     --card-desc: rgba(255, 255, 255, 0.7);
     --card-accent: #bb9fff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
   .news-card:hover {
@@ -118,7 +121,7 @@ const formattedDate = new Date(date).toLocaleDateString('es-ES', {
     font-size: 0.75rem;
     font-weight: bold;
     padding: 4px 10px;
-    border-radius: 0;
+    border-radius: 6px;
     text-transform: uppercase;
   }
 

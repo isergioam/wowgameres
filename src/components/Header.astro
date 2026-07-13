@@ -7,8 +7,8 @@ import logoBlack from "../assets/images/WOWGamerES_Logo_black.webp";
     <div class="header-top-row">
         <section class="logo">
             <a href="/">
-                <Image src={logoWhite} id="logo-white" alt="WOWGamerES Logo" width={400} height={100} format="avif" loading="eager" class="logo-img logo-white" />
-                <Image src={logoBlack} id="logo-black" alt="WOWGamerES Logo" width={400} height={100} format="avif" loading="eager" class="logo-img logo-black" />
+                <Image src={logoWhite} id="logo-white" alt="WOWGamerES Logo" width={180} height={45} format="avif" loading="eager" class="logo-img logo-white" />
+                <Image src={logoBlack} id="logo-black" alt="WOWGamerES Logo" width={180} height={45} format="avif" loading="eager" class="logo-img logo-black" />
             </a>
         </section>
 
@@ -93,6 +93,20 @@ import logoBlack from "../assets/images/WOWGamerES_Logo_black.webp";
 
     // Inicialización
     applyTheme(document.documentElement.classList.contains('dark-mode'));
+
+    // Scroll listener para redimensionar la cabecera flotante
+    const header = document.querySelector('.main-header');
+    if (header) {
+      const handleScroll = () => {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Check inicial
+    }
 
     if (toggle) {
       toggle.addEventListener('click', () => {

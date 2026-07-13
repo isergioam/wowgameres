@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import { Image } from "astro:assets";
+import globalBgImage from "../assets/images/cosmic_nebula_bg_v2.webp";
 
 interface Props {
 	title?: string;
@@ -53,7 +55,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<!-- Google Fonts: Inter -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 
 		<!-- Umami Analytics (Private & Privacy-focused) -->
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="017a7529-4eed-4f91-a881-841c908f88c2"></script>
@@ -71,8 +74,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		</script>
 	</head>
 	<body>
+		<!-- Fondo cósmico animado en el fondo fondo (Detrás de todo) -->
+		<div class="global-animated-bg">
+			<Image 
+				src={globalBgImage} 
+				alt="" 
+				quality="high" 
+				format="webp"
+				widths={[640, 1024, 2048]}
+				sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 2048px"
+			/>
+		</div>
 		<Header />
-		<slot />
+		<div class="main-container-box">
+			<slot />
+		</div>
 		<Footer />
 
 		<!-- Scripts de utilidad -->
