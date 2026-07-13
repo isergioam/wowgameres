@@ -416,7 +416,7 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Rubí estrella": 7910,
   "Rubí vivo": 23436,
   "Saeta de Nagrand": 109125,
-  "Sal": 131912,
+  "Sal": 4289,
   "Sal de curtido": 183955,
   "Salmón": 245573,
   "Salviargenta de montaña": 13465,
