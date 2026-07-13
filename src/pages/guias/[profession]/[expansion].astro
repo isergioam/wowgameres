@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButtons from "../../../components/ShareButtons.astro";
 import AffiliateBanner from "../../../components/AffiliateBanner.astro";
+import { WOWHEAD_IDS } from "../../../data/wowheadIds";
 
 
 interface Step {
@@ -500,7 +501,7 @@ const schemaJSON = {
   </div>
 </BaseLayout>
 
-<script>
+<script define:vars={{ wowheadIds: WOWHEAD_IDS }}>
   // Elementos DOM
   const slider = document.getElementById("levelSlider") as HTMLInputElement;
   const display = document.getElementById("currentLevelDisplay");
@@ -624,9 +625,15 @@ const schemaJSON = {
         tr.style.textDecoration = "line-through";
       }
 
+      // Generar link de Wowhead: con ID real si está en el diccionario, con búsqueda si no
+      const itemId = (wowheadIds as Record<string, number>)[item.name];
+      const wowheadHref = itemId
+        ? `https://es.wowhead.com/item=${itemId}`
+        : `https://es.wowhead.com/search?q=${encodeURIComponent(item.name)}`;
+
       tr.innerHTML = `
         <td style="padding: 5px;">
-          <a href="https://es.wowhead.com/search?q=${encodeURIComponent(item.name)}" 
+          <a href="${wowheadHref}" 
              target="_blank" 
              rel="noopener noreferrer" 
              class="wowhead-tooltip-link" 
