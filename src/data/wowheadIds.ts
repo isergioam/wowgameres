@@ -99,7 +99,7 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Cuero desolado": 172089,
   "Cuero desolado pesado": 172096,
   "Cuero endiablado": 151566,
-  "Cuero exótico": 79255,
+  "Cuero resistente exótico": 194076,
   "Cuero grueso": 4304,
   "Cuero denso": 4304,
   "Cuero elástico": 238511,

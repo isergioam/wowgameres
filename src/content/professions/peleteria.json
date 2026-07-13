@@ -461,7 +461,7 @@
         "min": 1,
         "max": 11,
         "mats": {
-          "Cuero exótico": 40
+          "Cuero resistente exótico": 40
         },
         "description": "<strong>Peletería 1 – 11</strong><br>Refuerzo para armadura de sha."
       },
@@ -469,7 +469,7 @@
         "min": 11,
         "max": 30,
         "mats": {
-          "Cuero exótico": 80
+          "Cuero resistente exótico": 80
         },
         "description": "<strong>Peletería 11 – 30</strong><br>Brazales de pellejo de niebla."
       },
@@ -477,7 +477,7 @@
         "min": 30,
         "max": 36,
         "mats": {
-          "Cuero exótico": 48
+          "Cuero resistente exótico": 48
         },
         "description": "<strong>Peletería 30 – 36</strong><br>Guantes de pellejo de niebla."
       },
@@ -485,7 +485,7 @@
         "min": 36,
         "max": 51,
         "mats": {
-          "Cuero exótico": 150
+          "Cuero resistente exótico": 150
         },
         "description": "<strong>Peletería 36 – 51</strong><br>Coselete de pellejo de niebla."
       },
@@ -493,7 +493,7 @@
         "min": 51,
         "max": 75,
         "mats": {
-          "Cuero exótico": 360,
+          "Cuero resistente exótico": 360,
           "Espíritu de armonía": 1
         },
         "description": "<strong>Peletería 51 – 75</strong><br>Brazales de cuero de contendiente."
