@@ -140,7 +140,7 @@
         "min": 1,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Herboristería 1 – 100: Islas Quebradas</div>Busca <strong>Fjarnskaggl y Rosa de luz estelar</strong>.",
+        "description": "<div class=\"step-title\">Herboristería 1 – 100: Islas Quebradas</div>Busca <strong>Fjarnskaggl y Rosa luz estelar</strong>.",
         "routeImage": "/images/routes/generic_herbalism_route.png"
       }
     ]
