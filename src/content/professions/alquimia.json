@@ -135,9 +135,9 @@
         "max": 300,
         "mats": {
           "Setelo": 10,
-          "Flor de plaga": 10
+          "Musgopena": 10
         },
-        "description": "<strong>Alquimia 295 – 300</strong><br><span class=\"recipe-name\">Poción de sanación sublime &rarr;</span> 10 Setelo, 10 Flor de plaga."
+        "description": "<strong>Alquimia 295 – 300</strong><br><span class=\"recipe-name\">Poción de purificación &rarr;</span> 10 Setelo, 10 Musgopena."
       }
     ]
   },
