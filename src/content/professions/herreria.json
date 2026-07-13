@@ -806,59 +806,59 @@
         "min": 1,
         "max": 10,
         "mats": {
-          "Mena de draconita": 60,
+          "Mena de draconio": 60,
           "Fundente primigenio": 20
         },
-        "description": "<strong>Herrería 1 – 10</strong><br><span class=\"recipe-name\">Protección para las manos de explorador &rarr;</span> 60 Mena de draconita, 20 Fundente primigenio."
+        "description": "<strong>Herrería 1 – 10</strong><br><span class=\"recipe-name\">Protección para las manos de explorador &rarr;</span> 60 Mena de draconio, 20 Fundente primigenio."
       },
       {
         "min": 10,
         "max": 20,
         "mats": {
-          "Mena de draconita": 80,
+          "Mena de draconio": 80,
           "Fundente primigenio": 30
         },
-        "description": "<strong>Herrería 10 – 20</strong><br><span class=\"recipe-name\">Botas de explorador &rarr;</span> 80 Mena de draconita, 30 Fundente primigenio."
+        "description": "<strong>Herrería 10 – 20</strong><br><span class=\"recipe-name\">Botas de explorador &rarr;</span> 80 Mena de draconio, 30 Fundente primigenio."
       },
       {
         "min": 20,
         "max": 35,
         "mats": {
-          "Mena de draconita": 150,
+          "Mena de draconio": 150,
           "Fundente primigenio": 45
         },
-        "description": "<strong>Herrería 20 – 35</strong><br><span class=\"recipe-name\">Grebas de explorador &rarr;</span> 150 Mena de draconita, 45 Fundente primigenio."
+        "description": "<strong>Herrería 20 – 35</strong><br><span class=\"recipe-name\">Grebas de explorador &rarr;</span> 150 Mena de draconio, 45 Fundente primigenio."
       },
       {
         "min": 35,
         "max": 50,
         "mats": {
-          "Mena de draconita": 180,
+          "Mena de draconio": 180,
           "Fundente primigenio": 60,
           "Tierra despierta": 15
         },
-        "description": "<strong>Herrería 35 – 50</strong><br><span class=\"recipe-name\">Coraza de explorador &rarr;</span> 180 Mena de draconita, 60 Fundente primigenio, 15 Tierra despierta."
+        "description": "<strong>Herrería 35 – 50</strong><br><span class=\"recipe-name\">Coraza de explorador &rarr;</span> 180 Mena de draconio, 60 Fundente primigenio, 15 Tierra despierta."
       },
       {
         "min": 50,
         "max": 75,
         "mats": {
-          "Mena de draconita": 250,
+          "Mena de draconio": 250,
           "Fundente primigenio": 100,
           "Fuego despierto": 25
         },
-        "description": "<strong>Herrería 50 – 75</strong><br><span class=\"recipe-name\">Hacha de guerra de draconita &rarr;</span> 250 Mena de draconita, 100 Fundente primigenio, 25 Fuego despierto."
+        "description": "<strong>Herrería 50 – 75</strong><br><span class=\"recipe-name\">Hacha de guerra de draconio &rarr;</span> 250 Mena de draconio, 100 Fundente primigenio, 25 Fuego despierto."
       },
       {
         "min": 75,
         "max": 100,
         "mats": {
           "Mena de khaz'gorite": 100,
-          "Mena de draconita": 150,
+          "Mena de draconio": 150,
           "Fundente primigenio": 50,
           "Caos primigenio": 40
         },
-        "description": "<strong>Herrería 75 – 100</strong><br><span class=\"recipe-name\">Yelmo de forja abisal &rarr;</span> 100 Mena de khaz'gorite, 150 Mena de draconita, 40 Caos primigenio."
+        "description": "<strong>Herrería 75 – 100</strong><br><span class=\"recipe-name\">Yelmo de forja abisal &rarr;</span> 100 Mena de khaz'gorite, 150 Mena de draconio, 40 Caos primigenio."
       }
     ]
   },

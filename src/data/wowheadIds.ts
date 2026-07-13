@@ -238,7 +238,6 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Martillo de herrero": 5956,
   "Mena de cobre": 2770,
   "Mena de cobre refulgente": 237359,
-  "Mena de draconita": 190396,
   "Mena de eletio": 171833,
   "Mena de estaño": 2771,
   "Mena de estaño umbrío": 237362,
