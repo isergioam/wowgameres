@@ -2461,55 +2461,125 @@ footer {
   text-shadow: 0 0 15px rgba(187, 159, 255, 0.8);
 }
 
-/* Image Modal / Lightbox */
+/* Image Modal / Lightbox Premium with Zoom & Pan controls */
 .image-modal {
   display: none;
   position: fixed;
   z-index: 10000;
-  padding-top: 60px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(10, 5, 25, 0.95);
+  background-color: rgba(10, 5, 25, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header {
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(13, 10, 30, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  z-index: 10002;
+}
+
+.modal-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  background: var(--primary-purple);
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 15px rgba(187, 159, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.zoom-indicator {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  min-width: 50px;
+  text-align: center;
+}
+
+.modal-viewport {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  overflow: hidden;
 }
 
 .image-modal .modal-content {
-  margin: auto;
-  display: block;
-  width: 90%;
-  max-width: 1200px;
+  max-width: 95%;
+  max-height: 85vh;
+  object-fit: contain;
   border-radius: 8px;
-  border: 2px solid var(--primary-purple);
-  box-shadow: 0 0 30px rgba(187, 159, 255, 0.3);
-  animation: zoomIn 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: transform 0.1s ease-out;
+  transform-origin: center center;
 }
 
-@keyframes zoomIn {
-  from {transform: scale(0.9); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
+.modal-instructions {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background: rgba(13, 10, 30, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.5px;
+  z-index: 10002;
 }
 
 .close-modal {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 45px;
-  font-weight: bold;
-  transition: 0.3s;
+  position: static;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1;
   cursor: pointer;
-  z-index: 10001;
+  transition: color 0.2s ease;
 }
 
-.close-modal:hover,
-.close-modal:focus {
-  color: var(--primary-purple);
-  text-decoration: none;
-  cursor: pointer;
+.close-modal:hover {
+  color: #ff4a4a;
 }
 
 /* Force global font-family on all imported/injected news content to maintain visual consistency */
@@ -2520,5 +2590,24 @@ footer {
 .news-card,
 .news-card * {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Transiciones de Vista Circulares de Premium Theme Switch */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark-mode::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark-mode::view-transition-new(root) {
+  z-index: 1;
 }
 

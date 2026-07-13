@@ -58,6 +58,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 
+		<!-- Soporte PWA (Progressive Web App) -->
+		<link rel="manifest" href="/manifest.json" />
+		<meta name="theme-color" content="#7c3aed" />
+		<link rel="apple-touch-icon" href="/favicon.svg" />
+
+		<!-- Integración de Tooltips de Wowhead -->
+		<script is:inline>
+			const whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: false };
+		</script>
+		<script src="https://wowhead.com/widgets/power.js" defer></script>
+
 		<!-- Umami Analytics (Private & Privacy-focused) -->
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="017a7529-4eed-4f91-a881-841c908f88c2"></script>
 
@@ -94,13 +105,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<!-- Scripts de utilidad -->
 		<script>
   (function() {
-    // 1. ELIMINAR SERVICE WORKERS EXISTENTES (Crucial para desactivar el modo offline en navegadores de usuarios)
+    // 1. REGISTRAR SERVICE WORKER PARA PWA (Passthrough seguro para publicidad)
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        for(let registration of registrations) {
-          registration.unregister();
-          console.log('Service Worker antiguo desinstalado para asegurar visualización de anuncios.');
-        }
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => console.log('PWA Service Worker registrado:', reg.scope))
+          .catch((err) => console.error('Error al registrar PWA Service Worker:', err));
       });
     }
 

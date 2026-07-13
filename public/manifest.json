@@ -1,0 +1,23 @@
+{
+  "name": "WOWGamerES - Guías de Profesiones WoW",
+  "short_name": "WOWGamerES",
+  "description": "Las mejores guías de profesiones, recetas y rutas de recolección de World of Warcraft.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06040d",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16 32x32 48x48"
+    }
+  ]
+}

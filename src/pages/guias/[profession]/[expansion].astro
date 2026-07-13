@@ -300,8 +300,19 @@ const schemaJSON = {
         </div>
       </div>
       <div id="materialsContent" class="section-content">
+        <!-- Barra de Progreso de Recolección Dinámica -->
+        <div class="farming-progress-container" style="margin-bottom: 25px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 16px; border-radius: 12px; backdrop-filter: blur(5px);">
+          <div class="farming-progress-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-color); letter-spacing: 0.3px;">Progreso de Recolección</span>
+            <span id="farmingProgressPercentage" style="font-size: 0.95rem; font-weight: 800; color: var(--primary-purple); text-shadow: 0 0 10px rgba(187, 159, 255, 0.2);">0%</span>
+          </div>
+          <div class="farming-progress-track" style="width: 100%; height: 8px; background: rgba(0, 0, 0, 0.15); border-radius: 10px; overflow: hidden; position: relative;">
+            <div id="farmingProgressBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #bb9fff 0%, #a855f7 100%); border-radius: 10px; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px rgba(187, 159, 255, 0.3);"></div>
+          </div>
+        </div>
+
         <p class="interaction-hint">
-          * Haz clic para marcar los materiales que ya tengas.
+          * Haz clic para marcar los materiales que ya tengas. Haz clic en el nombre del material para buscarlo en Wowhead.
         </p>
         <table
           id="materialsTable"
@@ -461,10 +472,31 @@ const schemaJSON = {
     </section>
   </main>
 
-  <!-- Modal para Zoom de Imágenes -->
+  <!-- Modal para Zoom de Imágenes con Controles -->
   <div id="imageModal" class="image-modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="imgModalDisplay" />
+    <div class="modal-header">
+      <span class="close-modal">&times;</span>
+      <div class="modal-controls">
+        <button id="zoomInBtn" class="control-btn" title="Acercar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button id="zoomOutBtn" class="control-btn" title="Alejar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button id="zoomResetBtn" class="control-btn" title="Restablecer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </button>
+        <span id="zoomIndicator" class="zoom-indicator">100%</span>
+      </div>
+    </div>
+    <div class="modal-viewport">
+      <div id="modalImageWrapper" class="modal-image-wrapper">
+        <img class="modal-content" id="imgModalDisplay" draggable="false" />
+      </div>
+    </div>
+    <div class="modal-instructions">
+      <span>🖱️ Rueda del ratón para Zoom | 🖐️ Arrastra para mover | 📱 Gestos táctiles en móvil</span>
+    </div>
   </div>
 </BaseLayout>
 
@@ -593,11 +625,35 @@ const schemaJSON = {
       }
 
       tr.innerHTML = `
-        <td style="padding: 5px;">${item.name}</td>
-        <td style="padding: 5px;">${item.qty}</td>
+        <td style="padding: 5px;">
+          <a href="https://es.wowhead.com/search?q=${encodeURIComponent(item.name)}" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="wowhead-tooltip-link" 
+             style="color: var(--text-color); text-decoration: none; transition: color 0.2s;"
+             onclick="event.stopPropagation();"
+          >
+            ${item.name}
+          </a>
+        </td>
+        <td style="padding: 5px; font-weight: 700; color: var(--primary-purple);">${item.qty}</td>
       `;
       materialsBody.appendChild(tr);
     });
+
+    // Actualizar Barra de Progreso
+    const totalItems = matsArray.length;
+    let checkedCount = 0;
+    matsArray.forEach(item => {
+      if (checkedMaterials.has(item.name)) checkedCount++;
+    });
+    const percentage = totalItems > 0 ? Math.round((checkedCount / totalItems) * 100) : 0;
+    const progressPercentage = document.getElementById("farmingProgressPercentage");
+    const progressBar = document.getElementById("farmingProgressBar");
+    if (progressPercentage && progressBar) {
+      progressPercentage.textContent = `${percentage}%`;
+      progressBar.style.width = `${percentage}%`;
+    }
   }
 
   // Event Listeners
@@ -629,7 +685,7 @@ const schemaJSON = {
     const target = e.target as HTMLElement;
     const tr = target.closest("tr");
     if (tr) {
-      const matName = tr.querySelector("td")?.textContent;
+      const matName = tr.querySelector("td")?.textContent?.trim();
       if (matName) {
         if (checkedMaterials.has(matName)) {
           checkedMaterials.delete(matName);
@@ -641,22 +697,147 @@ const schemaJSON = {
           tr.style.textDecoration = "line-through";
         }
         saveProgress();
+        
+        // Recalcular Barra de Progreso al hacer click
+        const rows = materialsBody.querySelectorAll("tr");
+        let checked = 0;
+        let total = 0;
+        rows.forEach(r => {
+          const name = r.querySelector("td")?.textContent?.trim();
+          if (name) {
+            total++;
+            if (checkedMaterials.has(name)) checked++;
+          }
+        });
+        const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
+        const progressPercentage = document.getElementById("farmingProgressPercentage");
+        const progressBar = document.getElementById("farmingProgressBar");
+        if (progressPercentage && progressBar) {
+          progressPercentage.textContent = `${pct}%`;
+          progressBar.style.width = `${pct}%`;
+        }
       }
     }
+  });
+
+  // --- LÓGICA DE MODAL CON ZOOM Y PAN ---
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("imgModalDisplay") as HTMLImageElement;
+  const imgWrapper = document.getElementById("modalImageWrapper");
+  const zoomInBtn = document.getElementById("zoomInBtn");
+  const zoomOutBtn = document.getElementById("zoomOutBtn");
+  const zoomResetBtn = document.getElementById("zoomResetBtn");
+  const zoomIndicator = document.getElementById("zoomIndicator");
+  const closeModal = document.querySelector(".close-modal");
+
+  let scale = 1;
+  let pointX = 0;
+  let pointY = 0;
+  let startX = 0;
+  let startY = 0;
+  let isDragging = false;
+
+  function updateTransform() {
+    if (modalImg) {
+      modalImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+      if (zoomIndicator) {
+        zoomIndicator.textContent = `${Math.round(scale * 100)}%`;
+      }
+    }
+  }
+
+  function resetZoom() {
+    scale = 1;
+    pointX = 0;
+    pointY = 0;
+    updateTransform();
+  }
+
+  if (zoomInBtn && zoomOutBtn && zoomResetBtn) {
+    zoomInBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      scale = Math.min(scale + 0.25, 4);
+      updateTransform();
+    });
+
+    zoomOutBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      scale = Math.max(scale - 0.25, 0.5);
+      updateTransform();
+    });
+
+    zoomResetBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      resetZoom();
+    });
+  }
+
+  imgWrapper?.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const xs = (e.clientX - pointX) / scale;
+    const ys = (e.clientY - pointY) / scale;
+    const delta = e.deltaY < 0 ? 1 : -1;
+    if (delta > 0) {
+      scale = Math.min(scale + 0.15, 4);
+    } else {
+      scale = Math.max(scale - 0.15, 0.5);
+    }
+    pointX = e.clientX - xs * scale;
+    pointY = e.clientY - ys * scale;
+    updateTransform();
+  }, { passive: false });
+
+  imgWrapper?.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX - pointX;
+    startY = e.clientY - pointY;
+    if (imgWrapper) imgWrapper.style.cursor = "grabbing";
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    pointX = e.clientX - startX;
+    pointY = e.clientY - startY;
+    updateTransform();
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    if (imgWrapper) imgWrapper.style.cursor = "grab";
+  });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  imgWrapper?.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      touchStartX = e.touches[0].clientX - pointX;
+      touchStartY = e.touches[0].clientY - pointY;
+    }
+  });
+
+  imgWrapper?.addEventListener("touchmove", (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    pointX = e.touches[0].clientX - touchStartX;
+    pointY = e.touches[0].clientY - touchStartY;
+    updateTransform();
+  });
+
+  imgWrapper?.addEventListener("touchend", () => {
+    isDragging = false;
   });
 
   const recipesContent = document.getElementById("recipesContent");
   recipesContent?.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     
-    // Si se hizo click en la imagen, hacer zoom y evitar marcar paso
     if (target.classList.contains("route-map-img")) {
       e.stopPropagation();
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("imgModalDisplay") as HTMLImageElement;
       if (modal && modalImg) {
-        modal.style.display = "block";
+        modal.style.display = "flex";
         modalImg.src = (target as HTMLImageElement).src;
+        resetZoom();
       }
       return;
     }
@@ -676,17 +857,13 @@ const schemaJSON = {
     }
   });
 
-  // Lógica para cerrar el Modal
-  const modal = document.getElementById("imageModal");
-  const closeModal = document.querySelector(".close-modal");
-  
   if (modal && closeModal) {
-    closeModal.addEventListener("click", () => {
+    closeModal.addEventListener("click", (e) => {
+      e.stopPropagation();
       modal.style.display = "none";
     });
-    // Cerrar si se hace click fuera de la imagen
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
+      if (e.target === modal || e.target === document.querySelector(".modal-viewport")) {
         modal.style.display = "none";
       }
     });
