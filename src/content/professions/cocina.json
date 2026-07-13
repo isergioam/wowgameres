@@ -106,7 +106,7 @@
       {
         "min": 1,
         "max": 75,
-        "mats": { "F Noodles": 75 },
+        "mats": { "Tallarines instantáneos": 75 },
         "description": "<div class=\"step-title\">Cocina 1 – 75: El Mercado del Alcor</div>Sube los primeros niveles con <b>Melocotones</b> y luego elige tu especialidad o 'Vía'."
       }
     ]

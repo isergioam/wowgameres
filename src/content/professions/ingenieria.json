@@ -507,7 +507,7 @@
         "mats": {
           "Mena de severita": 200,
           "Chispa de ingenio": 1,
-          "部品 básicos": 100
+          "Puñado de piezas de severita": 100
         },
         "description": "<strong>Ingeniería 20 – 50</strong><br>Miras, brazales y equipo de profesión."
       },
@@ -516,7 +516,7 @@
         "max": 100,
         "mats": {
           "Chispa de ingenio": 5,
-          "Mena abisal": 50
+          "Mena de draconio": 50
         },
         "description": "<strong>Ingeniería 50 – 100</strong><br>Equipos épicos y pedidos de artesanía."
       }
