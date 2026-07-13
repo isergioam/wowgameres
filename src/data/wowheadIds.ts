@@ -576,6 +576,6 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Oriblasa/Umbryl": 0,
   "Piezas de TWW": 0,
   "Planta de Terrallende": 0,
-  "Oriblasa": 173003,
+  "Oriblasa": 173108,
   "Nucleocristal de aumento": 219952,
 };
