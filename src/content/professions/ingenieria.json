@@ -400,7 +400,7 @@
         "max": 60,
         "mats": {
           "Mena de monelita": 330,
-          "Cartucho explosivo": 240,
+          "Cartucho explosivo químico": 240,
           "Cableado aislado": 390
         },
         "description": "<strong>Ingeniería 1 – 60</strong><br><span class=\"recipe-name\">FRITO y Reorganizador (Rango 1/2) &rarr;</span> Progresión de recetas básicas de monelita."

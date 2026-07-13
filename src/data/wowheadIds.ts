@@ -65,7 +65,7 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Carne de rinoceronte": 43012,
   "Carne de silítido": 46380,
   "Carne de uñagrieta": 27678,
-  "Cartucho explosivo": 312350,
+  "Cartucho explosivo químico": 160502,
   "Cartucho explosivo descomunal": 136637,
   "Catalizador de Vía del Núcleo": 210815,
   "Cebo mortal": 210799,
