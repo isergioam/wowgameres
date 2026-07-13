@@ -100,6 +100,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<div class="main-container-box">
 			<slot />
 		</div>
+		<slot name="outside" />
 		<Footer />
 
 		<!-- Scripts de utilidad -->
