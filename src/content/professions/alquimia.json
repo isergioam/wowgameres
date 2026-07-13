@@ -100,9 +100,9 @@
         "max": 250,
         "mats": {
           "Mostacho de Khadgar": 10,
-          "Soleá": 10
+          "Solea": 10
         },
-        "description": "<strong>Alquimia 240 – 250</strong><br><span class=\"recipe-name\">Elixir de intelecto superior &rarr;</span> 10 Mostacho de Khadgar, 10 Soleá."
+        "description": "<strong>Alquimia 240 – 250</strong><br><span class=\"recipe-name\">Elixir de intelecto superior &rarr;</span> 10 Mostacho de Khadgar, 10 Solea."
       },
       {
         "min": 250,
