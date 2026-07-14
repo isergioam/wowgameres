@@ -1,7 +1,7 @@
 ---
 /**
  * AffiliateBanner.astro
- * Banner premium para promocionar Instant Gaming.
+ * Banner premium para promocionar Eneba de forma nativa e integrada.
  */
 interface Props {
   type?: 'horizontal' | 'vertical';
@@ -9,25 +9,46 @@ interface Props {
 
 const { type = 'horizontal' } = Astro.props;
 
-// AQUÍ DEBES PONER TU ENLACE DE AFILIADO
-const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
+// ENLACE DE AFILIADO DE ENEBA (Modificable)
+const AFFILIATE_URL = "https://www.eneba.com/?af_id=wowgameres";
 ---
 
 <div class={`affiliate-container ${type}`}>
   <a href={AFFILIATE_URL} target="_blank" rel="noopener noreferrer" class="affiliate-card">
     <div class="affiliate-content">
-      <div class="brand-tag">Oferta Especial</div>
+      <div class="brand-tag">Oferta Recomendada</div>
       <div class="main-text">
-        <span class="highlight">Tiempo de Juego WoW</span> y Tarjetas Prepago al mejor precio
+        ¿Necesitas <span class="highlight">Tiempo de Juego</span> o saldo Battle.net? Consigue todo al mejor precio en Eneba
       </div>
-      <div class="cta-button">
-        Ver ofertas en Instant Gaming
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      <div class="cta-button-container">
+        <span class="cta-button">
+          Ver ofertas en Eneba
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </span>
       </div>
     </div>
     <div class="affiliate-visual">
-       <!-- Un gradiente o imagen sutil relacionada con IG -->
-       <div class="ig-logo-mock">IG</div>
+       <div class="eneba-logo-wrapper">
+         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="eneba-svg-mark">
+           <!-- Círculo estilizado con gradientes simulando el logo ribbon de Eneba -->
+           <path d="M 50,15 A 35,35 0 1 1 25.3,25.3 C 27.5,23 30,21 32.7,19.4" stroke="url(#enebaGradient)" stroke-width="13" stroke-linecap="round"/>
+           <path d="M 32.7,19.4 A 35,35 0 0 1 50,15" stroke="url(#enebaTeal)" stroke-width="13" stroke-linecap="round"/>
+           <defs>
+             <linearGradient id="enebaGradient" x1="15" y1="15" x2="85" y2="85" gradientUnits="userSpaceOnUse">
+               <stop offset="0%" stop-color="#ff3e00"/>
+               <stop offset="25%" stop-color="#ff007a"/>
+               <stop offset="50%" stop-color="#9a00e6"/>
+               <stop offset="75%" stop-color="#2a00ff"/>
+               <stop offset="100%" stop-color="#00e1ff"/>
+             </linearGradient>
+             <linearGradient id="enebaTeal" x1="32.7" y1="19.4" x2="50" y2="15" gradientUnits="userSpaceOnUse">
+               <stop offset="0%" stop-color="#00ff8c"/>
+               <stop offset="100%" stop-color="#ffd100"/>
+             </linearGradient>
+           </defs>
+         </svg>
+         <span class="eneba-text">eneba</span>
+       </div>
     </div>
   </a>
 </div>
@@ -43,21 +64,21 @@ const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
 
   .affiliate-card {
     display: flex;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border: 1px solid rgba(255, 100, 0, 0.3);
-    border-radius: 16px;
+    background: linear-gradient(135deg, #0e071e 0%, #1e0b3c 50%, #2f125a 100%);
+    border: 1px solid rgba(175, 82, 222, 0.25);
+    border-radius: 18px;
     overflow: hidden;
     text-decoration: none;
     color: white;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     position: relative;
   }
 
   .affiliate-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 100, 0, 0.8);
-    box-shadow: 0 15px 40px rgba(255, 100, 0, 0.15);
+    border-color: rgba(52, 199, 89, 0.6);
+    box-shadow: 0 15px 40px rgba(52, 199, 89, 0.12), 0 0 20px rgba(175, 82, 222, 0.1);
   }
 
   .affiliate-content {
@@ -71,61 +92,106 @@ const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
 
   .brand-tag {
     display: inline-block;
-    background: #ff6400;
+    background: linear-gradient(90deg, #9a00e6 0%, #ff007a 100%);
     color: white;
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     margin-bottom: 15px;
     width: fit-content;
+    box-shadow: 0 4px 10px rgba(255, 0, 122, 0.2);
   }
 
   .main-text {
     font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.3;
+    font-weight: 800;
+    line-height: 1.35;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
   }
 
   .highlight {
-    color: #ff6400;
+    background: linear-gradient(120deg, #00ff8c 0%, #ffd100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+  }
+
+  .cta-button-container {
+    margin-top: 5px;
   }
 
   .cta-button {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #ff6400;
-    transition: gap 0.3s ease;
+    gap: 8px;
+    background: #ffd100;
+    color: #0c0714;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.25);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .cta-button svg {
+    transition: transform 0.3s ease;
   }
 
   .affiliate-card:hover .cta-button {
-    gap: 15px;
+    background: #ffe033;
+    box-shadow: 0 6px 20px rgba(255, 209, 0, 0.45);
+    transform: scale(1.03);
+  }
+
+  .affiliate-card:hover .cta-button svg {
+    transform: translateX(4px);
   }
 
   .affiliate-visual {
-    width: 200px;
-    background: radial-gradient(circle at center, rgba(255, 100, 0, 0.2) 0%, transparent 70%);
+    width: 250px;
+    background: radial-gradient(circle at center, rgba(154, 0, 230, 0.18) 0%, transparent 70%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    border-left: 1px solid rgba(255, 255, 255, 0.03);
   }
 
-  .ig-logo-mock {
-    font-size: 4rem;
+  .eneba-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .eneba-svg-mark {
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(0 0 12px rgba(154, 0, 230, 0.35));
+  }
+
+  .eneba-text {
+    font-size: 2.1rem;
     font-weight: 900;
-    color: rgba(255, 100, 0, 0.1);
-    transform: rotate(-10deg);
+    color: white;
+    letter-spacing: -1.8px;
+    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  /* Animación de brillo */
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+
+  /* Animación de brillo de barrido */
   .affiliate-card::after {
     content: '';
     position: absolute;
@@ -136,7 +202,9 @@ const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
     background: linear-gradient(
       to right,
       transparent,
-      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.03),
       transparent
     );
     transform: rotate(45deg);
@@ -154,13 +222,24 @@ const AFFILIATE_URL = "https://www.instant-gaming.com/?igr=wowgameres";
     }
     .affiliate-visual {
       width: 100%;
-      height: 60px;
+      height: 100px;
+      border-left: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
     }
     .main-text {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
     .affiliate-content {
-      padding: 20px;
+      padding: 25px;
+      align-items: center;
+      text-align: center;
+    }
+    .brand-tag {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .eneba-logo-wrapper {
+      transform: scale(0.85);
     }
   }
 </style>
