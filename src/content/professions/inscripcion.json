@@ -510,16 +510,16 @@
         "min": 1,
         "max": 10,
         "mats": {
-          "Pigmento rutilante": 40,
+          "Pigmento fulgurante": 40,
           "Pigmento floreciente": 40
         },
-        "description": "<strong>Inscripción 1 – 10</strong><br>Tinta rutilante y Tinta floreciente."
+        "description": "<strong>Inscripción 1 – 10</strong><br>Tinta fulgurante y Tinta floreciente."
       },
       {
         "min": 10,
         "max": 20,
         "mats": {
-          "Tinta rutilante": 20,
+          "Tinta fulgurante": 20,
           "Pergamino relumbrante": 20
         },
         "description": "<strong>Inscripción 10 – 20</strong><br>Nota de investigación: Especialización."
@@ -537,7 +537,7 @@
         "min": 35,
         "max": 50,
         "mats": {
-          "Tinta rutilante": 60,
+          "Tinta fulgurante": 60,
           "Pigmento sereno": 15
         },
         "description": "<strong>Inscripción 35 – 50</strong><br>Runas de Vantus: Dragonflight."
