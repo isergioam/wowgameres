@@ -698,8 +698,8 @@
         "min": 1,
         "max": 20,
         "mats": {
-          "Escama de draco": 50,
-          "Cuero elástico": 50
+          "Escama de draco de tormenta": 50,
+          "Cuero resistente": 50
         },
         "description": "<strong>Peletería 1 – 20</strong><br>Refuerzos para armadura de las Islas Dragón."
       },
@@ -707,8 +707,8 @@
         "min": 20,
         "max": 50,
         "mats": {
-          "Escama de draco": 100,
-          "Cuero elástico": 100
+          "Escama de draco de tormenta": 100,
+          "Cuero resistente": 100
         },
         "description": "<strong>Peletería 20 – 50</strong><br>Equipamiento de cuero de las Islas Dragón."
       },
@@ -717,7 +717,7 @@
         "max": 100,
         "mats": {
           "Chispa de ingenio": 5,
-          "Pellejo imbuido": 20
+          "Pellejo imbuido de fuego": 20
         },
         "description": "<strong>Peletería 50 – 100</strong><br>Fabricación de equipo épico y pedidos."
       }
