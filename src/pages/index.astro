@@ -322,6 +322,9 @@ const description =
     height: 170%; /* Covers both card rows + separator margin */
     z-index: 1;
     overflow: hidden;
+    /* Fade out smoothly at the bottom to avoid sharp cuts */
+    mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   }
 
   .hero-img-asset {
