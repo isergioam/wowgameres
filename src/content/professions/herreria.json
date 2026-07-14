@@ -872,47 +872,47 @@
         "min": 1,
         "max": 15,
         "mats": {
-          "Mena de bismuto": 75,
-          "Fundente de núcleo cristaloide": 30
+          "Bismuto": 75,
+          "Flujo resonante": 30
         },
-        "description": "<strong>Herrería 1 – 15</strong><br><span class=\"recipe-name\">Guardabrazos de combatiente forjado &rarr;</span> 75 Mena de bismuto, 30 Fundente de núcleo cristaloide."
+        "description": "<strong>Herrería 1 – 15</strong><br><span class=\"recipe-name\">Guardabrazos de combatiente forjado &rarr;</span> 75 Bismuto, 30 Flujo resonante."
       },
       {
         "min": 15,
         "max": 30,
         "mats": {
-          "Mena de bismuto": 120,
-          "Fundente de núcleo cristaloide": 45
+          "Bismuto": 120,
+          "Flujo resonante": 45
         },
-        "description": "<strong>Herrería 15 – 30</strong><br><span class=\"recipe-name\">Botas de combatiente forjado &rarr;</span> 120 Mena de bismuto, 45 Fundente de núcleo cristaloide."
+        "description": "<strong>Herrería 15 – 30</strong><br><span class=\"recipe-name\">Botas de combatiente forjado &rarr;</span> 120 Bismuto, 45 Flujo resonante."
       },
       {
         "min": 30,
         "max": 50,
         "mats": {
-          "Mena de bismuto": 200,
-          "Mena de hierro de Kaheti": 40,
-          "Fundente de núcleo cristaloide": 60
+          "Bismuto": 200,
+          "Aqirita": 40,
+          "Flujo resonante": 60
         },
-        "description": "<strong>Herrería 30 – 50</strong><br><span class=\"recipe-name\">Coraza de combatiente forjado &rarr;</span> 200 Mena de bismuto, 40 Mena de hierro de Kaheti, 60 Fundente de núcleo cristaloide."
+        "description": "<strong>Herrería 30 – 50</strong><br><span class=\"recipe-name\">Coraza de combatiente forjado &rarr;</span> 200 Bismuto, 40 Aqirita, 60 Flujo resonante."
       },
       {
         "min": 50,
         "max": 75,
         "mats": {
-          "Mena de bismuto": 250,
-          "Mena de arathorita": 50,
-          "Fundente de núcleo cristaloide": 100
+          "Bismuto": 250,
+          "Mena de colmilloférreo": 50,
+          "Flujo resonante": 100
         },
-        "description": "<strong>Herrería 50 – 75</strong><br><span class=\"recipe-name\">Gran espada de acero de Arathor &rarr;</span> 250 Mena de bismuto, 50 Mena de arathorita, 100 Fundente de núcleo cristaloide."
+        "description": "<strong>Herrería 50 – 75</strong><br><span class=\"recipe-name\">Gran espada de acero de Arathor &rarr;</span> 250 Bismuto, 50 Mena de colmilloférreo, 100 Flujo resonante."
       },
       {
         "min": 75,
         "max": 100,
         "mats": {
-          "Mena de bismuto": 200,
-          "Mena de arathorita": 100,
-          "Mena de hierro de Kaheti": 100,
+          "Bismuto": 200,
+          "Mena de colmilloférreo": 100,
+          "Aqirita": 100,
           "Chispa de presagios": 5
         },
         "description": "<strong>Herrería 75 – 100</strong><br><span class=\"recipe-name\">Martillo de forja de presagios &rarr;</span> Equipamiento épico con Chispa de presagios o pedidos públicos."
