@@ -555,7 +555,7 @@
         "max": 40,
         "mats": {
           "Nozdiorita": 20,
-          "Tierra cristalina": 20
+          "Tierra reanimadora": 20
         },
         "description": "<strong>Joyería 20 – 40</strong><br>Tallas de gemas comunes de DF."
       },
@@ -564,7 +564,7 @@
         "max": 65,
         "mats": {
           "Gemas raras": 30,
-          "Mota de orden": 15
+          "Orden reanimador": 15
         },
         "description": "<strong>Joyería 40 – 65</strong><br>Collares y anillos de nivel intermedio."
       },
