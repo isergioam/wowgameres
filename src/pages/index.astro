@@ -44,7 +44,8 @@ const description =
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="hero-section">
+  <main>
+    <div class="hero-top-wrapper">
       <div class="hero-background">
         <Image 
           src={silvermoonLandscape} 
@@ -59,87 +60,93 @@ const description =
         />
       </div>
       <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span data-i18n="hero_badge_text">Actualizado: Midnight (12.0.7)</span>
-        </div>
-        <h1 id="profesiones" data-i18n="title_professions" class="gradient-title">
-          Guías de Profesiones<br>World of Warcraft
-        </h1>
-        <p class="hero-description">
-          Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para dominar las <strong>profesiones de WoW</strong>. Te ayudamos a alcanzar el nivel máximo de forma rápida, eficiente y optimizando cada moneda de oro en todas las expansiones.
-        </p>
-      </div>
-    </section>
 
-  <main class="content">
-    <!-- Expansiones (Grid Directo) -->
-    <section id="expansiones" class="section" style="margin-top: -60px; padding-top: 0; position: relative; z-index: 5;">
-      <div class="expansiones">
-        {
-          expansions.map((exp) => (
-            <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
-              <div 
-                class={`card-expansion ${exp.class}`}
-                style={`
-                  --glow-color: ${exp.color};
-                  --glow-shadow: ${exp.glow};
-                `}
-              >
-                <Image 
-                  src={exp.image} 
-                  alt={exp.name} 
-                  width={220}
-                  height={275}
-                  quality={80}
-                  format="webp"
-                  loading="lazy"
-                  class="card-expansion-img"
-                />
-                <div class="card-expansion-overlay"></div>
-                <span class="exp-name" style="position: relative; z-index: 2;">{exp.name}</span>
-              </div>
-            </a>
-          ))
-        }
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span data-i18n="hero_badge_text">Actualizado: Midnight (12.0.7)</span>
+          </div>
+          <h1 id="profesiones" data-i18n="title_professions" class="gradient-title">
+            Guías de Profesiones<br>World of Warcraft
+          </h1>
+          <p class="hero-description">
+            Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para dominar las <strong>profesiones de WoW</strong>. Te ayudamos a alcanzar el nivel máximo de forma rápida, eficiente y optimizando cada moneda de oro en todas las expansiones.
+          </p>
+        </div>
+      </section>
+
+      <div class="content" style="margin-bottom: 0; padding-bottom: 20px; position: relative; z-index: 5;">
+        <!-- Expansiones (Grid Directo) -->
+        <section id="expansiones" class="section" style="margin-top: -60px; padding-top: 0; position: relative; z-index: 5;">
+          <div class="expansiones">
+            {
+              expansions.map((exp) => (
+                <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
+                  <div 
+                    class={`card-expansion ${exp.class}`}
+                    style={`
+                      --glow-color: ${exp.color};
+                      --glow-shadow: ${exp.glow};
+                    `}
+                  >
+                    <Image 
+                      src={exp.image} 
+                      alt={exp.name} 
+                      width={220}
+                      height={275}
+                      quality={80}
+                      format="webp"
+                      loading="lazy"
+                      class="card-expansion-img"
+                    />
+                    <div class="card-expansion-overlay"></div>
+                    <span class="exp-name" style="position: relative; z-index: 2;">{exp.name}</span>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+        
+        <AffiliateBanner />
       </div>
-    </section>
-    
-    <AffiliateBanner />
+    </div>
 
     {
       latestNews.length > 0 && (
-        <section
-          id="noticias"
-          class="section news-preview-section"
-          style="margin-top: 30px; padding-top: 40px; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
-        >
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
-            <h2 class="news-section-title" style="border: none; padding: 0; margin: 0;">
-              Últimas Noticias de Azeroth
-            </h2>
-            <a
-              href="/noticias/"
-              class="news-view-all-link"
-              style="font-weight: 600; font-size: 0.9rem;"
-            >
-              Ver todas &rarr;
-            </a>
-          </div>
-          <div class="news-grid">
-            {latestNews.map((news) => (
-              <NewsCard
-                title={news.title}
-                description={news.summary || news.description}
-                slug={news.slug}
-                image={news.image}
-                date={news.date}
-                category={news.category}
-              />
-            ))}
-          </div>
-        </section>
+        <div class="content">
+          <section
+            id="noticias"
+            class="section news-preview-section"
+            style="margin-top: 30px; padding-top: 40px; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
+          >
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
+              <h2 class="news-section-title" style="border: none; padding: 0; margin: 0;">
+                Últimas Noticias de Azeroth
+              </h2>
+              <a
+                href="/noticias/"
+                class="news-view-all-link"
+                style="font-weight: 600; font-size: 0.9rem;"
+              >
+                Ver todas &rarr;
+              </a>
+            </div>
+            <div class="news-grid">
+              {latestNews.map((news) => (
+                <NewsCard
+                  title={news.title}
+                  description={news.summary || news.description}
+                  slug={news.slug}
+                  image={news.image}
+                  date={news.date}
+                  category={news.category}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
       )
     }
 
@@ -273,6 +280,12 @@ const description =
     box-shadow: 0 10px 25px var(--glow-shadow), inset 0 -45px 50px rgba(0, 0, 0, 0.9) !important;
   }
 
+  .hero-top-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
   .hero-section {
     position: relative;
     height: auto;
@@ -286,6 +299,7 @@ const description =
     overflow: visible;
     margin-top: 0 !important;
     padding: 70px 20px 80px;
+    z-index: 4;
   }
 
   .hero-content-simple {
@@ -319,7 +333,7 @@ const description =
     top: 0;
     left: 0;
     width: 100%;
-    height: 170%; /* Covers both card rows + separator margin */
+    height: 70vh; /* Match the base hero height */
     z-index: 1;
     overflow: hidden;
     /* Fade out smoothly at the bottom to avoid sharp cuts */
@@ -340,7 +354,7 @@ const description =
     top: 0;
     left: 0;
     width: 100%;
-    height: 250%;
+    height: 100%; /* Cover the entire hero-top-wrapper dynamically */
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.45) 0%,
