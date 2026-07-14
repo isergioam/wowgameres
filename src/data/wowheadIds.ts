@@ -125,7 +125,7 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Entereza de artesano": 190456,
   "Envoltura de hierro vil": 23782,
   "Equipo de canto": 243574,
-  "Escama de draco de tormenta": 197774,
+  "Escama de draco de tormenta": 122609,
   "Escamas templadas": 396571,
   "Escarcha despierta": 190329,
   "Escarcha reanimadora": 190328,
