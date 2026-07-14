@@ -532,7 +532,7 @@
         "min": 1,
         "max": 25,
         "mats": {
-          "Mena de bismuto": 150,
+          "Bismuto": 150,
           "Piezas de TWW": 50
         },
         "description": "<strong>Ingeniería 1 – 25</strong><br>Molienda y piezas de Khaz Algar."
@@ -541,8 +541,8 @@
         "min": 25,
         "max": 60,
         "mats": {
-          "Mena de bismuto": 300,
-          "Mena de hierro del núcleo": 100
+          "Bismuto": 300,
+          "Mena de colmilloférreo": 100
         },
         "description": "<strong>Ingeniería 25 – 60</strong><br>Gafas, miras y dispositivos de utilidad."
       },
@@ -551,7 +551,7 @@
         "max": 100,
         "mats": {
           "Chispa de presagios": 5,
-          "Mena ardiente": 50
+          "Aqirita": 50
         },
         "description": "<strong>Ingeniería 60 – 100</strong><br>Fabricaciones de Chispa y sistemas de pedidos."
       }
