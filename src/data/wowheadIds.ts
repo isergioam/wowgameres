@@ -173,7 +173,7 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Fragmento centelleante grande": 22449,
   "Fragmento de luz Ley": 124441,
   "Fragmento radiante": 243602,
-  "Fragmento resplandeciente": 10441,
+  "Fragmento resplandeciente": 218123,
   "Fragmento sagrado": 172231,
   "Fragmento umbrío": 152876,
   "Fragmento vibrante": 194124,
@@ -571,5 +571,5 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Piezas de TWW": 0,
   "Planta de Terrallende": 0,
   "Oriblasa": 173108,
-  "Nucleocristal de aumento": 219952,
+  "Cristal refulgente": 219952,
 };

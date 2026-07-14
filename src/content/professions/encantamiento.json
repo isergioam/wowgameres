@@ -864,18 +864,18 @@
         "max": 80,
         "mats": {
           "Polvo de tormenta": 200,
-          "Nucleocristal de aumento": 15
+          "Cristal refulgente": 15
         },
-        "description": "<strong>Encantamiento 65 – 80</strong><br><span class=\"recipe-name\">Encantar arma: Autoridad de las profundidades &rarr;</span> 200 Polvo de tormenta, 15 Nucleocristal de aumento."
+        "description": "<strong>Encantamiento 65 – 80</strong><br><span class=\"recipe-name\">Encantar arma: Autoridad de las profundidades &rarr;</span> 200 Polvo de tormenta, 15 Cristal refulgente."
       },
       {
         "min": 80,
         "max": 100,
         "mats": {
           "Polvo de tormenta": 300,
-          "Nucleocristal de aumento": 30
+          "Cristal refulgente": 30
         },
-        "description": "<strong>Encantamiento 80 – 100</strong><br><span class=\"recipe-name\">Autoridad suprema &rarr;</span> 300 Polvo de tormenta, 30 Nucleocristal de aumento."
+        "description": "<strong>Encantamiento 80 – 100</strong><br><span class=\"recipe-name\">Autoridad suprema &rarr;</span> 300 Polvo de tormenta, 30 Cristal refulgente."
       }
     ]
   },
