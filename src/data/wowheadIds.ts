@@ -162,7 +162,6 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Flor de ceniza": 52983,
   "Flor de corazón": 52986,
   "Flor de la bendición": 210805,
-  "Flor de la la bendición": 210805,
   "Flor de paz": 2447,
   "Flor de tranquilidad": 236761,
   "Flor de viuda": 168583,
