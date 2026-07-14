@@ -23,18 +23,114 @@ import imgTww from "../assets/images/expansions/tww.webp";
 import imgMidnight from "../assets/images/expansions/midnight.webp";
 
 const expansions = [
-  { id: "midnight", name: "Midnight", class: "exp-midnight", subtitle: "Sunwell Gold/Void", image: imgMidnight, color: "#bb9fff", glow: "rgba(187, 159, 255, 0.4)" },
-  { id: "tww", name: "The War Within", class: "exp-tww", subtitle: "Void Purple", image: imgTww, color: "#a330c9", glow: "rgba(163, 48, 201, 0.4)" },
-  { id: "df", name: "Dragonflight", class: "exp-df", subtitle: "Aspect Gold", image: imgDf, color: "#ffd700", glow: "rgba(255, 215, 0, 0.4)" },
-  { id: "sl", name: "Shadowlands", class: "exp-sl", subtitle: "Kyrian Blue", image: imgSl, color: "#48d1cc", glow: "rgba(72, 209, 204, 0.4)" },
-  { id: "bfa", name: "Battle for Azeroth", class: "exp-bfa", subtitle: "Zandalari Gold/Navy", image: imgBfa, color: "#ffd700", glow: "rgba(255, 215, 0, 0.4)" },
-  { id: "legion", name: "Legión", class: "exp-legion", subtitle: "Fel Green", image: imgLegion, color: "#32cd32", glow: "rgba(50, 205, 50, 0.4)" },
-  { id: "wod", name: "Draenor", class: "exp-wod", subtitle: "Iron Horde Orange", image: imgWod, color: "#b22222", glow: "rgba(178, 34, 34, 0.4)" },
-  { id: "mop", name: "Pandaria", class: "exp-mop", subtitle: "Jade Green", image: imgMop, color: "#2e8b57", glow: "rgba(46, 139, 87, 0.4)" },
-  { id: "cata", name: "Cataclismo", class: "exp-cata", subtitle: "Magma Orange", image: imgCata, color: "#ff4500", glow: "rgba(255, 69, 0, 0.4)" },
-  { id: "wotlk", name: "Rasganorte", class: "exp-wotlk", subtitle: "Ice Blue", image: imgWotlk, color: "#00b4d8", glow: "rgba(0, 180, 216, 0.4)" },
-  { id: "tbc", name: "Terrallende", class: "exp-tbc", subtitle: "Outland Purple", image: imgTbc, color: "#a330c9", glow: "rgba(163, 48, 201, 0.4)" },
-  { id: "vanilla", name: "Vanilla", class: "exp-vanilla", subtitle: "Classic Bronze", image: imgVanilla, color: "#c48f5a", glow: "rgba(196, 143, 90, 0.4)" },
+  {
+    id: "midnight",
+    name: "Midnight",
+    class: "exp-midnight",
+    subtitle: "Sunwell Gold/Void",
+    image: imgMidnight,
+    color: "#bb9fff",
+    glow: "rgba(187, 159, 255, 0.4)",
+  },
+  {
+    id: "tww",
+    name: "The War Within",
+    class: "exp-tww",
+    subtitle: "Void Purple",
+    image: imgTww,
+    color: "#a330c9",
+    glow: "rgba(163, 48, 201, 0.4)",
+  },
+  {
+    id: "df",
+    name: "Dragonflight",
+    class: "exp-df",
+    subtitle: "Aspect Gold",
+    image: imgDf,
+    color: "#ffd700",
+    glow: "rgba(255, 215, 0, 0.4)",
+  },
+  {
+    id: "sl",
+    name: "Shadowlands",
+    class: "exp-sl",
+    subtitle: "Kyrian Blue",
+    image: imgSl,
+    color: "#48d1cc",
+    glow: "rgba(72, 209, 204, 0.4)",
+  },
+  {
+    id: "bfa",
+    name: "Battle for Azeroth",
+    class: "exp-bfa",
+    subtitle: "Zandalari Gold/Navy",
+    image: imgBfa,
+    color: "#ffd700",
+    glow: "rgba(255, 215, 0, 0.4)",
+  },
+  {
+    id: "legion",
+    name: "Legión",
+    class: "exp-legion",
+    subtitle: "Fel Green",
+    image: imgLegion,
+    color: "#32cd32",
+    glow: "rgba(50, 205, 50, 0.4)",
+  },
+  {
+    id: "wod",
+    name: "Draenor",
+    class: "exp-wod",
+    subtitle: "Iron Horde Orange",
+    image: imgWod,
+    color: "#b22222",
+    glow: "rgba(178, 34, 34, 0.4)",
+  },
+  {
+    id: "mop",
+    name: "Pandaria",
+    class: "exp-mop",
+    subtitle: "Jade Green",
+    image: imgMop,
+    color: "#2e8b57",
+    glow: "rgba(46, 139, 87, 0.4)",
+  },
+  {
+    id: "cata",
+    name: "Cataclismo",
+    class: "exp-cata",
+    subtitle: "Magma Orange",
+    image: imgCata,
+    color: "#ff4500",
+    glow: "rgba(255, 69, 0, 0.4)",
+  },
+  {
+    id: "wotlk",
+    name: "Rasganorte",
+    class: "exp-wotlk",
+    subtitle: "Ice Blue",
+    image: imgWotlk,
+    color: "#00b4d8",
+    glow: "rgba(0, 180, 216, 0.4)",
+  },
+  {
+    id: "tbc",
+    name: "Terrallende",
+    class: "exp-tbc",
+    subtitle: "Outland Purple",
+    image: imgTbc,
+    color: "#a330c9",
+    glow: "rgba(163, 48, 201, 0.4)",
+  },
+  {
+    id: "vanilla",
+    name: "Vanilla",
+    class: "exp-vanilla",
+    subtitle: "Classic Bronze",
+    image: imgVanilla,
+    color: "#c48f5a",
+    glow: "rgba(196, 143, 90, 0.4)",
+  },
 ];
 
 const latestNews = newsData.slice(0, 3);
@@ -47,11 +143,11 @@ const description =
   <main>
     <div class="hero-top-wrapper">
       <div class="hero-background">
-        <Image 
-          src={silvermoonLandscape} 
-          alt="Ciudad de Lunargenta - Expansión Actual Midnight" 
-          width={1920} 
-          height={1080} 
+        <Image
+          src={silvermoonLandscape}
+          alt="Ciudad de Lunargenta - Expansión Actual Midnight"
+          width={1920}
+          height={1080}
           format="avif"
           quality="mid"
           loading="eager"
@@ -63,36 +159,55 @@ const description =
 
       <section class="hero-section">
         <div class="hero-content">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            <span data-i18n="hero_badge_text">Actualizado: Midnight (12.0.7)</span>
-          </div>
-          <h1 id="profesiones" data-i18n="title_professions" class="gradient-title">
-            Guías de Profesiones<br>World of Warcraft
+          <h1
+            id="profesiones"
+            data-i18n="title_professions"
+            class="gradient-title"
+          >
+            Guías de Profesiones<br />World of Warcraft
           </h1>
           <p class="hero-description">
-            Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para dominar las <strong>profesiones de WoW</strong>. Te ayudamos a alcanzar el nivel máximo de forma rápida, eficiente y optimizando cada moneda de oro en todas las expansiones.
+            Bienvenido a <strong>WOWGamerES</strong>, el recurso definitivo para
+            dominar las <strong>profesiones de WoW</strong>. Te ayudamos a
+            alcanzar el nivel máximo de forma rápida, eficiente y optimizando
+            cada moneda de oro en todas las expansiones.
           </p>
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span data-i18n="hero_badge_text"
+              >Actualizado: Midnight (12.0.7)</span
+            >
+          </div>
         </div>
       </section>
 
-      <div class="content" style="margin-bottom: 0; padding-bottom: 20px; position: relative; z-index: 5;">
+      <div
+        class="content"
+        style="margin-bottom: 0; padding-bottom: 20px; position: relative; z-index: 5;"
+      >
         <!-- Expansiones (Grid Directo) -->
-        <section id="expansiones" class="section" style="margin-top: -60px; padding-top: 0; position: relative; z-index: 5;">
+        <section
+          id="expansiones"
+          class="section"
+          style="margin-top: -130px; padding-top: 0; position: relative; z-index: 5;"
+        >
           <div class="expansiones">
             {
               expansions.map((exp) => (
-                <a href={`/guias/${exp.id}/`} class="card-expansion-link reveal">
-                  <div 
+                <a
+                  href={`/guias/${exp.id}/`}
+                  class="card-expansion-link reveal"
+                >
+                  <div
                     class={`card-expansion ${exp.class}`}
                     style={`
                       --glow-color: ${exp.color};
                       --glow-shadow: ${exp.glow};
                     `}
                   >
-                    <Image 
-                      src={exp.image} 
-                      alt={exp.name} 
+                    <Image
+                      src={exp.image}
+                      alt={exp.name}
                       width={220}
                       height={275}
                       quality={80}
@@ -100,15 +215,20 @@ const description =
                       loading="lazy"
                       class="card-expansion-img"
                     />
-                    <div class="card-expansion-overlay"></div>
-                    <span class="exp-name" style="position: relative; z-index: 2;">{exp.name}</span>
+                    <div class="card-expansion-overlay" />
+                    <span
+                      class="exp-name"
+                      style="position: relative; z-index: 2;"
+                    >
+                      {exp.name}
+                    </span>
                   </div>
                 </a>
               ))
             }
           </div>
         </section>
-        
+
         <AffiliateBanner />
       </div>
     </div>
@@ -122,7 +242,10 @@ const description =
             style="margin-top: 30px; padding-top: 40px; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
           >
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
-              <h2 class="news-section-title" style="border: none; padding: 0; margin: 0;">
+              <h2
+                class="news-section-title"
+                style="border: none; padding: 0; margin: 0;"
+              >
                 Últimas Noticias de Azeroth
               </h2>
               <a
@@ -149,7 +272,6 @@ const description =
         </div>
       )
     }
-
   </main>
 
   <!-- Sección Cinemática Informativa (Minimalista) -->
@@ -166,15 +288,24 @@ const description =
       <div class="cinematic-grid">
         <div class="cinematic-item">
           <h3>Rutas Optimizadas</h3>
-          <p>Estructuramos cada tramo seleccionando las recetas más eficientes y económicas de la casa de subastas.</p>
+          <p>
+            Estructuramos cada tramo seleccionando las recetas más eficientes y
+            económicas de la casa de subastas.
+          </p>
         </div>
         <div class="cinematic-item">
           <h3>Progreso Real</h3>
-          <p>Herramientas interactivas integradas para tachar materiales y guardar tu avance automáticamente.</p>
+          <p>
+            Herramientas interactivas integradas para tachar materiales y
+            guardar tu avance automáticamente.
+          </p>
         </div>
         <div class="cinematic-item">
           <h3>Siempre Al Día</h3>
-          <p>Revisamos cada parche y expansión para asegurar que nuestras rutas nunca queden obsoletas.</p>
+          <p>
+            Revisamos cada parche y expansión para asegurar que nuestras rutas
+            nunca queden obsoletas.
+          </p>
         </div>
       </div>
     </div>
@@ -217,7 +348,9 @@ const description =
     color: #ffffff !important;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
     border: 1.5px solid var(--glow-color, rgba(255, 255, 255, 0.12)) !important;
-    box-shadow: 0 4px 15px var(--glow-shadow, rgba(0,0,0,0.15)), inset 0 -40px 50px rgba(0, 0, 0, 0.8) !important;
+    box-shadow:
+      0 4px 15px var(--glow-shadow, rgba(0, 0, 0, 0.15)),
+      inset 0 -40px 50px rgba(0, 0, 0, 0.8) !important;
     aspect-ratio: 3.2 / 4;
     border-radius: 12px;
     overflow: hidden;
@@ -227,7 +360,10 @@ const description =
     justify-content: flex-end; /* Align elements to the bottom like in mockup */
     gap: 4px;
     padding: 20px 15px !important;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+    transition:
+      transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      border-color 0.4s ease,
+      box-shadow 0.4s ease !important;
   }
 
   .card-expansion-img {
@@ -251,7 +387,12 @@ const description =
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(10, 5, 25, 0.05) 0%, rgba(10, 5, 25, 0.3) 50%, rgba(10, 5, 25, 0.95) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 5, 25, 0.05) 0%,
+      rgba(10, 5, 25, 0.3) 50%,
+      rgba(10, 5, 25, 0.95) 100%
+    );
     z-index: -1;
     pointer-events: none;
   }
@@ -277,7 +418,9 @@ const description =
 
   .card-expansion:hover {
     transform: translateY(-6px) scale(1.015);
-    box-shadow: 0 10px 25px var(--glow-shadow), inset 0 -45px 50px rgba(0, 0, 0, 0.9) !important;
+    box-shadow:
+      0 10px 25px var(--glow-shadow),
+      inset 0 -45px 50px rgba(0, 0, 0, 0.9) !important;
   }
 
   .hero-top-wrapper {
@@ -346,7 +489,7 @@ const description =
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    filter: brightness(1.0) saturate(1.1);
+    filter: brightness(1) saturate(1.1);
   }
 
   .hero-overlay {
@@ -354,8 +497,8 @@ const description =
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Cover the entire hero-top-wrapper dynamically */
-    background: linear-gradient(
+    height: 64%; /* Cover the entire hero-top-wrapper dynamically */
+    /*  background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.45) 0%,
       rgba(0, 0, 0, 0.45) 18%,
@@ -364,10 +507,11 @@ const description =
       rgba(10, 5, 25, 0.97) 36%,
       rgba(10, 5, 25, 1) 40%,
       rgba(10, 5, 25, 1) 100%
-    );
+    );*/
+    background: linear-gradient(0deg, #00000096, #00000000);
     z-index: 3;
   }
-
+  /*
   .dark-mode .hero-overlay {
     background: linear-gradient(
       to bottom,
@@ -379,7 +523,7 @@ const description =
       rgba(6, 4, 13, 1) 100%
     );
   }
-
+*/
   .hero-content {
     position: relative;
     max-width: 900px;
@@ -393,7 +537,7 @@ const description =
     font-weight: 900;
     letter-spacing: -1.5px;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #FFE07D 0%, #D1A3FF 50%, #9F62FF 100%);
+    background: linear-gradient(135deg, #ffe07d 0%, #d1a3ff 50%, #9f62ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
@@ -401,8 +545,6 @@ const description =
     padding: 0;
     line-height: 1.1;
   }
-
-
 
   .hero-badge {
     display: inline-flex;
@@ -419,8 +561,6 @@ const description =
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   }
-
-
 
   .badge-dot {
     width: 8px;
@@ -504,8 +644,6 @@ const description =
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
   }
 
-
-
   .hero-description {
     font-size: 1.25rem;
     line-height: 1.6;
@@ -556,8 +694,6 @@ const description =
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.6);
   }
-
-
 
   @keyframes fadeInUp {
     from {
@@ -612,10 +748,11 @@ const description =
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, 
+    background: linear-gradient(
+      to bottom,
       transparent 0%,
-      transparent 20%, 
-      transparent 78%, 
+      transparent 20%,
+      transparent 78%,
       rgba(10, 5, 25, 0.95) 100%
     );
   }
@@ -692,10 +829,11 @@ const description =
   }
 
   html:not(.dark-mode) .cinematic-overlay {
-    background: linear-gradient(to bottom, 
-      transparent 0%, 
-      transparent 20%, 
-      transparent 80%, 
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 20%,
+      transparent 80%,
       rgba(255, 255, 255, 0.85) 100%
     );
   }

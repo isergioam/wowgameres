@@ -92,6 +92,12 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   }
 
+  html:not(.dark-mode) .affiliate-hub-container {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1.5px solid rgba(106, 13, 173, 0.22);
+    box-shadow: 0 15px 35px rgba(106, 13, 173, 0.05);
+  }
+
   .hub-header {
     text-align: center;
     max-width: 750px;
@@ -112,6 +118,12 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     margin-bottom: 12px;
   }
 
+  html:not(.dark-mode) .hub-badge {
+    background: rgba(106, 13, 173, 0.06);
+    border-color: rgba(106, 13, 173, 0.15);
+    color: var(--primary-purple);
+  }
+
   .hub-title {
     font-size: 1.6rem;
     font-weight: 900;
@@ -122,10 +134,18 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     padding: 0;
   }
 
+  html:not(.dark-mode) .hub-title {
+    color: var(--text-dark);
+  }
+
   .hub-subtitle {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.5;
+  }
+
+  html:not(.dark-mode) .hub-subtitle {
+    color: rgba(0, 0, 0, 0.65);
   }
 
   .hub-grid {
@@ -147,6 +167,13 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     position: relative;
   }
 
+  html:not(.dark-mode) .hub-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1.5px solid rgba(106, 13, 173, 0.16);
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.02);
+  }
+
   /* Eneba Brand Color Theme */
   .eneba-card:hover {
     transform: translateY(-5px);
@@ -157,6 +184,16 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
 
   .eneba-card:hover .hub-cta {
     color: #c586ff;
+  }
+
+  html:not(.dark-mode) .eneba-card:hover {
+    background: linear-gradient(to bottom, #ffffff, rgba(175, 82, 222, 0.05));
+    border-color: rgba(175, 82, 222, 0.55);
+    box-shadow: 0 10px 25px rgba(175, 82, 222, 0.08);
+  }
+
+  html:not(.dark-mode) .eneba-card:hover .hub-cta {
+    color: #8b1eb2;
   }
 
   /* Instant Gaming Brand Color Theme */
@@ -171,6 +208,16 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     color: #ff8533;
   }
 
+  html:not(.dark-mode) .ig-card:hover {
+    background: linear-gradient(to bottom, #ffffff, rgba(255, 100, 0, 0.05));
+    border-color: rgba(255, 100, 0, 0.55);
+    box-shadow: 0 10px 25px rgba(255, 100, 0, 0.08);
+  }
+
+  html:not(.dark-mode) .ig-card:hover .hub-cta {
+    color: #e65100;
+  }
+
   /* Amazon Brand Color Theme */
   .amazon-card:hover {
     transform: translateY(-5px);
@@ -183,6 +230,16 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     color: #ffb84d;
   }
 
+  html:not(.dark-mode) .amazon-card:hover {
+    background: linear-gradient(to bottom, #ffffff, rgba(255, 153, 0, 0.05));
+    border-color: rgba(255, 153, 0, 0.55);
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.08);
+  }
+
+  html:not(.dark-mode) .amazon-card:hover .hub-cta {
+    color: #b36b00;
+  }
+
   .card-brand-visual {
     height: 110px;
     display: flex;
@@ -190,7 +247,11 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     justify-content: center;
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    background: rgba(0, 0, 0, 0.15);
+    background: #141124; /* Always dark to ensure white brand logos are perfectly visible */
+  }
+
+  html:not(.dark-mode) .card-brand-visual {
+    border-bottom: 1px solid rgba(106, 13, 173, 0.08);
   }
 
   .logo-wrapper {
@@ -258,14 +319,29 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     color: #d39eff;
   }
 
+  html:not(.dark-mode) .tag-purple {
+    background: rgba(175, 82, 222, 0.12);
+    color: #7b1fa2;
+  }
+
   .tag-orange {
     background: rgba(255, 100, 0, 0.15);
     color: #ff944d;
   }
 
+  html:not(.dark-mode) .tag-orange {
+    background: rgba(255, 100, 0, 0.12);
+    color: #e65100;
+  }
+
   .tag-yellow {
     background: rgba(255, 153, 0, 0.15);
     color: #ffc266;
+  }
+
+  html:not(.dark-mode) .tag-yellow {
+    background: rgba(255, 153, 0, 0.12);
+    color: #b36b00;
   }
 
   .card-desc {
@@ -276,6 +352,10 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     flex: 1;
   }
 
+  html:not(.dark-mode) .card-desc {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
   .hub-cta {
     display: flex;
     align-items: center;
@@ -284,6 +364,10 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     font-weight: 700;
     transition: all 0.3s ease;
     margin-top: auto;
+  }
+
+  html:not(.dark-mode) .hub-cta {
+    color: var(--primary-purple);
   }
 
   .hub-cta svg {
