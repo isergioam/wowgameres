@@ -873,18 +873,18 @@
         "max": 15,
         "mats": {
           "Bismuto": 75,
-          "Flujo resonante": 30
+          "Cristal refulgente": 30
         },
-        "description": "<strong>Herrería 1 – 15</strong><br><span class=\"recipe-name\">Guardabrazos de combatiente forjado &rarr;</span> 75 Bismuto, 30 Flujo resonante."
+        "description": "<strong>Herrería 1 – 15</strong><br><span class=\"recipe-name\">Guardabrazos de combatiente forjado &rarr;</span> 75 Bismuto, 30 Cristal refulgente."
       },
       {
         "min": 15,
         "max": 30,
         "mats": {
           "Bismuto": 120,
-          "Flujo resonante": 45
+          "Cristal refulgente": 45
         },
-        "description": "<strong>Herrería 15 – 30</strong><br><span class=\"recipe-name\">Botas de combatiente forjado &rarr;</span> 120 Bismuto, 45 Flujo resonante."
+        "description": "<strong>Herrería 15 – 30</strong><br><span class=\"recipe-name\">Botas de combatiente forjado &rarr;</span> 120 Bismuto, 45 Cristal refulgente."
       },
       {
         "min": 30,
@@ -892,9 +892,9 @@
         "mats": {
           "Bismuto": 200,
           "Aqirita": 40,
-          "Flujo resonante": 60
+          "Cristal refulgente": 60
         },
-        "description": "<strong>Herrería 30 – 50</strong><br><span class=\"recipe-name\">Coraza de combatiente forjado &rarr;</span> 200 Bismuto, 40 Aqirita, 60 Flujo resonante."
+        "description": "<strong>Herrería 30 – 50</strong><br><span class=\"recipe-name\">Coraza de combatiente forjado &rarr;</span> 200 Bismuto, 40 Aqirita, 60 Cristal refulgente."
       },
       {
         "min": 50,
@@ -902,9 +902,9 @@
         "mats": {
           "Bismuto": 250,
           "Mena de colmilloférreo": 50,
-          "Flujo resonante": 100
+          "Cristal refulgente": 100
         },
-        "description": "<strong>Herrería 50 – 75</strong><br><span class=\"recipe-name\">Gran espada de acero de Arathor &rarr;</span> 250 Bismuto, 50 Mena de colmilloférreo, 100 Flujo resonante."
+        "description": "<strong>Herrería 50 – 75</strong><br><span class=\"recipe-name\">Gran espada de acero de Arathor &rarr;</span> 250 Bismuto, 50 Mena de colmilloférreo, 100 Cristal refulgente."
       },
       {
         "min": 75,

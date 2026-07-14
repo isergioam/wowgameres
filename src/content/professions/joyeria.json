@@ -589,7 +589,7 @@
         "min": 1,
         "max": 15,
         "mats": {
-          "Mena de bismuto": 75
+          "Bismuto": 75
         },
         "description": "<strong>Joyería 1 – 15</strong><br>Prospección de materiales de TWW."
       },
@@ -597,8 +597,7 @@
         "min": 15,
         "max": 40,
         "mats": {
-          "Gemas comunes": 50,
-          "Piedra velocrepúsculo": 20
+          "Gemas comunes": 50
         },
         "description": "<strong>Joyería 15 – 40</strong><br>Tallas de gemas de TWW."
       },
@@ -606,8 +605,7 @@
         "min": 40,
         "max": 70,
         "mats": {
-          "Gemas raras": 30,
-          "Mota de vacío": 15
+          "Gemas raras": 30
         },
         "description": "<strong>Joyería 40 – 70</strong><br>Joyas de alta calidad."
       },
