@@ -423,8 +423,8 @@
         "min": 1,
         "max": 25,
         "mats": {
-          "Paño de tejerred": 100,
-          "Hilo de Khaz Algar": 50
+          "Tejetela": 100,
+          "Bobina de tejehilo": 50
         },
         "description": "<strong>Sastrería 1 – 25</strong><br>Rollos y vendas de Khaz Algar."
       },
@@ -432,8 +432,8 @@
         "min": 25,
         "max": 60,
         "mats": {
-          "Paño de tejerred": 200,
-          "Hilo de Khaz Algar": 100
+          "Tejetela": 200,
+          "Bobina de tejehilo": 100
         },
         "description": "<strong>Sastrería 25 – 60</strong><br>Equipamiento de tela azul (Calidad rara)."
       },
@@ -441,8 +441,7 @@
         "min": 60,
         "max": 100,
         "mats": {
-          "Chispa de presagios": 5,
-          "Tela imbuida": 10
+          "Chispa de presagios": 5
         },
         "description": "<strong>Sastrería 60 – 100</strong><br>Fabricaciones de Chispa y sistemas de pedidos."
       }
