@@ -733,8 +733,8 @@
         "min": 1,
         "max": 25,
         "mats": {
-          "Cuero de Khaz Algar": 100,
-          "Escamas de Khaz Algar": 50
+          "Cuero cargado de tormenta": 100,
+          "Quitina penumbrosa": 50
         },
         "description": "<strong>Peletería 1 – 25</strong><br>Refuerzos y parches de Khaz Algar."
       },
@@ -742,7 +742,7 @@
         "min": 25,
         "max": 60,
         "mats": {
-          "Cuero de Khaz Algar": 200,
+          "Cuero cargado de tormenta": 200,
           "Plumaje incomparable": 20
         },
         "description": "<strong>Peletería 25 – 60</strong><br>Equipamiento de cuero y malla azul."
@@ -752,7 +752,7 @@
         "max": 100,
         "mats": {
           "Chispa de presagios": 5,
-          "Pellejo imbuido": 20
+          "Pellejo de cristal imbuido": 20
         },
         "description": "<strong>Peletería 60 – 100</strong><br>Fabricación épica y sistemas de pedidos."
       }
