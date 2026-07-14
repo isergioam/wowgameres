@@ -1,245 +1,340 @@
 ---
 /**
  * AffiliateBanner.astro
- * Banner premium para promocionar Eneba de forma nativa e integrada.
+ * Hub de afiliados premium integrado (Eneba, Instant Gaming, Amazon).
  */
-interface Props {
-  type?: 'horizontal' | 'vertical';
-}
 
-const { type = 'horizontal' } = Astro.props;
-
-// ENLACE DE AFILIADO DE ENEBA (Modificable)
-const AFFILIATE_URL = "https://www.eneba.com/?af_id=wowgameres";
+// ENLACES DE AFILIADOS (Modificables)
+const ENEBA_URL = "https://www.eneba.com/?af_id=wowgameres";
+const INSTANT_GAMING_URL = "https://www.instant-gaming.com/?igr=wowgameres";
+const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
 ---
 
-<div class={`affiliate-container ${type}`}>
-  <a href={AFFILIATE_URL} target="_blank" rel="noopener noreferrer" class="affiliate-card">
-    <div class="affiliate-content">
-      <div class="brand-tag">Oferta Recomendada</div>
-      <div class="main-text">
-        ¿Necesitas <span class="highlight">Tiempo de Juego</span> o saldo Battle.net? Consigue todo al mejor precio en Eneba
+<div class="affiliate-hub-container">
+  <div class="hub-header">
+    <div class="hub-badge">🛒 Apoya la Web</div>
+    <h3 class="hub-title">Consigue tu Tiempo de Juego y Gaming Gear al mejor precio</h3>
+    <p class="hub-subtitle">
+      Comprando a través de estos enlaces nos ayudas a mantener las guías 100% actualizadas y libres de anuncios molestos. ¡Gracias por tu apoyo!
+    </p>
+  </div>
+
+  <div class="hub-grid">
+    <!-- ENEBA -->
+    <a href={ENEBA_URL} target="_blank" rel="noopener noreferrer" class="hub-card eneba-card">
+      <div class="card-brand-visual">
+         <div class="logo-wrapper">
+           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-svg eneba-svg">
+             <path d="M 50,15 A 35,35 0 1 1 25.3,25.3 C 27.5,23 30,21 32.7,19.4" stroke="url(#enebaGradientHub)" stroke-width="13" stroke-linecap="round"/>
+             <path d="M 32.7,19.4 A 35,35 0 0 1 50,15" stroke="url(#enebaTealHub)" stroke-width="13" stroke-linecap="round"/>
+             <defs>
+               <linearGradient id="enebaGradientHub" x1="15" y1="15" x2="85" y2="85" gradientUnits="userSpaceOnUse">
+                 <stop offset="0%" stop-color="#ff3e00"/>
+                 <stop offset="25%" stop-color="#ff007a"/>
+                 <stop offset="50%" stop-color="#9a00e6"/>
+                 <stop offset="75%" stop-color="#2a00ff"/>
+                 <stop offset="100%" stop-color="#00e1ff"/>
+               </linearGradient>
+               <linearGradient id="enebaTealHub" x1="32.7" y1="19.4" x2="50" y2="15" gradientUnits="userSpaceOnUse">
+                 <stop offset="0%" stop-color="#00ff8c"/>
+                 <stop offset="100%" stop-color="#ffd100"/>
+               </linearGradient>
+             </defs>
+           </svg>
+           <span class="eneba-text-hub">eneba</span>
+         </div>
       </div>
-      <div class="cta-button-container">
-        <span class="cta-button">
+      <div class="card-info">
+        <span class="tag tag-purple">Suscripciones y Saldo</span>
+        <p class="card-desc">Tarjetas de saldo Battle.net, prepagos de WoW y claves de expansión con descuentos instantáneos.</p>
+        <div class="hub-cta">
           Ver ofertas en Eneba
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-        </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </div>
       </div>
-    </div>
-    <div class="affiliate-visual">
-       <div class="eneba-logo-wrapper">
-         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="eneba-svg-mark">
-           <!-- Círculo estilizado con gradientes simulando el logo ribbon de Eneba -->
-           <path d="M 50,15 A 35,35 0 1 1 25.3,25.3 C 27.5,23 30,21 32.7,19.4" stroke="url(#enebaGradient)" stroke-width="13" stroke-linecap="round"/>
-           <path d="M 32.7,19.4 A 35,35 0 0 1 50,15" stroke="url(#enebaTeal)" stroke-width="13" stroke-linecap="round"/>
-           <defs>
-             <linearGradient id="enebaGradient" x1="15" y1="15" x2="85" y2="85" gradientUnits="userSpaceOnUse">
-               <stop offset="0%" stop-color="#ff3e00"/>
-               <stop offset="25%" stop-color="#ff007a"/>
-               <stop offset="50%" stop-color="#9a00e6"/>
-               <stop offset="75%" stop-color="#2a00ff"/>
-               <stop offset="100%" stop-color="#00e1ff"/>
-             </linearGradient>
-             <linearGradient id="enebaTeal" x1="32.7" y1="19.4" x2="50" y2="15" gradientUnits="userSpaceOnUse">
-               <stop offset="0%" stop-color="#00ff8c"/>
-               <stop offset="100%" stop-color="#ffd100"/>
-             </linearGradient>
-           </defs>
-         </svg>
-         <span class="eneba-text">eneba</span>
-       </div>
-    </div>
-  </a>
+    </a>
+
+    <!-- INSTANT GAMING -->
+    <a href={INSTANT_GAMING_URL} target="_blank" rel="noopener noreferrer" class="hub-card ig-card">
+      <div class="card-brand-visual">
+         <div class="logo-wrapper">
+           <div class="ig-logo-badge">IG</div>
+           <span class="ig-text-hub">Instant Gaming</span>
+         </div>
+      </div>
+      <div class="card-info">
+        <span class="tag tag-orange">Tiempo de Juego Oficial</span>
+        <p class="card-desc">Compra tiempo de juego de 30 o 60 días al instante, de forma 100% segura y sin esperas.</p>
+        <div class="hub-cta">
+          Ver en Instant Gaming
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- AMAZON -->
+    <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" class="hub-card amazon-card">
+      <div class="card-brand-visual">
+         <div class="logo-wrapper">
+           <svg viewBox="0 0 100 45" fill="none" xmlns="http://www.w3.org/2000/svg" class="amazon-svg">
+             <path d="M12 18c0-3 2.5-5 5-5s5 2 5 5v3c0 3-2.5 5-5 5s-5-2-5-5v-3z" fill="white"/>
+             <path d="M22 13h4v15h-4v-1.5c-2 2-4.5 2-6 2-5.5 0-9.5-4-9.5-9.5s4-9.5 9.5-9.5c1.5 0 4 .5 6 2V13z" fill="white"/>
+             <path d="M40 13c0 3-1.5 5-4.5 5s-4.5-2-4.5-5v-3c0-3 1.5-5 4.5-5s4.5 2 4.5 5v3zm-4.5 15.5c-4.5 0-9-2.5-9-7.5v-11c0-5 4.5-7.5 9-7.5s9 2.5 9 7.5v11c0 5-4.5 7.5-9 7.5z" fill="white"/>
+             <!-- Smile arrow of Amazon -->
+             <path d="M10 32c18 8 36 8 50 0" stroke="#ff9900" stroke-width="3.5" stroke-linecap="round"/>
+             <path d="M56 32l-3-5m3 5l-6 2" stroke="#ff9900" stroke-width="3.5" stroke-linecap="round"/>
+           </svg>
+         </div>
+      </div>
+      <div class="card-info">
+        <span class="tag tag-yellow">Merch y Periféricos</span>
+        <p class="card-desc">Libros del Lore oficial de Warcraft, novelas, figuras coleccionables y hardware para tu PC.</p>
+        <div class="hub-cta">
+          Ver en Amazon
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>
 
 <style>
-  .affiliate-container {
+  .affiliate-hub-container {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
     position: relative;
     z-index: 5;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   }
 
-  .affiliate-card {
+  .hub-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 35px;
+  }
+
+  .hub-badge {
+    display: inline-block;
+    background: rgba(187, 159, 255, 0.1);
+    border: 1px solid rgba(187, 159, 255, 0.2);
+    color: #bb9fff;
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+
+  .hub-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    border: none;
+    padding: 0;
+  }
+
+  .hub-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+  }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .hub-card {
     display: flex;
-    background: linear-gradient(135deg, #0e071e 0%, #1e0b3c 50%, #2f125a 100%);
-    border: 1px solid rgba(175, 82, 222, 0.25);
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 18px;
-    overflow: hidden;
     text-decoration: none;
     color: white;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
     position: relative;
   }
 
-  .affiliate-card:hover {
+  /* Eneba Brand Color Theme */
+  .eneba-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(52, 199, 89, 0.6);
-    box-shadow: 0 15px 40px rgba(52, 199, 89, 0.12), 0 0 20px rgba(175, 82, 222, 0.1);
+    border-color: rgba(175, 82, 222, 0.5);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(175, 82, 222, 0.04));
+    box-shadow: 0 10px 25px rgba(175, 82, 222, 0.15);
   }
 
-  .affiliate-content {
-    flex: 1;
-    padding: 30px 40px;
+  .eneba-card:hover .hub-cta {
+    color: #c586ff;
+  }
+
+  /* Instant Gaming Brand Color Theme */
+  .ig-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 100, 0, 0.5);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 100, 0, 0.04));
+    box-shadow: 0 10px 25px rgba(255, 100, 0, 0.15);
+  }
+
+  .ig-card:hover .hub-cta {
+    color: #ff8533;
+  }
+
+  /* Amazon Brand Color Theme */
+  .amazon-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 153, 0, 0.5);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 153, 0, 0.04));
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.15);
+  }
+
+  .amazon-card:hover .hub-cta {
+    color: #ffb84d;
+  }
+
+  .card-brand-visual {
+    height: 110px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 2;
-  }
-
-  .brand-tag {
-    display: inline-block;
-    background: linear-gradient(90deg, #9a00e6 0%, #ff007a 100%);
-    color: white;
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 15px;
-    width: fit-content;
-    box-shadow: 0 4px 10px rgba(255, 0, 122, 0.2);
-  }
-
-  .main-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: 1.35;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-  }
-
-  .highlight {
-    background: linear-gradient(120deg, #00ff8c 0%, #ffd100 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-  }
-
-  .cta-button-container {
-    margin-top: 5px;
-  }
-
-  .cta-button {
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: #ffd100;
-    color: #0c0714;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.25);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background: rgba(0, 0, 0, 0.15);
   }
 
-  .cta-button svg {
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     transition: transform 0.3s ease;
   }
 
-  .affiliate-card:hover .cta-button {
-    background: #ffe033;
-    box-shadow: 0 6px 20px rgba(255, 209, 0, 0.45);
-    transform: scale(1.03);
+  .hub-card:hover .logo-wrapper {
+    transform: scale(1.05);
   }
 
-  .affiliate-card:hover .cta-button svg {
+  /* Logos styling */
+  .eneba-svg {
+    width: 42px;
+    height: 42px;
+    filter: drop-shadow(0 0 8px rgba(154, 0, 230, 0.2));
+  }
+
+  .eneba-text-hub {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -1.3px;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+
+  .ig-logo-badge {
+    background: #ff6400;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 900;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 100, 0, 0.3);
+  }
+
+  .ig-text-hub {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.3px;
+  }
+
+  .amazon-svg {
+    width: 80px;
+    height: auto;
+  }
+
+  .card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .tag-purple {
+    background: rgba(175, 82, 222, 0.15);
+    color: #d39eff;
+  }
+
+  .tag-orange {
+    background: rgba(255, 100, 0, 0.15);
+    color: #ff944d;
+  }
+
+  .tag-yellow {
+    background: rgba(255, 153, 0, 0.15);
+    color: #ffc266;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .hub-cta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-top: auto;
+  }
+
+  .hub-cta svg {
+    transition: transform 0.3s ease;
+  }
+
+  .hub-card:hover .hub-cta svg {
     transform: translateX(4px);
   }
 
-  .affiliate-visual {
-    width: 250px;
-    background: radial-gradient(circle at center, rgba(154, 0, 230, 0.18) 0%, transparent 70%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border-left: 1px solid rgba(255, 255, 255, 0.03);
-  }
-
-  .eneba-logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .eneba-svg-mark {
-    width: 55px;
-    height: 55px;
-    filter: drop-shadow(0 0 12px rgba(154, 0, 230, 0.35));
-  }
-
-  .eneba-text {
-    font-size: 2.1rem;
-    font-weight: 900;
-    color: white;
-    letter-spacing: -1.8px;
-    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
-  @keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-6px) rotate(1deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-  }
-
-  /* Animación de brillo de barrido */
-  .affiliate-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(255, 255, 255, 0.03),
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.03),
-      transparent
-    );
-    transform: rotate(45deg);
-    transition: 0.8s;
-    pointer-events: none;
-  }
-
-  .affiliate-card:hover::after {
-    left: 100%;
-  }
-
-  @media (max-width: 768px) {
-    .affiliate-card {
-      flex-direction: column;
+  @media (max-width: 900px) {
+    .hub-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
-    .affiliate-visual {
-      width: 100%;
-      height: 100px;
-      border-left: none;
-      border-top: 1px solid rgba(255, 255, 255, 0.03);
+    .affiliate-hub-container {
+      padding: 20px;
     }
-    .main-text {
-      font-size: 1.25rem;
-    }
-    .affiliate-content {
-      padding: 25px;
-      align-items: center;
-      text-align: center;
-    }
-    .brand-tag {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .eneba-logo-wrapper {
-      transform: scale(0.85);
+    .card-brand-visual {
+      height: 90px;
     }
   }
 </style>
