@@ -520,7 +520,7 @@
         "max": 20,
         "mats": {
           "Tinta rutilante": 20,
-          "Papiro centelleante": 20
+          "Pergamino relumbrante": 20
         },
         "description": "<strong>Inscripción 10 – 20</strong><br>Nota de investigación: Especialización."
       },
@@ -556,7 +556,7 @@
         "max": 100,
         "mats": {
           "Tinta floreciente": 150,
-          "Pigmento abrasador": 50,
+          "Ascuas ardientes": 50,
           "Chispa de ingenio": 5
         },
         "description": "<strong>Inscripción 75 – 100</strong><br>Equipamiento épico o pedidos de artesanía."
