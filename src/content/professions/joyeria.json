@@ -546,7 +546,7 @@
         "min": 1,
         "max": 20,
         "mats": {
-          "Mena de servita": 100
+          "Mena de serevita": 100
         },
         "description": "<strong>Joyería 1 – 20</strong><br>Prospección de menas de las Islas Dragón."
       },
@@ -554,7 +554,7 @@
         "min": 20,
         "max": 40,
         "mats": {
-          "Ámbar noo": 20,
+          "Nozdiorita": 20,
           "Tierra cristalina": 20
         },
         "description": "<strong>Joyería 20 – 40</strong><br>Tallas de gemas comunes de DF."
