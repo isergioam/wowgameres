@@ -4,6 +4,8 @@
  * Hub de afiliados premium integrado (Eneba, Instant Gaming, Amazon).
  */
 import { Image } from 'astro:assets';
+import enebaLogoImg from '../assets/images/afiliados/eneba-logo.png';
+import igLogoImg from '../assets/images/afiliados/instant-gaming-logo.svg';
 import amazonLogoImg from '../assets/images/afiliados/amazon-logo.png';
 
 // ENLACES DE AFILIADOS (Modificables)
@@ -26,24 +28,7 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     <a href={ENEBA_URL} target="_blank" rel="noopener noreferrer" class="hub-card eneba-card">
       <div class="card-brand-visual">
          <div class="logo-wrapper">
-           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-svg eneba-svg">
-             <path d="M 50,15 A 35,35 0 1 1 25.3,25.3 C 27.5,23 30,21 32.7,19.4" stroke="url(#enebaGradientHub)" stroke-width="13" stroke-linecap="round"/>
-             <path d="M 32.7,19.4 A 35,35 0 0 1 50,15" stroke="url(#enebaTealHub)" stroke-width="13" stroke-linecap="round"/>
-             <defs>
-               <linearGradient id="enebaGradientHub" x1="15" y1="15" x2="85" y2="85" gradientUnits="userSpaceOnUse">
-                 <stop offset="0%" stop-color="#ff3e00"/>
-                 <stop offset="25%" stop-color="#ff007a"/>
-                 <stop offset="50%" stop-color="#9a00e6"/>
-                 <stop offset="75%" stop-color="#2a00ff"/>
-                 <stop offset="100%" stop-color="#00e1ff"/>
-               </linearGradient>
-               <linearGradient id="enebaTealHub" x1="32.7" y1="19.4" x2="50" y2="15" gradientUnits="userSpaceOnUse">
-                 <stop offset="0%" stop-color="#00ff8c"/>
-                 <stop offset="100%" stop-color="#ffd100"/>
-               </linearGradient>
-             </defs>
-           </svg>
-           <span class="eneba-text-hub">eneba</span>
+            <Image src={enebaLogoImg} alt="Eneba" class="eneba-png-logo" />
          </div>
       </div>
       <div class="card-info">
@@ -60,8 +45,7 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
     <a href={INSTANT_GAMING_URL} target="_blank" rel="noopener noreferrer" class="hub-card ig-card">
       <div class="card-brand-visual">
          <div class="logo-wrapper">
-           <div class="ig-logo-badge">IG</div>
-           <span class="ig-text-hub">Instant Gaming</span>
+            <Image src={igLogoImg} alt="Instant Gaming" class="ig-svg-logo" />
          </div>
       </div>
       <div class="card-info">
@@ -221,39 +205,18 @@ const AMAZON_URL = "https://www.amazon.es/?tag=wowgameres-21";
   }
 
   /* Logos styling */
-  .eneba-svg {
-    width: 42px;
-    height: 42px;
-    filter: drop-shadow(0 0 8px rgba(154, 0, 230, 0.2));
+  .eneba-png-logo {
+    max-height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(154, 0, 230, 0.15));
   }
 
-  .eneba-text-hub {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: white;
-    letter-spacing: -1.3px;
-    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
-  }
-
-  .ig-logo-badge {
-    background: #ff6400;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 900;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px rgba(255, 100, 0, 0.3);
-  }
-
-  .ig-text-hub {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: white;
-    letter-spacing: -0.3px;
+  .ig-svg-logo {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 100, 0, 0.15));
   }
 
   .amazon-png-logo {
