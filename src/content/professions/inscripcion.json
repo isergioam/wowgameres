@@ -573,8 +573,8 @@
         "min": 1,
         "max": 15,
         "mats": {
-          "Mena de bismuto": 75,
-          "Fundente de núcleo cristaloide": 30
+          "Bismuto": 75,
+          "Flujo resonante": 30
         },
         "description": "<strong>Inscripción 1 – 15</strong><br>Molienda de materiales de TWW."
       },
@@ -582,8 +582,8 @@
         "min": 15,
         "max": 30,
         "mats": {
-          "Tinta de bismuto": 60,
-          "Pigmento de bismuto": 30
+          "Tinta nacarada": 60,
+          "Pigmento nacarado": 30
         },
         "description": "<strong>Inscripción 15 – 30</strong><br>Tratado de profesión (TWW)."
       },
@@ -591,8 +591,8 @@
         "min": 30,
         "max": 50,
         "mats": {
-          "Tinta de bismuto": 100,
-          "Pigmento de Kaheti": 40
+          "Tinta cálida": 100,
+          "Pigmento de cebo mortal": 40
         },
         "description": "<strong>Inscripción 30 – 50</strong><br>Naipe de la Luna Negra de TWW."
       },
@@ -600,8 +600,8 @@
         "min": 50,
         "max": 75,
         "mats": {
-          "Tinta de bismuto": 150,
-          "Pigmento de Arathor": 50
+          "Tinta cálida": 150,
+          "Pigmento de flor": 50
         },
         "description": "<strong>Inscripción 50 – 75</strong><br>Misivas de estadísticas de TWW."
       },
@@ -610,7 +610,7 @@
         "max": 100,
         "mats": {
           "Chispa de presagios": 5,
-          "Tinta de bismuto": 100
+          "Tinta cálida": 100
         },
         "description": "<strong>Inscripción 75 – 100</strong><br>Equipamiento épico con Chispa de presagios."
       }
