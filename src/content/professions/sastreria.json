@@ -388,17 +388,17 @@
         "min": 1,
         "max": 20,
         "mats": {
-          "Paño salvaje": 60,
-          "Carrete de hilo salvaje": 20
+          "Tela salvaje": 60,
+          "Bobina de hilo salvaje": 20
         },
-        "description": "<strong>Sastrería 1 – 20</strong><br><span class=\"recipe-name\">Madeja de paño salvaje &rarr;</span> ~60 Paño salvaje."
+        "description": "<strong>Sastrería 1 – 20</strong><br><span class=\"recipe-name\">Madeja de tela salvaje &rarr;</span> ~60 Tela salvaje."
       },
       {
         "min": 20,
         "max": 50,
         "mats": {
-          "Paño salvaje": 150,
-          "Carrete de hilo salvaje": 50
+          "Tela salvaje": 150,
+          "Bobina de hilo salvaje": 50
         },
         "description": "<strong>Sastrería 20 – 50</strong><br>Brazales e indumentaria básica de las Islas Dragón."
       },
@@ -407,7 +407,7 @@
         "max": 100,
         "mats": {
           "Chispa de ingenio": 5,
-          "Tela vibrante": 20
+          "Fragmento vibrante": 20
         },
         "description": "<strong>Sastrería 50 – 100</strong><br>Equipos épicos y pedidos de artesanía."
       }
