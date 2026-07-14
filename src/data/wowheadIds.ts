@@ -487,8 +487,6 @@ export const WOWHEAD_IDS: Record<string, number> = {
   "Tinta ultramarina": 158187,
   "Tinta umbría": 173058,
   "Tinta verdosa": 158189,
-  "tintas": 240722,
-  "Tintas": 240722,
   "Tinte gris": 4340,
   "Tinte negro": 2325,
   "Tinte verde": 2605,

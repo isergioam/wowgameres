@@ -638,8 +638,7 @@
         "max": 30,
         "mats": {
           "Cantagua thalassiana": 69,
-          "Pigmento de polvo": 460,
-          "tintas": 1
+          "Pigmento de polvo": 460
         },
         "description": "<strong>Inscripción 20 – 30</strong><br>Tinta Munsell y Tinta Sienna."
       },
@@ -647,8 +646,7 @@
         "min": 30,
         "max": 35,
         "mats": {
-          "Azerraíz": 24,
-          "tintas": 1
+          "Azerraíz": 24
         },
         "description": "<strong>Inscripción 30 – 35</strong><br>Bordón, Muleta y Lámpara de cuidador."
       },
@@ -656,8 +654,7 @@
         "min": 35,
         "max": 42,
         "mats": {
-          "Azerraíz": 23,
-          "tintas": 1
+          "Azerraíz": 23
         },
         "description": "<strong>Inscripción 35 – 42</strong><br>Equipo de profesión aficionado."
       },
