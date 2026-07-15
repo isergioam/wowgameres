@@ -402,21 +402,7 @@ a {
   margin: auto 20px;
 }
 
-.ad-container {
-  max-width: 1200px;
-  margin: 15px auto;
-  padding: 0 20px;
-  text-align: center;
-  min-height: 90px;
-}
 
-/* Adsterra Social Bar - Reposicionamiento a la derecha abajo */
-div[class*="as-social-bar"] {
-  top: auto !important;
-  bottom: 20px !important;
-  right: 20px !important;
-  left: auto !important;
-}
 
 .recipe-name {
   font-size: 1.2em;
@@ -469,42 +455,7 @@ h1 {
   padding-bottom: var(--space-sm);
 }
 
-/* Profesiones y Expansiones(tarjetas) */
-.profesiones {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-content: center;
-}
 
-.card {
-  padding: var(--space-lg);
-  text-align: center;
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  height: 150px;
-  width: auto;
-  object-fit: contain;
-}
-
-.card h3 {
-  color: var(--primary-purple);
-  margin-bottom: 10px;
-}
-
-.card p {
-  color: #2e2e2e;
-}
 
 /* Expansiones (tarjetas) */
 .expansiones {
@@ -945,11 +896,7 @@ footer {
 /* 📱 RESPONSIVE DESIGN  */
 /* ===================== */
 
-/* --- Tabla responsive --- */
-.table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
+
 
 /* --- TABLET (max 1024px) --- */
 @media (max-width: 1024px) {
@@ -966,9 +913,7 @@ footer {
     padding: 15px;
   }
 
-  .card {
-    flex: 1 1 200px;
-  }
+
 }
 
 /* --- TABLET (max 1024px) --- */
@@ -981,10 +926,7 @@ footer {
     margin: 10px 20px;
   }
 
-  .profesiones {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
+
 
   .search-container {
     margin: 0 20px;
@@ -1237,26 +1179,7 @@ footer {
     font-size: 1.2rem;
   }
 
-  /* Cards de profesiones */
-  .profesiones {
-    gap: 12px;
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  .card {
-    padding: 12px;
-  }
-
-  .card img {
-    height: auto;
-    width: 100%;
-    max-width: 180px;
-    object-fit: contain;
-  }
-
-  .card h3 {
-    font-size: 0.9rem;
-  }
 
   /* Cards de expansiones */
   .card-expansion {
@@ -1371,12 +1294,7 @@ footer {
     font-size: 0.8rem;
   }
 
-  /* Ad container compacto en móvil */
-  .ad-container {
-    padding: 0 5px;
-    min-height: 50px;
-    margin: 15px 0 !important;
-  }
+
 }
 
 /* --- SMALL MOBILE (max 480px) --- */
@@ -1400,26 +1318,7 @@ footer {
     padding: 0 var(--space-md);
   }
 
-  /* Cards en 2 columnas */
-  .profesiones {
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  }
 
-  .card {
-    padding: 10px;
-  }
-
-  .card img {
-    height: auto;
-    width: 100%;
-    max-width: 160px;
-  }
-
-  .card h3 {
-    font-size: 0.8rem;
-    margin-bottom: 5px;
-  }
 
   /* Expansiones en 2 columnas */
   .card-expansion {
@@ -1536,46 +1435,7 @@ footer {
   background-color: var(--primary-glow);
 }
 
-.ad-container {
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
 
-.ad-container::before {
-  content: "Anuncio";
-  display: block;
-  font-size: 10px;
-  color: #888;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-}
-
-.ad-middle {
-  margin-top: 30px;
-  min-height: 90px;
-}
-
-.ad-bottom {
-  margin-top: 40px;
-  min-height: 250px;
-}
-
-@media (max-width: 768px) {
-  .ad-middle {
-    margin-top: 20px;
-    min-height: 60px;
-    /* Menor impacto visual */
-  }
-
-  .ad-bottom {
-    margin-top: 25px;
-    min-height: 100px;
-    /* Evita que parezca el final de la página */
-  }
-}
 
 .dark-mode .sort-indicator {
   color: #bb9fff;
@@ -2163,12 +2023,7 @@ footer {
 
 
 /* --- PROFESIONES PANOR�MICAS --- */
-.profesiones-cinematic {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin-top: 20px;
-}
+
 
 
 
@@ -2452,9 +2307,7 @@ footer {
   border-radius: 0 !important;
 }
 
-.card-cinematic.alt-height {
-  height: 370px;
-}
+
 
 .card-cinematic .card-bg {
   position: absolute;
