@@ -1,0 +1,243 @@
+---
+/**
+ * DonationBanner.astro
+ * Banner interactivo y temático WoW para promover las donaciones y el mantenimiento de la web.
+ */
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "¡Ayúdanos a Mantener WOWGamerES Vivo y Libre de Anuncios!",
+  subtitle = "Somos un proyecto independiente de la comunidad. Tu apoyo nos ayuda a pagar los costes del servidor y seguir creando guías 100% actualizadas."
+} = Astro.props;
+
+const KOFI_URL = "https://ko-fi.com/wowgameres";
+---
+
+<section class="donation-banner-container">
+  <div class="donation-banner-content">
+    <div class="donation-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+      </svg>
+      <span>Comunidad y Mecenazgo</span>
+    </div>
+
+    <h3 class="donation-title">{title}</h3>
+    <p class="donation-subtitle">{subtitle}</p>
+
+    <div class="donation-actions">
+      <a href="/donar/" class="btn-donate-primary">
+        <span>🧪 Invítanos a una Poción de Maná</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14m-7-7 7 7-7 7"/>
+        </svg>
+      </a>
+
+      <a href={KOFI_URL} target="_blank" rel="noopener noreferrer" class="btn-donate-kofi">
+        <span>☕ Apoyar en Ko-fi</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="donation-banner-decoration">
+    <div class="potion-orb"></div>
+  </div>
+</section>
+
+<style>
+  .donation-banner-container {
+    position: relative;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.08) 0%, rgba(20, 10, 35, 0.04) 100%);
+    border: 1px solid rgba(106, 13, 173, 0.2);
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin: 40px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  :global(.dark-mode) .donation-banner-container {
+    background: linear-gradient(135deg, rgba(187, 159, 255, 0.1) 0%, rgba(15, 8, 25, 0.6) 100%);
+    border-color: rgba(187, 159, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .donation-banner-container:hover {
+    border-color: var(--primary-purple);
+    transform: translateY(-2px);
+  }
+
+  .donation-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+  }
+
+  .donation-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(106, 13, 173, 0.12);
+    color: var(--primary-purple);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  :global(.dark-mode) .donation-badge {
+    background: rgba(187, 159, 255, 0.18);
+    color: #e0d0ff;
+  }
+
+  .heart-icon {
+    stroke: #e63946;
+    fill: rgba(230, 57, 70, 0.2);
+  }
+
+  .donation-title {
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 10px 0;
+    color: var(--text-dark);
+  }
+
+  .donation-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    opacity: 0.88;
+    margin: 0 0 22px 0;
+    color: var(--text-dark);
+  }
+
+  .donation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-donate-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #6a0dad 0%, #8b2fc9 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(106, 13, 173, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  .btn-donate-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 13, 173, 0.5);
+    color: #ffffff;
+  }
+
+  :global(.dark-mode) .btn-donate-primary {
+    background: linear-gradient(135deg, #9b51e0 0%, #bb9fff 100%);
+    color: #120524;
+    box-shadow: 0 4px 16px rgba(187, 159, 255, 0.3);
+  }
+
+  :global(.dark-mode) .btn-donate-primary:hover {
+    color: #000000;
+    box-shadow: 0 6px 24px rgba(187, 159, 255, 0.5);
+  }
+
+  .btn-donate-kofi, .btn-donate-paypal {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  :global(.dark-mode) .btn-donate-kofi,
+  :global(.dark-mode) .btn-donate-paypal {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .btn-donate-kofi:hover {
+    background: #ff5e5b;
+    color: #ffffff;
+    border-color: #ff5e5b;
+  }
+
+  .btn-donate-paypal:hover {
+    background: #0070ba;
+    color: #ffffff;
+    border-color: #0070ba;
+  }
+
+  .donation-banner-decoration {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .donation-banner-decoration {
+      display: block;
+      position: relative;
+      width: 110px;
+      height: 110px;
+      flex-shrink: 0;
+    }
+
+    .potion-orb {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 47, 201, 0.4) 0%, rgba(106, 13, 173, 0.05) 70%);
+      border: 2px solid rgba(187, 159, 255, 0.4);
+      box-shadow: 0 0 30px rgba(139, 47, 201, 0.3);
+      animation: floatPulse 4s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes floatPulse {
+    0% {
+      transform: translateY(0) scale(0.96);
+      box-shadow: 0 0 20px rgba(139, 47, 201, 0.2);
+    }
+    100% {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 0 35px rgba(187, 159, 255, 0.5);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .donation-banner-container {
+      padding: 22px 18px;
+    }
+    .donation-title {
+      font-size: 1.25rem;
+    }
+    .btn-donate-primary {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

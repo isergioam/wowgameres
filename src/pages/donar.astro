@@ -1,0 +1,668 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DonationBanner from '../components/DonationBanner.astro';
+
+// Configuración de URLs de donación (Modificables)
+const KOFI_URL = "https://ko-fi.com/wowgameres";
+
+// Datos simulados de la meta del mes actual (Modificables)
+const MONTHLY_GOAL = {
+  currentAmount: 18,
+  targetAmount: 25,
+  currency: "€",
+  month: "Este Mes"
+};
+
+const goalPercentage = Math.min(100, Math.round((MONTHLY_GOAL.currentAmount / MONTHLY_GOAL.targetAmount) * 100));
+
+// Lista de mecénas / hall of fame (Modificable)
+const TOP_SUPPORTERS = [
+  { name: "Thrall_Fan99", amount: "15€", tier: "Mecenas del Consejo", icon: "👑" },
+  { name: "JainaProud", amount: "10€", tier: "Refuerzo de Hermandad", icon: "🛡️" },
+  { name: "Arthas_DK", amount: "5€", tier: "Poción de Maná", icon: "🧪" },
+  { name: "Anon_Hordie", amount: "3€", tier: "Poción de Maná", icon: "🧪" }
+];
+---
+
+<BaseLayout 
+  title="Donaciones y Mecenazgo | WOWGamerES" 
+  description="Apoya el proyecto independiente de WOWGamerES. Ayúdanos a mantener las guías de World of Warcraft libres de anuncios molestos y los servidores activos."
+>
+  <main class="donar-page-content">
+    
+    <!-- HERO HEADER -->
+    <header class="donar-hero">
+      <div class="donar-hero-badge">
+        <span class="pulse-dot"></span>
+        <span>Mecenazgo e Independencia</span>
+      </div>
+      <h1 class="donar-hero-title">Mantén WOWGamerES Vivo y Libres de Publicidad molesta</h1>
+      <p class="donar-hero-subtitle">
+        WOWGamerES es una web creada por y para jugadores de World of Warcraft. No tenemos grandes empresas detrás ni inundamos la pantalla con banners molestos. Tu apoyo directo garantiza servidores rápidos y guías siempre actualizadas.
+      </p>
+    </header>
+
+    <!-- BARRA DE META MENSUAL -->
+    <section class="goal-card-section">
+      <div class="goal-header">
+        <div class="goal-info">
+          <h3>Costes del Servidor y Mantenimiento ({MONTHLY_GOAL.month})</h3>
+          <p>Ayúdanos a cubrir los {MONTHLY_GOAL.targetAmount}{MONTHLY_GOAL.currency}/mes para mantener el servidor web, el dominio y las herramientas de optimización.</p>
+        </div>
+        <div class="goal-amount-badge">
+          <span class="current-amount">{MONTHLY_GOAL.currentAmount}{MONTHLY_GOAL.currency}</span> / {MONTHLY_GOAL.targetAmount}{MONTHLY_GOAL.currency}
+        </div>
+      </div>
+
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" style={`width: ${goalPercentage}%;`}>
+          <span class="progress-percentage-label">{goalPercentage}%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARJETAS DE DONACIÓN / TIERS -->
+    <section class="tiers-section">
+      <h2 class="section-title">Elige cómo quieres apoyar a Azeroth</h2>
+      
+      <div class="tiers-grid">
+        <!-- TIER 1: POCIÓN DE MANÁ -->
+        <div class="tier-card tier-mana">
+          <div class="tier-icon">🧪</div>
+          <span class="tier-badge">Aporte Puntual</span>
+          <h3 class="tier-title">Poción de Maná</h3>
+          <div class="tier-price">3€ <span class="tier-freq">/ puntual</span></div>
+          <p class="tier-desc">Un impulso rápido para mantener despierto al equipo durante las largas noches de raid y actualización de guías.</p>
+          <ul class="tier-features">
+            <li>✓ Nuestro agradecimiento eterno</li>
+            <li>✓ Ayuda a mantener la web sin anuncios molestos</li>
+            <li>✓ Muro de agradecimientos opcional</li>
+          </ul>
+          <a href={KOFI_URL} target="_blank" rel="noopener noreferrer" class="btn-tier btn-mana">
+            Invitar en Ko-fi (3€)
+          </a>
+        </div>
+
+        <!-- TIER 2: REFUERZO DE HERMANDAD (Destacado) -->
+        <div class="tier-card tier-guild featured-tier">
+          <div class="featured-ribbon">⭐ Más Popular</div>
+          <div class="tier-icon">🛡️</div>
+          <span class="tier-badge">Aporte Recomendado</span>
+          <h3 class="tier-title">Refuerzo de Hermandad</h3>
+          <div class="tier-price">5€ <span class="tier-freq">/ puntual o mes</span></div>
+          <p class="tier-desc">Financia directamente una parte importante del servidor web e infraestructura de parches.</p>
+          <ul class="tier-features">
+            <li>✓ Todo lo anterior</li>
+            <li>✓ Insignia especial en el Hall of Fame</li>
+            <li>✓ Sugiere nuevas guías prioritarias</li>
+          </ul>
+          <a href={KOFI_URL} target="_blank" rel="noopener noreferrer" class="btn-tier btn-guild">
+            Apoyar con 5€
+          </a>
+        </div>
+
+        <!-- TIER 3: MECENAS DEL CONSEJO -->
+        <div class="tier-card tier-council">
+          <div class="tier-icon">👑</div>
+          <span class="tier-badge">Gran Mecenas</span>
+          <h3 class="tier-title">Mecenas del Consejo</h3>
+          <div class="tier-price">10€+ <span class="tier-freq">/ puntual o mes</span></div>
+          <p class="tier-desc">Para aquellos campeones que desean impulsar el desarrollo de herramientas personalizadas de WoW.</p>
+          <ul class="tier-features">
+            <li>✓ Todo lo anterior</li>
+            <li>✓ Mención de honor en el Muro de Mecenas</li>
+            <li>✓ Contacto directo con el equipo técnico</li>
+          </ul>
+          <a href={KOFI_URL} target="_blank" rel="noopener noreferrer" class="btn-tier btn-council">
+            Donar en Ko-fi (Libre)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATAFORMA PRINCIPAL: KO-FI -->
+    <section class="platforms-section">
+      <h2 class="section-title">Plataforma de Mecenazgo Oficial</h2>
+      <div class="platforms-grid single-platform">
+        <a href={KOFI_URL} target="_blank" rel="noopener noreferrer" class="platform-card kofi-platform">
+          <div class="platform-header">
+            <span class="platform-logo">☕ Ko-fi (ko-fi.com/wowgameres)</span>
+            <span class="platform-tag">0% Comisión de Plataforma</span>
+          </div>
+          <p>Donaciones al instante mediante PayPal, tarjeta de crédito o débito de forma 100% segura y sin suscripciones obligatorias.</p>
+          <span class="platform-link">Ir a nuestro Ko-fi Oficial &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- TRANSPARENCIA / FAQ -->
+    <section class="transparency-section">
+      <h2 class="section-title">¿A dónde va tu dinero?</h2>
+      <div class="transparency-grid">
+        <div class="transparency-item">
+          <div class="trans-icon">🖥️</div>
+          <h4>Hosting y Dominio</h4>
+          <p>Servidores de alta velocidad para garantizar que las páginas de guías y mapas carguen al instante sin caídas.</p>
+        </div>
+        <div class="transparency-item">
+          <div class="trans-icon">📜</div>
+          <h4>Creación de Contenido</h4>
+          <p>Revisiones constantes tras cada parche de Blizzard para asegurar que las listas de materiales sean exactas.</p>
+        </div>
+        <div class="transparency-item">
+          <div class="trans-icon">🚫</div>
+          <h4>Cero Publicidad Invasiva</h4>
+          <p>Mantenemos la interfaz limpia de anuncios emergentes o bloqueadores de lectura para una mejor experiencia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HALL OF FAME / TOP SUPPORTERS -->
+    <section class="hall-of-fame-section">
+      <h2 class="section-title">🛡️ Muro de Agradecimientos (Hall of Fame)</h2>
+      <p class="hall-subtitle">Gracias a estos héroes la web sigue online este mes:</p>
+      
+      <div class="supporters-grid">
+        {TOP_SUPPORTERS.map(supporter => (
+          <div class="supporter-card">
+            <span class="supporter-icon">{supporter.icon}</span>
+            <div class="supporter-details">
+              <span class="supporter-name">{supporter.name}</span>
+              <span class="supporter-tier">{supporter.tier}</span>
+            </div>
+            <span class="supporter-amount">{supporter.amount}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- BANNER COMPONENT CALLOUT -->
+    <DonationBanner 
+      title="¿Tienes preguntas o deseas sugerir una función?"
+      subtitle="Escríbenos directamente o déjanos una nota junto a tu donación en Ko-fi. ¡Leemos todos los mensajes!"
+    />
+
+  </main>
+</BaseLayout>
+
+<style>
+  .donar-page-content {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 20px 16px 60px 16px;
+  }
+
+  /* HERO */
+  .donar-hero {
+    text-align: center;
+    padding: 40px 20px 30px 20px;
+  }
+
+  .donar-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(106, 13, 173, 0.1);
+    color: var(--primary-purple);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  :global(.dark-mode) .donar-hero-badge {
+    background: rgba(187, 159, 255, 0.15);
+    color: #d8beff;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #2ec4b6;
+    box-shadow: 0 0 10px #2ec4b6;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+  }
+
+  .donar-hero-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--text-dark);
+  }
+
+  .donar-hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 760px;
+    margin: 0 auto;
+    opacity: 0.88;
+    color: var(--text-dark);
+  }
+
+  /* SECCION TITULO REUTILIZABLE */
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 50px 0 24px 0;
+    color: var(--text-dark);
+  }
+
+  /* CARD META MENSUAL */
+  .goal-card-section {
+    background: rgba(106, 13, 173, 0.05);
+    border: 1px solid rgba(106, 13, 173, 0.2);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 32px 0 44px 0;
+  }
+
+  :global(.dark-mode) .goal-card-section {
+    background: rgba(187, 159, 255, 0.06);
+    border-color: rgba(187, 159, 255, 0.2);
+  }
+
+  .goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .goal-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .goal-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .goal-amount-badge {
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+  }
+
+  :global(.dark-mode) .goal-amount-badge {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .current-amount {
+    color: var(--primary-purple);
+  }
+
+  .progress-bar-track {
+    width: 100%;
+    height: 22px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  :global(.dark-mode) .progress-bar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6a0dad 0%, #bb9fff 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    transition: width 1s ease-in-out;
+  }
+
+  .progress-percentage-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+
+  /* TIERS GRID */
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .tier-card {
+    position: relative;
+    background: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  :global(.dark-mode) .tier-card {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .tier-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-purple);
+    box-shadow: 0 12px 28px var(--primary-glow);
+  }
+
+  .featured-tier {
+    border: 2px solid var(--primary-purple);
+    box-shadow: 0 8px 24px var(--primary-glow);
+  }
+
+  .featured-ribbon {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--primary-purple);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tier-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+  }
+
+  .tier-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .tier-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: var(--text-dark);
+  }
+
+  .tier-price {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: var(--primary-purple);
+    margin-bottom: 12px;
+  }
+
+  .tier-freq {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.7;
+    color: var(--text-dark);
+  }
+
+  .tier-desc {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    margin-bottom: 20px;
+    flex-grow: 0;
+  }
+
+  .tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px 0;
+    flex-grow: 1;
+  }
+
+  .tier-features li {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    opacity: 0.9;
+  }
+
+  .btn-tier {
+    display: block;
+    text-align: center;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .btn-mana {
+    background: rgba(106, 13, 173, 0.1);
+    color: var(--primary-purple);
+    border: 1px solid rgba(106, 13, 173, 0.3);
+  }
+
+  .btn-mana:hover {
+    background: var(--primary-purple);
+    color: #ffffff;
+  }
+
+  .btn-guild {
+    background: linear-gradient(135deg, #6a0dad 0%, #8b2fc9 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(106, 13, 173, 0.3);
+  }
+
+  .btn-guild:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 13, 173, 0.5);
+    color: #ffffff;
+  }
+
+  .btn-council {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  :global(.dark-mode) .btn-council {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-council:hover {
+    background: #0070ba;
+    color: #ffffff;
+    border-color: #0070ba;
+  }
+
+  /* PLATFORMS */
+  .platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .platform-card {
+    background: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  :global(.dark-mode) .platform-card {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .platform-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-purple);
+  }
+
+  .platform-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .platform-logo {
+    font-weight: 800;
+    font-size: 1.05rem;
+  }
+
+  .platform-tag {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(106, 13, 173, 0.1);
+    color: var(--primary-purple);
+    font-weight: 700;
+  }
+
+  .platform-card p {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    opacity: 0.8;
+    margin: 0 0 12px 0;
+  }
+
+  .platform-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+  }
+
+  /* TRANSPARENCIA */
+  .transparency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .transparency-item {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 12px;
+    padding: 22px;
+  }
+
+  :global(.dark-mode) .transparency-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .trans-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .transparency-item h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .transparency-item p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  /* HALL OF FAME */
+  .hall-subtitle {
+    text-align: center;
+    margin-top: -16px;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+
+  .supporters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .supporter-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(106, 13, 173, 0.04);
+    border: 1px solid rgba(106, 13, 173, 0.15);
+    border-radius: 10px;
+  }
+
+  :global(.dark-mode) .supporter-card {
+    background: rgba(187, 159, 255, 0.05);
+    border-color: rgba(187, 159, 255, 0.15);
+  }
+
+  .supporter-icon {
+    font-size: 1.3rem;
+  }
+
+  .supporter-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .supporter-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+  }
+
+  .supporter-tier {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .supporter-amount {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--primary-purple);
+  }
+
+  @media (max-width: 768px) {
+    .donar-hero-title {
+      font-size: 1.7rem;
+    }
+    .donar-hero-subtitle {
+      font-size: 0.98rem;
+    }
+    .goal-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

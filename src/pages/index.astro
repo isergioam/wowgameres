@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/NewsCard.astro";
 import AffiliateBanner from "../components/AffiliateBanner.astro";
+import DonationBanner from "../components/DonationBanner.astro";
 
 import newsData from "../content/news/latest.json";
 import { Image } from "astro:assets";
@@ -310,6 +311,10 @@ const description =
       </div>
     </div>
   </section>
+
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <DonationBanner />
+  </div>
 </BaseLayout>
 
 <style>
