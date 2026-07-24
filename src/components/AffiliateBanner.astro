@@ -2,13 +2,18 @@
 /**
  * AffiliateBanner.astro
  * Hub de afiliados premium integrado (Eneba, Instant Gaming, Amazon).
+ * Rediseño estilo Glassmorphism de alta conversión.
  */
 import { Image } from 'astro:assets';
 import enebaLogoImg from '../assets/images/afiliados/eneba-logo.png';
 import igLogoImg from '../assets/images/afiliados/instant-gaming-logo.svg';
 import amazonLogoImg from '../assets/images/afiliados/amazon-logo.png';
 
-// ENLACES DE AFILIADOS (Modificables - Directos a contenido WoW)
+import enebaPreviewImg from '../assets/images/afiliados/eneba-preview.png';
+import igPreviewImg from '../assets/images/afiliados/ig-preview.png';
+import amazonPreviewImg from '../assets/images/afiliados/amazon-preview.png';
+
+// ENLACES DE AFILIADOS (Directos a contenido de WoW)
 const ENEBA_URL = "https://www.eneba.com/store/all?text=world+of+warcraft&af_id=wowgameres";
 const INSTANT_GAMING_URL = "https://www.instant-gaming.com/es/busquedas/?query=world+of+warcraft&igr=wowgameres";
 const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wowgameres-21";
@@ -26,53 +31,65 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
   <div class="hub-grid">
     <!-- ENEBA -->
     <a href={ENEBA_URL} target="_blank" rel="noopener noreferrer" class="hub-card eneba-card">
-      <div class="card-brand-visual">
+      <div class="card-header">
          <div class="logo-wrapper">
             <Image src={enebaLogoImg} alt="Eneba" class="eneba-png-logo" />
             <span class="eneba-text-hub">eneba</span>
          </div>
       </div>
-      <div class="card-info">
-        <span class="tag tag-purple">Suscripciones y Saldo</span>
-        <p class="card-desc">Tarjetas de saldo Battle.net, prepagos de WoW y claves de expansión con descuentos instantáneos.</p>
-        <div class="hub-cta">
-          Ver ofertas en Eneba
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-        </div>
+
+      <div class="pill-badge-box pill-purple">
+        Suscripciones y<br />Saldo Battle.net
+      </div>
+
+      <div class="card-preview-container">
+        <Image src={enebaPreviewImg} alt="Saldo Battle.net Eneba" class="card-preview-img" />
+      </div>
+
+      <div class="btn-solid btn-eneba">
+        Ver Ofertas en Eneba
       </div>
     </a>
 
     <!-- INSTANT GAMING -->
     <a href={INSTANT_GAMING_URL} target="_blank" rel="noopener noreferrer" class="hub-card ig-card">
-      <div class="card-brand-visual">
+      <div class="card-header">
          <div class="logo-wrapper">
             <Image src={igLogoImg} alt="Instant Gaming" class="ig-svg-logo" />
          </div>
       </div>
-      <div class="card-info">
-        <span class="tag tag-orange">Tiempo de Juego Oficial</span>
-        <p class="card-desc">Compra tiempo de juego de 30 o 60 días al instante, de forma 100% segura y sin esperas.</p>
-        <div class="hub-cta">
-          Ver en Instant Gaming
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-        </div>
+
+      <div class="pill-badge-box pill-blue">
+        60 Días de Tiempo<br />de Juego WoW
+      </div>
+
+      <div class="card-preview-container">
+        <Image src={igPreviewImg} alt="Tarjeta Tiempo de Juego Instant Gaming" class="card-preview-img" />
+      </div>
+
+      <div class="btn-solid btn-ig">
+        Comprar Tiempo de Juego
       </div>
     </a>
 
     <!-- AMAZON -->
     <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" class="hub-card amazon-card">
-      <div class="card-brand-visual">
+      <div class="card-header">
          <div class="logo-wrapper">
             <Image src={amazonLogoImg} alt="Amazon" class="amazon-png-logo" />
          </div>
       </div>
-      <div class="card-info">
-        <span class="tag tag-yellow">Merch y Periféricos</span>
-        <p class="card-desc">Libros del Lore oficial de Warcraft, novelas, figuras coleccionables y hardware para tu PC.</p>
-        <div class="hub-cta">
-          Ver en Amazon
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
-        </div>
+
+      <div class="pill-badge-box pill-gold">
+        Funkos Pop y<br />Merch de WoW
+      </div>
+
+      <div class="card-preview-container">
+        <Image src={amazonPreviewImg} alt="Funkos y Merch Amazon" class="card-preview-img" />
+      </div>
+
+      <div class="btn-solid btn-amazon">
+        Explorar Merch en Amazon
       </div>
     </a>
   </div>
@@ -80,20 +97,20 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
 
 <style>
   .affiliate-hub-container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 50px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 24px;
-    backdrop-filter: blur(10px);
+    padding: 35px 30px;
+    background: rgba(18, 14, 33, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    backdrop-filter: blur(16px);
     position: relative;
     z-index: 5;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
   }
 
   html:not(.dark-mode) .affiliate-hub-container {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     border: 1.5px solid rgba(106, 13, 173, 0.22);
     box-shadow: 0 15px 35px rgba(106, 13, 173, 0.05);
   }
@@ -107,9 +124,9 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
   .hub-badge {
     display: inline-block;
     background: rgba(187, 159, 255, 0.1);
-    border: 1px solid rgba(187, 159, 255, 0.2);
+    border: 1px solid rgba(187, 159, 255, 0.25);
     color: #bb9fff;
-    padding: 5px 14px;
+    padding: 6px 16px;
     border-radius: 30px;
     font-size: 0.8rem;
     font-weight: 700;
@@ -125,7 +142,7 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
   }
 
   .hub-title {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 900;
     color: white;
     margin-bottom: 10px;
@@ -140,7 +157,7 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
 
   .hub-subtitle {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.65);
     line-height: 1.5;
   }
 
@@ -151,243 +168,210 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
   .hub-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 24px;
   }
 
+  /* Glassmorphism Cards */
   .hub-card {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 18px;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    padding: 24px 20px;
     text-decoration: none;
     color: white;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     overflow: hidden;
     position: relative;
+    backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
   }
 
   html:not(.dark-mode) .hub-card {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1.5px solid rgba(106, 13, 173, 0.16);
-    color: var(--text-dark);
-    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.02);
+    background: rgba(255, 255, 255, 0.9);
   }
 
-  /* Eneba Brand Color Theme */
+  /* Eneba Card Style */
+  .eneba-card {
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.05);
+  }
   .eneba-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(175, 82, 222, 0.5);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(175, 82, 222, 0.04));
-    box-shadow: 0 10px 25px rgba(175, 82, 222, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 15px 40px rgba(175, 82, 222, 0.3), 0 0 30px rgba(255, 255, 255, 0.25);
   }
 
-  .eneba-card:hover .hub-cta {
-    color: #c586ff;
+  /* Instant Gaming Card Style */
+  .ig-card {
+    border: 1.5px solid rgba(0, 162, 255, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 162, 255, 0.15);
   }
-
-  html:not(.dark-mode) .eneba-card:hover {
-    background: linear-gradient(to bottom, #ffffff, rgba(175, 82, 222, 0.05));
-    border-color: rgba(175, 82, 222, 0.55);
-    box-shadow: 0 10px 25px rgba(175, 82, 222, 0.08);
-  }
-
-  html:not(.dark-mode) .eneba-card:hover .hub-cta {
-    color: #8b1eb2;
-  }
-
-  /* Instant Gaming Brand Color Theme */
   .ig-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 100, 0, 0.5);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 100, 0, 0.04));
-    box-shadow: 0 10px 25px rgba(255, 100, 0, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(0, 195, 255, 0.85);
+    box-shadow: 0 15px 40px rgba(0, 150, 255, 0.4), 0 0 30px rgba(0, 162, 255, 0.3);
   }
 
-  .ig-card:hover .hub-cta {
-    color: #ff8533;
+  /* Amazon Card Style */
+  .amazon-card {
+    border: 1.5px solid rgba(255, 174, 0, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 174, 0, 0.15);
   }
-
-  html:not(.dark-mode) .ig-card:hover {
-    background: linear-gradient(to bottom, #ffffff, rgba(255, 100, 0, 0.05));
-    border-color: rgba(255, 100, 0, 0.55);
-    box-shadow: 0 10px 25px rgba(255, 100, 0, 0.08);
-  }
-
-  html:not(.dark-mode) .ig-card:hover .hub-cta {
-    color: #e65100;
-  }
-
-  /* Amazon Brand Color Theme */
   .amazon-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 153, 0, 0.5);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 153, 0, 0.04));
-    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(255, 190, 40, 0.85);
+    box-shadow: 0 15px 40px rgba(255, 160, 0, 0.4), 0 0 30px rgba(255, 174, 0, 0.3);
   }
 
-  .amazon-card:hover .hub-cta {
-    color: #ffb84d;
-  }
-
-  html:not(.dark-mode) .amazon-card:hover {
-    background: linear-gradient(to bottom, #ffffff, rgba(255, 153, 0, 0.05));
-    border-color: rgba(255, 153, 0, 0.55);
-    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.08);
-  }
-
-  html:not(.dark-mode) .amazon-card:hover .hub-cta {
-    color: #b36b00;
-  }
-
-  .card-brand-visual {
-    height: 110px;
+  /* Header Logos */
+  .card-header {
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    background: #141124; /* Always dark to ensure white brand logos are perfectly visible */
-  }
-
-  html:not(.dark-mode) .card-brand-visual {
-    border-bottom: 1px solid rgba(106, 13, 173, 0.08);
+    margin-bottom: 16px;
   }
 
   .logo-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    transition: transform 0.3s ease;
   }
 
-  .hub-card:hover .logo-wrapper {
-    transform: scale(1.05);
-  }
-
-  /* Logos styling */
-  .eneba-png-logo {
-    max-height: 35px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(154, 0, 230, 0.15));
-  }
-
+  .eneba-png-logo { max-height: 32px; width: auto; object-fit: contain; }
   .eneba-text-hub {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 900;
     color: white;
-    letter-spacing: -1.3px;
-    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    letter-spacing: -1.2px;
+    font-family: 'Outfit', 'Inter', sans-serif;
   }
+  html:not(.dark-mode) .eneba-text-hub { color: #222; }
 
-  .ig-svg-logo {
-    max-height: 48px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255, 100, 0, 0.15));
-  }
+  .ig-svg-logo { max-height: 44px; width: auto; object-fit: contain; }
+  .amazon-png-logo { max-height: 38px; width: auto; object-fit: contain; }
 
-  .amazon-png-logo {
-    max-height: 42px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255, 153, 0, 0.15));
-  }
-
-  .card-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .tag {
-    font-size: 0.72rem;
+  /* Pill Badges in upper center */
+  .pill-badge-box {
+    width: 100%;
+    text-align: center;
+    padding: 12px 14px;
+    border-radius: 18px;
+    font-size: 0.95rem;
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    width: fit-content;
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-
-  .tag-purple {
-    background: rgba(175, 82, 222, 0.15);
-    color: #d39eff;
-  }
-
-  html:not(.dark-mode) .tag-purple {
-    background: rgba(175, 82, 222, 0.12);
-    color: #7b1fa2;
-  }
-
-  .tag-orange {
-    background: rgba(255, 100, 0, 0.15);
-    color: #ff944d;
-  }
-
-  html:not(.dark-mode) .tag-orange {
-    background: rgba(255, 100, 0, 0.12);
-    color: #e65100;
-  }
-
-  .tag-yellow {
-    background: rgba(255, 153, 0, 0.15);
-    color: #ffc266;
-  }
-
-  html:not(.dark-mode) .tag-yellow {
-    background: rgba(255, 153, 0, 0.12);
-    color: #b36b00;
-  }
-
-  .card-desc {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.35;
     margin-bottom: 20px;
-    flex: 1;
+    backdrop-filter: blur(6px);
   }
 
-  html:not(.dark-mode) .card-desc {
-    color: rgba(0, 0, 0, 0.7);
+  .pill-purple {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
   }
 
-  .hub-cta {
+  html:not(.dark-mode) .pill-purple {
+    background: rgba(175, 82, 222, 0.08);
+    border-color: rgba(175, 82, 222, 0.4);
+    color: #6d1b9e;
+  }
+
+  .pill-blue {
+    background: rgba(0, 162, 255, 0.08);
+    border: 1.5px solid rgba(0, 195, 255, 0.7);
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(0, 162, 255, 0.25);
+  }
+
+  html:not(.dark-mode) .pill-blue {
+    background: rgba(0, 140, 255, 0.08);
+    border-color: rgba(0, 140, 255, 0.4);
+    color: #005bb5;
+  }
+
+  .pill-gold {
+    background: rgba(255, 174, 0, 0.08);
+    border: 1.5px solid rgba(255, 190, 40, 0.7);
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 174, 0, 0.25);
+  }
+
+  html:not(.dark-mode) .pill-gold {
+    background: rgba(255, 160, 0, 0.08);
+    border-color: rgba(255, 160, 0, 0.4);
+    color: #995c00;
+  }
+
+  /* Product Preview Graphics */
+  .card-preview-container {
+    width: 100%;
+    height: 160px;
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.88rem;
-    font-weight: 700;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .card-preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .hub-card:hover .card-preview-img {
+    transform: scale(1.07);
+  }
+
+  /* Solid Vibrant CTA Buttons */
+  .btn-solid {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 18px;
+    font-size: 0.98rem;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.2px;
     transition: all 0.3s ease;
-    margin-top: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   }
 
-  html:not(.dark-mode) .hub-cta {
-    color: var(--primary-purple);
+  .btn-eneba {
+    background: linear-gradient(135deg, #ff5500, #ff2200);
+    color: #ffffff;
+  }
+  .hub-card:hover .btn-eneba {
+    background: linear-gradient(135deg, #ff6611, #ff3311);
+    box-shadow: 0 12px 25px rgba(255, 69, 0, 0.45);
   }
 
-  .hub-cta svg {
-    transition: transform 0.3s ease;
+  .btn-ig {
+    background: linear-gradient(135deg, #0099ff, #0066ff);
+    color: #ffffff;
+  }
+  .hub-card:hover .btn-ig {
+    background: linear-gradient(135deg, #1ab0ff, #1a75ff);
+    box-shadow: 0 12px 25px rgba(0, 140, 255, 0.45);
   }
 
-  .hub-card:hover .hub-cta svg {
-    transform: translateX(4px);
+  .btn-amazon {
+    background: linear-gradient(135deg, #ffb700, #ffa000);
+    color: #160e00;
+  }
+  .hub-card:hover .btn-amazon {
+    background: linear-gradient(135deg, #ffc426, #ffad1a);
+    box-shadow: 0 12px 25px rgba(255, 170, 0, 0.45);
   }
 
   @media (max-width: 900px) {
     .hub-grid {
       grid-template-columns: 1fr;
-      gap: 16px;
-    }
-    .affiliate-hub-container {
-      padding: 20px;
-    }
-    .card-brand-visual {
-      height: 90px;
+      gap: 20px;
     }
   }
 </style>
