@@ -2,12 +2,16 @@
 /**
  * AffiliateBanner.astro
  * Hub de afiliados premium integrado (Eneba, Instant Gaming, Amazon).
- * Rediseño estilo Glassmorphism con gráficos vectoriales puros sin fondos ni cuadrículas.
+ * Rediseño estilo Glassmorphism con imágenes de producto transparentes de alta resolución.
  */
 import { Image } from 'astro:assets';
 import enebaLogoImg from '../assets/images/afiliados/eneba-logo.png';
 import igLogoImg from '../assets/images/afiliados/instant-gaming-logo.svg';
 import amazonLogoImg from '../assets/images/afiliados/amazon-logo.png';
+
+import enebaPreviewImg from '../assets/images/afiliados/eneba-preview.png';
+import igPreviewImg from '../assets/images/afiliados/ig-preview.png';
+import amazonPreviewImg from '../assets/images/afiliados/amazon-preview.png';
 
 // ENLACES DE AFILIADOS (Directos a contenido de WoW)
 const ENEBA_URL = "https://www.eneba.com/store/all?text=world+of+warcraft&af_id=wowgameres";
@@ -38,26 +42,8 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
         Suscripciones y<br />Saldo Battle.net
       </div>
 
-      <!-- Gráfico vectorial transparente de Tarjetas Battle.net -->
       <div class="card-preview-container">
-        <div class="bnet-visual-wrapper">
-          <div class="bnet-card bnet-blue">
-            <div class="bnet-chip"></div>
-            <div class="bnet-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <span class="bnet-amount">€20</span>
-            <span class="bnet-brand">BATTLE.NET</span>
-          </div>
-          <div class="bnet-card bnet-gold">
-            <div class="bnet-chip"></div>
-            <div class="bnet-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <span class="bnet-amount">€50</span>
-            <span class="bnet-brand">BATTLE.NET</span>
-          </div>
-        </div>
+        <Image src={enebaPreviewImg} alt="Saldo Battle.net Eneba" class="card-preview-img" />
       </div>
 
       <div class="btn-solid btn-eneba">
@@ -77,22 +63,8 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
         60 Días de Tiempo<br />de Juego WoW
       </div>
 
-      <!-- Gráfico vectorial transparente de Tarjeta Tiempo de Juego WoW -->
       <div class="card-preview-container">
-        <div class="wow-card-visual">
-          <div class="wow-card-header">
-            <span class="blizz-tag">BLIZZARD</span>
-            <span class="region-tag">EU / GLOBAL</span>
-          </div>
-          <div class="wow-card-body">
-            <div class="wow-title-emblem">WORLD OF WARCRAFT</div>
-            <div class="wow-card-sub">PREPAID GAME TIME</div>
-          </div>
-          <div class="wow-card-footer">
-            <span class="days-badge">60 DAYS</span>
-            <span class="code-icon">⚡ CÓDIGO DIGITAL</span>
-          </div>
-        </div>
+        <Image src={igPreviewImg} alt="Tarjeta Tiempo de Juego Instant Gaming" class="card-preview-img" />
       </div>
 
       <div class="btn-solid btn-ig">
@@ -112,22 +84,8 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
         Funkos Pop y<br />Merch de WoW
       </div>
 
-      <!-- Gráfico vectorial transparente de Funko Box + Taza Horda -->
       <div class="card-preview-container">
-        <div class="merch-visual-wrapper">
-          <div class="funko-box-visual">
-            <div class="funko-top">POP! GAMES</div>
-            <div class="funko-title">WARCRAFT</div>
-            <div class="funko-figure-silhouette">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 00-5 5v3H5a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2v-6a2 2 0 00-2-2h-2V7a5 5 0 00-5-5zm-3 5a3 3 0 016 0v3H9V7z"/></svg>
-            </div>
-            <div class="funko-num">#30</div>
-          </div>
-          <div class="horde-mug-visual">
-            <div class="mug-handle"></div>
-            <div class="horde-symbol">⚔️</div>
-          </div>
-        </div>
+        <Image src={amazonPreviewImg} alt="Funkos y Merch Amazon" class="card-preview-img" />
       </div>
 
       <div class="btn-solid btn-amazon">
@@ -348,7 +306,7 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
     color: #995c00;
   }
 
-  /* Product Preview Graphics Container */
+  /* Product Preview Graphics */
   .card-preview-container {
     width: 100%;
     height: 185px;
@@ -360,246 +318,17 @@ const AMAZON_URL = "https://www.amazon.es/s?k=funko+pop+world+of+warcraft&tag=wo
     position: relative;
   }
 
-  /* CARD 1 VISUAL: Battle.net Cards */
-  .bnet-visual-wrapper {
-    position: relative;
-    width: 170px;
-    height: 140px;
+  .card-preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
-  .bnet-card {
-    position: absolute;
-    width: 105px;
-    height: 135px;
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-    transition: transform 0.35s ease;
-  }
-
-  .bnet-blue {
-    background: linear-gradient(145deg, #0055b3, #002255);
-    border: 1.5px solid rgba(0, 150, 255, 0.5);
-    top: 5px;
-    left: 10px;
-    transform: rotate(-10deg);
-  }
-
-  .bnet-gold {
-    background: linear-gradient(145deg, #cfa030, #664800);
-    border: 1.5px solid rgba(255, 215, 0, 0.6);
-    top: 0px;
-    right: 10px;
-    transform: rotate(8deg);
-  }
-
-  .hub-card:hover .bnet-blue {
-    transform: rotate(-15deg) translateY(-4px);
-  }
-  .hub-card:hover .bnet-gold {
-    transform: rotate(13deg) translateY(-4px);
-  }
-
-  .bnet-chip {
-    width: 22px;
-    height: 16px;
-    background: linear-gradient(135deg, #ffe082, #ffb300);
-    border-radius: 4px;
-  }
-
-  .bnet-icon svg {
-    width: 32px;
-    height: 32px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .bnet-amount {
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: white;
-    letter-spacing: -0.5px;
-  }
-
-  .bnet-brand {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* CARD 2 VISUAL: WoW Game Time Card */
-  .wow-card-visual {
-    width: 200px;
-    height: 125px;
-    background: linear-gradient(135deg, #2b1f0d, #140d04);
-    border: 2px solid #d4af37;
-    border-radius: 14px;
-    padding: 12px 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2);
-    transition: transform 0.35s ease;
-  }
-
-  .hub-card:hover .wow-card-visual {
-    transform: scale(1.06) translateY(-4px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7), 0 0 28px rgba(212, 175, 55, 0.4);
-  }
-
-  .wow-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .blizz-tag {
-    font-size: 0.65rem;
-    font-weight: 900;
-    color: #00a2ff;
-    letter-spacing: 1.5px;
-  }
-
-  .region-tag {
-    font-size: 0.6rem;
-    font-weight: 800;
-    color: #d4af37;
-    background: rgba(212, 175, 55, 0.15);
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-
-  .wow-card-body {
-    text-align: center;
-    margin: 4px 0;
-  }
-
-  .wow-title-emblem {
-    font-size: 0.95rem;
-    font-weight: 900;
-    color: #f7d353;
-    letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    font-family: 'Outfit', 'Inter', sans-serif;
-  }
-
-  .wow-card-sub {
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 1px;
-  }
-
-  .wow-card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .days-badge {
-    background: linear-gradient(135deg, #0099ff, #0055ff);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 900;
-    padding: 3px 8px;
-    border-radius: 6px;
-  }
-
-  .code-icon {
-    font-size: 0.62rem;
-    font-weight: 700;
-    color: #00ffaa;
-  }
-
-  /* CARD 3 VISUAL: Funko Box + Horde Mug */
-  .merch-visual-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 12px;
-    height: 140px;
-  }
-
-  .funko-box-visual {
-    width: 90px;
-    height: 130px;
-    background: linear-gradient(145deg, #1e261c, #0a1209);
-    border: 2px solid #52b74c;
-    border-radius: 10px;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
-    transition: transform 0.35s ease;
-  }
-
-  .hub-card:hover .funko-box-visual {
-    transform: rotate(-4deg) translateY(-4px);
-  }
-
-  .funko-top {
-    font-size: 0.55rem;
-    font-weight: 900;
-    color: #52b74c;
-    letter-spacing: 0.5px;
-  }
-
-  .funko-title {
-    font-size: 0.7rem;
-    font-weight: 900;
-    color: white;
-  }
-
-  .funko-figure-silhouette svg {
-    width: 42px;
-    height: 42px;
-    color: #52b74c;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .funko-num {
-    font-size: 0.75rem;
-    font-weight: 900;
-    color: #52b74c;
-    text-align: right;
-  }
-
-  .horde-mug-visual {
-    width: 65px;
-    height: 75px;
-    background: linear-gradient(135deg, #b31212, #5e0505);
-    border: 1.5px solid #ff4d4d;
-    border-radius: 8px 14px 8px 8px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.35s ease;
-  }
-
-  .hub-card:hover .horde-mug-visual {
-    transform: rotate(6deg) translateY(-4px);
-  }
-
-  .mug-handle {
-    position: absolute;
-    right: -12px;
-    top: 15px;
-    width: 14px;
-    height: 40px;
-    border: 3px solid #b31212;
-    border-left: none;
-    border-radius: 0 10px 10px 0;
-  }
-
-  .horde-symbol {
-    font-size: 1.6rem;
+  .hub-card:hover .card-preview-img {
+    transform: scale(1.08) translateY(-4px);
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.75));
   }
 
   /* Solid Vibrant CTA Buttons */
