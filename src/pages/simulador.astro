@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout 
-	title="Nexo Craft: Simulador de Oro & IA – WOWGamerES" 
+<BaseLayout
+	title="Nexo Craft: Simulador de Oro & IA – WOWGamerES"
 	description="Calculadora avanzada de oro en tiempo real para World of Warcraft, optimizador de especializaciones de profesión y asistente táctico IA."
 >
 	<div class="lab-container">
@@ -15,25 +15,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			</div>
 			<h1 class="lab-title">Nexo Craft: Simulador de Oro & IA</h1>
 			<p class="lab-subtitle">
-				Calcula tus beneficios en subasta, optimiza tus talentos de profesión y consulta a la IA en tiempo real.
+				Calcula tus beneficios en subasta, optimiza tus talentos de
+				profesión y consulta a la IA en tiempo real.
 			</p>
 
 			<!-- Navegación por Pestañas de Alta Legibilidad -->
 			<div class="lab-controls">
-				<div class="mode-buttons" role="tablist" aria-label="Navegación de herramientas">
-					<button class="mode-btn active" data-mode="simulator" role="tab" aria-selected="true" id="btn-mode-simulator">
+				<div
+					class="mode-buttons"
+					role="tablist"
+					aria-label="Navegación de herramientas"
+				>
+					<button
+						class="mode-btn active"
+						data-mode="simulator"
+						role="tab"
+						aria-selected="true"
+						id="btn-mode-simulator"
+					>
 						<span class="btn-icon">💎</span> Simulador de Oro
 					</button>
-					<button class="mode-btn" data-mode="talents" role="tab" aria-selected="false" id="btn-mode-talents">
+					<button
+						class="mode-btn"
+						data-mode="talents"
+						role="tab"
+						aria-selected="false"
+						id="btn-mode-talents"
+					>
 						<span class="btn-icon">🎓</span> Talentos & Especializaciones
 					</button>
-					<button class="mode-btn" data-mode="ai" role="tab" aria-selected="false" id="btn-mode-ai">
+					<button
+						class="mode-btn"
+						data-mode="ai"
+						role="tab"
+						aria-selected="false"
+						id="btn-mode-ai"
+					>
 						<span class="btn-icon">🧠</span> Asistente IA Nexo
 					</button>
 				</div>
 				<div class="sound-toggle-wrapper">
-					<button id="sound-toggle-btn" class="sound-btn" title="Activar o desactivar efectos de audio">
-						<span id="sound-icon">🔊</span> Audio: <strong id="sound-status">ACTIVADO</strong>
+					<button
+						id="sound-toggle-btn"
+						class="sound-btn"
+						title="Activar o desactivar efectos de audio"
+					>
+						<span id="sound-icon">🔊</span> Audio: <strong
+							id="sound-status">ACTIVADO</strong
+						>
 					</button>
 				</div>
 			</div>
@@ -49,75 +78,168 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						<h2>⚙️ Parámetros de Mercado</h2>
 					</div>
 					<p class="card-intro-text">
-						Ajusta la profesión y los valores para calcular tu beneficio neto al instante.
+						Ajusta la profesión y los valores para calcular tu
+						beneficio neto al instante.
 					</p>
-					
+
 					<!-- Selección de Profesión y Receta -->
 					<div class="sim-input-group">
-						<label for="input-prof-type" class="input-title">Profesión Principal:</label>
+						<label for="input-prof-type" class="input-title"
+							>Profesión Principal:</label
+						>
 						<select id="input-prof-type" class="sim-select">
-							<option value="alquimia">🧪 Alquimia – Consumibles & Transmutación</option>
-							<option value="herreria">⚒️ Herrería – Armas & Armaduras Épicas</option>
-							<option value="encantamiento">✨ Encantamiento – Enchants & Velos</option>
-							<option value="joyeria">💎 Joyería – Gemas & Anillos Épicos</option>
-							<option value="inscripcion">📜 Inscripción – Runas, Glifos & Cartas</option>
-							<option value="ingenieria">⚙️ Ingeniería – Gadgets, Bombas & Torretas</option>
-							<option value="peleteria">🦴 Peletería – Kits de Armadura & Malla</option>
-							<option value="sastreria">🧵 Sastrería – Bolsas Grandes & Túnicas</option>
-							<option value="herboristeria">🌿 Herboristería – Ruta de Recolección de Hierbas</option>
-							<option value="mineria">⛏️ Minería – Menas & Fundición en Lote</option>
-							<option value="desuello">🗡️ Desuello – Cueros & Escamas Míticas</option>
-							<option value="cocina">🍳 Cocina – Festines de Raid & Comida</option>
-							<option value="pesca">🎣 Pesca – Peces Raros & Aceites</option>
-							<option value="primeros_auxilios">🩹 Primeros Auxilios – Vendas & Artefactos</option>
+							<option value="alquimia"
+								>🧪 Alquimia – Consumibles & Transmutación</option
+							>
+							<option value="herreria"
+								>⚒️ Herrería – Armas & Armaduras Épicas</option
+							>
+							<option value="encantamiento"
+								>✨ Encantamiento – Enchants & Velos</option
+							>
+							<option value="joyeria"
+								>💎 Joyería – Gemas & Anillos Épicos</option
+							>
+							<option value="inscripcion"
+								>📜 Inscripción – Runas, Glifos & Cartas</option
+							>
+							<option value="ingenieria"
+								>⚙️ Ingeniería – Gadgets, Bombas & Torretas</option
+							>
+							<option value="peleteria"
+								>🦴 Peletería – Kits de Armadura & Malla</option
+							>
+							<option value="sastreria"
+								>🧵 Sastrería – Bolsas Grandes & Túnicas</option
+							>
+							<option value="herboristeria"
+								>🌿 Herboristería – Ruta de Recolección de
+								Hierbas</option
+							>
+							<option value="mineria"
+								>⛏️ Minería – Menas & Fundición en Lote</option
+							>
+							<option value="desuello"
+								>🗡️ Desuello – Cueros & Escamas Míticas</option
+							>
+							<option value="cocina"
+								>🍳 Cocina – Festines de Raid & Comida</option
+							>
+							<option value="pesca"
+								>🎣 Pesca – Peces Raros & Aceites</option
+							>
+							<option value="primeros_auxilios"
+								>🩹 Primeros Auxilios – Vendas & Artefactos</option
+							>
 						</select>
 					</div>
 
 					<div class="sim-input-group">
-						<label for="input-recipe-type" class="input-title">Receta u Objeto a Producir:</label>
+						<label for="input-recipe-type" class="input-title"
+							>Receta u Objeto a Producir:</label
+						>
 						<select id="input-recipe-type" class="sim-select">
-							<option value="frasco_agilidad">Frasco de Agilidad Arcana (Calidad 3)</option>
-							<option value="pocion_poder">Poción de Poder Explosivo (Calidad 3)</option>
-							<option value="lote_transmutacion">Transmutación de Piedras de Sangre</option>
+							<option value="frasco_agilidad"
+								>Frasco de Agilidad Arcana (Calidad 3)</option
+							>
+							<option value="pocion_poder"
+								>Poción de Poder Explosivo (Calidad 3)</option
+							>
+							<option value="lote_transmutacion"
+								>Transmutación de Piedras de Sangre</option
+							>
 						</select>
 					</div>
 
 					<!-- Sliders de Control -->
 					<div class="sim-input-group">
 						<div class="label-row">
-							<label for="range-hours" class="input-title">Tiempo de Trabajo Diario:</label>
-							<span id="val-hours" class="badge-val">2.5 horas</span>
+							<label for="range-hours" class="input-title"
+								>Tiempo de Trabajo Diario:</label
+							>
+							<span id="val-hours" class="badge-val"
+								>2.5 horas</span
+							>
 						</div>
-						<input type="range" id="range-hours" min="0.5" max="8" step="0.5" value="2.5" aria-label="Tiempo de trabajo diario" />
+						<input
+							type="range"
+							id="range-hours"
+							min="0.5"
+							max="8"
+							step="0.5"
+							value="2.5"
+							aria-label="Tiempo de trabajo diario"
+						/>
 					</div>
 
 					<div class="sim-input-group">
 						<div class="label-row">
-							<label for="range-multicraft" class="input-title">Tasa de Multicraft / Procs Extra (%):</label>
-							<span id="val-multicraft" class="badge-val">28%</span>
+							<label for="range-multicraft" class="input-title"
+								>Tasa de Multicraft / Procs Extra (%):</label
+							>
+							<span id="val-multicraft" class="badge-val"
+								>28%</span
+							>
 						</div>
-						<input type="range" id="range-multicraft" min="0" max="60" step="1" value="28" aria-label="Tasa de multicraft" />
+						<input
+							type="range"
+							id="range-multicraft"
+							min="0"
+							max="60"
+							step="1"
+							value="28"
+							aria-label="Tasa de multicraft"
+						/>
 					</div>
 
 					<div class="sim-input-group">
 						<div class="label-row">
-							<label for="range-mat-cost" class="input-title">Coste de Materiales (Oro/Unidad):</label>
-							<span id="val-mat-cost" class="badge-val">110g</span>
+							<label for="range-mat-cost" class="input-title"
+								>Coste de Materiales (Oro/Unidad):</label
+							>
+							<span id="val-mat-cost" class="badge-val">110g</span
+							>
 						</div>
-						<input type="range" id="range-mat-cost" min="10" max="800" step="5" value="110" aria-label="Coste de materiales" />
+						<input
+							type="range"
+							id="range-mat-cost"
+							min="10"
+							max="800"
+							step="5"
+							value="110"
+							aria-label="Coste de materiales"
+						/>
 					</div>
 
 					<div class="sim-input-group">
 						<div class="label-row">
-							<label for="range-sell-price" class="input-title">Precio de Venta en Subasta (Oro/Unidad):</label>
-							<span id="val-sell-price" class="badge-val">340g</span>
+							<label for="range-sell-price" class="input-title"
+								>Precio de Venta en Subasta (Oro/Unidad):</label
+							>
+							<span id="val-sell-price" class="badge-val"
+								>340g</span
+							>
 						</div>
-						<input type="range" id="range-sell-price" min="20" max="1500" step="10" value="340" aria-label="Precio de venta en subasta" />
+						<input
+							type="range"
+							id="range-sell-price"
+							min="20"
+							max="1500"
+							step="10"
+							value="340"
+							aria-label="Precio de venta en subasta"
+						/>
 					</div>
 
 					<div class="sync-banner">
 						<span class="sync-icon">⚡</span>
-						<span class="sync-text">Bonus de Talentos: <strong id="talent-bonus-indicator" class="highlight-cyan">+12% Multicraft (-8% Mats)</strong></span>
+						<span class="sync-text"
+							>Bonus de Talentos: <strong
+								id="talent-bonus-indicator"
+								class="highlight-cyan"
+								>+12% Multicraft (-8% Mats)</strong
+							></span
+						>
 					</div>
 				</div>
 
@@ -129,26 +251,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					</div>
 
 					<div class="primary-result-box">
-						<span class="result-label-title">BENEFICIO NETO DIARIO ESTIMADO</span>
-						<div class="big-gold-counter" id="total-gold-counter">68.400g</div>
-						<span class="sub-counter-label" id="hourly-gold-counter">~27.360g por hora activa</span>
+						<span class="result-label-title"
+							>BENEFICIO NETO DIARIO ESTIMADO</span
+						>
+						<div class="big-gold-counter" id="total-gold-counter">
+							68.400g
+						</div>
+						<span class="sub-counter-label" id="hourly-gold-counter"
+							>~27.360g por hora activa</span
+						>
 					</div>
 
 					<div class="result-breakdown">
 						<div class="breakdown-item">
-							<span class="breakdown-label">Ingresos Brutos en Subasta:</span>
-							<strong id="res-gross" class="val-positive">114.240g</strong>
+							<span class="breakdown-label"
+								>Ingresos Brutos en Subasta:</span
+							>
+							<strong id="res-gross" class="val-positive"
+								>114.240g</strong
+							>
 						</div>
 						<div class="breakdown-item">
-							<span class="breakdown-label">Gastos Totales en Materiales:</span>
-							<strong id="res-costs" class="val-negative">40.128g</strong>
+							<span class="breakdown-label"
+								>Gastos Totales en Materiales:</span
+							>
+							<strong id="res-costs" class="val-negative"
+								>40.128g</strong
+							>
 						</div>
 						<div class="breakdown-item">
-							<span class="breakdown-label">Comisión de Subasta (5%):</span>
-							<strong id="res-tax" class="val-warning">5.712g</strong>
+							<span class="breakdown-label"
+								>Comisión de Subasta (5%):</span
+							>
+							<strong id="res-tax" class="val-warning"
+								>5.712g</strong
+							>
 						</div>
 						<div class="breakdown-item highlight-row">
-							<span class="breakdown-label">Retorno Neto sobre Inversión (ROI):</span>
+							<span class="breakdown-label"
+								>Retorno Neto sobre Inversión (ROI):</span
+							>
 							<strong id="res-roi" class="val-roi">+170%</strong>
 						</div>
 					</div>
@@ -156,16 +298,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<div class="visual-progress-wrapper">
 						<div class="bar-header">
 							<span>Margen de Ganancia Libre</span>
-							<strong id="bar-percentage-label" class="bar-percentage">70%</strong>
+							<strong
+								id="bar-percentage-label"
+								class="bar-percentage">70%</strong
+							>
 						</div>
 						<div class="visual-progress-bar">
-							<div class="bar-fill" id="roi-bar" style="width: 70%;"></div>
+							<div
+								class="bar-fill"
+								id="roi-bar"
+								style="width: 70%;"
+							>
+							</div>
 						</div>
 					</div>
 
 					<div class="quick-action-box">
-						<button id="btn-consult-ai-sim" class="btn-primary-action">
-							🤖 Consultar a IA Nexo cómo maximizar esta ganancia →
+						<button
+							id="btn-consult-ai-sim"
+							class="btn-primary-action"
+						>
+							🤖 Consultar a IA Nexo cómo maximizar esta ganancia
+							→
 						</button>
 					</div>
 				</div>
@@ -178,21 +332,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<div class="talents-header">
 					<div class="talents-title-block">
 						<h2>🎓 Talentos & Especializaciones</h2>
-						<p>Distribuye tus puntos de conocimiento para potenciar tu multicraft y ahorrar insumos.</p>
+						<p>
+							Distribuye tus puntos de conocimiento para potenciar
+							tu multicraft y ahorrar insumos.
+						</p>
 					</div>
 					<div class="points-budget">
 						<span class="points-label">Puntos Disponibles:</span>
-						<strong id="points-counter" class="points-badge">40 / 50 Puntos</strong>
+						<strong id="points-counter" class="points-badge"
+							>40 / 50 Puntos</strong
+						>
 					</div>
 				</div>
 
-				<!-- Grid de Nodos de Talentos -->
+				<!-- Grid de Nodos de Talentos (1 Talento por línea) -->
 				<div class="talents-grid">
 					<div class="talent-card">
 						<div class="talent-icon-wrap">🧪</div>
 						<div class="talent-content">
-							<h3>Maestría en Multicraft</h3>
-							<p>Aumenta la probabilidad de elaborar pociones y frascos adicionales por cada fabricación.</p>
+							<div class="talent-text-info">
+								<h3>Maestría en Multicraft</h3>
+								<p>Aumenta la probabilidad de elaborar pociones y frascos adicionales por cada fabricación.</p>
+							</div>
 							<div class="talent-stats">
 								<span>Efecto activo: <strong class="highlight-cyan" id="stat-multicraft">+12% Multicraft</strong></span>
 							</div>
@@ -207,8 +368,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<div class="talent-card">
 						<div class="talent-icon-wrap">🌿</div>
 						<div class="talent-content">
-							<h3>Eficiencia de Insumos</h3>
-							<p>Reduce la cantidad de hierbas raras requeridas para la confección de consumibles míticos.</p>
+							<div class="talent-text-info">
+								<h3>Eficiencia de Insumos</h3>
+								<p>Reduce la cantidad de hierbas raras requeridas para la confección de consumibles míticos.</p>
+							</div>
 							<div class="talent-stats">
 								<span>Efecto activo: <strong class="highlight-green" id="stat-frugality">-8% Ahorro de Insumos</strong></span>
 							</div>
@@ -223,8 +386,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<div class="talent-card">
 						<div class="talent-icon-wrap">✨</div>
 						<div class="talent-content">
-							<h3>Inspiración Mítica</h3>
-							<p>Incrementa la probabilidad de obtener artículos de máxima calidad (Rango 3) con insumos base.</p>
+							<div class="talent-text-info">
+								<h3>Inspiración Mítica</h3>
+								<p>Incrementa la probabilidad de obtener artículos de máxima calidad (Rango 3) con insumos base.</p>
+							</div>
 							<div class="talent-stats">
 								<span>Efecto activo: <strong class="highlight-gold" id="stat-inspiration">+10% Calidad Máxima</strong></span>
 							</div>
@@ -239,8 +404,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<div class="talent-card">
 						<div class="talent-icon-wrap">⚡</div>
 						<div class="talent-content">
-							<h3>Celeridad de Elaboración</h3>
-							<p>Aumenta la velocidad de fabricación en lote para procesar cientos de ítems en segundos.</p>
+							<div class="talent-text-info">
+								<h3>Celeridad de Elaboración</h3>
+								<p>Aumenta la velocidad de fabricación en lote para procesar cientos de ítems en segundos.</p>
+							</div>
 							<div class="talent-stats">
 								<span>Efecto activo: <strong class="highlight-violet" id="stat-speed">+0% Velocidad</strong></span>
 							</div>
@@ -255,9 +422,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 				<div class="talents-footer-banner">
 					<div class="banner-text">
-						💡 <strong>Sincronización activa:</strong> Tus puntos de conocimiento se aplican de forma inmediata al Simulador de Oro.
+						💡 <strong>Sincronización activa:</strong> Tus puntos de conocimiento
+						se aplican de forma inmediata al Simulador de Oro.
 					</div>
-					<button id="btn-apply-to-sim" class="btn-apply">Ver en el Simulador de Oro ➔</button>
+					<button id="btn-apply-to-sim" class="btn-apply"
+						>Ver en el Simulador de Oro ➔</button
+					>
 				</div>
 			</div>
 		</section>
@@ -272,7 +442,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					</div>
 					<div class="ai-title-block">
 						<h2>Asistente Táctico IA Nexo</h2>
-						<p>Consultor inteligente en tiempo real entrenado en economía, profesiones y rutas de Azeroth.</p>
+						<p>
+							Consultor inteligente en tiempo real entrenado en
+							economía, profesiones y rutas de Azeroth.
+						</p>
 					</div>
 					<div class="ai-status">
 						<span class="status-indicator"></span>
@@ -282,23 +455,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 				<div class="ai-quick-prompts">
 					<span class="prompts-label">Consultas frecuentes:</span>
-					<button class="quick-btn" data-prompt="¿Cuál es la receta de Alquimia que más margen de oro deja hoy?">🧪 Receta de Oro Top</button>
-					<button class="quick-btn" data-prompt="¿Cómo debo distribuir mis 50 puntos de conocimiento en Alquimia?">🎓 Distribución de Puntos</button>
-					<button class="quick-btn" data-prompt="¿Cuándo es el mejor día para poner a la venta consumibles en la Casa de Subastas?">📈 Estrategia de Subasta</button>
+					<button
+						class="quick-btn"
+						data-prompt="¿Cuál es la receta de Alquimia que más margen de oro deja hoy?"
+						>🧪 Receta de Oro Top</button
+					>
+					<button
+						class="quick-btn"
+						data-prompt="¿Cómo debo distribuir mis 50 puntos de conocimiento en Alquimia?"
+						>🎓 Distribución de Puntos</button
+					>
+					<button
+						class="quick-btn"
+						data-prompt="¿Cuándo es el mejor día para poner a la venta consumibles en la Casa de Subastas?"
+						>📈 Estrategia de Subasta</button
+					>
 				</div>
 
 				<div class="ai-chat-box" id="ai-chat-box">
 					<div class="chat-message msg-ai">
 						<div class="msg-author">Nexo IA</div>
 						<div class="msg-content">
-							¡Saludos, aventurero! He sincronizado los datos de tu <strong>Simulador de Oro</strong> y tu <strong>Árbol de Talentos</strong>. 
-							Actualmente simulas <strong>Alquimia</strong> con un beneficio proyectado de <strong class="highlight-gold">68.400g/día</strong>. ¿En qué te gustaría profundizar hoy?
+							¡Saludos, aventurero! He sincronizado los datos de
+							tu <strong>Simulador de Oro</strong> y tu <strong
+								>Árbol de Talentos</strong
+							>. Actualmente simulas <strong>Alquimia</strong> con un
+							beneficio proyectado de <strong
+								class="highlight-gold">68.400g/día</strong
+							>. ¿En qué te gustaría profundizar hoy?
 						</div>
 					</div>
 				</div>
 
 				<form id="ai-chat-form" class="ai-input-form">
-					<input type="text" id="ai-user-input" placeholder="Escribe tu consulta sobre profesiones, oro o recetas..." autocomplete="off" required />
+					<input
+						type="text"
+						id="ai-user-input"
+						placeholder="Escribe tu consulta sobre profesiones, oro o recetas..."
+						autocomplete="off"
+						required
+					/>
 					<button type="submit" class="ai-send-btn">
 						<span>Enviar</span>
 						<span class="send-arrow">➔</span>
@@ -318,7 +514,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		max-width: 1280px;
 		margin: 0 auto;
 		padding: 1.5rem 1rem 5rem 1rem;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+		font-family:
+			"Inter",
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Roboto,
+			sans-serif;
 	}
 
 	/* --- MODO CLARO (POR DEFECTO EN HTML:NOT(.DARK-MODE)) --- */
@@ -330,7 +532,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		--badge-bg: #e0e7ff;
 		--badge-border: #6366f1;
 		--badge-text: #3730a3;
-		
+
 		--controls-bg: #f8fafc;
 		--controls-border: #cbd5e1;
 		--btn-inactive-text: #334155;
@@ -368,7 +570,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 	/* --- MODO OSCURO (HTML.DARK-MODE) --- */
 	html.dark-mode .lab-container {
-		--bg-hero: linear-gradient(135deg, rgba(30, 27, 75, 0.8), rgba(15, 23, 42, 0.9));
+		--bg-hero: linear-gradient(
+			135deg,
+			rgba(30, 27, 75, 0.8),
+			rgba(15, 23, 42, 0.9)
+		);
 		--border-hero: rgba(99, 102, 241, 0.4);
 		--title-color: #ffffff;
 		--subtitle-color: #cbd5e1;
@@ -393,7 +599,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		--val-badge-border: #0284c7;
 		--val-badge-text: #38bdf8;
 
-		--result-box-bg: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(180, 83, 9, 0.25));
+		--result-box-bg: linear-gradient(
+			135deg,
+			rgba(245, 158, 11, 0.15),
+			rgba(180, 83, 9, 0.25)
+		);
 		--result-box-border: #f59e0b;
 		--result-counter-color: #fbbf24;
 		--breakdown-bg: rgba(255, 255, 255, 0.04);
@@ -447,8 +657,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 
 	@keyframes pulse-glow {
-		from { opacity: 0.5; transform: scale(0.9); }
-		to { opacity: 1; transform: scale(1.3); }
+		from {
+			opacity: 0.5;
+			transform: scale(0.9);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1.3);
+		}
 	}
 
 	.lab-title {
@@ -557,7 +773,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		}
 	}
 
-	.sim-card, .talents-container, .ai-widget-wrapper {
+	.sim-card,
+	.talents-container,
+	.ai-widget-wrapper {
 		background: var(--card-bg);
 		border: 2px solid var(--card-border);
 		border-radius: 24px;
@@ -602,7 +820,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		text-overflow: ellipsis;
 	}
 
-	.card-intro-text, .talents-title-block p, .ai-title-block p {
+	.card-intro-text,
+	.talents-title-block p,
+	.ai-title-block p {
 		color: var(--card-text);
 		font-size: 0.95rem;
 		margin-bottom: 1.6rem;
@@ -737,14 +957,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		font-size: 1.02rem;
 	}
 
-	.val-positive { color: #059669; font-weight: 800; }
-	.dark-mode .val-positive { color: #34d399; }
-	.val-negative { color: #dc2626; font-weight: 800; }
-	.dark-mode .val-negative { color: #f87171; }
-	.val-warning { color: #d97706; font-weight: 800; }
-	.dark-mode .val-warning { color: #fb923c; }
-	.val-roi { color: #0284c7; font-weight: 900; font-size: 1.15rem; }
-	.dark-mode .val-roi { color: #38bdf8; }
+	.val-positive {
+		color: #059669;
+		font-weight: 800;
+	}
+	.dark-mode .val-positive {
+		color: #34d399;
+	}
+	.val-negative {
+		color: #dc2626;
+		font-weight: 800;
+	}
+	.dark-mode .val-negative {
+		color: #f87171;
+	}
+	.val-warning {
+		color: #d97706;
+		font-weight: 800;
+	}
+	.dark-mode .val-warning {
+		color: #fb923c;
+	}
+	.val-roi {
+		color: #0284c7;
+		font-weight: 900;
+		font-size: 1.15rem;
+	}
+	.dark-mode .val-roi {
+		color: #38bdf8;
+	}
 
 	.visual-progress-wrapper {
 		margin-bottom: 1.6rem;
@@ -763,7 +1004,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		color: #059669;
 		font-weight: 900;
 	}
-	.dark-mode .bar-percentage { color: #34d399; }
+	.dark-mode .bar-percentage {
+		color: #34d399;
+	}
 
 	.visual-progress-bar {
 		width: 100%;
@@ -790,7 +1033,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		cursor: pointer;
 		font-size: 1rem;
 		box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
-		transition: transform 0.2s, background 0.2s;
+		transition:
+			transform 0.2s,
+			background 0.2s;
 	}
 
 	.btn-primary-action:hover {
@@ -821,9 +1066,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 
 	.talents-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 1.6rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
 		margin-bottom: 2rem;
 	}
 
@@ -831,15 +1076,46 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		background: var(--input-bg);
 		border: 2px solid var(--input-border);
 		border-radius: 20px;
-		padding: 1.6rem;
+		padding: 1.2rem 1.6rem;
 		display: flex;
-		gap: 1.2rem;
-		transition: border-color 0.2s, transform 0.2s;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		transition:
+			border-color 0.2s,
+			transform 0.2s;
 	}
 
 	.talent-card:hover {
 		border-color: #2563eb;
-		transform: translateY(-3px);
+		transform: translateX(4px);
+	}
+
+	.talent-card .talent-content {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.talent-text-info {
+		max-width: 450px;
+	}
+
+	.talent-text-info h3 {
+		font-size: 1.15rem;
+		font-weight: 800;
+		color: var(--card-title);
+		margin-bottom: 0.25rem;
+	}
+
+	.talent-text-info p {
+		font-size: 0.9rem;
+		color: var(--card-text);
+		line-height: 1.4;
+		margin: 0;
 	}
 
 	.talent-icon-wrap {
@@ -970,7 +1246,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		border-radius: 9999px;
 		border: 1.5px solid #10b981;
 	}
-	.dark-mode .ai-status { color: #34d399; }
+	.dark-mode .ai-status {
+		color: #34d399;
+	}
 
 	.status-indicator {
 		width: 8px;
@@ -1053,7 +1331,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		margin-bottom: 0.4rem;
 		letter-spacing: 0.04em;
 	}
-	.dark-mode .msg-author { color: #38bdf8; }
+	.dark-mode .msg-author {
+		color: #38bdf8;
+	}
 
 	.msg-user .msg-author {
 		color: #e0f2fe;
@@ -1094,31 +1374,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 	}
 
 	/* Highlight variables */
-	.highlight-cyan { color: var(--hl-cyan); font-weight: 800; }
-	.highlight-green { color: var(--hl-green); font-weight: 800; }
-	.highlight-gold { color: var(--hl-gold); font-weight: 800; }
-	.highlight-violet { color: var(--hl-violet); font-weight: 800; }
+	.highlight-cyan {
+		color: var(--hl-cyan);
+		font-weight: 800;
+	}
+	.highlight-green {
+		color: var(--hl-green);
+		font-weight: 800;
+	}
+	.highlight-gold {
+		color: var(--hl-gold);
+		font-weight: 800;
+	}
+	.highlight-violet {
+		color: var(--hl-violet);
+		font-weight: 800;
+	}
 </style>
 
 <!-- LÓGICA INTERACTIVA CLIENT-SIDE -->
 <script is:inline>
-	document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener("DOMContentLoaded", () => {
 		// --- 1. WEB AUDIO API ---
 		let soundEnabled = true;
 		let audioCtx = null;
 
 		function initAudio() {
 			if (!audioCtx) {
-				const AudioContext = window.AudioContext || window.webkitAudioContext;
+				const AudioContext =
+					window.AudioContext || window.webkitAudioContext;
 				if (AudioContext) audioCtx = new AudioContext();
 			}
 		}
 
-		function playTone(freq = 440, type = 'sine', duration = 0.15) {
+		function playTone(freq = 440, type = "sine", duration = 0.15) {
 			if (!soundEnabled) return;
 			try {
 				initAudio();
-				if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+				if (audioCtx && audioCtx.state === "suspended")
+					audioCtx.resume();
 				if (!audioCtx) return;
 
 				const osc = audioCtx.createOscillator();
@@ -1126,47 +1420,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				osc.type = type;
 				osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 				gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-				gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+				gain.gain.exponentialRampToValueAtTime(
+					0.001,
+					audioCtx.currentTime + duration,
+				);
 
 				osc.connect(gain);
 				gain.connect(audioCtx.destination);
 				osc.start();
 				osc.stop(audioCtx.currentTime + duration);
 			} catch (e) {
-				console.warn('Audio API', e);
+				console.warn("Audio API", e);
 			}
 		}
 
-		const soundBtn = document.getElementById('sound-toggle-btn');
-		const soundStatus = document.getElementById('sound-status');
-		const soundIcon = document.getElementById('sound-icon');
+		const soundBtn = document.getElementById("sound-toggle-btn");
+		const soundStatus = document.getElementById("sound-status");
+		const soundIcon = document.getElementById("sound-icon");
 
-		soundBtn?.addEventListener('click', () => {
+		soundBtn?.addEventListener("click", () => {
 			soundEnabled = !soundEnabled;
-			if (soundStatus) soundStatus.textContent = soundEnabled ? 'ACTIVADO' : 'DESACTIVADO';
-			if (soundIcon) soundIcon.textContent = soundEnabled ? '🔊' : '🔇';
-			if (soundEnabled) playTone(587.33, 'sine', 0.2);
+			if (soundStatus)
+				soundStatus.textContent = soundEnabled
+					? "ACTIVADO"
+					: "DESACTIVADO";
+			if (soundIcon) soundIcon.textContent = soundEnabled ? "🔊" : "🔇";
+			if (soundEnabled) playTone(587.33, "sine", 0.2);
 		});
 
 		// --- 2. NAVEGACIÓN ENTRE PESTAÑAS (TABS) ---
-		const modeBtns = document.querySelectorAll('.mode-btn');
-		const views = document.querySelectorAll('.lab-view');
+		const modeBtns = document.querySelectorAll(".mode-btn");
+		const views = document.querySelectorAll(".lab-view");
 
 		function switchTab(targetMode) {
-			playTone(523.25, 'triangle', 0.1);
-			modeBtns.forEach(b => {
-				const isActive = b.getAttribute('data-mode') === targetMode;
-				b.classList.toggle('active', isActive);
-				b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+			playTone(523.25, "triangle", 0.1);
+			modeBtns.forEach((b) => {
+				const isActive = b.getAttribute("data-mode") === targetMode;
+				b.classList.toggle("active", isActive);
+				b.setAttribute("aria-selected", isActive ? "true" : "false");
 			});
-			views.forEach(v => {
-				v.classList.toggle('active-view', v.id === `view-${targetMode}`);
+			views.forEach((v) => {
+				v.classList.toggle(
+					"active-view",
+					v.id === `view-${targetMode}`,
+				);
 			});
 		}
 
-		modeBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				const mode = btn.getAttribute('data-mode');
+		modeBtns.forEach((btn) => {
+			btn.addEventListener("click", () => {
+				const mode = btn.getAttribute("data-mode");
 				if (mode) switchTab(mode);
 			});
 		});
@@ -1176,29 +1479,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			multicraft: 12,
 			frugality: 8,
 			inspiration: 10,
-			speed: 0
+			speed: 0,
 		};
 		let totalPointsUsed = 30;
 		const maxPoints = 50;
 
 		function updateTalentsUI() {
-			const counter = document.getElementById('points-counter');
-			if (counter) counter.textContent = `${totalPointsUsed} / ${maxPoints} Puntos`;
+			const counter = document.getElementById("points-counter");
+			if (counter)
+				counter.textContent = `${totalPointsUsed} / ${maxPoints} Puntos`;
 
-			document.getElementById('val-talent-multicraft').textContent = `${talentPoints.multicraft} Pts`;
-			document.getElementById('val-talent-frugality').textContent = `${talentPoints.frugality} Pts`;
-			document.getElementById('val-talent-inspiration').textContent = `${talentPoints.inspiration} Pts`;
-			document.getElementById('val-talent-speed').textContent = `${talentPoints.speed} Pts`;
+			document.getElementById("val-talent-multicraft").textContent =
+				`${talentPoints.multicraft} Pts`;
+			document.getElementById("val-talent-frugality").textContent =
+				`${talentPoints.frugality} Pts`;
+			document.getElementById("val-talent-inspiration").textContent =
+				`${talentPoints.inspiration} Pts`;
+			document.getElementById("val-talent-speed").textContent =
+				`${talentPoints.speed} Pts`;
 
-			document.getElementById('stat-multicraft').textContent = `+${talentPoints.multicraft}% Multicraft`;
-			document.getElementById('stat-frugality').textContent = `-${talentPoints.frugality}% Ahorro de Insumos`;
-			document.getElementById('stat-inspiration').textContent = `+${talentPoints.inspiration}% Calidad Máxima`;
-			document.getElementById('stat-speed').textContent = `+${talentPoints.speed * 2}% Velocidad`;
+			document.getElementById("stat-multicraft").textContent =
+				`+${talentPoints.multicraft}% Multicraft`;
+			document.getElementById("stat-frugality").textContent =
+				`-${talentPoints.frugality}% Ahorro de Insumos`;
+			document.getElementById("stat-inspiration").textContent =
+				`+${talentPoints.inspiration}% Calidad Máxima`;
+			document.getElementById("stat-speed").textContent =
+				`+${talentPoints.speed * 2}% Velocidad`;
 
-			const indicator = document.getElementById('talent-bonus-indicator');
-			if (indicator) indicator.textContent = `+${talentPoints.multicraft}% Multicraft (-${talentPoints.frugality}% Mats)`;
+			const indicator = document.getElementById("talent-bonus-indicator");
+			if (indicator)
+				indicator.textContent = `+${talentPoints.multicraft}% Multicraft (-${talentPoints.frugality}% Mats)`;
 
-			const rangeMulti = document.getElementById('range-multicraft');
+			const rangeMulti = document.getElementById("range-multicraft");
 			if (rangeMulti) {
 				rangeMulti.value = 15 + talentPoints.multicraft;
 			}
@@ -1206,123 +1519,360 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			calculateProfits();
 		}
 
-		document.querySelectorAll('.btn-add').forEach(btn => {
-			btn.addEventListener('click', () => {
-				const target = btn.getAttribute('data-target');
+		document.querySelectorAll(".btn-add").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				const target = btn.getAttribute("data-target");
 				if (target && totalPointsUsed < maxPoints) {
 					talentPoints[target]++;
 					totalPointsUsed++;
-					playTone(600 + talentPoints[target] * 20, 'sine', 0.08);
+					playTone(600 + talentPoints[target] * 20, "sine", 0.08);
 					updateTalentsUI();
 				}
 			});
 		});
 
-		document.querySelectorAll('.btn-sub').forEach(btn => {
-			btn.addEventListener('click', () => {
-				const target = btn.getAttribute('data-target');
+		document.querySelectorAll(".btn-sub").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				const target = btn.getAttribute("data-target");
 				if (target && talentPoints[target] > 0) {
 					talentPoints[target]--;
 					totalPointsUsed--;
-					playTone(400 - talentPoints[target] * 20, 'sine', 0.08);
+					playTone(400 - talentPoints[target] * 20, "sine", 0.08);
 					updateTalentsUI();
 				}
 			});
 		});
 
-		document.getElementById('btn-apply-to-sim')?.addEventListener('click', () => {
-			switchTab('simulator');
-		});
+		document
+			.getElementById("btn-apply-to-sim")
+			?.addEventListener("click", () => {
+				switchTab("simulator");
+			});
 
 		// --- 4. SIMULADOR DE ORO DINÁMICO ---
 		const RECIPE_CATALOG = {
 			alquimia: [
-				{ id: 'frasco_agilidad', name: 'Frasco de Agilidad Arcana (Calidad 3)', cost: 110, sell: 340 },
-				{ id: 'pocion_poder', name: 'Poción de Poder Temerario (Calidad 3)', cost: 45, sell: 180 },
-				{ id: 'caldero_gran_raid', name: 'Caldero de Batalla de Raid Mítica', cost: 1200, sell: 4200 },
-				{ id: 'transmutacion_sangre', name: 'Transmutación de Piedras de Sangre', cost: 250, sell: 950 }
+				{
+					id: "frasco_agilidad",
+					name: "Frasco de Agilidad Arcana (Calidad 3)",
+					cost: 110,
+					sell: 340,
+				},
+				{
+					id: "pocion_poder",
+					name: "Poción de Poder Temerario (Calidad 3)",
+					cost: 45,
+					sell: 180,
+				},
+				{
+					id: "caldero_gran_raid",
+					name: "Caldero de Batalla de Raid Mítica",
+					cost: 1200,
+					sell: 4200,
+				},
+				{
+					id: "transmutacion_sangre",
+					name: "Transmutación de Piedras de Sangre",
+					cost: 250,
+					sell: 950,
+				},
 			],
 			herreria: [
-				{ id: 'espada_mitica', name: 'Mano Principal Runeada Épica (iLvl MAX)', cost: 4200, sell: 18500 },
-				{ id: 'pechera_placas', name: 'Peto de Placas Infundidas', cost: 2800, sell: 9800 },
-				{ id: 'piedra_afilar', name: 'Piedra de Afilar Mítica (Pack x20)', cost: 120, sell: 480 },
-				{ id: 'hebilla_cinturon', name: 'Hebilla Prismática de Cinturón', cost: 600, sell: 2100 }
+				{
+					id: "espada_mitica",
+					name: "Mano Principal Runeada Épica (iLvl MAX)",
+					cost: 4200,
+					sell: 18500,
+				},
+				{
+					id: "pechera_placas",
+					name: "Peto de Placas Infundidas",
+					cost: 2800,
+					sell: 9800,
+				},
+				{
+					id: "piedra_afilar",
+					name: "Piedra de Afilar Mítica (Pack x20)",
+					cost: 120,
+					sell: 480,
+				},
+				{
+					id: "hebilla_cinturon",
+					name: "Hebilla Prismática de Cinturón",
+					cost: 600,
+					sell: 2100,
+				},
 			],
 			encantamiento: [
-				{ id: 'ench_arma_autoridad', name: 'Encantamiento de Arma: Autoridad Sombría', cost: 1500, sell: 5400 },
-				{ id: 'ench_pecho_atributos', name: 'Encantamiento de Pecho: Estadísticas Míticas', cost: 800, sell: 2900 },
-				{ id: 'ench_anillo_celeridad', name: 'Encantamiento de Anillo: Celeridad Radianfe', cost: 320, sell: 1150 },
-				{ id: 'polvo_ilusorio', name: 'Lote de Polvos Resonance (Pack x50)', cost: 250, sell: 880 }
+				{
+					id: "ench_arma_autoridad",
+					name: "Encantamiento de Arma: Autoridad Sombría",
+					cost: 1500,
+					sell: 5400,
+				},
+				{
+					id: "ench_pecho_atributos",
+					name: "Encantamiento de Pecho: Estadísticas Míticas",
+					cost: 800,
+					sell: 2900,
+				},
+				{
+					id: "ench_anillo_celeridad",
+					name: "Encantamiento de Anillo: Celeridad Radianfe",
+					cost: 320,
+					sell: 1150,
+				},
+				{
+					id: "polvo_ilusorio",
+					name: "Lote de Polvos Resonance (Pack x50)",
+					cost: 250,
+					sell: 880,
+				},
 			],
 			joyeria: [
-				{ id: 'gema_diamante_primordial', name: 'Diamante Primordial Inscripto (Calidad 3)', cost: 1800, sell: 6500 },
-				{ id: 'gema_rubi_maestria', name: 'Rubí Solar de Maestría (+88)', cost: 350, sell: 1400 },
-				{ id: 'gema_esmeralda_critico', name: 'Esmeralda de Golpe Crítico (+88)', cost: 320, sell: 1250 },
-				{ id: 'anillo_joya_epico', name: 'Gargantilla de Lazos Elementales', cost: 3500, sell: 14200 }
+				{
+					id: "gema_diamante_primordial",
+					name: "Diamante Primordial Inscripto (Calidad 3)",
+					cost: 1800,
+					sell: 6500,
+				},
+				{
+					id: "gema_rubi_maestria",
+					name: "Rubí Solar de Maestría (+88)",
+					cost: 350,
+					sell: 1400,
+				},
+				{
+					id: "gema_esmeralda_critico",
+					name: "Esmeralda de Golpe Crítico (+88)",
+					cost: 320,
+					sell: 1250,
+				},
+				{
+					id: "anillo_joya_epico",
+					name: "Gargantilla de Lazos Elementales",
+					cost: 3500,
+					sell: 14200,
+				},
 			],
 			inscripcion: [
-				{ id: 'runa_aumento', name: 'Runa de Aumento Rúnica (Pack x10)', cost: 200, sell: 850 },
-				{ id: 'tratado_conocimiento', name: 'Tratado de Conocimiento Semanal', cost: 450, sell: 1900 },
-				{ id: 'mazo_luna_oscura', name: 'Mazo de la Luna Oscura: Tormenta', cost: 5200, sell: 24000 },
-				{ id: 'glifo_cosmetico', name: 'Glifo de Metamorfosis Estelar', cost: 180, sell: 720 }
+				{
+					id: "runa_aumento",
+					name: "Runa de Aumento Rúnica (Pack x10)",
+					cost: 200,
+					sell: 850,
+				},
+				{
+					id: "tratado_conocimiento",
+					name: "Tratado de Conocimiento Semanal",
+					cost: 450,
+					sell: 1900,
+				},
+				{
+					id: "mazo_luna_oscura",
+					name: "Mazo de la Luna Oscura: Tormenta",
+					cost: 5200,
+					sell: 24000,
+				},
+				{
+					id: "glifo_cosmetico",
+					name: "Glifo de Metamorfosis Estelar",
+					cost: 180,
+					sell: 720,
+				},
 			],
 			ingenieria: [
-				{ id: 'gafas_ingenieria', name: 'Gafas de Visión Nocturna Míticas', cost: 3200, sell: 12800 },
-				{ id: 'bomba_carga_pesada', name: 'Caja de Bombas de Carga Caótica (x20)', cost: 150, sell: 650 },
-				{ id: 'generador_gusano', name: 'Generador de Agujeros de Gusano de Zona', cost: 850, sell: 3400 },
-				{ id: 'robot_reparaciones', name: 'Unidad de Reparaciones Automatizada (JEEVES)', cost: 600, sell: 2400 }
+				{
+					id: "gafas_ingenieria",
+					name: "Gafas de Visión Nocturna Míticas",
+					cost: 3200,
+					sell: 12800,
+				},
+				{
+					id: "bomba_carga_pesada",
+					name: "Caja de Bombas de Carga Caótica (x20)",
+					cost: 150,
+					sell: 650,
+				},
+				{
+					id: "generador_gusano",
+					name: "Generador de Agujeros de Gusano de Zona",
+					cost: 850,
+					sell: 3400,
+				},
+				{
+					id: "robot_reparaciones",
+					name: "Unidad de Reparaciones Automatizada (JEEVES)",
+					cost: 600,
+					sell: 2400,
+				},
 			],
 			peleteria: [
-				{ id: 'parche_cuero_fuerza', name: 'Parche de Armadura de Cuero Mítico', cost: 400, sell: 1650 },
-				{ id: 'pecho_malla_epico', name: 'Jubón de Escamas de Dragón (iLvl MAX)', cost: 3100, sell: 12500 },
-				{ id: 'tambores_furia', name: 'Tambores de la Manada (Pack x20)', cost: 180, sell: 750 },
-				{ id: 'botas_cuero_agilidad', name: 'Zapatillas de Acechador Sombrío', cost: 2400, sell: 8900 }
+				{
+					id: "parche_cuero_fuerza",
+					name: "Parche de Armadura de Cuero Mítico",
+					cost: 400,
+					sell: 1650,
+				},
+				{
+					id: "pecho_malla_epico",
+					name: "Jubón de Escamas de Dragón (iLvl MAX)",
+					cost: 3100,
+					sell: 12500,
+				},
+				{
+					id: "tambores_furia",
+					name: "Tambores de la Manada (Pack x20)",
+					cost: 180,
+					sell: 750,
+				},
+				{
+					id: "botas_cuero_agilidad",
+					name: "Zapatillas de Acechador Sombrío",
+					cost: 2400,
+					sell: 8900,
+				},
 			],
 			sastreria: [
-				{ id: 'bolsa_36_casillas', name: 'Bolsa de Tela de Seda Dragónica (36 Casillas)', cost: 850, sell: 3600 },
-				{ id: 'tunica_seda_epica', name: 'Túnica de Tejido Estelar Arcane', cost: 2900, sell: 11200 },
-				{ id: 'hilo_bordado_pantalones', name: 'Hilo de Bordado Neomágico (Pantalón)', cost: 520, sell: 2100 },
-				{ id: 'capa_tejido_sombra', name: 'Capa de Sombras Crepusculares', cost: 1100, sell: 4300 }
+				{
+					id: "bolsa_36_casillas",
+					name: "Bolsa de Tela de Seda Dragónica (36 Casillas)",
+					cost: 850,
+					sell: 3600,
+				},
+				{
+					id: "tunica_seda_epica",
+					name: "Túnica de Tejido Estelar Arcane",
+					cost: 2900,
+					sell: 11200,
+				},
+				{
+					id: "hilo_bordado_pantalones",
+					name: "Hilo de Bordado Neomágico (Pantalón)",
+					cost: 520,
+					sell: 2100,
+				},
+				{
+					id: "capa_tejido_sombra",
+					name: "Capa de Sombras Crepusculares",
+					cost: 1100,
+					sell: 4300,
+				},
 			],
 			herboristeria: [
-				{ id: 'lote_amapola_silvestre', name: 'Lote de Amapola Silvestre Rara (x100)', cost: 0, sell: 4200 },
-				{ id: 'lote_flor_corteza', name: 'Lote de Flor de Corteza Arcana (x100)', cost: 0, sell: 5800 },
-				{ id: 'lote_loto_crepuscular', name: 'Loto Crepuscular Raro (x10)', cost: 0, sell: 8500 }
+				{
+					id: "lote_amapola_silvestre",
+					name: "Lote de Amapola Silvestre Rara (x100)",
+					cost: 0,
+					sell: 4200,
+				},
+				{
+					id: "lote_flor_corteza",
+					name: "Lote de Flor de Corteza Arcana (x100)",
+					cost: 0,
+					sell: 5800,
+				},
+				{
+					id: "lote_loto_crepuscular",
+					name: "Loto Crepuscular Raro (x10)",
+					cost: 0,
+					sell: 8500,
+				},
 			],
 			mineria: [
-				{ id: 'mena_bismuto', name: 'Lote de Mena de Bismuto Infundida (x100)', cost: 0, sell: 4800 },
-				{ id: 'mena_hierro_sombreo', name: 'Lote de Mena de Hierro Sombrío (x100)', cost: 0, sell: 3900 },
-				{ id: 'barra_torium_fundido', name: 'Barras de Aleación Mítica (Pack x20)', cost: 800, sell: 3600 }
+				{
+					id: "mena_bismuto",
+					name: "Lote de Mena de Bismuto Infundida (x100)",
+					cost: 0,
+					sell: 4800,
+				},
+				{
+					id: "mena_hierro_sombreo",
+					name: "Lote de Mena de Hierro Sombrío (x100)",
+					cost: 0,
+					sell: 3900,
+				},
+				{
+					id: "barra_torium_fundido",
+					name: "Barras de Aleación Mítica (Pack x20)",
+					cost: 800,
+					sell: 3600,
+				},
 			],
 			desuello: [
-				{ id: 'cuero_exotico', name: 'Lote de Cuero Prístino de Dragón (x100)', cost: 0, sell: 6200 },
-				{ id: 'escama_malla_rara', name: 'Escamas de Leviatán Abisal (x50)', cost: 0, sell: 5100 }
+				{
+					id: "cuero_exotico",
+					name: "Lote de Cuero Prístino de Dragón (x100)",
+					cost: 0,
+					sell: 6200,
+				},
+				{
+					id: "escama_malla_rara",
+					name: "Escamas de Leviatán Abisal (x50)",
+					cost: 0,
+					sell: 5100,
+				},
 			],
 			cocina: [
-				{ id: 'festin_raid_gran_banquete', name: 'Festín de Raid: Banquete de Grandes Señores', cost: 800, sell: 3200 },
-				{ id: 'comida_atributo_celeridad', name: 'Filete de Dragón Sazonado (+Atributo) x20', cost: 150, sell: 680 }
+				{
+					id: "festin_raid_gran_banquete",
+					name: "Festín de Raid: Banquete de Grandes Señores",
+					cost: 800,
+					sell: 3200,
+				},
+				{
+					id: "comida_atributo_celeridad",
+					name: "Filete de Dragón Sazonado (+Atributo) x20",
+					cost: 150,
+					sell: 680,
+				},
 			],
 			pesca: [
-				{ id: 'pez_rara_calidad', name: 'Lote de Pescado Esmeralda Raro (x50)', cost: 0, sell: 3400 },
-				{ id: 'aceite_pescado_concentrado', name: 'Aceite Purificado de Pescado (Pack x100)', cost: 100, sell: 1200 }
+				{
+					id: "pez_rara_calidad",
+					name: "Lote de Pescado Esmeralda Raro (x50)",
+					cost: 0,
+					sell: 3400,
+				},
+				{
+					id: "aceite_pescado_concentrado",
+					name: "Aceite Purificado de Pescado (Pack x100)",
+					cost: 100,
+					sell: 1200,
+				},
 			],
 			primeros_auxilios: [
-				{ id: 'venda_seda_pesada', name: 'Venda de Seda Tejida Pesada (Pack x50)', cost: 120, sell: 550 },
-				{ id: 'artefacto_raro', name: 'Fragmento de Reliquia Antigua', cost: 300, sell: 1600 }
-			]
+				{
+					id: "venda_seda_pesada",
+					name: "Venda de Seda Tejida Pesada (Pack x50)",
+					cost: 120,
+					sell: 550,
+				},
+				{
+					id: "artefacto_raro",
+					name: "Fragmento de Reliquia Antigua",
+					cost: 300,
+					sell: 1600,
+				},
+			],
 		};
 
-		const rangeHours = document.getElementById('range-hours');
-		const rangeMulti = document.getElementById('range-multicraft');
-		const rangeCost = document.getElementById('range-mat-cost');
-		const rangeSell = document.getElementById('range-sell-price');
-		const profSelect = document.getElementById('input-prof-type');
-		const recipeSelect = document.getElementById('input-recipe-type');
+		const rangeHours = document.getElementById("range-hours");
+		const rangeMulti = document.getElementById("range-multicraft");
+		const rangeCost = document.getElementById("range-mat-cost");
+		const rangeSell = document.getElementById("range-sell-price");
+		const profSelect = document.getElementById("input-prof-type");
+		const recipeSelect = document.getElementById("input-recipe-type");
 
 		function populateRecipes(profKey) {
 			if (!recipeSelect) return;
 			const list = RECIPE_CATALOG[profKey] || RECIPE_CATALOG.alquimia;
-			recipeSelect.innerHTML = list.map(item => `<option value="${item.id}" data-cost="${item.cost}" data-sell="${item.sell}">${item.name}</option>`).join('');
+			recipeSelect.innerHTML = list
+				.map(
+					(item) =>
+						`<option value="${item.id}" data-cost="${item.cost}" data-sell="${item.sell}">${item.name}</option>`,
+				)
+				.join("");
 
 			if (list.length > 0) {
 				const first = list[0];
@@ -1332,34 +1882,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			calculateProfits();
 		}
 
-		profSelect?.addEventListener('change', (e) => {
+		profSelect?.addEventListener("change", (e) => {
 			populateRecipes(e.target.value);
 		});
 
-		recipeSelect?.addEventListener('change', () => {
-			const selectedOpt = recipeSelect.options[recipeSelect.selectedIndex];
+		recipeSelect?.addEventListener("change", () => {
+			const selectedOpt =
+				recipeSelect.options[recipeSelect.selectedIndex];
 			if (selectedOpt) {
-				const cost = selectedOpt.getAttribute('data-cost');
-				const sell = selectedOpt.getAttribute('data-sell');
+				const cost = selectedOpt.getAttribute("data-cost");
+				const sell = selectedOpt.getAttribute("data-sell");
 				if (cost && rangeCost) rangeCost.value = cost;
 				if (sell && rangeSell) rangeSell.value = sell;
 			}
 			calculateProfits();
 		});
 
-		const valHours = document.getElementById('val-hours');
-		const valMulti = document.getElementById('val-multicraft');
-		const valCost = document.getElementById('val-mat-cost');
-		const valSell = document.getElementById('val-sell-price');
+		const valHours = document.getElementById("val-hours");
+		const valMulti = document.getElementById("val-multicraft");
+		const valCost = document.getElementById("val-mat-cost");
+		const valSell = document.getElementById("val-sell-price");
 
-		const totalCounter = document.getElementById('total-gold-counter');
-		const hourlyCounter = document.getElementById('hourly-gold-counter');
-		const resGross = document.getElementById('res-gross');
-		const resCosts = document.getElementById('res-costs');
-		const resTax = document.getElementById('res-tax');
-		const resRoi = document.getElementById('res-roi');
-		const roiBar = document.getElementById('roi-bar');
-		const barPercentageLabel = document.getElementById('bar-percentage-label');
+		const totalCounter = document.getElementById("total-gold-counter");
+		const hourlyCounter = document.getElementById("hourly-gold-counter");
+		const resGross = document.getElementById("res-gross");
+		const resCosts = document.getElementById("res-costs");
+		const resTax = document.getElementById("res-tax");
+		const resRoi = document.getElementById("res-roi");
+		const roiBar = document.getElementById("roi-bar");
+		const barPercentageLabel = document.getElementById(
+			"bar-percentage-label",
+		);
 
 		function calculateProfits() {
 			if (!rangeHours) return;
@@ -1368,7 +1921,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			let cost = parseFloat(rangeCost.value);
 			const sell = parseFloat(rangeSell.value);
 
-			const matDiscount = (talentPoints.frugality / 100);
+			const matDiscount = talentPoints.frugality / 100;
 			cost = cost * (1 - matDiscount);
 
 			if (valHours) valHours.textContent = `${hours} horas`;
@@ -1385,48 +1938,70 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			const grossIncome = totalProduced * sell;
 			const totalMaterialCost = totalBaseUnits * cost;
 			const ahTax = grossIncome * 0.05;
-			const netProfit = Math.max(0, grossIncome - totalMaterialCost - ahTax);
+			const netProfit = Math.max(
+				0,
+				grossIncome - totalMaterialCost - ahTax,
+			);
 
 			const hourlyProfit = Math.round(netProfit / totalHours);
-			const roi = totalMaterialCost > 0 ? Math.round((netProfit / totalMaterialCost) * 100) : 0;
-			const marginRatio = grossIncome > 0 ? Math.round((netProfit / grossIncome) * 100) : 0;
+			const roi =
+				totalMaterialCost > 0
+					? Math.round((netProfit / totalMaterialCost) * 100)
+					: 0;
+			const marginRatio =
+				grossIncome > 0
+					? Math.round((netProfit / grossIncome) * 100)
+					: 0;
 
-			if (totalCounter) totalCounter.textContent = `${Math.round(netProfit).toLocaleString('es-ES')}g`;
-			if (hourlyCounter) hourlyCounter.textContent = `~${hourlyProfit.toLocaleString('es-ES')}g por hora activa`;
-			if (resGross) resGross.textContent = `${Math.round(grossIncome).toLocaleString('es-ES')}g`;
-			if (resCosts) resCosts.textContent = `${Math.round(totalMaterialCost).toLocaleString('es-ES')}g`;
-			if (resTax) resTax.textContent = `${Math.round(ahTax).toLocaleString('es-ES')}g`;
+			if (totalCounter)
+				totalCounter.textContent = `${Math.round(netProfit).toLocaleString("es-ES")}g`;
+			if (hourlyCounter)
+				hourlyCounter.textContent = `~${hourlyProfit.toLocaleString("es-ES")}g por hora activa`;
+			if (resGross)
+				resGross.textContent = `${Math.round(grossIncome).toLocaleString("es-ES")}g`;
+			if (resCosts)
+				resCosts.textContent = `${Math.round(totalMaterialCost).toLocaleString("es-ES")}g`;
+			if (resTax)
+				resTax.textContent = `${Math.round(ahTax).toLocaleString("es-ES")}g`;
 			if (resRoi) resRoi.textContent = `+${roi}%`;
 			if (roiBar) roiBar.style.width = `${Math.min(marginRatio, 100)}%`;
-			if (barPercentageLabel) barPercentageLabel.textContent = `${marginRatio}%`;
+			if (barPercentageLabel)
+				barPercentageLabel.textContent = `${marginRatio}%`;
 		}
 
-		[rangeHours, rangeMulti, rangeCost, rangeSell, profSelect, recipeSelect].forEach(input => {
-			input?.addEventListener('input', () => {
+		[
+			rangeHours,
+			rangeMulti,
+			rangeCost,
+			rangeSell,
+			profSelect,
+			recipeSelect,
+		].forEach((input) => {
+			input?.addEventListener("input", () => {
 				calculateProfits();
-				playTone(250 + parseInt(rangeSell?.value || 300), 'sine', 0.02);
+				playTone(250 + parseInt(rangeSell?.value || 300), "sine", 0.02);
 			});
 		});
 
 		updateTalentsUI();
 
 		// --- 5. CHAT CON FORMATO HTML Y PARSER DE MARKDOWN ---
-		const aiForm = document.getElementById('ai-chat-form');
-		const aiInput = document.getElementById('ai-user-input');
-		const aiChatBox = document.getElementById('ai-chat-box');
-		const quickBtns = document.querySelectorAll('.quick-btn');
+		const aiForm = document.getElementById("ai-chat-form");
+		const aiInput = document.getElementById("ai-user-input");
+		const aiChatBox = document.getElementById("ai-chat-box");
+		const quickBtns = document.querySelectorAll(".quick-btn");
 
 		function parseSimpleMarkdown(text) {
 			return text
-				.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-				.replace(/\*(.*?)\*/g, '<em>$1</em>')
-				.replace(/\n/g, '<br/>');
+				.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+				.replace(/\*(.*?)\*/g, "<em>$1</em>")
+				.replace(/\n/g, "<br/>");
 		}
 
 		function appendMessage(author, text, isUser = false) {
 			if (!aiChatBox) return;
-			const msgDiv = document.createElement('div');
-			msgDiv.className = `chat-message ${isUser ? 'msg-user' : 'msg-ai'}`;
+			const msgDiv = document.createElement("div");
+			msgDiv.className = `chat-message ${isUser ? "msg-user" : "msg-ai"}`;
 			const formattedContent = parseSimpleMarkdown(text);
 			msgDiv.innerHTML = `
 				<div class="msg-author">${author}</div>
@@ -1437,47 +2012,64 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		}
 
 		function handleAiResponse(query) {
-			playTone(600, 'sine', 0.1);
-			appendMessage('Tú', query, true);
+			playTone(600, "sine", 0.1);
+			appendMessage("Tú", query, true);
 
 			setTimeout(() => {
-				playTone(800, 'triangle', 0.2);
+				playTone(800, "triangle", 0.2);
 				let responseText = "Analizando los datos de tu simulador...";
 
 				const qLower = query.toLowerCase();
-				if (qLower.includes('receta') || qLower.includes('margen') || qLower.includes('alquimia')) {
-					responseText = `Para la receta seleccionada en **Alquimia**, con tu **${talentPoints.multicraft}% de Multicraft** y **${talentPoints.frugality}% de ahorro de materiales**, tu beneficio neto es de **${totalCounter?.textContent || '68.400g'}**.\n\nSi asignas 5 puntos más en *Inspiración Mítica*, elevarás las ventas de Calidad 3 a un precio +45% superior en la Casa de Subastas.`;
-				} else if (qLower.includes('puntos') || qLower.includes('distribución') || qLower.includes('talentos')) {
+				if (
+					qLower.includes("receta") ||
+					qLower.includes("margen") ||
+					qLower.includes("alquimia")
+				) {
+					responseText = `Para la receta seleccionada en **Alquimia**, con tu **${talentPoints.multicraft}% de Multicraft** y **${talentPoints.frugality}% de ahorro de materiales**, tu beneficio neto es de **${totalCounter?.textContent || "68.400g"}**.\n\nSi asignas 5 puntos más en *Inspiración Mítica*, elevarás las ventas de Calidad 3 a un precio +45% superior en la Casa de Subastas.`;
+				} else if (
+					qLower.includes("puntos") ||
+					qLower.includes("distribución") ||
+					qLower.includes("talentos")
+				) {
 					responseText = `Distribución óptima recomendada para tus **50 Puntos de Conocimiento**:\n\n• **20 Pts** en *Maestría de Multicraft* (máximo multiplicador de procs).\n• **15 Pts** en *Eficiencia de Insumos* (ahorro crítico en plantas raras).\n• **15 Pts** en *Inspiración Mítica* (garantiza calidad máxima).`;
-				} else if (qLower.includes('subasta') || qLower.includes('día') || qLower.includes('vender')) {
-					responseText = "El momento pico para publicar consumibles en Subasta es el **Martes de 18:00 a 22:00 CET** y el **Miércoles de 17:00 a 20:00 CET**. Durante estos horarios, los grupos de raid compran inventario masivo pagando hasta un 25% más.";
+				} else if (
+					qLower.includes("subasta") ||
+					qLower.includes("día") ||
+					qLower.includes("vender")
+				) {
+					responseText =
+						"El momento pico para publicar consumibles en Subasta es el **Martes de 18:00 a 22:00 CET** y el **Miércoles de 17:00 a 20:00 CET**. Durante estos horarios, los grupos de raid compran inventario masivo pagando hasta un 25% más.";
 				} else {
-					responseText = `Consulta sobre **"${query}"**:\n\nCon los parámetros actuales de tu simulador (ganancia estimada por hora: **${hourlyCounter?.textContent || '~27.000g'}**), tu margen de beneficio es muy sólido. ¡Recuerda vender tus frascos en lotes pequeños de 10 a 20 unidades para acelerar las ventas!`;
+					responseText = `Consulta sobre **"${query}"**:\n\nCon los parámetros actuales de tu simulador (ganancia estimada por hora: **${hourlyCounter?.textContent || "~27.000g"}**), tu margen de beneficio es muy sólido. ¡Recuerda vender tus frascos en lotes pequeños de 10 a 20 unidades para acelerar las ventas!`;
 				}
 
-				appendMessage('Nexo IA', responseText, false);
+				appendMessage("Nexo IA", responseText, false);
 			}, 600);
 		}
 
-		aiForm?.addEventListener('submit', (e) => {
+		aiForm?.addEventListener("submit", (e) => {
 			e.preventDefault();
 			const val = aiInput?.value.trim();
 			if (val) {
 				handleAiResponse(val);
-				if (aiInput) aiInput.value = '';
+				if (aiInput) aiInput.value = "";
 			}
 		});
 
-		quickBtns.forEach(b => {
-			b.addEventListener('click', () => {
-				const prompt = b.getAttribute('data-prompt');
+		quickBtns.forEach((b) => {
+			b.addEventListener("click", () => {
+				const prompt = b.getAttribute("data-prompt");
 				if (prompt) handleAiResponse(prompt);
 			});
 		});
 
-		document.getElementById('btn-consult-ai-sim')?.addEventListener('click', () => {
-			switchTab('ai');
-			handleAiResponse("¿Cómo puedo optimizar la receta actual de Alquimia para maximizar el margen de oro por hora?");
-		});
+		document
+			.getElementById("btn-consult-ai-sim")
+			?.addEventListener("click", () => {
+				switchTab("ai");
+				handleAiResponse(
+					"¿Cómo puedo optimizar la receta actual de Alquimia para maximizar el margen de oro por hora?",
+				);
+			});
 	});
 </script>
