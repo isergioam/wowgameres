@@ -920,7 +920,8 @@
     "expansionName": "Midnight",
     "professionName": "Alquimia",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Alquimia (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Alquimia de Midnight (1-100). Incluye ubicación del instructor Camberon en Ciudad de Lunargenta, descubrimiento en el Caldero, lista de compras y las mejores recetas de pociones y frascos.",
+    "note": "Instructor: Camberon en Ciudad de Lunargenta (/way #2393 47.0 52.1). Melaris vende Frascos de vidriosolar y Aceite de duramen. Razas con bonificación: Goblins (+5 Alquimia), Kul Tiranos (+2 Alquimia).",
     "steps": [
       {
         "min": 1,
@@ -929,24 +930,30 @@
           "Flor de tranquilidad": 36,
           "Frasco de vidriosolar": 30
         },
-        "description": "<strong>Alquimia 1 – 7</strong><br><span class=\"recipe-name\">Poción de sanación de Lunargenta &rarr;</span> 36 Flor de tranquilidad, 30 Frasco de vidriosolar."
+        "description": "<strong>Alquimia 1 – 7: Pociones básicas</strong><br><span class=\"recipe-name\">6x Poción de sanación de Lunargenta &rarr;</span> 36 Flor de tranquilidad, 30 Frasco de vidriosolar.<br><em>Tip: Compra los Frascos de vidriosolar al vendedor Melaris justo al lado del instructor en Lunargenta.</em>"
       },
       {
         "min": 7,
         "max": 20,
         "mats": {
-          "Aceite de duramen": 20
+          "Aceite de duramen": 10
         },
-        "description": "<strong>Alquimia 7 – 20</strong><br><span class=\"recipe-name\">Reciclar pociones &rarr;</span> 20 Aceite de duramen."
+        "description": "<strong>Alquimia 7 – 20: Reciclaje de pociones</strong><br><span class=\"recipe-name\">10x Reciclar pociones &rarr;</span> 10 Aceite de duramen (usando las 6 Pociones de sanación de Lunargenta recién creadas).<br><em>El Aceite de duramen lo vende el vendedor de suministros de alquimia Melaris.</em>"
       },
       {
         "min": 20,
         "max": 27,
         "mats": {
           "Flor de tranquilidad": 28,
+          "Sanguispino": 3,
+          "Lirio de maná": 3,
+          "Hojargenta": 4,
+          "Derivado estabilizado": 3,
+          "Mota de luz": 12,
+          "Mota de energía primigenia": 4,
           "Frasco de vidriosolar": 20
         },
-        "description": "<strong>Alquimia 20 – 27</strong><br>Suero refrescante, Poción de maná imbuida de luz, etc."
+        "description": "<strong>Alquimia 20 – 27: Descubrimientos del Caldero de Camberon e Primeras Fabricaciones</strong><br>Interactúa con el Caldero de Camberon al lado del instructor para investigar y desbloquear la <em>Piedra filosofal primal</em> y la <em>Poción de maná imbuida de luz</em>.<br>Fabrica 1 de cada para obtener el bonus de primera fabricación:<br>• 1x Suero refrescante (8 Flor de tranquilidad, 3 Sanguispino, 5 Frasco de vidriosolar)<br>• 1x Poción de maná imbuida de luz (8 Flor de tranquilidad, 3 Lirio de maná, 5 Frasco de vidriosolar)<br>• 1x Piedra filosofal primal (2 Derivado estabilizado, 2 Mota de luz, 5 Suero refrescante) - <em>Requerido para transmutaciones</em><br>• 1x Transmutar: Mota de magia salvaje (10 Mota de luz, 1 Derivado estabilizado)<br>• 1x Flora compuesta (4 Mota de magia salvaje, 4 Mota de energía primigenia, 6 Flor de tranquilidad, 4 Hojargenta)<br>• 1x Tónico de iluminación (3 Flor de tranquilidad, 5 Frasco de vidriosolar)<br>• 1x Extracto entrópico (3 Flor de tranquilidad, 5 Frasco de vidriosolar)"
       },
       {
         "min": 27,
@@ -955,7 +962,7 @@
           "Flor de tranquilidad": 24,
           "Frasco de vidriosolar": 40
         },
-        "description": "<strong>Alquimia 27 – 32</strong><br><span class=\"recipe-name\">Extracto entrópico &rarr;</span> 24 Flor de tranquilidad, 40 Frasco de vidriosolar."
+        "description": "<strong>Alquimia 27 – 32: Extracto entrópico</strong><br><span class=\"recipe-name\">8x Extracto entrópico &rarr;</span> 24 Flor de tranquilidad, 40 Frasco de vidriosolar."
       },
       {
         "min": 32,
@@ -964,18 +971,19 @@
           "Flor de tranquilidad": 180,
           "Frasco de vidriosolar": 150
         },
-        "description": "<strong>Alquimia 32 – 50</strong><br><span class=\"recipe-name\">Poción de sanación de Lunargenta &rarr;</span> 180 Flor de tranquilidad, 150 Frasco de vidriosolar."
+        "description": "<strong>Alquimia 32 – 50: Nivelación con pociones de sanación</strong><br><span class=\"recipe-name\">30x Poción de sanación de Lunargenta &rarr;</span> 180 Flor de tranquilidad, 150 Frasco de vidriosolar.<br><em>Nota: La receta se vuelve amarilla hacia el final, por lo que podrías necesitar un par de fabricaciones extra. Al llegar a nivel 25 desbloqueas tu primera Especialización.</em>"
       },
       {
         "min": 50,
         "max": 100,
         "mats": {
-          "Flor de tranquilidad": 760,
-          "Azerraíz": 285,
-          "Hojargenta": 285,
-          "Frasco de vidriosolar": 485
+          "Mota de luz": 80,
+          "Flor de tranquilidad": 640,
+          "Azerraíz": 240,
+          "Hojargenta": 240,
+          "Frasco de vidriosolar": 400
         },
-        "description": "<strong>Alquimia 50 – 100</strong><br><span class=\"recipe-name\">Potencial de luz &rarr;</span> 760 Flor de tranquilidad, 285 Azerraíz, 285 Hojargenta, 485 Frasco de vidriosolar."
+        "description": "<strong>Alquimia 50 – 100: Potencial de luz (o Frascos/Transmutaciones)</strong><br><span class=\"recipe-name\">~80x Potencial de luz &rarr;</span> 80 Mota de luz, 640 Flor de tranquilidad, 240 Azerraíz, 240 Hojargenta, 400 Frasco de vidriosolar.<br><em>Ruta alternativa: Si te especializas en Frascos, puedes elaborar ~45x Frasco de los magistrados, Frasco de los Caballeros de la Sangre o Frasco del Sol Devastado. También las recetas de Transmutación (Escuela de gemas, Ramillete de hierbas, Caja de rocas) otorgan puntos hasta nivel 100.</em>"
       }
     ]
   }

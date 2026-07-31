@@ -209,20 +209,21 @@
     "expansionName": "Midnight",
     "professionName": "Herboristería",
     "maxLevel": 100,
-    "description": "Herboristería en Quel'Thalas.",
+    "description": "Guía completa de Herboristería de Midnight (1-100). Instructor Botanist Nathera en Lunargenta, rutas de farmeo por zona, sistema de 2 calidades (Plata/Oro), atributos de recolector (Deftness, Finesse, Perception), consumibles y plantas infundidas.",
+    "note": "Instructora: Botanist Nathera en Ciudad de Lunargenta (/way #2393 48.2 51.5). En Midnight solo existen 2 calidades de plantas (Plata y Oro, la calidad Bronce ha sido eliminada).",
     "steps": [
       {
         "min": 1,
         "max": 50,
         "mats": {},
-        "description": "<div class=\"step-title\">Herboristería 1 – 50: Vid de Vidriosolar</div>Busca en los jardines de Lunargenta.",
+        "description": "<div class=\"step-title\">Herboristería 1 – 50: Bosques de Canción Eterna y Ciudad de Lunargenta</div>Recolecta <strong>Flor de tranquilidad</strong>, <strong>Hojargenta</strong> y <strong>Lirio de maná</strong>.<br><em>Tip de equipamiento:</em> Obtén el Sombrero de herborista (Sastrería), la Fardela de botánico (Peletería) y la Hoz thalassiana (Herrería). Te recomendamos priorizar <strong>Deftness</strong> (Velocidad de recolección) para evitar interrupciones de los enemigos.",
         "routeImage": "/images/routes/midnight_herbs_sun.png"
       },
       {
         "min": 50,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Herboristería 50 – 100: Flor del Vacío</div>Busca en las zonas oscurecidas de Zul'Aman.",
+        "description": "<div class=\"step-title\">Herboristería 50 – 100: Zul'Aman, Harandar y Vacío</div>Recolecta <strong>Sanguispino</strong> en Zul'Aman y <strong>Azerraíz</strong> en Harandar, así como <strong>Loto nocturno</strong> (planta rara equivalente al Loto Negro).<br><strong>Mecánica de Sobrecargar Plantas Infundidas:</strong> Recolectar tu primera planta infundida desbloquea <em>Sobrecargar planta infundida</em> (reutilización 12h, reducida 30 min por cada planta normal recolectada).<br>• Plantas con infusión de Luz (Bosques de Canción Eterna) &rarr; Otorgan Mota de luz.<br>• Plantas con infusión Salvaje (Zul'Aman) &rarr; Otorgan Mota de magia salvaje.<br>• Plantas con infusión Primal (Harandar) &rarr; Otorgan Mota de energía primigenia.<br>• Plantas ligadas al Vacío &rarr; Otorgan Mota de vacío puro.<br><em>Consumibles recomendados para farmear: Té de azerraíz (+50 Deftness), Té de hojargenta (+50 Finesse), Phial de percepción Haranir y Agua de Fuego de la Luna Negra.</em>",
         "routeImage": "/images/routes/midnight_herbs_void.png"
       }
     ]

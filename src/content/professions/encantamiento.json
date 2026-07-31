@@ -883,7 +883,8 @@
     "expansionName": "Midnight",
     "professionName": "Encantamiento",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Encantamiento (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Encantamiento de Midnight (1-100). Instructor Dolothos en Lunargenta, macro de desencantado, recetas de Glamures alegres (+24 Conocimiento) y encantamientos de equipo.",
+    "note": "Instructor: Dolothos en Ciudad de Lunargenta (/way #2393 48.0 53.9). Vendedora Lyna al lado vende Vitualla de encantamiento y Varas de cobre refulgente. Instructora de Glamures alegres: Jennara Sunglow en la torre trasera (/way #2393 39.4 51.0). Razas con bonus: Elfos de sangre (+5), Kul Tiranos (+2).",
     "steps": [
       {
         "min": 1,
@@ -892,7 +893,7 @@
           "Vara de cobre refulgente": 30,
           "Polvo cantoeterno": 150
         },
-        "description": "<strong>Encantamiento 1 – 25</strong><br><span class=\"recipe-name\">Vara de cobre refulgente con runas &rarr;</span> 30 Vara de cobre refulgente, 150 Polvo cantoeterno."
+        "description": "<strong>Encantamiento 1 – 25: Varas con runas y Desencantado</strong><br><span class=\"recipe-name\">30x Vara de cobre refulgente con runas &rarr;</span> 30 Vara de cobre refulgente, 150 Polvo cantoeterno.<br><em>Tip: Desencanta las 30 varas creadas para subir puntos hasta nivel 25 y recuperar aproximadamente la mitad del Polvo cantoeterno.<br>Macro útil: /cast Desencantar /use Vara de cobre refulgente</em>"
       },
       {
         "min": 25,
@@ -900,17 +901,19 @@
         "mats": {
           "Polvo cantoeterno": 20,
           "Fragmento radiante": 3,
-          "Mota de luz": 5
+          "Mota de luz": 5,
+          "Frasco de vidriosolar": 1
         },
-        "description": "<strong>Encantamiento 25 – 27</strong><br>Encantar yelmo: Runa de evasión, Aceite de fénix, etc."
+        "description": "<strong>Encantamiento 25 – 27: Primeras Fabricaciones iniciales</strong><br>Fabrica en orden para el bonus de primera fabricación:<br>• 1x Encantar yelmo: Runa de evasión (15 Polvo cantoeterno, 3 Fragmento radiante)<br>• 1x Aceite de fénix thalassiano (5 Mota de luz, 1 Frasco de vidriosolar, 5 Polvo cantoeterno)<br><em>A nivel 25 desbloqueas las Especializaciones de Encantamiento.</em>"
       },
       {
         "min": 27,
         "max": 38,
         "mats": {
-          "Polvo cantoeterno": 72
+          "Polvo cantoeterno": 70,
+          "Mota de luz": 14
         },
-        "description": "<strong>Encantamiento 27 – 38</strong><br>Encantar anillo: Cólera de la Naturaleza, etc."
+        "description": "<strong>Encantamiento 27 – 38: Encantamiento de Anillos y Adornos</strong><br>• 1x Encantar anillo: Cólera de la Naturaleza (5 Polvo cantoeterno)<br>• 1x Adorno ilusorio: Luz floreciente (1 Mota de luz, 2 Polvo cantoeterno)<br>Luego fabrica 13 unidades más de la opción que prefieras (ej. 13x Encantar anillo: Cólera de la Naturaleza = 65 Polvo cantoeterno)."
       },
       {
         "min": 38,
@@ -919,7 +922,7 @@
           "Polvo cantoeterno": 30,
           "Fragmento radiante": 6
         },
-        "description": "<strong>Encantamiento 38 – 40</strong><br>Encantar hombros: Vuelo del águila, etc."
+        "description": "<strong>Encantamiento 38 – 40: Hombros y Yelmo</strong><br>• 1x Encantar hombros: Vuelo del águila (15 Polvo cantoeterno, 3 Fragmento radiante)<br>• 1x Encantar yelmo: Maleficio de restitución (15 Polvo cantoeterno, 3 Fragmento radiante)"
       },
       {
         "min": 40,
@@ -928,7 +931,7 @@
           "Polvo cantoeterno": 60,
           "Fragmento radiante": 12
         },
-        "description": "<strong>Encantamiento 40 – 52</strong><br><span class=\"recipe-name\">Varita de tejehechizos thalassiano &rarr;</span> 60 Polvo cantoeterno, 12 Fragmento radiante."
+        "description": "<strong>Encantamiento 40 – 52: Varita de tejehechizos</strong><br><span class=\"recipe-name\">4x Varita de tejehechizos thalassiano &rarr;</span> 60 Polvo cantoeterno, 12 Fragmento radiante (otorga 3 puntos por fabricación)."
       },
       {
         "min": 52,
@@ -937,28 +940,30 @@
           "Polvo cantoeterno": 35,
           "Fragmento radiante": 6
         },
-        "description": "<strong>Encantamiento 52 – 55</strong><br>Encantar anillo: Maestría Amani, etc."
+        "description": "<strong>Encantamiento 52 – 55: Anillos, Yelmo y Hombros thalassianos</strong><br>Crafts para Bonus de Primera Fabricación:<br>• 1x Encantar anillo: Maestría Amani (5 Polvo cantoeterno)<br>• 1x Encantar yelmo: Bendición de velocidad (15 Polvo cantoeterno, 3 Fragmento radiante)<br>• 1x Encantar hombros: Recuperación thalassiana (15 Polvo cantoeterno, 3 Fragmento radiante)"
       },
       {
         "min": 55,
         "max": 62,
         "mats": {
-          "Polvo cantoeterno": 45
+          "Polvo cantoeterno": 93,
+          "Mota de magia salvaje": 10,
+          "Mota de energía primigenia": 8,
+          "Mota de luz": 4,
+          "Mota de vacío puro": 2
         },
-        "description": "<strong>Encantamiento 55 – 62</strong><br><span class=\"recipe-name\">9x Encantar anillo: Maestría Amani &rarr;</span> 45 Polvo cantoeterno."
+        "description": "<strong>Encantamiento 55 – 62: Glamures Alegres (Gleeful Glamours) & Maestría Amani</strong><br>Visita a <strong>Jennara Sunglow</strong> en la torre tras el instructor de encantamiento (/way #2393 39.4 51.0) para aprender los 24 Glamures Alegres. Fabricar todos te dará <strong>+24 Puntos de Conocimiento</strong>.<br>Para subir nivel: 9x Encantar anillo: Maestría Amani &rarr; 45 Polvo cantoeterno."
       },
       {
         "min": 62,
         "max": 100,
         "mats": {
-          "Mota de energía primigenia": 190,
-          "Raíz petrificada": 152,
-          "Peridoto de Harandar": 38,
+          "Mota de luz": 190,
           "Polvo cantoeterno": 760,
           "Fragmento radiante": 380,
           "Cristal del alba": 76
         },
-        "description": "<strong>Encantamiento 62 – 100</strong><br><span class=\"recipe-name\">Encantar arma: Égida del alma-mundo &rarr;</span> 190 Mota de energía primigenia, 760 Polvo cantoeterno, etc."
+        "description": "<strong>Encantamiento 62 – 100: Encantamientos avanzados y Égida del alma-mundo</strong><br>Fabrica al menos 1 unidad de cada receta de anillo, yelmo, hombreras y pechera que desbloquees para vender en subasta.<br>Si prefieres subir rápido directo a 100: <span class=\"recipe-name\">Encantar arma: Égida del alma-mundo</span> se mantiene naranja todo el camino hasta 100."
       }
     ]
   }

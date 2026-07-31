@@ -923,7 +923,8 @@
     "expansionName": "Midnight",
     "professionName": "Herrería",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Herrería (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía de nivelación de Herrería de Midnight (1-100). Aprende la ruta más rápida y barata con la ubicación del instructor Bemarrin, fundiciones iniciales, Aleación plateada y equipamiento de profesión.",
+    "note": "Instructor: Bemarrin en Ciudad de Lunargenta (/way #2393 43.7 51.9). El vendedora de suministros al lado vende Flujo luminiscente y Martillo de herrero.",
     "steps": [
       {
         "min": 1,
@@ -932,16 +933,20 @@
           "Mena de cobre refulgente": 125,
           "Martillo de herrero": 1
         },
-        "description": "<strong>Herrería 1 – 15</strong><br><span class=\"recipe-name\">25x Lingote de cobre refulgente &rarr;</span> 125 Mena de cobre refulgente."
+        "description": "<strong>Herrería 1 – 15: Fundición de lingotes</strong><br><span class=\"recipe-name\">25x Lingote de cobre refulgente &rarr;</span> 125 Mena de cobre refulgente.<br><em>Tip: Si compraste lingotes directamente en la subasta, salta a la fundición restante. Necesitarás tener equipado un Martillo de herrero o herramientas de profesión.</em>"
       },
       {
         "min": 15,
         "max": 50,
         "mats": {
-          "Flujo luminiscente": 21,
-          "Lingote de cobre refulgente": 30
+          "Mena de cobre refulgente": 500,
+          "Lingote de cobre refulgente": 100,
+          "Mena de plata brillante": 6,
+          "Mena de sombratinas": 6,
+          "Piedra envuelta en el ocaso": 1,
+          "Flujo luminiscente": 50
         },
-        "description": "<strong>Herrería 15 – 50</strong><br>Grebas, Brazales, Cinturón y Guanteletes templados en sangre."
+        "description": "<strong>Herrería 15 – 50: Primeras Fabricaciones (Bonus de Conocimiento)</strong><br>Abre la ventana de profesión, activa el filtro <em>'Bonus de primera fabricación'</em> y pon la ventana del instructor al lado.<br>Fabrica cada una de las 28 recetas del instructor que otorgan el bonus de primera fabricación hasta agotar las recetas disponibles. Al llegar a nivel 25 desbloqueas tu primera Especialización.<br>Equipa las herramientas creadas: <em>Caja de herramientas de herrero thalassiana</em> y <em>Martillo de herrero thalassiano</em>.<br>Terminarás entre nivel 47 y 50."
       },
       {
         "min": 50,
@@ -951,7 +956,7 @@
           "Lingote de cobre refulgente": 150,
           "Flujo luminiscente": 200
         },
-        "description": "<strong>Herrería 50 – 70</strong><br><span class=\"recipe-name\">50x Aleación plateada &rarr;</span> 300 Mena de plata brillante, 150 Lingote de cobre refulgente."
+        "description": "<strong>Herrería 50 – 70: Aleación plateada (Sterling Alloy)</strong><br>Limpia tus filtros y fabrica:<br><span class=\"recipe-name\">50x Aleación plateada &rarr;</span> 300 Mena de plata brillante, 150 Lingote de cobre refulgente, 200 Flujo luminiscente.<br><em>Nota: La receta se vuelve amarilla en los últimos 10 puntos. Guarda la Aleación plateada ya que es un reactivo clave para el tramo 70-100.</em>"
       },
       {
         "min": 70,
@@ -961,7 +966,7 @@
           "Garra majestuosa": 30,
           "Torio deslumbrante": 60
         },
-        "description": "<strong>Herrería 70 – 100</strong><br><span class=\"recipe-name\">30x Martillo de herrería bendito por el sol &rarr;</span> 150 Aleación plateada, etc."
+        "description": "<strong>Herrería 70 – 100: Equipo de Profesión Raro y Pedidos</strong><br>Las recetas del instructor se vuelven grises alrededor de nivel 70. Para llegar a 100 tienes dos vías:<br>• <strong>Equipo de Profesión Raro (BoE):</strong> Desbloquea recetas en la especialización <em>Craftsmithing</em> (ej. Martillo de herrero bendito por el sol, Cuchillo de peletero bendito por el sol, Pico de minero bendito por el sol). Cada fabricación otorga 1 punto (amarillo a 90, verde a 95).<br>• <strong>Equipo Épico / Pedidos de Fabricación:</strong> Completa Pedidos Públicos o de Patronos (NPCs) para armas/armaduras épicas que otorgan 3 puntos por objeto y permanecen naranjas hasta nivel 100."
       }
     ]
   }

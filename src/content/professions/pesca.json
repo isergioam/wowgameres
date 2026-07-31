@@ -240,14 +240,33 @@
   "midnight": {
     "expansionName": "Midnight",
     "professionName": "Pesca",
-    "maxLevel": 100,
-    "description": "Pesca en las aguas bendecidas de Quel'Thalas y los mares oscurecidos por el Abismo.",
+    "maxLevel": 300,
+    "description": "Guía completa de Pesca de Midnight (1-300). Instructor Drathen en Lunargenta, rastreo de bancos de peces, tramos recomendados por zonas (Eversong, Zul'Aman, Harandar, Voidstorm), Vórtices Oceánicos y catálogo de los 20 peces de la expansión.",
+    "note": "Instructor: Drathen en Ciudad de Lunargenta (/way #2393 44.7 60.2). Vendedora de suministros al lado vende el libro 'Guía del pescador' para aprender a rastrear bancos de peces en el minimapa.",
     "steps": [
       {
         "min": 1,
-        "max": 100,
+        "max": 75,
         "mats": {},
-        "description": "<div class=\"step-title\">Pesca 1 – 100: Quel'Thalas</div>Pesca el <b>Pez de Vidriosolar</b> en las fuentes mágicas y el <b>Pez del Vacío</b> en las costas de Zul'Aman."
+        "description": "<div class=\"step-title\">Pesca 1 – 75: Bosques de Canción Eterna y Ciudad de Lunargenta</div>Pesca en aguas abiertas de Lunargenta o Bosques de Canción Eterna, o en bancos de peces de cualquier zona.<br>Peces frecuentes: <strong>Pez dragón arcano</strong>, <strong>Pez lince</strong>, <strong>Enjambrador sin'dorei</strong>.<br><em>Consejo de nivelación rápida:</em> Utiliza el addon <strong>Better Fishing</strong> para asignar una tecla rápida de lanzamiento e interacción al escuchar el sonido del anzuelo."
+      },
+      {
+        "min": 75,
+        "max": 150,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 75 – 150: Bosques de Canción Eterna y Lunargenta</div>Continúa pescando en las aguas interiores de Canción Eterna para evitar basuras grises.<br>Peces poco comunes: <strong>Cantor restaurado</strong>, <strong>Espina brillante</strong>, <strong>Pez Solwell</strong>, <strong>Trucha de Canción Eterna</strong> (Raro)."
+      },
+      {
+        "min": 150,
+        "max": 225,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 150 – 225: Zul'Aman</div>Pesca en los ríos y costas de Zul'Aman.<br>Peces notables: <strong>Gobiante sangriento</strong>, <strong>Cangrejo de raíz</strong>, <strong>Lucio pieldehongo</strong>, <strong>Loa de la suerte</strong> (Raro) y <strong>Cazador sangriento</strong> (Raro - invoca un espíritu hostil si no usas el Resguardo de pescador amani)."
+      },
+      {
+        "min": 225,
+        "max": 300,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 225 – 300: Harandar y Voidstorm (Vórtices Oceánicos)</div>• <strong>Harandar:</strong> Pesca en aguas de la selva (Minnow colaflor, Luminoso tierno, Tetra retorcido).<br>• <strong>Voidstorm y Vórtices Oceánicos:</strong> En Voidstorm las aguas profundas son escasas (/way 35.86 47.10 o 35.24 46.02). Busca burbujas de <strong>Vórtice Oceánico (Oceanic Vortex)</strong> para obtener peces raros del Vacío: <strong>Mero hueco</strong>, <strong>Pez del vacío nulo</strong>, <strong>Pulpo ominoso</strong>, <strong>Sirena brillante</strong> y <strong>Sabio deformado</strong> (este último te teletransporta a un lugar aleatorio de Midnight al usarlo)."
       }
     ]
   }

@@ -235,15 +235,37 @@
     "expansionName": "Midnight",
     "professionName": "Cocina",
     "maxLevel": 100,
-    "description": "Explora la gastronomía de Quel'Thalas y las delicias infundidas por la Luz y el Vacío.",
+    "description": "Guía completa de Cocina de Midnight (1-100). Instructora Sylann en la taberna de Lunargenta, ruta ultra-económica 1-100 usando únicamente materiales de vendedor, y catálogo de los mejores festines y comidas de estadísticas.",
+    "note": "Instructora: Sylann en la taberna de Ciudad de Lunargenta (/way #2393 56.3 69.9). Los ingredientes básicos (Trozote de mantequilla, Bolsa de especias, Proteína vegetal, Esencia de manáfago) se compran directamente a los vendedores de la taberna.",
     "steps": [
       {
         "min": 1,
+        "max": 25,
+        "mats": {
+          "Trozote de mantequilla": 50,
+          "Bolsa de especias": 150
+        },
+        "description": "<strong>Cocina 1 – 25: Galletas especiadas</strong><br><span class=\"recipe-name\">50x Galletas especiadas &rarr;</span> 50 Trozote de mantequilla, 150 Bolsa de especias.<br><em>¡Atención! Compra ambos ingredientes al vendedor de cocina cerca de la instructora en Lunargenta. NO los compres en la subasta.</em>"
+      },
+      {
+        "min": 25,
+        "max": 35,
+        "mats": {
+          "Proteína vegetal": 100,
+          "Surtido de verduras maduras": 40,
+          "Trozote de mantequilla": 10,
+          "Esencia de manáfago": 10
+        },
+        "description": "<strong>Cocina 25 – 35: Higos de felbaia</strong><br><span class=\"recipe-name\">10x Higos de felbaia &rarr;</span> 100 Proteína vegetal, 40 Surtido de verduras maduras, 10 Trozote de mantequilla, 10 Esencia de manáfago.<br><em>Compra la Proteína vegetal en subasta (o farméala) y el resto de reactivos en el vendedor de cocina.</em>"
+      },
+      {
+        "min": 35,
         "max": 100,
         "mats": {
-          "Carne": 100
+          "Trozote de mantequilla": 400,
+          "Bolsa de especias": 1200
         },
-        "description": "<div class=\"step-title\">Cocina 1 – 100: Banquetes del Sol</div>Utiliza los nuevos ingredientes de los bosques de Canción Eterna para preparar el 'Manjar de Quel'Thalas'."
+        "description": "<strong>Cocina 35 – 100: Método de Comida abundante (100% materiales de vendedor)</strong><br>A nivel 35 desbloqueas el hechizo <em>Comida abundante</em>, el cual consume tu propia comida fabricada para convertirla en raciones y otorga puntos de profesión.<br>1. Fabrica 100x Galletas especiadas (200 Trozote de mantequilla, 600 Bolsa de especias).<br>2. Usa <em>Comida abundante</em> sobre las Galletas especiadas.<br>3. Repite alternando entre cocinar Galletas especiadas y usar Comida abundante hasta alcanzar nivel 100.<br><em>Nota: La receta se vuelve verde en los últimos 25 puntos, pero sigue siendo el método más barato y rápido de todo el juego sin gastar oro en la subasta.</em><br><br><strong>Mejores Festines de Banda de Midnight:</strong><br>• <strong>Festín floreciente:</strong> +65 Estadística Secundaria Máxima, +98 Aguante.<br>• <strong>Celebración de Harandar:</strong> +50 Estadística Principal, +98 Aguante.<br>• <strong>Medley Quel'dorei:</strong> +65 Estadística Secundaria Máxima, +98 Aguante.<br>• <strong>Desfile de Lunargenta:</strong> +50 Estadística Principal, +98 Aguante."
       }
     ]
   }

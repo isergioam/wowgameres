@@ -196,13 +196,21 @@
     "expansionName": "Midnight",
     "professionName": "Desuello",
     "maxLevel": 100,
-    "description": "Desuello en Quel'Thalas.",
+    "description": "Guía completa de Desuello de Midnight (1-100). Instructor Tyn en Lunargenta, Rastreo de Bestias de Alto Valor, sistema de Difusores de motas, Señuelos Majestuosos y Bestias Renombradas.",
+    "note": "Instructor: Tyn en Ciudad de Lunargenta (/way #2393 43.3 55.6). Razas con bonus: Worgen (+5), Tauren / Tauren Monte Alto (+2). Novedades: Se eliminaron los cebos de pesca de desuello y el refinado de cueros.",
     "steps": [
       {
         "min": 1,
+        "max": 50,
+        "mats": {},
+        "description": "<div class=\"step-title\">Desuello 1 – 50: Bestias de Bosques de Canción Eterna y Lunargenta</div>Desuella cualquier bestia en las zonas iniciales para obtener <strong>Cuero templado en el vacío</strong> y <strong>Escamas templadas en el vacío</strong>.<br><strong>Rastreo de Bestias de Alto Valor:</strong> Se activa automáticamente al aprender Desuello de Midnight (habilidad <em>Encontrar bestias de alto valor</em>). Muestra un icono de cuchillo de desuello en el minimapa. Las bestias tienen un brillo rojo y otorgan de 5 a 10 cueros por desuello.",
+        "routeImage": "/images/routes/midnight_skinning.png"
+      },
+      {
+        "min": 50,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Desuello 1 – 100: Quel'Thalas</div>Desuella bestias infundidas por la energía del Sol y el Vacío.",
+        "description": "<div class=\"step-title\">Desuello 50 – 100: Difusores, Señuelos Majestuosos y Bestias Renombradas</div><strong>Sistema de Difusores:</strong> En lugar de colocar señuelos en el suelo, lanzas difusores a los monstruos para obtener Motas (Lightbloom, Wild, Primal y Void Diffusers, cuestan 2 Motas y otorgan de 1 a 4).<br><strong>Señuelos Majestuosos y Bestias Renombradas:</strong><br>Desbloquea recetas de señuelos en la especialización <em>Rastreador talentoso</em>:<br>• <strong>Señuelo majestuoso de Canción Eterna &rarr;</strong> Invoca a <em>Gloomclaw</em> en Eversong (/way #2395 41.95 79.70). Requiere: 8x Pez dragón arcano, 8x Pez lince.<br>• <strong>Señuelo majestuoso de Zul'Aman &rarr;</strong> Invoca en Zul'Aman. Requiere: 8x Gobiante sangriento.<br>• <strong>Señuelo majestuoso de Harandar &rarr;</strong> Invoca en Harandar. Requiere: 8x Lucio pieldehongo, 8x Luminoso tierno.<br>• <strong>Señuelo majestuoso de Voidstorm &rarr;</strong> Invoca en Voidstorm. Requiere: 4x Pulpo ominoso.<br>• <strong>Señuelo de Gran Bestia &rarr;</strong> Invoca a la Gran Bestia. Requiere: 4x Pez del vacío nulo.<br><em>Drop de Bestias Renombradas: Piel majestuosa, Aleta majestuosa y Garra majestuosa (utilizados para crafteos épicos). Cooldown: 1 uso al día por zona.</em>",
         "routeImage": "/images/routes/midnight_skinning.png"
       }
     ]

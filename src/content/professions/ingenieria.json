@@ -561,7 +561,8 @@
     "expansionName": "Midnight",
     "professionName": "Ingeniería",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Ingeniería (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Ingeniería de Midnight (1-100). Instructor Danwe en Lunargenta, sistema de descubrimiento por Reciclaje, armaduras Quel'dorei y objetos de Decoración de Casa.",
+    "note": "Instructor: Danwe en Ciudad de Lunargenta. El vendedor de suministros al lado vende Estructura de alambres maleable (21x), Montón de chatarra (35x), Llave arcoluz y Microajustador giromático.",
     "steps": [
       {
         "min": 1,
@@ -572,15 +573,16 @@
           "Mena de estaño umbrío": 40,
           "Pigmento de polvo": 35
         },
-        "description": "<strong>Ingeniería 1 – 16</strong><br><span class=\"recipe-name\">Equipo de canto y Reciclaje &rarr;</span> 80 Mena cobre, 40 Estaño umbrío, 35 Pigmento."
+        "description": "<strong>Ingeniería 1 – 16: Equipo de canto y Reciclaje inicial</strong><br>• 8x Equipo de canto (8 Estructura de alambres maleable, 80 Mena de cobre refulgente, 40 Mena de estaño umbrío)<br>• 7x Reciclar en Pigmento de polvo, Rollo de lino brillante o Lingote de cobre refulgente."
       },
       {
         "min": 16,
         "max": 25,
         "mats": {
-          "Núcleo eterno": 5
+          "Núcleo eterno": 5,
+          "Montón de chatarra": 3
         },
-        "description": "<strong>Ingeniería 16 – 25</strong><br><span class=\"recipe-name\">Recetas de núcleo eterno &rarr;</span> 5 Núcleo eterno (Sombra, Visión, Abremochas, etc.)."
+        "description": "<strong>Ingeniería 16 – 25: Recetas de Núcleo eterno</strong><br>Aprende nuevas recetas del instructor y fabrica 1 de cada para el bonus de primera fabricación:<br>• 1x Sombra de núcleo eterno (1 Núcleo eterno)<br>• 1x Protector de visión de núcleo eterno (1 Núcleo eterno)<br>• 1x Abremochas de núcleo eterno (3 Montón de chatarra, 1 Núcleo eterno)<br>• 1x Cobertura de zoom de núcleo eterno (1 Núcleo eterno)<br>• 1x Reconocimiento de núcleo eterno (1 Núcleo eterno)"
       },
       {
         "min": 25,
@@ -590,7 +592,7 @@
           "Mena de cobre refulgente": 50,
           "Mena de estaño umbrío": 100
         },
-        "description": "<strong>Ingeniería 25 – 39</strong><br><span class=\"recipe-name\">10x Piñón de almas &rarr;</span> 50 Cobre, 100 Estaño umbrío."
+        "description": "<strong>Ingeniería 25 – 39: Especialización de Reciclaje y Piñón de almas</strong><br><strong>IMPORTANTE:</strong> Al llegar a nivel 25, elige <strong>Reciclaje</strong> como primera especialización e invierte 10 puntos en ella. Esto es obligatorio para desbloquear el descubrimiento de recetas Quel'dorei.<br>• 10x Piñón de almas (10 Estructura de alambres maleable, 50 Mena de cobre refulgente, 100 Mena de estaño umbrío)<br>• Fabrica las 4 engranajeras (Cogwheels) para los bonus de primera fabricación."
       },
       {
         "min": 39,
@@ -598,29 +600,29 @@
         "mats": {
           "Pigmento de polvo": 100
         },
-        "description": "<strong>Ingeniería 39 – 45</strong><br><span class=\"recipe-name\">20x Reciclando &rarr;</span> Descubrimiento de recetas Quel'dorei."
+        "description": "<strong>Ingeniería 39 – 45: Reciclaje masivo y Primeras Fabricaciones</strong><br>• Realiza ~20x Reciclar en materiales económicos.<br>• Activa el filtro 'Bonus de primera fabricación' y fabrica todas las recetas disponibles en el instructor."
       },
       {
         "min": 45,
         "max": 80,
         "mats": {
           "Montón de chatarra": 300,
-          "Estructura maleable": 60,
+          "Estructura de alambres maleable": 60,
           "Núcleo eterno": 60
         },
-        "description": "<strong>Ingeniería 45 – 80</strong><br><span class=\"recipe-name\">60x Guardas quel'dorei &rarr;</span> Progresión de armadura descubierta."
+        "description": "<strong>Ingeniería 45 – 80: Armadura Quel'dorei descubierta</strong><br>Continúa usando Reciclar hasta descubrir tu primera receta Quel'dorei (ej. Guardas quel'dorei).<br><span class=\"recipe-name\">~60x Piezas de armadura Quel'dorei &rarr;</span> 300 Montón de chatarra, 60 Estructura de alambres maleable, 60 Núcleo eterno.<br><em>Son las recetas más baratas y te llevarán directamente a nivel 80.</em>"
       },
       {
         "min": 80,
         "max": 100,
         "mats": {
-          "Madera thalassiana": 150,
+          "Madera thalassiana": 650,
           "Eterluminiscencia": 150,
           "Núcleo eterno": 150,
           "Equipo de canto": 300,
           "Piñón de almas": 300
         },
-        "description": "<strong>Ingeniería 80 – 100</strong><br><span class=\"recipe-name\">30x Lámpara de Telogrus pequeña &rarr;</span> Decoración de casa (Receta amarilla hasta 100)."
+        "description": "<strong>Ingeniería 80 – 100: Decoración de Casas (Housing Decor) o Herramientas Raras</strong><br>Las piezas Quel'dorei se vuelven grises a 80. Opciones para llegar a 100:<br>• <strong>Decoración de Casa:</strong> Descubre mediante Reciclaje alguna de las 7 recetas de decoración (ej. Lámpara de Telogrus pequeña, Proyector de vacío Ren'dorei, Marco de artesanía Ren'dorei). Permanecen amarillas hasta 92-95 y llevan a 100.<br>• <strong>Herramientas de profesión Raras (Market Mobility):</strong> Multitarea de chatarrero turbo, Tijeras sin'dorei, Bag de chatarrero.<br>• <strong>Pedidos de Fabricación:</strong> Herramientas o gafas épicas mediante Pedidos Públicos/Patronos."
       }
     ]
   }

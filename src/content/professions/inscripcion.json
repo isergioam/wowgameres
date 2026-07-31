@@ -620,7 +620,8 @@
     "expansionName": "Midnight",
     "professionName": "Inscripción",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Inscripción (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Inscripción de Midnight (1-100). Ubicación de la instructora Zantasia en Lunargenta, moliendas, elaboración de tintas, recomendación de especialización (Manos calmas) y descubrimiento de Tratados.",
+    "note": "Instructora: Zantasia en Ciudad de Lunargenta. Vendedora de suministros al lado vende Cantagua thalassiana y Vitela de lexicólogo.",
     "steps": [
       {
         "min": 1,
@@ -631,42 +632,58 @@
           "Lirio de maná": 90,
           "Sanguispino": 90
         },
-        "description": "<strong>Inscripción 1 – 20</strong><br><span class=\"recipe-name\">Molienda de Midnight &rarr;</span> Varias plantas de Midnight."
+        "description": "<strong>Inscripción 1 – 20: Molienda de Midnight</strong><br>Usa el hechizo Molienda de Midnight en tu libro de profesiones para moler todas las plantas recién compradas:<br>• 360 Flor de tranquilidad<br>• 100 Hojargenta<br>• 90 Lirio de maná<br>• 90 Sanguispino"
       },
       {
         "min": 20,
         "max": 30,
         "mats": {
           "Cantagua thalassiana": 69,
-          "Pigmento de polvo": 460
+          "Pigmento de polvo": 460,
+          "Pigmento de Sanguispino": 110,
+          "Pigmento de Lirio de maná": 115,
+          "Pigmento de Hojargenta": 120
         },
-        "description": "<strong>Inscripción 20 – 30</strong><br>Tinta Munsell y Tinta Sienna."
+        "description": "<strong>Inscripción 20 – 30: Tintas Munsell y Sienna</strong><br>Fabrica las tintas en el orden exacto indicado (guárdalas para los siguientes pasos):<br>• 11x Tinta Munsell (33 Cantagua thalassiana, 220 Pigmento de polvo, 110 Pigmento de Sanguispino, 55 Pigmento de Lirio de maná)<br>• 12x Tinta Sienna (36 Cantagua thalassiana, 240 Pigmento de polvo, 120 Pigmento de Hojargenta, 60 Pigmento de Lirio de maná)<br><em>Nota: Cantagua thalassiana se compra al vendedor de suministros de inscripción. Al llegar a nivel 25, elige la especialización <strong>Manos calmas</strong> para desbloquear la receta del Tratado thalassiano de inscripción.</em>"
       },
       {
         "min": 30,
         "max": 35,
         "mats": {
-          "Azerraíz": 24
+          "Cantagua thalassiana": 3,
+          "Azerraíz": 24,
+          "Mota de vacío puro": 1,
+          "Mota de luz": 1,
+          "Piedra envuelta en el ocaso": 1,
+          "Tinta Munsell": 1,
+          "Tinta Sienna": 1
         },
-        "description": "<strong>Inscripción 30 – 35</strong><br>Bordón, Muleta y Lámpara de cuidador."
+        "description": "<strong>Inscripción 30 – 35: Primeras Fabricaciones iniciales</strong><br>Fabrica 1 de cada para el bonus de primera fabricación:<br>• 1x Bastón de cuidador de fauna (1 Cantagua thalassiana, 8 Azerraíz)<br>• 1x Muleta de cuidador de flora (1 Cantagua thalassiana, 8 Azerraíz)<br>• 1x Lámpara de guardarraíces (1 Cantagua thalassiana, 8 Azerraíz)<br>• 1x Cifra del alma (1 Mota de vacío puro, 1 Mota de luz, 1 Piedra envuelta en el ocaso, 1 Tinta Munsell, 1 Tinta Sienna)"
       },
       {
         "min": 35,
         "max": 42,
         "mats": {
-          "Azerraíz": 23
+          "Azerraíz": 41,
+          "Tinta Munsell": 11,
+          "Tinta Sienna": 11,
+          "Mota de energía primigenia": 4,
+          "Mota de magia salvaje": 1,
+          "Mota de vacío puro": 2
         },
-        "description": "<strong>Inscripción 35 – 42</strong><br>Equipo de profesión aficionado."
+        "description": "<strong>Inscripción 35 – 42: Equipo de aficionado y Misivas thalassianas</strong><br>Filtra por 'Bonus de primera fabricación' y fabrica 1 unidad de cada una de las siguientes recetas (salta el Tratado thalassiano por ahora):<br>• Codificado de Azerraíz, Confianza de cuidador de fauna, Vara de mezclar de alquimista aficionado, Rodillo de pastelero aficionado, Pluma de escriba aficionado, Misiva thalassiana de la aurora, Misiva thalassiana de la fiebre, Misiva thalassiana de la llamarada y Misiva thalassiana de la armonía.<br>Equipa la <em>Pluma de escriba aficionado</em>."
       },
       {
         "min": 42,
         "max": 50,
         "mats": {
-          "Vitela de lexicólogo": 20,
-          "Tinta Sienna": 4,
-          "Tinta Munsell": 4
+          "Vitela de lexicólogo": 18,
+          "Mota de magia salvaje": 6,
+          "Tinta Munsell": 10,
+          "Tinta Sienna": 10,
+          "Mota de vacío puro": 2
         },
-        "description": "<strong>Inscripción 42 – 50</strong><br>Tratado thalassiano de inscripción."
+        "description": "<strong>Inscripción 42 – 50: Misivas restantes y Tratados iniciales</strong><br>• 1x Misiva thalassiana de la excelencia (2 Tinta Munsell, 2 Tinta Sienna, 1 Mota de vacío puro)<br>• 1x Misiva thalassiana de la hoja veloz (2 Tinta Munsell, 2 Tinta Sienna, 1 Mota de vacío puro)<br>• 6x Tratado thalassiano de inscripción (18 Vitela de lexicólogo, 6 Mota de magia salvaje, 6 Tinta Munsell, 6 Tinta Sienna).<br><em>Consejo: Guarda los tratados para cuando tengas 10 puntos en Manos calmas para recibir el doble de conocimiento.</em>"
       },
       {
         "min": 50,
@@ -674,9 +691,10 @@
         "mats": {
           "Vitela de lexicólogo": 210,
           "Tinta Munsell": 70,
-          "Tinta Sienna": 70
+          "Tinta Sienna": 70,
+          "Mota de magia salvaje": 70
         },
-        "description": "<strong>Inscripción 50 – 100</strong><br>70x Tratado thalassiano de inscripción."
+        "description": "<strong>Inscripción 50 – 100: Descubrimiento de Tratados para otras profesiones</strong><br>A medida que fabricas el <em>Tratado thalassiano de inscripción</em>, descubrirás progresivamente los Tratados de las otras 10 profesiones.<br>Cada nuevo Tratado descubierto te otorgará bonus de primera fabricación. Elabora un total de ~70 Tratados (puedes guardarlos o enviarlos a tus personajes secundarios ya que son Ligados a la Tropas).<br>Ruta alternativa para los últimos puntos (90-100): Completa Pedidos de Fabricación de bastones/linternas épicas (Bordón Aln'hara, Pica Aln'hara, Linterna Aln'hara) que otorgan 3 puntos cada uno."
       }
     ]
   }

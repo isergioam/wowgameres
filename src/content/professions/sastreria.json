@@ -451,64 +451,49 @@
     "expansionName": "Midnight",
     "professionName": "Sastrería",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Sastrería (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Sastrería de Midnight (1-100). Ubicación de la instructora Galana en Lunargenta, tejidos de tela brillante, métodos de CD Diario y aceleración a nivel 100.",
+    "note": "Instructora: Galana en Ciudad de Lunargenta (/way #2393 48.1 54.1). Hilo de hojaplata y Lana de bordar se compran al vendedor de suministros al lado del instructor.",
     "steps": [
       {
         "min": 1,
         "max": 25,
         "mats": {
-          "Hilo de hojaplata": 264,
           "Lino brillante": 66
         },
-        "description": "<strong>Sastrería 1 – 25</strong><br><span class=\"recipe-name\">66x Rollo de lino brillante &rarr;</span> 264 Hilo de hojaplata, 66 Lino brillante."
+        "description": "<strong>Sastrería 1 – 25: Rollos de lino brillante</strong><br><span class=\"recipe-name\">66x Rollo de lino brillante &rarr;</span> 66 Lino brillante.<br><em>Nota: Necesitarás todos los 66 rollos para las armaduras y rollos imbuidos posteriores, así que elabóralos todos aunque la receta se vuelva gris a nivel 20.</em>"
       },
       {
         "min": 25,
         "max": 40,
         "mats": {
-          "Hilo de hojaplata": 56,
-          "Rollo de lino brillante": 28
+          "Rollo de lino brillante": 28,
+          "Polvo cantoeterno": 14
         },
-        "description": "<strong>Sastrería 25 – 40</strong><br><span class=\"recipe-name\">14x Rollo de lino brillante imbuido &rarr;</span> 56 Hilo de hojaplata, 28 Rollo de lino brillante."
+        "description": "<strong>Sastrería 25 – 40: Rollos de lino brillante imbuido</strong><br><span class=\"recipe-name\">14x Rollo de lino brillante imbuido &rarr;</span> 28 Rollo de lino brillante, 14 Polvo cantoeterno.<br><em>Al alcanzar nivel 25 desbloqueas las Especializaciones de Sastrería.</em>"
       },
       {
         "min": 40,
         "max": 50,
         "mats": {
-          "Hilo de hojaplata": 27,
-          "Rollo de lino": 12,
-          "Polvo cantoeterno": 6
+          "Rollo de lino brillante": 12,
+          "Rollo de lino brillante imbuido": 6,
+          "Polvo cantoeterno": 6,
+          "Hilo de hojaplata": 27
         },
-        "description": "<strong>Sastrería 40 – 50</strong><br>Toga de lino brillante y sobrehombros refinados."
+        "description": "<strong>Sastrería 40 – 50: Primeras Fabricaciones e Toga de sastrería</strong><br>Activa el filtro <em>'Bonus de primera fabricación'</em> y elabora 1 unidad de cada armadura disponible.<br>Equipa la <em>Toga de sastrería de lino brillante</em>.<br>Fabrica ~6x Sobrehombros cortesanos (12 Rollo de lino brillante) para llegar a nivel 50."
       },
       {
         "min": 50,
-        "max": 65,
-        "mats": {
-          "Filamento de bordado": 90,
-          "Rollo imbuido": 60,
-          "Polvo cantoeterno": 60
-        },
-        "description": "<strong>Sastrería 50 – 65</strong><br><span class=\"recipe-name\">30x Hilo de hechizo de lino brillante &rarr;</span> 90 Filamento de bordado, 60 Rollo imbuido, 60 Polvo cantoeterno."
-      },
-      {
-        "min": 65,
-        "max": 90,
-        "mats": {
-          "Filamento de bordado": 28,
-          "Seda de fuego solar": 168
-        },
-        "description": "<strong>Sastrería 65 – 90</strong><br><span class=\"recipe-name\">28x Forro de seda de fuego solar &rarr;</span> 28 Filamento de bordado, 168 Seda de fuego solar."
-      },
-      {
-        "min": 90,
         "max": 100,
         "mats": {
-          "Filamento de bordado": 13,
+          "Rollo de lino brillante imbuido": 60,
+          "Polvo cantoeterno": 100,
+          "Lana de bordar": 90,
+          "Seda de fuego solar": 168,
           "Mota de luz": 67,
-          "Rollo de seda": 107
+          "Fragmento radiante": 40
         },
-        "description": "<strong>Sastrería 90 – 100</strong><br><span class=\"recipe-name\">13x Gorro de cocina de artesano elegante &rarr;</span> Receta de especialización de Midnight."
+        "description": "<strong>Sastrería 50 – 100: Métodos de Nivelación (CD Diario vs Aceleración)</strong><br>Tienes dos métodos para completar la nivelación de 50 a 100:<br>• <strong>Método 1 (CD Diario - Lento y Rentable):</strong> Invierte 5 puntos en <em>Labor de aguja ágil</em> para desbloquear los CDs diarios de <em>Rollo de seda de fuego solar</em> o <em>Rollo de arcanotejido</em>. Cada CD otorga 2 puntos hasta nivel 80 (tarda ~2 semanas). Luego completa el tramo 80-100 con Pedidos de Fabricación de Patronos.<br>• <strong>Método 2 (Acelerado a 100):</strong><br>  - 50-65: 30x Hilo de hechizo de lino brillante (60 Rollo imbuido, 60 Polvo cantoeterno)<br>  - 65-90: ~28x Forro de seda de fuego solar (168 Seda de fuego solar, 56 Rollo de seda de fuego solar)<br>  - 90-100: ~13x Gorro de cocina de artesano elegante (67 Mota de luz, 107 Rollo de seda de fuego solar, 40 Fragmento radiante, comprado por Moxie de artesano)."
       }
     ]
   }

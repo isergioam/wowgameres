@@ -624,43 +624,53 @@
     "expansionName": "Midnight",
     "professionName": "Joyería",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Joyería (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Joyería de Midnight (1-100). Instructor Amin en Lunargenta, prospección de menas, tallado de gemas, Lente sin'dorei, Cáliz de monologuista y joyería de alta calidad.",
+    "note": "Instructor: Amin en Ciudad de Lunargenta (/way #2393 48.0 54.9). El vendedor de suministros al lado vende el Juego de herramientas de joyero.",
     "steps": [
       {
         "min": 1,
-        "max": 15,
+        "max": 14,
         "mats": {
-          "Mena de cobre": 60,
-          "Polvo de gema": 5,
-          "Vidrio": 15
+          "Mena de cobre refulgente": 60,
+          "Polvo de gemas reluciente": 4,
+          "Vidrio cristalino": 12
         },
-        "description": "<strong>Joyería 1 – 15</strong><br>Prospección y Lente sin'dorei."
+        "description": "<strong>Joyería 1 – 14: Prospección y Lente sin'dorei</strong><br>• 12x Prospección de Midnight &rarr; Prospecta 60 menas económicas de Midnight.<br>• 4x Lente sin'dorei &rarr; 4 Polvo de gemas reluciente, 12 Vidrio cristalino.<br><em>Tip: Asegúrate de comprar el Juego de herramientas de joyero al vendedor de suministros de joyería al lado del instructor.</em>"
       },
       {
-        "min": 15,
-        "max": 40,
+        "min": 14,
+        "max": 50,
         "mats": {
-          "Gemas (mix)": 15,
-          "Menas (mix)": 30
+          "Vidrio cristalino": 100,
+          "Piedra envuelta en el ocaso": 7,
+          "Granate sanguíneo": 5,
+          "Amatista tenebrosa": 4,
+          "Peridoto de Harandar": 4,
+          "Lapis Amani": 4,
+          "Granate sanguíneo impecable": 1,
+          "Amatista tenebrosa impecable": 1,
+          "Peridoto de Harandar impecable": 1,
+          "Lapis Amani impecable": 1
         },
-        "description": "<strong>Joyería 15 – 40</strong><br>Sortijas y talismanes relucientes."
+        "description": "<strong>Joyería 14 – 50: Primeras Fabricaciones del Instructor</strong><br>Cada 5 niveles de profesión, el instructor ofrece nuevas recetas de gemas y joyería.<br>Activa el filtro <em>'Bonus de primera fabricación'</em> y elabora 1 unidad de cada gema tallada y accesorio del instructor.<br>Al alcanzar nivel 25 desbloquearás tu primera Especialización."
       },
       {
-        "min": 40,
+        "min": 50,
         "max": 65,
         "mats": {
-          "Vidrio cristalino": 100
+          "Vidrio cristalino": 80
         },
-        "description": "<strong>Joyería 40 – 65</strong><br>Cáliz de monologuista (Receta barata)."
+        "description": "<strong>Joyería 50 – 65: Cáliz de monologuista</strong><br>Desactiva el filtro de primera fabricación.<br><span class=\"recipe-name\">40x Cáliz de monologuista &rarr;</span> 80 Vidrio cristalino.<br><em>Es una receta extremadamente económica de fabricar que te llevará hasta nivel 65 antes de volverse gris.</em>"
       },
       {
         "min": 65,
         "max": 100,
         "mats": {
-          "Lente sindorei": 160,
-          "Polvo de gema": 160
+          "Lente sin'dorei": 80,
+          "Polvo de gemas reluciente": 80,
+          "Diamante de Canción Eterna": 10
         },
-        "description": "<strong>Joyería 65 – 100</strong><br>Iris de enfoque prismático."
+        "description": "<strong>Joyería 65 – 100: Reactivos opcionales, Diamantes y Pedidos</strong><br>Opciones para completar la nivelación:<br>• <strong>Iris de enfoque prismático / Canana de gemas estabilizadora:</strong> Reactivos opcionales muy cotizados en subasta.<br>• <strong>Tallado de Diamantes de Canción Eterna:</strong> Cada talla otorga 2 puntos de profesión (naranja hasta 80, amarillo hasta 90).<br>• <strong>Equipo de profesión Raro/Épico:</strong> Lupas de joyero sin'dorei, Cristal de encantador sin'dorei.<br>• <strong>Joyería Épica (Anillos y Collares):</strong> Mediante Pedidos Públicos o de Patronos con Chispa de presagios."
       }
     ]
   }

@@ -244,20 +244,21 @@
     "expansionName": "Midnight",
     "professionName": "Minería",
     "maxLevel": 100,
-    "description": "Guía de Minería de Midnight (2026). Aprende a recolectar los nuevos cristales de luz y materiales del vacío en las tierras de Quel'Thalas.",
+    "description": "Guía completa de Minería de Midnight (1-100). Instructor Belil en Lunargenta, rutas de picado en Quel'Thalas, vetas infundidas, consumibles y equipamiento de profesión.",
+    "note": "Instructor: Belil en Ciudad de Lunargenta (/way #2393 42.6 52.8). En Midnight solo existen 2 calidades de mena (Plata y Oro).",
     "steps": [
       {
         "min": 1,
         "max": 50,
         "mats": {},
-        "description": "<div class=\"step-title\">Minería 1 – 50: Vetas de Luzsolar</div>Mina en los Bosques de Canción Eterna y las Tierras del Sol. Busca el brillo dorado en las bases de las estructuras élficas.",
+        "description": "<div class=\"step-title\">Minería 1 – 50: Mena de cobre refulgente y Mena de estaño umbrío</div>Pica en los Bosques de Canción Eterna y alrededores de Lunargenta.<br><em>Equipamiento sugerido:</em> Casco de minero de los Clamadores del Sol (Ingeniería), Bolsa de rocas de los Clamadores del Sol (Ingeniería) y Pico thalassiano (Herrería).<br>Usa <strong>Deftness</strong> para picar más rápido y evitar interrupciones de criaturas.",
         "routeImage": "/images/routes/midnight_mining.webp"
       },
       {
         "min": 50,
         "max": 100,
         "mats": {},
-        "description": "<div class=\"step-title\">Minería 50 – 100: Mena de Vacío</div>Explora las zonas afectadas por el abismo para encontrar estos depósitos oscuros. Son necesarios para la forja avanzada de Midnight.",
+        "description": "<div class=\"step-title\">Minería 50 – 100: Mena de plata brillante y Torio deslumbrante</div>Picado avanzado en Zul'Aman, Harandar y zonas del Vacío. El <strong>Torio deslumbrante</strong> es el mineral raro equivalente al Torio enriquecido.<br><strong>Mecánica de Sobrecargar Depósitos Infundidos:</strong> Picando tu primer depósito infundido aprendes <em>Sobrecargar depósito infundido</em> (reutilización 12h, reducida 30 min por cada veta picada).<br>• Depósitos infundidos por la Luz &rarr; Mota de luz.<br>• Depósitos infundidos de Magia Salvaje &rarr; Mota de magia salvaje.<br>• Depósitos infundidos de Energía Primigenia &rarr; Mota de energía primigenia.<br>• Depósitos infundidos del Vacío &rarr; Mota de vacío puro.<br><em>Consumibles recomendados: Té de azerraíz (+50 Deftness), Té de hojargenta (+50 Finesse), Phial de percepción Haranir y Piedra de afilar refulgente.</em>",
         "routeImage": "/images/routes/midnight_mining_void.png"
       }
     ]

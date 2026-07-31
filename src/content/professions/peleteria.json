@@ -762,46 +762,58 @@
     "expansionName": "Midnight",
     "professionName": "Peletería",
     "maxLevel": 100,
-    "description": "Guía de nivelación de Peletería (1-100) en Midnight de World of Warcraft.",
+    "description": "Guía completa de nivelación de Peletería de Midnight (1-100). Instructor Talmar en Lunargenta, lista de materiales con cueros y partes de bestias, progresión 1-60 y recetas avanzadas 60-100.",
+    "note": "Instructor: Talmar en Ciudad de Lunargenta (/way #2393 43.2 55.9). Hilo de hojaplata se compra al vendedor de suministros de peletería al lado del instructor.",
     "steps": [
       {
         "min": 1,
-        "max": 10,
+        "max": 7,
         "mats": {
-          "Cuero templado": 70,
-          "Escamas templadas": 50
+          "Cuero templado en el vacío": 10,
+          "Escamas templadas en el vacío": 10,
+          "Hilo de hojaplata": 2
         },
-        "description": "<strong>Peletería 1 – 10</strong><br>Brazales de cuero de contrabandista."
+        "description": "<strong>Peletería 1 – 7: Muñequeras de contrabandista y explorador</strong><br>• 1x Muñequeras de cuero de contrabandista (10 Cuero templado en el vacío, 1 Hilo de hojaplata)<br>• 1x Brazales escamados de explorador (10 Escamas templadas en el vacío, 1 Hilo de hojaplata)"
       },
       {
-        "min": 10,
-        "max": 62,
+        "min": 7,
+        "max": 60,
         "mats": {
-          "Cuero templado": 687,
-          "Escamas templadas": 607,
+          "Cuero templado en el vacío": 680,
+          "Escamas templadas en el vacío": 600,
+          "Pellejo templado en el vacío": 3,
+          "Placa templada en el vacío": 2,
+          "Plumaje inigualable": 4,
+          "Canino tallador": 3,
+          "Pelambre fantástico": 4,
+          "Flor de tranquilidad": 10,
+          "Mota de luz": 4,
+          "Mota de vacío puro": 1,
           "Hilo de hojaplata": 73
         },
-        "description": "<strong>Peletería 10 – 62</strong><br>Equipo de contrabandista y delantal de joyero."
+        "description": "<strong>Peletería 7 – 60: Recetas del Instructor y Primeras Fabricaciones</strong><br>Activa el filtro <em>'Bonus de primera fabricación'</em>.<br>Cada 5 a 10 niveles el instructor desbloquea nuevas piezas de cuero y malla. Fabrica 1 unidad de cada una para obtener el bonus de primera fabricación hasta agotar las recetas del instructor.<br>A nivel 25 desbloqueas tu primera Especialización.<br>Al terminar las recetas del instructor (alrededor de nivel 50), quedarás posicionado en nivel <strong>61</strong>.<br>Equipa el <em>Cubreobjeto de curtidor de pieles</em>."
       },
       {
-        "min": 62,
+        "min": 60,
         "max": 91,
         "mats": {
-          "Pellejo templado": 35,
+          "Piedra envuelta en el ocaso": 70,
+          "Pellejo templado en el vacío": 35,
           "Mota de magia salvaje": 350,
-          "Piedra velocrepúsculo": 70
+          "Canino tallador": 35,
+          "Plumaje inigualable": 35
         },
-        "description": "<strong>Peletería 62 – 91</strong><br>Talismán de pangolín bendito."
+        "description": "<strong>Peletería 60 – 91: Talismán de pangolín bendito o Atado de esporas primigenias</strong><br>Las recetas del instructor se vuelven grises a nivel 60. Necesitarás fabricar ~35 unidades de una de estas opciones:<br>• <strong>Talismán de pangolín bendito:</strong> Receta de misión <em>'El santuario del loa de la medicina'</em> en Zul'Aman (70 Piedra envuelta en el ocaso, 35 Pellejo templado, 350 Mota de magia salvaje, 35 Canino tallador, 35 Plumaje inigualable).<br>• <strong>Atado de esporas primigenias:</strong> Botín de Ziekket en El Valle Cegador (35 Pellejo de escamas tejidas, 350 Mota de energía primigenia, 35 Pelambre fantástico).<br>• <strong>Kit de armadura del Caballero de la Sangre / Cazador del bosque:</strong> Otorgados por la especialización <em>Flawless Fortes</em> o vendedor Magovu."
       },
       {
         "min": 91,
         "max": 100,
         "mats": {
-          "Cuero templado": 450,
-          "Mota de energía primigenia": 60,
-          "Barra sindorei": 6
+          "Pellejo de escamas tejidas": 15,
+          "Mota de energía primigenia": 30,
+          "Chispa de presagios": 3
         },
-        "description": "<strong>Peletería 91 – 100</strong><br>Envolturas raigales del Árbol del Mundo."
+        "description": "<strong>Peletería 91 – 100: Piezas de Armadura Épica</strong><br>Las recetas anteriores se mantienen amarillas/verdes hasta 100, pero la tasa de subida disminuye.<br>Para terminar de forma eficiente, fabrica 3 piezas de armadura épica de cuero o malla (ej. Envolturas raigales) mediante Pedidos Públicos o de Patronos (otorgan 3 puntos de profesión cada una y permanecen naranjas hasta 100)."
       }
     ]
   }
