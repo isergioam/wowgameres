@@ -1769,21 +1769,58 @@ footer {
   color: #bb9fff;
 }
 
-/* Piedra de Hogar (Home link) */
-.hearthstone-link {
+/* Links de Navegación del Menú Flotante (Iconos con Animación) */
+.hearthstone-link,
+.news-link,
+.lab-link,
+.donate-link,
+#darkModeToggle {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 5px;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.25s ease;
 }
 
-.hearthstone-link:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 6px var(--primary-glow));
+.hearthstone-link:hover,
+.news-link:hover,
+.lab-link:hover,
+.donate-link:hover,
+#darkModeToggle:hover {
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 8px var(--primary-glow));
 }
 
-.dark-mode .hearthstone-link:hover {
-  filter: drop-shadow(0 0 6px var(--primary-glow));
+.dark-mode .hearthstone-link:hover,
+.dark-mode .news-link:hover,
+.dark-mode .lab-link:hover,
+.dark-mode .donate-link:hover,
+.dark-mode #darkModeToggle:hover {
+  filter: drop-shadow(0 0 10px rgba(187, 159, 255, 0.8));
+}
+
+/* Micro-animaciones específicas por icono */
+.news-link:hover .news-icon {
+  transform: rotate(-8deg);
+  transition: transform 0.25s ease;
+}
+
+.lab-link:hover .lab-icon {
+  transform: rotate(20deg);
+  transition: transform 0.3s ease;
+}
+
+.donate-link:hover .donate-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+#darkModeToggle:hover .theme-icon {
+  transform: rotate(45deg);
+  transition: transform 0.35s ease;
 }
 
 
