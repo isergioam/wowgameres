@@ -56,11 +56,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					<div class="sim-input-group">
 						<label for="input-prof-type" class="input-title">Profesión Principal:</label>
 						<select id="input-prof-type" class="sim-select">
-							<option value="alquimia">🧪 Alquimia – Frascos y Pociones Míticas</option>
-							<option value="herreria">⚒️ Herrería – Armaduras Épicas y Placas</option>
-							<option value="herboristeria">🌿 Herboristería – Ruta de Recolección</option>
-							<option value="encantamiento">✨ Encantamiento – Velos y Cintas de Arma</option>
-							<option value="joyeria">💎 Joyería – Engaste de Gemas</option>
+							<option value="alquimia">🧪 Alquimia – Consumibles & Transmutación</option>
+							<option value="herreria">⚒️ Herrería – Armas & Armaduras Épicas</option>
+							<option value="encantamiento">✨ Encantamiento – Enchants & Velos</option>
+							<option value="joyeria">💎 Joyería – Gemas & Anillos Épicos</option>
+							<option value="inscripcion">📜 Inscripción – Runas, Glifos & Cartas</option>
+							<option value="ingenieria">⚙️ Ingeniería – Gadgets, Bombas & Torretas</option>
+							<option value="peleteria">🦴 Peletería – Kits de Armadura & Malla</option>
+							<option value="sastreria">🧵 Sastrería – Bolsas Grandes & Túnicas</option>
+							<option value="herboristeria">🌿 Herboristería – Ruta de Recolección de Hierbas</option>
+							<option value="mineria">⛏️ Minería – Menas & Fundición en Lote</option>
+							<option value="desuello">🗡️ Desuello – Cueros & Escamas Míticas</option>
+							<option value="cocina">🍳 Cocina – Festines de Raid & Comida</option>
+							<option value="pesca">🎣 Pesca – Peces Raros & Aceites</option>
+							<option value="primeros_auxilios">🩹 Primeros Auxilios – Vendas & Artefactos</option>
 						</select>
 					</div>
 
@@ -1226,12 +1235,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		});
 
 		// --- 4. SIMULADOR DE ORO DINÁMICO ---
+		const RECIPE_CATALOG = {
+			alquimia: [
+				{ id: 'frasco_agilidad', name: 'Frasco de Agilidad Arcana (Calidad 3)', cost: 110, sell: 340 },
+				{ id: 'pocion_poder', name: 'Poción de Poder Temerario (Calidad 3)', cost: 45, sell: 180 },
+				{ id: 'caldero_gran_raid', name: 'Caldero de Batalla de Raid Mítica', cost: 1200, sell: 4200 },
+				{ id: 'transmutacion_sangre', name: 'Transmutación de Piedras de Sangre', cost: 250, sell: 950 }
+			],
+			herreria: [
+				{ id: 'espada_mitica', name: 'Mano Principal Runeada Épica (iLvl MAX)', cost: 4200, sell: 18500 },
+				{ id: 'pechera_placas', name: 'Peto de Placas Infundidas', cost: 2800, sell: 9800 },
+				{ id: 'piedra_afilar', name: 'Piedra de Afilar Mítica (Pack x20)', cost: 120, sell: 480 },
+				{ id: 'hebilla_cinturon', name: 'Hebilla Prismática de Cinturón', cost: 600, sell: 2100 }
+			],
+			encantamiento: [
+				{ id: 'ench_arma_autoridad', name: 'Encantamiento de Arma: Autoridad Sombría', cost: 1500, sell: 5400 },
+				{ id: 'ench_pecho_atributos', name: 'Encantamiento de Pecho: Estadísticas Míticas', cost: 800, sell: 2900 },
+				{ id: 'ench_anillo_celeridad', name: 'Encantamiento de Anillo: Celeridad Radianfe', cost: 320, sell: 1150 },
+				{ id: 'polvo_ilusorio', name: 'Lote de Polvos Resonance (Pack x50)', cost: 250, sell: 880 }
+			],
+			joyeria: [
+				{ id: 'gema_diamante_primordial', name: 'Diamante Primordial Inscripto (Calidad 3)', cost: 1800, sell: 6500 },
+				{ id: 'gema_rubi_maestria', name: 'Rubí Solar de Maestría (+88)', cost: 350, sell: 1400 },
+				{ id: 'gema_esmeralda_critico', name: 'Esmeralda de Golpe Crítico (+88)', cost: 320, sell: 1250 },
+				{ id: 'anillo_joya_epico', name: 'Gargantilla de Lazos Elementales', cost: 3500, sell: 14200 }
+			],
+			inscripcion: [
+				{ id: 'runa_aumento', name: 'Runa de Aumento Rúnica (Pack x10)', cost: 200, sell: 850 },
+				{ id: 'tratado_conocimiento', name: 'Tratado de Conocimiento Semanal', cost: 450, sell: 1900 },
+				{ id: 'mazo_luna_oscura', name: 'Mazo de la Luna Oscura: Tormenta', cost: 5200, sell: 24000 },
+				{ id: 'glifo_cosmetico', name: 'Glifo de Metamorfosis Estelar', cost: 180, sell: 720 }
+			],
+			ingenieria: [
+				{ id: 'gafas_ingenieria', name: 'Gafas de Visión Nocturna Míticas', cost: 3200, sell: 12800 },
+				{ id: 'bomba_carga_pesada', name: 'Caja de Bombas de Carga Caótica (x20)', cost: 150, sell: 650 },
+				{ id: 'generador_gusano', name: 'Generador de Agujeros de Gusano de Zona', cost: 850, sell: 3400 },
+				{ id: 'robot_reparaciones', name: 'Unidad de Reparaciones Automatizada (JEEVES)', cost: 600, sell: 2400 }
+			],
+			peleteria: [
+				{ id: 'parche_cuero_fuerza', name: 'Parche de Armadura de Cuero Mítico', cost: 400, sell: 1650 },
+				{ id: 'pecho_malla_epico', name: 'Jubón de Escamas de Dragón (iLvl MAX)', cost: 3100, sell: 12500 },
+				{ id: 'tambores_furia', name: 'Tambores de la Manada (Pack x20)', cost: 180, sell: 750 },
+				{ id: 'botas_cuero_agilidad', name: 'Zapatillas de Acechador Sombrío', cost: 2400, sell: 8900 }
+			],
+			sastreria: [
+				{ id: 'bolsa_36_casillas', name: 'Bolsa de Tela de Seda Dragónica (36 Casillas)', cost: 850, sell: 3600 },
+				{ id: 'tunica_seda_epica', name: 'Túnica de Tejido Estelar Arcane', cost: 2900, sell: 11200 },
+				{ id: 'hilo_bordado_pantalones', name: 'Hilo de Bordado Neomágico (Pantalón)', cost: 520, sell: 2100 },
+				{ id: 'capa_tejido_sombra', name: 'Capa de Sombras Crepusculares', cost: 1100, sell: 4300 }
+			],
+			herboristeria: [
+				{ id: 'lote_amapola_silvestre', name: 'Lote de Amapola Silvestre Rara (x100)', cost: 0, sell: 4200 },
+				{ id: 'lote_flor_corteza', name: 'Lote de Flor de Corteza Arcana (x100)', cost: 0, sell: 5800 },
+				{ id: 'lote_loto_crepuscular', name: 'Loto Crepuscular Raro (x10)', cost: 0, sell: 8500 }
+			],
+			mineria: [
+				{ id: 'mena_bismuto', name: 'Lote de Mena de Bismuto Infundida (x100)', cost: 0, sell: 4800 },
+				{ id: 'mena_hierro_sombreo', name: 'Lote de Mena de Hierro Sombrío (x100)', cost: 0, sell: 3900 },
+				{ id: 'barra_torium_fundido', name: 'Barras de Aleación Mítica (Pack x20)', cost: 800, sell: 3600 }
+			],
+			desuello: [
+				{ id: 'cuero_exotico', name: 'Lote de Cuero Prístino de Dragón (x100)', cost: 0, sell: 6200 },
+				{ id: 'escama_malla_rara', name: 'Escamas de Leviatán Abisal (x50)', cost: 0, sell: 5100 }
+			],
+			cocina: [
+				{ id: 'festin_raid_gran_banquete', name: 'Festín de Raid: Banquete de Grandes Señores', cost: 800, sell: 3200 },
+				{ id: 'comida_atributo_celeridad', name: 'Filete de Dragón Sazonado (+Atributo) x20', cost: 150, sell: 680 }
+			],
+			pesca: [
+				{ id: 'pez_rara_calidad', name: 'Lote de Pescado Esmeralda Raro (x50)', cost: 0, sell: 3400 },
+				{ id: 'aceite_pescado_concentrado', name: 'Aceite Purificado de Pescado (Pack x100)', cost: 100, sell: 1200 }
+			],
+			primeros_auxilios: [
+				{ id: 'venda_seda_pesada', name: 'Venda de Seda Tejida Pesada (Pack x50)', cost: 120, sell: 550 },
+				{ id: 'artefacto_raro', name: 'Fragmento de Reliquia Antigua', cost: 300, sell: 1600 }
+			]
+		};
+
 		const rangeHours = document.getElementById('range-hours');
 		const rangeMulti = document.getElementById('range-multicraft');
 		const rangeCost = document.getElementById('range-mat-cost');
 		const rangeSell = document.getElementById('range-sell-price');
 		const profSelect = document.getElementById('input-prof-type');
 		const recipeSelect = document.getElementById('input-recipe-type');
+
+		function populateRecipes(profKey) {
+			if (!recipeSelect) return;
+			const list = RECIPE_CATALOG[profKey] || RECIPE_CATALOG.alquimia;
+			recipeSelect.innerHTML = list.map(item => `<option value="${item.id}" data-cost="${item.cost}" data-sell="${item.sell}">${item.name}</option>`).join('');
+
+			if (list.length > 0) {
+				const first = list[0];
+				if (rangeCost) rangeCost.value = first.cost;
+				if (rangeSell) rangeSell.value = first.sell;
+			}
+			calculateProfits();
+		}
+
+		profSelect?.addEventListener('change', (e) => {
+			populateRecipes(e.target.value);
+		});
+
+		recipeSelect?.addEventListener('change', () => {
+			const selectedOpt = recipeSelect.options[recipeSelect.selectedIndex];
+			if (selectedOpt) {
+				const cost = selectedOpt.getAttribute('data-cost');
+				const sell = selectedOpt.getAttribute('data-sell');
+				if (cost && rangeCost) rangeCost.value = cost;
+				if (sell && rangeSell) rangeSell.value = sell;
+			}
+			calculateProfits();
+		});
 
 		const valHours = document.getElementById('val-hours');
 		const valMulti = document.getElementById('val-multicraft');
