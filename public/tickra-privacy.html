@@ -66,7 +66,7 @@
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-top: 32px;
             margin-bottom: 16px;
             font-weight: 700;
@@ -76,10 +76,11 @@
         }
 
         h3 {
-            font-size: 1.2rem;
-            margin-top: 24px;
+            font-size: 1.15rem;
+            margin-top: 20px;
             margin-bottom: 8px;
             font-weight: 600;
+            color: var(--text-main);
         }
 
         p, ul {
@@ -129,42 +130,49 @@
     <div class="container">
         <div class="card">
             <h1>Política de Privacidad</h1>
-            <div class="subtitle">Última actualización: 17 de junio de 2026</div>
+            <div class="subtitle">Última actualización: 25 de agosto de 2026</div>
 
             <p><strong>WOWGamerES</strong> ("nosotros", "nuestro" o "la Empresa") se compromete a proteger la privacidad de los usuarios de la aplicación móvil <strong>Tickra</strong> ("la Aplicación"). Esta Política de Privacidad describe cómo se recopila, utiliza y protege tu información al utilizar nuestros servicios.</p>
 
             <h2>1. Información que recopilamos</h2>
             <ul>
-                <li><strong>Datos guardados localmente:</strong> Toda la información de tus compras, artículos extraídos, totales, tiendas, fechas y categorías de gastos se almacena <strong>exclusivamente en la base de datos local</strong> de tu dispositivo móvil (base de datos SQLite/Room). Nosotros no tenemos acceso a este historial de datos ni lo guardamos en servidores externos.</li>
-                <li><strong>Imágenes de tickets:</strong> Cuando utilizas la función de cámara para escanear un ticket, la imagen se procesa temporalmente con el único propósito de extraer la información de compra. La imagen se transmite de forma cifrada a través de nuestra API segura a los servicios de procesamiento de Inteligencia Artificial (Google Gemini API). <strong>Estas imágenes no se almacenan de forma permanente</strong> en ningún servidor y se eliminan inmediatamente tras finalizar el proceso de extracción de datos.</li>
+                <li><strong>Información de la cuenta de usuario:</strong> Al iniciar sesión a través de Google Sign-In, recopilamos tu nombre, dirección de correo electrónico, foto de perfil y un identificador único de usuario (Firebase UID) para gestionar tu cuenta, sincronizar tu estado de suscripción y controlar tu límite de escaneos.</li>
+                <li><strong>Historial y tickets guardados localmente:</strong> Tus tickets, desglose de artículos, tiendas, precios, fechas y categorías de gastos se almacenan <strong>principalmente en la base de datos local (SQLite/Room)</strong> de tu dispositivo móvil.</li>
+                <li><strong>Imágenes de tickets y documentos:</strong> Cuando escaneas o subes un ticket/PDF, la imagen se envía de forma cifrada a través de nuestra API segura a los servicios de Inteligencia Artificial para extraer los datos de compra. <strong>Estas imágenes no se almacenan de forma permanente</strong> y se descartan tras completar el procesamiento.</li>
+                <li><strong>Datos de cuota y uso:</strong> Almacenamos en la nube (Google Firebase Firestore) el recuento de escaneos realizados durante el mes para aplicar los límites del plan gratuito o validar el acceso ilimitado para usuarios Premium.</li>
             </ul>
 
-            <h2>2. Servicios de Terceros</h2>
-            <p>La Aplicación hace uso de servicios de terceros para el análisis inteligente de imágenes y la detección de textos:</p>
+            <h2>2. Servicios de Terceros y Proveedores</h2>
+            <p>La Aplicación se integra con proveedores de confianza para su correcto funcionamiento:</p>
             <ul>
-                <li><strong>Google Gemini API:</strong> Las imágenes de los tickets se envían temporalmente a esta API para convertirlas en datos de texto estructurados. Google procesa estos datos de conformidad con sus políticas de privacidad aplicables para desarrolladores de API.</li>
+                <li><strong>Google Firebase & Google Identity:</strong> Autenticación segura de usuarios (Firebase Auth) y sincronización de cuotas de uso (Firestore).</li>
+                <li><strong>Google Gemini API / Procesamiento IA:</strong> Extracción inteligente de texto y artículos a partir de las imágenes de tickets.</li>
+                <li><strong>Google AdMob:</strong> Muestra anuncios en la versión gratuita de la aplicación. AdMob puede recopilar y procesar identificadores del dispositivo (como el ID de publicidad de Android) y datos de interacción conforme a las políticas de publicidad de Google.</li>
+                <li><strong>RevenueCat & Google Play Billing:</strong> Procesamiento y verificación de suscripciones y compras dentro de la app (In-App Purchases). RevenueCat gestiona identificadores anónimos de compra y recibos de transacción.</li>
             </ul>
 
             <h2>3. Uso de la Información</h2>
-            <p>Utilizamos la información recopilada estrictamente para:</p>
+            <p>Utilizamos la información recopilada exclusivamente para:</p>
             <ul>
-                <li>Proporcionar la funcionalidad central de la aplicación (conversión de imágenes de tickets a listas de artículos de gastos).</li>
-                <li>Mantener estadísticas de gastos financieros organizados dentro de la aplicación móvil.</li>
-                <li>Permitir la exportación de tus datos a formato de hoja de cálculo Excel.</li>
+                <li>Permitir el inicio de sesión y autenticación segura de los usuarios.</li>
+                <li>Procesar las imágenes de los tickets mediante IA para extraer artículos, cantidades y precios.</li>
+                <li>Gestionar los planes de suscripción (versión Gratuita, Pro mensual/anual y Vitalicia).</li>
+                <li>Mostrar anuncios publicitarios no invasivos a los usuarios de la versión gratuita.</li>
+                <li>Generar estadísticas financieras dentro del dispositivo y permitir la exportación de datos a PDF y Excel.</li>
             </ul>
 
-            <h2>4. Seguridad de los Datos</h2>
-            <p>Implementamos medidas técnicas y organizativas de seguridad estándar de la industria para proteger tus datos contra el acceso no autorizado, la alteración o la divulgación, especialmente durante la transferencia de las imágenes a la API de análisis.</p>
+            <h2>4. Seguridad y Retención de Datos</h2>
+            <p>Implementamos protocolos de seguridad estándar de la industria (incluyendo cifrado HTTPS/TLS en todas las comunicaciones con nuestras APIs y servicios en la nube). Los datos locales permanecen en el dispositivo hasta que el usuario decida eliminarlos o desinstalar la app.</p>
 
-            <h2>5. Derechos de Control del Usuario</h2>
-            <p>Al estar todos los datos financieros almacenados de forma local en tu dispositivo móvil, tienes control total sobre ellos:</p>
+            <h2>5. Control del Usuario y Eliminación de Datos</h2>
+            <p>El usuario mantiene en todo momento el control sobre sus datos:</p>
             <ul>
-                <li>Puedes eliminar registros individuales de tickets o artículos en cualquier momento desde la propia interfaz de la aplicación.</li>
-                <li>Si desinstalas la aplicación o borras sus datos desde los ajustes del sistema de Android, toda tu base de datos de compras y configuraciones se eliminará de forma permanente e irrecuperable.</li>
+                <li><strong>Eliminación local:</strong> Puedes eliminar tickets individuales, vaciar la papelera o desinstalar la app para borrar todos los datos locales de tu dispositivo.</li>
+                <li><strong>Eliminación de cuenta y datos en la nube:</strong> Si deseas solicitar la eliminación definitiva de tu cuenta y de cualquier dato asociado en nuestros servidores (Firestore/Auth), puedes solicitarlo enviando un correo electrónico a nuestro equipo de soporte. Procesaremos la solicitud en un plazo máximo de 30 días.</li>
             </ul>
 
             <h2>6. Contacto</h2>
-            <p>Si tienes alguna duda o sugerencia sobre esta Política de Privacidad, puedes ponerte en contacto con nosotros a través de:</p>
+            <p>Para cualquier consulta, ejercicio de tus derechos de privacidad o solicitud de eliminación de datos, puedes contactarnos en:</p>
             <ul>
                 <li><strong>Correo electrónico:</strong> <a href="mailto:Tickra@wowgameres.com">Tickra@wowgameres.com</a></li>
             </ul>
