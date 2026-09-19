@@ -22,8 +22,8 @@
     "image": "https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/ev/EVFNPP5S77ZN1789667878336.png",
     "date": "2026-09-17T21:00:00.524Z",
     "category": "Retail",
-    "summary": null,
-    "summaryTitle": null
+    "summary": "¡Atención, héroes! La beta de *World of Warcraft: Forever* ya está oficialmente activa, invitándonos a explorar una Azeroth totalmente reimaginada donde el viaje y el descubrimiento vuelven a ser los grandes protagonistas. Para sumergiros hoy mismo en esta nueva aventura, que estará disponible hasta el 21 de octubre, podéis registraros en la web oficial para recibir una invitación o asegurar vuestro acceso inmediato adquiriendo uno de los nuevos lotes digitales de precompra en la tienda de Battle.net.\n\nDurante esta primera semana de pruebas, el límite de nivel estará fijado en 20 y podréis probar a la nueva raza, los célicos, en su zona de inicio, la Isla de Zephras, además de adentraros en las mazmorras del Salón de los Feudales y las Ruinas de Lordaeron. Recordad actualizar vuestros controladores gráficos para la ocasión y, ante todo, verificad vuestro acceso directamente en la pestaña \"En desarrollo\" de vuestra aplicación de Battle.net para evitar posibles intentos de suplantación de identidad. ¡Nos vemos en Azeroth!",
+    "summaryTitle": "La eternidad te reclama en Azeroth"
   },
   {
     "id": 24301512,
@@ -35,8 +35,8 @@
     "image": "https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/di/DILTN5MM6PIG1527786985289.jpg",
     "date": "2026-09-17T20:58:00.000Z",
     "category": "Retail",
-    "summary": null,
-    "summaryTitle": null
+    "summary": "¡Atención, héroes de Azeroth! De cara al lanzamiento de *World of Warcraft: Forever*, Blizzard ha anunciado una actualización en los requisitos mínimos de tarjeta gráfica para dar soporte a su renovado apartado visual. A partir de ahora, vuestra GPU deberá ser compatible con la tecnología RGBA16F UAV en sombreadores de computación, lo que se traduce en modelos basados en las arquitecturas AMD GCN 1 (2012), NVIDIA Maxwell (2014) o Intel Skylake (2015) en adelante. Aunque la inmensa mayoría de la comunidad ya cumple con este estándar, tarjetas clásicas como las GeForce GTX 760/770 o las Radeon HD 6950 se quedan oficialmente sin soporte, por lo que os tocará actualizar el hardware si queréis dar el salto a esta nueva era del juego.\n\nSi no tenéis claro qué gráfica ruge en vuestro PC, podéis comprobarlo rápidamente en Windows desde el «Administrador de dispositivos» (bajo el menú de adaptadores de pantalla) o en la sección de «Pantalla avanzada» dentro de la configuración del sistema. Eso sí, tened en cuenta que, aunque tarjetas antiguas como la GTX 750 Ti o la Radeon HD 7850 son técnicamente compatibles, su rendimiento estará muy por debajo de lo recomendado para disfrutar de una experiencia fluida. No dudéis en pasaros por la tienda de Battle.net para revisar la lista completa de requisitos y aseguraros de que vuestro PC está listo para la acción. ¡Nos vemos en los servidores!",
+    "summaryTitle": "La eternidad de Azeroth exige nuevas gráficas"
   },
   {
     "id": 24302544,
@@ -48,8 +48,8 @@
     "image": "https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/xq/XQHA2LAWZ50S1789241337987.png",
     "date": "2026-09-17T17:01:00.000Z",
     "category": "Comunidad",
-    "summary": null,
-    "summaryTitle": null
+    "summary": "**¡Prepara tus preguntas! El equipo de WoW responderá en directo tras la BlizzCon 2026**\n\n¡Preparad vuestras armas, héroes de Azeroth! El equipo de desarrollo de World of Warcraft se prepara para responder en directo a las dudas más importantes de la comunidad tras los bombazos anunciados en la BlizzCon 2026. Esta sesión de preguntas y respuestas es la oportunidad perfecta para conocer de primera mano los detalles y el rumbo que tomará el juego en las próximas fechas.\n\nTanto si vuestro hogar está en el WoW moderno como si disfrutáis de la experiencia clásica en WoW Forever, este encuentro ofrecerá un vistazo en exclusiva a todo el contenido que está por llegar. No te pierdas esta cita clave si quieres estar al tanto de las futuras aventuras que nos depara el destino. ¡Nos vemos en la retransmisión!",
+    "summaryTitle": "Los creadores de Azeroth responden al clamor"
   },
   {
     "id": 24307305,
@@ -61,7 +61,7 @@
     "image": "https://bnetcmsus-a.akamaihd.net/cms/blog_thumbnail/vn/VNVI1LDE8NP51772694004728.png",
     "date": "2026-09-16T17:00:00.000Z",
     "category": "Retail",
-    "summary": null,
+    "summary": "¡Atención, campeones de Azeroth! Blizzard ha desvelado la selección de mazmorras para la Temporada 3 de *Midnight* y llega con un lavado de cara espectacular. El equipo de desarrollo se ha volcado en escuchar a la comunidad para corregir los puntos más conflictivos de expansiones pasadas, modernizando la jugabilidad, los efectos visuales y el ritmo de clásicos que vuelven a la rotación, como Cavernas de Maisara, Bancal del Magister, El Núcleo Pétreo y Cavernas Sanguinas.\n\nLas novedades más jugosas se centran en optimizar vuestro tiempo y mejorar la experiencia en las piedras angulares. Uldaman reducirá su tediosa duración eliminando el encuentro de Los enanos desaparecidos (pasando de cinco jefes a cuatro), mientras que en el Puerto de Hierro se rediseñarán las habilidades de los jefes y se ajustarán las icónicas estrellas de hierro para que dependamos menos de ellas. En definitiva, nos espera una temporada con mecánicas mucho más pulidas y desafiantes, pero sin perder la esencia de los encuentros originales. ¡Id preparando vuestro equipo!",
     "summaryTitle": null
   },
   {
