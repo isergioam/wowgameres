@@ -419,8 +419,8 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
       // Leer preferencia guardada
       const savedVersion = localStorage.getItem('wow-preferred-version') || 'retail';
       
-      function setVersion(version) {
-        vSwitch.setAttribute('data-active', version);
+      function setVersion(version: string) {
+        vSwitch!.setAttribute('data-active', version);
         vBtns.forEach(btn => {
           if (btn.getAttribute('data-v') === version) {
             btn.classList.add('active');
@@ -444,7 +444,7 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
       // Eventos
       vBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const version = btn.getAttribute('data-v');
+          const version = btn.getAttribute('data-v') || 'retail';
           localStorage.setItem('wow-preferred-version', version);
           setVersion(version);
         });
