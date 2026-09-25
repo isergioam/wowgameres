@@ -53,7 +53,15 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
                       <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
                     </svg>
                   </a>
+                <!-- COMENTADO HASTA EL DÍA DEL LANZAMIENTO
+                <li class="version-switch-container">
+                  <div class="version-switch" id="versionSwitch" data-active="retail">
+                    <button class="v-btn active" data-v="retail">Retail</button>
+                    <button class="v-btn" data-v="forever">Forever</button>
+                    <div class="v-slider"></div>
+                  </div>
                 </li>
+                -->
                 <li>
                   <button id="darkModeToggle" aria-label="Cambiar tema">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon">
@@ -174,6 +182,72 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
 
     @media (max-width: 768px) {
         .logo-img { width: 250px; }
+        .version-switch-container { display: none; }
+    }
+
+    /* Switch de Versiones */
+    .version-switch-container {
+        display: flex;
+        align-items: center;
+        margin-right: 0.5rem;
+    }
+
+    .version-switch {
+        position: relative;
+        display: flex;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        padding: 3px;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    }
+    :global(.dark-mode) .version-switch {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .v-btn {
+        position: relative;
+        z-index: 2;
+        background: transparent;
+        border: none;
+        color: #6b7280;
+        font-size: 0.75rem;
+        font-weight: 700;
+        width: 75px;
+        padding: 0.4rem 0;
+        border-radius: 18px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .v-btn.active {
+        color: #fff;
+    }
+    :global(.dark-mode) .v-btn {
+        color: rgba(255,255,255,0.5);
+    }
+    :global(.dark-mode) .v-btn.active {
+        color: #fff;
+    }
+
+    .v-slider {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 75px;
+        height: calc(100% - 6px);
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        border-radius: 18px;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s;
+        box-shadow: 0 2px 5px rgba(37, 99, 235, 0.4);
+    }
+
+    .version-switch[data-active="forever"] .v-slider {
+        transform: translateX(75px);
+        background: linear-gradient(135deg, #10627e, #b2935d);
+        box-shadow: 0 2px 5px rgba(16, 98, 126, 0.4);
     }
 </style>
 
@@ -334,6 +408,46 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
         if (!searchInput.contains(e.target as Node) && !resultsList.contains(e.target as Node)) {
           resultsList.style.display = 'none';
         }
+      });
+    }
+
+    // --- Lógica del Switch de Versiones (Retail vs Forever) ---
+    const vSwitch = document.getElementById('versionSwitch');
+    if (vSwitch) {
+      const vBtns = vSwitch.querySelectorAll('.v-btn');
+      
+      // Leer preferencia guardada
+      const savedVersion = localStorage.getItem('wow-preferred-version') || 'retail';
+      
+      function setVersion(version) {
+        vSwitch.setAttribute('data-active', version);
+        vBtns.forEach(btn => {
+          if (btn.getAttribute('data-v') === version) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+        
+        // Simular un cambio de entorno general cambiando momentáneamente el fondo
+        // En producción aquí iría un `window.location.href = '...'` a la otra web.
+        if (version === 'forever') {
+            document.body.style.backgroundColor = '#06202c'; // Fondo teal de prueba
+        } else {
+            document.body.style.backgroundColor = ''; // Default
+        }
+      }
+
+      // Aplicar estado inicial
+      setVersion(savedVersion);
+
+      // Eventos
+      vBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const version = btn.getAttribute('data-v');
+          localStorage.setItem('wow-preferred-version', version);
+          setVersion(version);
+        });
       });
     }
   })();
