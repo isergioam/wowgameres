@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/NewsCard.astro";
-import AffiliateBanner from "../components/AffiliateBanner.astro";
 import DonationBanner from "../components/DonationBanner.astro";
 
 import newsData from "../content/news/latest.json";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/Cabecera_WOWGamerES.webp";
 import silvermoonLandscape from "../assets/images/silvermoon_landscape.webp";
+import foreverLandscape from "../assets/images/forever_landscape.webp";
 
 // Importación de imágenes de las expansiones
 import imgVanilla from "../assets/images/expansions/vanilla.webp";
@@ -22,6 +22,119 @@ import imgSl from "../assets/images/expansions/sl.webp";
 import imgDf from "../assets/images/expansions/df.webp";
 import imgTww from "../assets/images/expansions/tww.webp";
 import imgMidnight from "../assets/images/expansions/midnight.webp";
+
+// Importación de imágenes de las profesiones para modo Forever
+import imgAlquimia from "../assets/images/alquimia_wow.webp";
+import imgHerreria from "../assets/images/herreria_wow.webp";
+import imgEncantamiento from "../assets/images/encantamiento_wow.webp";
+import imgIngenieria from "../assets/images/ingenieria_wow.webp";
+import imgPeleteria from "../assets/images/peleteria_wow.webp";
+import imgSastreria from "../assets/images/sastreria_wow.webp";
+import imgMineria from "../assets/images/mineria_wow.webp";
+import imgHerboristeria from "../assets/images/herboristeria_wow.webp";
+import imgDesuello from "../assets/images/desuello_wow.webp";
+import imgCocina from "../assets/images/cocina_wow.webp";
+import imgPesca from "../assets/images/pesca_wow.webp";
+import imgPrimerosAuxilios from "../assets/images/primeros_auxilios_wow.webp";
+
+const foreverProfessions = [
+  {
+    id: "alquimia",
+    name: "Alquimia",
+    type: "Producción",
+    image: imgAlquimia,
+    color: "#38bdf8",
+    glow: "rgba(56, 189, 248, 0.45)",
+  },
+  {
+    id: "herreria",
+    name: "Herrería",
+    type: "Producción",
+    image: imgHerreria,
+    color: "#f59e0b",
+    glow: "rgba(245, 158, 11, 0.45)",
+  },
+  {
+    id: "encantamiento",
+    name: "Encantamiento",
+    type: "Producción",
+    image: imgEncantamiento,
+    color: "#c084fc",
+    glow: "rgba(192, 132, 252, 0.45)",
+  },
+  {
+    id: "ingenieria",
+    name: "Ingeniería",
+    type: "Producción",
+    image: imgIngenieria,
+    color: "#eab308",
+    glow: "rgba(234, 179, 8, 0.45)",
+  },
+  {
+    id: "peleteria",
+    name: "Peletería",
+    type: "Producción",
+    image: imgPeleteria,
+    color: "#d97706",
+    glow: "rgba(217, 119, 6, 0.45)",
+  },
+  {
+    id: "sastreria",
+    name: "Sastrería",
+    type: "Producción",
+    image: imgSastreria,
+    color: "#f472b6",
+    glow: "rgba(244, 114, 182, 0.45)",
+  },
+  {
+    id: "mineria",
+    name: "Minería",
+    type: "Recolección",
+    image: imgMineria,
+    color: "#fbbf24",
+    glow: "rgba(251, 191, 36, 0.45)",
+  },
+  {
+    id: "herboristeria",
+    name: "Herboristería",
+    type: "Recolección",
+    image: imgHerboristeria,
+    color: "#4ade80",
+    glow: "rgba(74, 222, 128, 0.45)",
+  },
+  {
+    id: "desuello",
+    name: "Desuello",
+    type: "Recolección",
+    image: imgDesuello,
+    color: "#f87171",
+    glow: "rgba(248, 113, 113, 0.45)",
+  },
+  {
+    id: "cocina",
+    name: "Cocina",
+    type: "Secundaria",
+    image: imgCocina,
+    color: "#fb923c",
+    glow: "rgba(251, 146, 60, 0.45)",
+  },
+  {
+    id: "pesca",
+    name: "Pesca",
+    type: "Secundaria",
+    image: imgPesca,
+    color: "#22d3ee",
+    glow: "rgba(34, 211, 238, 0.45)",
+  },
+  {
+    id: "primeros-auxilios",
+    name: "Primeros Auxilios",
+    type: "Secundaria",
+    image: imgPrimerosAuxilios,
+    color: "#ec4899",
+    glow: "rgba(236, 72, 153, 0.45)",
+  },
+];
 
 const expansions = [
   {
@@ -146,20 +259,31 @@ const description =
       <div class="hero-background">
         <Image
           src={silvermoonLandscape}
-          alt="Ciudad de Lunargenta - Expansión Actual Midnight"
+          alt="Ciudad de Lunargenta - Retail"
           width={1920}
           height={1080}
           format="avif"
           quality="mid"
           loading="eager"
           fetchpriority="high"
-          class="hero-img-asset"
+          class="hero-img-asset hero-bg-retail"
+        />
+        <Image
+          src={foreverLandscape}
+          alt="Azeroth Clásico Remasterizado - World of Warcraft Forever"
+          width={1920}
+          height={1080}
+          format="avif"
+          quality="mid"
+          loading="eager"
+          class="hero-img-asset hero-bg-forever"
         />
       </div>
       <div class="hero-overlay"></div>
 
       <section class="hero-section">
-        <div class="hero-content">
+        <!-- Modo Retail: Contenido Hero -->
+        <div class="hero-content hero-mode-retail">
           <h1
             id="profesiones"
             data-i18n="title_professions"
@@ -173,26 +297,33 @@ const description =
             alcanzar el nivel máximo de forma rápida, eficiente y optimizando
             cada moneda de oro en todas las expansiones.
           </p>
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            <span data-i18n="hero_badge_text"
-              >Actualizado: Midnight (12.0.7)</span
-            >
-          </div>
+        </div>
+
+        <!-- Modo Forever: Contenido Hero -->
+        <div class="hero-content hero-mode-forever">
+          <h1 class="gradient-title forever-gradient-title">
+            Guías de Profesiones<br />WoW Forever
+          </h1>
+          <p class="hero-description">
+            Bienvenido a tu hogar permanente en <strong>World of Warcraft: Forever</strong>.
+            Aprende a subir de nivel tus profesiones clásicas del 1 al 300 con
+            las rutas más eficientes, listas completas de materiales y trucos para
+            ahorrar oro en un Azeroth reinventado.
+          </p>
         </div>
       </section>
 
       <div
         class="content"
-        style="margin-bottom: 0; padding-bottom: 20px; position: relative; z-index: 5;"
+        style="margin-bottom: 0; padding-bottom: 0; position: relative; z-index: 5;"
       >
-        <!-- Expansiones (Grid Directo) -->
         <section
           id="expansiones"
           class="section"
-          style="margin-top: -130px; padding-top: 0; position: relative; z-index: 5;"
+          style="margin-top: -130px; padding-top: 0; margin-bottom: 0; position: relative; z-index: 5;"
         >
-          <div class="expansiones">
+          <!-- Cuadrícula Modo Retail: 12 Expansiones -->
+          <div class="expansiones grid-mode-retail">
             {
               expansions.map((exp) => (
                 <a
@@ -228,19 +359,55 @@ const description =
               ))
             }
           </div>
-        </section>
 
-        <AffiliateBanner />
+          <!-- Cuadrícula Modo Forever: 12 Profesiones Clásicas -->
+          <div class="expansiones grid-mode-forever">
+            {
+              foreverProfessions.map((prof) => (
+                <a
+                  href={`/guias/${prof.id}/forever/`}
+                  class="card-expansion-link reveal"
+                >
+                  <div
+                    class="card-expansion card-prof-forever"
+                    style={`
+                      --glow-color: ${prof.color};
+                      --glow-shadow: ${prof.glow};
+                    `}
+                  >
+                    <Image
+                      src={prof.image}
+                      alt={prof.name}
+                      width={220}
+                      height={275}
+                      quality={80}
+                      format="webp"
+                      loading="lazy"
+                      class="card-expansion-img"
+                    />
+                    <div class="card-expansion-overlay" />
+                    <span
+                      class="exp-name"
+                      style="position: relative; z-index: 2;"
+                    >
+                      {prof.name}
+                    </span>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
       </div>
     </div>
 
     {
       latestNews.length > 0 && (
-        <div class="content">
+        <div class="content" style="margin-top: 0; padding-top: 0;">
           <section
             id="noticias"
             class="section news-preview-section"
-            style="margin-top: 30px; padding-top: 40px; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
+            style="margin-top: 24px; padding-top: 0; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
           >
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
               <h2
@@ -320,6 +487,7 @@ const description =
 <style>
   .news-section-title {
     color: #bb9fff !important;
+    transition: color 0.4s ease;
   }
   .news-view-all-link {
     color: #bb9fff !important;
@@ -328,6 +496,125 @@ const description =
   .news-view-all-link:hover {
     color: #d1a3ff !important;
     text-shadow: 0 0 10px rgba(209, 163, 255, 0.4);
+  }
+
+</style>
+
+<style is:global>
+  /* --- Alternancia Dinámica Retail vs Forever (Sin problemas de especificidad) --- */
+  /* Modo Retail (Por defecto o data-version="retail") */
+  html:not([data-version="forever"]) .hero-mode-forever,
+  html[data-version="retail"] .hero-mode-forever {
+    display: none !important;
+  }
+  html:not([data-version="forever"]) .grid-mode-forever,
+  html[data-version="retail"] .grid-mode-forever {
+    display: none !important;
+  }
+  html:not([data-version="forever"]) .hero-bg-forever,
+  html[data-version="retail"] .hero-bg-forever {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  html:not([data-version="forever"]) .hero-mode-retail,
+  html[data-version="retail"] .hero-mode-retail {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  html:not([data-version="forever"]) .grid-mode-retail,
+  html[data-version="retail"] .grid-mode-retail {
+    display: grid !important;
+  }
+  html:not([data-version="forever"]) .hero-bg-retail,
+  html[data-version="retail"] .hero-bg-retail {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Modo Forever (html[data-version="forever"]) */
+  html[data-version="forever"] .hero-mode-retail {
+    display: none !important;
+  }
+  html[data-version="forever"] .grid-mode-retail {
+    display: none !important;
+  }
+  html[data-version="forever"] .hero-bg-retail {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  html[data-version="forever"] .hero-mode-forever {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  html[data-version="forever"] .grid-mode-forever {
+    display: grid !important;
+  }
+  html[data-version="forever"] .hero-bg-forever {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Personalización de colores en Modo Forever */
+  html[data-version="forever"] .news-section-title {
+    color: #22d3ee !important;
+  }
+  html[data-version="forever"] .news-view-all-link {
+    color: #22d3ee !important;
+  }
+  html[data-version="forever"] .news-view-all-link:hover {
+    color: #d4b47d !important;
+    text-shadow: 0 0 10px rgba(212, 180, 125, 0.5);
+  }
+  html[data-version="forever"] .global-animated-bg {
+    filter: hue-rotate(140deg) brightness(0.85) !important;
+    transition: filter 0.6s ease;
+  }
+</style>
+
+<style>
+  .hero-bg-forever {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hero-bg-retail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Estilos específicos Forever */
+  .forever-gradient-title {
+    background: linear-gradient(135deg, #fdf1d6 0%, #d4b47d 45%, #22d3ee 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 4px 25px rgba(16, 98, 126, 0.5);
+  }
+
+  .forever-badge {
+    background: rgba(16, 98, 126, 0.45) !important;
+    border: 1px solid rgba(212, 180, 125, 0.4) !important;
+    color: #fdf1d6 !important;
+  }
+
+  .forever-dot {
+    background: #22d3ee !important;
+    box-shadow: 0 0 10px #22d3ee !important;
+  }
+
+  .card-prof-forever {
+    border-color: rgba(212, 180, 125, 0.3) !important;
+  }
+  .card-prof-forever:hover {
+    border-color: #d4b47d !important;
   }
 
   /* Override global grid: force 6 columns = 2 rows for 12 expansions */

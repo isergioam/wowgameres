@@ -48,6 +48,7 @@ html:not(.dark-mode) ::-webkit-scrollbar-thumb {
   --primary-glow: rgba(106, 13, 173, 0.15);
   --primary-soft: rgba(106, 13, 173, 0.05);
   --text-dark: #2e2e2e;
+  --text-color: #2e2e2e;
   --bg-color: #ffffff;
 }
 
@@ -56,6 +57,7 @@ html:not(.dark-mode) ::-webkit-scrollbar-thumb {
   --primary-glow: rgba(187, 159, 255, 0.2);
   --primary-soft: rgba(187, 159, 255, 0.08);
   --text-dark: #e4e4e4;
+  --text-color: #e4e4e4;
   --bg-color: #000000;
 }
 
@@ -1445,6 +1447,7 @@ footer {
 /* 📜 TARJETAS DE RECETAS (STEPS) */
 /* ===================== */
 .custom-step {
+  cursor: pointer;
   background: #fdfbff;
   border-left: 5px solid var(--primary-purple);
   padding: 15px 20px;
@@ -1488,13 +1491,111 @@ footer {
 
 /* Estado completado (Checked) */
 .step-completed {
-  opacity: 0.4 !important;
-  border-left-color: #ccc !important;
-  transition: opacity 0.3s ease, border-left-color 0.3s ease;
+  opacity: 0.65 !important;
+  border-left-color: #10b981 !important;
+  transition: opacity 0.3s ease, border-left-color 0.3s ease, background 0.3s ease;
 }
 
 .dark-mode .step-completed {
-  border-left-color: rgba(255, 255, 255, 0.2) !important;
+  border-left-color: #22d3ee !important;
+}
+
+html[data-version="forever"].dark-mode .custom-step.step-completed {
+  border-left-color: #22d3ee !important;
+  background: rgba(3, 17, 25, 0.7) !important;
+}
+
+/* Step Header Top Bar & Action Button */
+.step-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark-mode .step-top-bar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.step-level-tag {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+html[data-version="forever"].dark-mode .step-level-tag {
+  color: #22d3ee !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .step-level-tag {
+  color: #10627e !important;
+}
+
+.step-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.dark-mode .step-check-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+}
+
+.step-check-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+}
+
+html[data-version="forever"] .step-check-btn:hover {
+  border-color: #22d3ee !important;
+  color: #22d3ee !important;
+}
+
+.step-check-btn.completed {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+}
+
+html[data-version="forever"].dark-mode .step-check-btn.completed {
+  background: rgba(34, 211, 238, 0.18) !important;
+  border-color: #22d3ee !important;
+  color: #22d3ee !important;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.25);
+}
+
+.hide-completed-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-color);
+  transition: opacity 0.2s;
+}
+
+.hide-completed-label:hover {
+  opacity: 1;
 }
 
 /* Identificador visual visual para Rutas Alternativas */
@@ -2543,20 +2644,16 @@ footer {
   mix-blend-mode: normal;
 }
 
+::view-transition-image-pair(root) {
+  isolation: isolate;
+}
+
 ::view-transition-old(root) {
   z-index: 1;
 }
 
 ::view-transition-new(root) {
   z-index: 9999;
-}
-
-.dark-mode::view-transition-old(root) {
-  z-index: 9999;
-}
-
-.dark-mode::view-transition-new(root) {
-  z-index: 1;
 }
 
 /* Override Wowhead quality colors in Light Mode to ensure proper contrast/readability */
@@ -2570,4 +2667,553 @@ html:not(.dark-mode) a.q0,
 html:not(.dark-mode) a.q0:visited,
 html:not(.dark-mode) .wowhead-tooltip-link.q0 {
   color: #666666 !important;
+}
+
+/* ========================================================
+   ESTILOS GLOBALES MODO FOREVER (data-version="forever")
+   Atmósfera WoW Classic Remastered • Kalimdor Teal & Gold
+   ======================================================== */
+
+/* Ocultar el banner de cuenta regresiva cuando estamos dentro de Forever */
+html[data-version="forever"] .wow-forever-banner {
+  display: none !important;
+}
+
+/* Herramienta flotante Nexo Craft en Forever */
+html[data-version="forever"] .nexo-tool-banner {
+  background: linear-gradient(135deg, #10627e, #b2935d) !important;
+  box-shadow: 0 8px 24px rgba(16, 98, 126, 0.45) !important;
+  top: 102px !important;
+}
+
+html[data-version="forever"] .nexo-tool-banner.scrolled {
+  top: 84px !important;
+}
+
+html[data-version="forever"] .nexo-link-btn {
+  color: #10627e !important;
+}
+
+@media (max-width: 768px) {
+  html[data-version="forever"] .nexo-tool-banner {
+    top: 125px !important;
+  }
+  html[data-version="forever"] .nexo-tool-banner.scrolled {
+    top: 105px !important;
+  }
+}
+
+/* Cabecera en Modo Forever (regresa a su posición superior natural sin hueco) */
+html[data-version="forever"] .main-header {
+  top: 15px !important;
+}
+
+html[data-version="forever"] .main-header.scrolled {
+  top: 8px !important;
+}
+
+/* El contenido sube para unirse con la cabecera y el banner flotante sin hueco */
+html[data-version="forever"] .main-container-box {
+  margin-top: -20px !important;
+}
+
+/* --- MODO FOREVER: MODO OSCURO (Default) --- */
+html[data-version="forever"].dark-mode body {
+  background-color: #031119 !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-version="forever"].dark-mode .global-animated-bg {
+  opacity: 0.92 !important;
+  filter: hue-rotate(140deg) brightness(0.85) saturate(1.2) !important;
+  transition: filter 0.6s ease, opacity 0.4s ease;
+}
+
+html[data-version="forever"].dark-mode .global-animated-bg::after {
+  background: radial-gradient(circle at center, rgba(3, 17, 25, 0.2) 20%, rgba(3, 17, 25, 0.92) 100%) !important;
+}
+
+html[data-version="forever"].dark-mode .main-header {
+  background: rgba(3, 17, 25, 0.85) !important;
+  border-color: rgba(34, 211, 238, 0.18) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(34, 211, 238, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+html[data-version="forever"].dark-mode .main-container-box {
+  background: rgba(3, 17, 25, 0.75) !important;
+  border-color: rgba(34, 211, 238, 0.2) !important;
+}
+
+html[data-version="forever"].dark-mode #darkModeToggle .theme-icon.sun {
+  color: #22d3ee !important;
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.7)) !important;
+}
+
+html[data-version="forever"].dark-mode .intro-description-box {
+  background: rgba(16, 98, 126, 0.12) !important;
+  border: 1px solid rgba(34, 211, 238, 0.25) !important;
+  border-left: 4px solid #22d3ee !important;
+  box-shadow: 0 10px 30px rgba(3, 17, 25, 0.5) !important;
+  color: #f1f5f9 !important;
+}
+
+html[data-version="forever"].dark-mode .leveling-wrapper-glass {
+  background: rgba(3, 17, 25, 0.88) !important;
+  border-color: rgba(34, 211, 238, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(3, 17, 25, 0.6) !important;
+}
+
+html[data-version="forever"].dark-mode .glass-title {
+  color: #22d3ee !important;
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.3) !important;
+}
+
+html[data-version="forever"].dark-mode .glass-badge {
+  background: transparent !important;
+  border: none !important;
+  color: #fdf1d6 !important;
+}
+
+html[data-version="forever"].dark-mode .glass-badge span {
+  color: #22d3ee !important;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5) !important;
+}
+
+html[data-version="forever"].dark-mode .reset-btn-mini {
+  background: rgba(16, 98, 126, 0.25) !important;
+  color: #fdf1d6 !important;
+  border: 1px solid rgba(34, 211, 238, 0.35) !important;
+}
+
+html[data-version="forever"].dark-mode .reset-btn-mini:hover {
+  background: rgba(16, 98, 126, 0.5) !important;
+  border-color: #d4b47d !important;
+  color: #22d3ee !important;
+}
+
+html[data-version="forever"].dark-mode .glass-slider {
+  background: rgba(16, 98, 126, 0.35) !important;
+}
+
+html[data-version="forever"].dark-mode .custom-step {
+  background: rgba(4, 22, 33, 0.72) !important;
+  border-left-color: #22d3ee !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-version="forever"].dark-mode .custom-step:hover {
+  box-shadow: 0 6px 20px rgba(16, 98, 126, 0.35) !important;
+  border-left-color: #d4b47d !important;
+}
+
+html[data-version="forever"].dark-mode .custom-step strong {
+  color: #22d3ee !important;
+  border-bottom-color: rgba(34, 211, 238, 0.3) !important;
+}
+
+html[data-version="forever"].dark-mode .section-toggle-title {
+  color: #22d3ee !important;
+}
+
+html[data-version="forever"].dark-mode .minimal-icon {
+  stroke: #22d3ee !important;
+}
+
+html[data-version="forever"].dark-mode .section-subtitle {
+  color: #22d3ee !important;
+  border-left-color: #d4b47d !important;
+}
+
+html[data-version="forever"].dark-mode .materials-header-row th {
+  color: #22d3ee !important;
+  border-bottom: 3px solid #22d3ee !important;
+}
+
+html[data-version="forever"].dark-mode #materialsTable tr:hover {
+  background: rgba(34, 211, 238, 0.08) !important;
+}
+
+html[data-version="forever"].dark-mode #farmingProgressBar,
+html[data-version="forever"].dark-mode #levelProgressBar {
+  background: linear-gradient(90deg, #10627e 0%, #22d3ee 50%, #d4b47d 100%) !important;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.45) !important;
+}
+
+html[data-version="forever"].dark-mode #farmingProgressPercentage,
+html[data-version="forever"].dark-mode #levelProgressPercentage {
+  color: #22d3ee !important;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.4) !important;
+}
+
+html[data-version="forever"].dark-mode .copy-btn-premium {
+  background: rgba(16, 98, 126, 0.25) !important;
+  border-color: rgba(34, 211, 238, 0.3) !important;
+  color: #22d3ee !important;
+}
+
+html[data-version="forever"].dark-mode .copy-btn-premium:hover {
+  background: rgba(16, 98, 126, 0.45) !important;
+  border-color: #22d3ee !important;
+  color: #fdf1d6 !important;
+}
+
+/* --- MODO FOREVER: MODO CLARO --- */
+html[data-version="forever"]:not(.dark-mode) body {
+  background-color: #f0f7f9 !important;
+  color: #1e293b !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .global-animated-bg {
+  opacity: 0.12 !important;
+  filter: hue-rotate(140deg) brightness(1.2) saturate(0.9) !important;
+  transition: filter 0.6s ease, opacity 0.4s ease;
+}
+
+html[data-version="forever"]:not(.dark-mode) .global-animated-bg::after {
+  background: radial-gradient(circle at center, rgba(240, 247, 249, 0.1) 20%, rgba(240, 247, 249, 0.85) 100%) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .main-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(16, 98, 126, 0.18) !important;
+  box-shadow: 0 10px 30px rgba(16, 98, 126, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .main-header.scrolled {
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 10px 30px rgba(16, 98, 126, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) #darkModeToggle .theme-icon.moon {
+  color: #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .main-container-box {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(16, 98, 126, 0.16) !important;
+  box-shadow: 0 15px 40px rgba(16, 98, 126, 0.08) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .intro-description-box {
+  background: rgba(16, 98, 126, 0.05) !important;
+  border: 1px solid rgba(16, 98, 126, 0.16) !important;
+  border-left: 4px solid #10627e !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  color: #1e293b !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .leveling-wrapper-glass {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(16, 98, 126, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(16, 98, 126, 0.08) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .glass-title {
+  color: #10627e !important;
+  text-shadow: none !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .glass-badge {
+  background: transparent !important;
+  border: none !important;
+  color: #334155 !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .glass-badge span {
+  color: #10627e !important;
+  text-shadow: none !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .reset-btn-mini {
+  background: rgba(16, 98, 126, 0.08) !important;
+  color: #10627e !important;
+  border: 1px solid rgba(16, 98, 126, 0.25) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .reset-btn-mini:hover {
+  background: rgba(16, 98, 126, 0.16) !important;
+  color: #0c4a6e !important;
+  border-color: #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .glass-slider {
+  background: #cbd5e1 !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .custom-step {
+  background: #ffffff !important;
+  border: 1px solid rgba(16, 98, 126, 0.12) !important;
+  border-left: 4px solid #10627e !important;
+  color: #1e293b !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .custom-step:hover {
+  box-shadow: 0 4px 14px rgba(16, 98, 126, 0.15) !important;
+  border-left-color: #b2935d !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .custom-step strong {
+  color: #10627e !important;
+  border-bottom-color: rgba(16, 98, 126, 0.2) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .section-toggle {
+  background: rgba(16, 98, 126, 0.05) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .section-toggle:hover {
+  background: rgba(16, 98, 126, 0.1) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .section-toggle-title {
+  color: #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .minimal-icon {
+  stroke: #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .section-subtitle {
+  color: #10627e !important;
+  border-left-color: #b2935d !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .materials-header-row th {
+  color: #10627e !important;
+  border-bottom: 3px solid #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) #materialsTable td {
+  color: #1e293b !important;
+  border-bottom: 1px solid rgba(16, 98, 126, 0.1) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) #materialsTable tr:hover {
+  background: rgba(16, 98, 126, 0.04) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .farming-progress-container {
+  background: rgba(16, 98, 126, 0.04) !important;
+  border-color: rgba(16, 98, 126, 0.15) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .farming-progress-header span {
+  color: #1e293b !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) #farmingProgressPercentage,
+html[data-version="forever"]:not(.dark-mode) #levelProgressPercentage {
+  color: #10627e !important;
+  text-shadow: none !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) #farmingProgressBar,
+html[data-version="forever"]:not(.dark-mode) #levelProgressBar {
+  background: linear-gradient(90deg, #10627e 0%, #0284c7 50%, #b2935d 100%) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .farming-progress-track {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .copy-btn-premium {
+  background: rgba(16, 98, 126, 0.08) !important;
+  border-color: rgba(16, 98, 126, 0.25) !important;
+  color: #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .copy-btn-premium:hover {
+  background: rgba(16, 98, 126, 0.16) !important;
+  border-color: #10627e !important;
+  color: #0c4a6e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .interaction-hint {
+  color: #64748b !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .news-section-title {
+  color: #10627e !important;
+}
+
+html[data-version="forever"]:not(.dark-mode) .news-view-all-link {
+  color: #10627e !important;
+}
+
+/* Hover común para el botón de tema en Forever */
+html[data-version="forever"] #darkModeToggle:hover {
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.5)) !important;
+}
+
+/* Slider thumb compartido en Forever */
+html[data-version="forever"] .glass-slider::-webkit-slider-thumb {
+  background: transparent !important;
+  background-image: url("/images/favicon.ico") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.7)) hue-rotate(140deg) !important;
+}
+
+html[data-version="forever"] .glass-slider::-moz-range-thumb {
+  background: transparent !important;
+  background-image: url("/images/favicon.ico") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.7)) hue-rotate(140deg) !important;
+}
+
+html[data-version="forever"] .card-cinematic:hover {
+  border-color: #22d3ee !important;
+  box-shadow: 0 8px 30px rgba(16, 98, 126, 0.4) !important;
+}
+
+/* --- HERO DE GUÍAS EN MODO FOREVER --- */
+html[data-version="forever"] .guide-hero-detail {
+  background: #031119 !important;
+}
+
+html[data-version="forever"] .guide-hero-detail .hero-bg img {
+  filter: brightness(0.42) saturate(1.2) hue-rotate(15deg) !important;
+}
+
+html[data-version="forever"] .guide-hero-detail .hero-overlay {
+  background: linear-gradient(0deg, rgba(3, 17, 25, 0.98) 0%, rgba(3, 17, 25, 0.65) 50%, rgba(16, 98, 126, 0.25) 100%) !important;
+}
+
+/* Título de la expansión / modo: FOREVER con degradado Dorado / Cian */
+html[data-version="forever"] .hero-exp-name {
+  background: linear-gradient(135deg, #fdf1d6 0%, #d4b47d 45%, #22d3ee 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  text-shadow: 0 4px 25px rgba(16, 98, 126, 0.6) !important;
+}
+
+/* Separador dorado clásico */
+html[data-version="forever"] .hero-separator {
+  background-color: #d4b47d !important;
+  box-shadow: 0 0 10px rgba(212, 180, 125, 0.5) !important;
+}
+
+/* Migas de pan */
+html[data-version="forever"] .guide-breadcrumb .current {
+  color: #22d3ee !important;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.4) !important;
+}
+
+html[data-version="forever"] .guide-breadcrumb a:hover {
+  color: #d4b47d !important;
+}
+
+/* --- TARJETA DE PROFESIÓN COMPLEMENTARIA RECOMENDADA --- */
+.paired-profession-card {
+  position: relative;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 16px;
+  padding: 24px 28px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.paired-profession-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 14px 35px rgba(124, 58, 237, 0.2);
+}
+
+.paired-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.paired-card-info {
+  flex: 1;
+  min-width: 260px;
+}
+
+.paired-card-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.15);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.paired-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 4px 0 8px 0;
+  color: var(--text-color, #f1f5f9);
+}
+
+.paired-card-text {
+  font-size: 0.95rem;
+  color: var(--text-muted, #94a3b8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.paired-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.paired-card-btn:hover {
+  background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+  transform: translateX(3px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+}
+
+/* Modo Forever para la tarjeta complementaria */
+html[data-version="forever"] .paired-profession-card {
+  background: rgba(16, 98, 126, 0.18) !important;
+  border: 1px solid rgba(34, 211, 238, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(3, 17, 25, 0.5) !important;
+}
+
+html[data-version="forever"] .paired-profession-card:hover {
+  border-color: #22d3ee !important;
+  box-shadow: 0 14px 40px rgba(16, 98, 126, 0.5) !important;
+}
+
+html[data-version="forever"] .paired-card-badge {
+  color: #22d3ee !important;
+  background: rgba(34, 211, 238, 0.15) !important;
+  border: 1px solid rgba(34, 211, 238, 0.25) !important;
+}
+
+html[data-version="forever"] .paired-card-btn {
+  background: linear-gradient(135deg, #10627e, #0e7490) !important;
+  border: 1px solid rgba(34, 211, 238, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(16, 98, 126, 0.4) !important;
+  color: #fdf1d6 !important;
+}
+
+html[data-version="forever"] .paired-card-btn:hover {
+  background: linear-gradient(135deg, #0e7490, #0891b2) !important;
+  border-color: #22d3ee !important;
+  box-shadow: 0 6px 25px rgba(34, 211, 238, 0.4) !important;
 }

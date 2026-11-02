@@ -1,4 +1,69 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Cocina",
+    "maxLevel": 300,
+    "description": "Guía completa de Cocina (1-300) en World of Warcraft: Forever. Ruta optimizada mediante pesca y carnes, bufo de 5% PE de bien alimentado, recetas por facción y novedades de hogueras y hornos de campamento.",
+    "note": "Novedades de Forever: En WoW Forever, todas las comidas cocinadas otorgan el beneficio Bonificación de PE de bien alimentado (+5% de experiencia por muertes durante 15 minutos). La Vara para remover galletas ahora acelera la velocidad de cocinado un +25%. Además, los cocineros pueden fabricar mejoras de campamento: Hoguera básica (nivel 20), Hoguera de oficial (nivel 90), Festín de Cocinitas (nivel 140), Hoguera de experto (nivel 200) y Horno de hierro (nivel 300), aumentando la capacidad y potencia de los beneficios de campamento.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 50,
+        "mats": {
+          "Pececito luminoso crudo": 55
+        },
+        "description": "<div class=\"step-title\">Cocina 1 – 50: Pececito Brillante y Zonas de Inicio</div>Aprende la receta del vendedor cercano a las zonas de pesca y cocina ~50x <span class=\"recipe-name\">Pececito brillante</span> usando <span class=\"recipe-name\">Pececito luminoso crudo</span> (o cocina carnes iniciales de lobo/jabalí según tu raza).<br><br>💡 <em>¡Todas las recetas cocinadas otorgan un 5% extra de experiencia al matar monstruos! Al nivel 20 puedes elaborar la <span class=\"recipe-name\">Hoguera básica</span> para tu campamento. Al nivel 50, visita al instructor para aprender <strong>Cocinero Oficial</strong>.</em>"
+      },
+      {
+        "min": 50,
+        "max": 100,
+        "mats": {
+          "Pargo de lodo boquilargo crudo": 55
+        },
+        "description": "<div class=\"step-title\">Cocina 50 – 100: Pargo de Lodo Boquilargo</div>Aprende la <span class=\"recipe-name\">Receta: pargo de lodo boquilargo</span> (la venden en Villadorada, Loch Modan, Los Baldíos y Cima del Trueno) y cocina ~55x <span class=\"recipe-name\">Pargo de lodo boquilargo</span>.<br><br>💡 <em>A nivel 90 puedes conseguir el objeto de campamento <span class=\"recipe-name\">Hoguera de oficial</span> (drop de Lord Serpentis en Cavernas de los Lamentos).</em>"
+      },
+      {
+        "min": 100,
+        "max": 150,
+        "mats": {
+          "Siluro mostacherizo crudo": 55
+        },
+        "description": "<div class=\"step-title\">Cocina 100 – 150: Siluro Mostacherizo</div>Aprende la <span class=\"recipe-name\">Receta: siluro mostacherizo</span> (en Ventormenta, Costa Oscura, Orgrimmar o Cima del Trueno) y cocina ~55x <span class=\"recipe-name\">Siluro mostacherizo</span>.<br><br>💡 <em>Al nivel 125, debes comprar el <span class=\"recipe-name\">Libro de cocina para expertos</span> para desbloquear hasta 225. Lo venden Shandrina al noreste del Sendero del Talón de Vallefresno (Alianza) y Wulan en Aldea Cazasombras en Desolace (Horda). ¡Al nivel 140 puedes aprender el <span class=\"recipe-name\">Festín de Cocinitas</span> (drop de El Chef en Minas de la Muerte)!</em>"
+      },
+      {
+        "min": 150,
+        "max": 175,
+        "mats": {
+          "Siluro mostacherizo crudo": 40
+        },
+        "description": "<div class=\"step-title\">Cocina 150 – 175: Tramo Final de Siluro</div>Continúa cocinando <span class=\"recipe-name\">Siluro mostacherizo</span> hasta alcanzar nivel 175.<br><br>💡 <em>Los siluros mostacherizos se pescan abundantemente en masas de agua interiores de nivel 20-35 (como Los Humedales, Hillsbrad o Los Baldíos).</em>"
+      },
+      {
+        "min": 175,
+        "max": 225,
+        "mats": {
+          "Trucha cabeza de mitril cruda": 60
+        },
+        "description": "<div class=\"step-title\">Cocina 175 – 225: Trucha Cabeza de Mitril</div>Aprende la <span class=\"recipe-name\">Receta: trucha de cabeza de mitril</span> (vendida por Tansy Burbajea en Forjaz o Shankys en Orgrimmar) y cocina ~55-60x <span class=\"recipe-name\">Trucha cabeza de mitril</span>.<br><br>💡 <em>Al nivel 200 puedes aprender el <span class=\"recipe-name\">Plano: hoguera de experto</span> para fabricar la <span class=\"recipe-name\">Hoguera de experto</span>. Al llegar a nivel 225 (y nivel 35 de personaje), se desbloquea la misión de Cocinero Artesano «Almejas sorpresa» con Dirge Hojágil en Gadgetzan (Tanaris). Necesitarás entregarle 10x <span class=\"recipe-name\">Carne de almeja sabrosa</span>, 12x <span class=\"recipe-name\">Huevo gigante</span> y 20x <span class=\"recipe-name\">Queso suizo de Alterac</span>.</em>"
+      },
+      {
+        "min": 225,
+        "max": 275,
+        "mats": {
+          "Pez coraza de placas": 60
+        },
+        "description": "<div class=\"step-title\">Cocina 225 – 275: Manjares de Tanaris y Aguas Profundas</div>Tras completar la misión de Dirge Hojágil, cocina recetas avanzadas como <span class=\"recipe-name\">Pez coraza de placas</span>, <span class=\"recipe-name\">Mero espinoso</span> o tortillas de huevos gigantes de los roc de Tanaris hasta alcanzar nivel 275.<br><br>💡 <em>¡Recuerda que con la <span class=\"recipe-name\">Vara para remover galletas</span> cocinas un 25% más rápido!</em>"
+      },
+      {
+        "min": 275,
+        "max": 300,
+        "mats": {
+          "Salmón al horno": 35
+        },
+        "description": "<div class=\"step-title\">Cocina 275 – 300: Salmón al Horno y Horno de Hierro</div>Aprende recetas de nivel 275 como <span class=\"recipe-name\">Salmón al horno</span> o <span class=\"recipe-name\">Salmón escama de sol pochado</span> (vendidas por Vivianna en Bastión Plumaluna o Sheendra Tallapasto en Campamento Mojache en Feralas) y cocina hasta alcanzar nivel 300.<br><br>🌟 <strong>Novedades de Endgame en WoW Forever:</strong><br>• A nivel 300 puedes conseguir el <span class=\"recipe-name\">Plano: horno de hierro</span> para fabricar el <span class=\"recipe-name\">Horno de hierro</span> de campamento, indispensable para banquetes avanzados.<br>• Además, en las ciudades y puertos de facción los mercaderes ofrecen nuevos batidos y tés con estadísticas avanzadas por Favor de mercader.</em>"
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Cocina",

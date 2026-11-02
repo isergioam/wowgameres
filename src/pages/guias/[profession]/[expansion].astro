@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButtons from "../../../components/ShareButtons.astro";
-import AffiliateBanner from "../../../components/AffiliateBanner.astro";
+import ProfessionsCarousel from "../../../components/ProfessionsCarousel.astro";
 import { WOWHEAD_IDS } from "../../../data/wowheadIds";
 
 
@@ -37,24 +37,79 @@ const allImages: Record<string, any> = import.meta.glob(
 
 export async function getStaticPaths() {
   const allProfessions = await getCollection("professions");
-  return allProfessions.flatMap((prof: any) => {
-    return Object.keys(prof.data).map((expKey) => {
+  const standardPaths = allProfessions.flatMap((prof: any) => {
+    return Object.keys(prof.data)
+      .filter((expKey) => expKey !== "forever")
+      .map((expKey) => {
+        return {
+          params: { profession: prof.id, expansion: expKey },
+          props: {
+            guideData: prof.data[expKey],
+            professionId: prof.id,
+            expansionId: expKey,
+          },
+        };
+      });
+  });
+
+  // Rutas dedicadas para World of Warcraft: Forever (usa datos específicos si existen, o fallback a vanilla)
+  const foreverPaths = allProfessions
+    .filter((prof: any) => prof.data["forever"] || prof.data["vanilla"])
+    .map((prof: any) => {
+      const specificForever = prof.data["forever"];
+      const vanillaData = prof.data["vanilla"];
+      const guideData = specificForever
+        ? specificForever
+        : {
+            ...vanillaData,
+            expansionName: "Forever",
+            description: `Guía completa para subir ${vanillaData.professionName} del nivel 1 al 300 en World of Warcraft: Forever. Rutas optimizadas para el lanzamiento.`,
+          };
+
       return {
-        params: { profession: prof.id, expansion: expKey },
+        params: { profession: prof.id, expansion: "forever" },
         props: {
-          guideData: prof.data[expKey],
+          guideData,
           professionId: prof.id,
-          expansionId: expKey,
+          expansionId: "forever",
         },
       };
     });
-  });
+
+  return [...standardPaths, ...foreverPaths];
 }
 
 const { guideData, professionId, expansionId } = Astro.props as Props;
 const { expansionName, professionName, maxLevel, description, steps, note } =
   guideData;
 const cleanExpansionName = expansionName.replace(/\s*\(.*?\)/g, "").trim();
+
+// Elimina títulos repetitivos dentro de la descripción que duplican la etiqueta NIVEL X - Y
+const cleanStepDescription = (desc: string): string => {
+  if (!desc) return desc;
+  let cleaned = desc;
+  // 1. <div class="step-title">Profession X - Y: Subtitle</div> -> <div class="step-title">Subtitle</div>
+  cleaned = cleaned.replace(
+    /^\s*<div class=["']step-title["']>\s*(?:[A-Za-zÁ-ú\s]+)?\d+\s*[\u2013\u2014\-\s]+\d+\s*:\s*([^<]+)<\/div>\s*(?:<br\s*\/?>)?/i,
+    '<div class="step-title">$1</div>'
+  );
+  // <div class="step-title">Profession X - Y</div> (sin subtítulo) -> eliminar
+  cleaned = cleaned.replace(
+    /^\s*<div class=["']step-title["']>\s*(?:[A-Za-zÁ-ú\s]+)?\d+\s*[\u2013\u2014\-\s]+\d+\s*<\/div>\s*(?:<br\s*\/?>)?/i,
+    ''
+  );
+  // 2. <strong>Profession X - Y: Subtitle</strong> -> <div class="step-title">Subtitle</div>
+  cleaned = cleaned.replace(
+    /^\s*<strong[^>]*>\s*(?:[A-Za-zÁ-ú\s]+)?\d+\s*[\u2013\u2014\-\s]+\d+\s*:\s*([^<]+)<\/strong>\s*(?:<br\s*\/?>)?/i,
+    '<div class="step-title">$1</div>'
+  );
+  // <strong>Profession X - Y</strong> (sin subtítulo) -> eliminar
+  cleaned = cleaned.replace(
+    /^\s*<strong[^>]*>\s*(?:[A-Za-zÁ-ú\s]+)?\d+\s*[\u2013\u2014\-\s]+\d+\s*<\/strong>\s*(?:<br\s*\/?>)?/i,
+    ''
+  );
+  return cleaned.trim();
+};
 
 // Generamos un título de alto impacto SEO
 const optimizedTitle = `Guía de ${professionName} ${cleanExpansionName} (1-${maxLevel}) Actualizada | WOWGamerES`;
@@ -77,6 +132,57 @@ const isPngProfession = [
 const imgNameSeo = professionId.replace(/-/g, "_");
 const seoImage = `/images/${imgNameSeo}_wow.webp`;
 
+// Mapeo de profesiones complementarias para aconsejar ahorrar oro
+const pairedProfessions: Record<string, { id: string; name: string; desc: string }> = {
+  alquimia: {
+    id: "herboristeria",
+    name: "Herboristería",
+    desc: "Recolecta tus propias plantas y ahorra cientos de monedas de oro en la casa de subastas.",
+  },
+  herboristeria: {
+    id: "alquimia",
+    name: "Alquimia",
+    desc: "Aprovecha todas las plantas que recolectas para fabricar pociones, elixires y frascos de gran demanda.",
+  },
+  herreria: {
+    id: "mineria",
+    name: "Minería",
+    desc: "Extrae tus propios minerales y forja barras para no gastar oro en subasta.",
+  },
+  ingenieria: {
+    id: "mineria",
+    name: "Minería",
+    desc: "Consigue tus propios metales y piedras preciosas para tus artefactos e inventos.",
+  },
+  joyeria: {
+    id: "mineria",
+    name: "Minería",
+    desc: "Prospecta menas para obtener gemas valiosas sin coste adicional.",
+  },
+  mineria: {
+    id: "herreria",
+    name: "Herrería",
+    desc: "Funde tus metales y fabrica armaduras, armas o artilugios de ingeniería de gran valor.",
+  },
+  peleteria: {
+    id: "desuello",
+    name: "Desuello",
+    desc: "Consigue tus propios cueros y pieles cazando bestias por todo Azeroth.",
+  },
+  desuello: {
+    id: "peleteria",
+    name: "Peletería",
+    desc: "Usa todos los cueros y pieles obtenidos para crear piezas de armadura y parches de refuerzo.",
+  },
+  sastreria: {
+    id: "encantamiento",
+    name: "Encantamiento",
+    desc: "Desencanta los objetos de tela que fabriques para subir Encantamiento gratis.",
+  },
+};
+
+const pairedProf = pairedProfessions[professionId];
+
 // Datos Estructurados para Fragmentos Destacados en Google
 const schemaJSON = {
   "@context": "https://schema.org",
@@ -85,7 +191,7 @@ const schemaJSON = {
   description: seoDescription,
   step: steps.map((s: Step, i: number) => ({
     "@type": "HowToStep",
-    name: `Nivel ${s.min}-${s.max}`,
+    name: `${professionName} ${s.min}-${s.max}`,
     url: `https://wowgameres.com/guias/${professionId}/${expansionId}#niveles`,
     text: s.description.replace(/<[^>]*>?/gm, "").trim(),
   })),
@@ -151,7 +257,7 @@ const schemaJSON = {
 
   <main class="content">
     <!-- Bloque Informativo -->
-    <div class="intro-description-box section reveal" style="margin-top: 30px;">
+    <div class="intro-description-box section" style="margin-top: 30px;">
       <p style="margin-bottom: 12px;">
         {
           [
@@ -181,26 +287,30 @@ const schemaJSON = {
             : "Utiliza el rastreador para marcar los materiales que ya posees y filtrar los pasos según tu nivel actual."
         }
       </p>
+      {pairedProf && (
+        <p style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.15); line-height: 1.6;">
+          <span style="color: #4ade80; font-weight: 600;">🌿 Consejo de ahorro:</span>{" "}
+          Subir {professionName} comprando los materiales en subasta puede ser muy costoso. Te recomendamos emparejarla con{" "}
+          <a href={`/guias/${pairedProf.id}/${expansionId}/`} style="color: #38bdf8; text-decoration: underline; font-weight: 600;">
+            {pairedProf.name}
+          </a>{" "}
+          para farmear tus propios recursos. ¡Sigue nuestra{" "}
+          <a href={`/guias/${pairedProf.id}/${expansionId}/`} style="color: #38bdf8; text-decoration: underline; font-weight: 600;">
+            Guía de {pairedProf.name} {cleanExpansionName} (1-{maxLevel})
+          </a>!
+        </p>
+      )}
     </div>
 
     <!-- Controles Nivelación -->
     <div
       id="leveling-controls"
       class="leveling-wrapper-glass section"
-      style={[
-        "mineria",
-        "herboristeria",
-        "desuello",
-        "pesca",
-        "arqueologia",
-      ].includes(professionId)
-        ? "display: none;"
-        : ""}
     >
       <div class="glass-header">
         <h2 class="glass-title">Filtro por Nivel de Profesión</h2>
         <div class="glass-badge">
-          Nivel <span id="currentLevelDisplay">1</span>
+          Nivel <span id="currentLevelDisplay">1</span> / {maxLevel}
         </div>
         <button
           id="resetProgress"
@@ -234,12 +344,22 @@ const schemaJSON = {
           class="glass-slider"
         />
       </div>
+      <!-- Barra de Progreso de Nivelación -->
+      <div class="level-progress-wrapper" style="margin-top: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <span style="font-size: 0.85rem; font-weight: 600; opacity: 0.85;">Progreso de Nivelación</span>
+          <span id="levelProgressPercentage" style="font-size: 0.95rem; font-weight: 800; color: var(--primary-purple);">0%</span>
+        </div>
+        <div class="level-progress-track" style="width: 100%; height: 8px; background: rgba(0, 0, 0, 0.15); border-radius: 8px; overflow: hidden; position: relative;">
+          <div id="levelProgressBar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #bb9fff 0%, #a855f7 100%); border-radius: 8px; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px rgba(187, 159, 255, 0.3);"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Materiales -->
     <section
       id="materiales"
-      class="section reveal"
+      class="section"
       style={steps.every((s: Step) => Object.keys(s.mats).length === 0)
         ? "display: none;"
         : ""}
@@ -357,10 +477,8 @@ const schemaJSON = {
 
     </section>
 
-    <AffiliateBanner />
-
     <!-- Nivelación (Pasos) -->
-    <section id="niveles" class="section reveal">
+    <section id="niveles" class="section">
       <div id="recipesToggle" class="section-toggle">
         <div style="display: flex; align-items: center; gap: 10px;">
           <svg
@@ -397,19 +515,40 @@ const schemaJSON = {
       </div>
 
       <div id="recipesContent" class="section-content">
-        <p class="interaction-hint">
-          * Haz clic para marcar los pasos que ya hiciste.
-        </p>
+        <div class="recipes-controls-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+          <p class="interaction-hint" style="margin: 0;">
+            * Haz clic en cualquier paso para marcarlo como completado y avanzar tu progreso.
+          </p>
+          <label class="hide-completed-label">
+            <input type="checkbox" id="hideCompletedToggle" checked style="cursor: pointer; accent-color: #22d3ee;" />
+            <span>Ocultar completados</span>
+          </label>
+        </div>
+        <div id="noStepsMessage" style="display: none; padding: 25px 20px; text-align: center; border-radius: 12px; background: rgba(34, 211, 238, 0.05); border: 1px dashed rgba(34, 211, 238, 0.3); margin: 20px 0;">
+          <div style="font-size: 1.8rem; margin-bottom: 6px;">🎉</div>
+          <h3 style="margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 700;">¡Has alcanzado el nivel máximo de esta guía!</h3>
+          <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Todos los pasos anteriores han sido completados o filtrados. Pulsa en <strong>Reiniciar</strong> o desliza el filtro para ver los pasos de nuevo.</p>
+        </div>
         {
           steps.map((step: Step, index: number) => (
             <div
               class="custom-step"
+              data-index={index}
               data-min={step.min}
               data-max={step.max}
               data-mats={JSON.stringify(step.mats)}
             >
+              <div class="step-top-bar">
+                <h3 class="step-level-tag">
+                  {professionName.toUpperCase()} {step.min} - {step.max}
+                </h3>
+                <button type="button" class="step-check-btn" title="Marcar o desmarcar este paso">
+                  <span class="step-check-icon">○</span>
+                  <span class="step-check-text">Marcar como hecho</span>
+                </button>
+              </div>
               <div class="step-info">
-                <Fragment set:html={step.description} />
+                <Fragment set:html={cleanStepDescription(step.description)} />
               </div>
               {step.routeImage && (
                 <div
@@ -465,8 +604,34 @@ const schemaJSON = {
           ))
         }
       </div>
+
+      {pairedProf && (
+        <div class="paired-profession-card reveal" style="margin: 35px 0 25px 0;">
+          <div class="paired-card-content">
+            <div class="paired-card-info">
+              <span class="paired-card-badge">💡 Combinación recomendada</span>
+              <h3 class="paired-card-title">¿Quieres ahorrar oro en {professionName}?</h3>
+              <p class="paired-card-text">
+                {pairedProf.desc} Aprende las mejores rutas de farmeo y optimiza tu tiempo con nuestra guía paso a paso.
+              </p>
+            </div>
+            <a href={`/guias/${pairedProf.id}/${expansionId}/`} class="paired-card-btn">
+              <span>Ver Guía de {pairedProf.name}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      )}
+
       <!-- Botones de Compartir -->
       <ShareButtons />
+
+      <!-- Carrusel de Otras Profesiones -->
+      <ProfessionsCarousel
+        currentProfessionId={professionId}
+        expansionId={expansionId}
+        expansionName={cleanExpansionName}
+      />
 
 
 
@@ -559,22 +724,75 @@ const schemaJSON = {
     }
   }
 
-  function updateLeveling() {
-    if (!slider || !materialsBody) return;
+  function updateStepButtonUI(step: HTMLElement, isCompleted: boolean) {
+    const icon = step.querySelector(".step-check-icon");
+    const text = step.querySelector(".step-check-text");
+    const btn = step.querySelector(".step-check-btn") as HTMLElement;
+    if (icon && text) {
+      icon.textContent = isCompleted ? "✓" : "○";
+      text.textContent = isCompleted ? "Completado" : "Marcar como hecho";
+    }
+    if (btn) {
+      if (isCompleted) {
+        btn.classList.add("completed");
+      } else {
+        btn.classList.remove("completed");
+      }
+    }
+  }
+
+  function updateLeveling(fromClick = false) {
+    if (!slider) return;
     const steps = document.querySelectorAll(
       ".custom-step",
     ) as NodeListOf<HTMLElement>;
     const currentLevel = parseInt(slider.value);
     if (display) display.textContent = currentLevel.toString();
 
+    // Actualizar Barra de Progreso de Nivelación
+    const maxLevel = parseInt(slider.max || "300");
+    const minLevel = parseInt(slider.min || "1");
+    const levelPct = maxLevel > minLevel
+      ? Math.min(100, Math.max(0, Math.round(((currentLevel - minLevel) / (maxLevel - minLevel)) * 100)))
+      : 0;
+
+    const levelProgressPercentage = document.getElementById("levelProgressPercentage");
+    const levelProgressBar = document.getElementById("levelProgressBar");
+    if (levelProgressPercentage) levelProgressPercentage.textContent = `${levelPct}%`;
+    if (levelProgressBar) levelProgressBar.style.width = `${levelPct}%`;
+
+    const hideToggle = document.getElementById("hideCompletedToggle") as HTMLInputElement;
+    const hideCompleted = hideToggle ? hideToggle.checked : false;
+
+    let visibleSteps = 0;
     const totalMats: Record<string, number> = {};
 
-    steps.forEach((step) => {
+    steps.forEach((step, index) => {
       const max = parseInt(step.getAttribute("data-max") || "0");
-      if (currentLevel >= max) {
+      const isCompleted = completedSteps.has(index);
+
+      if (isCompleted) {
+        step.classList.add("step-completed");
+        updateStepButtonUI(step, true);
+      } else {
+        step.classList.remove("step-completed");
+        updateStepButtonUI(step, false);
+      }
+
+      // Regla de visibilidad:
+      // Si "Ocultar completados" está activo -> ocultar pasos completados o que estén por debajo del nivel actual
+      // Si "Ocultar completados" está desmarcado -> mostrar todos los pasos (los completados mostrarán su estado '✓ Completado')
+      const shouldHide = hideCompleted ? (isCompleted || currentLevel >= max) : false;
+
+      if (shouldHide) {
         step.style.display = "none";
       } else {
         step.style.display = "block";
+        visibleSteps++;
+      }
+
+      // Materiales: no sumar los materiales de pasos ya completados
+      if (!isCompleted && currentLevel < max) {
         const matsStr = step.getAttribute("data-mats");
         if (matsStr) {
           try {
@@ -590,12 +808,25 @@ const schemaJSON = {
       }
     });
 
+    const noStepsMessage = document.getElementById("noStepsMessage");
+    if (noStepsMessage) {
+      noStepsMessage.style.display = visibleSteps === 0 ? "block" : "none";
+    }
+
+    if (!materialsBody) return;
+
     materialsBody.innerHTML = "";
     const matsEntries = Object.entries(totalMats);
 
     if (matsEntries.length === 0) {
       materialsBody.innerHTML =
         '<tr><td colspan="2" style="text-align:center; padding: 10px;">¡Ya has alcanzado el nivel máximo de esta guía!</td></tr>';
+      const farmingProgressPercentage = document.getElementById("farmingProgressPercentage");
+      const farmingProgressBar = document.getElementById("farmingProgressBar");
+      if (farmingProgressPercentage && farmingProgressBar) {
+        farmingProgressPercentage.textContent = currentLevel >= maxLevel ? "100%" : "0%";
+        farmingProgressBar.style.width = currentLevel >= maxLevel ? "100%" : "0%";
+      }
       return;
     }
 
@@ -631,8 +862,9 @@ const schemaJSON = {
       // Generar link de Wowhead: con ID real si está en el diccionario, con búsqueda si no
       const wowIds = (window as any).__WOWHEAD_IDS__ as Record<string, number> || {};
       const itemId = wowIds[item.name];
+      const isForever = window.location.pathname.includes('/forever');
       const wowheadHref = itemId
-        ? `https://es.wowhead.com/item=${itemId}`
+        ? (isForever ? `https://www.wowhead.com/forever/es/item=${itemId}` : `https://es.wowhead.com/item=${itemId}`)
         : `https://es.wowhead.com/search?q=${encodeURIComponent(item.name)}`;
 
       tr.innerHTML = `
@@ -674,8 +906,22 @@ const schemaJSON = {
 
   // Event Listeners
   slider?.addEventListener("input", () => {
-    updateLeveling();
+    const lvl = parseInt(slider.value);
+    const allSteps = document.querySelectorAll(".custom-step");
+    allSteps.forEach((s, idx) => {
+      const max = parseInt(s.getAttribute("data-max") || "0");
+      if (lvl >= max) {
+        completedSteps.add(idx);
+      } else {
+        completedSteps.delete(idx);
+      }
+    });
+    updateLeveling(false);
     saveProgress();
+  });
+
+  document.getElementById("hideCompletedToggle")?.addEventListener("change", () => {
+    updateLeveling(false);
   });
 
   sortByNameBtn?.addEventListener("click", () => {
@@ -843,6 +1089,11 @@ const schemaJSON = {
   recipesContent?.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     
+    // Si se hace clic en un enlace (Wowhead o profesión emparejada), no marcar el paso
+    if (target.tagName === "A" || target.closest("a")) {
+      return;
+    }
+
     if (target.classList.contains("route-map-img")) {
       e.stopPropagation();
       if (modal && modalImg) {
@@ -855,15 +1106,40 @@ const schemaJSON = {
 
     const step = target.closest(".custom-step") as HTMLElement;
     if (step) {
-      const allSteps = Array.from(document.querySelectorAll(".custom-step"));
+      const allSteps = Array.from(document.querySelectorAll(".custom-step")) as HTMLElement[];
       const stepIndex = allSteps.indexOf(step);
+      if (stepIndex === -1) return;
 
-      step.classList.toggle("step-completed");
-      if (step.classList.contains("step-completed")) {
-        completedSteps.add(stepIndex);
+      const willBeCompleted = !completedSteps.has(stepIndex);
+      if (willBeCompleted) {
+        // Al completar este paso, completamos este y todos los anteriores
+        for (let i = 0; i <= stepIndex; i++) {
+          completedSteps.add(i);
+        }
       } else {
-        completedSteps.delete(stepIndex);
+        // Al desmarcar este paso, desmarcamos este y todos los posteriores
+        for (let i = stepIndex; i < allSteps.length; i++) {
+          completedSteps.delete(i);
+        }
       }
+
+      // Calcular el nuevo nivel alcanzado según los pasos completados
+      let newLevel = 1;
+      if (completedSteps.size > 0) {
+        completedSteps.forEach((idx) => {
+          const s = allSteps[idx];
+          if (s) {
+            const stepMax = parseInt(s.getAttribute("data-max") || "1");
+            if (stepMax > newLevel) newLevel = stepMax;
+          }
+        });
+      }
+
+      if (slider) {
+        slider.value = newLevel.toString();
+      }
+
+      updateLeveling(true);
       saveProgress();
     }
   });
@@ -963,9 +1239,13 @@ const schemaJSON = {
       // Resetear UI de pasos
       document.querySelectorAll(".custom-step").forEach((step) => {
         step.classList.remove("step-completed");
+        updateStepButtonUI(step as HTMLElement, false);
       });
 
-      updateLeveling();
+      const hideToggle = document.getElementById("hideCompletedToggle") as HTMLInputElement;
+      if (hideToggle) hideToggle.checked = true;
+
+      updateLeveling(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   });

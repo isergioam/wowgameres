@@ -168,17 +168,17 @@
         transform: translateY(-8px);
     }
 
-    /* Reglas globales para empujar el header y otros banners flotantes hacia abajo cuando este banner está activo */
-    :global(html.has-wow-banner .main-header) {
+    /* Reglas globales para empujar el header y otros banners flotantes hacia abajo cuando este banner está activo (Solo en Retail) */
+    :global(html:not([data-version="forever"]).has-wow-banner .main-header) {
         top: 95px !important;
     }
-    :global(html.has-wow-banner .main-header.scrolled) {
+    :global(html:not([data-version="forever"]).has-wow-banner .main-header.scrolled) {
         top: 88px !important;
     }
-    :global(html.has-wow-banner .nexo-tool-banner) {
+    :global(html:not([data-version="forever"]).has-wow-banner .nexo-tool-banner) {
         top: 182px !important;
     }
-    :global(html.has-wow-banner .nexo-tool-banner.scrolled) {
+    :global(html:not([data-version="forever"]).has-wow-banner .nexo-tool-banner.scrolled) {
         top: 164px !important;
     }
 
@@ -205,10 +205,10 @@
         .wow-forever-banner {
             height: 100px;
         }
-        :global(html.has-wow-banner .main-header) { top: 115px !important; }
-        :global(html.has-wow-banner .main-header.scrolled) { top: 108px !important; }
-        :global(html.has-wow-banner .nexo-tool-banner) { top: 202px !important; }
-        :global(html.has-wow-banner .nexo-tool-banner.scrolled) { top: 184px !important; }
+        :global(html:not([data-version="forever"]).has-wow-banner .main-header) { top: 115px !important; }
+        :global(html:not([data-version="forever"]).has-wow-banner .main-header.scrolled) { top: 108px !important; }
+        :global(html:not([data-version="forever"]).has-wow-banner .nexo-tool-banner) { top: 202px !important; }
+        :global(html:not([data-version="forever"]).has-wow-banner .nexo-tool-banner.scrolled) { top: 184px !important; }
     }
     
     @media (max-width: 500px) {
@@ -219,15 +219,51 @@
             font-size: 0.9rem;
         }
     }
+
+    .banner-launch-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #d4b47d, #f59e0b);
+        color: #0d2836;
+        font-family: 'Cinzel', Georgia, serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 0.45rem 1.1rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(212, 180, 125, 0.45);
+        transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        animation: pulseGlow 2.5s infinite;
+    }
+
+    .banner-launch-btn:hover {
+        transform: translateY(-1px) scale(1.04);
+        box-shadow: 0 6px 20px rgba(212, 180, 125, 0.65);
+        background: linear-gradient(135deg, #fdf1d6, #d4b47d);
+    }
+
+    @keyframes pulseGlow {
+        0%, 100% {
+            box-shadow: 0 4px 14px rgba(212, 180, 125, 0.45);
+        }
+        50% {
+            box-shadow: 0 4px 22px rgba(245, 158, 11, 0.7);
+        }
+    }
 </style>
 
 <script is:inline>
-    // Se ejecuta inmediatamente para evitar el parpadeo visual del menú superpuesto
-    document.documentElement.classList.add('has-wow-banner');
+    // Solo añadir si no estamos en Forever
+    if (document.documentElement.getAttribute('data-version') !== 'forever') {
+        document.documentElement.classList.add('has-wow-banner');
+    }
 </script>
 
 <script>
-    // --- LÓGICA DEL CONTADOR ---
+    // --- LÓGICA DEL CONTADOR Y LANZAMIENTO AUTOMÁTICO ---
     // Fecha objetivo exacta extraída directamente de la web oficial de Blizzard
     const targetDate = new Date('2026-11-04T23:00:00Z').getTime();
 
@@ -237,19 +273,40 @@
     const elSecs = document.getElementById('cd-seconds');
 
     function updateCountdown() {
-        if (!elDays || !elHours || !elMins || !elSecs) return;
-
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        if (distance < 0) {
-            // El tiempo ha expirado
-            elDays.innerText = "00";
-            elHours.innerText = "00";
-            elMins.innerText = "00";
-            elSecs.innerText = "00";
+        if (distance <= 0) {
+            // El tiempo ha expirado: Lanzamiento oficial de WoW Forever
+            window.dispatchEvent(new CustomEvent('wow-forever-launch'));
+
+            const bannerTitle = document.querySelector('.banner-title');
+            if (bannerTitle && !bannerTitle.getAttribute('data-launched')) {
+                bannerTitle.setAttribute('data-launched', 'true');
+                bannerTitle.textContent = "¡WoW Forever ya está disponible! Descubre las nuevas guías.";
+            }
+
+            const bannerCountdown = document.getElementById('wow-countdown');
+            if (bannerCountdown && !bannerCountdown.getAttribute('data-launched')) {
+                bannerCountdown.setAttribute('data-launched', 'true');
+                bannerCountdown.innerHTML = `
+                    <a href="/guias/forever/" class="banner-launch-btn">
+                        <span>¡EXPLORAR GUÍAS!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                `;
+            }
+
+            if (elDays && elHours && elMins && elSecs) {
+                elDays.innerText = "00";
+                elHours.innerText = "00";
+                elMins.innerText = "00";
+                elSecs.innerText = "00";
+            }
             return;
         }
+
+        if (!elDays || !elHours || !elMins || !elSecs) return;
 
         // Cálculos matemáticos para días, horas, minutos y segundos
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));

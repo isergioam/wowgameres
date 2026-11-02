@@ -1,4 +1,93 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Primeros auxilios",
+    "maxLevel": 300,
+    "description": "Guía completa de Primeros auxilios (1-300) en World of Warcraft: Forever. Fabricación de vendas paso a paso, nuevas pociones de sanación elaboradas con Primeros auxilios, remedios para sangrados y enfermedades, libros y novedades de acampada.",
+    "note": "Novedades de Forever: En WoW Forever, las Pociones de sanación ahora se elaboran mediante la profesión de Primeros auxilios (desde la Poción de sanación menor a nivel 1 hasta la Poción de sanación sublime a nivel 275). También se han añadido Cataplasmas para curar enfermedades y Torniquetes para detener sangrados. Además, los médicos pueden forjar objetos de campamento junto a las hogueras: Equipo de primeros auxilios (nivel 20), Estudio sobre toxinas (nivel 140) y Laboratorio de doctor de peste (nivel 300).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 40,
+        "mats": {
+          "Paño de lino": 45
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 1 – 40: Vendas de Lino</div>Crea ~45x <span class=\"recipe-name\">Vendaje de lino</span> usando <span class=\"recipe-name\">Paño de lino</span>.<br><br>💡 <em>¡Novedad de Forever! Ya desde nivel 1 puedes elaborar <span class=\"recipe-name\">Poción de sanación menor</span> directamente con tu botiquín de Primeros auxilios. Al nivel 20 puedes crear el objeto de campamento <span class=\"recipe-name\">Equipo de primeros auxilios</span> para colocarlo en cualquier hoguera. Al nivel 40, aprende la siguiente receta con tu instructor.</em>"
+      },
+      {
+        "min": 40,
+        "max": 80,
+        "mats": {
+          "Paño de lino": 130
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 40 – 80: Vendas Pesadas de Lino</div>Crea ~65x <span class=\"recipe-name\">Vendaje pesado de lino</span> usando <span class=\"recipe-name\">Paño de lino</span>.<br><br>💡 <em>Al alcanzar nivel 50 de habilidad, visita a tu instructor en cualquier capital para aprender <strong>Primeros Auxilios Oficial</strong> (te permitirá continuar subiendo hasta 150). A nivel 55 de habilidad también puedes elaborar <span class=\"recipe-name\">Poción de sanación inferior</span>.</em>"
+      },
+      {
+        "min": 80,
+        "max": 115,
+        "mats": {
+          "Paño de lana": 50
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 80 – 115: Vendas de Lana</div>Crea ~50x <span class=\"recipe-name\">Vendaje de lana</span> usando <span class=\"recipe-name\">Paño de lana</span>.<br><br>💡 <em>A nivel 90 puedes aprender a fabricar <span class=\"recipe-name\">Cataplasma sencilla</span> para disipar enfermedades, y a nivel 110 la <span class=\"recipe-name\">Poción de sanación</span>. Al nivel 115 de habilidad, aprende de tu instructor la receta de vendas pesadas de lana.</em>"
+      },
+      {
+        "min": 115,
+        "max": 150,
+        "mats": {
+          "Paño de lana": 100
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 115 – 150: Vendas Pesadas de Lana</div>Crea ~50x <span class=\"recipe-name\">Vendaje pesado de lana</span> usando <span class=\"recipe-name\">Paño de lana</span>.<br><br>💡 <em>A nivel 120 puedes aprender a fabricar <span class=\"recipe-name\">Torniquete de lana</span> para frenar efectos de sangrado. Al alcanzar nivel 125, debes conseguir el libro <span class=\"recipe-name\">Primeros auxilios para expertos: Entre vendas</span> para desbloquear el rango Experto (hasta 225). Lo venden Deneb Camino en Castillo de Stromgarde (Arathi) para la Alianza y Balai Lok'Wein en Poblado Murohelecho (Marjal Revolcafango) para la Horda (no se liga, se vende también en Casa de Subastas).</em>"
+      },
+      {
+        "min": 150,
+        "max": 180,
+        "mats": {
+          "Paño de seda": 50
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 150 – 180: Vendas de Seda</div>Aprende a fabricar <span class=\"recipe-name\">Venda de seda</span> tras leer el libro de experto y crea ~45-50x usando <span class=\"recipe-name\">Paño de seda</span>.<br><br>💡 <em>A nivel 140 puedes aprender la receta de campamento <span class=\"recipe-name\">Estudio sobre toxinas</span> (drop de Comandante Vallefont en Castillo de Colmillo Oscuro). ¡Asegúrate de comprar también a los mismos vendedores de Stromgarde / Murohelecho los libros <span class=\"recipe-name\">Manual: venda de seda pesada</span> y <span class=\"recipe-name\">Manual: venda de paño mágico</span>!</em>"
+      },
+      {
+        "min": 180,
+        "max": 210,
+        "mats": {
+          "Paño de seda": 100
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 180 – 210: Vendas Pesadas de Seda</div>Aprende <span class=\"recipe-name\">Manual: venda de seda pesada</span> y crea ~45-50x <span class=\"recipe-name\">Vendaje pesado de seda</span> usando <span class=\"recipe-name\">Paño de seda</span>.<br><br>💡 <em>A nivel 200 puedes aprender <span class=\"recipe-name\">Torniquete de cuero</span> para sangrados avanzados. Al nivel 210 de habilidad, aprende la siguiente receta con el libro de paño mágico.</em>"
+      },
+      {
+        "min": 210,
+        "max": 225,
+        "mats": {
+          "Tela de paño mágico": 25
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 210 – 225: Vendas de Tejido Mágico</div>Aprende <span class=\"recipe-name\">Manual: venda de paño mágico</span> y crea ~20-25x <span class=\"recipe-name\">Vendaje de tejido mágico</span> usando <span class=\"recipe-name\">Tela de paño mágico</span>.<br><br>💡 <em>Al alcanzar 225 de habilidad (y nivel 35 de personaje), se desbloquea la misión de Triage de Artesano: «Atenciones médicas» en Theramore con el Doctor Gustaf VanHowzen para la Alianza, o «La selección» en Sentencia con el Doctor Gregory Víctor para la Horda. ¡Completa la prueba de vendar pacientes para aprender <strong>Primeros Auxilios Artesano</strong>!</em>"
+      },
+      {
+        "min": 225,
+        "max": 260,
+        "mats": {
+          "Tela de paño mágico": 50
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 225 – 260: Camino a Tejido Mágico Pesado</div>Continúa creando <span class=\"recipe-name\">Vendaje de tejido mágico</span> usando <span class=\"recipe-name\">Tela de paño mágico</span> hasta alcanzar nivel 260.<br><br>💡 <em>Al nivel 260, el mismo Doctor de tu misión de triage te enseñará la receta de vendas pesadas de paño mágico de forma gratuita.</em>"
+      },
+      {
+        "min": 260,
+        "max": 290,
+        "mats": {
+          "Tela de paño mágico": 80
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 260 – 290: Vendas Pesadas de Tejido Mágico</div>Crea ~40x <span class=\"recipe-name\">Vendaje pesado de tejido mágico</span> usando <span class=\"recipe-name\">Tela de paño mágico</span>.<br><br>💡 <em>A nivel 265 puedes aprender <span class=\"recipe-name\">Torniquete quirúrgico</span> y a nivel 275 la <span class=\"recipe-name\">Poción de sanación sublime</span>. Al alcanzar nivel 290, el Doctor te enseñará las vendas de paño rúnico.</em>"
+      },
+      {
+        "min": 290,
+        "max": 300,
+        "mats": {
+          "Paño rúnico": 20
+        },
+        "description": "<div class=\"step-title\">Primeros auxilios 290 – 300: Vendas de Paño Rúnico y Endgame</div>Crea ~15x <span class=\"recipe-name\">Venda de paño rúnico</span> usando <span class=\"recipe-name\">Paño rúnico</span> hasta alcanzar el nivel máximo 300.<br><br>🌟 <strong>Novedades de Endgame en WoW Forever:</strong><br>• Al nivel 300 puedes aprender <span class=\"recipe-name\">Vendaje pesado de paño rúnico</span>, la venda más potente para bandas y mazmorras.<br>• Puedes conseguir el <span class=\"recipe-name\">Plano: laboratorio de doctor de peste</span> para instalar un <span class=\"recipe-name\">Laboratorio de doctor de peste</span> en campamentos.<br>• Además, a nivel 280 se desbloquea <span class=\"recipe-name\">Cataplasma poderosa</span> para eliminar cualquier enfermedad persistente.</em>"
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Primeros Auxilios",
@@ -8,31 +97,41 @@
       {
         "min": 1,
         "max": 80,
-        "mats": { "Paño de lino": 110 },
+        "mats": {
+          "Paño de lino": 110
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 80: Paño de Lino</div><br>Crea <span class=\"recipe-name\">Vendas de lino</span> y luego <span class=\"recipe-name\">Vendas de lino pesadas</span>. Puedes farmear este paño en cualquier zona inicial."
       },
       {
         "min": 80,
         "max": 150,
-        "mats": { "Paño de lana": 120 },
+        "mats": {
+          "Paño de lana": 120
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 80 – 150: Paño de Lana</div><br>Fabrica <span class=\"recipe-name\">Vendas de lana pesadas</span>. Los humanoides de nivel 15-25 (como los de Los Baldíos) son tu mejor fuente."
       },
       {
         "min": 150,
         "max": 210,
-        "mats": { "Paño de seda": 100 },
+        "mats": {
+          "Paño de seda": 100
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 150 – 210: Paño de Seda</div><br><b>Nota:</b> Necesitas comprar el libro 'Primeros Auxilios para Expertos' para subir de 150. Procesa <span class=\"recipe-name\">Vendas de seda pesadas</span> en Monasterio Escarlata para optimizar el farmeo."
       },
       {
         "min": 210,
         "max": 260,
-        "mats": { "Paño de tejido de mago": 90 },
+        "mats": {
+          "Paño de tejido de mago": 90
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 210 – 260: Tejido de Mago</div><br>Crea <span class=\"recipe-name\">Vendas de tejido de mago pesadas</span>. Los ogros de Tanaris son ideales para esto. <b>Tip:</b> A nivel 225 debes hacer la misión de Triaje en Theramore (Alianza) o Hammerfall (Horda)."
       },
       {
         "min": 260,
         "max": 300,
-        "mats": { "Paño rúnico": 80 },
+        "mats": {
+          "Paño rúnico": 80
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 260 – 300: Paño Rúnico</div><br>Termina con <span class=\"recipe-name\">Vendas de paño rúnico pesadas</span>. El farmeo en Stratholme o Scholomance es el más rápido. Las recetas se aprenden del mismo instructor de la misión de Triaje."
       }
     ]
@@ -46,13 +145,17 @@
       {
         "min": 1,
         "max": 40,
-        "mats": { "Paño de tejido abisal": 40 },
+        "mats": {
+          "Paño de tejido abisal": 40
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 40</div><br>Fabrica <span class=\"recipe-name\">Vendas de tejido abisal</span> con los paños que caen en la Península del Fuego Infernal."
       },
       {
         "min": 40,
         "max": 75,
-        "mats": { "Paño de tejido abisal": 60 },
+        "mats": {
+          "Paño de tejido abisal": 60
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 40 – 75</div><br>Aprende <span class=\"recipe-name\">Vendas de tejido abisal pesadas</span> en Falcon Watch o Honor Hold para llegar al máximo."
       }
     ]
@@ -66,13 +169,17 @@
       {
         "min": 1,
         "max": 40,
-        "mats": { "Paño de tejido de escarcha": 40 },
+        "mats": {
+          "Paño de tejido de escarcha": 40
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 40</div><br>Usa <span class=\"recipe-name\">Vendas de tejido de escarcha</span> básicas farmradas en el Fiordo o Tundra."
       },
       {
         "min": 40,
         "max": 75,
-        "mats": { "Paño de tejido de escarcha": 60 },
+        "mats": {
+          "Paño de tejido de escarcha": 60
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 40 – 75</div><br>Consigue el manual para <span class=\"recipe-name\">Vendas de tejido de escarcha pesadas</span>, esencial para las bandas de nivel 80."
       }
     ]
@@ -86,13 +193,17 @@
       {
         "min": 1,
         "max": 45,
-        "mats": { "Paño de seda de ascuas": 50 },
+        "mats": {
+          "Paño de seda de ascuas": 50
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 45</div><br>Fabrica <span class=\"recipe-name\">Vendas de seda de ascuas</span> en Monte Hyjal."
       },
       {
         "min": 45,
         "max": 75,
-        "mats": { "Paño de seda de ascuas": 70 },
+        "mats": {
+          "Paño de seda de ascuas": 70
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 45 – 75</div><br>Finaliza con <span class=\"recipe-name\">Vendas de seda de ascuas pesadas</span> para el contenido de nivel 85."
       }
     ]
@@ -106,13 +217,17 @@
       {
         "min": 1,
         "max": 40,
-        "mats": { "Paño de lanaviento": 50 },
+        "mats": {
+          "Paño de lanaviento": 50
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 40</div><br>Crea <span class=\"recipe-name\">Vendas de lanaviento</span> con los abundantes paños del Bosque de Jade."
       },
       {
         "min": 40,
         "max": 75,
-        "mats": { "Paño de lanaviento": 70 },
+        "mats": {
+          "Paño de lanaviento": 70
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 40 – 75</div><br>Sube al máximo con <span class=\"recipe-name\">Vendas de lanaviento pesadas</span> comprando la receta a los instructores del Alcor."
       }
     ]
@@ -126,7 +241,9 @@
       {
         "min": 1,
         "max": 100,
-        "mats": { "Pelaje suntuoso": 150 },
+        "mats": {
+          "Pelaje suntuoso": 150
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 100</div><br>A diferencia de otras expansiones, en Draenor usarás <span class=\"recipe-name\">Vendas antisépticas</span> de alta eficiencia hechas con pelaje de bestia."
       }
     ]
@@ -140,7 +257,9 @@
       {
         "min": 1,
         "max": 100,
-        "mats": { "Seda vil": 150 },
+        "mats": {
+          "Seda vil": 150
+        },
         "description": "<div class=\"step-title\">Primeros Auxilios 1 – 100</div><br>Fabrica <span class=\"recipe-name\">Vendas de seda vil</span>. Es el último rango de esta histórica profesión secundaria."
       }
     ]

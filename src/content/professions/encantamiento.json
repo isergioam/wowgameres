@@ -1,4 +1,210 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Encantamiento",
+    "maxLevel": 300,
+    "description": "Guía optimizada de Encantamiento (1-300) en World of Warcraft: Forever. Rutas económicas con aceites de maná, motas de magia de vendedor para los primeros niveles, localización de instructores de inicio y la expedición a Annora en Uldaman.",
+    "note": "Novedades de WoW: Forever: En Encantamiento Aprendiz no hay requisito de nivel de personaje (puedes aprenderla a nivel 1). ¡Atención con los suministros!: Los instructores de zonas de inicio NO tienen vendedores de componentes a su lado (salvo en Isla Zephras para Skyborne); deberás comprar tu Vara de cobre y Motas de magia en tu capital. El botón Desencantar ya no está en el libro de hechizos, sino en la pestaña de Profesiones. Además, la subida de 1 a 20 se puede hacer íntegramente con Motas de magia compradas al vendedor sin gastar componentes caros. Para superar el nivel 225, la única instructora artesana del mundo es Annora, dentro de la mazmorra de Uldaman (¡lleva oro y componentes para subir a 250 del tirón antes de salir!).",
+    "steps": [
+      {
+        "min": 1,
+        "max": 2,
+        "mats": {
+          "Vara de cobre": 1,
+          "Mota de magia": 1
+        },
+        "description": "<div class=\"step-title\">Aprendiz y Localización de Instructores</div><span class=\"recipe-name\">Vara rúnica de cobre &rarr;</span> 1 Vara de cobre, 1 Mota de magia.<br><br>🌟 <strong>¡Novedades de WoW: Forever para Encantamiento!</strong><br>• <strong>Sin nivel mínimo:</strong> Puedes aprender Aprendiz de Encantamiento a nivel 1 en tu capital.<br>• <strong>Instructores de Inicio:</strong><br>  - <em>Orcos, Trolls y No-Muertos:</em> No tienen instructores en sus zonas iniciales; acude a Godan (Orgrimmar) o Lavinia Crowe (Entrañas).<br>  - <em>Tauren:</em> Acude a Teg Caminante del Alba en Cima del Trueno.<br>  - <em>Humanos, Enanos y Gnomos:</em> Acude a Betty Quin (Ventormenta) o Thonys Rocapilar (Forjaz).<br>  - <em>Elfos de la Noche:</em> Alanna Ovocuervo en el Claro del Oráculo (noroeste de Teldrassil).<br>  - <em>Skyborne (Isla Zephras):</em> Eaysaa Brillantarráfaga en Valanaar o Nasalanna Cantavientos en Shen'dar.<br>⚠️ <strong>Aviso de componentes:</strong> La <span class=\"recipe-name\">Vara de cobre</span> y las <span class=\"recipe-name\">Mota de magia</span> las vende el comerciante de suministros de encantamiento junto al instructor de tu capital (en zonas de inicio no hay suministradores, salvo en Isla Zephras)."
+      },
+      {
+        "min": 2,
+        "max": 20,
+        "mats": {
+          "Mota de magia": 18
+        },
+        "description": "<span class=\"recipe-name\">Encantar brazales: aguante inferior &rarr;</span> 18 Mota de magia (18 creaciones).<br>💡 <strong>¡Ahorro masivo exclusivo de Forever!</strong> Las <span class=\"recipe-name\">Mota de magia</span> se compran directamente al intendente de suministros de encantamiento por monedas de cobre. No gastes polvos ni esencias caras para este tramo.<br><em>Tip de agilidad: Utiliza una macro para encantar rápidamente sin confirmar cada sobreescritura:</em><br><code>/run ProfessionsFrame.CraftingPage.CreateButton:Click()<br>/run StaticPopup1Button1:Click()</code>"
+      },
+      {
+        "min": 20,
+        "max": 70,
+        "mats": {
+          "Esencia mágica inferior": 50
+        },
+        "description": "<span class=\"recipe-name\">Encantar brazales: desvío menor &rarr;</span> 50 Esencia mágica inferior.<br>💡 <em>Ruta alternativa: Si el <span class=\"recipe-name\">Polvo extraño</span> está más barato que las esencias en subasta, puedes elaborar 50x <span class=\"recipe-name\">Encantar pechera: salud inferior</span> (50 Polvo extraño).<br>Recuerda que 1 <span class=\"recipe-name\">Esencia mágica superior</span> se convierte en 3 Esencias mágicas inferiores al hacerle clic derecho en tu bolsa. Al llegar a nivel 50 de profesión (y nivel 10 de personaje), visita a tu instructor para aprender <strong>Encantador Oficial</strong>.</em>"
+      },
+      {
+        "min": 70,
+        "max": 100,
+        "mats": {
+          "Esencia mágica inferior": 30
+        },
+        "description": "<span class=\"recipe-name\">Encantar pechera: absorción menor &rarr;</span> 30 Esencia mágica inferior.<br>💡 <em>Alternativa: 30x <span class=\"recipe-name\">Encantar brazales: aguante menor</span> (requiere 60 Polvo extraño). Elige la opción más rentable según los precios de subasta.</em>"
+      },
+      {
+        "min": 100,
+        "max": 109,
+        "mats": {
+          "Esencia mágica inferior": 10
+        },
+        "description": "<span class=\"recipe-name\">Encantar pechera: absorción menor &rarr;</span> 10 Esencia mágica inferior (o 9x <span class=\"recipe-name\">Encantar capa: protección menor</span> con 18 Polvo extraño)."
+      },
+      {
+        "min": 109,
+        "max": 110,
+        "mats": {
+          "Vara de plata": 1,
+          "Polvo extraño": 3,
+          "Esencia mágica inferior": 4,
+          "Gema de sombras": 1
+        },
+        "description": "<span class=\"recipe-name\">Vara rúnica de plata &rarr;</span> 1 Vara de plata, 3 Polvo extraño, 4 Esencia mágica inferior, 1 Gema de sombras.<br><em>La <span class=\"recipe-name\">Vara de plata</span> la fabrican los herreros y la <span class=\"recipe-name\">Gema de sombras</span> se extrae comúnmente de yacimientos de estaño o en subasta.</em>"
+      },
+      {
+        "min": 110,
+        "max": 130,
+        "mats": {
+          "Esencia mágica inferior": 80
+        },
+        "description": "<span class=\"recipe-name\">Encantar arma 2M: intelecto menor &rarr;</span> 80 Esencia mágica inferior (20 creaciones).<br>💡 <em>Fórmula vendida por intendentes de suministros: Kithas (Orgrimmar), Nata Caminante del Alba (Cima del Trueno) o Tilli Husofino (Forjaz). ¡Aprovecha para comprarles también las fórmulas de Aceite de maná menor (nivel 150) y Aceite de zahorí menor (nivel 200)!<br>Alternativa sin fórmula: 32x <span class=\"recipe-name\">Encantar capa: protección menor</span> (64 Polvo extraño).</em>"
+      },
+      {
+        "min": 130,
+        "max": 150,
+        "mats": {
+          "Polvo extraño": 80
+        },
+        "description": "<span class=\"recipe-name\">Encantar botas: aguante menor &rarr;</span> 80 Polvo extraño (20 creaciones).<br>💡 <em>Alternativa: 20x <span class=\"recipe-name\">Encantar brazales: aguante inferior</span> (20 Polvo de alma) si el polvo de alma resulta más asequible.<br>Al llegar a nivel 125 de habilidad (y nivel 20 de personaje), visita a tu instructor único de <strong>Encantador Experto</strong>: Hgarth en Sierra Espolón (Refugio Roca del Sol, Horda) o Kitta Vientofuego en Bosque de Elwynn (Torre de Azora, Alianza). Cuesta 50 monedas de plata.</em>"
+      },
+      {
+        "min": 150,
+        "max": 151,
+        "mats": {
+          "Vara dorada": 1,
+          "Perla iridiscente": 1,
+          "Esencia astral superior": 1,
+          "Polvo de alma": 1
+        },
+        "description": "<span class=\"recipe-name\">Vara rúnica dorada &rarr;</span> 1 Vara dorada, 1 Perla iridiscente, 1 Esencia astral superior, 1 Polvo de alma.<br><em>La <span class=\"recipe-name\">Perla iridiscente</span> se obtiene al abrir almejas en zonas de costa o en subasta, y la vara dorada la forjan los herreros.</em>"
+      },
+      {
+        "min": 151,
+        "max": 165,
+        "mats": {
+          "Polvo de alma": 16,
+          "Semilla de arce": 32,
+          "Vial con plomo": 16
+        },
+        "description": "<span class=\"recipe-name\">Aceite de maná menor &rarr;</span> 16 Polvo de alma, 32 Semilla de arce, 16 Vial con plomo (16 creaciones).<br>💡 <em>¡Gran ahorro! La <span class=\"recipe-name\">Fórmula: Aceite de maná menor</span> la venden Kithas (Orgrimmar), Thaddeus Webb (Entrañas) / Tilli (Forjaz), Jessara Cordell (Ventormenta). Las semillas de arce se compran a mercaderes de componentes y los viales con plomo a suministros de alquimia.</em>"
+      },
+      {
+        "min": 165,
+        "max": 185,
+        "mats": {
+          "Polvo de alma": 22
+        },
+        "description": "<span class=\"recipe-name\">Encantar botas: agilidad inferior &rarr;</span> 22 Polvo de alma (22 creaciones).<br>💡 <em>Consejo de oro: En WoW: Forever el Polvo de alma es mucho más abundante y barato que el Polvo de visión. Puedes continuar con este encantamiento hasta el nivel 200 (~22 creaciones más) si el Polvo de visión está caro en subasta.</em>"
+      },
+      {
+        "min": 185,
+        "max": 200,
+        "mats": {
+          "Polvo de visión": 15
+        },
+        "description": "<span class=\"recipe-name\">Encantar brazales: fuerza &rarr;</span> 15 Polvo de visión (15 creaciones)."
+      },
+      {
+        "min": 200,
+        "max": 201,
+        "mats": {
+          "Vara de veraplata": 1,
+          "Perla negra": 1,
+          "Esencia mística superior": 1,
+          "Polvo de visión": 1
+        },
+        "description": "<span class=\"recipe-name\">Vara rúnica de veraplata &rarr;</span> 1 Vara de veraplata, 1 Perla negra, 1 Esencia mística superior, 1 Polvo de visión.<br><em>La <span class=\"recipe-name\">Perla negra</span> se encuentra abriendo almejas de boca grande en Tanaris o Feralas, y la vara de veraplata la forjan los herreros.</em>"
+      },
+      {
+        "min": 201,
+        "max": 220,
+        "mats": {
+          "Polvo de visión": 25,
+          "Semilla de Tuercespina": 50,
+          "Vial con plomo": 25
+        },
+        "description": "<span class=\"recipe-name\">Aceite de zahorí menor &rarr;</span> 25 Polvo de visión, 50 Semilla de Tuercespina, 25 Vial con plomo (25 creaciones).<br>💡 <em>Requiere la <span class=\"recipe-name\">Fórmula: Aceite de zahorí menor</span> (vendida por los mismos comerciantes de suministros de las capitales). Las Semillas de Tuercespina las venden comerciantes de componentes.</em>"
+      },
+      {
+        "min": 220,
+        "max": 225,
+        "mats": {
+          "Polvo de visión": 5
+        },
+        "description": "<span class=\"recipe-name\">Encantar capa: defensa superior &rarr;</span> 5 Polvo de visión (5 creaciones)."
+      },
+      {
+        "min": 225,
+        "max": 230,
+        "mats": {
+          "Polvo de visión": 5
+        },
+        "description": "<div class=\"step-title\">Artisan en Uldaman: Instructora Annora</div><span class=\"recipe-name\">Encantar guantes: agilidad &rarr;</span> 5 Polvo de visión.<br><br>🏛️ <strong>¡Acceso crucial a Uldaman (Nivel 35 / Encantamiento 200)!</strong><br>Para entrenar <strong>Encantador Artesano</strong> y aprender las recetas 225-250 debes visitar a <strong>Annora</strong> dentro de la mazmorra de <strong>Uldaman</strong> (Tierras Inhóspitas). Es la única instructora artesana del juego.<br>⚠️ <strong>Regla de oro:</strong> Entra por la puerta trasera de Uldaman en grupo. Debes eliminar a todos los troggs de su sala para que Annora aparezca. <em>¡Lleva suficiente oro (~10 oros) y alrededor de 100 Polvos de visión en tus bolsas para subir a 250 y aprender todos sus diseños antes de salir de la mazmorra!</em>"
+      },
+      {
+        "min": 230,
+        "max": 235,
+        "mats": {
+          "Polvo de visión": 10
+        },
+        "description": "<span class=\"recipe-name\">Encantar botas: aguante &rarr;</span> 10 Polvo de visión (5 creaciones, enseñada por Annora)."
+      },
+      {
+        "min": 235,
+        "max": 250,
+        "mats": {
+          "Polvo de visión": 60
+        },
+        "description": "<span class=\"recipe-name\">Encantar pechera: salud excelente &rarr;</span> 60 Polvo de visión (20 creaciones).<br><em>Aprende esta y todas las recetas disponibles con Annora antes de abandonar Uldaman (incluyendo Cuero encantado y Torio encantado a nivel 250).</em>"
+      },
+      {
+        "min": 250,
+        "max": 265,
+        "mats": {
+          "Polvo de sueño": 20,
+          "Loto morado": 20,
+          "Vial de cristal": 20
+        },
+        "description": "<span class=\"recipe-name\">Aceite de maná inferior &rarr;</span> 20 Polvo de sueño, 20 Loto morado, 20 Vial de cristal (20 creaciones).<br>💡 <em>Fórmula vendida por Kania en Fuerte Cenarion (Silithus), en el piso superior de la posada. Los Viales de cristal los vende Mishta al lado o cualquier alquimista.<br>Alternativa sin Loto morado: <span class=\"recipe-name\">Encantar brazales: fuerza superior</span> (1 Polvo de sueño, 2 Esencia abisal inferior cada uno, enseñada por Annora).</em>"
+      },
+      {
+        "min": 265,
+        "max": 294,
+        "mats": {
+          "Polvo de sueño": 192
+        },
+        "description": "<span class=\"recipe-name\">Encantar escudo: aguante superior &rarr;</span> 192 Polvo de sueño (32 creaciones).<br>⭐ <strong>¡Fórmula clave de facción!</strong> La <span class=\"recipe-name\">Fórmula: Encantar escudo: aguante superior</span> la venden Daniel Bartlett en Entrañas (/way 64.4 37.8, Horda) y Mythrin'dir en Darnassus (/way 35.0 51.8, Alianza). ⚠️ ¡Es ligada al recoger, cómprala con tu personaje encantador!"
+      },
+      {
+        "min": 294,
+        "max": 295,
+        "mats": {
+          "Vara de arcanita": 1,
+          "Perla dorada": 1,
+          "Polvo de ilusión": 10,
+          "Esencia eterna superior": 4,
+          "Fragmento brillante pequeño": 4,
+          "Fragmento brillante grande": 2
+        },
+        "description": "<span class=\"recipe-name\">Vara rúnica de arcanita &rarr;</span> 1 Vara de arcanita, 1 Perla dorada, 10 Polvo de ilusión, 4 Esencia eterna superior, 4 Fragmento brillante pequeño, 2 Fragmento brillante grande.<br>💡 <em>La <span class=\"recipe-name\">Fórmula: Vara rúnica de arcanita</span> la vende Lorelae Cantoinvernal en Claro de la Luna (Refugio Noche). ¡Aprovecha para comprarle también la <span class=\"recipe-name\">Fórmula: Encantar capa: defensa superior</span> antes de marcharte!</em>"
+      },
+      {
+        "min": 295,
+        "max": 300,
+        "mats": {
+          "Polvo de ilusión": 40
+        },
+        "description": "<span class=\"recipe-name\">Encantar capa: defensa superior &rarr;</span> 40 Polvo de ilusión (5 creaciones).<br>🎉 <strong>¡Felicidades, has alcanzado 300 de Encantamiento en WoW: Forever!</strong><br>Fórmula vendida por Lorelae Cantoinvernal en Claro de la Luna. Alternativamente, si el Polvo de ilusión está muy caro, puedes seguir elaborando Encantar escudo: aguante superior con Polvo de sueño hasta llegar a 300."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Encantamiento",

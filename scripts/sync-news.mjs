@@ -51,14 +51,20 @@ function normalizeCategory(rawCategory, title = '', description = '') {
   ];
   if (queHacerKeywords.some(kw => titleLower.includes(kw))) return 'Qué hacer';
 
-  // 3. RETAIL — Expansión retail actual (Midnight + WoW moderno)
+  // 3. FOREVER — World of Warcraft: Forever
+  const foreverKeywords = [
+    'forever', 'cielonato', 'cielonatos', 'shen\'dorei', 'zephras', 'clarofluvial'
+  ];
+  if (foreverKeywords.some(kw => titleLower.includes(kw))) return 'Forever';
+
+  // 4. RETAIL — Expansión retail actual (Midnight + WoW moderno)
   const midnightKeywords = [
     'midnight', 'vacío', "quel'thalas", 'the war within', 'guerra interior',
     'khaz algar', 'alleria', "xal'atath", 'dornogal'
   ];
   if (midnightKeywords.some(kw => titleLower.includes(kw))) return 'Retail';
 
-  // 3. CLASSIC — Versiones clásicas del juego (prioridad en título)
+  // 5. CLASSIC — Versiones clásicas del juego (prioridad en título)
   const classicKeywords = [
     'classic', 'burning crusade', 'terrallende', 'wotlk', 'rasganorte', 'lich king',
     'cataclismo', 'cataclysm', 'pandaria', 'mop', 'draenor', 'wod', 'legión', 'legion',
@@ -67,22 +73,26 @@ function normalizeCategory(rawCategory, title = '', description = '') {
   ];
   if (classicKeywords.some(kw => titleLower.includes(kw))) return 'Classic';
 
-  // 4. HOUSING — Adornos y contenido para el hogar (검사 en todo el texto)
-  //    Captura Twitch Drops de adornos, noticias de hogares, etc.
+  // 6. HOUSING — Adornos y contenido específico para el hogar
+  //    (No incluir 'hogar'/'hogares' en genérico para evitar falsos positivos con expresiones como "un nuevo hogar permanente")
   const housingKeywords = [
     'adorno para los hogares', 'adorno para el hogar', 'adornos para el hogar',
-    'housing', 'hogar', 'hogares', 'barrio', 'vecindario', 'decoración del hogar',
-    'mueble', 'catálogo de adornos', 'parcela'
+    'adornos para hogares', 'adorno para hogares', 'exteriores para los hogares',
+    'housing', 'hacienda de mareasombría', 'vecindario', 'decoración del hogar',
+    'catálogo de adornos', 'muebles para el hogar', 'casa del árbol'
   ];
   if (housingKeywords.some(kw => fullText.includes(kw))) return 'Housing';
 
-  // 5. PUESTO COMERCIAL — Solo el puesto mensual de Blizzard
+  // Si en el texto se habla de forever
+  if (foreverKeywords.some(kw => fullText.includes(kw))) return 'Forever';
+
+  // 7. PUESTO COMERCIAL — Solo el puesto mensual de Blizzard
   const shopKeywords = [
     'puesto comercial'
   ];
   if (shopKeywords.some(kw => fullText.includes(kw))) return 'Puesto comercial';
 
-  // 6. COMUNIDAD — Eventos, torneos, competiciones
+  // 8. COMUNIDAD — Eventos, torneos, competiciones
   const communityKeywords = [
     'comunidad', 'community', 'torneo', 'campeonato', 'fanart', 'concurso',
     'podcast', 'entrevista', 'blizzcon', 'arena world championship', 'awc',

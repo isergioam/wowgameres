@@ -1,4 +1,37 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Pesca",
+    "maxLevel": 300,
+    "description": "Guía completa de Pesca (1-300) en World of Warcraft: Forever. Requisitos de habilidad por zona, cebos y cañas mejoradas, nuevo sistema de torneos de Bahía del Botín (¡50 ganadores!) y mejoras de campamento.",
+    "note": "Novedades de Forever: El Gran Torneo de Pesca de Tuercespina ahora premia a los primeros 50 jugadores con la Caña de pescar de arcanita (+35 a pesca) y Monedas de espectáculo extravagante. Los pescadores pueden fabricar útiles de campamento para hogueras: Cuenco con pescado (habilidad 20), Expositor de pesca (habilidad 140) y Cabaña de pesca (habilidad 300). Además, comer pescados cocinados otorga un 5% extra de experiencia por bajas y bonos directos de habilidad de pesca.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 75,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 1 – 75: Aguas Iniciales y Capitales</div><strong>Requisito de habilidad:</strong> Mínimo 1 | 100% capturas sin escapes: 25 a 75.<br>• <strong>Peces comunes:</strong> <span class=\"recipe-name\">Pececito luminoso crudo</span> y <span class=\"recipe-name\">Pargo de lodo boquilargo crudo</span>.<br><br>📍 <strong>Zonas recomendadas:</strong><br>Cualquier masa de agua en zonas de inicio (Bosque de Elwynn, Dun Morogh, Teldrassil, Claros de Tirisfal, Durotar, Mulgore o Isla Zephras) o dentro de las capitales de facción (canales de Ventormenta, Caverna Forlorn en Forjaz, El Arrastre en Orgrimmar o Cima del Trueno).<br><br>💡 <em>Equípate una <span class=\"recipe-name\">Caña de pescar</span> (vendida por cualquier mercader de pesca). Si los peces se te escapan en los primeros lanzamientos, usa un cebo como <span class=\"recipe-name\">Adorno lustroso</span> (+25 pesca). A nivel 20 puedes fabricar el objeto de campamento <span class=\"recipe-name\">Cuenco con pescado</span>. Al alcanzar nivel 50, visita al instructor para aprender <strong>Pescador Oficial</strong>.</em>"
+      },
+      {
+        "min": 75,
+        "max": 150,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 75 – 150: Lagos y Costas Templadas</div><strong>Requisito de habilidad:</strong> Mínimo 55 | 100% capturas: 150.<br>• <strong>Peces comunes:</strong> <span class=\"recipe-name\">Siluro mostacherizo crudo</span>, y en bancos de costa <span class=\"recipe-name\">Bocanegra graso</span> y <span class=\"recipe-name\">Pezfuego</span>.<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Horda:</strong> Los Baldíos (los oasis de los Líquenes del Olvido y del Estanque Estancado), Laderas de Hillsbrad y Bosque de Argénteos.<br>• <strong>Alianza:</strong> Loch Modan, Los Humedales (Puerto de Menethil), Páramos de Poniente y Crestagrana.<br>• <strong>Neutrales:</strong> Vallefresno y Sierra Espolón.<br><br>💡 <em>Para no fallar picadas, utiliza cebos como <span class=\"recipe-name\">Reptadores nocturnos</span> (+50 pesca) o <span class=\"recipe-name\">Lentes de peces acuadinámicas</span> (+50 pesca). Al alcanzar nivel 125, viaja a Bahía del Botín en Vega de Tuercespina y compra a Old Man Heming el libro <span class=\"recipe-name\">Pesca para expertos: La lubina y tú</span> para subir hasta 225.</em>"
+      },
+      {
+        "min": 150,
+        "max": 225,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 150 – 225: Marjal y Ríos Interiores</div><strong>Requisito de habilidad:</strong> Mínimo 130 | 100% capturas: 225.<br>• <strong>Peces comunes:</strong> <span class=\"recipe-name\">Trucha cabeza de mitril cruda</span>, <span class=\"recipe-name\">Bacalao Piedrescama</span>, <span class=\"recipe-name\">Pezfuego</span> y <span class=\"recipe-name\">Bocanegra graso</span>.<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Marjal Revolcafango</strong> y <strong>Vega de Tuercespina</strong> (costas y ríos centrales).<br>• <strong>Alternativas:</strong> Tierras Altas de Arathi, Desolace (Aldea Cazasombras) y Montañas de Alterac.<br><br>💡 <em>A nivel 140 puedes aprender la receta de campamento <span class=\"recipe-name\">Expositor de pesca</span> (drop de Gelihast en Cavernas de Brazanegra). Al alcanzar 225 de pesca (y nivel 35 de personaje), ve a ver a Nat Pagle en Marjal Revolcafango (/way 58.6 60.0) para completar la misión de Pescador Artesano «Nat Pagle, pescador extremo». Deberás pescar 4 peces únicos: <span class=\"recipe-name\">Ahi de Feralas</span>, <span class=\"recipe-name\">Mahi mahi de Juncobruma</span>, <span class=\"recipe-name\">Golpeador Sar'theris</span> y <span class=\"recipe-name\">Latipinia azul de La Costa Salvaje</span>.</em>"
+      },
+      {
+        "min": 225,
+        "max": 300,
+        "mats": {},
+        "description": "<div class=\"step-title\">Pesca 225 – 300: Costas de Tanaris y Gran Torneo</div><strong>Requisito de habilidad:</strong> Mínimo 205 | 100% capturas: 300 (hasta 425 en aguas hostiles de Azshara y Peste del Este).<br>• <strong>Peces comunes:</strong> <span class=\"recipe-name\">Lubina cruda</span>, <span class=\"recipe-name\">Calamar de invierno crudo</span> y <span class=\"recipe-name\">Pez coraza de placas</span>.<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Costas de Tanaris (Puerto Bonvapor):</strong> La mejor zona para alcanzar 300 de pesca.<br>• <strong>Feralas, Tierras del Interior, Azshara y Cráter de Un'Goro.</strong><br><br>🌟 <strong>Novedades de Endgame en WoW Forever:</strong><br>• <strong>Gran Torneo de Pesca de Bahía del Botín:</strong> En Forever ya no gana solo el primer jugador; <strong>¡los primeros 50 jugadores ganan el torneo!</strong> Todos reciben la <span class=\"recipe-name\">Caña de pescar de arcanita</span> (+35) y la <span class=\"recipe-name\">Moneda de espectáculo extravagante</span> intercambiable por tesoros.<br>• Al nivel 300 puedes conseguir el <span class=\"recipe-name\">Plano: cabaña de pesca</span> para montar una <span class=\"recipe-name\">Cabaña de pesca</span> en campamentos.<br>• Si pescas en zonas de nivel 60 como Azshara o Cuna del Invierno, equipa una <span class=\"recipe-name\">Caña de pescar de hierro grande</span> o <span class=\"recipe-name\">Pescador extremo de Nat Pagle FC-5000</span> y aplica un <span class=\"recipe-name\">Atractor de peces acuadinámico</span> (+100 pesca) para evitar pérdidas de picada.</em>"
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Pesca",

@@ -22,6 +22,7 @@ export function getStaticPaths() {
     { id: "df", name: "Dragonflight" },
     { id: "tww", name: "The War Within" },
     { id: "midnight", name: "Midnight" },
+    { id: "forever", name: "Forever" },
   ];
 
   return expansions.map((exp) => ({
@@ -109,7 +110,7 @@ const profMetadata: Record<string, any> = {
 
 // Filtrar las profesiones que tienen contenido para esta expansión
 const filteredProfessions = allProfessions
-  .filter((p) => p.data[expansion])
+  .filter((p) => expansion === "forever" ? (p.data["forever"] || p.data["vanilla"]) : p.data[expansion])
   .map((p) => ({
     id: p.id,
     ...profMetadata[p.id],
@@ -128,9 +129,10 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
     (() => {
       // Intentamos cargar una imagen de fondo para la expansión (o usamos una genérica)
       const expansionImgPath = `/src/assets/images/expansions/${expansion}.webp`;
-      const heroImageAsset =
-        allImages[expansionImgPath] ||
-        allImages["/src/assets/images/dragonflight_wow.webp"]; // Fallback
+      const fallbackImg = expansion === "forever" 
+        ? allImages["/src/assets/images/forever_landscape.webp"]
+        : allImages["/src/assets/images/dragonflight_wow.webp"];
+      const heroImageAsset = allImages[expansionImgPath] || fallbackImg;
       return (
         <header class="guide-hero-detail">
           <div class="hero-bg">

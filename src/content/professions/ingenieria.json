@@ -1,4 +1,298 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Ingeniería",
+    "maxLevel": 300,
+    "description": "Guía optimizada de nivelación de Ingeniería (1-300) en World of Warcraft: Forever. Rutas más económicas, instructores en capitales y zonas de inicio, cambio en la racial gnómica, preparación para especializaciones Goblin y Gnómica, y novedades de acampada.",
+    "note": "Novedades de WoW: Forever en Ingeniería: Aprendiz no requiere nivel de personaje (puedes aprenderla a nivel 1). ¡Atención Gnomos!: La habilidad racial ya NO otorga +15 puntos de habilidad; ahora reduce un 20% la probabilidad de que los artilugios fallen o exploten (subes con los mismos materiales y rangos que las demás razas). ¡Sin instructores en Cima del Trueno ni Darnassus/Teldrassil!: Los Tauren deben acudir a Orgrimmar y los Elfos de la Noche a Auberdine (Costa Oscura). Necesitas un Martillo de herrero para casi todas las recetas (comprarlo en tu capital o en Kharanos/Shen'dar). No tires las herramientas (Llave inglesa y Microajustador) ni los componentes intermedios que reutilizarás para las bombas y especializaciones.",
+    "materials": [
+      {
+        "name": "Piedra férrea",
+        "amount": 60
+      },
+      {
+        "name": "Barra de cobre",
+        "amount": 66
+      },
+      {
+        "name": "Paño de lino",
+        "amount": 50
+      },
+      {
+        "name": "Piedra burda",
+        "amount": 60
+      },
+      {
+        "name": "Barra de plata",
+        "amount": 5
+      },
+      {
+        "name": "Barra de bronce",
+        "amount": 110
+      },
+      {
+        "name": "Fundente débil",
+        "amount": 25
+      },
+      {
+        "name": "Ágata musgosa",
+        "amount": 10
+      },
+      {
+        "name": "Piedra pesada",
+        "amount": 30
+      },
+      {
+        "name": "Paño de lana",
+        "amount": 60
+      },
+      {
+        "name": "Cuero medio",
+        "amount": 15
+      },
+      {
+        "name": "Barra de acero",
+        "amount": 4
+      },
+      {
+        "name": "Piedra sólida",
+        "amount": 120
+      },
+      {
+        "name": "Barra de mitril",
+        "amount": 158
+      },
+      {
+        "name": "Paño de tejido mágico",
+        "amount": 20
+      },
+      {
+        "name": "Piedra densa",
+        "amount": 60
+      },
+      {
+        "name": "Barra de torio",
+        "amount": 225
+      },
+      {
+        "name": "Paño rúnico",
+        "amount": 35
+      },
+      {
+        "name": "Martillo de herrero",
+        "amount": 1
+      }
+    ],
+    "steps": [
+      {
+        "min": 1,
+        "max": 30,
+        "recipe": "Pólvora férrea",
+        "mats": {
+          "Piedra férrea": 60
+        },
+        "description": "<div class=\"step-title\">Aprendiz e Instructores de Inicio</div><span class=\"recipe-name\">Pólvora férrea &rarr;</span> 60 Piedra férrea (60 creaciones).<br><br>🌟 <strong>¡Novedades de WoW: Forever para Ingeniería!</strong><br>• <strong>Sin nivel mínimo:</strong> Puedes aprender Aprendiz de Ingeniería a nivel 1 en tu capital.<br>• <strong>Racial Gnómica modificada:</strong> Ya no otorga +15 puntos de habilidad; ahora reduce un 20% la probabilidad de fallo/explosión en dispositivos. Los gnomos suben de nivel exactamente igual que el resto.<br>• <strong>Ubicación de Instructores:</strong><br>  - <em>Orcos y Trolls:</em> Mukdrak en Cerrotajo (Durotar, cerca de la forja) o Thund en Orgrimmar.<br>  - <em>No-Muertos:</em> Graham Van Talen en el Barrio de los Pícaros (Entrañas).<br>  - <em>Tauren:</em> ¡No hay instructor en Cima del Trueno! Acude a Orgrimmar (Tuizgüik Muelodentado en Mulgore está en una meseta alta sin yunque ni suministros).<br>  - <em>Humanos:</em> Duendy Ruedadentada en el Barrio de los Enanos (Ventormenta).<br>  - <em>Enanos y Gnomos:</em> Bronk Comengranaje en el Depósito de Montacable (Dun Morogh) o Jemma Cambioveloz en Forjaz.<br>  - <em>Elfos de la Noche:</em> ¡No hay instructor en Teldrassil ni Darnassus! Acude a Jenna Lemkenilli en Auberdine (Costa Oscura).<br>  - <em>Skyborne:</em> Ermitaño extraño en el Bosque Vendaval (Isla Zephras, /way 54.0 39.0).<br>⚠️ <strong>Martillo de herrero:</strong> Cómpralo de inmediato en un vendedor de suministros generales o herrería. ¡Los instructores de Dun Morogh e Isla Zephras no tienen suministradores cerca!<br>💾 <strong>¡Guarda toda la pólvora férrea! La necesitarás entera para las bombas de nivel 51.</strong>"
+      },
+      {
+        "min": 30,
+        "max": 50,
+        "recipe": "Puñado de tornillos de cobre",
+        "mats": {
+          "Barra de cobre": 30
+        },
+        "description": "<span class=\"recipe-name\">Puñado de tornillos de cobre &rarr;</span> 30 Barra de cobre (30 creaciones).<br>💾 <strong>¡Guarda todos los tornillos!</strong> Los necesitarás para fabricar la llave inglesa y las bombas de cobre a nivel 51."
+      },
+      {
+        "min": 50,
+        "max": 51,
+        "recipe": "Llave inglesa de arco voltaico",
+        "mats": {
+          "Barra de cobre": 6
+        },
+        "description": "<span class=\"recipe-name\">Llave inglesa de arco voltaico &rarr;</span> 6 Barra de cobre.<br>🔧 <strong>Herramienta permanente:</strong> Consérvala siempre en tus bolsas o banco; es obligatoria para fabricar decenas de artilugios de ingeniería en todos los niveles."
+      },
+      {
+        "min": 51,
+        "max": 75,
+        "recipe": "Bomba de cobre férrea",
+        "mats": {
+          "Barra de cobre": 30,
+          "Puñado de tornillos de cobre": 30,
+          "Pólvora férrea": 60,
+          "Paño de lino": 30
+        },
+        "description": "<span class=\"recipe-name\">Bomba de cobre férrea &rarr;</span> 30 Barra de cobre, 30 Puñado de tornillos de cobre, 60 Pólvora férrea, 30 Paño de lino (30 creaciones).<br>⚠️ <strong>Aviso importante:</strong> Esta receta se vuelve amarilla al nivel 60. Si aprendes <strong>Ingeniero Oficial</strong> antes de crearlas todas, podrías ganar puntos extra por encima del 75. Al llegar a nivel 50 de habilidad (y nivel 10 de personaje), visita a tu instructor para aprender Oficial."
+      },
+      {
+        "min": 75,
+        "max": 90,
+        "recipe": "Pólvora burda",
+        "mats": {
+          "Piedra burda": 60
+        },
+        "description": "<span class=\"recipe-name\">Pólvora burda &rarr;</span> 60 Piedra burda (60 creaciones).<br>💾 <strong>¡Guárdalas todas!</strong> Las usarás inmediatamente en el siguiente paso para elaborar dinamita."
+      },
+      {
+        "min": 90,
+        "max": 100,
+        "recipe": "Dinamita burda",
+        "mats": {
+          "Pólvora burda": 60,
+          "Paño de lino": 20
+        },
+        "description": "<span class=\"recipe-name\">Dinamita burda &rarr;</span> 60 Pólvora burda, 20 Paño de lino (20 creaciones)."
+      },
+      {
+        "min": 100,
+        "max": 105,
+        "recipe": "Contacto de plata",
+        "mats": {
+          "Barra de plata": 5
+        },
+        "description": "<span class=\"recipe-name\">Contacto de plata &rarr;</span> 5 Barra de plata (5 creaciones).<br>💡 <em>Alternativa barata: Si la barra de plata está muy cara en subasta, puedes elaborar 5x <span class=\"recipe-name\">Gafas de tigre volador</span> (requiere 30 Cuero ligero y 10 Ojo de tigre).</em>"
+      },
+      {
+        "min": 105,
+        "max": 125,
+        "recipe": "Tubo de bronce",
+        "mats": {
+          "Barra de bronce": 50,
+          "Fundente débil": 25
+        },
+        "description": "<span class=\"recipe-name\">Tubo de bronce &rarr;</span> 50 Barra de bronce, 25 Fundente débil (25 creaciones).<br>El <span class=\"recipe-name\">Fundente débil</span> lo venden los intendentes de suministros de ingeniería junto al instructor. Guarda al menos 10 tubos para el siguiente paso. Si te quedas a 1-2 puntos de 125, no fabriques más tubos; pasa directamente a las miras."
+      },
+      {
+        "min": 125,
+        "max": 135,
+        "recipe": "Mira estándar",
+        "mats": {
+          "Tubo de bronce": 10,
+          "Ágata musgosa": 10
+        },
+        "description": "<span class=\"recipe-name\">Mira estándar &rarr;</span> 10 Tubo de bronce, 10 Ágata musgosa (10 creaciones).<br>Utiliza 10 de los tubos elaborados anteriormente. Si el <span class=\"recipe-name\">Ágata musgosa</span> escasea o está cara, puedes comenzar a fabricar <span class=\"recipe-name\">Pólvora pesada</span> antes de tiempo."
+      },
+      {
+        "min": 135,
+        "max": 150,
+        "recipe": "Pólvora pesada",
+        "mats": {
+          "Piedra pesada": 30,
+          "Barra de bronce": 30,
+          "Paño de lana": 15
+        },
+        "description": "<span class=\"recipe-name\">Pólvora pesada y Cacharros zumbones &rarr;</span> Elabora en este orden exacto:<br>1. 30x <span class=\"recipe-name\">Pólvora pesada</span> (30 Piedra pesada)<br>2. 15x <span class=\"recipe-name\">Cacharros zumbones de bronce</span> (30 Barra de bronce, 15 Paño de lana)<br>💾 <strong>¡Guarda ambos componentes!</strong> Los necesitarás todos para fabricar las ovejas explosivas a nivel 160.<br>Al alcanzar nivel 125 de profesión (y nivel 20 de personaje), visita a tu instructor de <strong>Ingeniero Experto</strong>: Roxxik en Orgrimmar (Horda) o Muello Saltarín / Lilliam Chispeje (Alianza, Forjaz / Ventormenta). Cuesta 50 monedas de plata."
+      },
+      {
+        "min": 150,
+        "max": 160,
+        "recipe": "Marco de bronce",
+        "mats": {
+          "Barra de bronce": 30,
+          "Cuero medio": 15,
+          "Paño de lana": 15
+        },
+        "description": "<span class=\"recipe-name\">Marco de bronce &rarr;</span> 30 Barra de bronce, 15 Cuero medio, 15 Paño de lana (15 creaciones).<br>💾 Guarda los 15 marcos para las ovejas explosivas del siguiente paso."
+      },
+      {
+        "min": 160,
+        "max": 175,
+        "recipe": "Oveja explosiva",
+        "mats": {
+          "Pólvora pesada": 30,
+          "Cacharros zumbones de bronce": 15,
+          "Marco de bronce": 15,
+          "Paño de lana": 30
+        },
+        "description": "<span class=\"recipe-name\">Oveja explosiva &rarr;</span> 30 Pólvora pesada, 15 Cacharros zumbones de bronce, 15 Marco de bronce, 30 Paño de lana (15 creaciones).<br>💣 <strong>Consejo clave para Especialización Goblin:</strong> ¡Guarda al menos 5 ovejas explosivas en tu banco! Son requisito de la misión para desbloquear Ingeniería Goblin al llegar a nivel 200."
+      },
+      {
+        "min": 175,
+        "max": 194,
+        "recipe": "Pólvora sólida",
+        "mats": {
+          "Piedra sólida": 120
+        },
+        "description": "<span class=\"recipe-name\">Pólvora sólida &rarr;</span> 120 Piedra sólida (60 creaciones).<br>💾 Guarda la pólvora sólida para los detonadores inestables y las bombas altamente explosivas.<br>💡 <em>Ruta alternativa económica: Si la Piedra sólida está escasa, elabora 10x <span class=\"recipe-name\">Pólvora sólida</span> (20 Piedra sólida) y luego 20x <span class=\"recipe-name\">Granada de hierro</span> (20 Barra de hierro, 20 Pólvora pesada, 20 Paño de seda).</em>"
+      },
+      {
+        "min": 194,
+        "max": 195,
+        "recipe": "Microajustador giromático",
+        "mats": {
+          "Barra de acero": 4
+        },
+        "description": "<span class=\"recipe-name\">Microajustador giromático &rarr;</span> 4 Barra de acero.<br>🔧 <strong>Herramienta indispensable:</strong> Al igual que la llave inglesa, guárdala siempre contigo para recetas avanzadas de nivel 200+. Si tuviste mala suerte con los puntos y no llegas a 195, crea 1-2 Granadas de hierro más."
+      },
+      {
+        "min": 195,
+        "max": 200,
+        "recipe": "Tubo de mitril",
+        "mats": {
+          "Barra de mitril": 18
+        },
+        "description": "<span class=\"recipe-name\">Tubo de mitril &rarr;</span> 18 Barra de mitril (6 creaciones).<br>⚙️ <strong>Consejo clave para Especialización Gnómica:</strong> ¡Guarda los 6 tubos de mitril en tu banco! Son requisito directo de la misión para desbloquear Ingeniería Gnómica a nivel 200.<br><br>🏛️ <strong>Aprender Ingeniero Artesano (200-300):</strong><br>A nivel 200 de profesión y 35 de personaje, debes visitar a <strong>Buzzek Giracorchete</strong> en Gadgetzan (Tanaris, /way 52.2 27.6, junto a la posada y el buzón). Él enseña Artesano y todas las recetas de 200 a 250."
+      },
+      {
+        "min": 200,
+        "max": 215,
+        "recipe": "Disparador inestable",
+        "mats": {
+          "Barra de mitril": 20,
+          "Paño de tejido mágico": 20,
+          "Pólvora sólida": 20
+        },
+        "description": "<div class=\"step-title\">Especializaciones (Nivel 30 / Habilidad 200)</div><span class=\"recipe-name\">Disparador inestable &rarr;</span> 20 Barra de mitril, 20 Paño de tejido mágico, 20 Pólvora sólida (20 creaciones).<br>💾 Guarda todos los disparadores para las bombas del tramo 238-250.<br><br>🌟 <strong>Misiones de Especialización en WoW: Forever:</strong><br>• <strong>Ingeniería Goblin:</strong> Se inicia en Trinquete (Manitas de Oro) y te envía a Nixx Muellepiñón en Gadgetzan. Requiere entregar 20x Granada de hierro, 20x Gran bomba de hierro y 5x Oveja explosiva.<br>• <strong>Ingeniería Gnómica:</strong> Se inicia en Forjaz (Maestro Sobrechispa, Alianza) o Bahía del Botín (Oglethorpe Obnoticus, Horda). Requiere entregar 6x Tubo de mitril, 2x Dispositivo de precisión de bronce y 1x Mira de precisión.<br><em>Nota de membresía: Ambas facciones otorgan una Tarjeta de Membresía válida por 14 días jugados (336 h), renovable por 2 de oro mediante misión para recibir paquetes con esquemas raros por correo.</em>"
+      },
+      {
+        "min": 215,
+        "max": 238,
+        "recipe": "Envoltura de mitril",
+        "mats": {
+          "Barra de mitril": 120
+        },
+        "description": "<span class=\"recipe-name\">Envoltura de mitril &rarr;</span> 120 Barra de mitril (40 creaciones).<br>💾 Guarda las 40 envolturas para el siguiente paso."
+      },
+      {
+        "min": 238,
+        "max": 250,
+        "recipe": "Bomba altamente explosiva",
+        "mats": {
+          "Envoltura de mitril": 40,
+          "Disparador inestable": 20,
+          "Pólvora sólida": 40
+        },
+        "description": "<span class=\"recipe-name\">Bomba altamente explosiva &rarr;</span> 40 Envoltura de mitril, 20 Disparador inestable, 40 Pólvora sólida (20 creaciones).<br>Usa todos los disparadores y envolturas creados anteriormente."
+      },
+      {
+        "min": 250,
+        "max": 260,
+        "recipe": "Pólvora densa",
+        "mats": {
+          "Piedra densa": 60
+        },
+        "description": "<span class=\"recipe-name\">Pólvora densa &rarr;</span> 60 Piedra densa (30 creaciones).<br>Esta receta es amarilla desde el inicio en 250, por lo que podrías necesitar entre 25 y 35 creaciones."
+      },
+      {
+        "min": 260,
+        "max": 285,
+        "recipe": "Trastos wow de torio",
+        "mats": {
+          "Barra de torio": 105,
+          "Paño rúnico": 35
+        },
+        "description": "<span class=\"recipe-name\">Trastos wow de torio &rarr;</span> 105 Barra de torio, 35 Paño rúnico (35 creaciones).<br>💡 <em>Requiere <span class=\"recipe-name\">Esquema: trastos wow de torio</span>, vendido por Sovik en Orgrimmar (/way 75.6 25.2, Horda) y Cortaengranajes en Forjaz (/way 67.8 43.0, Alianza).</em>"
+      },
+      {
+        "min": 285,
+        "max": 300,
+        "recipe": "Tubo de torio",
+        "mats": {
+          "Barra de torio": 120
+        },
+        "description": "<span class=\"recipe-name\">Tubo de torio &rarr;</span> 120 Barra de torio (20 creaciones).<br>⭐ <strong>¡Fórmula clave y aviso de WoW: Forever!</strong><br>El <span class=\"recipe-name\">Esquema: tubo de torio</span> lo vende <strong>Xizzer Chispaperno</strong> en Vista Eterna (Cuna del Invierno, en el primer edificio a la derecha tras la puerta). ⚠️ <em>¡En WoW: Forever este esquema es ligado al recoger (BoP)! Cómpralo obligatoriamente con el personaje que sube Ingeniería.</em><br><br>🎉 <strong>¡Felicidades, has alcanzado 300 de Ingeniería en WoW: Forever!</strong><br>A nivel 300 puedes desbloquear el <strong>Banco de trabajo de anarquista</strong> (Acampada Tier 3) para fabricar el nuevo equipo de Forever (gafas de 200 y cinturones de 175) y optar al título <em>el Ingeniero</em> con la Autoridad Comercial."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Ingeniería",

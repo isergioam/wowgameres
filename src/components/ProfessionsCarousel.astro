@@ -1,0 +1,439 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+interface Props {
+  currentProfessionId: string;
+  expansionId: string;
+  expansionName?: string;
+}
+
+const { currentProfessionId, expansionId } = Astro.props;
+
+const allImages: Record<string, any> = import.meta.glob(
+  "/src/assets/images/**/*.{webp,png,jpg,jpeg}",
+  { eager: true }
+);
+
+const profMetadata: Record<string, { name: string; img: string; type: "crafting" | "gathering" | "secondary" }> = {
+  alquimia: { name: "Alquimia", img: "/images/alquimia_wow.webp", type: "crafting" },
+  encantamiento: { name: "Encantamiento", img: "/images/encantamiento_wow.webp", type: "crafting" },
+  herreria: { name: "Herrería", img: "/images/herreria_wow.webp", type: "crafting" },
+  ingenieria: { name: "Ingeniería", img: "/images/ingenieria_wow.webp", type: "crafting" },
+  inscripcion: { name: "Inscripción", img: "/images/inscripcion_wow.webp", type: "crafting" },
+  joyeria: { name: "Joyería", img: "/images/joyeria_wow.webp", type: "crafting" },
+  peleteria: { name: "Peletería", img: "/images/peleteria_wow.webp", type: "crafting" },
+  sastreria: { name: "Sastrería", img: "/images/sastreria_wow.webp", type: "crafting" },
+  mineria: { name: "Minería", img: "/images/mineria_wow.webp", type: "gathering" },
+  herboristeria: { name: "Herboristería", img: "/images/herboristeria_wow.webp", type: "gathering" },
+  desuello: { name: "Desuello", img: "/images/desuello_wow.webp", type: "gathering" },
+  cocina: { name: "Cocina", img: "/images/cocina_wow.webp", type: "secondary" },
+  pesca: { name: "Pesca", img: "/images/pesca_wow.webp", type: "secondary" },
+  "primeros-auxilios": { name: "Primeros Auxilios", img: "/images/primeros_auxilios_wow.webp", type: "secondary" },
+  arqueologia: { name: "Arqueología", img: "/images/arqueologia_wow.webp", type: "secondary" }
+};
+
+// Obtener todas las profesiones excepto la actual que tengan guía en esta expansión
+const allProfessions = await getCollection("professions");
+
+const availableProfessions = allProfessions
+  .filter((p: any) => {
+    if (p.id === currentProfessionId) return false;
+    return expansionId === "forever"
+      ? (p.data["forever"] || p.data["vanilla"])
+      : Boolean(p.data[expansionId]);
+  })
+  .map((p: any) => {
+    const meta = profMetadata[p.id] || {
+      name: p.id,
+      img: `/images/${p.id}_wow.webp`,
+      type: "crafting" as const
+    };
+    return {
+      id: p.id,
+      name: meta.name,
+      img: meta.img,
+      type: meta.type
+    };
+  });
+
+// Ordenar: primero artesanías, luego recolección, luego secundarias
+const typeOrder: Record<string, number> = { crafting: 1, gathering: 2, secondary: 3 };
+availableProfessions.sort((a, b) => {
+  const diff = (typeOrder[a.type] || 9) - (typeOrder[b.type] || 9);
+  if (diff !== 0) return diff;
+  return a.name.localeCompare(b.name);
+});
+---
+
+{availableProfessions.length > 0 && (
+  <section class="professions-carousel-section reveal" aria-labelledby="other-professions-title">
+    <div class="carousel-header">
+      <h3 id="other-professions-title" class="carousel-title">
+        Más profesiones
+      </h3>
+
+      <div class="carousel-nav-controls">
+        <button
+          type="button"
+          class="carousel-nav-btn prev"
+          id="profCarouselPrev"
+          aria-label="Ver profesiones anteriores"
+          title="Anterior"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="carousel-nav-btn next"
+          id="profCarouselNext"
+          aria-label="Ver siguientes profesiones"
+          title="Siguiente"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="profCarouselTrack" tabindex="0" role="region" aria-label="Carrusel de profesiones">
+        {availableProfessions.map((prof) => {
+          const assetPath = `/src/assets${prof.img}`;
+          const imgAsset = allImages[assetPath];
+
+          return (
+            <a
+              href={`/guias/${prof.id}/${expansionId}/`}
+              class="carousel-item"
+              title={`Guía de ${prof.name}`}
+            >
+              <div class="carousel-card">
+                <div class="carousel-card-bg">
+                  {imgAsset ? (
+                    <Image
+                      src={imgAsset.default}
+                      alt={prof.name}
+                      width={280}
+                      height={180}
+                      quality="mid"
+                    />
+                  ) : (
+                    <img src={prof.img} alt={prof.name} loading="lazy" />
+                  )}
+                </div>
+                <div class="carousel-card-overlay">
+                  <h4>{prof.name}</h4>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .professions-carousel-section {
+    margin: 35px 0 15px 0;
+    padding: 18px 22px;
+    background: rgba(14, 8, 26, 0.45);
+    border: 1px solid rgba(139, 92, 246, 0.16);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .carousel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .carousel-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+
+  .carousel-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .carousel-nav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-nav-btn:hover:not(:disabled) {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(167, 139, 250, 0.5);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  .carousel-nav-btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .carousel-nav-btn:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .carousel-viewport {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -2px;
+    padding: 2px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 4px;
+    scrollbar-width: none; /* Scrollbar oculta para diseño minimalista */
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-track:active {
+    cursor: grabbing;
+  }
+
+  .carousel-item {
+    flex: 0 0 165px;
+    scroll-snap-align: start;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    outline: none;
+    transition: transform 0.2s ease;
+  }
+
+  .carousel-item:hover {
+    transform: translateY(-3px);
+  }
+
+  .carousel-card {
+    position: relative;
+    height: 110px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: #06030b;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .carousel-item:hover .carousel-card {
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.25);
+  }
+
+  .carousel-card-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .carousel-card-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.65) saturate(1.05);
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .carousel-item:hover .carousel-card-bg img {
+    transform: scale(1.06);
+    filter: brightness(0.8) saturate(1.15);
+  }
+
+  .carousel-card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, transparent 35%, rgba(6, 3, 11, 0.9) 100%);
+  }
+
+  .carousel-card-overlay h4 {
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    transition: color 0.2s ease;
+  }
+
+  .carousel-item:hover .carousel-card-overlay h4 {
+    color: #c4b5fd;
+  }
+
+  /* Modo Forever / Estilo Especial para WoW Forever */
+  :global(html[data-version="forever"]) .professions-carousel-section {
+    background: rgba(4, 18, 26, 0.45) !important;
+    border: 1px solid rgba(34, 211, 238, 0.16) !important;
+    box-shadow: 0 8px 24px rgba(2, 10, 16, 0.35) !important;
+  }
+
+  :global(html[data-version="forever"]) .carousel-title {
+    color: #e6f6f9 !important;
+  }
+
+  :global(html[data-version="forever"]) .carousel-nav-btn {
+    background: rgba(34, 211, 238, 0.05) !important;
+    border-color: rgba(34, 211, 238, 0.15) !important;
+    color: #93c5fd !important;
+  }
+
+  :global(html[data-version="forever"]) .carousel-nav-btn:hover:not(:disabled) {
+    background: rgba(16, 98, 126, 0.3) !important;
+    border-color: rgba(34, 211, 238, 0.45) !important;
+    color: #fdf1d6 !important;
+    transform: translateY(-1px);
+  }
+
+  :global(html[data-version="forever"]) .carousel-card {
+    border-color: rgba(34, 211, 238, 0.14) !important;
+    background: #02080d !important;
+  }
+
+  :global(html[data-version="forever"]) .carousel-item:hover .carousel-card {
+    border-color: rgba(34, 211, 238, 0.5) !important;
+    box-shadow: 0 6px 18px rgba(16, 98, 126, 0.35) !important;
+  }
+
+  :global(html[data-version="forever"]) .carousel-item:hover .carousel-card-overlay h4 {
+    color: #67e8f9 !important;
+  }
+
+  @media (max-width: 768px) {
+    .professions-carousel-section {
+      padding: 14px 16px;
+      margin: 25px 0 15px 0;
+    }
+
+    .carousel-title {
+      font-size: 1.05rem;
+    }
+
+    .carousel-item {
+      flex: 0 0 135px;
+    }
+
+    .carousel-card {
+      height: 95px;
+    }
+
+    .carousel-card-overlay h4 {
+      font-size: 0.8rem;
+    }
+
+    .carousel-nav-btn {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>
+
+<script>
+  function setupProfessionsCarousel() {
+    const track = document.getElementById("profCarouselTrack");
+    const prevBtn = document.getElementById("profCarouselPrev") as HTMLButtonElement | null;
+    const nextBtn = document.getElementById("profCarouselNext") as HTMLButtonElement | null;
+
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const updateButtonStates = () => {
+      const scrollLeft = track.scrollLeft;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      prevBtn.disabled = scrollLeft <= 8;
+      nextBtn.disabled = scrollLeft >= maxScroll - 8;
+    };
+
+    const getScrollAmount = () => {
+      return Math.max(track.clientWidth * 0.75, 200);
+    };
+
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+    });
+
+    track.addEventListener("scroll", updateButtonStates, { passive: true });
+
+    // Drag to scroll con ratón
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    track.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    track.addEventListener("mouseleave", () => {
+      isDown = false;
+    });
+
+    track.addEventListener("mouseup", () => {
+      isDown = false;
+    });
+
+    track.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Inicializar estado de botones
+    updateButtonStates();
+    window.addEventListener("resize", updateButtonStates, { passive: true });
+  }
+
+  setupProfessionsCarousel();
+  document.addEventListener("astro:page-load", setupProfessionsCarousel);
+</script>

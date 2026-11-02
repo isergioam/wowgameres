@@ -1,4 +1,202 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Herrería",
+    "maxLevel": 300,
+    "description": "Guía optimizada de Herrería (1-300) en World of Warcraft: Forever. Rutas paso a paso ajustadas a los nuevos rangos de recetas, ubicaciones de instructores de inicio por facción, consejos para ahorrar oro y alternativas de fabricación.",
+    "note": "Novedades de WoW: Forever: En Herrería Aprendiz no hay requisito de nivel de personaje (puedes aprenderla a nivel 1 en tu zona de inicio). Instructores de inicio clave: Durotar (Dwukk en Cerro del Filo), Dun Morogh (Tognus Fuegosílex en Kharanos), Bosque de Elwynn (Herrero Argus en Villadorada), Isla Zephras (Daeann Viento de Acero y Aedi Tresvecesforjado). ¡Atención No-Muertos!: Angus Manomartillo está en Torreón Bandarion, pero nadie cerca vende Martillo de herrero; cómpralo en Camposanto o Rémol antes de viajar. En Mulgore y Teldrassil no hay instructor (debes ir a Cima del Trueno o Costa Oscura). Además, en Forever muchas recetas se vuelven amarillas y grises ~25 puntos antes que en Classic Era, por lo que esta guía usa una ruta adaptada para optimizar tus barras de metal y piedras.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 25,
+        "mats": {
+          "Piedra férrea": 30
+        },
+        "description": "<div class=\"step-title\">Aprendiz y Ubicación de Instructores</div><span class=\"recipe-name\">Piedra de afilar férrea &rarr;</span> 30 Piedra férrea.<br><br>🌟 <strong>¡Novedades de WoW: Forever para Herrería!</strong><br>• <strong>Sin nivel mínimo:</strong> En Forever puedes aprender Aprendiz de Herrería a nivel 1 directamente en tu zona de inicio.<br>• <strong>Instructores de Zona de Inicio:</strong><br>  - <em>Orcos y Trolls (Durotar):</em> Dwukk en la forja de Cerro del Filo.<br>  - <em>Humanos (Bosque de Elwynn):</em> Herrero Argus en Villadorada (frente a la posada).<br>  - <em>Enanos y Gnomos (Dun Morogh):</em> Tognus Fuegosílex en Kharanos (frente a la destilería Cebatruenos).<br>  - <em>Skyborne (Isla Zephras):</em> Daeann Viento de Acero en Valanaar o Aedi Tresvecesforjado en Aldea Shen'dar.<br>  - <em>No-muertos (Claros de Tirisfal):</em> Angus Manomartillo en Torreón Bandarion. ⚠️ <strong>¡Aviso!</strong> Nadie cerca de Angus vende martillos; compra previamente tu <span class=\"recipe-name\">Martillo de herrero</span> a Walter Mason en Camposanto o Abigail Shiel en Rémol.<br>  - <em>Tauren (Mulgore):</em> No hay instructor en Mulgore. Ve a Cima del Trueno (Thrag Pezuña Pétrea en el bancal inferior).<br>  - <em>Elfos de la Noche (Teldrassil):</em> No hay instructor en Teldrassil ni Darnassus. El más cercano es Delfrum Barbapedernal en Auberdine (Costa Oscura).<br><br>🔨 <strong>Martillo de herrero:</strong> Cómpralo por unas monedas de cobre al intendente junto a tu instructor (Horda: Sumi en Orgrimmar, Taur en Cima del Trueno, Flakk en Cerro del Filo; Alianza: Kaita en Ventormenta, Thurgrum en Forjaz, Tharynn en Villadorada)."
+      },
+      {
+        "min": 25,
+        "max": 50,
+        "mats": {
+          "Piedra férrea": 60
+        },
+        "description": "<span class=\"recipe-name\">Piedra de pulir férrea &rarr;</span> 60 Piedra férrea.<br>💡 <em>Guarda al menos 26 de estas piedras de pulir: necesitarás 16 para los Guanteletes rúnicos de cobre (67-75) y 10 si decides fabricar Varas de plata a nivel 75.</em>"
+      },
+      {
+        "min": 50,
+        "max": 67,
+        "mats": {
+          "Piedra burda": 72
+        },
+        "description": "<span class=\"recipe-name\">Piedra de pulir burda &rarr;</span> 72 Piedra burda.<br>💡 <em>Fabrica las 36 piedras de pulir burdas completas: las utilizarás todas en los brazales a nivel 95 y 112.<br>Al alcanzar nivel 50 de herrería (y nivel 10 de personaje), visita a tu instructor para aprender <strong>Herrero Oficial</strong> (Journeyman 75-150).</em>"
+      },
+      {
+        "min": 67,
+        "max": 75,
+        "mats": {
+          "Barra de cobre": 64,
+          "Piedra de pulir férrea": 16
+        },
+        "description": "<span class=\"recipe-name\">Guanteletes rúnicos de cobre &rarr;</span> 64 Barra de cobre, 16 Piedra de pulir férrea.<br><em>A partir de aquí necesitas tener en tu inventario el <span class=\"recipe-name\">Martillo de herrero</span>. Utiliza 16 de las piedras de pulir férreas creadas en el paso 25-50.</em>"
+      },
+      {
+        "min": 75,
+        "max": 80,
+        "mats": {
+          "Barra de cobre": 50
+        },
+        "description": "<span class=\"recipe-name\">Cinturón rúnico de cobre &rarr;</span> 50 Barra de cobre.<br>💡 <em>Alternativa económica: Puedes fabricar 5x <span class=\"recipe-name\">Vara de plata</span> (1 Barra de plata y 2 Piedra de pulir férrea c/u) si tienes barras de plata o te salen más baratas en subasta que 10 barras de cobre. Son muy cotizadas por los encantadores.</em>"
+      },
+      {
+        "min": 80,
+        "max": 95,
+        "mats": {
+          "Barra de bronce": 90
+        },
+        "description": "<span class=\"recipe-name\">Pantalones de bronce burdos &rarr;</span> 90 Barra de bronce.<br><em>Fundir cobre y estaño para crear bronce también te proporcionará valiosos puntos de habilidad en Minería si las subes juntas.</em>"
+      },
+      {
+        "min": 95,
+        "max": 100,
+        "mats": {
+          "Barra de bronce": 25,
+          "Piedra de pulir burda": 10
+        },
+        "description": "<span class=\"recipe-name\">Brazales de bronce grabados &rarr;</span> 25 Barra de bronce, 10 Piedra de pulir burda.<br><em>Utiliza 10 de las piedras de pulir burdas que creaste en el tramo 50-67. Guarda las 26 restantes para el nivel 112.</em>"
+      },
+      {
+        "min": 100,
+        "max": 112,
+        "mats": {
+          "Piedra pesada": 60
+        },
+        "description": "<span class=\"recipe-name\">Piedra de pulir pesada &rarr;</span> 60 Piedra pesada (elabora 20 unidades).<br>⚠️ <em>¡No las vendas ni las gastes! Guarda las 20 piedras de pulir pesadas en tu banco o bolsas, ya que las necesitarás para los Brazales de escamas doradas a nivel 175.</em>"
+      },
+      {
+        "min": 112,
+        "max": 125,
+        "mats": {
+          "Barra de bronce": 65,
+          "Piedra de pulir burda": 26
+        },
+        "description": "<span class=\"recipe-name\">Brazales de bronce grabados &rarr;</span> 65 Barra de bronce, 26 Piedra de pulir burda.<br><em>Gasta las últimas 26 piedras de pulir burdas reservadas del paso 50-67.<br>Al llegar a nivel 125 de habilidad (y nivel 20 de personaje), visita a <strong>Saru Furiaacero</strong> en Orgrimmar (Horda) o <strong>Bengus Forjafunda</strong> en Forjaz (Alianza) para aprender <strong>Herrero Experto</strong> (Expert 150-225) por 50 monedas de plata.</em>"
+      },
+      {
+        "min": 125,
+        "max": 140,
+        "mats": {
+          "Barra de bronce": 120,
+          "Fundente débil": 96,
+          "Cuero medio": 48
+        },
+        "description": "<span class=\"recipe-name\">Espada corta de bronce &rarr;</span> 120 Barra de bronce, 96 Fundente débil, 48 Cuero medio.<br><em>El <span class=\"recipe-name\">Fundente débil</span> se adquiere por muy poco cobre al vendedor de suministros de herrería que está junto al instructor en cualquier capital.</em>"
+      },
+      {
+        "min": 140,
+        "max": 150,
+        "mats": {
+          "Barra de bronce": 80,
+          "Fundente fuerte": 10,
+          "Cuero medio": 10
+        },
+        "description": "<span class=\"recipe-name\">Martillo de guerra de bronce &rarr;</span> 80 Barra de bronce, 10 Fundente fuerte, 10 Cuero medio.<br><em>El <span class=\"recipe-name\">Fundente fuerte</span> también lo vende el suministrador de herrería junto al instructor.</em>"
+      },
+      {
+        "min": 150,
+        "max": 165,
+        "mats": {
+          "Barra de bronce": 152,
+          "Fundente fuerte": 19,
+          "Cuero medio": 19
+        },
+        "description": "<span class=\"recipe-name\">Martillo de guerra de bronce &rarr;</span> 152 Barra de bronce, 19 Fundente fuerte, 19 Cuero medio.<br><em>En WoW: Forever esta receta sigue otorgando puntos de habilidad con gran fiabilidad hasta 165, permitiéndote exprimir el bronce y ahorrar tus barras de hierro.</em>"
+      },
+      {
+        "min": 165,
+        "max": 175,
+        "mats": {
+          "Barra de hierro": 90,
+          "Tinte verde": 15
+        },
+        "description": "<span class=\"recipe-name\">Brazales de hierro verdes &rarr;</span> 90 Barra de hierro, 15 Tinte verde.<br><em>El <span class=\"recipe-name\">Tinte verde</span> lo venden comerciantes de suministros como Tamar en Orgrimmar (/way 63.2 45.4) o Bombus Husofino en Forjaz (/way 42.6 67.2).</em>"
+      },
+      {
+        "min": 175,
+        "max": 185,
+        "mats": {
+          "Barra de acero": 50,
+          "Piedra de pulir pesada": 20
+        },
+        "description": "<span class=\"recipe-name\">Brazales de escamas doradas &rarr;</span> 50 Barra de acero, 20 Piedra de pulir pesada.<br><em>Usa las 20 piedras de pulir pesadas que fabricaste a nivel 100.<br>💡 <strong>Truco de Minería:</strong> Si posees Minería 165+, funde tú mismo las Barras de acero combinando 1 Barra de hierro + 1 Carbón (el carbón se compra por unas monedas de cobre al vendedor de suministros de herrería).</em>"
+      },
+      {
+        "min": 185,
+        "max": 215,
+        "mats": {
+          "Barra de mitril": 432
+        },
+        "description": "<span class=\"recipe-name\">Pantalones de placas de mitril &rarr;</span> 432 Barra de mitril (36 creaciones).<br>💡 <strong>Ruta Alternativa con Acero (Ahorro de Oro):</strong><br>Si las 432 barras de mitril resultan prohibitivas en la Casa de Subastas en los primeros días del servidor, puedes cubrir este tramo alternando con acero:<br>• <strong>185 – 200:</strong> 15x <span class=\"recipe-name\">Coraza de acero</span> (240 Barra de acero, 45 Piedra de pulir pesada [135 Piedra pesada]).<br>• <strong>200 – 215:</strong> 17x <span class=\"recipe-name\">Yelmo de placas de acero</span> (238 Barra de acero, 17 Piedra de pulir sólida [68 Piedra sólida])."
+      },
+      {
+        "min": 215,
+        "max": 225,
+        "mats": {
+          "Barra de mitril": 160
+        },
+        "description": "<span class=\"recipe-name\">Coraza pesada de mitril &rarr;</span> 160 Barra de mitril (10 creaciones).<br>⭐ <strong>¡Alternativa Ahorro Extremo con Diseño de Subasta!</strong><br>El <span class=\"recipe-name\">Diseño: Espuelas de mitril</span> es un botín de mundo muy habitual en subasta. Si consigues el diseño, fabrica:<br>• 10x <span class=\"recipe-name\">Espuelas de mitril</span>: 40 Barra de mitril, 30 Piedra de pulir sólida (120 Piedra sólida). ¡Ahorrarás 120 barras de mitril!<br><br>Al llegar a nivel 200 de habilidad (y nivel 35 de personaje), debes acudir a <strong>Brikk Calderovivo</strong> en Bahía del Botín (Vega de Tuercespina) para aprender <strong>Herrero Artesano</strong> (Artisan 225-300). Ambas facciones entrenan con él."
+      },
+      {
+        "min": 225,
+        "max": 235,
+        "mats": {
+          "Barra de mitril": 80
+        },
+        "description": "<span class=\"recipe-name\">Brazales de placas de mitril &rarr;</span> 80 Barra de mitril (10 creaciones).<br><em>⚠️ En WoW: Forever muchas recetas pasan a amarillo y gris 25 puntos antes que en Classic Era original. Esta es la opción más segura aprendida directamente de tu instructor artesano.<br>🛡️ <strong>Especialización a nivel 200 (Personaje nivel 40):</strong> Puedes elegir entre Forjador de armaduras (Grumnus Forjafin en Forjaz / Okoth Tecnosangre en Orgrimmar) o Forjador de armas (Ironus Escarchafría en Forjaz / Borgosh en Orgrimmar). Si eliges Armaduras, guarda los brazales y hombreras de mitril para las misiones de la hermandad.</em>"
+      },
+      {
+        "min": 235,
+        "max": 250,
+        "mats": {
+          "Barra de mitril": 105,
+          "Paño de tejido mágico": 90
+        },
+        "description": "<span class=\"recipe-name\">Hombreras de placas de mitril &rarr;</span> 105 Barra de mitril, 90 Paño de tejido mágico (15 creaciones).<br><em>Receta enseñada por Brikk Calderovivo en Bahía del Botín. Los Paños de tejido mágico se obtienen fácilmente en mazmorras como Zul'Farrak o granjeando humanoides en Tanaris y Tierras del Interior.</em>"
+      },
+      {
+        "min": 250,
+        "max": 260,
+        "mats": {
+          "Piedra densa": 20
+        },
+        "description": "<span class=\"recipe-name\">Piedra de afilar densa &rarr;</span> 20 Piedra densa (20 creaciones).<br><em>¡Un tramo extraordinariamente económico! La Piedra densa se consigue picando yacimientos de Torio en Cráter de Un'Goro, Azshara o Frondavil.</em>"
+      },
+      {
+        "min": 260,
+        "max": 275,
+        "mats": {
+          "Barra de torio": 90
+        },
+        "description": "<span class=\"recipe-name\">Brazales de torio ligeros &rarr;</span> 90 Barra de torio (15 creaciones).<br><em>Aprende esta receta en tu instructor artesano. Es la forma más rápida y sin recetas raras de avanzar hacia el tramo final de torio.</em>"
+      },
+      {
+        "min": 275,
+        "max": 295,
+        "mats": {
+          "Barra de torio": 400
+        },
+        "description": "<span class=\"recipe-name\">Brazales de torio imperiales &rarr;</span> 400 Barra de torio (20 creaciones).<br>💡 <strong>Cómo desbloquear la receta:</strong> Acude a Derotain Barralodo en Gadgetzan (Tanaris) y completa la misión <span class=\"recipe-name\">Diseño de brazales de placas imperiales</span> entregando 20 Barras de torio. Con este diseño podrás subir hasta 295 con total seguridad y garantías."
+      },
+      {
+        "min": 295,
+        "max": 300,
+        "mats": {
+          "Barra de torio": 90,
+          "Cuero denso": 40
+        },
+        "description": "<span class=\"recipe-name\">Botas de torio imperiales &rarr;</span> 90 Barra de torio, 40 Cuero denso (5 creaciones).<br>🎉 <strong>¡Enhorabuena, has alcanzado 300 de Herrería en WoW: Forever!</strong><br>El diseño de las Botas imperiales también lo entrega Derotain Barralodo en Gadgetzan a cambio de 40 barras de torio. Como alternativa, si tienes menos cuero denso, puedes fabricar el <span class=\"recipe-name\">Yelmo de torio imperial</span> (16 Barra de torio por unidad)."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Herrería",

@@ -1,4 +1,284 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Peletería",
+    "maxLevel": 300,
+    "description": "Guía optimizada de nivelación de Peletería (1-300) en World of Warcraft: Forever. Rutas más económicas con opciones con y sin Pellejos pesados, instructores por facción, preparación para Especializaciones (Dragontina, Elemental y Tribal) y ventajas de acampada.",
+    "note": "Novedades de WoW: Forever en Peletería: Aprendiz no requiere nivel de personaje (puedes aprenderla a nivel 1). ¡Atención con los instructores iniciales!: Durotar y Dun Morogh NO tienen instructores de peletería (acude a Orgrimmar o Forjaz). Suministros: Los instructores de Bosque de Elwynn y Claros de Tirisfal no tienen vendedores de hilos ni sal a su lado (debes comprarlos en Villadorada o Rémol). A partir de 130 se ofrece una doble ruta: si los Pellejos pesados están caros, puedes subir con Guantes de montaraz y Pantalones barbáricos. Para el rango 210-225 (Pantalones de noctámbulo) los instructores de capitales no la enseñan; debes acudir obligatoriamente a Hahrana en Campamento Mojache (Horda) o Drakk en Pico Nidal (Alianza).",
+    "materials": [
+      {
+        "name": "Restos de cuero estropeado",
+        "amount": 100
+      },
+      {
+        "name": "Pellejo ligero",
+        "amount": 27
+      },
+      {
+        "name": "Cuero ligero",
+        "amount": 415
+      },
+      {
+        "name": "Cuero medio",
+        "amount": 310
+      },
+      {
+        "name": "Pellejo medio",
+        "amount": 10
+      },
+      {
+        "name": "Pellejo pesado",
+        "amount": 46
+      },
+      {
+        "name": "Cuero pesado",
+        "amount": 224
+      },
+      {
+        "name": "Cuero grueso",
+        "amount": 390
+      },
+      {
+        "name": "Cuero basto",
+        "amount": 400
+      },
+      {
+        "name": "Sal",
+        "amount": 97
+      },
+      {
+        "name": "Hilo burdo",
+        "amount": 80
+      },
+      {
+        "name": "Hilo fino",
+        "amount": 124
+      },
+      {
+        "name": "Hilo de seda",
+        "amount": 152
+      },
+      {
+        "name": "Tinte gris",
+        "amount": 10
+      },
+      {
+        "name": "Tinte negro",
+        "amount": 50
+      },
+      {
+        "name": "Hilo rúnico",
+        "amount": 50
+      }
+    ],
+    "steps": [
+      {
+        "min": 1,
+        "max": 30,
+        "recipe": "Cuero ligero",
+        "mats": {
+          "Restos de cuero estropeado": 100
+        },
+        "description": "<div class=\"step-title\">Aprendiz e Instructores de Inicio</div><span class=\"recipe-name\">Cuero ligero &rarr;</span> 100 Restos de cuero estropeado (33 creaciones).<br><br>🌟 <strong>¡Novedades de WoW: Forever para Peletería!</strong><br>• <strong>Sin nivel mínimo:</strong> Puedes aprender Aprendiz de Peletería a nivel 1 en tu capital.<br>• <strong>Ubicación de Instructores:</strong><br>  - <em>Orcos y Trolls:</em> ¡No hay instructor en Durotar! Acude a Kamari en el Callejón (Orgrimmar).<br>  - <em>Tauren:</em> Chaw Pellejofuerte en Poblado Pezuña de Sangre (Mulgore) o Mak en Cima del Trueno.<br>  - <em>No-Muertos:</em> Shelene Rhobart (sureste de Rémol, Tirisfal) o Dan Golthas en Entrañas.<br>  - <em>Humanos:</em> Adele Fielder junto al Lago Cristalino (Bosque de Elwynn) o Randal Worth en Ventormenta.<br>  - <em>Enanos y Gnomos:</em> ¡No hay instructor en Dun Morogh! Acude a Gretta Finespindle en la Gran Forja de Forjaz.<br>  - <em>Elfos de la Noche:</em> Nadyia Manetejedora (camino a Darnassus, Teldrassil) o Darianna en Darnassus.<br>  - <em>Skyborne:</em> Emerii Tallgust en Valanaar o Indari Sunseam en Shen'dar (Isla Zephras).<br>⚠️ <strong>Aviso de suministros:</strong> Adele Fielder (Elwynn) y Shelene Rhobart (Tirisfal) NO tienen vendedores de hilos ni sal cerca. Compra los hilos y la sal en Villadorada (Tharynn Bouden) o en Rémol (Abigail Shiel).<br>💡 <em>Si compraste Cuero ligero directamente en subasta en vez de restos, elabora <span class=\"recipe-name\">Refuerzo para armadura ligero</span> hasta el nivel 30 (1 Cuero ligero por creación).</em>"
+      },
+      {
+        "min": 30,
+        "max": 55,
+        "recipe": "Pellejo ligero curado",
+        "mats": {
+          "Pellejo ligero": 27,
+          "Sal": 27
+        },
+        "description": "<span class=\"recipe-name\">Pellejo ligero curado &rarr;</span> 27 Pellejo ligero, 27 Sal (27 creaciones).<br>💾 <strong>¡Guarda al menos 24 de estos pellejos curados!</strong> Serán imprescindibles para fabricar los Pantalones de cuero ligero a nivel 100.<br>Al llegar a nivel 50 de profesión (y nivel 10 de personaje), visita a tu instructor para aprender <strong>Peletero Oficial</strong>."
+      },
+      {
+        "min": 55,
+        "max": 75,
+        "recipe": "Guantes de cuero estampado",
+        "mats": {
+          "Cuero ligero": 63,
+          "Hilo burdo": 42
+        },
+        "description": "<span class=\"recipe-name\">Guantes de cuero estampado &rarr;</span> 63 Cuero ligero, 42 Hilo burdo (21 creaciones)."
+      },
+      {
+        "min": 75,
+        "max": 80,
+        "recipe": "Cuero medio",
+        "mats": {
+          "Cuero ligero": 32
+        },
+        "description": "<span class=\"recipe-name\">Cuero medio &rarr;</span> 32 Cuero ligero (8 creaciones). Convierte 4 Cueros ligeros en 1 Cuero medio."
+      },
+      {
+        "min": 80,
+        "max": 90,
+        "recipe": "Pellejo medio curado",
+        "mats": {
+          "Pellejo medio": 10,
+          "Sal": 10
+        },
+        "description": "<span class=\"recipe-name\">Pellejo medio curado &rarr;</span> 10 Pellejo medio, 10 Sal (10 creaciones).<br>💾 Guarda los 10 pellejos medios curados para los Cinturones de cuero oscuro a nivel 115."
+      },
+      {
+        "min": 90,
+        "max": 100,
+        "recipe": "Cinturón de cuero refinado",
+        "mats": {
+          "Cuero ligero": 114,
+          "Hilo burdo": 38
+        },
+        "description": "<span class=\"recipe-name\">Cinturón de cuero refinado &rarr;</span> 114 Cuero ligero, 38 Hilo burdo (19 creaciones).<br>💾 Guarda al menos 10 de estos cinturones, ya que se reutilizan como componente base a nivel 115."
+      },
+      {
+        "min": 100,
+        "max": 115,
+        "recipe": "Pantalones de cuero ligero",
+        "mats": {
+          "Cuero ligero": 240,
+          "Pellejo ligero curado": 24,
+          "Hilo fino": 24
+        },
+        "description": "<span class=\"recipe-name\">Pantalones de cuero ligero &rarr;</span> 240 Cuero ligero, 24 Pellejo ligero curado, 24 Hilo fino (24 creaciones).<br>Utiliza los 24 pellejos curados que guardaste del tramo 30-55."
+      },
+      {
+        "min": 115,
+        "max": 125,
+        "recipe": "Cinturón de cuero oscuro",
+        "mats": {
+          "Cinturón de cuero refinado": 10,
+          "Pellejo medio curado": 10,
+          "Hilo fino": 20,
+          "Tinte gris": 10
+        },
+        "description": "<span class=\"recipe-name\">Cinturón de cuero oscuro &rarr;</span> 10 Cinturón de cuero refinado, 10 Pellejo medio curado, 20 Hilo fino, 10 Tinte gris (10 creaciones).<br>El tinte gris y el hilo fino los venden los intendentes de suministros de peletería."
+      },
+      {
+        "min": 125,
+        "max": 130,
+        "recipe": "Cuero pesado",
+        "mats": {
+          "Cuero medio": 35
+        },
+        "description": "<span class=\"recipe-name\">Cuero pesado &rarr;</span> 35 Cuero medio (7 creaciones). Convierte 5 Cueros medios en 1 Cuero pesado."
+      },
+      {
+        "min": 130,
+        "max": 140,
+        "recipe": "Pellejo pesado curado",
+        "mats": {
+          "Pellejo pesado": 20,
+          "Sal": 60
+        },
+        "description": "<div class=\"step-title\">Peletero Experto (125-225)</div><span class=\"recipe-name\">Pellejo pesado curado &rarr;</span> 20 Pellejo pesado, 60 Sal (20 creaciones).<br><br>🏛️ <strong>Aprender Peletero Experto:</strong><br>A nivel 125 de habilidad y nivel 20 de personaje, aprende Experto con <strong>Una</strong> en Cima del Trueno (Horda) o <strong>Telonis</strong> en Darnassus (Alianza). Cuesta 50 monedas de plata.<br><br>💾 <strong>¡Guarda los 20 pellejos pesados curados!</strong> Los usarás en los siguientes pasos.<br>💡 <em>Ruta alternativa sin pellejos pesados: Si el Pellejo pesado está exorbitantemente caro en subasta, puedes elaborar directamente 30x <span class=\"recipe-name\">Guantes de montaraz</span> (420 Cuero medio, 120 Hilo fino) del tirón de 130 a 155.</em>"
+      },
+      {
+        "min": 140,
+        "max": 155,
+        "recipe": "Guantes de montaraz",
+        "mats": {
+          "Cuero medio": 280,
+          "Hilo fino": 80
+        },
+        "description": "<span class=\"recipe-name\">Guantes de montaraz &rarr;</span> 280 Cuero medio, 80 Hilo fino (20 creaciones)."
+      },
+      {
+        "min": 155,
+        "max": 165,
+        "recipe": "Hombreras barbáricas",
+        "mats": {
+          "Cuero pesado": 80,
+          "Pellejo pesado curado": 10,
+          "Hilo fino": 20
+        },
+        "description": "<span class=\"recipe-name\">Hombreras barbáricas &rarr;</span> 80 Cuero pesado, 10 Pellejo pesado curado, 20 Hilo fino (10 creaciones).<br>💡 <em>Alternativa si no tienes pellejos pesados: 17x <span class=\"recipe-name\">Pantalones barbáricos</span> (170 Cuero pesado, 34 Hilo fino, 17 Ágata musgosa). El patrón lo venden Jandia (Las Mil Agujas), Keena (Tierras Altas de Arathi) / Hammon Karwn (Arathi), Lardan (Vallefresno).</em>"
+      },
+      {
+        "min": 165,
+        "max": 175,
+        "recipe": "Guantes de guardián",
+        "mats": {
+          "Cuero pesado": 40,
+          "Pellejo pesado curado": 10,
+          "Hilo de seda": 10
+        },
+        "description": "<span class=\"recipe-name\">Guantes de guardián &rarr;</span> 40 Cuero pesado, 10 Pellejo pesado curado, 10 Hilo de seda (10 creaciones)."
+      },
+      {
+        "min": 175,
+        "max": 195,
+        "recipe": "Guantes de guardián",
+        "mats": {
+          "Cuero pesado": 104,
+          "Pellejo pesado curado": 26,
+          "Hilo de seda": 26
+        },
+        "description": "<span class=\"recipe-name\">Guantes de guardián &rarr;</span> 104 Cuero pesado, 26 Pellejo pesado curado, 26 Hilo de seda (26 creaciones). Si compraste Pellejos pesados sin curar, cúralos antes (cada uno requiere 3 de Sal)."
+      },
+      {
+        "min": 195,
+        "max": 205,
+        "recipe": "Diadema de noctámbulo",
+        "mats": {
+          "Cuero grueso": 50,
+          "Hilo de seda": 20
+        },
+        "description": "<span class=\"recipe-name\">Diadema de noctámbulo &rarr;</span> 50 Cuero grueso, 20 Hilo de seda (10 creaciones)."
+      },
+      {
+        "min": 205,
+        "max": 210,
+        "recipe": "Diadema de noctámbulo",
+        "mats": {
+          "Cuero grueso": 55,
+          "Hilo de seda": 22
+        },
+        "description": "<span class=\"recipe-name\">Diadema de noctámbulo &rarr;</span> 55 Cuero grueso, 22 Hilo de seda (11 creaciones).<br><br>🏛️ <strong>Aprender Peletero Artesano (200-300):</strong><br>A nivel 200 de profesión y 35 de personaje, debes visitar a los instructores artesanos únicos:<br>• <strong>Hahrana Pellejoférreo</strong> en Campamento Mojache (Feralas, Horda, /way 74.4 43.0).<br>• <strong>Drakk Manopétrea</strong> en Pico Nidal (Tierras del Interior, Alianza, /way 13.4 43.6).<br>⚠️ <em>¡Atención!: Los instructores de las capitales NO enseñan la siguiente receta; debes aprenderla obligatoriamente con Hahrana o Drakk.</em>"
+      },
+      {
+        "min": 210,
+        "max": 225,
+        "recipe": "Pantalones de noctámbulo",
+        "mats": {
+          "Cuero grueso": 210,
+          "Hilo de seda": 60
+        },
+        "description": "<span class=\"recipe-name\">Pantalones de noctámbulo &rarr;</span> 210 Cuero grueso, 60 Hilo de seda (15 creaciones, enseñada por Hahrana / Drakk)."
+      },
+      {
+        "min": 225,
+        "max": 250,
+        "recipe": "Botas de noctámbulo",
+        "mats": {
+          "Cuero grueso": 125,
+          "Hilo de seda": 50
+        },
+        "description": "<div class=\"step-title\">Especializaciones (Nivel 40 / Habilidad 225)</div><span class=\"recipe-name\">Botas de noctámbulo &rarr;</span> 125 Cuero grueso, 50 Hilo de seda (25 creaciones).<br><br>🌟 <strong>Especializaciones de Peletería en WoW: Forever:</strong><br>• <strong>Peletería de escamas de dragón (Dragonscale):</strong> Orientada a armaduras de malla con agilidad e intelecto para Cazadores y Chamanes.<br>• <strong>Peletería elemental (Elemental):</strong> Orientada a armaduras de cuero con agilidad, daño y resistencias elementales (Pícaros y Ferales).<br>• <strong>Peletería tribal (Tribal):</strong> Orientada a armaduras de cuero con intelecto, espíritu y curación/daño mágico (Druidas Equilibrio/Restauración)."
+      },
+      {
+        "min": 250,
+        "max": 275,
+        "recipe": "Guanteletes de cuero maligno",
+        "mats": {
+          "Cuero basto": 200,
+          "Tinte negro": 25,
+          "Hilo rúnico": 25
+        },
+        "description": "<span class=\"recipe-name\">Guanteletes de cuero maligno &rarr;</span> 200 Cuero basto, 25 Tinte negro, 25 Hilo rúnico (25 creaciones).<br>El <span class=\"recipe-name\">Hilo rúnico</span> y el <span class=\"recipe-name\">Tinte negro</span> los venden los suministradores de peletería y sastrería de cualquier capital o puesto avanzado de alto nivel."
+      },
+      {
+        "min": 275,
+        "max": 300,
+        "recipe": "Brazales de cuero maligno",
+        "mats": {
+          "Cuero basto": 200,
+          "Tinte negro": 25,
+          "Hilo rúnico": 25
+        },
+        "description": "<span class=\"recipe-name\">Brazales de cuero maligno &rarr;</span> 200 Cuero basto, 25 Tinte negro, 25 Hilo rúnico (25 creaciones, o Cinta de cuero maligno / Pantalones de cuero maligno).<br><br>🎉 <strong>¡Felicidades, has alcanzado 300 de Peletería en WoW: Forever!</strong><br>A nivel 300 puedes fabricar la tienda de campaña avanzada de acampada (Tier 3) que otorga un 5% de experiencia descansada adicional a tu grupo, y optar a la certificación y título <em>el Peletero</em> mediante la Autoridad Comercial de Azeroth."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Peletería",

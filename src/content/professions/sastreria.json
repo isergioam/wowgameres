@@ -1,4 +1,232 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Sastrería",
+    "maxLevel": 300,
+    "description": "Guía optimizada de nivelación de Sastrería (1-300) en World of Warcraft: Forever. Rutas más económicas con telas, ubicación de instructores por facción, preparación para especializaciones, fabricación de bolsas y ventajas de acampada (Espíritu y Telar portatil).",
+    "note": "Novedades de WoW: Forever en Sastrería: Aprendiz no requiere nivel de personaje (puedes aprenderla a nivel 1). ¡Atención con los instructores iniciales!: Durotar, Mulgore, Dun Morogh y Teldrassil NO tienen instructores de sastrería en sus zonas de inicio; deberás acudir a sus respectivas capitales (Orgrimmar, Cima del Trueno, Forjaz o Darnassus). Suministros: El instructor de Claros de Tirisfal (Bowen Brisboise) no tiene vendedores de hilo cerca (cómpralos en Rémol). Acampada: Los sastres aportan el Estandarte de Facción (buff de Espíritu) y el Telar portatil (Loom, Tier 3) en los campamentos. Se recomienda guardar siempre las madejas elaboradas, ya que se reutilizan íntegramente en los siguientes tramos de equipo y bolsas.",
+    "materials": [
+      {
+        "name": "Paño de lino",
+        "amount": 60
+      },
+      {
+        "name": "Paño de lana",
+        "amount": 459
+      },
+      {
+        "name": "Paño de seda",
+        "amount": 736
+      },
+      {
+        "name": "Elixir de sabiduría",
+        "amount": 29
+      },
+      {
+        "name": "Paño de tejido mágico",
+        "amount": 900
+      },
+      {
+        "name": "Paño rúnico",
+        "amount": 600
+      },
+      {
+        "name": "Hilo burdo",
+        "amount": 28
+      },
+      {
+        "name": "Hilo fino",
+        "amount": 149
+      },
+      {
+        "name": "Tinte rojo",
+        "amount": 92
+      },
+      {
+        "name": "Hilo de seda",
+        "amount": 104
+      },
+      {
+        "name": "Hilo de seda grueso",
+        "amount": 126
+      },
+      {
+        "name": "Hilo rúnico",
+        "amount": 60
+      }
+    ],
+    "steps": [
+      {
+        "min": 1,
+        "max": 30,
+        "recipe": "Madeja de paño de lino",
+        "mats": {
+          "Paño de lino": 60
+        },
+        "description": "<div class=\"step-title\">Aprendiz e Instructores de Inicio</div><span class=\"recipe-name\">Madeja de paño de lino &rarr;</span> 60 Paño de lino (30 creaciones).<br><br>🌟 <strong>¡Novedades de WoW: Forever para Sastrería!</strong><br>• <strong>Sin nivel mínimo:</strong> Puedes aprender Aprendiz de Sastrería a nivel 1 en tu capital.<br>• <strong>Ubicación de Instructores:</strong><br>  - <em>Orcos y Trolls:</em> ¡No hay instructor en Durotar! Acude a Snang en el Callejón (Orgrimmar).<br>  - <em>Tauren:</em> ¡No hay instructor en Mulgore! Acude a Vhan en Cima del Trueno (Alto Central).<br>  - <em>No-Muertos:</em> Bowen Brisboise en la Hacienda de los Fríos (Tirisfal) o Victor Ward en Entrañas.<br>  - <em>Humanos:</em> Eldrin en el Campamento Maderero Vega del Este (Elwynn) o Lawrence Schneider en Ventormenta.<br>  - <em>Enanos y Gnomos:</em> ¡No hay instructor en Dun Morogh! Acude a Uthrar Threx en Forjaz (Gran Forja).<br>  - <em>Elfos de la Noche:</em> ¡No hay instructor en Teldrassil! Acude a Trianna en Darnassus (Bancal de los Artesanos).<br>  - <em>Skyborne:</em> Othesia Evengale en Valanaar o Taleen Shimmerthread en Shen'dar (Isla Zephras).<br>⚠️ <strong>Aviso de suministros:</strong> Bowen Brisboise (Tirisfal) NO tiene vendedores de hilos cerca. Compra el hilo burdo en Rémol a Abigail Shiel.<br>💾 <strong>¡Guarda todas las madejas de lino! Las usarás para fabricar los cinturones en el siguiente paso.</strong>"
+      },
+      {
+        "min": 30,
+        "max": 55,
+        "recipe": "Cinturón de lino",
+        "mats": {
+          "Madeja de paño de lino": 28,
+          "Hilo burdo": 28
+        },
+        "description": "<span class=\"recipe-name\">Cinturón de lino &rarr;</span> 28 Madeja de paño de lino, 28 Hilo burdo (28 creaciones).<br>Al llegar a nivel 50 de profesión (y nivel 10 de personaje), visita a tu instructor para aprender <strong>Sastre Oficial</strong>."
+      },
+      {
+        "min": 55,
+        "max": 80,
+        "recipe": "Madeja de paño de lana",
+        "mats": {
+          "Paño de lana": 135
+        },
+        "description": "<span class=\"recipe-name\">Madeja de paño de lana &rarr;</span> 135 Paño de lana (45 creaciones).<br>⚠️ <strong>Aprende Sastre Oficial antes de fabricar:</strong> Esta receta puede subirte más allá de nivel 75; si no aprendes Oficial previamente no ganarás puntos extras por encima de 75.<br>💾 Guarda todas las madejas de lana. En total necesitarás 153 madejas (459 Paños de lana) hasta el nivel 140, por lo que puedes transformarlas todas ahora si tienes la tela."
+      },
+      {
+        "min": 80,
+        "max": 95,
+        "recipe": "Capa de lana",
+        "mats": {
+          "Madeja de paño de lana": 22,
+          "Hilo fino": 22
+        },
+        "description": "<span class=\"recipe-name\">Capa de lana &rarr;</span> 22 Madeja de paño de lana, 22 Hilo fino (22 creaciones). El hilo fino lo venden los suministradores de sastrería."
+      },
+      {
+        "min": 95,
+        "max": 100,
+        "recipe": "Hombreras de lana con doble costura",
+        "mats": {
+          "Madeja de paño de lana": 15,
+          "Hilo fino": 10
+        },
+        "description": "<span class=\"recipe-name\">Hombreras de lana con doble costura &rarr;</span> 15 Madeja de paño de lana, 10 Hilo fino (5 creaciones)."
+      },
+      {
+        "min": 100,
+        "max": 120,
+        "recipe": "Madeja de paño de seda",
+        "mats": {
+          "Paño de seda": 216
+        },
+        "description": "<span class=\"recipe-name\">Madeja de paño de seda &rarr;</span> 216 Paño de seda (54 creaciones).<br>💾 Guarda las madejas; en total necesitarás 184 madejas de seda (736 Paños de seda) hasta el nivel 190.<br>💡 <em>Alternativa si tienes excedente de lana: Puedes seguir creando Hombreras de lana con doble costura hasta 120 (requiere ~69 Madejas de lana y 46 Hilo fino adicionales).</em>"
+      },
+      {
+        "min": 120,
+        "max": 125,
+        "recipe": "Guantes de meditación",
+        "mats": {
+          "Madeja de paño de lana": 20,
+          "Hilo fino": 15,
+          "Elixir de sabiduría": 5
+        },
+        "description": "<span class=\"recipe-name\">Guantes de meditación &rarr;</span> 20 Madeja de paño de lana, 15 Hilo fino, 5 Elixir de sabiduría (5 creaciones).<br>El <span class=\"recipe-name\">Elixir de sabiduría</span> se compra en subasta a precios asequibles o puedes pedirle a un alquimista amigo que te los elabore."
+      },
+      {
+        "min": 125,
+        "max": 140,
+        "recipe": "Guantes de meditación",
+        "mats": {
+          "Madeja de paño de lana": 96,
+          "Hilo fino": 72,
+          "Elixir de sabiduría": 24
+        },
+        "description": "<div class=\"step-title\">Sastre Experto (125-225)</div><span class=\"recipe-name\">Guantes de meditación &rarr;</span> 96 Madeja de paño de lana, 72 Hilo fino, 24 Elixir de sabiduría (24 creaciones).<br><br>🏛️ <strong>Aprender Sastre Experto:</strong><br>A nivel 125 de habilidad y nivel 20 de personaje, aprende Experto con <strong>Josef Gregorian</strong> en Entrañas (Horda) o <strong>Georgio Bolero</strong> en Ventormenta (Alianza). Cuesta 50 monedas de plata.<br>Esta receta es amarilla en este tramo, por lo que podrías necesitar un par de creaciones adicionales."
+      },
+      {
+        "min": 140,
+        "max": 150,
+        "recipe": "Madeja de tejido mágico",
+        "mats": {
+          "Paño de tejido mágico": 115
+        },
+        "description": "<span class=\"recipe-name\">Madeja de tejido mágico &rarr;</span> 115 Paño de tejido mágico (23 creaciones).<br>💾 Guarda todas las madejas; necesitarás 180 madejas de tejido mágico en total hasta el nivel 225.<br>💡 <em>Ruta alternativa económica: Si el Paño de tejido mágico está caro o escasea en el servidor, puedes elaborar 10x <span class=\"recipe-name\">Camisa roja de espadachín</span> (30 Madeja de paño de seda, 20 Tinte rojo, 10 Hilo de seda).</em>"
+      },
+      {
+        "min": 150,
+        "max": 170,
+        "recipe": "Chaleco de seda carmesí",
+        "mats": {
+          "Madeja de paño de seda": 80,
+          "Tinte rojo": 40,
+          "Hilo fino": 40
+        },
+        "description": "<span class=\"recipe-name\">Chaleco de seda carmesí &rarr;</span> 80 Madeja de paño de seda, 40 Tinte rojo, 40 Hilo fino (20 creaciones). El tinte rojo lo venden los intendentes de sastrería."
+      },
+      {
+        "min": 170,
+        "max": 190,
+        "recipe": "Pantalones de seda carmesí",
+        "mats": {
+          "Madeja de paño de seda": 104,
+          "Tinte rojo": 52,
+          "Hilo de seda": 52
+        },
+        "description": "<span class=\"recipe-name\">Pantalones de seda carmesí &rarr;</span> 104 Madeja de paño de seda, 52 Tinte rojo, 52 Hilo de seda (26 creaciones). Se vuelve amarillo a 180."
+      },
+      {
+        "min": 190,
+        "max": 215,
+        "recipe": "Guantes de tejido mágico negros",
+        "mats": {
+          "Madeja de tejido mágico": 76,
+          "Hilo de seda grueso": 76
+        },
+        "description": "<span class=\"recipe-name\">Guantes de tejido mágico negros &rarr;</span> 76 Madeja de tejido mágico, 76 Hilo de seda grueso (38 creaciones). Se vuelven amarillos a 195 y verdes a 210, por lo que el número exacto puede variar según tu suerte."
+      },
+      {
+        "min": 215,
+        "max": 225,
+        "recipe": "Bolsa de tejido mágico",
+        "mats": {
+          "Madeja de tejido mágico": 104,
+          "Hilo de seda": 52
+        },
+        "description": "<span class=\"recipe-name\">Bolsa de tejido mágico &rarr;</span> 104 Madeja de tejido mágico, 52 Hilo de seda (26 creaciones).<br>¡Excelente rentabilidad vendiendo estas bolsas de 12 casillas en subasta a otros jugadores del reino!<br><br>🏛️ <strong>Aprender Sastre Artesano (200-300):</strong><br>A nivel 200 de profesión y 35 de personaje, debes acudir a los instructores artesanos únicos:<br>• <strong>Daryl Stack</strong> en Molino Tarren (Laderas de Trabalomas, Horda, /way 63.6 20.8).<br>• <strong>Timothy Worthington</strong> en Isla Theramore (Marjal Revolcafango, Alianza, /way 66.2 51.6)."
+      },
+      {
+        "min": 225,
+        "max": 250,
+        "recipe": "Pantalones de tejido mágico negros",
+        "mats": {
+          "Madeja de tejido mágico": 100,
+          "Hilo de seda grueso": 50
+        },
+        "description": "<div class=\"step-title\">Artesano y Fabricación de Bolsas</div><span class=\"recipe-name\">Pantalones de tejido mágico negros &rarr;</span> 100 Madeja de tejido mágico, 50 Hilo de seda grueso (25 creaciones).<br>Enseñada por los instructores artesanos en Molino Tarren o Theramore."
+      },
+      {
+        "min": 250,
+        "max": 260,
+        "recipe": "Madeja de paño rúnico",
+        "mats": {
+          "Paño rúnico": 250
+        },
+        "description": "<span class=\"recipe-name\">Madeja de paño rúnico &rarr;</span> 250 Paño rúnico (50 creaciones). Guarda las madejas para los últimos tramos."
+      },
+      {
+        "min": 260,
+        "max": 280,
+        "recipe": "Cinturón de paño rúnico",
+        "mats": {
+          "Madeja de paño rúnico": 60,
+          "Hilo rúnico": 20
+        },
+        "description": "<span class=\"recipe-name\">Cinturón de paño rúnico &rarr;</span> 60 Madeja de paño rúnico, 20 Hilo rúnico (20 creaciones). El hilo rúnico lo venden los intendentes de sastrería."
+      },
+      {
+        "min": 280,
+        "max": 300,
+        "recipe": "Guantes de paño rúnico",
+        "mats": {
+          "Madeja de paño rúnico": 80,
+          "Hilo rúnico": 40
+        },
+        "description": "<span class=\"recipe-name\">Guantes de paño rúnico &rarr;</span> 80 Madeja de paño rúnico, 40 Hilo rúnico (20 creaciones, o Pantalones de paño rúnico / Bolsa de paño rúnico).<br><br>🎉 <strong>¡Felicidades, has alcanzado 300 de Sastrería en WoW: Forever!</strong><br>A nivel 300 puedes fabricar el <strong>Telar portatil (Loom, Acampada Tier 3)</strong> para procesar telas avanzadas y Paño lunar en cualquier hoguera, y obtener el título <em>el Sastre</em> con la Autoridad Comercial de Azeroth."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Sastrería",

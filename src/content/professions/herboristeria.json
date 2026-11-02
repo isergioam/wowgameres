@@ -1,4 +1,55 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Herboristería",
+    "maxLevel": 300,
+    "description": "Guía completa de Herboristería (1-300) en World of Warcraft: Forever. Rutas de recolección optimizadas, niveles de habilidad por planta, novedades exclusivas de Forever y mecánicas de campamento.",
+    "note": "Novedades de Forever: Los Tauren cuentan con la racial Cultivo mejorada (duplica un nodo de hierba cercano). Además, los herboristas pueden fabricar objetos de campamento (Vela de incienso a nivel 20, Invernadero a nivel 140, Hibridador de semillas a nivel 300) que conceden un beneficio similar a Intelecto Arcano junto a las hogueras. Para maximizar tus ganancias, combina esta profesión con Alquimia.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 70,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 1 – 70: Zonas de Inicio</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Flor de paz</span> (Habilidad 1 &rarr; Naranja: 1, Amarillo: 25, Verde: 50, Gris: 100)<br>• <span class=\"recipe-name\">Hojaplata</span> (Habilidad 1 &rarr; Naranja: 1, Amarillo: 25, Verde: 50, Gris: 100)<br>• <span class=\"recipe-name\">Raíz de tierra</span> (Habilidad 15 &rarr; Naranja: 15, Amarillo: 40, Verde: 65, Gris: 115)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Alianza:</strong> Bosque de Elwynn, Dun Morogh, Teldrassil, Páramos de Poniente o Isla Zephras.<br>• <strong>Horda:</strong> Claros de Tirisfal, Durotar, Mulgore o Isla Zephras.<br><br>💡 <em>En WoW Forever, las zonas de inicio cuentan con nodos de Flor de paz marchita y Hojaplata atrofiada para subir los primeros puntos al instante. Al llegar a nivel 50, visita a tu instructor para aprender <strong>Herborista Oficial</strong>.</em>"
+      },
+      {
+        "min": 70,
+        "max": 115,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 70 – 115: Costa y Bosques Templados</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Marregal</span> (Habilidad 50 &rarr; Naranja: 50, Amarillo: 75, Verde: 100, Gris: 150 - terrenos abiertos)<br>• <span class=\"recipe-name\">Brezospina</span> (Habilidad 70 &rarr; Naranja: 70, Amarillo: 95, Verde: 120, Gris: 170 - base de árboles)<br>• <span class=\"recipe-name\">Alga estranguladora</span> (Habilidad 85 &rarr; Naranja: 85, Amarillo: 110, Verde: 135, Gris: 185 - sumergida en agua o costa)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Alianza:</strong> Costa Oscura, Loch Modan, Páramos de Poniente.<br>• <strong>Horda:</strong> Bosque de Argénteos, Los Baldíos (zona norte).<br><br>💡 <em>¡Ojo con el Alga estranguladora! Crece sumergida en el agua a lo largo de las costas y lagos. Será vital para Alquimia. Al nivel 125, visita al instructor para aprender <strong>Herborista Experto</strong>.</em>"
+      },
+      {
+        "min": 115,
+        "max": 170,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 115 – 170: Laderas de Hillsbrad y Humedales</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Hierba cardenal</span> (Habilidad 100 &rarr; Naranja: 100, Amarillo: 125, Verde: 150, Gris: 200)<br>• <span class=\"recipe-name\">Acérita salvaje</span> (Habilidad 115 &rarr; Naranja: 115, Amarillo: 140, Verde: 165, Gris: 215 - colinas y riscos)<br>• <span class=\"recipe-name\">Sangrerregia</span> (Habilidad 125 &rarr; Naranja: 125, Amarillo: 150, Verde: 175, Gris: 225 - praderas abiertas)<br>• <span class=\"recipe-name\">Vidarraíz</span> (Habilidad 150 &rarr; Naranja: 150, Amarillo: 175, Verde: 200, Gris: 250 - riberas de ríos)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Zona Estrella (Ambas facciones):</strong> <em>Laderas de Hillsbrad</em> es la mejor zona indiscutible de todo Azeroth para este tramo.<br>• <strong>Alternativas:</strong> Los Humedales, Sierra Espolón, Bosque del Ocaso."
+      },
+      {
+        "min": 170,
+        "max": 205,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 170 – 205: Vega de Tuercespina y Arathi</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Pálida</span> (Habilidad 160 &rarr; Naranja: 160, Amarillo: 185, Verde: 210, Gris: 260 - sombras de árboles)<br>• <span class=\"recipe-name\">Espina de oro</span> (Habilidad 170 &rarr; Naranja: 170, Amarillo: 195, Verde: 220, Gris: 270 - laderas rocosas y riscos)<br>• <span class=\"recipe-name\">Mostacho de Khadgar</span> (Habilidad 185 &rarr; Naranja: 185, Amarillo: 210, Verde: 235, Gris: 285 - cerca de árboles)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Vega de Tuercespina</strong> (norte y centro) y <strong>Tierras Altas de Arathi</strong>.<br>• <strong>Alternativa secundaria:</strong> Pantano de las Penas y Marjal Revolcafango.<br><br>💡 <em>Al alcanzar 200/225 de habilidad (y nivel 35 de personaje), aprende <strong>Herborista Artesano</strong> en tu capital de facción.</em>"
+      },
+      {
+        "min": 205,
+        "max": 225,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 205 – 225: Alterac y Tanaris</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Invernalia</span> (Habilidad 195 &rarr; Naranja: 195, Amarillo: 220, Verde: 245, Gris: 295 - exclusiva de la nieve de Alterac)<br>• <span class=\"recipe-name\">Flor de fuego</span> (Habilidad 205 &rarr; Naranja: 205, Amarillo: 230, Verde: 255, Gris: 305 - terrenos áridos y calientes)<br>• <span class=\"recipe-name\">Loto morado / cárdeno</span> (Habilidad 210 &rarr; Naranja: 210, Amarillo: 235, Verde: 260, Gris: 310 - cerca de ruinas antiguas)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Montañas de Alterac</strong> (la zona nevada es ideal para Invernalia).<br>• <strong>Tanaris, Garganta de Fuego y Tierras Inhóspitas</strong> para Flor de fuego."
+      },
+      {
+        "min": 225,
+        "max": 270,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 225 – 270: Tierras de la Peste del Oeste y Frondavil</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Lágrimas de Arthas</span> (Habilidad 220 &rarr; Naranja: 220, Amarillo: 245, Verde: 270, Gris: 320)<br>• <span class=\"recipe-name\">Solea</span> (Habilidad 230 &rarr; Naranja: 230, Amarillo: 255, Verde: 280, Gris: 330 - llanuras soleadas)<br>• <span class=\"recipe-name\">Carolina</span> (Habilidad 235 &rarr; Naranja: 235, Amarillo: 260, Verde: 285, Gris: 335 - orillas de agua y pantanos)<br>• <span class=\"recipe-name\">Champiñón fantasma</span> (Habilidad 245 &rarr; Naranja: 245, Amarillo: 270, Verde: 295, Gris: 345 - cuevas e interiores)<br>• <span class=\"recipe-name\">Gromsanguina</span> (Habilidad 250 &rarr; Naranja: 250, Amarillo: 275, Verde: 300, Gris: 350 - suelos corruptos)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Tierras de la Peste del Oeste</strong> y <strong>Frondavil</strong> (perfectas para conectar circuitos de recolección).<br>• <strong>Alternativas:</strong> Feralas, Azshara o Tierras del Interior."
+      },
+      {
+        "min": 270,
+        "max": 300,
+        "mats": {},
+        "description": "<div class=\"step-title\">Herboristería 270 – 300: Tierras de la Peste del Este y Cuna del Invierno</div><strong>Plantas a recolectar:</strong><br>• <span class=\"recipe-name\">Sansam dorado</span> (Habilidad 260 &rarr; Naranja: 260, Amarillo: 285, Verde: 310, Gris: 360)<br>• <span class=\"recipe-name\">Hojasueño</span> (Habilidad 270 &rarr; Naranja: 270, Amarillo: 290, Verde: 315, Gris: 370)<br>• <span class=\"recipe-name\">Salviargenta de montaña</span> (Habilidad 280 &rarr; Naranja: 280, Amarillo: 305, Verde: 330, Gris: 380 - acantilados elevados)<br>• <span class=\"recipe-name\">Flor de peste</span> (Habilidad 285 &rarr; Naranja: 285, Amarillo: 310, Verde: 335, Gris: 385)<br>• <span class=\"recipe-name\">Setelo</span> (Habilidad 290 &rarr; Naranja: 290, Amarillo: 315, Verde: 340, Gris: 390 - exclusiva de Cuna del Invierno)<br>• <span class=\"recipe-name\">Loto negro</span> (Habilidad 300 &rarr; El rey de las plantas de Classic / Forever, esencial para Frascos de banda)<br><br>📍 <strong>Zonas recomendadas:</strong><br>• <strong>Tierras de la Peste del Este</strong> (la reina de Flor de peste y Hojasueño).<br>• <strong>Cuna del Invierno</strong> (única para Setelo y excelente para Salviargenta de montaña).<br>• <strong>Alternativas:</strong> Silithus, Estepas Ardientes y Cráter de Un'Goro."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Herboristería",

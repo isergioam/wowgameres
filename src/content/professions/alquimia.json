@@ -1,4 +1,131 @@
 {
+  "forever": {
+    "expansionName": "Forever",
+    "professionName": "Alquimia",
+    "maxLevel": 300,
+    "description": "Guía optimizada de Alquimia (1-300) en World of Warcraft: Forever. Incluye la ruta económica con Lágrimas de Arthas y la receta exclusiva de Poción de sanación descolorida sublime con sus misiones de facción.",
+    "note": "Ruta actualizada para WoW: Forever. Los costes se han minimizado evitando recetas caras de botín. Para evitar arruinarte comprando plantas en subasta durante el lanzamiento, te recomendamos subir Alquimia a la par con Herboristería siguiendo nuestra guía. Además, recuerda desbloquear la cadena de misiones de la Poción de sanación descolorida sublime (Niña extraña en Páramos de Poniente para la Alianza / Rane Yorick en Argénteos para la Horda) antes de llegar a nivel 270.",
+    "steps": [
+      {
+        "min": 1,
+        "max": 12,
+        "mats": {
+          "Hojaplata": 13,
+          "Vial vacío": 13
+        },
+        "description": "<strong>Alquimia 1 – 12</strong><br><span class=\"recipe-name\">Elixir de fuerza menor &rarr;</span> 13 Hojaplata, 13 Vial vacío.<br><em>Aprende esta receta directamente en cualquier instructor de Alquimia. Solo consume Hojaplata, reservando la Flor de paz para los siguientes rangos.</em>"
+      },
+      {
+        "min": 12,
+        "max": 55,
+        "mats": {
+          "Hojaplata": 43,
+          "Flor de paz": 43,
+          "Vial vacío": 43
+        },
+        "description": "<strong>Alquimia 12 – 55</strong><br><span class=\"recipe-name\">Elixir de defensa menor &rarr;</span> 43 Hojaplata, 43 Flor de paz, 43 Vial vacío.<br><em>Al alcanzar nivel 50 de habilidad (y nivel 10 de personaje), habla con tu instructor para aprender <strong>Alquimista Oficial</strong>.</em>"
+      },
+      {
+        "min": 55,
+        "max": 65,
+        "mats": {
+          "Marregal": 10,
+          "Flor de paz": 10,
+          "Vial vacío": 10
+        },
+        "description": "<strong>Alquimia 55 – 65</strong><br><span class=\"recipe-name\">Poción menor de maná &rarr;</span> 10 Marregal, 10 Flor de paz, 10 Vial vacío."
+      },
+      {
+        "min": 65,
+        "max": 90,
+        "mats": {
+          "Raíz de tierra": 56,
+          "Flor de paz": 28,
+          "Vial vacío": 28
+        },
+        "description": "<strong>Alquimia 65 – 90</strong><br><span class=\"recipe-name\">Elixir de entereza menor &rarr;</span> 56 Raíz de tierra, 28 Flor de paz, 28 Vial vacío.<br><em>Cada preparación utiliza 2 Raíces de tierra y 1 Flor de paz.</em>"
+      },
+      {
+        "min": 90,
+        "max": 120,
+        "mats": {
+          "Marregal": 30,
+          "Brezospina": 60,
+          "Vial con plomo": 30
+        },
+        "description": "<strong>Alquimia 90 – 120</strong><br><span class=\"recipe-name\">Elixir de sabiduría &rarr;</span> 30 Marregal, 60 Brezospina, 30 Vial con plomo.<br><em>A partir de este rango necesitarás Viales con plomo (los venden los suministradores de alquimia junto al instructor).</em>"
+      },
+      {
+        "min": 120,
+        "max": 160,
+        "mats": {
+          "Marregal": 50,
+          "Alga estranguladora": 50,
+          "Vial con plomo": 50
+        },
+        "description": "<strong>Alquimia 120 – 160</strong><br><span class=\"recipe-name\">Poción inferior de maná &rarr;</span> 50 Marregal, 50 Alga estranguladora, 50 Vial con plomo.<br><em>Al nivel 125 de habilidad (y nivel 20 de personaje), aprende <strong>Alquimista Experto</strong> en tu instructor.</em>"
+      },
+      {
+        "min": 160,
+        "max": 195,
+        "mats": {
+          "Alga estranguladora": 40,
+          "Sangrerregia": 40,
+          "Vial con plomo": 40
+        },
+        "description": "<strong>Alquimia 160 – 195</strong><br><span class=\"recipe-name\">Poción de maná &rarr;</span> 40 Alga estranguladora, 40 Sangrerregia, 40 Vial con plomo."
+      },
+      {
+        "min": 195,
+        "max": 205,
+        "mats": {
+          "Alga estranguladora": 10,
+          "Espina de oro": 10,
+          "Vial con plomo": 10
+        },
+        "description": "<strong>Alquimia 195 – 205</strong><br><span class=\"recipe-name\">Elixir de agilidad &rarr;</span> 10 Alga estranguladora, 10 Espina de oro, 10 Vial con plomo.<br><em>💡 Alternativa: si la Espina de oro está cara en subasta, puedes elaborar <span class=\"recipe-name\">Elixir de defensa</span> (1 Vidarraíz, 1 Brezospina).</em>"
+      },
+      {
+        "min": 205,
+        "max": 240,
+        "mats": {
+          "Mostacho de Khadgar": 43,
+          "Espina de oro": 43,
+          "Vial con plomo": 43
+        },
+        "description": "<strong>Alquimia 205 – 240</strong><br><span class=\"recipe-name\">Poción superior de maná &rarr;</span> 43 Mostacho de Khadgar, 43 Espina de oro, 43 Vial con plomo.<br><em>Al nivel 200/225 (nivel 35 de personaje), debes acudir al instructor de <strong>Alquimista Artesano</strong>: Kylanna Vientosol en Bastión Plumaluna (Feralas) para la Alianza, o Rogvar en Rocal (Pantano de las Penas) para la Horda.<br>💡 En nivel 225 puedes comprar la <span class=\"recipe-name\">Receta: piedra de filósofo</span> al Alquimista Morterozugg en Gadgetzan (/way 50.8 27.0). Aunque no es estrictamente obligatoria, otorga puntos garantizados y es imprescindible para transmutar.</em>"
+      },
+      {
+        "min": 240,
+        "max": 260,
+        "mats": {
+          "Lágrimas de Arthas": 25,
+          "Vial de cristal": 25
+        },
+        "description": "<strong>Alquimia 240 – 260</strong><br><span class=\"recipe-name\">Jarabe de detección de no-muertos &rarr;</span> 25 Lágrimas de Arthas, 25 Vial de cristal.<br><em>¡Gran ahorro de oro! Las Lágrimas de Arthas son muy económicas y abundantes. Requiere Viales de cristal.</em>"
+      },
+      {
+        "min": 260,
+        "max": 270,
+        "mats": {
+          "Solea": 20,
+          "Carolina": 20,
+          "Vial de cristal": 10
+        },
+        "description": "<strong>Alquimia 260 – 270</strong><br><span class=\"recipe-name\">Poción excelente de maná &rarr;</span> 20 Solea, 20 Carolina, 10 Vial de cristal.<br><em>Receta vendida por Algor en Entrañas (Horda) y Ulthir en Darnassus (Alianza). Si la Flor de peste del siguiente paso está cara, puedes seguir creando esta poción hasta nivel 280-285.</em>"
+      },
+      {
+        "min": 270,
+        "max": 300,
+        "mats": {
+          "Flor de peste": 32,
+          "Ojo de múrloc": 32,
+          "Vial de cristal": 32
+        },
+        "description": "<strong>Alquimia 270 – 300</strong><br><span class=\"recipe-name\">Poción de sanación descolorida sublime &rarr;</span> 32 Flor de peste, 32 Ojo de múrloc, 32 Vial de cristal.<br>🌟 <strong>¡Receta Exclusiva de WoW: Forever!</strong> Requiere desbloquear una breve cadena de misiones por facción:<br>• <strong>Alianza:</strong> Ve al sur de Páramos de Poniente (/way 42.6 72.4, establo frente a Minas de la Muerte) y habla con la <em>Niña extraña</em> (Odd Child). Inicia <em>My First Alchemy Set</em> y <em>Mi primera poción de verdad</em>. Lleva previamente 5 Viales vacíos, 5 Flor de paz, 5 Hojaplata y 3 Ojos de múrloc.<br>• <strong>Horda:</strong> Habla con <em>Rane Yorick</em> al norte de Bosque de Argénteos (/way 53.6 13.4) para completar <em>Corazones salvajes</em> &rarr; <em>Vuelve con Quinn</em> &rarr; <em>Ojos salvajes</em>. Desbloquearás al instructor especial <em>Boticario Renferrel</em> en El Sepulcro (/way 42.8 40.8). Lleva previamente 3 Corazones de lupo descoloridos y 3 Ojos de múrloc."
+      }
+    ]
+  },
   "vanilla": {
     "expansionName": "Vanilla (Classic)",
     "professionName": "Alquimia",

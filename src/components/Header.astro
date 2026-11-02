@@ -53,15 +53,14 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
                       <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
                     </svg>
                   </a>
-                <!-- COMENTADO HASTA EL DÍA DEL LANZAMIENTO
-                <li class="version-switch-container">
+                </li>
+                <li class="version-switch-container locked" id="versionSwitchContainer">
                   <div class="version-switch" id="versionSwitch" data-active="retail">
                     <button class="v-btn active" data-v="retail">Retail</button>
                     <button class="v-btn" data-v="forever">Forever</button>
                     <div class="v-slider"></div>
                   </div>
                 </li>
-                -->
                 <li>
                   <button id="darkModeToggle" aria-label="Cambiar tema">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="theme-icon moon">
@@ -182,7 +181,7 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
 
     @media (max-width: 768px) {
         .logo-img { width: 250px; }
-        .version-switch-container { display: none; }
+        .version-switch-container { display: none !important; }
     }
 
     /* Switch de Versiones */
@@ -190,6 +189,25 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
         display: flex;
         align-items: center;
         margin-right: 0.5rem;
+    }
+
+    .version-switch-container.locked {
+        display: none !important;
+    }
+
+    .version-switch-container.revealed {
+        animation: switchReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes switchReveal {
+        from {
+            opacity: 0;
+            transform: scale(0.85);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 
     .version-switch {
@@ -249,6 +267,22 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
         background: linear-gradient(135deg, #10627e, #b2935d);
         box-shadow: 0 2px 5px rgba(16, 98, 126, 0.4);
     }
+
+    /* Soporte de Onda Circular en View Transitions */
+    :global(::view-transition-old(root)),
+    :global(::view-transition-new(root)) {
+        animation: none;
+        mix-blend-mode: normal;
+    }
+    :global(::view-transition-image-pair(root)) {
+        isolation: isolate;
+    }
+    :global(::view-transition-old(root)) {
+        z-index: 1;
+    }
+    :global(::view-transition-new(root)) {
+        z-index: 9999;
+    }
 </style>
 
 <script>
@@ -285,7 +319,7 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
     }
 
     if (toggle) {
-      toggle.addEventListener('click', (event) => {
+      toggle.addEventListener('click', (event: MouseEvent) => {
         const isDark = !document.documentElement.classList.contains('dark-mode');
         
         if (!(document as any).startViewTransition) {
@@ -294,8 +328,9 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
           return;
         }
 
-        const x = event.clientX;
-        const y = event.clientY;
+        const rect = toggle.getBoundingClientRect();
+        const x = (event.clientX && event.clientX > 0) ? event.clientX : (rect.left + rect.width / 2);
+        const y = (event.clientY && event.clientY > 0) ? event.clientY : (rect.top + rect.height / 2);
         const endRadius = Math.hypot(
           Math.max(x, window.innerWidth - x),
           Math.max(y, window.innerHeight - y)
@@ -313,12 +348,12 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
           ];
           document.documentElement.animate(
             {
-              clipPath: isDark ? clipPath : [...clipPath].reverse()
+              clipPath: clipPath
             },
             {
-              duration: 400,
-              easing: 'ease-in-out',
-              pseudoElement: isDark ? '::view-transition-new(root)' : '::view-transition-old(root)'
+              duration: 450,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              pseudoElement: '::view-transition-new(root)'
             }
           );
         });
@@ -353,6 +388,7 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
     ];
 
     const expansions = [
+      { id: 'forever', name: 'World of Warcraft: Forever' },
       { id: 'midnight', name: 'Midnight (12.0)' },
       { id: 'tww', name: 'The War Within' },
       { id: 'df', name: 'Dragonflight' },
@@ -411,15 +447,79 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
       });
     }
 
-    // --- Lógica del Switch de Versiones (Retail vs Forever) ---
+    // --- Lógica del Switch de Versiones (Retail vs Forever) y Desbloqueo Automático ---
+    const switchContainer = document.getElementById('versionSwitchContainer');
     const vSwitch = document.getElementById('versionSwitch');
+
+    // Fecha objetivo exacta para el lanzamiento de WoW Forever (sincronizada con el banner)
+    const TARGET_LAUNCH_DATE = new Date('2026-11-04T23:00:00Z').getTime();
+
+    // Soporte para pruebas previas al lanzamiento:
+    // Permite al administrador previsualizar usando ?preview=forever o navegando a rutas /forever/
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('preview') === 'forever') {
+      try { localStorage.setItem('preview-forever', 'true'); } catch (e) {}
+    } else if (urlParams.get('preview') === 'retail') {
+      try { localStorage.removeItem('preview-forever'); } catch (e) {}
+    }
+
+    const currentPath = window.location.pathname;
+    let isPreview = false;
+    try {
+      isPreview = currentPath.includes('/forever') || 
+                  urlParams.get('preview') === 'forever' || 
+                  localStorage.getItem('preview-forever') === 'true';
+    } catch (e) {}
+
+    function unlockVersionSwitch(withAnimation = false) {
+      if (!switchContainer) return;
+      switchContainer.classList.remove('locked');
+      if (withAnimation) {
+        switchContainer.classList.add('revealed');
+      }
+    }
+
+    const isLaunched = Date.now() >= TARGET_LAUNCH_DATE;
+
+    if (isLaunched || isPreview) {
+      unlockVersionSwitch(false);
+    } else {
+      const remainingTime = TARGET_LAUNCH_DATE - Date.now();
+      if (remainingTime > 0 && remainingTime < 2147483647) {
+        setTimeout(() => {
+          unlockVersionSwitch(true);
+        }, remainingTime);
+      }
+    }
+
+    // Escuchar el evento emitido por el banner cuando el contador llegue a cero en tiempo real
+    window.addEventListener('wow-forever-launch', () => {
+      unlockVersionSwitch(true);
+    });
+
     if (vSwitch) {
       const vBtns = vSwitch.querySelectorAll('.v-btn');
       
-      // Leer preferencia guardada
-      const savedVersion = localStorage.getItem('wow-preferred-version') || 'retail';
+      // Leer versión adecuada: según ruta actual o preferencia guardada
+      let initialVersion = 'retail';
+      if (currentPath.includes('/forever')) {
+        initialVersion = 'forever';
+      } else if (currentPath.match(/\/guias\/[^\/]+\/[^\/]+/)) {
+        initialVersion = 'retail';
+      } else if (isLaunched || isPreview) {
+        initialVersion = localStorage.getItem('wow-preferred-version') || 'retail';
+      } else {
+        // Antes del lanzamiento, mantener siempre Retail para los visitantes
+        initialVersion = 'retail';
+      }
       
-      function setVersion(version: string) {
+      function applyVersionState(version: string) {
+        document.documentElement.setAttribute('data-version', version);
+        if (version === 'forever') {
+          document.documentElement.classList.remove('has-wow-banner');
+        } else if (document.getElementById('wow-forever-banner')) {
+          document.documentElement.classList.add('has-wow-banner');
+        }
         vSwitch!.setAttribute('data-active', version);
         vBtns.forEach(btn => {
           if (btn.getAttribute('data-v') === version) {
@@ -428,25 +528,86 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
             btn.classList.remove('active');
           }
         });
-        
-        // Simular un cambio de entorno general cambiando momentáneamente el fondo
-        // En producción aquí iría un `window.location.href = '...'` a la otra web.
-        if (version === 'forever') {
-            document.body.style.backgroundColor = '#06202c'; // Fondo teal de prueba
+        window.dispatchEvent(new CustomEvent('version-change', { detail: { version } }));
+      }
+
+      function setVersion(version: string, event?: MouseEvent) {
+        if (event && (document as any).startViewTransition) {
+          const x = event.clientX;
+          const y = event.clientY;
+          const endRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+          );
+
+          const transition = (document as any).startViewTransition(() => {
+            applyVersionState(version);
+          });
+
+          transition.ready.then(() => {
+            document.documentElement.animate(
+              {
+                clipPath: [
+                  `circle(0px at ${x}px ${y}px)`,
+                  `circle(${endRadius}px at ${x}px ${y}px)`
+                ]
+              },
+              {
+                duration: 500,
+                easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+                pseudoElement: '::view-transition-new(root)'
+              }
+            );
+          });
         } else {
-            document.body.style.backgroundColor = ''; // Default
+          applyVersionState(version);
         }
       }
 
-      // Aplicar estado inicial
-      setVersion(savedVersion);
+      // Aplicar estado inicial (sin transición)
+      setVersion(initialVersion);
 
       // Eventos
       vBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
           const version = btn.getAttribute('data-v') || 'retail';
+          const path = window.location.pathname;
+
+          // 1. Si estamos dentro de una guía individual: /guias/[profesion]/[expansion]/
+          const guideMatch = path.match(/^\/guias\/([^\/]+)\/([^\/]+)\/?$/);
+          if (guideMatch) {
+            const [, prof, exp] = guideMatch;
+            if (version === 'retail' && exp === 'forever') {
+              localStorage.setItem('wow-preferred-version', 'retail');
+              const retailExp = prof === 'primeros-auxilios' ? 'bfa' : 'midnight';
+              window.location.href = `/guias/${prof}/${retailExp}/`;
+              return;
+            } else if (version === 'forever' && exp !== 'forever') {
+              localStorage.setItem('wow-preferred-version', 'forever');
+              window.location.href = `/guias/${prof}/forever/`;
+              return;
+            }
+          }
+
+          // 2. Si estamos en el listado de una expansión: /guias/[expansion]/
+          const expMatch = path.match(/^\/guias\/([^\/]+)\/?$/);
+          if (expMatch) {
+            const [, exp] = expMatch;
+            if (version === 'retail' && exp === 'forever') {
+              localStorage.setItem('wow-preferred-version', 'retail');
+              window.location.href = '/guias/midnight/';
+              return;
+            } else if (version === 'forever' && exp !== 'forever') {
+              localStorage.setItem('wow-preferred-version', 'forever');
+              window.location.href = '/guias/forever/';
+              return;
+            }
+          }
+
+          // 3. En la portada (/) o páginas generales, aplicar transición in-situ
+          if (document.documentElement.getAttribute('data-version') === version) return;
           localStorage.setItem('wow-preferred-version', version);
-          setVersion(version);
+          setVersion(version, e as MouseEvent);
         });
       });
     }
