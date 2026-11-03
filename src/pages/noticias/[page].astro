@@ -314,7 +314,7 @@ const description = "Explora el historial completo de noticias de World of Warcr
 
   .toolbar-sticky {
     position: sticky;
-    top: var(--header-height-desktop, 100px);
+    top: var(--sticky-top-offset, 118px);
     z-index: 1000;
     transition: all 0.3s ease;
     background: var(--toolbar-bg);
@@ -472,18 +472,22 @@ const description = "Explora el historial completo de noticias de World of Warcr
 
   @media (max-width: 1024px) {
     .toolbar-sticky {
-      top: 100px;
+      top: var(--sticky-top-offset, 118px);
     }
   }
   @media (max-width: 1024px) and (min-width: 769px) {
     .toolbar-sticky {
-      top: var(--header-height-tablet, 135px);
+      top: var(--sticky-top-offset, 118px);
     }
   }
 
   @media (max-width: 768px) {
     .toolbar-sticky {
-      top: var(--header-height-mobile, 110px);
+      top: var(--sticky-top-offset, 102px);
+    }
+    .news-gallery {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
     .news-command-bar {
       flex-direction: column;
@@ -508,6 +512,16 @@ const description = "Explora el historial completo de noticias de World of Warcr
     }
     .main-news-section {
       padding-top: 20px !important;
+    }
+    .pagination-nav {
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+      padding: 20px 0;
+    }
+    .page-link {
+      padding: 8px 14px;
+      font-size: 0.85rem;
     }
   }
 
@@ -590,6 +604,7 @@ const description = "Explora el historial completo de noticias de World of Warcr
     line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin: 0;
@@ -644,10 +659,10 @@ const description = "Explora el historial completo de noticias de World of Warcr
 
   @media (max-width: 480px) {
     .toolbar-sticky {
-      top: var(--header-height-mobile, 110px);
+      top: var(--sticky-top-offset, 102px);
     }
     .card-content {
-      padding: 20px;
+      padding: 18px;
     }
     .card-content h3 {
       font-size: 1.15rem;

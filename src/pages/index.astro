@@ -319,8 +319,8 @@ const description =
       >
         <section
           id="expansiones"
-          class="section"
-          style="margin-top: -130px; padding-top: 0; margin-bottom: 0; position: relative; z-index: 5;"
+          class="section expansions-section-overlap"
+          style="padding-top: 0; margin-bottom: 0; position: relative; z-index: 5;"
         >
           <!-- Cuadrícula Modo Retail: 12 Expansiones -->
           <div class="expansiones grid-mode-retail">
@@ -409,7 +409,7 @@ const description =
             class="section news-preview-section"
             style="margin-top: 24px; padding-top: 0; padding-bottom: 0; margin-bottom: 0; position: relative; z-index: 5;"
           >
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 25px;">
               <h2
                 class="news-section-title"
                 style="border: none; padding: 0; margin: 0;"
@@ -595,6 +595,7 @@ const description =
   .forever-gradient-title {
     background: linear-gradient(135deg, #fdf1d6 0%, #d4b47d 45%, #22d3ee 100%) !important;
     -webkit-background-clip: text !important;
+    background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     text-shadow: 0 4px 25px rgba(16, 98, 126, 0.5);
   }
@@ -831,6 +832,7 @@ const description =
     margin-bottom: 20px;
     background: linear-gradient(135deg, #ffe07d 0%, #d1a3ff 50%, #9f62ff 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
     border: none;
@@ -1072,6 +1074,7 @@ const description =
     text-transform: uppercase;
     background: linear-gradient(to right, #ffffff, #bb9fff);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.1;
   }
@@ -1133,6 +1136,7 @@ const description =
   html:not(.dark-mode) .cinematic-header h2 {
     background: linear-gradient(to right, #1a1a2e, #6a0dad);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -1149,26 +1153,50 @@ const description =
     color: #444;
   }
 
+  .expansions-section-overlap {
+    margin-top: -110px;
+  }
+
   @media (max-width: 1024px) and (min-width: 769px) {
     .hero-section {
       height: auto;
-      padding: 180px 40px 100px;
-      margin-top: calc(-1 * var(--header-height-tablet));
+      padding: 140px 40px 80px;
+      margin-top: 0 !important;
     }
     .hero-section h1 {
       font-size: 2.8rem;
+    }
+    .expansions-section-overlap {
+      margin-top: -60px;
     }
   }
 
   @media (max-width: 768px) {
     .hero-section {
       height: auto;
-      padding: 180px 20px 100px;
-      margin-top: calc(-1 * var(--header-height-mobile));
+      min-height: auto;
+      padding: 36px 16px 45px;
+      margin-top: 0 !important;
     }
 
-    .hero-section h1 {
-      font-size: 2.2rem;
+    .hero-background {
+      height: 420px;
+    }
+
+    .hero-section h1,
+    .gradient-title {
+      font-size: clamp(1.8rem, 7vw, 2.3rem);
+      margin-bottom: 14px;
+    }
+
+    .hero-description {
+      font-size: 0.96rem;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .expansions-section-overlap {
+      margin-top: -15px !important;
     }
 
     .hero-stats {
@@ -1195,6 +1223,23 @@ const description =
 
     .cinematic-container {
       padding: 0 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .expansiones {
+      gap: 10px !important;
+    }
+
+    .card-expansion {
+      aspect-ratio: 4 / 3.4;
+      padding: 12px 10px !important;
+    }
+
+    .card-expansion span.exp-name {
+      font-size: 0.76rem;
+      white-space: normal;
+      line-height: 1.15;
     }
   }
 </style>

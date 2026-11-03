@@ -113,7 +113,7 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
         width: fit-content;
         max-width: 90%;
         border: 1px solid rgba(255, 255, 255, 0.25);
-        transition: top 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: top 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
         white-space: nowrap;
     }
 
@@ -123,13 +123,15 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
 
     @media (max-width: 768px) {
         .nexo-tool-banner {
-            top: 125px;
-            font-size: 0.78rem;
-            padding: 0.35rem 0.9rem;
-            gap: 0.5rem;
+            top: 116px;
+            font-size: 0.74rem;
+            padding: 0.25rem 0.75rem;
+            gap: 0.45rem;
         }
         .nexo-tool-banner.scrolled {
-            top: 105px;
+            top: 102px;
+            opacity: 0;
+            pointer-events: none;
         }
         .nexo-text {
             display: none;
@@ -180,7 +182,12 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
     :global(.dark-mode) .logo-black { display: none; }
 
     @media (max-width: 768px) {
-        .logo-img { width: 250px; }
+        .logo-img {
+            width: auto !important;
+            max-width: 145px !important;
+            max-height: 36px !important;
+            height: auto !important;
+        }
         .version-switch-container { display: none !important; }
     }
 

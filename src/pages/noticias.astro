@@ -399,6 +399,7 @@ const description =
     margin-bottom: 30px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -435,7 +436,7 @@ const description =
 
   .toolbar-sticky {
     position: sticky;
-    top: var(--header-height-desktop, 100px);
+    top: var(--sticky-top-offset, 118px);
     z-index: 1000;
     transition: all 0.3s ease;
     background: var(--toolbar-bg);
@@ -594,18 +595,22 @@ const description =
 
   @media (max-width: 1024px) {
     .toolbar-sticky {
-      top: 100px;
+      top: var(--sticky-top-offset, 118px);
     }
   }
   @media (max-width: 1024px) and (min-width: 769px) {
     .toolbar-sticky {
-      top: var(--header-height-tablet, 135px);
+      top: var(--sticky-top-offset, 118px);
     }
   }
 
   @media (max-width: 768px) {
     .toolbar-sticky {
-      top: var(--header-height-mobile, 110px);
+      top: var(--sticky-top-offset, 102px);
+    }
+    .news-gallery {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
     .news-command-bar {
       flex-direction: column;
@@ -632,12 +637,28 @@ const description =
       padding-top: 20px !important;
     }
     .hero-cinematic {
-      height: 50vh;
-      min-height: 400px;
-      padding-top: 20px;
+      height: auto;
+      min-height: 280px;
+      padding: 28px 0 32px;
+      align-items: center;
     }
     .hero-content h1 {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+    .hero-content p {
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+    .pagination-nav {
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 36px;
+      padding: 20px 0;
+    }
+    .page-link {
+      padding: 8px 14px;
+      font-size: 0.85rem;
     }
   }
 
@@ -721,6 +742,7 @@ const description =
     line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin: 0;
@@ -776,14 +798,14 @@ const description =
   /* Ajuste ultra-fino para dispositivos muy pequeños */
   @media (max-width: 480px) {
     .toolbar-sticky {
-      top: var(--header-height-mobile, 110px);
+      top: var(--sticky-top-offset, 102px);
     }
     .hero-cinematic {
-      height: 55vh;
-      min-height: 360px;
+      height: auto;
+      min-height: 260px;
     }
     .card-content {
-      padding: 20px;
+      padding: 18px;
     }
     .card-content h3 {
       font-size: 1.15rem;
