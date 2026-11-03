@@ -29,12 +29,7 @@
         <div class="banner-right">
             <div class="countdown" id="wow-countdown">
                 <div class="time-block">
-                    <span class="number" id="cd-days">40</span>
-                    <span class="label">DÍAS</span>
-                </div>
-                <span class="separator">:</span>
-                <div class="time-block">
-                    <span class="number" id="cd-hours">00</span>
+                    <span class="number" id="cd-hours">35</span>
                     <span class="label">HORAS</span>
                 </div>
                 <span class="separator">:</span>
@@ -340,7 +335,6 @@
     // Fecha objetivo exacta extraída directamente de la web oficial de Blizzard
     const targetDate = new Date('2026-11-04T23:00:00Z').getTime();
 
-    const elDays = document.getElementById('cd-days');
     const elHours = document.getElementById('cd-hours');
     const elMins = document.getElementById('cd-minutes');
     const elSecs = document.getElementById('cd-seconds');
@@ -370,8 +364,7 @@
                 `;
             }
 
-            if (elDays && elHours && elMins && elSecs) {
-                elDays.innerText = "00";
+            if (elHours && elMins && elSecs) {
                 elHours.innerText = "00";
                 elMins.innerText = "00";
                 elSecs.innerText = "00";
@@ -379,17 +372,15 @@
             return;
         }
 
-        if (!elDays || !elHours || !elMins || !elSecs) return;
+        if (!elHours || !elMins || !elSecs) return;
 
-        // Cálculos matemáticos para días, horas, minutos y segundos
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // Cálculos matemáticos en horas totales (incluyendo días restantes), minutos y segundos
+        const totalHours = Math.floor(distance / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Formatear a 2 dígitos
-        elDays.innerText = days.toString().padStart(2, '0');
-        elHours.innerText = hours.toString().padStart(2, '0');
+        elHours.innerText = totalHours.toString().padStart(2, '0');
         elMins.innerText = minutes.toString().padStart(2, '0');
         elSecs.innerText = seconds.toString().padStart(2, '0');
     }
