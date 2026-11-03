@@ -1,0 +1,429 @@
+---
+import { FOREVER_PROFESSIONS_CONFIG } from "../data/foreverConfig";
+
+interface Props {
+  onlyInForeverMode?: boolean;
+}
+
+const { onlyInForeverMode = false } = Astro.props;
+const activeProfessions = FOREVER_PROFESSIONS_CONFIG.filter((p) => p.enabled);
+---
+
+<section
+  class={`forever-camping-overview section ${onlyInForeverMode ? "camping-mode-forever-only" : ""}`}
+  aria-labelledby="camping-section-title"
+>
+  <div class="camping-box">
+    <div class="camping-header">
+      <span class="camping-eyebrow">🔥 NUEVO SISTEMA DE WOW FOREVER</span>
+      <h2 id="camping-section-title" class="camping-title">
+        Sistema de Campamentos y Bufos de Profesión
+      </h2>
+      <p class="camping-subtitle">
+        En <strong>World of Warcraft: Forever</strong>, las profesiones pueden colocar objetos alrededor de una hoguera en el mundo abierto. Cualquier jugador que descanse junto al fuego recibe potentes beneficios de estadísticas, experiencia descansada, vendedores y estaciones de fabricación portátiles.
+      </p>
+    </div>
+
+    <div class="camping-pillars">
+      <div class="pillar-card">
+        <span class="pillar-badge">Hoguera Base (Cocina)</span>
+        <strong>3, 5 y 10 huecos de mejora</strong>
+        <p>La Hoguera básica admite 3 objetos de profesión, la de Oficial (140) admite 5 y la de Experto (220) hasta 10 mejoras simultáneas.</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-badge">3 Tiers por Profesión</span>
+        <strong>Niveles 20, 140 y 300</strong>
+        <p>Al nivel 20 desbloqueas el bufo principal, al 140 una estación intermedia y al 300 la estación maestra portátil (Forja, Laboratorio, Telar...).</p>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-badge">Reutilización Compartida</span>
+        <strong>Beneficio para todo el grupo</strong>
+        <p>Colocar una mejora de campamento tiene 1 h de reutilización, pero cualquier aventurero que pase y se siente junto al fuego obtiene todos los bufos activos.</p>
+      </div>
+    </div>
+
+    <div class="camping-table-wrapper">
+      <table class="camping-table">
+        <thead>
+          <tr>
+            <th>Profesión</th>
+            <th>Beneficio / Bufo Principal</th>
+            <th>Tier 1 (Nv. 20)</th>
+            <th>Tier 2 (Nv. 140)</th>
+            <th>Tier 3 (Nv. 300)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            activeProfessions.map((prof) => {
+              const t1 = prof.campTiers?.[0];
+              const t2 = prof.campTiers?.[1];
+              const t3 = prof.campTiers?.[2];
+              return (
+                <tr>
+                  <td data-label="Profesión" class="prof-cell">
+                    <a href={`/guias/${prof.id}/forever/`} class="prof-table-link">
+                      <span class="prof-dot" style={`background: ${prof.color};`} />
+                      <span class="prof-name-text">{prof.name}</span>
+                      <span class="prof-type-tag">{prof.type}</span>
+                    </a>
+                  </td>
+                  <td data-label="Bufo Principal" class="buff-cell">
+                    <span class="buff-pill">{prof.campBuff}</span>
+                  </td>
+                  <td data-label={`Tier 1 (Nv. ${t1?.skillReq ?? 20})`} class="tier-cell">
+                    <strong>{t1?.itemName}</strong>
+                  </td>
+                  <td data-label={`Tier 2 (Nv. ${t2?.skillReq ?? 140})`} class="tier-cell">
+                    <strong>{t2?.itemName}</strong>
+                  </td>
+                  <td data-label={`Tier 3 (Nv. ${t3?.skillReq ?? 300})`} class="tier-cell">
+                    <strong>{t3?.itemName}</strong>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Mostrar solo en modo Forever cuando se usa en la portada */
+  .camping-mode-forever-only {
+    display: none;
+  }
+
+  :global(html[data-version="forever"]) .camping-mode-forever-only {
+    display: block;
+    animation: campingFadeIn 0.45s ease forwards;
+  }
+
+  @keyframes campingFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .camping-box {
+    background: linear-gradient(145deg, rgba(6, 34, 48, 0.92) 0%, rgba(3, 17, 25, 0.96) 100%);
+    border: 1px solid rgba(212, 180, 125, 0.35);
+    border-top: 3px solid #d4b47d;
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+  }
+
+  :global(html:not(.dark-mode)) .camping-box {
+    background: linear-gradient(145deg, #f4f9fb 0%, #e6f2f6 100%);
+    border-color: rgba(16, 98, 126, 0.25);
+    border-top: 3px solid #b2935d;
+    color: #1e293b;
+    box-shadow: 0 10px 30px rgba(16, 98, 126, 0.1);
+  }
+
+  .camping-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 26px auto;
+  }
+
+  .camping-eyebrow {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #fdf1d6;
+    background: linear-gradient(135deg, #10627e, #b2935d);
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  .camping-title {
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 900;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    color: #fdf1d6 !important;
+    letter-spacing: -0.5px;
+  }
+
+  :global(html:not(.dark-mode)) .camping-title {
+    color: #0f3d52 !important;
+  }
+
+  .camping-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: rgba(241, 245, 249, 0.85);
+    margin: 0;
+  }
+
+  :global(html:not(.dark-mode)) .camping-subtitle {
+    color: #334155;
+  }
+
+  .camping-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .pillar-card {
+    background: rgba(16, 98, 126, 0.16);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  :global(html:not(.dark-mode)) .pillar-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(16, 98, 126, 0.2);
+  }
+
+  .pillar-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #22d3ee;
+  }
+
+  :global(html:not(.dark-mode)) .pillar-badge {
+    color: #10627e;
+  }
+
+  .pillar-card strong {
+    font-size: 1rem;
+    color: #fdf1d6;
+  }
+
+  :global(html:not(.dark-mode)) .pillar-card strong {
+    color: #0f172a;
+  }
+
+  .pillar-card p {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin: 0;
+    color: rgba(226, 232, 240, 0.82);
+  }
+
+  :global(html:not(.dark-mode)) .pillar-card p {
+    color: #475569;
+  }
+
+  .camping-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 180, 125, 0.25);
+  }
+
+  .camping-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .camping-table thead tr {
+    background: rgba(16, 98, 126, 0.35);
+    border-bottom: 2px solid #d4b47d;
+  }
+
+  :global(html:not(.dark-mode)) .camping-table thead tr {
+    background: rgba(16, 98, 126, 0.12);
+    border-bottom-color: #b2935d;
+  }
+
+  .camping-table th {
+    padding: 13px 14px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #fdf1d6;
+    white-space: nowrap;
+  }
+
+  :global(html:not(.dark-mode)) .camping-table th {
+    color: #0f3d52;
+  }
+
+  .camping-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.2s ease;
+  }
+
+  :global(html:not(.dark-mode)) .camping-table tbody tr {
+    border-bottom-color: rgba(16, 98, 126, 0.12);
+  }
+
+  .camping-table tbody tr:hover {
+    background: rgba(34, 211, 238, 0.08);
+  }
+
+  .camping-table td {
+    padding: 12px 14px;
+    vertical-align: middle;
+  }
+
+  .prof-table-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fdf1d6;
+    font-weight: 700;
+    transition: color 0.2s ease;
+  }
+
+  :global(html:not(.dark-mode)) .prof-table-link {
+    color: #0f3d52;
+  }
+
+  .prof-table-link:hover {
+    color: #22d3ee;
+  }
+
+  .prof-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .prof-type-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  :global(html:not(.dark-mode)) .prof-type-tag {
+    background: rgba(16, 98, 126, 0.1);
+    color: #334155;
+  }
+
+  .buff-pill {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #22d3ee;
+    background: rgba(34, 211, 238, 0.12);
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+
+  :global(html:not(.dark-mode)) .buff-pill {
+    color: #0e7490;
+    background: rgba(16, 98, 126, 0.08);
+    border-color: rgba(16, 98, 126, 0.25);
+  }
+
+  .tier-cell strong {
+    font-weight: 600;
+    color: #e2e8f0;
+    font-size: 0.86rem;
+  }
+
+  :global(html:not(.dark-mode)) .tier-cell strong {
+    color: #1e293b;
+  }
+
+  @media (max-width: 900px) {
+    .camping-pillars {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .camping-box {
+      padding: 20px 16px;
+    }
+
+    .camping-subtitle {
+      font-size: 0.9rem;
+    }
+
+    /* En móvil transformamos cada fila de la tabla en una tarjeta apilada fácil de leer */
+    .camping-table thead {
+      display: none;
+    }
+
+    .camping-table,
+    .camping-table tbody,
+    .camping-table tr,
+    .camping-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .camping-table tbody tr {
+      padding: 14px;
+      border-bottom: 1px solid rgba(212, 180, 125, 0.22);
+    }
+
+    .camping-table td {
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      text-align: right;
+    }
+
+    .camping-table td.prof-cell {
+      padding-bottom: 10px;
+      margin-bottom: 6px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    :global(html:not(.dark-mode)) .camping-table td.prof-cell {
+      border-bottom-color: rgba(16, 98, 126, 0.15);
+    }
+
+    .camping-table td:not(.prof-cell)::before {
+      content: attr(data-label);
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #d4b47d;
+      text-align: left;
+      flex-shrink: 0;
+    }
+
+    :global(html:not(.dark-mode)) .camping-table td:not(.prof-cell)::before {
+      color: #10627e;
+    }
+
+    .buff-pill {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+    }
+  }
+</style>
+

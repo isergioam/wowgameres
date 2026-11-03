@@ -2,7 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import { isProfessionEnabledInForever } from "../../data/foreverConfig";
+import {
+  isProfessionEnabledInForever,
+  getForeverProfessionConfig,
+} from "../../data/foreverConfig";
+import ForeverCampingSection from "../../components/ForeverCampingSection.astro";
 
 const allImages: Record<string, any> = import.meta.glob(
   "/src/assets/images/**/*.{webp,png,jpg,jpeg}",
@@ -121,6 +125,10 @@ const filteredProfessions = allProfessions
   .map((p) => ({
     id: p.id,
     ...profMetadata[p.id],
+    campBuffShort:
+      expansion === "forever"
+        ? getForeverProfessionConfig(p.id)?.campBuffShort
+        : undefined,
   }));
 
 const crafting = filteredProfessions.filter((p) => p.type === "crafting");
@@ -204,6 +212,9 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
                         return <img src={prof.img} alt={prof.name} />;
                       })()}
                     </div>
+                    {prof.campBuffShort && (
+                      <span class="card-camp-badge">{prof.campBuffShort}</span>
+                    )}
                     <div class="card-overlay">
                       <h3>{prof.name}</h3>
                     </div>
@@ -241,6 +252,9 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
                       return <img src={prof.img} alt={prof.name} />;
                     })()}
                   </div>
+                  {prof.campBuffShort && (
+                    <span class="card-camp-badge">{prof.campBuffShort}</span>
+                  )}
                   <div class="card-overlay">
                     <h3>{prof.name}</h3>
                   </div>
@@ -278,6 +292,9 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
                       return <img src={prof.img} alt={prof.name} />;
                     })()}
                   </div>
+                  {prof.campBuffShort && (
+                    <span class="card-camp-badge">{prof.campBuffShort}</span>
+                  )}
                   <div class="card-overlay">
                     <h3>{prof.name}</h3>
                   </div>
@@ -288,6 +305,8 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
         </section>
       )
     }
+
+    {expansion === "forever" && <ForeverCampingSection />}
   </main>
 </BaseLayout>
 
@@ -302,11 +321,35 @@ const seoDescription = `Todas las guías de profesiones de Artesanía para la ex
     letter-spacing: 1px;
   }
 
+  .card-camp-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 4;
+    background: rgba(10, 12, 18, 0.88);
+    border: 1px solid rgba(255, 209, 0, 0.45);
+    color: #ffd100;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.3px;
+  }
+
   @media (max-width: 768px) {
     .section-subtitle {
       font-size: 1.15rem;
       margin-bottom: 18px;
       padding-left: 12px;
+    }
+
+    .card-camp-badge {
+      top: 8px;
+      right: 8px;
+      font-size: 0.65rem;
+      padding: 3px 8px;
     }
   }
 </style>

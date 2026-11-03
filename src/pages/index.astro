@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/NewsCard.astro";
 import DonationBanner from "../components/DonationBanner.astro";
+import ForeverCampingSection from "../components/ForeverCampingSection.astro";
 
 import newsData from "../content/news/latest.json";
 import { Image } from "astro:assets";
@@ -317,6 +318,9 @@ const description =
                       class="card-expansion-img"
                     />
                     <div class="card-expansion-overlay" />
+                    {prof.campBuffShort && (
+                      <span class="camp-buff-badge">{prof.campBuffShort}</span>
+                    )}
                     <span
                       class="exp-name"
                       style="position: relative; z-index: 2;"
@@ -329,6 +333,11 @@ const description =
             }
           </div>
         </section>
+
+        <!-- Sección del Sistema de Campamentos y Bufos (visible en modo Forever) -->
+        <div style="margin-top: 28px;">
+          <ForeverCampingSection onlyInForeverMode={true} />
+        </div>
       </div>
     </div>
 
@@ -1088,6 +1097,32 @@ const description =
     margin-top: -110px;
   }
 
+  .camp-buff-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 3;
+    display: inline-block;
+    width: fit-content;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #fdf1d6;
+    background: rgba(3, 17, 25, 0.85);
+    border: 1px solid rgba(212, 180, 125, 0.55);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   @media (max-width: 1024px) and (min-width: 769px) {
     .hero-section {
       height: auto;
@@ -1171,6 +1206,15 @@ const description =
       font-size: 0.76rem;
       white-space: normal;
       line-height: 1.15;
+    }
+
+    .camp-buff-badge {
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      max-width: calc(100% - 12px);
+      font-size: 0.62rem;
+      padding: 2px 7px;
     }
   }
 </style>

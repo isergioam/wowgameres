@@ -5,7 +5,10 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButtons from "../../../components/ShareButtons.astro";
 import ProfessionsCarousel from "../../../components/ProfessionsCarousel.astro";
 import { WOWHEAD_IDS } from "../../../data/wowheadIds";
-import { isProfessionEnabledInForever } from "../../../data/foreverConfig";
+import {
+  isProfessionEnabledInForever,
+  getForeverProfessionConfig,
+} from "../../../data/foreverConfig";
 
 
 interface Step {
@@ -188,6 +191,10 @@ const pairedProfessions: Record<string, { id: string; name: string; desc: string
 };
 
 const pairedProf = pairedProfessions[professionId];
+const foreverCampData =
+  expansionId === "forever"
+    ? getForeverProfessionConfig(professionId)
+    : undefined;
 
 // Datos Estructurados para Fragmentos Destacados en Google
 const schemaJSON = {
@@ -307,6 +314,49 @@ const schemaJSON = {
         </p>
       )}
     </div>
+
+    {foreverCampData && (
+      <section class="forever-camping-detail-card section" id="campamento">
+        <div class="camp-detail-header">
+          <div class="camp-detail-title-group">
+            <span class="camp-detail-kicker">🔥 SISTEMA DE CAMPAMENTO · WOW FOREVER</span>
+            <h2 class="camp-detail-title">
+              Beneficios y Estaciones de {professionName}
+            </h2>
+          </div>
+          <div class="camp-detail-main-buff">
+            <span class="camp-buff-label">Bufo Principal</span>
+            <span class="camp-buff-value">{foreverCampData.campBuff}</span>
+          </div>
+        </div>
+
+        <p class="camp-detail-summary">{foreverCampData.campSummary}</p>
+
+        <div class="camping-tiers-grid">
+          {foreverCampData.campTiers.map((tier) => (
+            <div class={`camping-tier-card tier-${tier.tier}`}>
+              <div class="camping-tier-top">
+                <span class="camping-tier-badge">TIER {tier.tier}</span>
+                <span class="camping-tier-skill">
+                  Nivel {tier.skillReq} de {professionName}
+                </span>
+              </div>
+              <h3 class="camping-tier-item">{tier.itemName}</h3>
+              <p class="camping-tier-effect">{tier.effect}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="camp-detail-footer">
+          <span>
+            💡 Todos los objetos de campamento comparten tiempo de reutilización y se colocan alrededor de una Hoguera (3, 5 o 10 huecos).
+          </span>
+          <a href="/guias/forever/#forever-camping" class="camp-detail-link">
+            Ver tabla de las 12 profesiones →
+          </a>
+        </div>
+      </section>
+    )}
 
     <!-- Controles Nivelación -->
     <div
@@ -1256,3 +1306,222 @@ const schemaJSON = {
     }
   });
 </script>
+
+<style>
+  .forever-camping-detail-card {
+    background: linear-gradient(
+      145deg,
+      rgba(24, 18, 12, 0.92) 0%,
+      rgba(15, 16, 24, 0.96) 100%
+    );
+    border: 1px solid rgba(255, 209, 0, 0.35);
+    border-radius: 20px;
+    padding: 26px 28px;
+    margin-bottom: 30px;
+    box-shadow:
+      0 14px 35px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 209, 0, 0.15);
+  }
+
+  .camp-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .camp-detail-kicker {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: #fb923c;
+    margin-bottom: 4px;
+  }
+
+  .camp-detail-title {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  .camp-detail-main-buff {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background: rgba(255, 209, 0, 0.1);
+    border: 1px solid rgba(255, 209, 0, 0.35);
+    padding: 8px 14px;
+    border-radius: 12px;
+  }
+
+  .camp-buff-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 700;
+  }
+
+  .camp-buff-value {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffd100;
+  }
+
+  .camp-detail-summary {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 20px;
+  }
+
+  .camping-tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .camping-tier-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .camping-tier-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 209, 0, 0.4);
+  }
+
+  .camping-tier-card.tier-1 {
+    border-top: 3px solid #4ade80;
+  }
+
+  .camping-tier-card.tier-2 {
+    border-top: 3px solid #38bdf8;
+  }
+
+  .camping-tier-card.tier-3 {
+    border-top: 3px solid #ffd100;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 209, 0, 0.07) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+  }
+
+  .camping-tier-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .camping-tier-badge {
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .tier-1 .camping-tier-badge {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.12);
+  }
+
+  .tier-2 .camping-tier-badge {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+  }
+
+  .tier-3 .camping-tier-badge {
+    color: #ffd100;
+    background: rgba(255, 209, 0, 0.15);
+  }
+
+  .camping-tier-skill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .camping-tier-item {
+    margin: 2px 0 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .camping-tier-effect {
+    margin: 0;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .camp-detail-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.12);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+    flex-wrap: wrap;
+  }
+
+  .camp-detail-link {
+    color: #ffd100;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .camp-detail-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .forever-camping-detail-card {
+      padding: 18px 16px;
+      border-radius: 16px;
+    }
+
+    .camp-detail-header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .camp-detail-title {
+      font-size: 1.2rem;
+    }
+
+    .camp-detail-main-buff {
+      align-items: flex-start;
+    }
+
+    .camping-tiers-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .camp-detail-footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
