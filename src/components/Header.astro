@@ -410,6 +410,9 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
       { id: 'vanilla', name: 'Classic (Vanilla)' }
     ];
 
+    // Profesiones guardadas para el futuro en WoW Forever (ocultas en el lanzamiento de Forever)
+    const archivedForeverProfessions = new Set(['joyeria', 'inscripcion', 'arqueologia']);
+
     function searchGuides(query: string) {
       if (!query || query.length < 2) return [];
       const q = query.toLowerCase().trim();
@@ -423,6 +426,10 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
       const results = [];
       for (const p of matchedProf) {
         for (const e of matchedExp) {
+          // Omitir profesiones que no están disponibles en el lanzamiento de WoW Forever
+          if (e.id === 'forever' && archivedForeverProfessions.has(p.id)) {
+            continue;
+          }
           results.push({
             title: `Guía de ${p.name} - ${e.name}`,
             url: `/guias/${p.id}/${e.id}/`
@@ -591,7 +598,9 @@ const isLabPage = pathname.includes('/simulador') || pathname.includes('/laborat
               return;
             } else if (version === 'forever' && exp !== 'forever') {
               localStorage.setItem('wow-preferred-version', 'forever');
-              window.location.href = `/guias/${prof}/forever/`;
+              window.location.href = archivedForeverProfessions.has(prof)
+                ? '/guias/forever/'
+                : `/guias/${prof}/forever/`;
               return;
             }
           }

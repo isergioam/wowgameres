@@ -23,7 +23,7 @@ import imgDf from "../assets/images/expansions/df.webp";
 import imgTww from "../assets/images/expansions/tww.webp";
 import imgMidnight from "../assets/images/expansions/midnight.webp";
 
-// Importación de imágenes de las profesiones para modo Forever
+// Importación de imágenes de las profesiones para modo Forever (incluyendo las guardadas en el cajón para el futuro)
 import imgAlquimia from "../assets/images/alquimia_wow.webp";
 import imgHerreria from "../assets/images/herreria_wow.webp";
 import imgEncantamiento from "../assets/images/encantamiento_wow.webp";
@@ -36,105 +36,36 @@ import imgDesuello from "../assets/images/desuello_wow.webp";
 import imgCocina from "../assets/images/cocina_wow.webp";
 import imgPesca from "../assets/images/pesca_wow.webp";
 import imgPrimerosAuxilios from "../assets/images/primeros_auxilios_wow.webp";
+import imgJoyeria from "../assets/images/joyeria_wow.webp";
+import imgInscripcion from "../assets/images/inscripcion_wow.webp";
+import imgArqueologia from "../assets/images/arqueologia_wow.webp";
+import { FOREVER_PROFESSIONS_CONFIG } from "../data/foreverConfig";
 
-const foreverProfessions = [
-  {
-    id: "alquimia",
-    name: "Alquimia",
-    type: "Producción",
-    image: imgAlquimia,
-    color: "#38bdf8",
-    glow: "rgba(56, 189, 248, 0.45)",
-  },
-  {
-    id: "herreria",
-    name: "Herrería",
-    type: "Producción",
-    image: imgHerreria,
-    color: "#f59e0b",
-    glow: "rgba(245, 158, 11, 0.45)",
-  },
-  {
-    id: "encantamiento",
-    name: "Encantamiento",
-    type: "Producción",
-    image: imgEncantamiento,
-    color: "#c084fc",
-    glow: "rgba(192, 132, 252, 0.45)",
-  },
-  {
-    id: "ingenieria",
-    name: "Ingeniería",
-    type: "Producción",
-    image: imgIngenieria,
-    color: "#eab308",
-    glow: "rgba(234, 179, 8, 0.45)",
-  },
-  {
-    id: "peleteria",
-    name: "Peletería",
-    type: "Producción",
-    image: imgPeleteria,
-    color: "#d97706",
-    glow: "rgba(217, 119, 6, 0.45)",
-  },
-  {
-    id: "sastreria",
-    name: "Sastrería",
-    type: "Producción",
-    image: imgSastreria,
-    color: "#f472b6",
-    glow: "rgba(244, 114, 182, 0.45)",
-  },
-  {
-    id: "mineria",
-    name: "Minería",
-    type: "Recolección",
-    image: imgMineria,
-    color: "#fbbf24",
-    glow: "rgba(251, 191, 36, 0.45)",
-  },
-  {
-    id: "herboristeria",
-    name: "Herboristería",
-    type: "Recolección",
-    image: imgHerboristeria,
-    color: "#4ade80",
-    glow: "rgba(74, 222, 128, 0.45)",
-  },
-  {
-    id: "desuello",
-    name: "Desuello",
-    type: "Recolección",
-    image: imgDesuello,
-    color: "#f87171",
-    glow: "rgba(248, 113, 113, 0.45)",
-  },
-  {
-    id: "cocina",
-    name: "Cocina",
-    type: "Secundaria",
-    image: imgCocina,
-    color: "#fb923c",
-    glow: "rgba(251, 146, 60, 0.45)",
-  },
-  {
-    id: "pesca",
-    name: "Pesca",
-    type: "Secundaria",
-    image: imgPesca,
-    color: "#22d3ee",
-    glow: "rgba(34, 211, 238, 0.45)",
-  },
-  {
-    id: "primeros-auxilios",
-    name: "Primeros Auxilios",
-    type: "Secundaria",
-    image: imgPrimerosAuxilios,
-    color: "#ec4899",
-    glow: "rgba(236, 72, 153, 0.45)",
-  },
-];
+const foreverProfessionImages: Record<string, any> = {
+  alquimia: imgAlquimia,
+  herreria: imgHerreria,
+  encantamiento: imgEncantamiento,
+  ingenieria: imgIngenieria,
+  peleteria: imgPeleteria,
+  sastreria: imgSastreria,
+  mineria: imgMineria,
+  herboristeria: imgHerboristeria,
+  desuello: imgDesuello,
+  cocina: imgCocina,
+  pesca: imgPesca,
+  "primeros-auxilios": imgPrimerosAuxilios,
+  joyeria: imgJoyeria,
+  inscripcion: imgInscripcion,
+  arqueologia: imgArqueologia,
+};
+
+// Solo se muestran en portada las profesiones con `enabled: true` en src/data/foreverConfig.ts
+const foreverProfessions = FOREVER_PROFESSIONS_CONFIG
+  .filter((prof) => prof.enabled)
+  .map((prof) => ({
+    ...prof,
+    image: foreverProfessionImages[prof.id],
+  }));
 
 const expansions = [
   {

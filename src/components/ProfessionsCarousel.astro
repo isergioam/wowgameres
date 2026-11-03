@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { isProfessionEnabledInForever } from "../data/foreverConfig";
 
 interface Props {
   currentProfessionId: string;
@@ -12,25 +13,80 @@ const { currentProfessionId, expansionId } = Astro.props;
 
 const allImages: Record<string, any> = import.meta.glob(
   "/src/assets/images/**/*.{webp,png,jpg,jpeg}",
-  { eager: true }
+  { eager: true },
 );
 
-const profMetadata: Record<string, { name: string; img: string; type: "crafting" | "gathering" | "secondary" }> = {
-  alquimia: { name: "Alquimia", img: "/images/alquimia_wow.webp", type: "crafting" },
-  encantamiento: { name: "Encantamiento", img: "/images/encantamiento_wow.webp", type: "crafting" },
-  herreria: { name: "Herrería", img: "/images/herreria_wow.webp", type: "crafting" },
-  ingenieria: { name: "Ingeniería", img: "/images/ingenieria_wow.webp", type: "crafting" },
-  inscripcion: { name: "Inscripción", img: "/images/inscripcion_wow.webp", type: "crafting" },
-  joyeria: { name: "Joyería", img: "/images/joyeria_wow.webp", type: "crafting" },
-  peleteria: { name: "Peletería", img: "/images/peleteria_wow.webp", type: "crafting" },
-  sastreria: { name: "Sastrería", img: "/images/sastreria_wow.webp", type: "crafting" },
-  mineria: { name: "Minería", img: "/images/mineria_wow.webp", type: "gathering" },
-  herboristeria: { name: "Herboristería", img: "/images/herboristeria_wow.webp", type: "gathering" },
-  desuello: { name: "Desuello", img: "/images/desuello_wow.webp", type: "gathering" },
+const profMetadata: Record<
+  string,
+  { name: string; img: string; type: "crafting" | "gathering" | "secondary" }
+> = {
+  alquimia: {
+    name: "Alquimia",
+    img: "/images/alquimia_wow.webp",
+    type: "crafting",
+  },
+  encantamiento: {
+    name: "Encantamiento",
+    img: "/images/encantamiento_wow.webp",
+    type: "crafting",
+  },
+  herreria: {
+    name: "Herrería",
+    img: "/images/herreria_wow.webp",
+    type: "crafting",
+  },
+  ingenieria: {
+    name: "Ingeniería",
+    img: "/images/ingenieria_wow.webp",
+    type: "crafting",
+  },
+  inscripcion: {
+    name: "Inscripción",
+    img: "/images/inscripcion_wow.webp",
+    type: "crafting",
+  },
+  joyeria: {
+    name: "Joyería",
+    img: "/images/joyeria_wow.webp",
+    type: "crafting",
+  },
+  peleteria: {
+    name: "Peletería",
+    img: "/images/peleteria_wow.webp",
+    type: "crafting",
+  },
+  sastreria: {
+    name: "Sastrería",
+    img: "/images/sastreria_wow.webp",
+    type: "crafting",
+  },
+  mineria: {
+    name: "Minería",
+    img: "/images/mineria_wow.webp",
+    type: "gathering",
+  },
+  herboristeria: {
+    name: "Herboristería",
+    img: "/images/herboristeria_wow.webp",
+    type: "gathering",
+  },
+  desuello: {
+    name: "Desuello",
+    img: "/images/desuello_wow.webp",
+    type: "gathering",
+  },
   cocina: { name: "Cocina", img: "/images/cocina_wow.webp", type: "secondary" },
   pesca: { name: "Pesca", img: "/images/pesca_wow.webp", type: "secondary" },
-  "primeros-auxilios": { name: "Primeros Auxilios", img: "/images/primeros_auxilios_wow.webp", type: "secondary" },
-  arqueologia: { name: "Arqueología", img: "/images/arqueologia_wow.webp", type: "secondary" }
+  "primeros-auxilios": {
+    name: "Primeros Auxilios",
+    img: "/images/primeros_auxilios_wow.webp",
+    type: "secondary",
+  },
+  arqueologia: {
+    name: "Arqueología",
+    img: "/images/arqueologia_wow.webp",
+    type: "secondary",
+  },
 };
 
 // Obtener todas las profesiones excepto la actual que tengan guía en esta expansión
@@ -40,25 +96,30 @@ const availableProfessions = allProfessions
   .filter((p: any) => {
     if (p.id === currentProfessionId) return false;
     return expansionId === "forever"
-      ? (p.data["forever"] || p.data["vanilla"])
+      ? isProfessionEnabledInForever(p.id) &&
+          Boolean(p.data["forever"] || p.data["vanilla"])
       : Boolean(p.data[expansionId]);
   })
   .map((p: any) => {
     const meta = profMetadata[p.id] || {
       name: p.id,
       img: `/images/${p.id}_wow.webp`,
-      type: "crafting" as const
+      type: "crafting" as const,
     };
     return {
       id: p.id,
       name: meta.name,
       img: meta.img,
-      type: meta.type
+      type: meta.type,
     };
   });
 
 // Ordenar: primero artesanías, luego recolección, luego secundarias
-const typeOrder: Record<string, number> = { crafting: 1, gathering: 2, secondary: 3 };
+const typeOrder: Record<string, number> = {
+  crafting: 1,
+  gathering: 2,
+  secondary: 3,
+};
 availableProfessions.sort((a, b) => {
   const diff = (typeOrder[a.type] || 9) - (typeOrder[b.type] || 9);
   if (diff !== 0) return diff;
@@ -66,76 +127,107 @@ availableProfessions.sort((a, b) => {
 });
 ---
 
-{availableProfessions.length > 0 && (
-  <section class="professions-carousel-section reveal" aria-labelledby="other-professions-title">
-    <div class="carousel-header">
-      <h3 id="other-professions-title" class="carousel-title">
-        Más profesiones
-      </h3>
+{
+  availableProfessions.length > 0 && (
+    <section
+      class="professions-carousel-section reveal"
+      aria-labelledby="other-professions-title"
+    >
+      <div class="carousel-header">
+        <h3 id="other-professions-title" class="carousel-title">
+          Más profesiones
+        </h3>
 
-      <div class="carousel-nav-controls">
-        <button
-          type="button"
-          class="carousel-nav-btn prev"
-          id="profCarouselPrev"
-          aria-label="Ver profesiones anteriores"
-          title="Anterior"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <button
-          type="button"
-          class="carousel-nav-btn next"
-          id="profCarouselNext"
-          aria-label="Ver siguientes profesiones"
-          title="Siguiente"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="carousel-viewport">
-      <div class="carousel-track" id="profCarouselTrack" tabindex="0" role="region" aria-label="Carrusel de profesiones">
-        {availableProfessions.map((prof) => {
-          const assetPath = `/src/assets${prof.img}`;
-          const imgAsset = allImages[assetPath];
-
-          return (
-            <a
-              href={`/guias/${prof.id}/${expansionId}/`}
-              class="carousel-item"
-              title={`Guía de ${prof.name}`}
+        <div class="carousel-nav-controls">
+          <button
+            type="button"
+            class="carousel-nav-btn prev"
+            id="profCarouselPrev"
+            aria-label="Ver profesiones anteriores"
+            title="Anterior"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <div class="carousel-card">
-                <div class="carousel-card-bg">
-                  {imgAsset ? (
-                    <Image
-                      src={imgAsset.default}
-                      alt={prof.name}
-                      width={280}
-                      height={180}
-                      quality="mid"
-                    />
-                  ) : (
-                    <img src={prof.img} alt={prof.name} loading="lazy" />
-                  )}
-                </div>
-                <div class="carousel-card-overlay">
-                  <h4>{prof.name}</h4>
-                </div>
-              </div>
-            </a>
-          );
-        })}
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="carousel-nav-btn next"
+            id="profCarouselNext"
+            aria-label="Ver siguientes profesiones"
+            title="Siguiente"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
-)}
+
+      <div class="carousel-viewport">
+        <div
+          class="carousel-track"
+          id="profCarouselTrack"
+          tabindex="0"
+          role="region"
+          aria-label="Carrusel de profesiones"
+        >
+          {availableProfessions.map((prof) => {
+            const assetPath = `/src/assets${prof.img}`;
+            const imgAsset = allImages[assetPath];
+
+            return (
+              <a
+                href={`/guias/${prof.id}/${expansionId}/`}
+                class="carousel-item"
+                title={`Guía de ${prof.name}`}
+              >
+                <div class="carousel-card">
+                  <div class="carousel-card-bg">
+                    {imgAsset ? (
+                      <Image
+                        src={imgAsset.default}
+                        alt={prof.name}
+                        width={280}
+                        height={180}
+                        quality="mid"
+                      />
+                    ) : (
+                      <img src={prof.img} alt={prof.name} loading="lazy" />
+                    )}
+                  </div>
+                  <div class="carousel-card-overlay">
+                    <h4>{prof.name}</h4>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 <style>
   .professions-carousel-section {
@@ -254,7 +346,9 @@ availableProfessions.sort((a, b) => {
     border: 1px solid rgba(255, 255, 255, 0.09);
     background: #06030b;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .carousel-item:hover .carousel-card {
@@ -274,7 +368,9 @@ availableProfessions.sort((a, b) => {
     object-fit: cover;
     object-position: center;
     filter: brightness(0.65) saturate(1.05);
-    transition: transform 0.4s ease, filter 0.4s ease;
+    transition:
+      transform 0.4s ease,
+      filter 0.4s ease;
   }
 
   .carousel-item:hover .carousel-card-bg img {
@@ -289,7 +385,11 @@ availableProfessions.sort((a, b) => {
     display: flex;
     align-items: flex-end;
     padding: 8px 12px;
-    background: linear-gradient(180deg, transparent 35%, rgba(6, 3, 11, 0.9) 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(6, 3, 11, 0.9) 100%
+    );
   }
 
   .carousel-card-overlay h4 {
@@ -340,7 +440,10 @@ availableProfessions.sort((a, b) => {
     box-shadow: 0 6px 18px rgba(16, 98, 126, 0.35) !important;
   }
 
-  :global(html[data-version="forever"]) .carousel-item:hover .carousel-card-overlay h4 {
+  :global(html[data-version="forever"])
+    .carousel-item:hover
+    .carousel-card-overlay
+    h4 {
     color: #67e8f9 !important;
   }
 
@@ -376,8 +479,12 @@ availableProfessions.sort((a, b) => {
 <script>
   function setupProfessionsCarousel() {
     const track = document.getElementById("profCarouselTrack");
-    const prevBtn = document.getElementById("profCarouselPrev") as HTMLButtonElement | null;
-    const nextBtn = document.getElementById("profCarouselNext") as HTMLButtonElement | null;
+    const prevBtn = document.getElementById(
+      "profCarouselPrev",
+    ) as HTMLButtonElement | null;
+    const nextBtn = document.getElementById(
+      "profCarouselNext",
+    ) as HTMLButtonElement | null;
 
     if (!track || !prevBtn || !nextBtn) return;
 

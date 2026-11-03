@@ -5,6 +5,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButtons from "../../../components/ShareButtons.astro";
 import ProfessionsCarousel from "../../../components/ProfessionsCarousel.astro";
 import { WOWHEAD_IDS } from "../../../data/wowheadIds";
+import { isProfessionEnabledInForever } from "../../../data/foreverConfig";
 
 
 interface Step {
@@ -39,7 +40,7 @@ export async function getStaticPaths() {
   const allProfessions = await getCollection("professions");
   const standardPaths = allProfessions.flatMap((prof: any) => {
     return Object.keys(prof.data)
-      .filter((expKey) => expKey !== "forever")
+      .filter((expKey) => expKey !== "forever" && !expKey.startsWith("_"))
       .map((expKey) => {
         return {
           params: { profession: prof.id, expansion: expKey },
@@ -52,9 +53,14 @@ export async function getStaticPaths() {
       });
   });
 
-  // Rutas dedicadas para World of Warcraft: Forever (usa datos específicos si existen, o fallback a vanilla)
+  // Rutas dedicadas para World of Warcraft: Forever
+  // Solo genera las profesiones activas en el lanzamiento (las futuras quedan guardadas en foreverConfig.ts)
   const foreverPaths = allProfessions
-    .filter((prof: any) => prof.data["forever"] || prof.data["vanilla"])
+    .filter(
+      (prof: any) =>
+        isProfessionEnabledInForever(prof.id) &&
+        Boolean(prof.data["forever"] || prof.data["vanilla"])
+    )
     .map((prof: any) => {
       const specificForever = prof.data["forever"];
       const vanillaData = prof.data["vanilla"];
