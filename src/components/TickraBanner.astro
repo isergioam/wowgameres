@@ -1,0 +1,799 @@
+---
+/**
+ * TickraBanner.astro
+ * Bloque promocional interactivo Glassmorphism para la app móvil Tickra (de WOWGamerES).
+ * Diseñado para ubicarse donde antiguamente iba el bloque de afiliados (Portada y Guías).
+ */
+import { Image } from "astro:assets";
+import tickraLogo from "../assets/images/tickra_logo.png";
+
+interface Props {
+  variant?: "home" | "guide";
+}
+
+const { variant = "home" } = Astro.props;
+
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.wowgameres.tickra";
+---
+
+<aside
+  class={`tickra-promo-wrapper ${variant === "guide" ? "tickra-variant-guide" : "tickra-variant-home"}`}
+  aria-label="Promoción de aplicación Tickra"
+>
+  <div class="tickra-promo-card">
+    <!-- Resplandor ambiental decorativo -->
+    <div class="tickra-glow-orb orb-cyan" aria-hidden="true"></div>
+    <div class="tickra-glow-orb orb-emerald" aria-hidden="true"></div>
+
+    <div class="tickra-main-grid">
+      <!-- Columna Izquierda: Identidad + Propuesta de valor + 3 Puntos Clave IA -->
+      <div class="tickra-info-col">
+        <div class="tickra-top-badges">
+          <span class="tickra-kicker-badge">
+            <span class="pulse-dot"></span>
+            APP OFICIAL DE WOWGAMERES
+          </span>
+          <span class="tickra-ai-tag">✨ Potenciada con IA</span>
+        </div>
+
+        <h3 class="tickra-headline">
+          ¿Controlas cada moneda de oro en la subasta?{" "}
+          <span class="tickra-gradient-text">
+            Haz lo mismo con tus tickets y gastos reales
+          </span>
+        </h3>
+
+        <p class="tickra-description">
+          Descubre <strong>Tickra</strong>, nuestra aplicación para Android que
+          escanea tus tickets de compra (Mercadona, Carrefour, Lidl y más) con
+          <strong>Inteligencia Artificial</strong>. Extrae cada producto al
+          instante, organiza tu economía por categorías y exporta todo a
+          <strong>Excel o PDF</strong>.
+        </p>
+
+        <div class="tickra-features-grid">
+          <div class="tickra-feature-pill">
+            <div class="feature-icon-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                <circle cx="12" cy="13" r="3" />
+              </svg>
+            </div>
+            <div class="feature-text">
+              <strong>Escáner IA</strong>
+              <span>Extrae artículos y precios con una foto</span>
+            </div>
+          </div>
+
+          <div class="tickra-feature-pill">
+            <div class="feature-icon-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </div>
+            <div class="feature-text">
+              <strong>Gastos Bajo Control</strong>
+              <span>Gráficos y categorías automáticas</span>
+            </div>
+          </div>
+
+          <div class="tickra-feature-pill">
+            <div class="feature-icon-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="12" y1="18" x2="12" y2="12" />
+                <line x1="9" y1="15" x2="15" y2="15" />
+              </svg>
+            </div>
+            <div class="feature-text">
+              <strong>Exporta a Excel y PDF</strong>
+              <span>Informes listos en un solo toque</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Tarjeta App Showcase + Botón Google Play -->
+      <div class="tickra-cta-col">
+        <a
+          href={PLAY_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="tickra-app-showcase"
+          aria-label="Descargar Tickra en Google Play"
+        >
+          <div class="tickra-app-header">
+            <div class="tickra-app-icon-wrap">
+              <Image
+                src={tickraLogo}
+                alt="Logo de Tickra"
+                width={72}
+                height={72}
+                class="tickra-app-icon"
+              />
+            </div>
+            <div class="tickra-app-meta">
+              <span class="tickra-brand-name">TICKRA</span>
+              <span class="tickra-brand-sub">Tus tickets bajo control</span>
+              <div class="tickra-rating-row">
+                <span class="stars">★★★★★</span>
+                <span class="rating-label">Gratis en Android</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simulación visual de escaneo IA -->
+          <div class="tickra-scan-preview">
+            <div class="scan-line-header">
+              <span class="scan-status">✓ Ticket procesado con IA</span>
+              <span class="scan-time">1.8s</span>
+            </div>
+            <div class="scan-items-list">
+              <div class="scan-item-row">
+                <span>🛒 Alimentación y Supermercado</span>
+                <span class="scan-tag">Auto</span>
+              </div>
+              <div class="scan-item-row">
+                <span>📊 Exportable a .XLSX / PDF</span>
+                <span class="scan-tag emerald">Listo</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón Oficial Google Play -->
+          <div class="tickra-play-btn">
+            <svg
+              class="play-triangle-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill="#00d2ff"
+                d="M3.61 1.814L13.793 12 3.61 22.186a1.96 1.96 0 0 1-.61-1.425V3.239c0-.554.224-1.063.61-1.425z"
+              />
+              <path
+                fill="#00f076"
+                d="M17.228 8.565L5.265 1.662a1.75 1.75 0 0 0-1.655.152L13.793 12l3.435-3.435z"
+              />
+              <path
+                fill="#ff3a44"
+                d="M3.61 22.186a1.75 1.75 0 0 0 1.655.152l11.963-6.903L13.793 12 3.61 22.186z"
+              />
+              <path
+                fill="#ffbd00"
+                d="M20.996 10.74l-3.768-2.175L13.793 12l3.435 3.435 3.768-2.175c.805-.465.805-2.055 0-2.52z"
+              />
+            </svg>
+            <div class="play-btn-text">
+              <span class="play-btn-small">DISPONIBLE GRATIS EN</span>
+              <span class="play-btn-big">Google Play</span>
+            </div>
+            <svg
+              class="play-arrow-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </div>
+        </a>
+        <span class="tickra-privacy-note">
+          🔒 Tus datos se guardan en tu dispositivo · Creada por el equipo de
+          WOWGamerES
+        </span>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .tickra-promo-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 5;
+  }
+
+  .tickra-variant-home {
+    max-width: 1200px;
+    margin: 42px auto 18px;
+    padding: 0 20px;
+  }
+
+  .tickra-variant-guide {
+    margin: 34px 0;
+  }
+
+  .tickra-promo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    padding: 32px 34px;
+    background: linear-gradient(
+      135deg,
+      rgba(12, 22, 38, 0.92) 0%,
+      rgba(16, 14, 34, 0.95) 55%,
+      rgba(10, 28, 36, 0.92) 100%
+    );
+    border: 1.5px solid rgba(34, 211, 238, 0.32);
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.4),
+      0 0 35px rgba(34, 211, 238, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    transition:
+      transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1),
+      border-color 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .tickra-promo-card:hover {
+    border-color: rgba(52, 211, 153, 0.55);
+    box-shadow:
+      0 24px 55px rgba(0, 0, 0, 0.48),
+      0 0 40px rgba(34, 211, 238, 0.16),
+      inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  }
+
+  html:not(.dark-mode) .tickra-promo-card {
+    background: linear-gradient(
+      135deg,
+      rgba(240, 253, 250, 0.95) 0%,
+      rgba(255, 255, 255, 0.98) 50%,
+      rgba(236, 254, 255, 0.95) 100%
+    );
+    border-color: rgba(14, 165, 233, 0.35);
+    box-shadow:
+      0 15px 38px rgba(14, 165, 233, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .tickra-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .orb-cyan {
+    width: 280px;
+    height: 280px;
+    top: -110px;
+    left: -80px;
+    background: rgba(34, 211, 238, 0.16);
+  }
+
+  .orb-emerald {
+    width: 260px;
+    height: 260px;
+    bottom: -110px;
+    right: -60px;
+    background: rgba(52, 211, 153, 0.15);
+  }
+
+  html:not(.dark-mode) .orb-cyan,
+  html:not(.dark-mode) .orb-emerald {
+    opacity: 0.45;
+  }
+
+  .tickra-main-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .tickra-top-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .tickra-kicker-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 13px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.12);
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    color: #22d3ee;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  html:not(.dark-mode) .tickra-kicker-badge {
+    background: rgba(14, 165, 233, 0.1);
+    border-color: rgba(14, 165, 233, 0.3);
+    color: #0284c7;
+  }
+
+  .pulse-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 8px #34d399;
+    animation: tickraPulse 2s infinite;
+  }
+
+  @keyframes tickraPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.35);
+      opacity: 0.65;
+    }
+  }
+
+  .tickra-ai-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(187, 159, 255, 0.12);
+    border: 1px solid rgba(187, 159, 255, 0.3);
+    color: #d8b4fe;
+    font-size: 0.74rem;
+    font-weight: 700;
+  }
+
+  html:not(.dark-mode) .tickra-ai-tag {
+    background: rgba(106, 13, 173, 0.08);
+    border-color: rgba(106, 13, 173, 0.2);
+    color: #6a0dad;
+  }
+
+  .tickra-headline {
+    font-size: 1.55rem;
+    font-weight: 900;
+    line-height: 1.25;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    padding: 0;
+    border: none;
+    letter-spacing: -0.4px;
+  }
+
+  html:not(.dark-mode) .tickra-headline {
+    color: #0f172a;
+  }
+
+  .tickra-gradient-text {
+    background: linear-gradient(90deg, #22d3ee 0%, #34d399 60%, #a3e635 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  html:not(.dark-mode) .tickra-gradient-text {
+    background: linear-gradient(90deg, #0284c7 0%, #059669 70%, #16a34a 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tickra-description {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 20px 0;
+  }
+
+  html:not(.dark-mode) .tickra-description {
+    color: #334155;
+  }
+
+  .tickra-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tickra-feature-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 13px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .tickra-feature-pill:hover {
+    border-color: rgba(34, 211, 238, 0.35);
+    background: rgba(34, 211, 238, 0.06);
+  }
+
+  html:not(.dark-mode) .tickra-feature-pill {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(14, 165, 233, 0.2);
+  }
+
+  .feature-icon-box {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.18),
+      rgba(52, 211, 153, 0.18)
+    );
+    border: 1px solid rgba(52, 211, 153, 0.35);
+    color: #34d399;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  html:not(.dark-mode) .feature-icon-box {
+    color: #059669;
+  }
+
+  .feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .feature-text strong {
+    font-size: 0.84rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+
+  html:not(.dark-mode) .feature-text strong {
+    color: #0f172a;
+  }
+
+  .feature-text span {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.3;
+  }
+
+  html:not(.dark-mode) .feature-text span {
+    color: #475569;
+  }
+
+  /* Columna Derecha: Tarjeta App Showcase */
+  .tickra-cta-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tickra-app-showcase {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 22px;
+    background: rgba(8, 14, 26, 0.72);
+    border: 1.5px solid rgba(34, 211, 238, 0.28);
+    text-decoration: none;
+    color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .tickra-app-showcase:hover {
+    transform: translateY(-4px);
+    border-color: #34d399;
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.45),
+      0 0 28px rgba(52, 211, 153, 0.25);
+  }
+
+  html:not(.dark-mode) .tickra-app-showcase {
+    background: #0f172a;
+    color: #ffffff;
+  }
+
+  .tickra-app-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .tickra-app-icon-wrap {
+    width: 66px;
+    height: 66px;
+    border-radius: 16px;
+    background: radial-gradient(
+      circle at 30% 30%,
+      rgba(34, 211, 238, 0.22),
+      rgba(15, 23, 42, 0.95)
+    );
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .tickra-app-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(34, 211, 238, 0.35));
+  }
+
+  .tickra-app-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .tickra-brand-name {
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #22d3ee 0%, #34d399 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tickra-brand-sub {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 600;
+  }
+
+  .tickra-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .stars {
+    color: #fbbf24;
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+  }
+
+  .rating-label {
+    font-size: 0.72rem;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+    font-weight: 700;
+  }
+
+  .tickra-scan-preview {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .scan-line-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #34d399;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+  }
+
+  .scan-time {
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 600;
+  }
+
+  .scan-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .scan-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .scan-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(34, 211, 238, 0.15);
+    color: #22d3ee;
+  }
+
+  .scan-tag.emerald {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+  }
+
+  .tickra-play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  .tickra-app-showcase:hover .tickra-play-btn {
+    filter: brightness(1.08);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.55);
+  }
+
+  .play-triangle-icon {
+    flex-shrink: 0;
+    background: #0b1120;
+    padding: 5px;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .play-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+
+  .play-btn-small {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    opacity: 0.92;
+  }
+
+  .play-btn-big {
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+  }
+
+  .play-arrow-icon {
+    margin-left: auto;
+    transition: transform 0.25s ease;
+  }
+
+  .tickra-app-showcase:hover .play-arrow-icon {
+    transform: translateX(4px);
+  }
+
+  .tickra-privacy-note {
+    font-size: 0.74rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+
+  html:not(.dark-mode) .tickra-privacy-note {
+    color: #475569;
+  }
+
+  /* Responsive Tablet & Mobile */
+  @media (max-width: 980px) {
+    .tickra-main-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .tickra-features-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .tickra-variant-home {
+      margin: 28px auto 12px;
+      padding: 0 14px;
+    }
+
+    .tickra-variant-guide {
+      margin: 24px 0;
+    }
+
+    .tickra-promo-card {
+      padding: 22px 18px;
+      border-radius: 20px;
+    }
+
+    .tickra-headline {
+      font-size: 1.25rem;
+    }
+
+    .tickra-description {
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    .tickra-app-showcase {
+      padding: 16px;
+    }
+
+    .tickra-app-icon-wrap {
+      width: 56px;
+      height: 56px;
+    }
+
+    .tickra-brand-name {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+

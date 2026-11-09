@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ShareButtons from "../../../components/ShareButtons.astro";
 import ProfessionsCarousel from "../../../components/ProfessionsCarousel.astro";
+import TickraBanner from "../../../components/TickraBanner.astro";
 import { WOWHEAD_IDS } from "../../../data/wowheadIds";
 import {
   isProfessionEnabledInForever,
@@ -532,6 +533,9 @@ const schemaJSON = {
 
 
     </section>
+
+    <!-- Bloque Promocional de Tickra (donde antiguamente estaba el bloque de afiliados) -->
+    <TickraBanner variant="guide" />
 
     <!-- Nivelación (Pasos) -->
     <section id="niveles" class="section">

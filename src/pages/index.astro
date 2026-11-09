@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import NewsCard from "../components/NewsCard.astro";
 import DonationBanner from "../components/DonationBanner.astro";
 import ForeverCampingSection from "../components/ForeverCampingSection.astro";
+import TickraBanner from "../components/TickraBanner.astro";
 
 import newsData from "../content/news/latest.json";
 import { Image } from "astro:assets";
@@ -340,6 +341,9 @@ const description =
         </div>
       </div>
     </div>
+
+    <!-- Bloque Promocional de Tickra (App Oficial de WOWGamerES) -->
+    <TickraBanner variant="home" />
 
     {
       latestNews.length > 0 && (
